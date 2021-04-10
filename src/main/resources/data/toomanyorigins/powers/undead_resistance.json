@@ -1,0 +1,15 @@
+{
+  "type": "origins:modify_damage_taken",
+  "damage_condition": {
+    "type": "origins:projectile"
+  },
+  "condition": {
+    "type": "origins:health",
+    "comparison": "<=",
+    "compare_to": 10.0
+  },
+  "modifier": {
+    "value": -1,
+    "operation": "multiply_total"
+  }
+}

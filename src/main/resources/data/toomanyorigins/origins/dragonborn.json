@@ -1,0 +1,12 @@
+{
+	"powers": [
+		"toomanyorigins:dragon_breath",
+		"origins:carnivore",
+		"toomanyorigins:no_knockback",
+		"toomanyorigins:weak_point",
+		"toomanyorigins:zenith_scales"
+	],
+	"icon": "minecraft:dragon_breath",
+	"order": 6,
+	"impact": 1
+}

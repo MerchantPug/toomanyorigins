@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "toomanyorigins:block/withered_carved_pumpkin",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "toomanyorigins:block/withered_carved_pumpkin"
+    },
+    "facing=south": {
+      "model": "toomanyorigins:block/withered_carved_pumpkin",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "toomanyorigins:block/withered_carved_pumpkin",
+      "y": 270
+    }
+  }
+}

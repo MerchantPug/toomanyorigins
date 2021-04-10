@@ -1,0 +1,17 @@
+{
+  "type": "toomanyorigins:rocket_jump",
+  "cooldown": 10,
+  "hud_render": {
+    "should_render": false,
+    "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
+    "bar_index": 2
+  },
+  "damage_source": {
+    "name": "overheat",
+    "bypasses_armor": "true",
+    "fire": "true",
+    "unblockable": "true"
+  },
+  "damage_amount": 3,
+  "speed": 1.0
+}
