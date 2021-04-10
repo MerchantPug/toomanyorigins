@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "TooManyOrigins",
-  "description": "PlaceHolder",
+  "description": "Origins addon that currently adds 3 origins. Withered, Dragonborn and Hiss-kin.",
   "authors": [
     "Pug",
     "Omniv"
