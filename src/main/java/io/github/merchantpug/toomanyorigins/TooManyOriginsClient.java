@@ -3,7 +3,6 @@ package io.github.merchantpug.toomanyorigins;
 import io.github.merchantpug.toomanyorigins.networking.packet.EntitySpawnPacket;
 import io.github.merchantpug.toomanyorigins.registry.TMOBlocks;
 import io.github.merchantpug.toomanyorigins.registry.TMOEntities;
-import io.github.merchantpug.toomanyorigins.registry.conditions.TMOEntityConditionsClient;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -44,8 +43,6 @@ public class TooManyOriginsClient implements ClientModInitializer {
         receiveEntityPacket();
         EntityRendererRegistry.INSTANCE.register(TMOEntities.FIREBALL_AREA_EFFECT_CLOUD,
                 (dispatcher, context) -> new AreaEffectCloudEntityRenderer(dispatcher));
-
-        TMOEntityConditionsClient.register();
 
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
             int j = 7 * 32;
