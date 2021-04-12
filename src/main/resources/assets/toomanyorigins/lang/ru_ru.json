@@ -1,0 +1,58 @@
+{
+  "origin.toomanyorigins.dragonborn.name": "Драконорождённый",
+  "origin.toomanyorigins.dragonborn.description": "Наполовину Человек, наполовину Дракон. В то время пока им не хватает телепортационных способностей, как у Эндерменов, сами же они могут одним видом страшить весь Энд.",
+
+  "origin.toomanyorigins.hisskin.name": "Адаптированный Подрывник",
+  "origin.toomanyorigins.hisskin.description": "Люди долго спорили насчёт действительного существования этой расы. Как говорит мифология: Данная раса корнями исходит от обычных Криперов, что смогли адаптироваться к последствиям от своих взрывов и использовать их в своих целях.",
+
+  "origin.toomanyorigins.withered.name": "Иссушённый",
+  "origin.toomanyorigins.withered.description": "Иссушённые когда-то заплатили страшную цену взамен на удержание силы Визера в себе. Своим касанием он может лишить тебя кожи в секунды.",
+
+  "power.toomanyorigins.black_thumb.name": "Разносчик Чумы",
+  "power.toomanyorigins.black_thumb.description": "Ты распространяешь иссушение на всю природу в Верхнем Мире, превращая растительность в отходы.",
+  "power.toomanyorigins.scorched_structure.name": "Выженная Структура",
+  "power.toomanyorigins.scorched_structure.description": "Вы имеете вечный эффект Скорости Души.",
+  "power.toomanyorigins.undead_resistance.name": "Щит Мертвеца",
+  "power.toomanyorigins.undead_resistance.description": "Когда ваш уровень здоровья падает ниже половины вокруг вас создаётся защита от дальнобойных снарядов.",
+  "power.toomanyorigins.wither_immunity.name": "Поражённые вены",
+  "power.toomanyorigins.wither_immunity.description": "Вы иммунны к эффекту Иссушения.",
+  "power.toomanyorigins.wither_toxins.name": "Мёртвое касание",
+  "power.toomanyorigins.wither_toxins.description": "Ваши атаки в ближнем бою ненадолго накладывают иссушение на врагов.",
+
+  "power.toomanyorigins.dragon_breath.name": "Мятное дыхание)",
+  "power.toomanyorigins.dragon_breath.description": "Вы можете испускать драконье дыхание и активировать этим печки.",
+  "power.toomanyorigins.no_knockback.name": "Стойкость",
+  "power.toomanyorigins.no_knockback.description": "Вы иммунны к отбрасыванию.",
+  "power.toomanyorigins.weak_point.name": "Слабая точка",
+  "power.toomanyorigins.weak_point.description": "Вы имеете слабую точку, поэтому получаете больше урона от дальнобойных снарядов.",
+  "power.toomanyorigins.zenith_scales.name": "Крепыш",
+  "power.toomanyorigins.zenith_scales.description": "Вы имеете на два сердца больше.",
+
+  "item.toomanyorigins.dragon_fireball": "Драконий Файерболл",
+  "entity.toomanyorigins.fireball_area_effect_cloud": "Облако эффекта драконьего файерболла",
+  "effect.toomanyorigins.end_fire": "Огонь Энда",
+  "death.attack.dragonMagic": "%1$s освежил дыхание",
+  "death.attack.dragonMagic.player": "%1$s убегал, но орбит %2$s оказался быстрее",
+  "death.attack.dragonMagic.player.item": "%1$s освежил дыхание %2$s используя %3$s",
+  "death.attack.indirectDragonMagic": "%1$s был превращён в КФС для драконов из-за %2$s",
+  "death.attack.indirectDragonMagic.item": "%1$s полюбил мяту из-за %2$s используя %3$s",
+
+  "power.toomanyorigins.overheat.name": "Рывок в небеса",
+  "power.toomanyorigins.overheat.description": "Вы можете использовать порох внутри вас для реактивного прыжка по траектории в блок, на который смотрите.",
+  "power.toomanyorigins.blast_immunity.name": "Адаптированная плоть",
+  "power.toomanyorigins.blast_immunity.description": "Вы иммунны к любому взрывному урону.",
+  "power.toomanyorigins.conductor.name": "Супер Сайян 2",
+  "power.toomanyorigins.conductor.description": "Попадание молнии пробуждает в вас новые силы.",
+  "power.toomanyorigins.sneaking_steps.name": "Гладкие пяты",
+  "power.toomanyorigins.sneaking_steps.description": "Вы двигаетесь чуть медленнее, чем обычно, когда крадётесь.",
+  "power.toomanyorigins.ailurophobia.name": "Котофобия",
+  "power.toomanyorigins.ailurophobia.description": "Будучи поблизости котов или оцелотов делает вас ослабленным и быстрым.",
+
+  "effect.toomanyorigins.charged": "SSJ2",
+  "death.attack.overheat": "%1$s решил показать свои внутренности",
+  "death.attack.overheat.player": "внутренности %1$s были отделены %2$s",
+  "death.attack.overheat.player.item": "внутренности %1$s были отделены %2$s используя %3$s",
+  "death.attack.jumpExplosion": "%1$s забыл как делать рокетджамп",
+  "death.attack.jumpExplosion.player": "%1$s дорокетджампился из-за %2$s",
+  "death.attack.jumpExplosion.player.item": "%1$s дорокетджампился из-за %2$s используя %3$s"
+}
