@@ -3,23 +3,18 @@ package io.github.merchantpug.toomanyorigins.power;
 import io.github.apace100.origins.power.ActiveCooldownPower;
 import io.github.apace100.origins.power.PowerType;
 import io.github.apace100.origins.util.HudRender;
-import io.github.merchantpug.toomanyorigins.networking.packet.LightUpBlockEntityPacket;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import io.github.merchantpug.toomanyorigins.networking.packet.LightUpBlockPacket;
 import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CampfireBlock;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleType;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
-
-import java.util.Random;
 
 public class LightUpBlockPower extends ActiveCooldownPower {
     private final int burnTime;
@@ -44,7 +39,7 @@ public class LightUpBlockPower extends ActiveCooldownPower {
                     assert client.world != null;
                     BlockState state = client.world.getBlockState(pos);
                     if (state.getBlock() instanceof AbstractFurnaceBlock || state.getBlock() instanceof CampfireBlock) {
-                        LightUpBlockEntityPacket.send(pos, particle, particleCount, burnTime);
+                        LightUpBlockPacket.send(pos, particle, particleCount, burnTime);
                     }
                 }
             }

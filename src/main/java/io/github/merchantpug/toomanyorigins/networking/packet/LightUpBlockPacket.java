@@ -1,5 +1,6 @@
 package io.github.merchantpug.toomanyorigins.networking.packet;
 
+import io.github.merchantpug.toomanyorigins.mixin.AbstractFurnaceBlockEntityAccessor;
 import io.netty.buffer.Unpooled;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
@@ -22,7 +23,7 @@ import java.util.Random;
 
 import static net.minecraft.state.property.Properties.LIT;
 
-public class LightUpBlockEntityPacket {
+public class LightUpBlockPacket {
     public static final Identifier ID = new Identifier(TooManyOrigins.MODID, "light_up_block");
 
     public static void send(BlockPos pos, ParticleType particle, int particleCount, int burnTime) {
@@ -53,8 +54,8 @@ public class LightUpBlockEntityPacket {
             }
             if (entity instanceof AbstractFurnaceBlockEntity) {
                 AbstractFurnaceBlockEntity abstractFurnaceBlockEntity = ((AbstractFurnaceBlockEntity) entity);
-                abstractFurnaceBlockEntity.fuelTime = abstractFurnaceBlockEntity.burnTime + burnTime;
-                abstractFurnaceBlockEntity.burnTime += burnTime;
+                ((AbstractFurnaceBlockEntityAccessor)entity).setFuelTime(((AbstractFurnaceBlockEntityAccessor)entity).getBurnTime() + burnTime);
+                ((AbstractFurnaceBlockEntityAccessor)entity).setBurnTime(((AbstractFurnaceBlockEntityAccessor)entity).getBurnTime() + burnTime);
                 player.world.syncWorldEvent(1591, pos, 0);
             }
         });
