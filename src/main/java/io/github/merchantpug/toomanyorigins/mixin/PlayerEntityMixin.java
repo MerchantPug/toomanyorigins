@@ -56,13 +56,6 @@ public abstract class PlayerEntityMixin extends LivingEntity {
         }
     }
 
-    public void onStruckByLightning(ServerWorld world, LightningEntity lightning) {
-        super.onStruckByLightning(world, lightning);
-        if (TMOPowers.CONDUCTOR.isActive(this)) {
-            this.addStatusEffect(new StatusEffectInstance(TMOEffects.CHARGED, 48000, 0));
-        }
-    }
-
     private void setFramesOnGround() {
         for (int i2 = 0; i2 < 3; ++i2) {
             framesOnGround += 1;
