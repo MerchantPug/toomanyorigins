@@ -1,4 +1,4 @@
-package io.github.merchantpug.toomanyorigins.registry.conditions;
+package io.github.merchantpug.toomanyorigins.registry;
 
 import io.github.apace100.origins.power.factory.condition.ConditionFactory;
 import io.github.apace100.origins.registry.ModRegistries;
