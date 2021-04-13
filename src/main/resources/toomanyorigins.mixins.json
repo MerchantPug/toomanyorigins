@@ -4,6 +4,7 @@
   "package": "io.github.merchantpug.toomanyorigins.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "AbstractFurnaceBlockEntityAccessor",
     "CropBlockMixin",
     "EntityMixin",
     "ExplosionMixin",
