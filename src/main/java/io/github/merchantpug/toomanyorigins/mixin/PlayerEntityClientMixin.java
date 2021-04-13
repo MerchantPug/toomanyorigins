@@ -19,7 +19,6 @@ public abstract class PlayerEntityClientMixin extends LivingEntity implements Sk
         super(EntityType.PLAYER, world);
     }
 
-    @Override
     public boolean shouldRenderOverlay() {
         if (TMOPowers.RENDER_WITHER_OVERLAY.isActive(this) && this.getHealth() <= this.getMaxHealth() * 0.5) {
             return true;
