@@ -59,10 +59,10 @@ public class TMOPowers {
     public static final PowerFactory<Power> ROCKET_JUMP = create(new PowerFactory<>(new Identifier(TooManyOrigins.MODID, "rocket_jump"),
             new SerializableData()
                     .add("cooldown", SerializableDataType.INT)
-                    .add("hud_render", SerializableDataType.HUD_RENDER)
                     .add("damage_source", SerializableDataType.DAMAGE_SOURCE, DamageSource.GENERIC)
                     .add("damage_amount", SerializableDataType.FLOAT, 3.0F)
                     .add("speed", SerializableDataType.DOUBLE, 1.0)
+                    .add("hud_render", SerializableDataType.HUD_RENDER)
                     .add("key", SerializableDataType.BACKWARDS_COMPATIBLE_KEY, new Active.Key()),
             data ->
                     (type, player) -> {
