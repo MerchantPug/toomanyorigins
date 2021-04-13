@@ -29,7 +29,6 @@
       "io.github.merchantpug.toomanyorigins.registry.TMOComponents"
     ]
   },
-  "accessWidener": "toomanyorigins.accesswidener",
   "mixins": [
     "toomanyorigins.mixins.json"
   ],
