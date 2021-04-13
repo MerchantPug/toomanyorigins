@@ -5,7 +5,6 @@ import io.github.merchantpug.toomanyorigins.networking.packet.RocketJumpPacket;
 import io.github.merchantpug.toomanyorigins.registry.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
