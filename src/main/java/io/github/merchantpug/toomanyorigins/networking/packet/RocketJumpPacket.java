@@ -62,7 +62,7 @@ public class RocketJumpPacket {
             float h = -MathHelper.cos(player.yaw * 0.017453292F) * MathHelper.cos(player.pitch * 0.017453292F);
             player.damage(damageSource, damageAmount);
             player.world.createExplosion(player, TMODamageSources.jumpExplosion(player), null, player.getX(), player.getY(), player.getZ(), e, false, Explosion.DestructionType.NONE);
-            player.addVelocity(f * speed * d, g * speed * d * 0.8, h * speed * d);
+            player.addVelocity(f * speed * d, g * speed * d, h * speed * d);
             player.velocityModified = true;
             if (player.hasStatusEffect(TMOEffects.CHARGED)) {
                 player.removeStatusEffect(TMOEffects.CHARGED);
