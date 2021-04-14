@@ -1,6 +1,5 @@
 package io.github.merchantpug.toomanyorigins.mixin;
 
-import io.github.merchantpug.toomanyorigins.registry.TMOEffects;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.entity.feature.SkinOverlayOwner;
@@ -8,20 +7,12 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
-import io.github.merchantpug.toomanyorigins.registry.TMOPowers;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Environment(EnvType.CLIENT)
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntityClientMixin extends LivingEntity implements SkinOverlayOwner {
-
     public PlayerEntityClientMixin(World world) {
         super(EntityType.PLAYER, world);
-    }
-
-    public boolean shouldRenderOverlay() {
-        if (this.hasStatusEffect(TMOEffects.WITHER_RESISTANCE)) {
-            return true;
-        } else return this.hasStatusEffect(TMOEffects.CHARGED);
     }
 }

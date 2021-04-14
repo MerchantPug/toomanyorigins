@@ -28,7 +28,7 @@ public class PlayerWitherArmorEnergySwirlOverlayFeatureRenderer<T extends Living
     }
 
     public void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, T entity, float limbAngle, float limbDistance, float tickDelta, float animationProgress, float headYaw, float headPitch) {
-        if (entity.shouldRenderOverlay() && entity.hasStatusEffect(TMOEffects.WITHER_RESISTANCE)) {
+        if (entity.hasStatusEffect(TMOEffects.WITHER_RESISTANCE)) {
             float f = (float)entity.age + tickDelta;
             BipedEntityModel<T> entityModel = this.getContextModel();
             entityModel.animateModel(entity, limbAngle, limbDistance, tickDelta);
