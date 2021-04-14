@@ -61,11 +61,12 @@ public class TMOPowers {
                     .add("damage_source", SerializableDataType.DAMAGE_SOURCE, DamageSource.GENERIC)
                     .add("damage_amount", SerializableDataType.FLOAT, 3.0F)
                     .add("speed", SerializableDataType.DOUBLE, 1.0)
+                    .add("should_use_charged", SerializableDataType.BOOLEAN, false)
                     .add("hud_render", SerializableDataType.HUD_RENDER)
                     .add("key", SerializableDataType.BACKWARDS_COMPATIBLE_KEY, new Active.Key()),
             data ->
                     (type, player) -> {
-            RocketJumpPower power = new RocketJumpPower(type, player, data.getInt("cooldown"), (HudRender)data.get("hud_render"), (DamageSource)data.get("damage_source"), data.getFloat("damage_amount"), data.getDouble("speed"));
+            RocketJumpPower power = new RocketJumpPower(type, player, data.getInt("cooldown"), (HudRender)data.get("hud_render"), (DamageSource)data.get("damage_source"), data.getBoolean("should_use_charged"), data.getFloat("damage_amount"), data.getDouble("speed"));
             power.setKey((Active.Key)data.get("key"));
             return power;
     })).allowCondition();

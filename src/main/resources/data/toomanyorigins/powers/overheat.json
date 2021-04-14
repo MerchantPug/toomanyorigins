@@ -13,5 +13,6 @@
     "unblockable": "true"
   },
   "damage_amount": 3,
+  "should_use_charged": true,
   "speed": 1.0
 }

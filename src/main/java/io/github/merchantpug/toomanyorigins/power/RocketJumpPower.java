@@ -16,14 +16,15 @@ public class RocketJumpPower extends ActiveCooldownPower {
     private Key key;
     private final DamageSource damageSource;
     private final float damageAmount;
+    private final boolean shouldUseCharged;
     private final double speed;
 
-    public RocketJumpPower(PowerType<?> type, PlayerEntity player, int cooldownDuration, HudRender hudRender, DamageSource damageSource, float damageAmount, double speed) {
+    public RocketJumpPower(PowerType<?> type, PlayerEntity player, int cooldownDuration, HudRender hudRender, DamageSource damageSource, boolean shouldUseCharged, float damageAmount, double speed) {
         super(type, player, cooldownDuration, hudRender, null);
         this.damageSource = damageSource;
         this.damageAmount = damageAmount;
+        this.shouldUseCharged = shouldUseCharged;
         this.speed = speed;
-
     }
 
     @Override
@@ -32,7 +33,7 @@ public class RocketJumpPower extends ActiveCooldownPower {
             if (player.world.isClient) {
                 MinecraftClient client = MinecraftClient.getInstance();
                 if (client.crosshairTarget != null && client.crosshairTarget.getType() == HitResult.Type.BLOCK || client.crosshairTarget != null && client.crosshairTarget.getType() == HitResult.Type.ENTITY) {
-                    RocketJumpPacket.send(damageSource, damageAmount, speed);
+                    RocketJumpPacket.send(damageSource, damageAmount, shouldUseCharged, speed);
                     this.use();
                 }
             }
