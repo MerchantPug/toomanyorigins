@@ -20,7 +20,7 @@ public abstract class PlayerEntityClientMixin extends LivingEntity implements Sk
     }
 
     public boolean shouldRenderOverlay() {
-        if (TMOPowers.RENDER_WITHER_OVERLAY.isActive(this) && this.getHealth() <= this.getMaxHealth() * 0.5) {
+        if (this.hasStatusEffect(TMOEffects.WITHER_RESISTANCE)) {
             return true;
         } else return this.hasStatusEffect(TMOEffects.CHARGED);
     }

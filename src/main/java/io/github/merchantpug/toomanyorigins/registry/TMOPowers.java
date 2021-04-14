@@ -37,7 +37,6 @@ public class TMOPowers {
                     (type, player) ->
                             new UnenchantedSoulSpeedPower(type, player,
                                     data.getInt("modifier"))).allowCondition());
-    public static final PowerType<Power> RENDER_WITHER_OVERLAY = new PowerTypeReference(new Identifier(TooManyOrigins.MODID, "undead_resistance"));
     public static final PowerType<Power> BLACK_THUMB = new PowerTypeReference(new Identifier(TooManyOrigins.MODID, "black_thumb"));
 
     public static final PowerFactory<Power> LIGHT_UP_BLOCK = create(new PowerFactory<>(new Identifier(TooManyOrigins.MODID,"light_up_block"),

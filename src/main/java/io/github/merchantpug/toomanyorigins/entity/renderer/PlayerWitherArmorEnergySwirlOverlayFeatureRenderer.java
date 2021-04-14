@@ -1,5 +1,6 @@
 package io.github.merchantpug.toomanyorigins.entity.renderer;
 
+import io.github.merchantpug.toomanyorigins.registry.TMOEffects;
 import io.github.merchantpug.toomanyorigins.registry.TMOPowers;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -27,7 +28,7 @@ public class PlayerWitherArmorEnergySwirlOverlayFeatureRenderer<T extends Living
     }
 
     public void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, T entity, float limbAngle, float limbDistance, float tickDelta, float animationProgress, float headYaw, float headPitch) {
-        if (entity.shouldRenderOverlay() && TMOPowers.RENDER_WITHER_OVERLAY.isActive(entity) && entity.getHealth() <= entity.getMaxHealth() * 0.5) {
+        if (entity.shouldRenderOverlay() && entity.hasStatusEffect(TMOEffects.WITHER_RESISTANCE)) {
             float f = (float)entity.age + tickDelta;
             BipedEntityModel<T> entityModel = this.getContextModel();
             entityModel.animateModel(entity, limbAngle, limbDistance, tickDelta);
