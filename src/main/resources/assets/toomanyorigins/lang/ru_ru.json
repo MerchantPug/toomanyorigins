@@ -1,8 +1,8 @@
 {
-  "origin.toomanyorigins.dragonborn.name": "Драконорождённый",
+  "origin.toomanyorigins.dragonborn.name": "Драконоподобный",
   "origin.toomanyorigins.dragonborn.description": "Наполовину Человек, наполовину Дракон. В то время пока им не хватает телепортационных способностей, как у Эндерменов, сами же они могут одним видом страшить весь Энд.",
 
-  "origin.toomanyorigins.hisskin.name": "Адаптированный Подрывник",
+  "origin.toomanyorigins.hisskin.name": "Адапт. Крипер",
   "origin.toomanyorigins.hisskin.description": "Люди долго спорили насчёт действительного существования этой расы. Как говорит мифология: Данная раса корнями исходит от обычных Криперов, что смогли адаптироваться к последствиям от своих взрывов и использовать их в своих целях.",
 
   "origin.toomanyorigins.withered.name": "Иссушённый",
@@ -18,6 +18,8 @@
   "power.toomanyorigins.wither_immunity.description": "Вы иммунны к эффекту Иссушения.",
   "power.toomanyorigins.wither_toxins.name": "Мёртвое касание",
   "power.toomanyorigins.wither_toxins.description": "Ваши атаки в ближнем бою ненадолго накладывают иссушение на врагов.",
+
+  "effect.toomanyorigins.wither_resistance": "Иммунитет Иссушения",
 
   "power.toomanyorigins.dragon_breath.name": "Мятное дыхание)",
   "power.toomanyorigins.dragon_breath.description": "Вы можете испускать драконье дыхание и активировать этим печки.",

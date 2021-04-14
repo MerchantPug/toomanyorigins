@@ -19,6 +19,8 @@
   "power.toomanyorigins.wither_toxins.name": "Toxines de Wither",
   "power.toomanyorigins.wither_toxins.description": "Tes attaques de mêlées font l'effet de Wither durant un court moment.",
 
+  "effect.toomanyorigins.wither_resistance": "Résistance à l'effet de Wither",
+
   "power.toomanyorigins.dragon_breath.name": "Souffle draconique",
   "power.toomanyorigins.dragon_breath.description": "Tu peut souffler une boule de feu draconique, et tu a aussi capable d'allumer des fours.",
   "power.toomanyorigins.no_knockback.name": "Solidité",

@@ -19,6 +19,8 @@
   "power.toomanyorigins.wither_toxins.name": "Wither Toxins",
   "power.toomanyorigins.wither_toxins.description": "Your melee attacks inflict the wither effect for a short time.",
 
+  "effect.toomanyorigins.wither_resistance": "Wither Resistance",
+
   "power.toomanyorigins.dragon_breath.name": "Draconic Breath",
   "power.toomanyorigins.dragon_breath.description": "You can breathe a draconic fireball, you are also able to light up furnaces.",
   "power.toomanyorigins.no_knockback.name": "Solidity",
