@@ -1,12 +1,12 @@
 {
   "origin.toomanyorigins.dragonborn.name": "Dragonborn",
-  "origin.toomanyorigins.dragonborn.description": "Half Human, Half Dragon. Whilst they lack the teleportation abilities of the Enderian, their mighty breath and structure makes the inhabitants of the End bow before them.",
+  "origin.toomanyorigins.dragonborn.description": "Half Human, Half Dragon. Whilst they lack the teleportation abilities of the Enderian, their mighty breath and structure makes the inhabitants of The End bow before them.",
 
   "origin.toomanyorigins.hisskin.name": "Hiss-kin",
   "origin.toomanyorigins.hisskin.description": "Many people have constant debates on whether or not this creature truly exists. It is said in mythology that this evolutionary path of creeper learned to control their explosions as to not harm the environment around them as a get-away tactic.",
 
   "origin.toomanyorigins.withered.name": "Withered",
-  "origin.toomanyorigins.withered.description": "The Withered are those whose ancestors have paid the price for harnessing the chaotic power of the Wither. They can feel the decay within spread to anything you touch.",
+  "origin.toomanyorigins.withered.description": "The Withered are those whose ancestors have paid the price for harnessing the chaotic power of the Wither. They can feel the decay within spread to anything they touch.",
 
   "power.toomanyorigins.black_thumb.name": "Black Thumb",
   "power.toomanyorigins.black_thumb.description": "You spread decay to any overworld crops you plant, withering them.",
@@ -40,7 +40,7 @@
   "death.attack.indirectDragonMagic.item": "%1$s was roasted in dragon breath by %2$s using %3$s",
 
   "power.toomanyorigins.overheat.name": "Overheat",
-  "power.toomanyorigins.overheat.description": "You can heat up the gunpowder within you, causing you to rocket jump in the opposite direction of the object you're looking at.",
+  "power.toomanyorigins.overheat.description": "You can heat up the gunpowder within your body, causing you to rocket jump in the opposite direction of the object you're looking at.",
   "power.toomanyorigins.blast_immunity.name": "Resistant Hide",
   "power.toomanyorigins.blast_immunity.description": "You are immune to all forms of explosive damage.",
   "power.toomanyorigins.conductor.name": "Conductor",
