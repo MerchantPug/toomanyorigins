@@ -10,8 +10,8 @@
     "Omniv"
   ],
   "contact": {
-    "homepage": "",
-    "sources": ""
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/toomanyorigins",
+    "sources": "https://github.com/MerchantPug/toomanyorigins/"
   },
 
   "license": "MIT",
@@ -27,6 +27,9 @@
     ],
     "cardinal-components-entity": [
       "io.github.merchantpug.toomanyorigins.registry.TMOComponents"
+    ],
+    "modmenu": [
+      "io.github.merchantpug.toomanyorigins.config.ModMenuIntegration"
     ]
   },
   "mixins": [
