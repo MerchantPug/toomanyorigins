@@ -3,6 +3,10 @@ package io.github.merchantpug.toomanyorigins;
 import io.github.merchantpug.toomanyorigins.networking.packet.EntitySpawnPacket;
 import io.github.merchantpug.toomanyorigins.registry.TMOBlocks;
 import io.github.merchantpug.toomanyorigins.registry.TMOEntities;
+import io.github.merchantpug.toomanyorigins.blocks.WitheredStemBlock;
+import io.github.merchantpug.toomanyorigins.config.*;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -19,8 +23,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.registry.Registry;
-import io.github.merchantpug.toomanyorigins.blocks.WitheredStemBlock;
-
 import java.util.UUID;
 
 public class TooManyOriginsClient implements ClientModInitializer {
@@ -29,6 +31,10 @@ public class TooManyOriginsClient implements ClientModInitializer {
     @Override
     @Environment(EnvType.CLIENT)
     public void onInitializeClient() {
+
+        AutoConfig.register(ClientConfig.class, Toml4jConfigSerializer::new);
+        ClientConfig config = AutoConfig.getConfigHolder(ClientConfig.class).getConfig();
+
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_BEETROOTS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_CARROTS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.ATTACHED_WITHERED_MELON_STEM, RenderLayer.getCutout());
@@ -59,8 +65,6 @@ public class TooManyOriginsClient implements ClientModInitializer {
             return j << 16 | k << 8 | l;
         }, TMOBlocks.WITHERED_PUMPKIN_STEM, TMOBlocks.WITHERED_MELON_STEM);
     }
-
-
 
     @Environment(EnvType.CLIENT)
     public void receiveEntityPacket() {
