@@ -7,7 +7,7 @@
     {
       "effect": "toomanyorigins:wither_resistance",
       "is_ambient": false,
-      "show_particles": false,
+      "show_particles": true,
       "show_icon": false
     }
   ],
