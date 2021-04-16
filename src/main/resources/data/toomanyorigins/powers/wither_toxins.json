@@ -5,7 +5,7 @@
     "effect": {
       "effect": "minecraft:wither",
       "amplifier": 1,
-      "duration": 80
+      "duration": 100
     }
   },
   "cooldown": 120,
