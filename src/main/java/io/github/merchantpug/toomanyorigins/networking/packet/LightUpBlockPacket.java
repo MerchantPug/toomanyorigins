@@ -71,9 +71,6 @@ public class LightUpBlockPacket {
             for (int i = 0; i < particleCount; ++i) {
                 player.world.addParticle(particleEffect, pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5, random.nextDouble() * 0.2D - 0.1D, 0.1D, random.nextDouble() * 0.2D - 0.1D);
             }
-
-        } else {
-
         }
     }
 }
