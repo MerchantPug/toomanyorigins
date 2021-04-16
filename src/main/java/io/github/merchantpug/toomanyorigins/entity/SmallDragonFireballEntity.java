@@ -52,7 +52,7 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
                 }
                 areaEffectCloudEntity.setParticleType(ParticleTypes.DRAGON_BREATH);
                 areaEffectCloudEntity.setRadius(1.0F);
-                areaEffectCloudEntity.setDuration(60);
+                areaEffectCloudEntity.setDuration(100);
                 areaEffectCloudEntity.setWaitTime(0);
                 areaEffectCloudEntity.setRadiusGrowth((1.5F - areaEffectCloudEntity.getRadius()) / (float)areaEffectCloudEntity.getDuration());
                 areaEffectCloudEntity.addEffect(new StatusEffectInstance(TMOEffects.END_FIRE, 1, 0));

@@ -2,7 +2,7 @@
   "type": "origins:multiple",
   "light_up_block": {
     "type": "toomanyorigins:light_up_block",
-    "cooldown": 140,
+    "cooldown": 120,
     "hud_render": {
       "should_render": true,
       "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
@@ -25,7 +25,7 @@
   },
   "fire_projectile": {
     "type": "origins:fire_projectile",
-    "cooldown": 140,
+    "cooldown": 120,
     "hud_render": {
       "should_render": true,
       "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
