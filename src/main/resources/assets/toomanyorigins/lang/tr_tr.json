@@ -56,7 +56,7 @@
     "death.attack.overheat.player.item": "%1$s %2$s tarafından içi yakılarak öldürüldü %3$s kullanırken",
     "death.attack.jumpExplosion": "%1$s patladı",
     "death.attack.jumpExplosion.player": "%1$s %2$s tarafından patladı",
-    "death.attack.jumpExplosion.player.item": "%1$s %2$s %3$s kullanılarak patladı"
+    "death.attack.jumpExplosion.player.item": "%1$s %2$s %3$s kullanılarak patladı",
 	
 	"text.autoconfig.toomanyorigins.title": "TooManyOrigins Konfigürasyon",
 	"text.autoconfig.toomanyorigins.option.showPlayerOverlays": "Oyuncuların kaplamalarını göster"
