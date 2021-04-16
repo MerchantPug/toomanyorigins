@@ -5,15 +5,14 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "AbstractFurnaceBlockEntityAccessor",
-    "CropBlockMixin",
+    "BlockMixin",
     "EntityMixin",
     "ExplosionMixin",
     "LivingEntityInvoker",
     "LivingEntityMixin",
     "PlayerEntityMixin",
     "ServerPlayerEntityMixin",
-    "ServerWorldMixin",
-    "StemBlockMixin"
+    "ServerWorldMixin"
   ],
   "client": [
     "ClientPlayNetworkHandlerMixin",
