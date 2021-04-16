@@ -40,5 +40,4 @@ public abstract class BlockMixin extends AbstractBlock implements ItemConvertibl
             }
         }
     }
-
 }
