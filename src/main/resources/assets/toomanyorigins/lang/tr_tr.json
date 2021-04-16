@@ -1,0 +1,63 @@
+{
+    "origin.toomanyorigins.dragonborn.name": "Dragonborn",
+    "origin.toomanyorigins.dragonborn.description": "Yarı insan, yarı ejderha. Enderian'ların ışınlanma yeteneklerinden mahrum kalsalarda, güçlü nefesleri ve yapıları onların sonunu getirmeye yeter.",
+  
+    "origin.toomanyorigins.hisskin.name": "Hiss-kin",
+    "origin.toomanyorigins.hisskin.description": "Birçok insan, bu yaratığın gerçekten var olup olmadığı konusunda sürekli tartışıyor. Mitolojide, bu evrimsel sarmaşık yolunun bir kaçış taktiği olarak patlamalarını kontrol etmeyi, etrafındaki çevreye zarar vermeyecek şekilde öğrendiği söylenir.",
+  
+    "origin.toomanyorigins.withered.name": "Withered",
+    "origin.toomanyorigins.withered.description": "Withered'lar, ataları Wither'in kaotik gücünden yararlanmanın bedelini ödeyenlerdir. Dokunduğunuz her şeye yayılmış olarak çürümeyi hissedebilirler.",
+  
+    "power.toomanyorigins.black_thumb.name": "Siyah Çürüme",
+    "power.toomanyorigins.black_thumb.description": "Diktiğiniz tüm dünya üzerindeki bitkilere çürümeyi yayarsınız.",
+    "power.toomanyorigins.scorched_structure.name": "Ruh Gücü",
+    "power.toomanyorigins.scorched_structure.description": "Her zaman bir ekstra Ruh Hızınız var.",
+    "power.toomanyorigins.undead_resistance.name": "Ölmemiş Koruması",
+    "power.toomanyorigins.undead_resistance.description": "Maksimum sağlığınızın yarısına geldiğinizde, etrafınızda bir ruh projeksiyonu yaratırsınız ve sizi hasarlara karşı bağışık hale getirir.",
+    "power.toomanyorigins.wither_immunity.name": "Bağışık",
+    "power.toomanyorigins.wither_immunity.description": "Wither efektine bağışıklılığınız var.",
+    "power.toomanyorigins.wither_toxins.name": "Wither Hasarı",
+    "power.toomanyorigins.wither_toxins.description": "Yakın dövüş saldırılarınız kısa süreliğine wither efekti verir.",
+  
+	"effect.toomanyorigins.wither_resistance": "Wither Koruması",
+  
+    "power.toomanyorigins.dragon_breath.name": "Ejderha Nefesi",
+    "power.toomanyorigins.dragon_breath.description": "Acımasız bir ateş topu soluyabilirsin, ayrıca fırınları da yakabilirsin.",
+    "power.toomanyorigins.no_knockback.name": "Hacıyatmaz",
+    "power.toomanyorigins.no_knockback.description": "Geri tepmezsin, dimdik vurursun.",
+    "power.toomanyorigins.weak_point.name": "Zayıf nokta",
+    "power.toomanyorigins.weak_point.description": "Savunmasız bir noktanız var, daha fazla hasar almanızı sağlıyor.",
+    "power.toomanyorigins.zenith_scales.name": "Güçlü Cüsse",
+    "power.toomanyorigins.zenith_scales.description": "İnsanlardan 2 tane daha fazla kalbin var.",
+  
+    "item.toomanyorigins.dragon_fireball": "Ejderha Ateştopu",
+    "entity.toomanyorigins.fireball_area_effect_cloud": "Fireball Area Effect Cloud",
+    "effect.toomanyorigins.end_fire": "Son Ateşi",
+    "death.attack.dragonMagic": "%1$s ejderha nefesinde kavruldu",
+    "death.attack.dragonMagic.player": "%1$s %2$s tarafından ejderha nefesinde kavruldu.",
+    "death.attack.dragonMagic.player.item": "%1$s %2$s tarafından %3$s kullanılarak ejderha nefesinde kavruldu",
+    "death.attack.indirectDragonMagic": "%1$s %2$s tarafından ejderha nefesinde kavruldu.",
+    "death.attack.indirectDragonMagic.item": "%1$s %2$s tarafından %3$s kullanılarak ejderha nefesinde kavruldu ",
+  
+    "power.toomanyorigins.overheat.name": "Fazla ısınma",
+    "power.toomanyorigins.overheat.description": "İçinizdeki barutu ısıtarak baktığınız nesnenin tersi yönde roket atlamanıza neden olabilirsiniz..",
+    "power.toomanyorigins.blast_immunity.name": "Patlama Koruması",
+    "power.toomanyorigins.blast_immunity.description": "Her türlü patlayıcı hasara karşı bağışıksınız.",
+    "power.toomanyorigins.conductor.name": "Kondüktör",
+    "power.toomanyorigins.conductor.description": "Yıldırım çarptığında şarj olursun ve güçlenirsin.",
+    "power.toomanyorigins.sneaking_steps.name": "Sinsi Adımlar",
+    "power.toomanyorigins.sneaking_steps.description": "Avına gizlice yaklaşmaya alıştığın için biraz daha yavaş hareket edersin.",
+    "power.toomanyorigins.ailurophobia.name": "Kedi Korkusu",
+    "power.toomanyorigins.ailurophobia.description": "Kedilerin veya ocelotların yanında olmak sizi zayıflatır ve yavaşlatır.",
+  
+    "effect.toomanyorigins.charged": "Şarjlı",
+    "death.attack.overheat": "%1$s içlerini yaktı",
+    "death.attack.overheat.player": "%1$s %2$s tarafından içi yakılarak öldürüldü",
+    "death.attack.overheat.player.item": "%1$s %2$s tarafından içi yakılarak öldürüldü %3$s kullanırken",
+    "death.attack.jumpExplosion": "%1$s patladı",
+    "death.attack.jumpExplosion.player": "%1$s %2$s tarafından patladı",
+    "death.attack.jumpExplosion.player.item": "%1$s %2$s %3$s kullanılarak patladı"
+	
+	"text.autoconfig.toomanyorigins.title": "TooManyOrigins Konfigürasyon",
+	"text.autoconfig.toomanyorigins.option.showPlayerOverlays": "Oyuncuların kaplamalarını göster"
+}
