@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(PlayerEntity.class)
-public abstract class PlayerEntityMixin extends LivingEntity implements SkinOverlayOwner {
+public abstract class PlayerEntityMixin extends LivingEntity {
     private int framesOnGround = 0;
 
     public PlayerEntityMixin(World world) {

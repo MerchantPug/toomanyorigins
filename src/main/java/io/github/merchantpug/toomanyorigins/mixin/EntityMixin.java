@@ -19,20 +19,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Entity.class)
 public abstract class EntityMixin implements Nameable, CommandOutput {
-    @Shadow public abstract boolean isLiving();
-
     @Inject(method = "isInvulnerableTo", at = @At("HEAD"), cancellable = true)
     public void isInvulnerableTo(DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
-        if (damageSource.isExplosive() && TMOPowers.BLAST_IMMUNITY.isActive((Entity)(Object)this)) {
-            cir.setReturnValue(true);
-        } else if (damageSource.isProjectile() && this.isLiving() && ((LivingEntity)(Object)this).hasStatusEffect(TMOEffects.WITHER_RESISTANCE)) {
-            cir.setReturnValue(true);
+        if ((Entity)(Object)this instanceof LivingEntity) {
+            if (damageSource.isExplosive() && TMOPowers.BLAST_IMMUNITY.isActive((LivingEntity)(Object)this)) {
+                cir.setReturnValue(true);
+            } else if (damageSource.isProjectile() && ((LivingEntity)(Object)this).hasStatusEffect(TMOEffects.WITHER_RESISTANCE)) {
+                cir.setReturnValue(true);
+            }
         }
     }
 
     @Inject(method = "onStruckByLightning", at = @At("HEAD"))
     private void onStruckByLightning(ServerWorld world, LightningEntity lightning, CallbackInfo ci) {
-        if (this.isLiving()) {
+        if ((Entity)(Object)this instanceof LivingEntity) {
             if (TMOPowers.CONDUCTOR.isActive((LivingEntity)(Object)this)) {
                 ((LivingEntity)(Object)this).addStatusEffect(new StatusEffectInstance(TMOEffects.CHARGED, 48000, 0));
             }
