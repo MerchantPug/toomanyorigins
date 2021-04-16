@@ -1,7 +1,8 @@
-package io.github.merchantpug.toomanyorigins.entity.renderer;
+package io.github.merchantpug.toomanyorigins.entity.feature;
 
-import io.github.merchantpug.toomanyorigins.registry.TMOEffects;
+import io.github.merchantpug.toomanyorigins.config.ClientConfig;
 import io.github.merchantpug.toomanyorigins.registry.TMOPowers;
+import me.shedaniel.autoconfig.AutoConfig;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.OverlayTexture;
@@ -27,8 +28,10 @@ public class PlayerWitherArmorEnergySwirlOverlayFeatureRenderer<T extends Living
         super(featureRendererContext);
     }
 
+    @Override
     public void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, T entity, float limbAngle, float limbDistance, float tickDelta, float animationProgress, float headYaw, float headPitch) {
-        if (entity.hasStatusEffect(TMOEffects.WITHER_RESISTANCE)) {
+        ClientConfig config = AutoConfig.getConfigHolder(ClientConfig.class).getConfig();
+        if (TMOPowers.UNDEAD_RESISTANCE.isActive(entity) && config.showPlayerOverlays) {
             float f = (float)entity.age + tickDelta;
             BipedEntityModel<T> entityModel = this.getContextModel();
             entityModel.animateModel(entity, limbAngle, limbDistance, tickDelta);

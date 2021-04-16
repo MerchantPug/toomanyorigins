@@ -1,7 +1,6 @@
 package io.github.merchantpug.toomanyorigins.mixin;
 
-import io.github.merchantpug.toomanyorigins.entity.renderer.PlayerChargeEnergySwirlOverlayFeatureRenderer;
-import io.github.merchantpug.toomanyorigins.entity.renderer.PlayerWitherArmorEnergySwirlOverlayFeatureRenderer;
+import io.github.merchantpug.toomanyorigins.entity.feature.PlayerWitherArmorEnergySwirlOverlayFeatureRenderer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
@@ -25,6 +24,5 @@ public abstract class PlayerEntityRendererMixin extends LivingEntityRenderer<Abs
     @Inject(method = "<init>(Lnet/minecraft/client/render/entity/EntityRenderDispatcher;Z)V", at = @At("RETURN"))
     private void construct(EntityRenderDispatcher dispatcher, boolean slim, CallbackInfo ci) {
         this.addFeature(new PlayerWitherArmorEnergySwirlOverlayFeatureRenderer(this));
-        this.addFeature(new PlayerChargeEnergySwirlOverlayFeatureRenderer(this));
     }
 }
