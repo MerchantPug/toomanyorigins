@@ -20,7 +20,7 @@ public class EndFireStatusEffect extends InstantStatusEffect {
 
     @Override
     public void applyInstantEffect(Entity source, Entity attacker, LivingEntity target, int amplifier, double proximity) {
-        int j = (int)(proximity * (double)(6 << amplifier) + 1.5D);
+        int j = (int)(proximity * (double)(6 << amplifier) + 2.0D);
         if ((this != TMOEffects.END_FIRE))
         {
             this.applyUpdateEffect(target, amplifier);
