@@ -35,7 +35,7 @@ public class TMOEntityConditions {
                     return comparison.compare(amount, compareTo);
                 }));
         register(new ConditionFactory<>(new Identifier(TooManyOrigins.MODID, "block_looking_at"), new SerializableData()
-                .add("reach", SerializableDataType.DOUBLE, 5.0D)
+                .add("reach", SerializableDataType.DOUBLE, 4.5D)
                 .add("block_condition", SerializableDataType.BLOCK_CONDITION, null),
                 (data, entity) -> {
                         ConditionFactory<CachedBlockPosition>.Instance blockCondition = (ConditionFactory<CachedBlockPosition>.Instance) data.get("block_condition");
