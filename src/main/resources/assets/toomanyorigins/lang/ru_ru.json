@@ -56,5 +56,8 @@
   "death.attack.overheat.player.item": "внутренности %1$s были отделены %2$s используя %3$s",
   "death.attack.jumpExplosion": "%1$s забыл как делать рокетджамп",
   "death.attack.jumpExplosion.player": "%1$s дорокетджампился из-за %2$s",
-  "death.attack.jumpExplosion.player.item": "%1$s дорокетджампился из-за %2$s используя %3$s"
+  "death.attack.jumpExplosion.player.item": "%1$s дорокетджампился из-за %2$s используя %3$s",
+
+  "text.autoconfig.toomanyorigins.title": "TooManyOrigins конфигурация",
+  "text.autoconfig.toomanyorigins.option.showPlayerOverlays": "Показать Наложения Игрока"
 }

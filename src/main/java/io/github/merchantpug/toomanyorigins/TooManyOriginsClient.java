@@ -31,7 +31,6 @@ public class TooManyOriginsClient implements ClientModInitializer {
     @Override
     @Environment(EnvType.CLIENT)
     public void onInitializeClient() {
-
         AutoConfig.register(ClientConfig.class, Toml4jConfigSerializer::new);
         ClientConfig config = AutoConfig.getConfigHolder(ClientConfig.class).getConfig();
 
