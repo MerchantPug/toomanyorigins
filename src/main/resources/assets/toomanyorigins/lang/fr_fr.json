@@ -56,5 +56,8 @@
   "death.attack.overheat.player.item": "%1$s a été incinéré de l'intérieur en essayant d'échapper  %2$s en utilisant %3$s",
   "death.attack.jumpExplosion": "%1$s a exploser",
   "death.attack.jumpExplosion.player": "%1$s c'est fais exploser par %2$s",
-  "death.attack.jumpExplosion.player.item": "%1$s c'est fait exploser par %2$s en utilisant %3$s"
+  "death.attack.jumpExplosion.player.item": "%1$s c'est fait exploser par %2$s en utilisant %3$s",
+
+  "text.autoconfig.toomanyorigins.title": "Configuration de TooManyOrigins",
+  "text.autoconfig.toomanyorigins.option.showPlayerOverlays": "Overlay pour montré les joueurs"
 }
