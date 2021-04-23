@@ -7,10 +7,7 @@ import io.github.apace100.origins.util.HudRender;
 import io.github.apace100.origins.util.SerializableData;
 import io.github.apace100.origins.util.SerializableDataType;
 import io.github.merchantpug.toomanyorigins.power.*;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleType;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundEvent;
@@ -43,7 +40,7 @@ public class TMOPowers {
     public static final PowerFactory<Power> LIGHT_UP_BLOCK = create(new PowerFactory<>(new Identifier(TooManyOrigins.MODID,"light_up_block"),
             new SerializableData()
                     .add("cooldown", SerializableDataType.INT)
-                    .add("burn_time", SerializableDataType.INT, 600)
+                    .add("burn_time", SerializableDataType.INT, 1600)
                     .add("particle", SerializableDataType.PARTICLE_TYPE, ParticleTypes.FLAME)
                     .add("particle_count", SerializableDataType.INT, 15)
                     .add("sound", SerializableDataType.SOUND_EVENT, null)
@@ -74,7 +71,6 @@ public class TMOPowers {
 
     public static final PowerType<Power> BLAST_IMMUNITY = new PowerTypeReference(new Identifier(TooManyOrigins.MODID, "blast_immunity"));
     public static final PowerType<Power> CONDUCTOR = new PowerTypeReference(new Identifier(TooManyOrigins.MODID, "conductor"));
-    public static final PowerType<Power> RENDER_CHARGED_OVERLAY = new PowerTypeReference(new Identifier(TooManyOrigins.MODID, "render_charged_overlay"));
 
     private static <T extends Power> PowerFactory<T> create(PowerFactory<T> factory) {
         POWER_FACTORIES.put(factory, factory.getSerializerId());
