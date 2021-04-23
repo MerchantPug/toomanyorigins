@@ -19,8 +19,6 @@ import net.minecraft.util.math.BlockPos;
 import io.github.merchantpug.toomanyorigins.TooManyOrigins;
 import net.minecraft.util.registry.Registry;
 
-import java.util.Random;
-
 import static net.minecraft.state.property.Properties.LIT;
 
 public class LightUpBlockPacket {
