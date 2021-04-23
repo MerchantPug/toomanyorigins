@@ -53,24 +53,16 @@ public class LightUpBlockPacket {
                 player.world.syncWorldEvent(1590, pos, 0);
             }
             if (entity instanceof AbstractFurnaceBlockEntity) {
-                AbstractFurnaceBlockEntity abstractFurnaceBlockEntity = ((AbstractFurnaceBlockEntity) entity);
-                ((AbstractFurnaceBlockEntityAccessor)entity).setFuelTime(((AbstractFurnaceBlockEntityAccessor)entity).getBurnTime() + burnTime);
-                ((AbstractFurnaceBlockEntityAccessor)entity).setBurnTime(((AbstractFurnaceBlockEntityAccessor)entity).getBurnTime() + burnTime);
-                player.world.syncWorldEvent(1591, pos, 0);
+                if (((AbstractFurnaceBlockEntityAccessor)entity).getBurnTime() < burnTime) {
+                    ((AbstractFurnaceBlockEntityAccessor)entity).setFuelTime(burnTime);
+                    ((AbstractFurnaceBlockEntityAccessor)entity).setBurnTime(burnTime);
+                    player.world.syncWorldEvent(1591, pos, 0);
+                }
             }
         });
     }
 
     private static <T extends ParticleEffect> T readParticleParameters(PacketByteBuf buf, ParticleType<T> type) {
         return type.getParametersFactory().read(type, buf);
-    }
-
-    private static void spawnParticles(BlockPos pos, ServerPlayerEntity player, ParticleEffect particleEffect, int particleCount) {
-        Random random = player.getRandom();
-        if (particleEffect != null) {
-            for (int i = 0; i < particleCount; ++i) {
-                player.world.addParticle(particleEffect, pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5, random.nextDouble() * 0.2D - 0.1D, 0.1D, random.nextDouble() * 0.2D - 0.1D);
-            }
-        }
     }
 }
