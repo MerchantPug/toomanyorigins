@@ -20,6 +20,9 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 import io.github.merchantpug.toomanyorigins.TooManyOriginsClient;
 
+import java.util.Iterator;
+import java.util.List;
+
 public class SmallDragonFireballEntity extends ThrownItemEntity {
 
     public SmallDragonFireballEntity(EntityType<? extends SmallDragonFireballEntity> entityType, World world) {
@@ -46,6 +49,7 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
         Entity entity = this.getOwner();
         if (hitResult.getType() != HitResult.Type.ENTITY || !((EntityHitResult)hitResult).getEntity().isPartOf(entity)) {
             if (!this.world.isClient) {
+                List<LivingEntity> list = this.world.getNonSpectatingEntities(LivingEntity.class, this.getBoundingBox().expand(2.0D, 1.0D, 2.0D));
                 FireballAreaEffectCloudEntity areaEffectCloudEntity = new FireballAreaEffectCloudEntity(this.world, this.getX(), this.getY(), this.getZ());
                 if (entity instanceof LivingEntity) {
                     areaEffectCloudEntity.setOwner((LivingEntity)entity);
@@ -56,6 +60,18 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
                 areaEffectCloudEntity.setWaitTime(0);
                 areaEffectCloudEntity.setRadiusGrowth((1.5F - areaEffectCloudEntity.getRadius()) / (float)areaEffectCloudEntity.getDuration());
                 areaEffectCloudEntity.addEffect(new StatusEffectInstance(TMOEffects.END_FIRE, 1, 0));
+                if (!list.isEmpty()) {
+                    Iterator var5 = list.iterator();
+
+                    while (var5.hasNext()) {
+                        LivingEntity livingEntity = (LivingEntity) var5.next();
+                        double d = this.squaredDistanceTo(livingEntity);
+                        if (d < 4.0D && !(livingEntity instanceof PlayerEntity)) {
+                            areaEffectCloudEntity.updatePosition(livingEntity.getX(), livingEntity.getY(), livingEntity.getZ());
+                            break;
+                        }
+                    }
+                }
 
                 this.world.syncWorldEvent(1520, this.getBlockPos(), this.isSilent() ? -1 : 1);
                 this.world.spawnEntity(areaEffectCloudEntity);
