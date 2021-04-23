@@ -10,6 +10,7 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.shape.VoxelShape;
@@ -26,6 +27,9 @@ public class WitheredCropBlock extends CropBlock {
 
     public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
         return false;
+    }
+
+    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
     }
 
     @Environment(EnvType.CLIENT)
