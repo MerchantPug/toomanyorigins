@@ -278,7 +278,7 @@ public class FireballAreaEffectCloudEntity extends Entity {
                             while(var14.hasNext()) {
                                 StatusEffectInstance statusEffectInstance2 = (StatusEffectInstance)var14.next();
                                 if (statusEffectInstance2.getEffectType().isInstant()) {
-                                    statusEffectInstance2.getEffectType().applyInstantEffect(this, this.getOwner(), livingEntity, statusEffectInstance2.getAmplifier(), 0.67D);
+                                    statusEffectInstance2.getEffectType().applyInstantEffect(this, this.getOwner(), livingEntity, statusEffectInstance2.getAmplifier(), 0.5);;
                                 } else {
                                     livingEntity.addStatusEffect(new StatusEffectInstance(statusEffectInstance2));
                                 }
