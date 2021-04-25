@@ -6,6 +6,7 @@
   "mixins": [
     "AbstractFurnaceBlockEntityAccessor",
     "BlockMixin",
+    "DamageEnchantmentMixin",
     "EntityMixin",
     "ExplosionMixin",
     "LivingEntityInvoker",
