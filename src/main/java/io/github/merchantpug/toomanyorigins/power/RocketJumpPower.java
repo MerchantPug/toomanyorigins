@@ -4,12 +4,9 @@ import io.github.apace100.origins.power.ActiveCooldownPower;
 import io.github.apace100.origins.power.PowerType;
 import io.github.apace100.origins.util.HudRender;
 import io.github.merchantpug.toomanyorigins.networking.packet.RocketJumpPacket;
-import io.github.merchantpug.toomanyorigins.registry.TMODamageSources;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.hit.HitResult;
 
 public class RocketJumpPower extends ActiveCooldownPower {
