@@ -7,6 +7,8 @@ import io.github.apace100.origins.util.HudRender;
 import io.github.apace100.origins.util.SerializableData;
 import io.github.apace100.origins.util.SerializableDataType;
 import io.github.merchantpug.toomanyorigins.power.*;
+import io.github.merchantpug.toomanyorigins.util.TMOSerializableDataType;
+import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.particle.ParticleType;
 import net.minecraft.particle.ParticleTypes;
@@ -21,19 +23,26 @@ import java.util.Map;
 public class TMOPowers {
     private static final Map<PowerFactory<?>, Identifier> POWER_FACTORIES = new LinkedHashMap<>();
 
+    public static final PowerFactory<Power> TMO_ENTITY_GROUP = create(new PowerFactory<>(new Identifier(TooManyOrigins.MODID, "entity_group"),
+            new SerializableData()
+                    .add("group", TMOSerializableDataType.TMO_ENTITY_GROUP),
+            data ->
+                    (type, player) ->
+                            new SetTMOEntityGroupPower(type, player, (EntityGroup)data.get("group"))).allowCondition());
+
     public static final PowerFactory<Power> EXTRA_SOUL_SPEED = create(new PowerFactory<>(new Identifier(TooManyOrigins.MODID, "extra_soul_speed"),
             new SerializableData()
                     .add("modifier", SerializableDataType.INT),
             data ->
                     (type, player) ->
-                            new ExtraSoulSpeedPower(type, player,
-                                    data.getInt("modifier"))).allowCondition());
+                            new ExtraSoulSpeedPower(type, player, data.getInt("modifier")))
+            .allowCondition());
     public static final PowerFactory<Power> UNENCHANTED_SOUL_SPEED = create(new PowerFactory<>(new Identifier(TooManyOrigins.MODID, "unenchanted_soul_speed"),
             new SerializableData().add("modifier", SerializableDataType.INT),
             data ->
                     (type, player) ->
-                            new UnenchantedSoulSpeedPower(type, player,
-                                    data.getInt("modifier"))).allowCondition());
+                            new UnenchantedSoulSpeedPower(type, player, data.getInt("modifier")))
+            .allowCondition());
     public static final PowerType<Power> UNDEAD_RESISTANCE = new PowerTypeReference(new Identifier(TooManyOrigins.MODID, "undead_resistance"));
     public static final PowerType<Power> BLACK_THUMB = new PowerTypeReference(new Identifier(TooManyOrigins.MODID, "black_thumb"));
 
