@@ -5,7 +5,8 @@
 		"toomanyorigins:black_thumb",
 		"toomanyorigins:scorched_structure",
 		"toomanyorigins:undead_resistance",
-		"toomanyorigins:wither_immunity"
+		"toomanyorigins:wither_immunity",
+		"toomanyorigins:smiteable"
 	],
 	"icon": "minecraft:wither_rose",
 	"order": 2,
