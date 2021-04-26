@@ -11,6 +11,7 @@ import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.network.Packet;
@@ -27,6 +28,7 @@ import net.minecraft.world.World;
 import io.github.merchantpug.toomanyorigins.registry.TMOEntities;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.lwjgl.system.CallbackI;
 
 import java.util.Iterator;
 import java.util.List;
@@ -282,7 +284,6 @@ public class FireballAreaEffectCloudEntity extends Entity {
                                 } else {
                                     livingEntity.addStatusEffect(new StatusEffectInstance(statusEffectInstance2));
                                 }
-                                duration = 0;
                             }
 
                             if (this.radiusOnUse != 0.0F) {

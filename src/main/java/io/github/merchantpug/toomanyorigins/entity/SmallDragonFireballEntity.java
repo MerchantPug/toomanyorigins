@@ -47,7 +47,7 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
     public void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
         Entity entity = this.getOwner();
-        if (hitResult.getType() != HitResult.Type.ENTITY || !((EntityHitResult)hitResult).getEntity().isPartOf(entity)) {
+        if (hitResult.getType() != HitResult.Type.ENTITY) {
             if (!this.world.isClient) {
                 List<LivingEntity> list = this.world.getNonSpectatingEntities(LivingEntity.class, this.getBoundingBox().expand(2.0D, 1.0D, 2.0D));
                 FireballAreaEffectCloudEntity areaEffectCloudEntity = new FireballAreaEffectCloudEntity(this.world, this.getX(), this.getY(), this.getZ());
@@ -56,7 +56,7 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
                 }
                 areaEffectCloudEntity.setParticleType(ParticleTypes.DRAGON_BREATH);
                 areaEffectCloudEntity.setRadius(1.0F);
-                areaEffectCloudEntity.setDuration(100);
+                areaEffectCloudEntity.setDuration(60);
                 areaEffectCloudEntity.setWaitTime(0);
                 areaEffectCloudEntity.setRadiusGrowth((1.5F - areaEffectCloudEntity.getRadius()) / (float)areaEffectCloudEntity.getDuration());
                 areaEffectCloudEntity.addEffect(new StatusEffectInstance(TMOEffects.END_FIRE, 1, 0));
@@ -66,7 +66,7 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
                     while (var5.hasNext()) {
                         LivingEntity livingEntity = (LivingEntity) var5.next();
                         double d = this.squaredDistanceTo(livingEntity);
-                        if (d < 4.0D && !(livingEntity instanceof PlayerEntity)) {
+                        if (d < 4.0D && !(livingEntity instanceof PlayerEntity) && list.size() == 1) {
                             areaEffectCloudEntity.updatePosition(livingEntity.getX(), livingEntity.getY(), livingEntity.getZ());
                             break;
                         }

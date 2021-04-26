@@ -2,13 +2,13 @@
   "type": "origins:multiple",
   "light_up_block": {
     "type": "toomanyorigins:light_up_block",
-    "cooldown": 80,
+    "cooldown": 100,
     "hud_render": {
       "should_render": true,
       "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
       "bar_index": 1
     },
-    "burn_time": 2400,
+    "burn_time": 2600,
     "particle": "minecraft:dragon_breath",
     "particle_count": 15,
     "sound": "minecraft:entity.ender_dragon.shoot",
