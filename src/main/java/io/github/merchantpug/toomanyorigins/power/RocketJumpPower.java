@@ -8,6 +8,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.math.Vec3d;
 
 public class RocketJumpPower extends ActiveCooldownPower {
     private Key key;
@@ -30,7 +31,8 @@ public class RocketJumpPower extends ActiveCooldownPower {
             if (player.world.isClient) {
                 MinecraftClient client = MinecraftClient.getInstance();
                 if (client.crosshairTarget != null && client.crosshairTarget.getType() == HitResult.Type.BLOCK || client.crosshairTarget != null && client.crosshairTarget.getType() == HitResult.Type.ENTITY) {
-                    RocketJumpPacket.send(damageSource, damageAmount, shouldUseCharged, speed);
+                    Vec3d targetPos = client.crosshairTarget.getPos();
+                    RocketJumpPacket.send(targetPos, damageSource, damageAmount, shouldUseCharged, speed);
                     this.use();
                 }
             }

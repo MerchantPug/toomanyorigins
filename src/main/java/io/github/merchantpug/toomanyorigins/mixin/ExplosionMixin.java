@@ -14,7 +14,7 @@ public abstract class ExplosionMixin {
     @ModifyArg(method = "collectBlocksAndDamageEntities", at = @At(value = "INVOKE", target = "net/minecraft/entity/Entity.damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
     private float changeDamage(float amount) {
         if (getDamageSource().getName().equals("jumpExplosion") || getDamageSource().getName().equals("jumpExplosion.player") || getDamageSource().getName().equals("chargedExplosion") || getDamageSource().getName().equals("chargedExplosion.player")) {
-            return amount = amount * 0.75F;
+            return amount = amount * 0.5F;
         }
         return amount;
     }

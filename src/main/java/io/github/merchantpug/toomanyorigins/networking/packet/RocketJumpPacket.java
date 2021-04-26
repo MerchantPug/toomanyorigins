@@ -14,13 +14,17 @@ import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.explosion.Explosion;
 
 public class RocketJumpPacket {
     public static final Identifier ID = new Identifier(TooManyOrigins.MODID, "rocket_jump");
 
-    public static void send(DamageSource damageSource, float damageAmount, boolean shouldUseCharged, double speed) {
+    public static void send(Vec3d pos, DamageSource damageSource, float damageAmount, boolean shouldUseCharged, double speed) {
         PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
+        buf.writeDouble(pos.getX());
+        buf.writeDouble(pos.getY());
+        buf.writeDouble(pos.getZ());
         buf.writeString(damageSource.getName(), 325);
         buf.writeBoolean(damageSource.bypassesArmor());
         buf.writeBoolean(damageSource.isFire());
@@ -34,6 +38,9 @@ public class RocketJumpPacket {
     }
 
     public static void handle(MinecraftServer server, ServerPlayerEntity player, ServerPlayNetworkHandler network, PacketByteBuf buf, PacketSender sender) {
+        double crosshairX = buf.readDouble();
+        double crosshairY = buf.readDouble();
+        double crosshairZ = buf.readDouble();
         DamageSource damageSource = DamageSourceAccessor.createDamageSource(buf.readString(32767));
         DamageSourceAccessor accessor = (DamageSourceAccessor)damageSource;
         if (buf.readBoolean()) {
@@ -65,7 +72,7 @@ public class RocketJumpPacket {
                 player.damage(damageSource, damageAmount);
             }
 
-            player.world.createExplosion(player, TMODamageSources.jumpExplosion(player), null, player.getX(), player.getY(), player.getZ(), e, false, Explosion.DestructionType.NONE);
+            player.world.createExplosion(player, TMODamageSources.jumpExplosion(player), null, crosshairX, crosshairY, crosshairZ, e, false, Explosion.DestructionType.NONE);
             player.addVelocity(f * speed * d, g * speed * d, h * speed * d);
             player.velocityModified = true;
             if (player.hasStatusEffect(TMOEffects.CHARGED) && shouldUseCharged) {
