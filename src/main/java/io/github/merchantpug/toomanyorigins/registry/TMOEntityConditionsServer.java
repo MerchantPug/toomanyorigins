@@ -21,7 +21,6 @@ import net.minecraft.world.RaycastContext;
 
 public class TMOEntityConditionsServer {
     @SuppressWarnings("unchecked")
-    @Environment(EnvType.CLIENT)
     public static void register() {
         register(new ConditionFactory<>(new Identifier(TooManyOrigins.MODID, "block_looking_at"), new SerializableData()
                 .add("block_condition", SerializableDataType.BLOCK_CONDITION, null),
