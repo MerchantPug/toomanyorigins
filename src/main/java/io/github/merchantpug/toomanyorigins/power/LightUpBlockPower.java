@@ -36,7 +36,6 @@ public class LightUpBlockPower extends ActiveCooldownPower {
                 MinecraftClient client = MinecraftClient.getInstance();
                 if (client.crosshairTarget != null && client.crosshairTarget.getType() == HitResult.Type.BLOCK) {
                     BlockPos pos = ((BlockHitResult) client.crosshairTarget).getBlockPos();
-                    assert client.world != null;
                     BlockState state = client.world.getBlockState(pos);
                     if (state.getBlock() instanceof AbstractFurnaceBlock || state.getBlock() instanceof CampfireBlock) {
                         LightUpBlockPacket.send(pos, particle, particleCount, burnTime);
