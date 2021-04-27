@@ -5,6 +5,7 @@ import io.github.merchantpug.toomanyorigins.registry.TMOBlocks;
 import io.github.merchantpug.toomanyorigins.registry.TMOEntities;
 import io.github.merchantpug.toomanyorigins.blocks.WitheredStemBlock;
 import io.github.merchantpug.toomanyorigins.config.*;
+import io.github.merchantpug.toomanyorigins.registry.TMOEntityConditionsClient;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
@@ -32,7 +33,8 @@ public class TooManyOriginsClient implements ClientModInitializer {
     @Environment(EnvType.CLIENT)
     public void onInitializeClient() {
         AutoConfig.register(ClientConfig.class, Toml4jConfigSerializer::new);
-        ClientConfig config = AutoConfig.getConfigHolder(ClientConfig.class).getConfig();
+
+        TMOEntityConditionsClient.register();
 
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_BEETROOTS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_CARROTS, RenderLayer.getCutout());

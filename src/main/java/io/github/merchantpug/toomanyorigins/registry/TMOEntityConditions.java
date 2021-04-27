@@ -1,19 +1,31 @@
 package io.github.merchantpug.toomanyorigins.registry;
 
+import com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes;
 import io.github.apace100.origins.power.factory.condition.ConditionFactory;
 import io.github.apace100.origins.registry.ModRegistries;
 import io.github.apace100.origins.util.Comparison;
 import io.github.apace100.origins.util.SerializableData;
 import io.github.apace100.origins.util.SerializableDataType;
+import io.github.merchantpug.toomanyorigins.networking.packet.LightUpBlockPacket;
+import net.minecraft.block.AbstractFurnaceBlock;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.CampfireBlock;
 import net.minecraft.block.pattern.CachedBlockPosition;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import io.github.merchantpug.toomanyorigins.TooManyOrigins;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.network.ServerPlayerInteractionManager;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.RaycastContext;
 
 public class TMOEntityConditions {
     @SuppressWarnings("unchecked")
@@ -33,17 +45,6 @@ public class TMOEntityConditions {
                     int compareTo = data.getInt("compare_to");
 
                     return comparison.compare(amount, compareTo);
-                }));
-        register(new ConditionFactory<>(new Identifier(TooManyOrigins.MODID, "block_looking_at"), new SerializableData()
-                .add("reach", SerializableDataType.DOUBLE, 4.5D)
-                .add("block_condition", SerializableDataType.BLOCK_CONDITION, null),
-                (data, entity) -> {
-                        ConditionFactory<CachedBlockPosition>.Instance blockCondition = (ConditionFactory<CachedBlockPosition>.Instance) data.get("block_condition");
-                        if (entity.raycast(data.getDouble("reach"), 0.0F, false).getType() == HitResult.Type.BLOCK) {
-                            BlockPos pos = ((BlockHitResult) entity.raycast(data.getDouble("reach"), 0.0F, false)).getBlockPos();
-                            return blockCondition.test(new CachedBlockPosition(entity.world, pos, true));
-                    }
-                    return false;
                 }));
     }
 
