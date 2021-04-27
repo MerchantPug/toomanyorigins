@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "TooManyOrigins",
-  "description": "Origins addon that currently adds 3 origins. Withered, Dragonborn and Hiss-kin.",
+  "description": "Origins addon that currently adds 3 origins. Dragonborn, Hiss-kin and  Withered.",
   "authors": [
     "Pug",
     "Omniv"
@@ -24,6 +24,9 @@
     ],
     "client": [
       "io.github.merchantpug.toomanyorigins.TooManyOriginsClient"
+    ],
+    "server": [
+      "io.github.merchantpug.toomanyorigins.TooManyOriginsServer"
     ],
     "cardinal-components-entity": [
       "io.github.merchantpug.toomanyorigins.registry.TMOComponents"
