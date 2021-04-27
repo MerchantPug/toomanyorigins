@@ -2,7 +2,7 @@ package io.github.merchantpug.toomanyorigins.networking.packet;
 
 import io.github.apace100.origins.mixin.DamageSourceAccessor;
 import io.github.merchantpug.toomanyorigins.TooManyOrigins;
-import io.github.merchantpug.toomanyorigins.util.TMODamageSources;
+import io.github.merchantpug.toomanyorigins.registry.TMODamageSources;
 import io.github.merchantpug.toomanyorigins.registry.TMOEffects;
 import io.netty.buffer.Unpooled;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;

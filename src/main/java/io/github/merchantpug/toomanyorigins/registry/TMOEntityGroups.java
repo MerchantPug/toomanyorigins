@@ -1,4 +1,4 @@
-package io.github.merchantpug.toomanyorigins.util;
+package io.github.merchantpug.toomanyorigins.registry;
 
 import net.minecraft.entity.EntityGroup;
 

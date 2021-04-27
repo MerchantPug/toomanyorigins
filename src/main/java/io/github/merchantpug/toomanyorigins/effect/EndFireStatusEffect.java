@@ -1,6 +1,6 @@
 package io.github.merchantpug.toomanyorigins.effect;
 
-import io.github.merchantpug.toomanyorigins.util.TMODamageSources;
+import io.github.merchantpug.toomanyorigins.registry.TMODamageSources;
 import io.github.merchantpug.toomanyorigins.registry.TMOEffects;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;

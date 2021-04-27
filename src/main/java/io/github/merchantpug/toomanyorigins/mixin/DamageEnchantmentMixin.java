@@ -1,6 +1,6 @@
 package io.github.merchantpug.toomanyorigins.mixin;
 
-import io.github.merchantpug.toomanyorigins.util.TMOEntityGroups;
+import io.github.merchantpug.toomanyorigins.registry.TMOEntityGroups;
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;

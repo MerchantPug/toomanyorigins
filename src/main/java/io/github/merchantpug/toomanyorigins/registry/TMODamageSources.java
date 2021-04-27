@@ -1,4 +1,4 @@
-package io.github.merchantpug.toomanyorigins.util;
+package io.github.merchantpug.toomanyorigins.registry;
 
 import io.github.apace100.origins.mixin.DamageSourceAccessor;
 import net.minecraft.entity.Entity;
