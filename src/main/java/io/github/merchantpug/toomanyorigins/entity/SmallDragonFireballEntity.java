@@ -1,6 +1,10 @@
 package io.github.merchantpug.toomanyorigins.entity;
 
+import io.github.apace100.origins.component.OriginComponent;
+import io.github.apace100.origins.power.ModifyProjectileDamagePower;
+import io.github.apace100.origins.power.Power;
 import io.github.merchantpug.toomanyorigins.networking.packet.EntitySpawnPacket;
+import io.github.merchantpug.toomanyorigins.power.ModifyDragonFireballDamagePower;
 import io.github.merchantpug.toomanyorigins.registry.TMOEffects;
 import io.github.merchantpug.toomanyorigins.registry.TMOEntities;
 import io.github.merchantpug.toomanyorigins.registry.TMOItems;
@@ -9,8 +13,10 @@ import net.fabricmc.api.Environment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.network.Packet;
@@ -58,8 +64,12 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
                 areaEffectCloudEntity.setRadius(1.0F);
                 areaEffectCloudEntity.setDuration(60);
                 areaEffectCloudEntity.setWaitTime(0);
+                float damage = 6.0F;
+                if(this.getOwner() != null) {
+                    damage = OriginComponent.modify(this.getOwner(), ModifyDragonFireballDamagePower.class, 6.0F);
+                }
+                areaEffectCloudEntity.setDamage(damage);
                 areaEffectCloudEntity.setRadiusGrowth((1.5F - areaEffectCloudEntity.getRadius()) / (float)areaEffectCloudEntity.getDuration());
-                areaEffectCloudEntity.addEffect(new StatusEffectInstance(TMOEffects.END_FIRE, 1, 0));
                 if (!list.isEmpty()) {
                     Iterator var5 = list.iterator();
 
