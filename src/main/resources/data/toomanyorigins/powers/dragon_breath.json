@@ -2,7 +2,7 @@
   "type": "origins:multiple",
   "light_up_block": {
     "type": "toomanyorigins:light_up_block",
-    "cooldown": 100,
+    "cooldown": 80,
     "hud_render": {
       "should_render": true,
       "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
