@@ -1,11 +1,8 @@
 package io.github.merchantpug.toomanyorigins.entity;
 
 import io.github.apace100.origins.component.OriginComponent;
-import io.github.apace100.origins.power.ModifyProjectileDamagePower;
-import io.github.apace100.origins.power.Power;
 import io.github.merchantpug.toomanyorigins.networking.packet.EntitySpawnPacket;
 import io.github.merchantpug.toomanyorigins.power.ModifyDragonFireballDamagePower;
-import io.github.merchantpug.toomanyorigins.registry.TMOEffects;
 import io.github.merchantpug.toomanyorigins.registry.TMOEntities;
 import io.github.merchantpug.toomanyorigins.registry.TMOItems;
 import net.fabricmc.api.EnvType;
@@ -13,15 +10,11 @@ import net.fabricmc.api.Environment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.network.Packet;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 import io.github.merchantpug.toomanyorigins.TooManyOriginsClient;
