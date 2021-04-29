@@ -1,8 +1,8 @@
 {
   "type": "toomanyorigins:rocket_jump",
-  "cooldown": 10,
+  "cooldown": 5,
   "hud_render": {
-    "should_render": false,
+    "should_render": true,
     "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
     "bar_index": 2
   },
@@ -12,7 +12,7 @@
     "fire": "true",
     "unblockable": "true"
   },
-  "damage_amount": 3.0,
+  "damage_amount": 2.0,
   "should_use_charged": true,
   "speed": 1.0
 }
