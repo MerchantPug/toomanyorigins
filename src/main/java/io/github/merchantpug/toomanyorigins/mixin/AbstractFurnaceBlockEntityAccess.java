@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(AbstractFurnaceBlockEntity.class)
-public interface AbstractFurnaceBlockEntityAccessor {
+public interface AbstractFurnaceBlockEntityAccess {
     @Accessor
     int getBurnTime();
 
