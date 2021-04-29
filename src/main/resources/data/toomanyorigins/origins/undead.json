@@ -1,0 +1,11 @@
+{
+	"powers": [
+		"toomanyorigins:deathly_bite",
+		"toomanyorigins:undead",
+		"toomanyorigins:zombify_villagers",
+		"toomanyorigins:zombify"
+	],
+	"icon": "minecraft:rotten_flesh",
+	"order": 2,
+	"impact": 2
+}

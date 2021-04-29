@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "TooManyOrigins",
-  "description": "Origins addon that currently adds 3 origins. Dragonborn, Hiss-kin and  Withered.",
+  "description": "Origins addon that currently adds 4 origins.",
   "authors": [
     "Pug",
     "Omniv"
@@ -47,6 +47,6 @@
     "fabricloader": ">=0.7.4",
     "fabric": ">=0.29.4",
     "minecraft": "1.16.x",
-    "origins": ">=0.6.1"
+    "origins": ">=0.7.0"
   }
 }

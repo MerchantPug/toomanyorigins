@@ -9,6 +9,7 @@ import io.github.apace100.origins.util.SerializableDataType;
 import io.github.merchantpug.toomanyorigins.power.*;
 import io.github.merchantpug.toomanyorigins.util.TMOSerializableDataType;
 import net.minecraft.entity.EntityGroup;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.particle.ParticleType;
 import net.minecraft.particle.ParticleTypes;
@@ -18,6 +19,7 @@ import net.minecraft.util.registry.Registry;
 import io.github.merchantpug.toomanyorigins.TooManyOrigins;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class TMOPowers {
@@ -28,7 +30,8 @@ public class TMOPowers {
                     .add("group", TMOSerializableDataType.TMO_ENTITY_GROUP),
             data ->
                     (type, player) ->
-                            new SetTMOEntityGroupPower(type, player, (EntityGroup)data.get("group"))).allowCondition());
+                            new SetTMOEntityGroupPower(type, player, (EntityGroup)data.get("group")))
+            .allowCondition());
 
     public static final PowerFactory<Power> EXTRA_SOUL_SPEED = create(new PowerFactory<>(new Identifier(TooManyOrigins.MODID, "extra_soul_speed"),
             new SerializableData()
@@ -60,7 +63,24 @@ public class TMOPowers {
                         LightUpBlockPower power = new LightUpBlockPower(type, player, data.getInt("cooldown"), (HudRender)data.get("hud_render"), data.getInt("burn_time"), (ParticleType)data.get("particle"), data.getInt("particle_count"), (SoundEvent)data.get("sound"));
                         power.setKey((Active.Key)data.get("key"));
                         return power;
-                    })).allowCondition();
+                    }))
+            .allowCondition();
+    public static final PowerFactory<Power> MODIFY_DRAGON_FIREBALL_DAMAGE = create(new PowerFactory<>(new Identifier(TooManyOrigins.MODID, "modify_dragon_fireball_damage"),
+            new SerializableData()
+                    .add("modifier", SerializableDataType.ATTRIBUTE_MODIFIER, null)
+                    .add("modifiers", SerializableDataType.ATTRIBUTE_MODIFIERS, null),
+            data ->
+                    (type, player) -> {
+                        ModifyDragonFireballDamagePower power = new ModifyDragonFireballDamagePower(type, player);
+                        if (data.isPresent("modifier")) {
+                            power.addModifier(data.getModifier("modifier"));
+                        }
+                        if (data.isPresent("modifiers")) {
+                            ((List<EntityAttributeModifier>)data.get("modifiers")).forEach(power::addModifier);
+                        }
+                        return power;
+                    })
+            .allowCondition());
 
     public static final PowerFactory<Power> ROCKET_JUMP = create(new PowerFactory<>(new Identifier(TooManyOrigins.MODID, "rocket_jump"),
             new SerializableData()
@@ -73,13 +93,16 @@ public class TMOPowers {
                     .add("key", SerializableDataType.BACKWARDS_COMPATIBLE_KEY, new Active.Key()),
             data ->
                     (type, player) -> {
-            RocketJumpPower power = new RocketJumpPower(type, player, data.getInt("cooldown"), (HudRender)data.get("hud_render"), (DamageSource)data.get("damage_source"), data.getBoolean("should_use_charged"), data.getFloat("damage_amount"), data.getDouble("speed"));
-            power.setKey((Active.Key)data.get("key"));
-            return power;
-    })).allowCondition();
+                        RocketJumpPower power = new RocketJumpPower(type, player, data.getInt("cooldown"), (HudRender)data.get("hud_render"), (DamageSource)data.get("damage_source"), data.getBoolean("should_use_charged"), data.getFloat("damage_amount"), data.getDouble("speed"));
+                        power.setKey((Active.Key)data.get("key"));
+                        return power;
+                    }))
+            .allowCondition();
 
     public static final PowerType<Power> BLAST_IMMUNITY = new PowerTypeReference(new Identifier(TooManyOrigins.MODID, "blast_immunity"));
     public static final PowerType<Power> CONDUCTOR = new PowerTypeReference(new Identifier(TooManyOrigins.MODID, "conductor"));
+
+    public static final PowerType<Power> ZOMBIFY = new PowerTypeReference(new Identifier(TooManyOrigins.MODID, "zombify"));
 
     private static <T extends Power> PowerFactory<T> create(PowerFactory<T> factory) {
         POWER_FACTORIES.put(factory, factory.getSerializerId());
