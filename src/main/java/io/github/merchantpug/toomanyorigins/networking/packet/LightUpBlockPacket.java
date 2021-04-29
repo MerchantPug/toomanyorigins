@@ -1,6 +1,6 @@
 package io.github.merchantpug.toomanyorigins.networking.packet;
 
-import io.github.merchantpug.toomanyorigins.mixin.AbstractFurnaceBlockEntityAccessor;
+import io.github.merchantpug.toomanyorigins.mixin.AbstractFurnaceBlockEntityAccess;
 import io.netty.buffer.Unpooled;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
@@ -51,9 +51,9 @@ public class LightUpBlockPacket {
                 player.world.syncWorldEvent(1590, pos, 0);
             }
             if (entity instanceof AbstractFurnaceBlockEntity) {
-                if (((AbstractFurnaceBlockEntityAccessor)entity).getBurnTime() < burnTime) {
-                    ((AbstractFurnaceBlockEntityAccessor)entity).setFuelTime(burnTime);
-                    ((AbstractFurnaceBlockEntityAccessor)entity).setBurnTime(burnTime);
+                if (((AbstractFurnaceBlockEntityAccess)entity).getBurnTime() < burnTime) {
+                    ((AbstractFurnaceBlockEntityAccess)entity).setFuelTime(burnTime);
+                    ((AbstractFurnaceBlockEntityAccess)entity).setBurnTime(burnTime);
                     player.world.syncWorldEvent(1591, pos, 0);
                 }
             }
