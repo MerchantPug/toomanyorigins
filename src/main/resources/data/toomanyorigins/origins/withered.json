@@ -6,9 +6,9 @@
 		"toomanyorigins:scorched_structure",
 		"toomanyorigins:undead_resistance",
 		"toomanyorigins:wither_immunity",
-		"toomanyorigins:smiteable"
+		"toomanyorigins:unholy"
 	],
 	"icon": "minecraft:wither_rose",
-	"order": 2,
+	"order": 3,
 	"impact": 2
 }
