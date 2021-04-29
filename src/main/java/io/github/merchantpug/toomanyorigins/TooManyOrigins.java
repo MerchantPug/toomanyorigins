@@ -17,6 +17,7 @@ public class TooManyOrigins implements ModInitializer {
 		LOGGER.info("TooManyOrigins is initializing. Enjoy!");
 
 		TMOBlocks.register();
+		TMOEntityActions.register();
 		TMOEntityConditions.register();
 		TMOEffects.register();
 		TMOEntities.register();
