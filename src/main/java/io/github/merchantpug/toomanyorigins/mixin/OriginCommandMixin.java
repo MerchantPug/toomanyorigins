@@ -16,6 +16,7 @@ public class OriginCommandMixin {
     @Inject(method = "setOrigin", at = @At("TAIL"))
     private static void setOrigin(PlayerEntity player, OriginLayer layer, Origin origin, CallbackInfo ci) {
         OriginComponent component = ModComponents.ORIGIN.get(player);
-        origin.getPowerTypes().forEach(powerType -> component.getPower(powerType).onChosen(true));
+        boolean hadOriginBefore = component.hadOriginBefore();
+        origin.getPowerTypes().forEach(powerType -> component.getPower(powerType).onChosen(hadOriginBefore));
     }
 }
