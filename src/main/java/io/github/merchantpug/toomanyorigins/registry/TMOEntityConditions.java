@@ -10,6 +10,10 @@ import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import io.github.merchantpug.toomanyorigins.TooManyOrigins;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -33,6 +37,24 @@ public class TMOEntityConditions {
                 .add("group", TMOSerializableDataType.TMO_ENTITY_GROUP),
                 (data, entity) ->
                         entity.getGroup() == (EntityGroup)data.get("group")));
+        register(new ConditionFactory<>(new Identifier(TooManyOrigins.MODID, "can_have_effect"), new SerializableData()
+                .add("effect", SerializableDataType.STATUS_EFFECT),
+                (data, entity) -> {
+                    StatusEffect effect = (StatusEffect)data.get("effect");
+                    StatusEffectInstance instance = new StatusEffectInstance(effect);
+                    return entity.canHaveStatusEffect(instance);
+                }));
+        register(new ConditionFactory<>(new Identifier(TooManyOrigins.MODID, "minutes_alive"), new SerializableData()
+                .add("comparison", SerializableDataType.COMPARISON)
+                .add("compare_to", SerializableDataType.INT),
+                (data, entity) -> {
+                    if (entity instanceof PlayerEntity) {
+                        ServerPlayerEntity player = (ServerPlayerEntity)entity;
+                        float value = TMOComponents.getTimeAlive(player);
+                        return ((Comparison)data.get("comparison")).compare(value, data.getInt("compare_to"));
+                    }
+                    return false;
+                }));
     }
 
     private static void register(ConditionFactory<LivingEntity> conditionFactory) {
