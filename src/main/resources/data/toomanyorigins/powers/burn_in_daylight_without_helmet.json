@@ -16,10 +16,9 @@
           "item_condition": {
             "type": "origins:ingredient",
             "ingredient": {
-              "tag": "toomanyorigins:head_equipable"
+              "item": "minecraft:air"
             }
-          },
-          "inverted": true
+          }
         },
         {
           "type": "toomanyorigins:ticks_alive",
