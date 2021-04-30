@@ -22,7 +22,7 @@
           "inverted": true
         },
         {
-          "type": "toomanyorigins:minutes_alive",
+          "type": "toomanyorigins:ticks_alive",
           "comparison": ">",
           "compare_to": 1200
         }

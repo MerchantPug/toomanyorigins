@@ -44,7 +44,7 @@ public class TMOEntityConditions {
                     StatusEffectInstance instance = new StatusEffectInstance(effect);
                     return entity.canHaveStatusEffect(instance);
                 }));
-        register(new ConditionFactory<>(new Identifier(TooManyOrigins.MODID, "minutes_alive"), new SerializableData()
+        register(new ConditionFactory<>(new Identifier(TooManyOrigins.MODID, "ticks_alive"), new SerializableData()
                 .add("comparison", SerializableDataType.COMPARISON)
                 .add("compare_to", SerializableDataType.INT),
                 (data, entity) -> {
