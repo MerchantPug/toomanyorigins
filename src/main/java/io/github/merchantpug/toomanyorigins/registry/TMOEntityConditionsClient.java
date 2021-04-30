@@ -27,7 +27,7 @@ public class TMOEntityConditionsClient {
     @Environment(EnvType.CLIENT)
     public static void register() {
         register(new ConditionFactory<>(new Identifier(TooManyOrigins.MODID, "block_looking_at"), new SerializableData()
-                .add("block_condition", SerializableDataType.BLOCK_CONDITION, null),
+                .add("block_condition", SerializableDataType.BLOCK_CONDITION),
                 (data, entity) -> {
                     ConditionFactory<CachedBlockPosition>.Instance blockCondition = (ConditionFactory<CachedBlockPosition>.Instance) data.get("block_condition");
                     if (entity instanceof ServerPlayerEntity) {
@@ -49,13 +49,7 @@ public class TMOEntityConditionsClient {
                     } else
                     if (entity instanceof ClientPlayerEntity) {
                         ClientPlayerInteractionManager interactionManager = MinecraftClient.getInstance().interactionManager;
-                        double baseReach;
-                        if (interactionManager.getCurrentGameMode().isCreative()) {
-                            baseReach = 5.0D;
-                        } else {
-                            baseReach = 4.5D;
-                        }
-                        double reach = ReachEntityAttributes.getReachDistance(entity, baseReach);
+                        double reach = ReachEntityAttributes.getReachDistance(entity, interactionManager.getReachDistance());
                         Vec3d vec3d = entity.getCameraPosVec(0.0F);
                         Vec3d vec3d2 = entity.getRotationVec(0.0F);
                         Vec3d vec3d3 = vec3d.add(vec3d2.x * reach, vec3d2.y * reach, vec3d2.z * reach);

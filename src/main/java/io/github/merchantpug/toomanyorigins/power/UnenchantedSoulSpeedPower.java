@@ -5,7 +5,8 @@ import io.github.apace100.origins.power.PowerType;
 import net.minecraft.entity.player.PlayerEntity;
 
 public class UnenchantedSoulSpeedPower extends Power {
-    int modifier;
+    private final int modifier;
+
     public UnenchantedSoulSpeedPower(PowerType<?> type, PlayerEntity player, int modifier) {
         super(type, player);
         this.modifier = modifier;
