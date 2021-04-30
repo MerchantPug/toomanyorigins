@@ -17,5 +17,9 @@
   "damage_condition": {
     "type": "origins:name",
     "name": "player"
+  },
+  "target_condition": {
+    "type": "toomanyorigins:can_have_effect",
+    "effect": "toomanyorigins:zombifying"
   }
 }

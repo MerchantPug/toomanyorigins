@@ -1,0 +1,42 @@
+{
+  "type": "origins:multiple",
+  "burn": {
+    "type": "origins:burn",
+    "interval": 20,
+    "burn_duration": 6,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:exposed_to_sun"
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "head",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:leather_helmet"
+            }
+          },
+          "inverted": true
+        },
+        {
+          "type": "toomanyorigins:minutes_alive",
+          "comparison": ">",
+          "compare_to": 1200
+        }
+      ]
+    }
+  },
+  "timer": {
+    "type": "toomanyorigins:visual_timer",
+    "cooldown": 1200,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
+      "bar_index": 5
+    },
+    "reset_on_respawn": true
+  }
+}

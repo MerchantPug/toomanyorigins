@@ -1,9 +1,10 @@
 {
 	"powers": [
 		"toomanyorigins:deathly_bite",
-		"toomanyorigins:undead",
-		"toomanyorigins:zombify_villagers",
-		"toomanyorigins:zombify"
+		"toomanyorigins:burn_in_daylight_without_helmet",
+		"toomanyorigins:blood_sight",
+		"toomanyorigins:opposite_day",
+		"toomanyorigins:zombify_hit"
 	],
 	"icon": "minecraft:rotten_flesh",
 	"order": 2,

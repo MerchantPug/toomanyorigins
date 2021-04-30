@@ -24,7 +24,7 @@ public class DamageEnchantmentMixin extends Enchantment {
 
     @Inject(method = "getAttackDamage", at = @At("HEAD"), cancellable = true)
     private void damageSmiteableTargets(int level, EntityGroup group, CallbackInfoReturnable<Float> cir) {
-        if (this.typeIndex == 1 && group == TMOEntityGroups.SMITEABLE) {
+        if (this.typeIndex == 1 && group == TMOEntityGroups.SMITEABLE || this.typeIndex == 1 && group == TMOEntityGroups.PLAYER_UNDEAD) {
             cir.setReturnValue ((float)level * 2.5F * 0.6F);
         }
     }

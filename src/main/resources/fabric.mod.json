@@ -40,7 +40,8 @@
   ],
   "custom": {
     "cardinal-components": [
-      "toomanyorigins:extra_health"
+      "toomanyorigins:extra_health",
+      "toomanyorigins:time_alive"
     ]
   },
   "depends": {

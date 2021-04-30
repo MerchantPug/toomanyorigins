@@ -1,5 +1,8 @@
 package io.github.merchantpug.toomanyorigins.mixin;
 
+import io.github.apace100.origins.component.OriginComponent;
+import io.github.apace100.origins.power.Power;
+import io.github.merchantpug.toomanyorigins.power.VisualTimerPower;
 import io.github.merchantpug.toomanyorigins.registry.TMOComponents;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -30,7 +33,9 @@ public abstract class ServerWorldMixin extends World implements StructureWorldAc
         }
     }
     @Inject(method = "onPlayerRespawned", at = @At("HEAD"))
-    private void healPlayerOnRespawn(ServerPlayerEntity player, CallbackInfo ci) {
+    private void onPlayerRespawned(ServerPlayerEntity player, CallbackInfo ci) {
         player.heal(40.0F);
+        TMOComponents.setTimeAlive(player, 0);
+        OriginComponent.getPowers(player, VisualTimerPower.class).forEach(Power::onRespawn);
     }
 }

@@ -2,8 +2,6 @@ package io.github.merchantpug.toomanyorigins.mixin;
 
 import io.github.apace100.origins.registry.ModComponents;
 import io.github.merchantpug.toomanyorigins.registry.TMOComponents;
-import io.github.merchantpug.toomanyorigins.registry.TMOEffects;
-import net.minecraft.client.render.entity.feature.SkinOverlayOwner;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -33,6 +31,7 @@ public abstract class PlayerEntityMixin extends LivingEntity {
                 }
                 TMOComponents.setNewPlayer(player, false);
             }
+            TMOComponents.setTimeAlive(player, (TMOComponents.getTimeAlive(player) + 1));
         }
         if (onGround) {
             setFramesOnGround();

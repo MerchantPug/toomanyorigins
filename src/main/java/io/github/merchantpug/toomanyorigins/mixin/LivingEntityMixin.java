@@ -7,13 +7,14 @@ import io.github.merchantpug.toomanyorigins.TooManyOrigins;
 import io.github.merchantpug.toomanyorigins.power.ExtraSoulSpeedPower;
 import io.github.merchantpug.toomanyorigins.power.SetTMOEntityGroupPower;
 import io.github.merchantpug.toomanyorigins.power.UnenchantedSoulSpeedPower;
-import io.github.merchantpug.toomanyorigins.registry.TMODamageSources;
 import io.github.merchantpug.toomanyorigins.registry.TMOEffects;
-import io.github.merchantpug.toomanyorigins.registry.TMOPowers;
+import io.github.merchantpug.toomanyorigins.registry.TMOEntityGroups;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.mob.ZombieVillagerEntity;
 import net.minecraft.entity.passive.VillagerEntity;
@@ -36,6 +37,8 @@ import java.util.List;
 public abstract class LivingEntityMixin extends Entity {
 
     @Shadow public abstract boolean hasStatusEffect(StatusEffect effect);
+
+    @Shadow public abstract EntityGroup getGroup();
 
     public LivingEntityMixin(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
@@ -85,22 +88,41 @@ public abstract class LivingEntityMixin extends Entity {
     @Inject(method = "onDeath", at = @At("HEAD"))
     private void zombifyVillagerOnDeath(DamageSource source, CallbackInfo ci) {
         if (!this.removed && !((LivingEntityAccess)this).getDead()) {
-            if ((LivingEntity)(Object)this instanceof VillagerEntity && this.hasStatusEffect(TMOEffects.ZOMBIFYING)) {
-                Entity attacker = source.getAttacker();
-                if (TMOPowers.ZOMBIFY.isActive(attacker)) {
+            if ((Object)this instanceof VillagerEntity) {
+                if (this.hasStatusEffect(TMOEffects.ZOMBIFYING) && source.getName().equals("zombification")) {
                     VillagerEntity villagerEntity = (VillagerEntity)(Object)this;
                     ZombieVillagerEntity zombieVillagerEntity = villagerEntity.method_29243(EntityType.ZOMBIE_VILLAGER, false);
                     if (zombieVillagerEntity != null) {
-                        zombieVillagerEntity.initialize((ServerWorldAccess)attacker.world, attacker.world.getLocalDifficulty(zombieVillagerEntity.getBlockPos()), SpawnReason.CONVERSION, new ZombieEntity.ZombieData(false, true), null);
+                        zombieVillagerEntity.initialize((ServerWorldAccess)villagerEntity.world, villagerEntity.world.getLocalDifficulty(zombieVillagerEntity.getBlockPos()), SpawnReason.CONVERSION, new ZombieEntity.ZombieData(false, true), null);
                         zombieVillagerEntity.setVillagerData(villagerEntity.getVillagerData());
                         zombieVillagerEntity.setGossipData(villagerEntity.getGossip().serialize(NbtOps.INSTANCE).getValue());
                         zombieVillagerEntity.setOfferData(villagerEntity.getOffers().toTag());
                         zombieVillagerEntity.setXp(villagerEntity.getExperience());
+                        villagerEntity.world.syncWorldEvent(null, 1526, zombieVillagerEntity.getBlockPos(), 0);
                     }
-                    villagerEntity.damage(TMODamageSources.zombification(((VillagerEntity)attacker).getAttacker()), 20.0F);
-                    attacker.world.syncWorldEvent(null, 1527, attacker.getBlockPos(), 0);
                 }
             }
+        }
+    }
+
+    @Inject(method = "canHaveStatusEffect", at = @At("HEAD"), cancellable = true)
+    private void makeUndeadImmuneToEffects(StatusEffectInstance effect, CallbackInfoReturnable<Boolean> cir) {
+        StatusEffect statusEffect = effect.getEffectType();
+        if (this.getGroup() == TMOEntityGroups.PLAYER_UNDEAD) {
+            if (statusEffect == StatusEffects.REGENERATION || statusEffect == StatusEffects.POISON || statusEffect == StatusEffects.HUNGER || statusEffect == TMOEffects.ZOMBIFYING) {
+                cir.setReturnValue(false);
+            }
+        } else if (this.getGroup() == EntityGroup.UNDEAD) {
+            if (statusEffect == TMOEffects.ZOMBIFYING) {
+                cir.setReturnValue(false);
+            }
+        }
+    }
+
+    @Inject(method = "isUndead", at = @At("HEAD"), cancellable = true)
+    private void isUndead(CallbackInfoReturnable<Boolean> cir) {
+        if (this.getGroup() == TMOEntityGroups.PLAYER_UNDEAD) {
+            cir.setReturnValue(true);
         }
     }
 }

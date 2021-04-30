@@ -12,9 +12,11 @@ import net.minecraft.util.Identifier;
 
 public class TMOComponents implements EntityComponentInitializer {
     public static final ComponentKey<ExtraHealthComponent> EXTRA_HEALTH = ComponentRegistry.getOrCreate(new Identifier(TooManyOrigins.MODID, "extra_health"), ExtraHealthComponent.class);
+    public static final ComponentKey<TimeAliveComponent> TIME_ALIVE = ComponentRegistry.getOrCreate(new Identifier(TooManyOrigins.MODID, "time_alive"), TimeAliveComponent.class);
 
     public void registerEntityComponentFactories(EntityComponentFactoryRegistry registry) {
         registry.registerForPlayers(EXTRA_HEALTH, player -> new PlayerExtraHealthComponent(0, true), RespawnCopyStrategy.ALWAYS_COPY);
+        registry.registerForPlayers(TIME_ALIVE, player -> new PlayerTimeAliveComponent(0), RespawnCopyStrategy.ALWAYS_COPY);
     }
 
     public static void setExtraHealth(ServerPlayerEntity serverPlayerEntity, int value) {
@@ -28,5 +30,12 @@ public class TMOComponents implements EntityComponentInitializer {
     }
     public static boolean getNewPlayer(ServerPlayerEntity serverPlayerEntity) {
         return EXTRA_HEALTH.get(serverPlayerEntity).getNewPlayer();
+    }
+    public static void setTimeAlive(ServerPlayerEntity serverPlayerEntity, int value) {
+        TIME_ALIVE.get(serverPlayerEntity).setTimeAlive(value);
+    }
+
+    public static int getTimeAlive(ServerPlayerEntity serverPlayerEntity) {
+        return TIME_ALIVE.get(serverPlayerEntity).getTimeAlive();
     }
 }

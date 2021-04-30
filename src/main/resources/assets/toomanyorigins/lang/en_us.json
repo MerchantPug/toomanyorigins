@@ -48,8 +48,13 @@
   "death.attack.jumpExplosion.player.item": "%1$s was blown up by %2$s using %3$s",
 
   "power.toomanyorigins.deathly_bite.name": "Deathly Bite",
-  "power.toomanyorigins.deathly_bite.description": "Your melee attacks inflict a Zombifying effect for a short time. Hitting any villager below a quarter of their full health that is also under this effect zombifies them.",
+  "power.toomanyorigins.deathly_bite.description": "Your melee attacks inflict a Zombifying effect for a short time. Hitting any villager with this effect zombifies them.",
+  "power.toomanyorigins.blood_sight.name": "Blood Sight",
+  "power.toomanyorigins.blood_sight.description": "You can slightly see in the dark and whilst underwater.",
+  "power.toomanyorigins.opposite_day.name": "Opposite Day",
+  "power.toomanyorigins.opposite_day.description": "Instant Health and Instant Damage have the reverse effect. You are also immune to Regeneration, Poison, Hunger and Zombifying.",
 
+  "effect.toomanyorigins.zombifying": "Zombifying",
   "death.attack.zombification": "%1$s rotted away",
   "death.attack.zombification.player": "%1$s rotted away whilst trying to escape %2$s",
   "death.attack.zombification.player.item": "%1$s rotted away whilst trying to escape %2$s using %3$s",

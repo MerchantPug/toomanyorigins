@@ -63,8 +63,8 @@ public class TMOPowers {
                         LightUpBlockPower power = new LightUpBlockPower(type, player, data.getInt("cooldown"), (HudRender)data.get("hud_render"), data.getInt("burn_time"), (ParticleType)data.get("particle"), data.getInt("particle_count"), (SoundEvent)data.get("sound"));
                         power.setKey((Active.Key)data.get("key"));
                         return power;
-                    }))
-            .allowCondition();
+                    })
+            .allowCondition());
     public static final PowerFactory<Power> MODIFY_DRAGON_FIREBALL_DAMAGE = create(new PowerFactory<>(new Identifier(TooManyOrigins.MODID, "modify_dragon_fireball_damage"),
             new SerializableData()
                     .add("modifier", SerializableDataType.ATTRIBUTE_MODIFIER, null)
@@ -96,12 +96,23 @@ public class TMOPowers {
                         RocketJumpPower power = new RocketJumpPower(type, player, data.getInt("cooldown"), (HudRender)data.get("hud_render"), (DamageSource)data.get("damage_source"), data.getBoolean("should_use_charged"), data.getFloat("damage_amount"), data.getDouble("speed"));
                         power.setKey((Active.Key)data.get("key"));
                         return power;
-                    }))
-            .allowCondition();
+                    })
+            .allowCondition());
 
     public static final PowerType<Power> BLAST_IMMUNITY = new PowerTypeReference(new Identifier(TooManyOrigins.MODID, "blast_immunity"));
     public static final PowerType<Power> CONDUCTOR = new PowerTypeReference(new Identifier(TooManyOrigins.MODID, "conductor"));
 
+    public static final PowerFactory<Power> VISUAL_TIMER = create (new PowerFactory<>(new Identifier(TooManyOrigins.MODID, "visual_timer"),
+            new SerializableData()
+                    .add("cooldown", SerializableDataType.INT)
+                    .add("hud_render", SerializableDataType.HUD_RENDER)
+                    .add("reset_on_respawn", SerializableDataType.BOOLEAN),
+            data ->
+                    (type, player) -> {
+                        VisualTimerPower power = new VisualTimerPower(type, player, data.getInt("cooldown"), (HudRender)data.get("hud_render"), data.getBoolean("reset_on_respawn"));
+                        return power;
+                    })
+            .allowCondition());
     public static final PowerType<Power> ZOMBIFY = new PowerTypeReference(new Identifier(TooManyOrigins.MODID, "zombify"));
 
     private static <T extends Power> PowerFactory<T> create(PowerFactory<T> factory) {
