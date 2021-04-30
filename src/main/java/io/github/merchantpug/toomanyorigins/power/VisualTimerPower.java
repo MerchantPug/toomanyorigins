@@ -20,14 +20,14 @@ public class VisualTimerPower extends CooldownPower {
         super.onChosen(isOrbOfOrigin);
         if (isOrbOfOrigin) {
             ServerPlayerEntity serverPlayer = (ServerPlayerEntity)player;
-            this.use();
             TMOComponents.setTimeAlive(serverPlayer, 0);
+            this.use();
         }
     }
 
     @Override
     public void onRespawn() {
-        if (canUse() && resetOnRespawn) {
+        if (resetOnRespawn) {
             this.use();
         }
     }
