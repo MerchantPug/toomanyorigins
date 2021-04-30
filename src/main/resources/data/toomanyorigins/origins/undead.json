@@ -2,8 +2,9 @@
 	"powers": [
 		"toomanyorigins:deathly_bite",
 		"toomanyorigins:burn_in_daylight_without_helmet",
-		"toomanyorigins:blood_sight",
 		"toomanyorigins:opposite_day",
+		"toomanyorigins:cannibalism",
+		"toomanyorigins:blood_sight",
 		"toomanyorigins:zombify_hit"
 	],
 	"icon": "minecraft:rotten_flesh",

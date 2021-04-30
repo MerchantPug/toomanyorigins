@@ -16,7 +16,7 @@
           "item_condition": {
             "type": "origins:ingredient",
             "ingredient": {
-              "item": "minecraft:leather_helmet"
+              "tag": "toomanyorigins:head_equipable"
             }
           },
           "inverted": true
