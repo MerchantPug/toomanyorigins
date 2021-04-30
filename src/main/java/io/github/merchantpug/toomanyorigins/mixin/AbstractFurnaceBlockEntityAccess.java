@@ -11,9 +11,6 @@ public interface AbstractFurnaceBlockEntityAccess {
     int getBurnTime();
 
     @Accessor
-    int getFuelTime();
-
-    @Accessor
     void setFuelTime(int value);
 
     @Accessor
