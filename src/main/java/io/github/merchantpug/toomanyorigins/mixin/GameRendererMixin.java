@@ -33,7 +33,7 @@ public abstract class GameRendererMixin {
 
     @ModifyArgs(method = "method_31136", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/systems/RenderSystem;color4f(FFFF)V", ordinal = 0))
     private void modifyColor(Args args) {
-        if(TMOPowers.UNDEAD_RESISTANCE.isActive(this.client.player) && !this.client.player.hasStatusEffect(StatusEffects.NAUSEA)) {
+        if(this.client.player.hasStatusEffect(TMOEffects.WITHER_RESISTANCE) && !this.client.player.hasStatusEffect(StatusEffects.NAUSEA)) {
             args.set(0, (float)0.69411764705D);
             args.set(1, (float)0.76078431372D);
             args.set(2, (float)0.47058823529D);
