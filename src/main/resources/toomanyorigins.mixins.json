@@ -9,6 +9,7 @@
     "DamageEnchantmentMixin",
     "EntityMixin",
     "ExplosionMixin",
+    "GameRendererMixin",
     "LivingEntityAccess",
     "LivingEntityMixin",
     "OriginCommandMixin",
