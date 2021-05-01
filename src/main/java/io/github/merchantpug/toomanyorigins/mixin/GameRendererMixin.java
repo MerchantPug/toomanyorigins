@@ -1,7 +1,5 @@
 package io.github.merchantpug.toomanyorigins.mixin;
 
-import io.github.apace100.origins.OriginsClient;
-import io.github.apace100.origins.component.OriginComponent;
 import io.github.merchantpug.toomanyorigins.config.ClientConfig;
 import io.github.merchantpug.toomanyorigins.registry.TMOEffects;
 import io.github.merchantpug.toomanyorigins.registry.TMOPowers;
@@ -14,7 +12,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.ModifyArgs;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
