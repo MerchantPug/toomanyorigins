@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(OriginCommand.class)
 public class OriginCommandMixin {
-    @Inject(method = "setOrigin", at = @At("TAIL"))
+    @Inject(method = "setOrigin", at = @At("TAIL"), remap = false)
     private static void setOrigin(PlayerEntity player, OriginLayer layer, Origin origin, CallbackInfo ci) {
         OriginComponent component = ModComponents.ORIGIN.get(player);
         boolean hadOriginBefore = component.hadOriginBefore();
