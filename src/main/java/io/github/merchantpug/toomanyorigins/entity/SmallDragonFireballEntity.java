@@ -54,15 +54,15 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
                     areaEffectCloudEntity.setOwner((LivingEntity)entity);
                 }
                 areaEffectCloudEntity.setParticleType(ParticleTypes.DRAGON_BREATH);
-                areaEffectCloudEntity.setRadius(1.0F);
+                areaEffectCloudEntity.setRadius(1.125F);
                 areaEffectCloudEntity.setDuration(60);
                 areaEffectCloudEntity.setWaitTime(0);
-                float damage = 6.0F;
+                float damage = 5.0F;
                 if(this.getOwner() != null) {
-                    damage = OriginComponent.modify(this.getOwner(), ModifyDragonFireballDamagePower.class, 6.0F);
+                    damage = OriginComponent.modify(this.getOwner(), ModifyDragonFireballDamagePower.class, 5.0F);
                 }
                 areaEffectCloudEntity.setDamage(damage);
-                areaEffectCloudEntity.setRadiusGrowth((1.5F - areaEffectCloudEntity.getRadius()) / (float)areaEffectCloudEntity.getDuration());
+                areaEffectCloudEntity.setRadiusGrowth((2.25F - areaEffectCloudEntity.getRadius()) / (float)areaEffectCloudEntity.getDuration());
                 if (!list.isEmpty()) {
                     Iterator var5 = list.iterator();
 

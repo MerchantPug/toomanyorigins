@@ -52,7 +52,7 @@ public class FireballAreaEffectCloudEntity extends Entity {
         this.waitTime = 20;
         this.reapplicationDelay = 20;
         this.noClip = true;
-        this.damage = 6.0F;
+        this.damage = 5.0F;
         this.setRadius(3.0F);
     }
 
