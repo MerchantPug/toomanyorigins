@@ -5,7 +5,8 @@
 		"toomanyorigins:opposite_day",
 		"toomanyorigins:cannibalism",
 		"toomanyorigins:blood_sight",
-		"toomanyorigins:zombify_hit"
+		"toomanyorigins:zombify_hit",
+		"toomanyorigins:undead_immunities"
 	],
 	"icon": "minecraft:rotten_flesh",
 	"order": 2,

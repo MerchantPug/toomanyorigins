@@ -1,7 +1,7 @@
 package io.github.merchantpug.toomanyorigins.mixin;
 
 import io.github.apace100.origins.component.OriginComponent;
-import io.github.apace100.origins.power.SetEntityGroupPower;
+import io.github.apace100.origins.power.*;
 import io.github.apace100.origins.registry.ModComponents;
 import io.github.merchantpug.toomanyorigins.TooManyOrigins;
 import io.github.merchantpug.toomanyorigins.power.ExtraSoulSpeedPower;
@@ -14,7 +14,6 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.mob.ZombieVillagerEntity;
 import net.minecraft.entity.passive.VillagerEntity;
@@ -108,11 +107,7 @@ public abstract class LivingEntityMixin extends Entity {
     @Inject(method = "canHaveStatusEffect", at = @At("HEAD"), cancellable = true)
     private void makeUndeadImmuneToEffects(StatusEffectInstance effect, CallbackInfoReturnable<Boolean> cir) {
         StatusEffect statusEffect = effect.getEffectType();
-        if (this.getGroup() == TMOEntityGroups.PLAYER_UNDEAD) {
-            if (statusEffect == StatusEffects.REGENERATION || statusEffect == StatusEffects.POISON || statusEffect == StatusEffects.HUNGER || statusEffect == TMOEffects.ZOMBIFYING) {
-                cir.setReturnValue(false);
-            }
-        } else if (this.getGroup() == EntityGroup.UNDEAD) {
+        if (this.getGroup() == EntityGroup.UNDEAD) {
             if (statusEffect == TMOEffects.ZOMBIFYING) {
                 cir.setReturnValue(false);
             }

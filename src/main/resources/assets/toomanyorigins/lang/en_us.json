@@ -30,7 +30,7 @@
 
   "power.toomanyorigins.overheat.name": "Overheat",
   "power.toomanyorigins.overheat.description": "You can rocket jump away from any object you're looking at. This sets your inner gunpowder on fire harming you in the process.",
-  "power.toomanyorigins.blast_immunity.name": "Resistant Hide",
+  "power.toomanyorigins.blast_immunity.name": "Blast Resistant Hide",
   "power.toomanyorigins.blast_immunity.description": "You are immune to all forms of explosive damage.",
   "power.toomanyorigins.conductor.name": "Conductor",
   "power.toomanyorigins.conductor.description": "When struck by lightning, you become charged.",
@@ -48,7 +48,7 @@
   "death.attack.jumpExplosion.player.item": "%1$s was blown up by %2$s using %3$s",
 
   "power.toomanyorigins.deathly_bite.name": "Deathly Bite",
-  "power.toomanyorigins.deathly_bite.description": "Your melee attacks inflict a Zombifying effect for a short time. Hitting any villager with this effect zombifies them.",
+  "power.toomanyorigins.deathly_bite.description": "Your melee attacks inflict a Zombifying effect on non undead mobs for a short time. Hitting any villager with this effect zombifies them.",
   "power.toomanyorigins.burn_in_daylight_without_helmet.name": "A Husk of Your Former Self",
   "power.toomanyorigins.burn_in_daylight_without_helmet.description": "After the first minute of spawning in you burn in sunlight unless headwear is worn.",
   "power.toomanyorigins.cannibalism.name": "Cannibalism",
@@ -56,7 +56,7 @@
   "power.toomanyorigins.blood_sight.name": "Blood Sight",
   "power.toomanyorigins.blood_sight.description": "You can slightly see in the dark and whilst underwater.",
   "power.toomanyorigins.opposite_day.name": "Opposite Day",
-  "power.toomanyorigins.opposite_day.description": "Instant Health and Instant Damage have the reverse effect. You are also immune to Regeneration, Poison, Hunger and Zombifying.",
+  "power.toomanyorigins.opposite_day.description": "Instant Health and Instant Damage have the reverse effect. You are also immune to Regeneration, Hunger and Zombifying.",
 
   "effect.toomanyorigins.zombifying": "Zombifying",
   "death.attack.zombification": "%1$s rotted away",
@@ -69,15 +69,17 @@
   "power.toomanyorigins.black_thumb.description": "You spread decay to any overworld crops you plant, making them unable to grow.",
   "power.toomanyorigins.scorched_structure.name": "Scorched Structure",
   "power.toomanyorigins.scorched_structure.description": "You have one extra level of Soul Speed at all times.",
-  "power.toomanyorigins.undead_resistance.name": "Undead Resistance",
-  "power.toomanyorigins.undead_resistance.description": "When you are at half of your maximum health, you create a soul projection around yourself, making you immune to projectiles.",
+  "power.toomanyorigins.soul_shield.name": "Soul Shield",
+  "power.toomanyorigins.soul_shield.description": "When you are at 60% of your maximum health, you create a soul projection around yourself, making you immune to projectiles.",
   "power.toomanyorigins.wither_immunity.name": "Infused Veins",
   "power.toomanyorigins.wither_immunity.description": "You are immune to the Wither effect.",
   "power.toomanyorigins.wither_toxins.name": "Wither Toxins",
   "power.toomanyorigins.wither_toxins.description": "Your melee attacks inflict the Wither effect for a short time.",
 
-  "effect.toomanyorigins.wither_resistance": "Wither Resistance",
+  "effect.toomanyorigins.soul_shield": "Soul Shield",
 
   "text.autoconfig.toomanyorigins.title": "TooManyOrigins Configuration",
-  "text.autoconfig.toomanyorigins.option.showPlayerOverlays": "Show Player Overlays"
+  "text.autoconfig.toomanyorigins.option.showPlayerOverlays": "Show Player Overlays",
+  "text.autoconfig.toomanyorigins.option.showWitherShieldOverlay": "Show Wither Shield Overlay",
+  "text.autoconfig.toomanyorigins.option.witherShieldOverlayStrength": "Wither Shield Overlay Strength"
 }
