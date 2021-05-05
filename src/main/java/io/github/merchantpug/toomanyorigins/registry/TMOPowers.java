@@ -113,7 +113,6 @@ public class TMOPowers {
                         return power;
                     })
             .allowCondition());
-    public static final PowerType<Power> ZOMBIFY = new PowerTypeReference(new Identifier(TooManyOrigins.MODID, "zombify"));
 
     private static <T extends Power> PowerFactory<T> create(PowerFactory<T> factory) {
         POWER_FACTORIES.put(factory, factory.getSerializerId());
