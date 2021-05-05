@@ -4,5 +4,6 @@
     "minecraft:regeneration",
     "minecraft:hunger",
     "toomanyorigins:zombifying"
-  ]
+  ],
+  "hidden": true
 }
