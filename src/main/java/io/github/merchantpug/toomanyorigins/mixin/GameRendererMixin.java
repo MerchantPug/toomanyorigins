@@ -26,14 +26,14 @@ public abstract class GameRendererMixin {
     @Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/MathHelper;lerp(FFF)F"))
     private void drawWitherShieldOverlay(float tickDelta, long startTime, boolean tick, CallbackInfo ci) {
         ClientConfig config = AutoConfig.getConfigHolder(ClientConfig.class).getConfig();
-        if(this.client.player.hasStatusEffect(TMOEffects.WITHER_RESISTANCE) && !this.client.player.hasStatusEffect(StatusEffects.NAUSEA) && config.showWitherShieldOverlay) {
+        if(this.client.player.hasStatusEffect(TMOEffects.SOUL_SHIELD) && !this.client.player.hasStatusEffect(StatusEffects.NAUSEA) && config.showWitherShieldOverlay) {
             this.method_31136(config.witherShieldOverlayStrength);
         }
     }
 
     @ModifyArgs(method = "method_31136", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/systems/RenderSystem;color4f(FFFF)V", ordinal = 0))
     private void modifyColor(Args args) {
-        if(this.client.player.hasStatusEffect(TMOEffects.WITHER_RESISTANCE) && !this.client.player.hasStatusEffect(StatusEffects.NAUSEA)) {
+        if(this.client.player.hasStatusEffect(TMOEffects.SOUL_SHIELD) && !this.client.player.hasStatusEffect(StatusEffects.NAUSEA)) {
             args.set(0, (float)0.69411764705D);
             args.set(1, (float)0.76078431372D);
             args.set(2, (float)0.47058823529D);

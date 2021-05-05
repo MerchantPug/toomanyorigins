@@ -5,15 +5,15 @@
   "duration_per_stack": 10,
   "effects": [
     {
-      "effect": "toomanyorigins:wither_resistance",
+      "effect": "toomanyorigins:soul_shield",
       "is_ambient": false,
       "show_particles": false,
       "show_icon": false
     }
   ],
   "condition": {
-    "type": "origins:health",
+    "type": "origins:relative_health",
     "comparison": "<=",
-    "compare_to": 10.0
+    "compare_to": 0.5
   }
 }

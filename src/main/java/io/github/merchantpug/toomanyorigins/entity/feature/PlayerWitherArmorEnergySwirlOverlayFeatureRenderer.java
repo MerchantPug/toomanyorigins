@@ -31,7 +31,7 @@ public class PlayerWitherArmorEnergySwirlOverlayFeatureRenderer<T extends Living
     @Override
     public void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, T entity, float limbAngle, float limbDistance, float tickDelta, float animationProgress, float headYaw, float headPitch) {
         ClientConfig config = AutoConfig.getConfigHolder(ClientConfig.class).getConfig();
-        if (TMOPowers.UNDEAD_RESISTANCE.isActive(entity) && config.showPlayerOverlays) {
+        if (TMOPowers.SOUL_SHIELD.isActive(entity) && config.showPlayerOverlays) {
             float f = (float)entity.age + tickDelta;
             BipedEntityModel<T> entityModel = this.getContextModel();
             entityModel.animateModel(entity, limbAngle, limbDistance, tickDelta);
