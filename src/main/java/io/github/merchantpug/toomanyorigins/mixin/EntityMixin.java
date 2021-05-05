@@ -24,7 +24,7 @@ public abstract class EntityMixin implements Nameable, CommandOutput {
         if ((Entity)(Object)this instanceof LivingEntity) {
             if (damageSource.isExplosive() && TMOPowers.BLAST_IMMUNITY.isActive((LivingEntity)(Object)this)) {
                 cir.setReturnValue(true);
-            } else if (damageSource.isProjectile() && ((LivingEntity)(Object)this).hasStatusEffect(TMOEffects.WITHER_RESISTANCE)) {
+            } else if (damageSource.isProjectile() && ((LivingEntity)(Object)this).hasStatusEffect(TMOEffects.SOUL_SHIELD)) {
                 cir.setReturnValue(true);
             }
         }
