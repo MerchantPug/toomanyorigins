@@ -9,7 +9,6 @@
     "DamageEnchantmentMixin",
     "EntityMixin",
     "ExplosionMixin",
-    "GameRendererMixin",
     "LivingEntityAccess",
     "LivingEntityMixin",
     "OriginCommandMixin",
@@ -19,6 +18,7 @@
   ],
   "client": [
     "ClientPlayNetworkHandlerMixin",
+    "GameRendererMixin",
     "PlayerEntityClientMixin",
     "PlayerEntityRendererMixin"
   ],

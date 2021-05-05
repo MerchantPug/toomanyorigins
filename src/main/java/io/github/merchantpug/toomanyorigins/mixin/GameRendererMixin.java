@@ -4,6 +4,8 @@ import io.github.merchantpug.toomanyorigins.config.ClientConfig;
 import io.github.merchantpug.toomanyorigins.registry.TMOEffects;
 import io.github.merchantpug.toomanyorigins.registry.TMOPowers;
 import me.shedaniel.autoconfig.AutoConfig;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.entity.effect.StatusEffects;
@@ -16,6 +18,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArgs;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
+@Environment(EnvType.CLIENT)
 @Mixin(GameRenderer.class)
 public abstract class GameRendererMixin {
     @Shadow @Final private MinecraftClient client;
