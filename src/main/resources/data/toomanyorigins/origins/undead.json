@@ -1,12 +1,13 @@
 {
 	"powers": [
 		"toomanyorigins:deathly_bite",
-		"toomanyorigins:burn_in_daylight_without_helmet",
+		"toomanyorigins:no_helmet_burn",
 		"toomanyorigins:opposite_day",
 		"toomanyorigins:cannibalism",
 		"toomanyorigins:blood_sight",
 		"toomanyorigins:zombify_hit",
-		"toomanyorigins:undead_immunities"
+		"toomanyorigins:undead_immunities",
+		"toomanyorigins:burn_timer"
 	],
 	"icon": "minecraft:rotten_flesh",
 	"order": 2,
