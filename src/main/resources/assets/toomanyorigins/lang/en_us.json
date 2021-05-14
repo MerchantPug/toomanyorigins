@@ -76,6 +76,18 @@
   "power.toomanyorigins.wither_toxins.name": "Wither Toxins",
   "power.toomanyorigins.wither_toxins.description": "Your melee attacks inflict the Wither effect for a short time.",
 
+  "block.toomanyorigins.attached_withered_melon_stem": "Withered Melon Stem",
+  "block.toomanyorigins.attached_withered_pumpkin_stem": "Withered Pumpkin Stem",
+  "block.toomanyorigins.withered_beetroots": "Withered Beetroots",
+  "block.toomanyorigins.withered_carrots": "Withered Carrots",
+  "block.toomanyorigins.withered_carved_pumpkin": "Withered Carved Pumpkin",
+  "block.toomanyorigins.withered_melon": "Withered Melon",
+  "block.toomanyorigins.withered_melon_stem": "Withered Melon Stem",
+  "block.toomanyorigins.withered_potatoes": "Withered Potatoes",
+  "block.toomanyorigins.withered_pumpkin": "Withered Pumpkin",
+  "block.toomanyorigins.withered_pumpkin_stem": "Withered Pumpkin Stem",
+  "block.toomanyorigins.withered_wheat": "Withered Wheat",
+
   "effect.toomanyorigins.soul_shield": "Soul Shield",
 
   "text.autoconfig.toomanyorigins.title": "TooManyOrigins Configuration",
