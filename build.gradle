@@ -12,18 +12,20 @@ group = project.maven_group
 
 repositories {
 	maven {
-		name = "Jitpack"
-		url 'https://jitpack.io'
+		name = "Ladysnake Libs"
+		url = 'https://ladysnake.jfrog.io/artifactory/mods'
 	}
 	maven {
-		name = "AdrianTodt's Maven"
-		url = "https://dl.bintray.com/adriantodt/maven"
+		url 'https://jitpack.io'
 	}
 	maven {
 		url "https://maven.jamieswhiteshirt.com/libs-release/"
 	}
 	maven {
 		url "https://maven.shedaniel.me/"
+	}
+	maven {
+		url "https://maven.terraformersmc.com/"
 	}
 }
 
@@ -36,8 +38,7 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modImplementation "com.github.apace100:origins-fabric:${project.origins_version}"
-	modImplementation "io.github.prospector:modmenu:${project.modmenu_version}"
+	modImplementation "com.github.MerchantPug:origins-fabric:master-SNAPSHOT"
 
 	modApi("me.shedaniel.cloth:cloth-config-fabric:${project.clothconfig_version}") {
 		exclude(group: "net.fabricmc.fabric-api")
