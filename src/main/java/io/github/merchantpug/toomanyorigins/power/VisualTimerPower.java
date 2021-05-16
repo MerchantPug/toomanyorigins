@@ -1,13 +1,12 @@
 package io.github.merchantpug.toomanyorigins.power;
 
-import io.github.apace100.origins.power.CooldownPower;
 import io.github.apace100.origins.power.PowerType;
 import io.github.apace100.origins.util.HudRender;
 import io.github.merchantpug.toomanyorigins.registry.TMOComponents;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 
-public class VisualTimerPower extends CooldownPower {
+public class VisualTimerPower extends InvertedCooldownPower {
     private final boolean resetOnRespawn;
 
     public VisualTimerPower(PowerType<?> type, PlayerEntity player, int cooldownDuration, HudRender hudRender, boolean resetOnRespawn) {
