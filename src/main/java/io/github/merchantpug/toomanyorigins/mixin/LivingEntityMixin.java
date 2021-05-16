@@ -14,13 +14,14 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.mob.ZombieVillagerEntity;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
@@ -102,6 +103,7 @@ public abstract class LivingEntityMixin extends Entity {
                         zombieVillagerEntity.setGossipData(villagerEntity.getGossip().serialize(NbtOps.INSTANCE).getValue());
                         zombieVillagerEntity.setOfferData(villagerEntity.getOffers().toTag());
                         zombieVillagerEntity.setXp(villagerEntity.getExperience());
+                        zombieVillagerEntity.world.playSound(zombieVillagerEntity.getX(), zombieVillagerEntity.getY(), zombieVillagerEntity.getZ(), SoundEvents.ENTITY_ZOMBIE_INFECT, SoundCategory.HOSTILE, 2.0F,(zombieVillagerEntity.getRandom().nextFloat() - zombieVillagerEntity.getRandom().nextFloat()) * 0.2F + 1.0F, false);
                         villagerEntity.world.syncWorldEvent(null, 1526, zombieVillagerEntity.getBlockPos(), 0);
                     }
                 }
