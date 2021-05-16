@@ -1,20 +1,20 @@
 {
   "origin.toomanyorigins.dragonborn.name": "Dragonborn",
-  "origin.toomanyorigins.dragonborn.description": "Half Human, Half Dragon. Whilst they lack the teleportation abilities of the Enderian, their mighty breath and structure makes the inhabitants of The End bow before them.",
+  "origin.toomanyorigins.dragonborn.description": "Half Human, Half Dragon. Whilst they lack the teleportation abilities of the Enderian, their ferocious breath and structure makes the inhabitants of The End bow before them.",
 
   "origin.toomanyorigins.hisskin.name": "Hiss-kin",
   "origin.toomanyorigins.hisskin.description": "Many people have constant debates on whether or not this creature truly exists. It is said in mythology that this evolutionary path of creeper learned to control their explosions as to not harm the environment around them as a get-away tactic.",
 
   "origin.toomanyorigins.undead.name": "Undead",
-  "origin.toomanyorigins.undead.description": "Haha you got bit by a zombie you fucking nerd.",
+  "origin.toomanyorigins.undead.description": "A rare genetic mutation allows this race to keep their humanity despite suffering the effects of the Infection.",
 
   "origin.toomanyorigins.withered.name": "Withered",
   "origin.toomanyorigins.withered.description": "The Withered are those whose ancestors have paid the price for harnessing the chaotic power of the Wither. They can feel the decay within spread to anything they touch.",
 
   "power.toomanyorigins.dragon_breath.name": "Draconic Breath",
-  "power.toomanyorigins.dragon_breath.description": "You can breathe a draconic fireball, you are also able to light up furnaces.",
+  "power.toomanyorigins.dragon_breath.description": "You're able to conjure a ball of armour-piercing draconic flame that leaves a lingering cloud wherever it lands. It can also act as fuel for furnaces.",
   "power.toomanyorigins.no_knockback.name": "Solidity",
-  "power.toomanyorigins.no_knockback.description": "You do not take knockback.",
+  "power.toomanyorigins.no_knockback.description": "Your dominant body negates all knockback.",
   "power.toomanyorigins.weak_point.name": "Weak Point",
   "power.toomanyorigins.weak_point.description": "You have a vulnerable spot, making you take more damage from projectiles.",
   "power.toomanyorigins.zenith_scales.name": "Zenith Scales",
@@ -49,12 +49,12 @@
 
   "power.toomanyorigins.deathly_bite.name": "Deathly Bite",
   "power.toomanyorigins.deathly_bite.description": "Your melee attacks inflict a Zombifying effect on non undead mobs for a short time. Hitting any villager with this effect zombifies them.",
-  "power.toomanyorigins.no_helmet_burn.name": "A Husk of Your Former Self",
+  "power.toomanyorigins.no_helmet_burn.name": "Husk of a Former Self",
   "power.toomanyorigins.no_helmet_burn.description": "After the first minute of spawning in you burn in sunlight unless headwear is worn.",
   "power.toomanyorigins.cannibalism.name": "Cannibalism",
   "power.toomanyorigins.cannibalism.description": "Rotten Flesh is more nutritious for you.",
   "power.toomanyorigins.blood_sight.name": "Blood Sight",
-  "power.toomanyorigins.blood_sight.description": "You can slightly see in the dark and whilst underwater.",
+  "power.toomanyorigins.blood_sight.description": "You have improved vision in the dark and whilst underwater.",
   "power.toomanyorigins.opposite_day.name": "Opposite Day",
   "power.toomanyorigins.opposite_day.description": "Instant Health and Instant Damage have the reverse effect. You are also immune to Regeneration, Hunger and Zombifying.",
 
@@ -70,7 +70,7 @@
   "power.toomanyorigins.scorched_structure.name": "Scorched Structure",
   "power.toomanyorigins.scorched_structure.description": "You have one extra level of Soul Speed at all times.",
   "power.toomanyorigins.soul_shield.name": "Soul Shield",
-  "power.toomanyorigins.soul_shield.description": "When you are at 60% of your maximum health, you create a soul projection around yourself, making you immune to projectiles.",
+  "power.toomanyorigins.soul_shield.description": "When you are at 50% of your maximum health or below, you create a soul projection around yourself, making you more resistant to damage and immune to projectiles.",
   "power.toomanyorigins.wither_immunity.name": "Infused Veins",
   "power.toomanyorigins.wither_immunity.description": "You are immune to the Wither effect.",
   "power.toomanyorigins.wither_toxins.name": "Wither Toxins",
@@ -92,6 +92,6 @@
 
   "text.autoconfig.toomanyorigins.title": "TooManyOrigins Configuration",
   "text.autoconfig.toomanyorigins.option.showPlayerOverlays": "Show Player Overlays",
-  "text.autoconfig.toomanyorigins.option.showWitherShieldOverlay": "Show Wither Shield Overlay",
-  "text.autoconfig.toomanyorigins.option.witherShieldOverlayStrength": "Wither Shield Overlay Strength"
+  "text.autoconfig.toomanyorigins.option.showWitherShieldOverlay": "Show Soul Shield HUD Overlay",
+  "text.autoconfig.toomanyorigins.option.witherShieldOverlayStrength": "Soul Shield HUD Overlay Strength"
 }
