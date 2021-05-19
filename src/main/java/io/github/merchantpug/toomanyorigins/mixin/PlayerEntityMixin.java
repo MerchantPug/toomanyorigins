@@ -31,7 +31,6 @@ public abstract class PlayerEntityMixin extends LivingEntity {
                 }
                 TMOComponents.setNewPlayer(player, false);
             }
-            TMOComponents.setTimeAlive(player, (TMOComponents.getTimeAlive(player) + 1));
         }
         if (onGround) {
             setFramesOnGround();

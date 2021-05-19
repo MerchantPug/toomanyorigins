@@ -2,9 +2,7 @@ package io.github.merchantpug.toomanyorigins.power;
 
 import io.github.apace100.origins.power.PowerType;
 import io.github.apace100.origins.util.HudRender;
-import io.github.merchantpug.toomanyorigins.registry.TMOComponents;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.network.ServerPlayerEntity;
 
 public class VisualTimerPower extends InvertedCooldownPower {
     private final boolean resetOnRespawn;
@@ -18,8 +16,6 @@ public class VisualTimerPower extends InvertedCooldownPower {
     public void onChosen(boolean isOrbOfOrigin) {
         super.onChosen(isOrbOfOrigin);
         if (isOrbOfOrigin) {
-            ServerPlayerEntity serverPlayer = (ServerPlayerEntity)player;
-            TMOComponents.setTimeAlive(serverPlayer, 0);
             this.use();
         }
     }

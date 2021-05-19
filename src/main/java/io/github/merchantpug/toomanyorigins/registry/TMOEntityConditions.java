@@ -44,17 +44,6 @@ public class TMOEntityConditions {
                     StatusEffectInstance instance = new StatusEffectInstance(effect);
                     return entity.canHaveStatusEffect(instance);
                 }));
-        register(new ConditionFactory<>(new Identifier(TooManyOrigins.MODID, "ticks_alive"), new SerializableData()
-                .add("comparison", SerializableDataType.COMPARISON)
-                .add("compare_to", SerializableDataType.INT),
-                (data, entity) -> {
-                    if (entity instanceof PlayerEntity) {
-                        ServerPlayerEntity player = (ServerPlayerEntity)entity;
-                        float value = TMOComponents.getTimeAlive(player);
-                        return ((Comparison)data.get("comparison")).compare(value, data.getInt("compare_to"));
-                    }
-                    return false;
-                }));
     }
 
     private static void register(ConditionFactory<LivingEntity> conditionFactory) {

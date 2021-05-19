@@ -35,7 +35,6 @@ public abstract class ServerWorldMixin extends World implements StructureWorldAc
     @Inject(method = "onPlayerRespawned", at = @At("HEAD"))
     private void onPlayerRespawned(ServerPlayerEntity player, CallbackInfo ci) {
         player.heal(40.0F);
-        TMOComponents.setTimeAlive(player, 0);
         OriginComponent.getPowers(player, VisualTimerPower.class).forEach(Power::onRespawn);
     }
 }
