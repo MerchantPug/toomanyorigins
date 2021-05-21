@@ -56,7 +56,7 @@ public abstract class LivingEntityMixin extends Entity {
 
     @ModifyVariable(method = "addSoulSpeedBoostIfNeeded", at = @At("STORE"), ordinal = 0)
     private int replaceLevelOfSouLSpeed(int i) {
-        if (OriginComponent.hasPower(this, UnenchantedSoulSpeedPower.class) && i == 0) {
+        if (OriginComponent.hasPower(this, UnenchantedSoulSpeedPower.class) && i <= OriginComponent.getPowers(this, UnenchantedSoulSpeedPower.class).get(0).getModifier()) {
             return i = (OriginComponent.getPowers(this, UnenchantedSoulSpeedPower.class).get(0).getModifier());
         }
         if (OriginComponent.hasPower(this, ExtraSoulSpeedPower.class)) {
