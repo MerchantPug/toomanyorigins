@@ -8,6 +8,7 @@
     "BlockMixin",
     "CooldownPowerAccess",
     "DamageEnchantmentMixin",
+    "DragonFireballEntityMixin",
     "EntityMixin",
     "ExplosionMixin",
     "LivingEntityAccess",
