@@ -65,18 +65,21 @@ public class TMOPowers {
                         return power;
                     })
             .allowCondition());
-    public static final PowerFactory<Power> MODIFY_DRAGON_FIREBALL_DAMAGE = create(new PowerFactory<>(new Identifier(TooManyOrigins.MODID, "modify_dragon_fireball_damage"),
+    public static final PowerFactory<Power> MODIFY_DRAGON_FIREBALL = create(new PowerFactory<>(new Identifier(TooManyOrigins.MODID, "modify_dragon_fireball"),
             new SerializableData()
-                    .add("modifier", SerializableDataType.ATTRIBUTE_MODIFIER, null)
-                    .add("modifiers", SerializableDataType.ATTRIBUTE_MODIFIERS, null),
+                    .add("damage_modifier", SerializableDataType.ATTRIBUTE_MODIFIER, null)
+                    .add("damage_modifiers", SerializableDataType.ATTRIBUTE_MODIFIERS, null)
+                    .add("min_radius", SerializableDataType.FLOAT, 1.125F)
+                    .add("max_radius", SerializableDataType.FLOAT, 2.25F)
+                    .add("duration", SerializableDataType.INT, 60),
             data ->
                     (type, player) -> {
-                        ModifyDragonFireballDamagePower power = new ModifyDragonFireballDamagePower(type, player);
-                        if (data.isPresent("modifier")) {
-                            power.addModifier(data.getModifier("modifier"));
+                        ModifyDragonFireballPower power = new ModifyDragonFireballPower(type, player, data.getFloat("min_radius"), data.getFloat("max_radius"), data.getInt("duration"));
+                        if (data.isPresent("damage_modifier")) {
+                            power.addModifier(data.getModifier("damage_modifier"));
                         }
-                        if (data.isPresent("modifiers")) {
-                            ((List<EntityAttributeModifier>)data.get("modifiers")).forEach(power::addModifier);
+                        if (data.isPresent("damage_modifiers")) {
+                            ((List<EntityAttributeModifier>)data.get("damage_modifiers")).forEach(power::addModifier);
                         }
                         return power;
                     })

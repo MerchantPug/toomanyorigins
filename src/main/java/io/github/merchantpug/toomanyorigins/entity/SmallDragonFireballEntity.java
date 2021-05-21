@@ -2,7 +2,7 @@ package io.github.merchantpug.toomanyorigins.entity;
 
 import io.github.apace100.origins.component.OriginComponent;
 import io.github.merchantpug.toomanyorigins.networking.packet.EntitySpawnPacket;
-import io.github.merchantpug.toomanyorigins.power.ModifyDragonFireballDamagePower;
+import io.github.merchantpug.toomanyorigins.power.ModifyDragonFireballPower;
 import io.github.merchantpug.toomanyorigins.registry.TMOEntities;
 import io.github.merchantpug.toomanyorigins.registry.TMOItems;
 import net.fabricmc.api.EnvType;
@@ -48,28 +48,33 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
         Entity entity = this.getOwner();
         if (hitResult.getType() != HitResult.Type.ENTITY) {
             if (!this.world.isClient) {
-                List<LivingEntity> list = this.world.getNonSpectatingEntities(LivingEntity.class, this.getBoundingBox().expand(2.0D, 1.0D, 2.0D));
+                List<LivingEntity> list = this.world.getEntitiesByClass(LivingEntity.class, this.getBoundingBox().expand(2.5D, 1.0D, 2.5D), TMOEntityPredicates.EXCEPT_PLAYER);
                 FireballAreaEffectCloudEntity areaEffectCloudEntity = new FireballAreaEffectCloudEntity(this.world, this.getX(), this.getY(), this.getZ());
                 if (entity instanceof LivingEntity) {
                     areaEffectCloudEntity.setOwner((LivingEntity)entity);
                 }
                 areaEffectCloudEntity.setParticleType(ParticleTypes.DRAGON_BREATH);
-                areaEffectCloudEntity.setRadius(1.125F);
-                areaEffectCloudEntity.setDuration(60);
                 areaEffectCloudEntity.setWaitTime(0);
+                float minRadius = 1.125F;
+                float maxRadius = 2.25F;
+                int duration = 60;
                 float damage = 5.0F;
-                if(this.getOwner() != null) {
-                    damage = OriginComponent.modify(this.getOwner(), ModifyDragonFireballDamagePower.class, 5.0F);
+                if(this.getOwner() != null && OriginComponent.hasPower(this.getOwner(), ModifyDragonFireballPower.class)) {
+                    minRadius = OriginComponent.getPowers(this.getOwner(), ModifyDragonFireballPower.class).get(0).getMinRadius();
+                    maxRadius = OriginComponent.getPowers(this.getOwner(), ModifyDragonFireballPower.class).get(0).getMaxRadius();
+                    duration = OriginComponent.getPowers(this.getOwner(), ModifyDragonFireballPower.class).get(0).getDuration();
+                    damage = OriginComponent.modify(this.getOwner(), ModifyDragonFireballPower.class, 5.0F);
                 }
+                areaEffectCloudEntity.setRadius(minRadius);
+                areaEffectCloudEntity.setDuration(duration);
                 areaEffectCloudEntity.setDamage(damage);
-                areaEffectCloudEntity.setRadiusGrowth((2.25F - areaEffectCloudEntity.getRadius()) / (float)areaEffectCloudEntity.getDuration());
+                areaEffectCloudEntity.setRadiusGrowth((maxRadius - areaEffectCloudEntity.getRadius()) / (float)areaEffectCloudEntity.getDuration());
                 if (!list.isEmpty()) {
                     Iterator var5 = list.iterator();
-
                     while (var5.hasNext()) {
-                        LivingEntity livingEntity = (LivingEntity) var5.next();
+                        LivingEntity livingEntity = (LivingEntity)var5.next();
                         double d = this.squaredDistanceTo(livingEntity);
-                        if (d < 4.0D && !(livingEntity instanceof PlayerEntity) && list.size() == 1) {
+                        if (d < 6.25D && list.size() == 1) {
                             areaEffectCloudEntity.updatePosition(livingEntity.getX(), livingEntity.getY(), livingEntity.getZ());
                             break;
                         }

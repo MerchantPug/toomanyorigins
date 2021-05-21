@@ -9,13 +9,15 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntityMixin extends LivingEntity {
-    private int framesOnGround = 0;
+    @Unique
+    int framesOnGround = 0;
 
     public PlayerEntityMixin(World world) {
         super(EntityType.PLAYER, world);
@@ -39,6 +41,8 @@ public abstract class PlayerEntityMixin extends LivingEntity {
         }
     }
 
+    // Unused code for a future origin
+    @Unique
     private void setFramesOnGround() {
         for (int i2 = 0; i2 < 3; ++i2) {
             framesOnGround += 1;
