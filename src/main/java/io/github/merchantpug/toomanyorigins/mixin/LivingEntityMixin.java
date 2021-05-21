@@ -128,25 +128,24 @@ public abstract class LivingEntityMixin extends Entity {
         }
     }
 
-    @Inject(method = "applyEnchantmentsToDamage", at = @At("HEAD"),  cancellable = true)
+    @Inject(method = "applyEnchantmentsToDamage", at = @At(value = "RETURN", opcode = 2),  cancellable = true)
     private void applyEnchantmentsToDamage(DamageSource source, float amount, CallbackInfoReturnable<Float> cir) {
-        if (!source.isUnblockable()) {
-            int k;
-            if (this.hasStatusEffect(TMOEffects.SOUL_SHIELD) && source != DamageSource.OUT_OF_WORLD) {
-                k = (this.getStatusEffect(TMOEffects.SOUL_SHIELD).getAmplifier() + 1) * 5;
-                int j = 25 - k;
-                float f = amount * (float) j;
-                float g = amount;
-                amount = Math.max(f / 25.0F, 0.0F);
-                float h = g - amount;
-                if (h > 0.0F && h < 3.4028235E37F) {
-                    if ((Object) this instanceof ServerPlayerEntity) {
-                        ((ServerPlayerEntity) (Object) this).increaseStat(Stats.DAMAGE_RESISTED, Math.round(h * 10.0F));
-                    } else if (source.getAttacker() instanceof ServerPlayerEntity) {
-                        ((ServerPlayerEntity) source.getAttacker()).increaseStat(Stats.DAMAGE_DEALT_RESISTED, Math.round(h * 10.0F));
-                    }
+        int k;
+        if (this.hasStatusEffect(TMOEffects.SOUL_SHIELD) && source != DamageSource.OUT_OF_WORLD) {
+            k = (this.getStatusEffect(TMOEffects.SOUL_SHIELD).getAmplifier() + 1) * 5;
+            int j = 25 - k;
+            float f = amount * (float) j;
+            float g = amount;
+            amount = Math.max(f / 25.0F, 0.0F);
+            float h = g - amount;
+            if (h > 0.0F && h < 3.4028235E37F) {
+                if ((Object) this instanceof ServerPlayerEntity) {
+                    ((ServerPlayerEntity) (Object) this).increaseStat(Stats.DAMAGE_RESISTED, Math.round(h * 10.0F));
+                } else if (source.getAttacker() instanceof ServerPlayerEntity) {
+                    ((ServerPlayerEntity) source.getAttacker()).increaseStat(Stats.DAMAGE_DEALT_RESISTED, Math.round(h * 10.0F));
                 }
             }
+            cir.setReturnValue(amount);
         }
     }
 }
