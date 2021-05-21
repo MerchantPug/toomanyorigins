@@ -10,7 +10,6 @@ import net.minecraft.block.CampfireBlock;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleType;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
@@ -38,18 +37,11 @@ public class LightUpBlockPower extends ActiveCooldownPower {
                     BlockPos pos = ((BlockHitResult) client.crosshairTarget).getBlockPos();
                     BlockState state = client.world.getBlockState(pos);
                     if (state.getBlock() instanceof AbstractFurnaceBlock || state.getBlock() instanceof CampfireBlock) {
-                        LightUpBlockPacket.send(pos, particle, particleCount, burnTime);
+                        LightUpBlockPacket.send(pos, particle, particleCount, burnTime, soundEvent);
+                        this.use();
                     }
                 }
             }
-            playSound(soundEvent);
-            this.use();
-        }
-    }
-
-    private void playSound(SoundEvent soundEvent) {
-        if (soundEvent != null) {
-            this.player.world.playSound(null, this.player.getX(), this.player.getY(), this.player.getZ(), this.soundEvent, SoundCategory.NEUTRAL, 0.5F, (player.getRandom().nextFloat() - player.getRandom().nextFloat()) * 0.2F + 1.0F);
         }
     }
 }

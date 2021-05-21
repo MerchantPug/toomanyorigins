@@ -13,6 +13,8 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -24,13 +26,14 @@ import static net.minecraft.state.property.Properties.LIT;
 public class LightUpBlockPacket {
     public static final Identifier ID = new Identifier(TooManyOrigins.MODID, "light_up_block");
 
-    public static void send(BlockPos pos, ParticleType particle, int particleCount, int burnTime) {
+    public static void send(BlockPos pos, ParticleType particle, int particleCount, int burnTime, SoundEvent soundEvent) {
         PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
         ParticleEffect particleEffect = (ParticleEffect)particle;
         buf.writeBlockPos(pos);
         buf.writeInt(Registry.PARTICLE_TYPE.getRawId(particleEffect.getType()));
         buf.writeInt(particleCount);
         buf.writeInt(burnTime);
+        buf.writeInt(Registry.SOUND_EVENT.getRawId(soundEvent));
         particleEffect.write(buf);
         ClientPlayNetworking.send(ID, buf);
     }
@@ -40,6 +43,7 @@ public class LightUpBlockPacket {
         ParticleType<?> particle = Registry.PARTICLE_TYPE.get(buf.readInt());
         int particleCount = buf.readInt();
         int burnTime = buf.readInt();
+        SoundEvent soundEvent = Registry.SOUND_EVENT.get(buf.readInt());
         ParticleEffect particleEffect = readParticleParameters(buf, particle);
         server.execute(() -> {
             BlockState state = player.world.getBlockState(pos);
@@ -48,6 +52,7 @@ public class LightUpBlockPacket {
                 player.world.setBlockState(pos, state.with(LIT, true).with(LIT, true), 2);
                 ((ServerWorld)player.world).spawnParticles(particleEffect, pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5, particleCount, player.getRandom().nextDouble() * 0.2D - 0.1D, 0.1D, player.getRandom().nextDouble() * 0.2D - 0.1D, 0.05D);
                 player.swingHand(Hand.MAIN_HAND, true);
+                player.world.playSound(null, player.getX(), player.getY(), player.getZ(), soundEvent, SoundCategory.NEUTRAL, 0.5F, (player.getRandom().nextFloat() - player.getRandom().nextFloat()) * 0.2F + 1.0F);
                 player.world.syncWorldEvent(1590, pos, 0);
             }
             if (entity instanceof AbstractFurnaceBlockEntity) {
