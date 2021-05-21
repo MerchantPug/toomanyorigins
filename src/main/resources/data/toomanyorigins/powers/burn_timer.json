@@ -1,6 +1,6 @@
 {
   "type": "toomanyorigins:visual_timer",
-  "cooldown": 1200,
+  "cooldown": 1800,
   "hud_render": {
     "should_render": true,
     "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
