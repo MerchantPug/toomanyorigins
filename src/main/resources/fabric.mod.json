@@ -48,6 +48,6 @@
     "fabricloader": ">=0.7.4",
     "fabric": ">=0.29.4",
     "minecraft": "1.16.x",
-    "origins": ">=0.7.1"
+    "origins": ">=0.7.2"
   }
 }
