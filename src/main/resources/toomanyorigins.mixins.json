@@ -13,7 +13,6 @@
     "ExplosionMixin",
     "LivingEntityAccess",
     "LivingEntityMixin",
-    "OriginCommandMixin",
     "PlayerEntityMixin",
     "ServerPlayerEntityMixin",
     "ServerWorldMixin"
