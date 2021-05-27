@@ -53,10 +53,10 @@
   "power.toomanyorigins.no_helmet_burn.description": "After 1 minute and 30 seconds of spawning in you burn in sunlight unless headwear is worn.",
   "power.toomanyorigins.cannibalism.name": "Cannibalism",
   "power.toomanyorigins.cannibalism.description": "Rotten Flesh is more nutritious for you.",
-  "power.toomanyorigins.blood_sight.name": "Blood Sight",
-  "power.toomanyorigins.blood_sight.description": "You have improved vision in the dark and whilst underwater.",
   "power.toomanyorigins.opposite_day.name": "Opposite Day",
   "power.toomanyorigins.opposite_day.description": "Instant Health and Instant Damage have the reverse effect. You are also immune to Regeneration, Hunger and Zombifying.",
+  "power.toomanyorigins.decomposing_body.name": "Decomposing Body",
+  "power.toomanyorigins.decomposing_body.description": "You have 1 less heart of health than humans.",
 
   "effect.toomanyorigins.zombifying": "Zombifying",
   "death.attack.zombification": "%1$s rotted away",
