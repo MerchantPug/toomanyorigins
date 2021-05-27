@@ -55,8 +55,8 @@
   "power.toomanyorigins.cannibalism.description": "Rotten Flesh is more nutritious for you.",
   "power.toomanyorigins.opposite_day.name": "Opposite Day",
   "power.toomanyorigins.opposite_day.description": "Instant Health and Instant Damage have the reverse effect. You are also immune to Regeneration, Hunger and Zombifying.",
-  "power.toomanyorigins.decomposing_body.name": "Decomposing Body",
-  "power.toomanyorigins.decomposing_body.description": "You have 1 less heart of health than humans.",
+  "power.toomanyorigins.torn_lungs.name": "Torn Lungs",
+  "power.toomanyorigins.torn_lungs.description": "You exhaust much quicker than others, thus requiring you to eat more.",
 
   "effect.toomanyorigins.zombifying": "Zombifying",
   "death.attack.zombification": "%1$s rotted away",
