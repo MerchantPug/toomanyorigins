@@ -3,7 +3,7 @@
   "modifier": {
     "name": " health addition",
     "attribute": "minecraft:generic.max_health",
-    "value": -2.0,
+    "value": -4.0,
     "operation": "addition"
   }
 }
