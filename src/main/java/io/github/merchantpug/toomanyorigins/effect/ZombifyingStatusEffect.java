@@ -26,7 +26,7 @@ public class ZombifyingStatusEffect extends StatusEffect {
                 ((PlayerEntity)entity).addExhaustion(4F);
             } else {
                 if (mobUpdate > 0) {
-                    entity.damage(TMODamageSources.ZOMBIFICATION, 1.5F);
+                    entity.damage(TMODamageSources.ZOMBIFICATION, 2.0F);
                     mobUpdate -= 1;
                 }
             }
