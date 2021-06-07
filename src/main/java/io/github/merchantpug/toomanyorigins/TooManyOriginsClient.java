@@ -47,9 +47,9 @@ public class TooManyOriginsClient implements ClientModInitializer {
 
         EntityRendererRegistry.INSTANCE.register(TMOEntities.SMALL_DRAGON_FIREBALL,
                 (dispatcher, context) -> new FlyingItemEntityRenderer(dispatcher, context.getItemRenderer()));
-        receiveEntityPacket();
         EntityRendererRegistry.INSTANCE.register(TMOEntities.FIREBALL_AREA_EFFECT_CLOUD,
                 (dispatcher, context) -> new AreaEffectCloudEntityRenderer(dispatcher));
+        receiveEntityPacket();
 
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
             int j = 7 * 32;
