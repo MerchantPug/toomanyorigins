@@ -6,8 +6,6 @@ import io.github.apace100.origins.registry.ModRegistries;
 import io.github.apace100.origins.util.SerializableData;
 import io.github.apace100.origins.util.SerializableDataType;
 import io.github.merchantpug.toomanyorigins.TooManyOrigins;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.block.pattern.CachedBlockPosition;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
