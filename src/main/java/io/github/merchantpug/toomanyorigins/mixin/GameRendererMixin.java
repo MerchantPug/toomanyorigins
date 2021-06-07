@@ -29,8 +29,8 @@ public abstract class GameRendererMixin {
     @Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/MathHelper;lerp(FFF)F"))
     private void drawWitherShieldOverlay(float tickDelta, long startTime, boolean tick, CallbackInfo ci) {
         ClientConfig config = AutoConfig.getConfigHolder(ClientConfig.class).getConfig();
-        if(this.client.player.hasStatusEffect(TMOEffects.SOUL_SHIELD) && !this.client.player.hasStatusEffect(StatusEffects.NAUSEA) && config.showWitherShieldOverlay) {
-            this.method_31136(config.witherShieldOverlayStrength);
+        if(this.client.player.hasStatusEffect(TMOEffects.SOUL_SHIELD) && !this.client.player.hasStatusEffect(StatusEffects.NAUSEA) && config.showSoulShieldOverlay) {
+            this.method_31136(config.soulShieldOverlayStrength);
         }
     }
 

@@ -70,7 +70,7 @@
   "power.toomanyorigins.scorched_structure.name": "Scorched Structure",
   "power.toomanyorigins.scorched_structure.description": "You have one extra level of Soul Speed at all times.",
   "power.toomanyorigins.soul_shield.name": "Soul Shield",
-  "power.toomanyorigins.soul_shield.description": "When you are at 50% of your maximum health or below, you create a soul projection around yourself, making you more resistant to damage and immune to projectiles.",
+  "power.toomanyorigins.soul_shield.description": "When you are at 50% of your maximum health or below, you create a soul projection around yourself, making yourself more resistant to damage and immune to projectiles.",
   "power.toomanyorigins.wither_immunity.name": "Infused Veins",
   "power.toomanyorigins.wither_immunity.description": "You are immune to the Wither effect.",
   "power.toomanyorigins.wither_toxins.name": "Wither Toxins",
@@ -92,6 +92,6 @@
 
   "text.autoconfig.toomanyorigins.title": "TooManyOrigins Configuration",
   "text.autoconfig.toomanyorigins.option.showPlayerOverlays": "Show Player Overlays",
-  "text.autoconfig.toomanyorigins.option.showWitherShieldOverlay": "Show Soul Shield HUD Overlay",
-  "text.autoconfig.toomanyorigins.option.witherShieldOverlayStrength": "Soul Shield HUD Overlay Strength"
+  "text.autoconfig.toomanyorigins.option.showSoulShieldOverlay": "Show Soul Shield HUD Overlay",
+  "text.autoconfig.toomanyorigins.option.soulShieldOverlayStrength": "Soul Shield HUD Overlay Strength"
 }
