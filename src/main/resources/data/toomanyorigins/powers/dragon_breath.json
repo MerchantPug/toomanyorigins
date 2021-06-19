@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "light_up_block": {
-    "type": "toomanyorigins:light_up_block",
+    "type": "apugli:light_up_block",
     "cooldown": 80,
     "hud_render": {
       "should_render": true,
@@ -9,6 +9,7 @@
       "bar_index": 1
     },
     "burn_time": 2600,
+    "brew_time": 20,
     "particle": "minecraft:dragon_breath",
     "particle_count": 15,
     "sound": "minecraft:entity.ender_dragon.shoot",
@@ -17,7 +18,7 @@
       "continuous": false
     },
     "condition": {
-      "type": "toomanyorigins:block_looking_at",
+      "type": "apugli:block_looking_at",
       "block_condition": {
         "type": "origins:in_tag",
         "tag": "toomanyorigins:lightable"
@@ -41,7 +42,7 @@
       "continuous": false
     },
     "condition": {
-      "type": "toomanyorigins:block_looking_at",
+      "type": "apugli:block_looking_at",
       "block_condition": {
         "type": "origins:in_tag",
         "tag": "toomanyorigins:lightable"

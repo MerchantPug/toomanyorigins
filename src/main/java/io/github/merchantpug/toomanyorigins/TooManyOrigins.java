@@ -1,10 +1,7 @@
 package io.github.merchantpug.toomanyorigins;
 
-import io.github.merchantpug.toomanyorigins.networking.packet.LightUpBlockPacket;
-import io.github.merchantpug.toomanyorigins.networking.packet.RocketJumpPacket;
 import io.github.merchantpug.toomanyorigins.registry.*;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,15 +12,10 @@ public class TooManyOrigins implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("TooManyOrigins is initializing. Enjoy!");
-
 		TMOBlocks.register();
-		TMOEntityActions.register();
-		TMOEntityConditions.register();
 		TMOEffects.register();
 		TMOEntities.register();
 		TMOItems.register();
 		TMOPowers.init();
-		ServerPlayNetworking.registerGlobalReceiver(LightUpBlockPacket.ID, LightUpBlockPacket::handle);
-		ServerPlayNetworking.registerGlobalReceiver(RocketJumpPacket.ID, RocketJumpPacket::handle);
 	}
 }

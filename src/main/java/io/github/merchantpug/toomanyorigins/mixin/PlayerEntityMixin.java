@@ -29,7 +29,7 @@ public abstract class PlayerEntityMixin extends LivingEntity {
             ServerPlayerEntity player = (ServerPlayerEntity)(Object)this;
             if (ModComponents.ORIGIN.get(player).hasAllOrigins() && TMOComponents.getNewPlayer(player)) {
                 if (player.getStatHandler().getStat(Stats.CUSTOM.getOrCreateStat(Stats.LEAVE_GAME)) == 0) {
-                    player.heal(40.0F);
+                    player.heal(Float.MAX_VALUE);
                 }
                 TMOComponents.setNewPlayer(player, false);
             }

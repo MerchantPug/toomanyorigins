@@ -26,14 +26,8 @@
     "client": [
       "io.github.merchantpug.toomanyorigins.TooManyOriginsClient"
     ],
-    "server": [
-      "io.github.merchantpug.toomanyorigins.TooManyOriginsServer"
-    ],
     "cardinal-components-entity": [
       "io.github.merchantpug.toomanyorigins.registry.TMOComponents"
-    ],
-    "modmenu": [
-      "io.github.merchantpug.toomanyorigins.config.ModMenuIntegration"
     ]
   },
   "mixins": [
@@ -45,9 +39,10 @@
     ]
   },
   "depends": {
-    "fabricloader": ">=0.7.4",
-    "fabric": ">=0.29.4",
-    "minecraft": "1.16.x",
-    "origins": ">=0.7.3"
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.17.x",
+    "java": ">=16",
+    "origins": ">=1.0.0"
   }
 }

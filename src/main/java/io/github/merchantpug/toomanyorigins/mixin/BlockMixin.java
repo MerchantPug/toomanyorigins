@@ -2,10 +2,8 @@ package io.github.merchantpug.toomanyorigins.mixin;
 
 import io.github.merchantpug.toomanyorigins.registry.TMOBlocks;
 import io.github.merchantpug.toomanyorigins.registry.TMOPowers;
-import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.annotation.Nullable;
 import net.minecraft.block.*;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;

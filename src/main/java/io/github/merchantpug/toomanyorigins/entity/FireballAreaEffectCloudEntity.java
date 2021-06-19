@@ -5,12 +5,12 @@ import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import io.github.merchantpug.toomanyorigins.registry.TMODamageSources;
 import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.command.argument.ParticleArgumentType;
+import net.minecraft.command.argument.ParticleEffectArgumentType;
 import net.minecraft.entity.*;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.particle.ParticleEffect;
@@ -52,7 +52,7 @@ public class FireballAreaEffectCloudEntity extends Entity {
         this.waitTime = 20;
         this.reapplicationDelay = 20;
         this.noClip = true;
-        this.damage = 5.0F;
+        this.damage = 6.0F;
         this.setRadius(3.0F);
     }
 
@@ -179,7 +179,7 @@ public class FireballAreaEffectCloudEntity extends Entity {
             }
         } else {
             if (this.age >= this.waitTime + this.duration) {
-                this.remove();
+                this.discard();
                 return;
             }
 
@@ -195,7 +195,7 @@ public class FireballAreaEffectCloudEntity extends Entity {
             if (this.radiusGrowth != 0.0F) {
                 f += this.radiusGrowth;
                 if (f < 0.5F) {
-                    this.remove();
+                    this.discard();
                     return;
                 }
 
@@ -245,7 +245,7 @@ public class FireballAreaEffectCloudEntity extends Entity {
                         if (this.radiusOnUse != 0.0F) {
                             f += this.radiusOnUse;
                             if (f < 0.5F) {
-                                this.remove();
+                                this.discard();
                                 return;
                             }
 
@@ -255,7 +255,7 @@ public class FireballAreaEffectCloudEntity extends Entity {
                         if (this.durationOnUse != 0) {
                             this.duration += this.durationOnUse;
                             if (this.duration <= 0) {
-                                this.remove();
+                                this.discard();
                                 return;
                             }
                         }
@@ -289,50 +289,50 @@ public class FireballAreaEffectCloudEntity extends Entity {
         return this.owner;
     }
 
-    protected void readCustomDataFromTag(CompoundTag tag) {
-        this.age = tag.getInt("Age");
-        this.duration = tag.getInt("Duration");
-        this.waitTime = tag.getInt("WaitTime");
-        this.reapplicationDelay = tag.getInt("ReapplicationDelay");
-        this.durationOnUse = tag.getInt("DurationOnUse");
-        this.radiusOnUse = tag.getFloat("RadiusOnUse");
-        this.radiusGrowth = tag.getFloat("RadiusPerTick");
-        this.damage = tag.getFloat("Damage");
-        this.setRadius(tag.getFloat("Radius"));
-        if (tag.containsUuid("Owner")) {
-            this.ownerUuid = tag.getUuid("Owner");
+    protected void readCustomDataFromNbt(NbtCompound nbt) {
+        this.age = nbt.getInt("Age");
+        this.duration = nbt.getInt("Duration");
+        this.waitTime = nbt.getInt("WaitTime");
+        this.reapplicationDelay = nbt.getInt("ReapplicationDelay");
+        this.durationOnUse = nbt.getInt("DurationOnUse");
+        this.radiusOnUse = nbt.getFloat("RadiusOnUse");
+        this.radiusGrowth = nbt.getFloat("RadiusPerTick");
+        this.damage = nbt.getFloat("Damage");
+        this.setRadius(nbt.getFloat("Radius"));
+        if (nbt.containsUuid("Owner")) {
+            this.ownerUuid = nbt.getUuid("Owner");
         }
 
-        if (tag.contains("Particle", 8)) {
+        if (nbt.contains("Particle", 8)) {
             try {
-                this.setParticleType(ParticleArgumentType.readParameters(new StringReader(tag.getString("Particle"))));
+                this.setParticleType(ParticleEffectArgumentType.readParameters(new StringReader(nbt.getString("Particle"))));
             } catch (CommandSyntaxException var5) {
-                LOGGER.warn("Couldn't load custom particle {}", tag.getString("Particle"), var5);
+                LOGGER.warn((String)"Couldn't load custom particle {}", (Object)nbt.getString("Particle"), (Object)var5);
             }
         }
 
-        if (tag.contains("Color", 99)) {
-            this.setColor(tag.getInt("Color"));
+        if (nbt.contains("Color", 99)) {
+            this.setColor(nbt.getInt("Color"));
         }
     }
 
-    protected void writeCustomDataToTag(CompoundTag tag) {
-        tag.putInt("Age", this.age);
-        tag.putInt("Duration", this.duration);
-        tag.putInt("WaitTime", this.waitTime);
-        tag.putInt("ReapplicationDelay", this.reapplicationDelay);
-        tag.putInt("DurationOnUse", this.durationOnUse);
-        tag.putFloat("RadiusOnUse", this.radiusOnUse);
-        tag.putFloat("RadiusPerTick", this.radiusGrowth);
-        tag.putFloat("Damage", this.damage);
-        tag.putFloat("Radius", this.getRadius());
-        tag.putString("Particle", this.getParticleType().asString());
+    protected void writeCustomDataToNbt(NbtCompound nbt) {
+        nbt.putInt("Age", this.age);
+        nbt.putInt("Duration", this.duration);
+        nbt.putInt("WaitTime", this.waitTime);
+        nbt.putInt("ReapplicationDelay", this.reapplicationDelay);
+        nbt.putInt("DurationOnUse", this.durationOnUse);
+        nbt.putFloat("RadiusOnUse", this.radiusOnUse);
+        nbt.putFloat("RadiusPerTick", this.radiusGrowth);
+        nbt.putFloat("Damage", this.damage);
+        nbt.putFloat("Radius", this.getRadius());
+        nbt.putString("Particle", this.getParticleType().asString());
         if (this.ownerUuid != null) {
-            tag.putUuid("Owner", this.ownerUuid);
+            nbt.putUuid("Owner", this.ownerUuid);
         }
 
         if (this.customColor) {
-            tag.putInt("Color", this.getColor());
+            nbt.putInt("Color", this.getColor());
         }
     }
 

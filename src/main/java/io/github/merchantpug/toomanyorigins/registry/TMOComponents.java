@@ -4,9 +4,9 @@ import dev.onyxstudios.cca.api.v3.component.ComponentKey;
 import dev.onyxstudios.cca.api.v3.component.ComponentRegistry;
 import dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry;
 import dev.onyxstudios.cca.api.v3.entity.EntityComponentInitializer;
+import dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy;
 import io.github.merchantpug.toomanyorigins.TooManyOrigins;
 import io.github.merchantpug.toomanyorigins.component.*;
-import nerdhub.cardinal.components.api.util.RespawnCopyStrategy;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 

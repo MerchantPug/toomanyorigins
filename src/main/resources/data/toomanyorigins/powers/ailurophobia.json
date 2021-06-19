@@ -21,14 +21,14 @@
     "type": "origins:or",
     "conditions": [
       {
-        "type": "toomanyorigins:nearby_entities",
+        "type": "apugli:nearby_entities",
         "entity_type": "minecraft:cat",
         "player_box_multiplier": 5.0,
         "comparison": ">=",
         "compare_to": 1
       },
       {
-        "type": "toomanyorigins:nearby_entities",
+        "type": "apugli:nearby_entities",
         "entity_type": "minecraft:ocelot",
         "player_box_multiplier": 5.0,
         "comparison": ">=",

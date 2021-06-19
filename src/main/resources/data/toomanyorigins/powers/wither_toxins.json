@@ -19,7 +19,7 @@
     "name": "player"
   },
   "target_condition": {
-    "type": "toomanyorigins:can_have_effect",
+    "type": "apugli:can_have_effect",
     "effect": "minecraft:wither"
   }
 }
