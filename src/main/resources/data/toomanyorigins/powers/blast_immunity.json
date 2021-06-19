@@ -1,8 +1,7 @@
 {
   "type": "origins:modify_damage_taken",
   "damage_condition": {
-    "type": "origins:name",
-    "name": "explosion"
+    "type": "apugli:explosive"
   },
   "modifier": {
     "value": -1,

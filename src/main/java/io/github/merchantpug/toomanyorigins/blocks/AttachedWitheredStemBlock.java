@@ -2,10 +2,8 @@ package io.github.merchantpug.toomanyorigins.blocks;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.AttachedStemBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
+import net.minecraft.item.Item;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -14,15 +12,12 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.Random;
+import java.util.function.Supplier;
 
 public class AttachedWitheredStemBlock extends AttachedStemBlock {
 
-    private final WitheredGourdBlock witheredGourdBlock;
-
-    public AttachedWitheredStemBlock(WitheredGourdBlock witheredGourdBlock, AbstractBlock.Settings settings) {
-        super(witheredGourdBlock, settings);
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(FACING, Direction.NORTH));
-        this.witheredGourdBlock = witheredGourdBlock;
+    public AttachedWitheredStemBlock(WitheredGourdBlock witheredGourdBlock, Supplier<Item> pickBlockItem, AbstractBlock.Settings settings) {
+        super(witheredGourdBlock, pickBlockItem, settings);
     }
 
     @Environment(EnvType.CLIENT)

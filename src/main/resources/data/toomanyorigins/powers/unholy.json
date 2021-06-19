@@ -1,5 +1,5 @@
 {
-  "type": "toomanyorigins:entity_group",
+  "type": "apugli:entity_group",
   "group": "smiteable",
   "hidden": true
 }

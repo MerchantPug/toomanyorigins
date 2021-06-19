@@ -1,5 +1,5 @@
 {
-  "type": "toomanyorigins:rocket_jump",
+  "type": "apugli:rocket_jump",
   "cooldown": 5,
   "hud_render": {
     "should_render": true,
@@ -11,6 +11,10 @@
     "bypasses_armor": "true",
     "fire": "true",
     "unblockable": "true"
+  },
+  "key": {
+    "key": "key.origins.primary_active",
+    "continuous": false
   },
   "damage_amount": 2.0,
   "should_use_charged": true,

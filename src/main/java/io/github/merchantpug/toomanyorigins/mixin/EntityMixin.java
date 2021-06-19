@@ -21,19 +21,8 @@ public abstract class EntityMixin implements Nameable, CommandOutput {
     @Inject(method = "isInvulnerableTo", at = @At("HEAD"), cancellable = true)
     public void isInvulnerableTo(DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
         if ((Entity)(Object)this instanceof LivingEntity) {
-            if (damageSource.isExplosive() && TMOPowers.BLAST_IMMUNITY.isActive((LivingEntity)(Object)this)) {
+            if (damageSource.isProjectile() && ((LivingEntity)(Object)this).hasStatusEffect(TMOEffects.SOUL_SHIELD)) {
                 cir.setReturnValue(true);
-            } else if (damageSource.isProjectile() && ((LivingEntity)(Object)this).hasStatusEffect(TMOEffects.SOUL_SHIELD)) {
-                cir.setReturnValue(true);
-            }
-        }
-    }
-
-    @Inject(method = "onStruckByLightning", at = @At("HEAD"))
-    private void onStruckByLightning(ServerWorld world, LightningEntity lightning, CallbackInfo ci) {
-        if ((Entity)(Object)this instanceof LivingEntity) {
-            if (TMOPowers.CONDUCTOR.isActive((LivingEntity)(Object)this)) {
-                ((LivingEntity)(Object)this).addStatusEffect(new StatusEffectInstance(TMOEffects.CHARGED, 48000, 0));
             }
         }
     }

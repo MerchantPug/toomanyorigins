@@ -1,23 +1,18 @@
 package io.github.merchantpug.toomanyorigins.entity;
 
-import io.github.apace100.origins.component.OriginComponent;
-import io.github.merchantpug.toomanyorigins.networking.packet.EntitySpawnPacket;
+import io.github.apace100.apoli.component.PowerHolderComponent;
 import io.github.merchantpug.toomanyorigins.power.ModifyDragonFireballPower;
 import io.github.merchantpug.toomanyorigins.registry.TMOEntities;
 import io.github.merchantpug.toomanyorigins.registry.TMOItems;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
-import net.minecraft.network.Packet;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
-import io.github.merchantpug.toomanyorigins.TooManyOriginsClient;
 
 import java.util.Iterator;
 import java.util.List;
@@ -32,7 +27,6 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
         super(TMOEntities.SMALL_DRAGON_FIREBALL, owner, world);
     }
 
-    @Environment(EnvType.CLIENT)
     public SmallDragonFireballEntity(World world, double x, double y, double z) {
         super(TMOEntities.SMALL_DRAGON_FIREBALL, x, y, z, world);
     }
@@ -58,12 +52,12 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
                 float minRadius = 1.125F;
                 float maxRadius = 2.25F;
                 int duration = 60;
-                float damage = 5.0F;
-                if(this.getOwner() != null && OriginComponent.hasPower(this.getOwner(), ModifyDragonFireballPower.class)) {
-                    minRadius = OriginComponent.getPowers(this.getOwner(), ModifyDragonFireballPower.class).get(0).getMinRadius();
-                    maxRadius = OriginComponent.getPowers(this.getOwner(), ModifyDragonFireballPower.class).get(0).getMaxRadius();
-                    duration = OriginComponent.getPowers(this.getOwner(), ModifyDragonFireballPower.class).get(0).getDuration();
-                    damage = OriginComponent.modify(this.getOwner(), ModifyDragonFireballPower.class, 5.0F);
+                float damage = 6.0F;
+                if(this.getOwner() != null && PowerHolderComponent.hasPower(this.getOwner(), ModifyDragonFireballPower.class)) {
+                    minRadius = PowerHolderComponent.getPowers(this.getOwner(), ModifyDragonFireballPower.class).get(0).getMinRadius();
+                    maxRadius = PowerHolderComponent.getPowers(this.getOwner(), ModifyDragonFireballPower.class).get(0).getMaxRadius();
+                    duration = PowerHolderComponent.getPowers(this.getOwner(), ModifyDragonFireballPower.class).get(0).getDuration();
+                    damage = PowerHolderComponent.modify(this.getOwner(), ModifyDragonFireballPower.class, 6.0F);
                 }
                 areaEffectCloudEntity.setRadius(minRadius);
                 areaEffectCloudEntity.setDuration(duration);
@@ -83,7 +77,7 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
 
                 this.world.syncWorldEvent(1520, this.getBlockPos(), this.isSilent() ? -1 : 1);
                 this.world.spawnEntity(areaEffectCloudEntity);
-                this.remove();
+                this.discard();
             }
         }
     }
@@ -91,15 +85,9 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
     public void tick() {
         Entity entity = this.getOwner();
         if (entity instanceof PlayerEntity && !entity.isAlive()) {
-            this.remove();
+            this.discard();
         } else {
             super.tick();
         }
-    }
-
-    @Override
-    @Environment(EnvType.CLIENT)
-    public Packet<?> createSpawnPacket() {
-        return EntitySpawnPacket.create(this, TooManyOriginsClient.PacketID);
     }
 }

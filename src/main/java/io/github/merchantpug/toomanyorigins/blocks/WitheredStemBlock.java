@@ -5,6 +5,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.*;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
@@ -16,15 +17,17 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 import java.util.Random;
+import java.util.function.Supplier;
 
 public class WitheredStemBlock extends StemBlock {
 
     private final WitheredGourdBlock witheredGourdBlock;
+    private final Supplier<Item> pickBlockItem;
 
-    public WitheredStemBlock(WitheredGourdBlock witheredGourdBlock, AbstractBlock.Settings settings) {
-        super(witheredGourdBlock, settings);
+    public WitheredStemBlock(WitheredGourdBlock witheredGourdBlock, Supplier<Item> pickBlockItem, Settings settings) {
+        super(witheredGourdBlock, pickBlockItem, settings);
         this.witheredGourdBlock = witheredGourdBlock;
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(AGE, 0));
+        this.pickBlockItem = pickBlockItem;
     }
 
     public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
@@ -53,17 +56,7 @@ public class WitheredStemBlock extends StemBlock {
     }
 
     @Environment(EnvType.CLIENT)
-    protected Item getPickItem() {
-        if (this.witheredGourdBlock == TMOBlocks.WITHERED_PUMPKIN) {
-            return Items.PUMPKIN_SEEDS;
-        } else {
-            return this.witheredGourdBlock == TMOBlocks.WITHERED_MELON ? Items.MELON_SEEDS : null;
-        }
-    }
-
-    @Environment(EnvType.CLIENT)
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        Item item = this.getPickItem();
-        return item == null ? ItemStack.EMPTY : new ItemStack(item);
+        return new ItemStack((ItemConvertible)this.pickBlockItem.get());
     }
 }

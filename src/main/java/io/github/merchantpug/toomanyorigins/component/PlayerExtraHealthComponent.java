@@ -1,6 +1,6 @@
 package io.github.merchantpug.toomanyorigins.component;
 
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 
 public class PlayerExtraHealthComponent implements ExtraHealthComponent {
 
@@ -33,13 +33,13 @@ public class PlayerExtraHealthComponent implements ExtraHealthComponent {
     }
 
     @Override
-    public void readFromNbt(CompoundTag tag) {
+    public void readFromNbt(NbtCompound tag) {
         this.extraHealth = tag.getInt("ExtraHealth");
         this.newPlayer = tag.getBoolean("NewPlayer");
     }
 
     @Override
-    public void writeToNbt(CompoundTag compoundTag) {
+    public void writeToNbt(NbtCompound compoundTag) {
         compoundTag.putInt("ExtraHealth", this.extraHealth);
         compoundTag.putBoolean("NewPlayer", this.newPlayer);
     }
