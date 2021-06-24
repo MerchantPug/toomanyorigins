@@ -43,6 +43,6 @@
     "fabric": "*",
     "minecraft": "1.17.x",
     "java": ">=16",
-    "origins": ">=1.0.0"
+    "origins": ">=1.0.2"
   }
 }
