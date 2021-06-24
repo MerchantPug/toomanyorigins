@@ -15,12 +15,9 @@ import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.minecraft.util.Identifier;
 
 public class TooManyOriginsClient implements ClientModInitializer {
-    public static final Identifier PacketID = new Identifier(TooManyOrigins.MODID, "spawn_packet");
-
     @Override
     @Environment(EnvType.CLIENT)
     public void onInitializeClient() {
-
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_BEETROOTS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_CARROTS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.ATTACHED_WITHERED_MELON_STEM, RenderLayer.getCutout());
@@ -43,11 +40,9 @@ public class TooManyOriginsClient implements ClientModInitializer {
         }, TMOBlocks.ATTACHED_WITHERED_PUMPKIN_STEM, TMOBlocks.ATTACHED_WITHERED_MELON_STEM);
 
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
-            int i = state.get(WitheredStemBlock.AGE);
-            int j = i * 32;
-            int k = 255 - i * 8;
-            int l = i * 14;
-            return j << 16 | k << 8 | l;
+            int k = 255;
+            int l = 0;
+            return k << 8 | l;
         }, TMOBlocks.WITHERED_PUMPKIN_STEM, TMOBlocks.WITHERED_MELON_STEM);
     }
 }
