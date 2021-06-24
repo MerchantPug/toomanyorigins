@@ -1,5 +1,5 @@
 {
-  "type": "apugli:visual_timer",
+  "type": "toomanyorigins:visual_timer",
   "cooldown": 1800,
   "hud_render": {
     "should_render": true,

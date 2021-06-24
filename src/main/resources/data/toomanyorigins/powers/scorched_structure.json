@@ -1,4 +1,7 @@
 {
-  "type": "apugli:extra_soul_speed",
-  "modifier": 1
+  "type": "toomanyorigins:modify_soul_speed",
+  "modifier": {
+    "operation": "addition",
+    "value": 1
+  }
 }
