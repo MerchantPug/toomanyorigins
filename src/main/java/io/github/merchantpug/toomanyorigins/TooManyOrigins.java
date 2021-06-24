@@ -1,5 +1,6 @@
 package io.github.merchantpug.toomanyorigins;
 
+import io.github.apace100.apoli.util.NamespaceAlias;
 import io.github.merchantpug.toomanyorigins.registry.*;
 import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
@@ -17,5 +18,7 @@ public class TooManyOrigins implements ModInitializer {
 		TMOEntities.register();
 		TMOItems.register();
 		TMOPowers.init();
+
+		NamespaceAlias.addAlias(MODID, "apugli");
 	}
 }
