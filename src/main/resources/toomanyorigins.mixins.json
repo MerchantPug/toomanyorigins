@@ -7,11 +7,7 @@
     "BlockMixin",
     "DragonFireballEntityMixin",
     "EntityMixin",
-    "ExplosionMixin",
-    "LivingEntityMixin",
-    "PlayerEntityMixin",
-    "ServerPlayerEntityMixin",
-    "ServerWorldMixin"
+    "LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

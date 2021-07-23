@@ -12,6 +12,7 @@ import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import java.util.Iterator;
@@ -88,6 +89,11 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
             this.discard();
         } else {
             super.tick();
+            Vec3d vec3d = this.getVelocity();
+            double d = this.getX() + vec3d.x;
+            double e = this.getY() + vec3d.y;
+            double f = this.getZ() + vec3d.z;
+            this.world.addParticle(ParticleTypes.DRAGON_BREATH, d, e + 0.5D, f, (this.random.nextDouble() - this.random.nextDouble() + 0.2D) * 0.1D, 0.0D, (this.random.nextDouble() - this.random.nextDouble() + 0.2D) * 0.1D);
         }
     }
 }

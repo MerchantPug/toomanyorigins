@@ -18,19 +18,10 @@ public class TMOBlocks {
     public static final Block WITHERED_BEETROOTS = new WitheredBeetrootsBlock(FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
     public static final Block WITHERED_CARROTS = new WitheredCarrotsBlock(FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
     public static final Block WITHERED_POTATOES = new WitheredPotatoesBlock(FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
-    public static final Block WITHERED_MELON = new WitheredMelonBlock(FabricBlockSettings.of(Material.GOURD, MapColor.LIME).strength(1.0F).sounds(BlockSoundGroup.WOOD));
-    public static final Block ATTACHED_WITHERED_MELON_STEM = new AttachedWitheredStemBlock((WitheredGourdBlock)WITHERED_MELON, () -> {
-        return Items.MELON_SEEDS;
-    },(AbstractBlock.Settings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WOOD)));
-    public static final Block WITHERED_MELON_STEM = new WitheredStemBlock((WitheredGourdBlock)WITHERED_MELON, () -> {
+    public static final Block WITHERED_MELON_STEM = new WitheredStemBlock(() -> {
         return Items.MELON_SEEDS;
     },(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM)));
-    public static final Block CARVED_WITHERED_PUMPKIN = new CarvedWitheredPumpkinBlock(AbstractBlock.Settings.of(Material.GOURD, MapColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD).allowsSpawning((state, world, pos, type) -> true));
-    public static final Block WITHERED_PUMPKIN = new WitheredPumpkinBlock(FabricBlockSettings.of(Material.GOURD, MapColor.ORANGE).strength(1.0F).sounds(BlockSoundGroup.WOOD));
-    public static final Block ATTACHED_WITHERED_PUMPKIN_STEM = new AttachedWitheredStemBlock((WitheredGourdBlock)WITHERED_PUMPKIN, () -> {
-        return Items.PUMPKIN_SEEDS;
-    },(AbstractBlock.Settings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.WOOD)));
-    public static final Block WITHERED_PUMPKIN_STEM = new WitheredStemBlock((WitheredGourdBlock)WITHERED_PUMPKIN, () -> {
+        public static final Block WITHERED_PUMPKIN_STEM = new WitheredStemBlock(() -> {
         return Items.PUMPKIN_SEEDS;
     },(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM)));
     public static final Block WITHERED_WHEAT = new WitheredCropBlock(FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
@@ -39,12 +30,7 @@ public class TMOBlocks {
         register("withered_beetroots", WITHERED_BEETROOTS, false, null);
         register("withered_carrots", WITHERED_CARROTS, false, null);
         register("withered_potatoes", WITHERED_POTATOES, false, null);
-        register("withered_melon", WITHERED_MELON, false, null);
-        register("attached_withered_melon_stem", ATTACHED_WITHERED_MELON_STEM, false, null);
         register("withered_melon_stem", WITHERED_MELON_STEM, false, null);
-        register("carved_withered_pumpkin", CARVED_WITHERED_PUMPKIN, false, null);
-        register("withered_pumpkin", WITHERED_PUMPKIN, false, null);
-        register("attached_withered_pumpkin_stem", ATTACHED_WITHERED_PUMPKIN_STEM, false, null);
         register("withered_pumpkin_stem", WITHERED_PUMPKIN_STEM, false, null);
         register("withered_wheat", WITHERED_WHEAT, false, null);
     }

@@ -1,27 +1,6 @@
 {
   "variants": {
-    "age=0": {
-      "model": "toomanyorigins:block/withered_wheat"
-    },
-    "age=1": {
-      "model": "toomanyorigins:block/withered_wheat"
-    },
-    "age=2": {
-      "model": "toomanyorigins:block/withered_wheat"
-    },
-    "age=3": {
-      "model": "toomanyorigins:block/withered_wheat"
-    },
-    "age=4": {
-      "model": "toomanyorigins:block/withered_wheat"
-    },
-    "age=5": {
-      "model": "toomanyorigins:block/withered_wheat"
-    },
-    "age=6": {
-      "model": "toomanyorigins:block/withered_wheat"
-    },
-    "age=7": {
+    "": {
       "model": "toomanyorigins:block/withered_wheat"
     }
   }

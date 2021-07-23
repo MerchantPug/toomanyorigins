@@ -25,15 +25,20 @@ public abstract class BlockMixin extends AbstractBlock implements ItemConvertibl
         if (placer != null && TMOPowers.BLACK_THUMB.isActive(placer)) {
             if ((Block)(Object)this == Blocks.WHEAT) {
                 world.setBlockState(pos, TMOBlocks.WITHERED_WHEAT.getDefaultState());
-            } else if ((Block)(Object)this == Blocks.POTATOES) {
+            }
+            if ((Block)(Object)this == Blocks.POTATOES) {
                 world.setBlockState(pos, TMOBlocks.WITHERED_POTATOES.getDefaultState());
-            } else if ((Block)(Object)this == Blocks.CARROTS) {
+            }
+            if ((Block)(Object)this == Blocks.CARROTS) {
                 world.setBlockState(pos, TMOBlocks.WITHERED_CARROTS.getDefaultState());
-            } else if ((Block)(Object)this == Blocks.BEETROOTS) {
+            }
+            if ((Block)(Object)this == Blocks.BEETROOTS) {
                 world.setBlockState(pos, TMOBlocks.WITHERED_BEETROOTS.getDefaultState());
-            } else if ((Block)(Object)this == Blocks.MELON_STEM) {
+            }
+            if ((Block)(Object)this == Blocks.MELON_STEM) {
                 world.setBlockState(pos, TMOBlocks.WITHERED_MELON_STEM.getDefaultState());
-            } else if ((Block)(Object)this == Blocks.PUMPKIN_STEM) {
+            }
+            if ((Block)(Object)this == Blocks.PUMPKIN_STEM) {
                 world.setBlockState(pos, TMOBlocks.WITHERED_PUMPKIN_STEM.getDefaultState());
             }
         }

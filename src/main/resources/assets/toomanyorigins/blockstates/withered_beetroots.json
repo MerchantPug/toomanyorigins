@@ -1,15 +1,6 @@
 {
   "variants": {
-    "age=0": {
-      "model": "toomanyorigins:block/withered_beetroots"
-    },
-    "age=1": {
-      "model": "toomanyorigins:block/withered_beetroots"
-    },
-    "age=2": {
-      "model": "toomanyorigins:block/withered_beetroots"
-    },
-    "age=3": {
+    "": {
       "model": "toomanyorigins:block/withered_beetroots"
     }
   }

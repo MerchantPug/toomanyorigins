@@ -1,7 +1,5 @@
 package io.github.merchantpug.toomanyorigins.mixin;
 
-import io.github.merchantpug.toomanyorigins.TooManyOrigins;
-import io.github.merchantpug.toomanyorigins.registry.TMODamageSources;
 import io.github.merchantpug.toomanyorigins.registry.TMOEffects;
 import io.github.merchantpug.toomanyorigins.registry.TMOPowers;
 import net.minecraft.entity.*;
@@ -13,8 +11,6 @@ import net.minecraft.entity.mob.ZombieVillagerEntity;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
@@ -35,12 +31,6 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Shadow public abstract StatusEffectInstance getStatusEffect(StatusEffect effect);
 
-    @Shadow public abstract boolean isDead();
-
-    @Shadow public abstract float getHealth();
-
-    @Shadow public abstract float getMaxHealth();
-
     public LivingEntityMixin(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -49,7 +39,7 @@ public abstract class LivingEntityMixin extends Entity {
     private void zombifyVillagerOnDeath(DamageSource source, CallbackInfo ci) {
         if (!this.isRemoved()) {
             if ((LivingEntity)(Object)this instanceof VillagerEntity) {
-                if (this.hasStatusEffect(TMOEffects.ZOMBIFYING) && source.getName().equals("zombification")) {
+                if ((this.hasStatusEffect(TMOEffects.ZOMBIFYING) && source.getName().equals("zombification")) || TMOPowers.DEATHLY_BITE.get(source.getAttacker()).canUse()) {
                     VillagerEntity villagerEntity = (VillagerEntity)(Object)this;
                     ZombieVillagerEntity zombieVillagerEntity = villagerEntity.convertTo(EntityType.ZOMBIE_VILLAGER, false);
                     if (zombieVillagerEntity != null) {

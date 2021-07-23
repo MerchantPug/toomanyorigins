@@ -1,0 +1,22 @@
+{
+  "type": "origins:modify_food",
+  "item_condition": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "toomanyorigins:carrots"
+    }
+  },
+  "food_modifier": {
+    "name": "Increased food points",
+    "operation": "addition",
+    "value": 4.0
+  },
+  "entity_action": {
+    "type": "origins:apply_effect",
+    "effect": {
+      "effect": "minecraft:speed",
+      "duration": 160,
+      "amplifier": 0
+    }
+  }
+}

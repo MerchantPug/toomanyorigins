@@ -21,16 +21,22 @@
     "type": "origins:or",
     "conditions": [
       {
-        "type": "toomanyorigins:nearby_entities",
-        "entity_type": "minecraft:cat",
-        "player_box_multiplier": 5.0,
+        "type": "toomanyorigins:entity_in_radius",
+        "condition": {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:cat"
+        },
+        "radius": 7.0,
         "comparison": ">=",
         "compare_to": 1
       },
       {
-        "type": "toomanyorigins:nearby_entities",
-        "entity_type": "minecraft:ocelot",
-        "player_box_multiplier": 5.0,
+        "type": "toomanyorigins:entity_in_radius",
+        "condition": {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:ocelot"
+        },
+        "radius": 7.0,
         "comparison": ">=",
         "compare_to": 1
       }

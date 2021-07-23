@@ -1,0 +1,9 @@
+{
+  "type": "origins:prevent_sleep",
+  "condition": {
+    "type": "origins:brightness",
+    "comparison": ">=",
+    "compare_to": 0.2727273
+  },
+  "message": "toomanyorigins.hare_sleep_fail"
+}

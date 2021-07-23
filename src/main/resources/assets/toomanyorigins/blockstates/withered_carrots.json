@@ -1,27 +1,6 @@
 {
   "variants": {
-    "age=0": {
-      "model": "toomanyorigins:block/withered_carrots"
-    },
-    "age=1": {
-      "model": "toomanyorigins:block/withered_carrots"
-    },
-    "age=2": {
-      "model": "toomanyorigins:block/withered_carrots"
-    },
-    "age=3": {
-      "model": "toomanyorigins:block/withered_carrots"
-    },
-    "age=4": {
-      "model": "toomanyorigins:block/withered_carrots"
-    },
-    "age=5": {
-      "model": "toomanyorigins:block/withered_carrots"
-    },
-    "age=6": {
-      "model": "toomanyorigins:block/withered_carrots"
-    },
-    "age=7": {
+    "": {
       "model": "toomanyorigins:block/withered_carrots"
     }
   }

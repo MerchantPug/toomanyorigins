@@ -25,19 +25,11 @@
     ],
     "client": [
       "io.github.merchantpug.toomanyorigins.TooManyOriginsClient"
-    ],
-    "cardinal-components-entity": [
-      "io.github.merchantpug.toomanyorigins.registry.TMOComponents"
     ]
   },
   "mixins": [
     "toomanyorigins.mixins.json"
   ],
-  "custom": {
-    "cardinal-components": [
-      "toomanyorigins:extra_health"
-    ]
-  },
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",

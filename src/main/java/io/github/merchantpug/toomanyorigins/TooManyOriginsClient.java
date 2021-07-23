@@ -20,10 +20,8 @@ public class TooManyOriginsClient implements ClientModInitializer {
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_BEETROOTS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_CARROTS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.ATTACHED_WITHERED_MELON_STEM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_MELON_STEM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_POTATOES, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.ATTACHED_WITHERED_PUMPKIN_STEM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_PUMPKIN_STEM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_WHEAT, RenderLayer.getCutout());
 
@@ -31,14 +29,6 @@ public class TooManyOriginsClient implements ClientModInitializer {
                 (context) -> new FlyingItemEntityRenderer(context));
         EntityRendererRegistry.INSTANCE.register(TMOEntities.FIREBALL_AREA_EFFECT_CLOUD,
                 (context) -> new EmptyEntityRenderer(context));
-
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
-            int j = 7 * 32;
-            int k = 255 - 7 * 8;
-            int l = 7 * 14;
-            return j << 16 | k << 8 | l;
-        }, TMOBlocks.ATTACHED_WITHERED_PUMPKIN_STEM, TMOBlocks.ATTACHED_WITHERED_MELON_STEM);
-
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
             int k = 255;
             int l = 0;

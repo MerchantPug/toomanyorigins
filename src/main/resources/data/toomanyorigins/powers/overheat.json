@@ -17,6 +17,6 @@
     "continuous": false
   },
   "amount": 2.0,
-  "should_use_charged": true,
+  "use_charged": true,
   "speed": 1.0
 }
