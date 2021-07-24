@@ -91,9 +91,9 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
             super.tick();
             Vec3d vec3d = this.getVelocity();
             double d = this.getX() + vec3d.x;
-            double e = this.getY() + vec3d.y;
+            double e = this.getY() + (this.getHeight() / 2);
             double f = this.getZ() + vec3d.z;
-            this.world.addParticle(ParticleTypes.DRAGON_BREATH, d, e + 0.5D, f, (this.random.nextDouble() - this.random.nextDouble() + 0.2D) * 0.1D, 0.0D, (this.random.nextDouble() - this.random.nextDouble() + 0.2D) * 0.1D);
+            this.world.addParticle(ParticleTypes.DRAGON_BREATH, d, e, f, (this.random.nextDouble() - this.random.nextDouble() + 0.2D) * 0.1D, Math.abs(this.random.nextDouble() - this.random.nextDouble() + 0.2D) * 0.1D, (this.random.nextDouble() - this.random.nextDouble() + 0.2D) * 0.1D);
         }
     }
 }
