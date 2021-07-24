@@ -39,7 +39,7 @@ public abstract class LivingEntityMixin extends Entity {
     private void zombifyVillagerOnDeath(DamageSource source, CallbackInfo ci) {
         if (!this.isRemoved()) {
             if ((LivingEntity)(Object)this instanceof VillagerEntity) {
-                if ((this.hasStatusEffect(TMOEffects.ZOMBIFYING) && source.getName().equals("zombification")) || TMOPowers.DEATHLY_BITE.get(source.getAttacker()).canUse()) {
+                if ((this.hasStatusEffect(TMOEffects.ZOMBIFYING) && source.getName().equals("zombification")) || TMOPowers.DEATHLY_BITE.isActive(source.getAttacker()) && TMOPowers.DEATHLY_BITE.get(source.getAttacker()).canUse()) {
                     VillagerEntity villagerEntity = (VillagerEntity)(Object)this;
                     ZombieVillagerEntity zombieVillagerEntity = villagerEntity.convertTo(EntityType.ZOMBIE_VILLAGER, false);
                     if (zombieVillagerEntity != null) {
