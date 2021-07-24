@@ -1,6 +1,6 @@
 {
   "type": "toomanyorigins:bunny_hop",
-  "cooldown": 1200,
+  "cooldown": 900,
   "hud_render": {
     "should_render": true,
     "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
