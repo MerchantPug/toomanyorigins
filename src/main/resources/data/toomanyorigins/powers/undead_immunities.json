@@ -1,9 +1,0 @@
-{
-  "type": "origins:effect_immunity",
-  "effects": [
-    "minecraft:regeneration",
-    "minecraft:hunger",
-    "toomanyorigins:zombifying"
-  ],
-  "hidden": true
-}
