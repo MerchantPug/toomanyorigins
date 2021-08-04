@@ -8,7 +8,8 @@
 		"toomanyorigins:soul_shield_overlay",
 		"toomanyorigins:wither_immunity",
 		"toomanyorigins:unholy"
-	],
+		"toomanyorigins:undead"
+	],	
 	"icon": "minecraft:wither_rose",
 	"order": 3,
 	"impact": 2
