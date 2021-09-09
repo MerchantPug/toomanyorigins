@@ -40,3 +40,9 @@ publishing {
         // Add repositories to publish to here.
     }
 }
+
+afterEvaluate {
+    remapJar {
+        remapAccessWidener = false
+    }
+}
