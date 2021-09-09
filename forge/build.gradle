@@ -4,6 +4,7 @@ plugins {
 
 configurations {
     shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
+    dev
 }
 
 architectury {
@@ -13,12 +14,24 @@ architectury {
 
 loom {
     useFabricMixin = true
+    mixinConfigs = [
+        "toomanyorigins.mixins.json",
+        "toomanyorigins.forge.mixins.json"
+    ]
+    launches {
+        client {
+            property 'mixin.debug', 'true'
+        }
+    }
 }
 
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
     // Remove the next line if you don't want to depend on the API
     modApi "me.shedaniel:architectury-forge:${rootProject.architectury_version}"
+    modApi "me.shedaniel.cloth:cloth-config-forge:${rootProject.clothconfig_version}"
+    modApi "top.theillusivec4.caelus:caelus-forge:${rootProject.caelus_forge_version}"
+    modApi group: 'com.github.EdwinMindcraft.origins-architectury', name: 'Origins-1.16.5-forge', version: "0.7.3.9"
 
     implementation(project(path: ":common")) {
         transitive = false
@@ -38,9 +51,9 @@ processResources {
         expand "version": project.version
     }
 }
-
 shadowJar {
     exclude "fabric.mod.json"
+    exclude "toomanyorigins.accessWidener"
 
     configurations = [project.configurations.shadowCommon]
     classifier "dev-shadow"
@@ -61,9 +74,9 @@ java {
 }
 
 sourcesJar {
-    def commonSources = project(":common").sourcesJar
+    def commonSources = project(":common").remapSourcesJar
     dependsOn commonSources
-    from commonSources.archiveFile.map { zipTree(it) }
+    from zipTree(commonSources.output)
 }
 
 publishing {

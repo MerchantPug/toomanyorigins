@@ -1,0 +1,12 @@
+{
+  "powers": [
+    "toomanyorigins:overheat",
+    "toomanyorigins:conductor",
+    "toomanyorigins:blast_immunity",
+    "toomanyorigins:sneaking_steps",
+    "toomanyorigins:ailurophobia"
+  ],
+  "icon": "minecraft:gunpowder",
+  "order": 6,
+  "impact": 1
+}

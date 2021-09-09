@@ -1,0 +1,9 @@
+{
+  "origin.hare.dash": {
+    "subtitle": "subtitles.origin.hare.dash",
+    "sounds": [
+      "toomanyorigins:origin/hare/dash1",
+      "toomanyorigins:origin/hare/dash2"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "io.github.merchantpug.toomanyorigins.mixin.fabric",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "AttributePowerMixin",
+    "LivingEntityMixin"
+  ],
+  "client": [
+    "ClientPlayNetworkHandlerMixin"
+  ]
+}

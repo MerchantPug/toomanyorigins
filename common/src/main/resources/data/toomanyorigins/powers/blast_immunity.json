@@ -1,0 +1,10 @@
+{
+  "type": "origins:modify_damage_taken",
+  "damage_condition": {
+    "type": "toomanyorigins:explosive"
+  },
+  "modifier": {
+    "value": -1,
+    "operation": "multiply_total"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "origins:target_action_on_hit",
+  "entity_action": {
+    "type": "toomanyorigins:zombify_villager"
+  },
+  "cooldown": 0,
+  "damage_condition": {
+    "type": "origins:name",
+    "name": "player"
+  },
+  "target_condition": {
+    "type": "origins:status_effect",
+    "effect": "toomanyorigins:zombifying",
+    "max_duration": 85
+  },
+  "hidden": true
+}

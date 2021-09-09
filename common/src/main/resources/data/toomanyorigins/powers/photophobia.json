@@ -1,0 +1,9 @@
+{
+  "type": "origins:prevent_sleep",
+  "block_condition": {
+    "type": "origins:light_level",
+    "comparison": ">",
+    "compare_to": 10
+  },
+  "message": "toomanyorigins.hare_sleep_fail"
+}

@@ -1,0 +1,16 @@
+{
+  "type": "origins:self_action_when_hit",
+  "entity_action": {
+    "type": "origins:apply_effect",
+    "effect": {
+      "effect": "toomanyorigins:charged",
+      "amplifier": 0,
+      "duration": 24000
+    }
+  },
+  "damage_condition": {
+    "type": "origins:name",
+    "name": "lightningBolt"
+  },
+  "cooldown": 20
+}

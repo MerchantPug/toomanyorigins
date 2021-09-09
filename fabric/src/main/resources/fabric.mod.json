@@ -1,31 +1,39 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "toomanyorigins",
   "version": "${version}",
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "TooManyOrigins",
+  "description": "Origins addon that serves as an extension to the original mod.",
   "authors": [
-    "Me!"
+    "Pug",
+    "Omniv",
+    "PapaPepsmAn"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/toomanyorigins",
+    "sources": "https://github.com/MerchantPug/toomanyorigins/"
   },
-  "license": "Insert License Here",
-  "icon": "assets/examplemod/icon.png",
+  "license": "MIT",
+  "icon": "assets/toomanyorigins/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.examplemod.fabric.ExampleModFabric"
+      "io.github.merchantpug.toomanyorigins.fabric.TooManyOriginsFabric"
+    ],
+    "client": [
+      "io.github.merchantpug.toomanyorigins.fabric.TooManyOriginsFabricClient"
     ]
   },
+  "accessWidener": "toomanyorigins.accessWidener",
+  "mixins": [
+    "toomanyorigins.mixins.json",
+    "toomanyorigins.fabric.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": "*",
     "minecraft": ">=1.16.4",
-    "architectury": ">=1.1.55"
-  },
-  "suggests": {
-    "flamingo": "*"
+    "architectury": ">=1.10.142",
+    "origins": ">=0.7.3"
   }
 }

@@ -1,0 +1,15 @@
+{
+	"powers": [
+		"toomanyorigins:wither_toxins",
+		"origins:nether_spawn",
+		"toomanyorigins:black_thumb",
+		"toomanyorigins:scorched_structure",
+		"toomanyorigins:soul_shield",
+		"toomanyorigins:soul_shield_overlay",
+		"toomanyorigins:wither_immunity",
+		"toomanyorigins:unholy"
+	],
+	"icon": "minecraft:wither_rose",
+	"order": 3,
+	"impact": 2
+}

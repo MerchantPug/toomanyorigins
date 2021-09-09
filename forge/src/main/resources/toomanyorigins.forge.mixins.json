@@ -1,0 +1,14 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "io.github.merchantpug.toomanyorigins.mixin.forge",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "AttributePowerMixin",
+    "FireballAreaEffectCloudMixin",
+    "LivingEntityMixin",
+    "SmallDragonFireballEntityMixin"
+  ],
+  "client": [
+  ]
+}

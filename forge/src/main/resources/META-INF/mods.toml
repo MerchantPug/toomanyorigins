@@ -1,35 +1,42 @@
-modLoader = "javafml"
-loaderVersion = "[35,)"
-#issueTrackerURL = ""
-license = "Insert License Here"
+modLoader="javafml"
+loaderVersion="[35,)"
+license="MIT"
 
 [[mods]]
-modId = "examplemod"
+modId = "toomanyorigins"
+logoFile="tmo_icon.png"
+displayURL="https://github.com/MerchantPug/toomanyorigins/"
 version = "${version}"
-displayName = "Example Mod"
-authors = "Me!"
+displayName = "TooManyOrigins"
+authors = "Pug, Omniv, PapaPepsmAn"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+Origins addon that serves as an extension to the original mod.
 '''
-#logoFile = ""
 
-[[dependencies.examplemod]]
+[[dependencies.toomanyorigins]]
 modId = "forge"
 mandatory = true
 versionRange = "[35,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.examplemod]]
+[[dependencies.toomanyorigins]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.16.2,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.examplemod]]
+[[dependencies.toomanyorigins]]
 modId = "architectury"
 mandatory = true
 versionRange = "[1.1.55,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.toomanyorigins]]
+modId = "origins"
+mandatory = true
+versionRange = "[0.7.3.8,)"
 ordering = "AFTER"
 side = "BOTH"
