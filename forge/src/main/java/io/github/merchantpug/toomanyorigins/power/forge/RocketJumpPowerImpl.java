@@ -2,6 +2,7 @@ package io.github.merchantpug.toomanyorigins.power.forge;
 
 import io.github.merchantpug.toomanyorigins.registry.TMODamageSources;
 import io.github.merchantpug.toomanyorigins.registry.TMOEffects;
+import io.github.merchantpug.toomanyorigins.util.RaycastEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -33,7 +34,7 @@ public class RocketJumpPowerImpl {
             Box box = player.getBoundingBox().stretch(vec3d2).expand(1.0D);
             double entityReach = reach * reach;
             Predicate<Entity> predicate = (entityx) -> !entityx.isSpectator() && entityx.collides();
-            EntityHitResult entityHitResult = ProjectileUtil.raycast(player, vec3d, vec3d3, box, predicate, entityReach);
+            EntityHitResult entityHitResult = RaycastEntity.raycast(player, vec3d, vec3d3, box, predicate, entityReach);
             BlockHitResult blockHitResult = player.world.raycast(new RaycastContext(vec3d, vec3d3, RaycastContext.ShapeType.OUTLINE, RaycastContext.FluidHandling.NONE, player));
 
             boolean tmoCharged;

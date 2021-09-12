@@ -6,6 +6,7 @@ import io.github.apace100.origins.power.factory.action.ActionFactory;
 import io.github.apace100.origins.power.factory.condition.ConditionFactory;
 import io.github.apace100.origins.registry.ModRegistries;
 import io.github.merchantpug.toomanyorigins.registry.TMODamageSources;
+import io.github.merchantpug.toomanyorigins.util.RaycastEntity;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.pattern.CachedBlockPosition;
@@ -64,7 +65,7 @@ public class TMOEntityActionsImpl {
             Box box = entity.getBoundingBox().stretch(vec3d2).expand(1.0D);
             double d = reach * reach;
             Predicate<Entity> predicate = (entityx) -> !entityx.isSpectator() && entityx.collides();
-            EntityHitResult entityHitResult = ProjectileUtil.raycast(entity, vec3d, vec3d3, box, predicate, d);
+            EntityHitResult entityHitResult = RaycastEntity.raycast(entity, vec3d, vec3d3, box, predicate, d);
             BlockHitResult blockHitResult = entity.world.raycast(new RaycastContext(vec3d, vec3d3, RaycastContext.ShapeType.OUTLINE, RaycastContext.FluidHandling.NONE, entity));
             if (entityHitResult != null && entityHitResult.getEntity() instanceof LivingEntity && entityHitResult.getType() == HitResult.Type.ENTITY) {
                 if (targetAction != null) {
