@@ -7,7 +7,8 @@
 		"toomanyorigins:cannibalism",
 		"toomanyorigins:torn_lungs",
 		"toomanyorigins:zombify_hit",
-		"toomanyorigins:undead_immunities"
+		"toomanyorigins:undead_immunities",
+		"toomanyorigins:undead_callback"
 	],
 	"icon": "minecraft:rotten_flesh",
 	"order": 2,
