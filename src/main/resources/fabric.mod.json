@@ -4,15 +4,16 @@
   "version": "${version}",
 
   "name": "TooManyOrigins",
-  "description": "Origins addon that currently adds 4 origins.",
+  "description": "Origins addon that serves as an extension to the original mod.",
   "authors": [
     "Pug",
     "Omniv",
     "PapaPepsmAn"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/toomanyorigins",
-    "sources": "https://github.com/MerchantPug/toomanyorigins/"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/toomanyorigins/",
+    "sources": "https://github.com/MerchantPug/toomanyorigins/",
+    "issues": "https://github.com/MerchantPug/toomanyorigins/issues/"
   },
 
   "license": "MIT",
