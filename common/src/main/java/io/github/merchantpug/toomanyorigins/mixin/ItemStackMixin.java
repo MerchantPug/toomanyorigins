@@ -72,15 +72,13 @@ public abstract class ItemStackMixin implements ItemStackAccess {
             ItemStack itemStack = user.getStackInHand(hand);
             if (user.canConsume(this.getItemStackFoodComponent().isAlwaysEdible())) {
                 user.setCurrentHand(hand);
-                cir.setReturnValue(TypedActionResult.consume(itemStack));
                 if (this.getItem() instanceof BucketItem) {
                     BlockHitResult blockHitResult = Item.raycast(world, user, ((BucketItem)this.getItem()).fluid == Fluids.EMPTY ? RaycastContext.FluidHandling.SOURCE_ONLY : RaycastContext.FluidHandling.NONE);
                     if (blockHitResult.getType() == HitResult.Type.BLOCK) {
                         cir.setReturnValue(((ItemStack)(Object)this).getItem().use(world, user, hand));
                     }
                 }
-            } else {
-                cir.setReturnValue(((ItemStack)(Object)this).getItem().use(world, user, hand));
+                cir.setReturnValue(TypedActionResult.consume(itemStack));
             }
         }
     }
