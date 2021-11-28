@@ -15,11 +15,21 @@
     "continuous": false
   },
   "condition": {
-    "type": "toomanyorigins:looking_at",
+    "type": "toomanyorigins:raycast",
     "block_condition": {
       "type": "origins:in_tag",
       "tag": "toomanyorigins:lightable"
     },
     "inverted": true
-  }
+  },
+  "badges": [
+    {
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "origins.gui.badge.active"
+    },
+    {
+      "sprite": "toomanyorigins:textures/gui/badge/no_furnace.png",
+      "text": "toomanyorigins.gui.badge.no_furnace"
+    }
+  ]
 }

@@ -3,6 +3,7 @@ package io.github.merchantpug.toomanyorigins.blocks;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.RavagerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -16,11 +17,14 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
 import java.util.Random;
+import java.util.function.Supplier;
 
 public class WitheredCropBlock extends PlantBlock {
+    private final Supplier<Item> pickBlockItem;
 
-    public WitheredCropBlock(AbstractBlock.Settings settings) {
+    public WitheredCropBlock(Supplier<Item> pickBlockItem, Settings settings) {
         super(settings);
+        this.pickBlockItem = pickBlockItem;
         this.setDefaultState(this.stateManager.getDefaultState());
     }
 
@@ -56,11 +60,7 @@ public class WitheredCropBlock extends PlantBlock {
         super.onEntityCollision(state, world, pos, entity);
     }
 
-    protected ItemConvertible getSeedsItem() {
-        return Items.WHEAT_SEEDS;
-    }
-
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        return new ItemStack(this.getSeedsItem());
+        return new ItemStack(this.pickBlockItem.get());
     }
 }

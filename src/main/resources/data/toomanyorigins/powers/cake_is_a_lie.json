@@ -1,0 +1,35 @@
+{
+  "type": "origins:multiple",
+  "prevent_eating_items": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:food"
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "toomanyorigins:tall_grasses_grains"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "toomanyorigins:grasses"
+          },
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "prevent_eating_cake": {
+    "type": "origins:prevent_block_use",
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:cake"
+    }
+  }
+}

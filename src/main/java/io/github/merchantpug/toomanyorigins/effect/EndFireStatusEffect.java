@@ -6,18 +6,18 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.InstantStatusEffect;
-import net.minecraft.entity.effect.StatusEffectType;
+import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class EndFireStatusEffect extends InstantStatusEffect {
 
     public EndFireStatusEffect() {
-        super(StatusEffectType.HARMFUL,
+        super(StatusEffectCategory.HARMFUL,
                 0xc700c2);
     }
 
     @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
-        entity.damage(TMODamageSources.DRAGON_MAGIC, (float)(6 << amplifier));
+        entity.damage(DamageSource.MAGIC, (float)(6 << amplifier));
     }
 
     @Override

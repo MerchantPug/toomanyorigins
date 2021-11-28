@@ -1,0 +1,32 @@
+{
+  "type": "origins:multiple",
+  "edible_grasses": {
+    "type": "toomanyorigins:edible_item",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "toomanyorigins:grasses"
+      }
+    },
+    "food_component": {
+      "hunger": 6,
+      "saturation": 0.6,
+      "always_edible": true
+    }
+  },
+  "edible_tall_grasses_grains": {
+    "type": "toomanyorigins:edible_item",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "toomanyorigins:tall_grasses_grains"
+      }
+    },
+    "food_component": {
+      "hunger": 8,
+      "saturation": 0.8,
+      "always_edible": true
+    }
+  },
+  "hidden": true
+}

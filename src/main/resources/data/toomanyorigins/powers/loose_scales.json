@@ -1,0 +1,12 @@
+{
+  "type": "origins:modify_damage_taken",
+  "bientity_condition": {
+    "type": "toomanyorigins:rotation",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "modifier": {
+    "value": 0.4,
+    "operation": "multiply_base"
+  }
+}

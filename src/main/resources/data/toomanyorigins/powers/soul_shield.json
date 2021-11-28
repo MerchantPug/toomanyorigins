@@ -1,16 +1,34 @@
 {
-  "type": "origins:stacking_status_effect",
-  "min_stacks": 1,
-  "max_stacks": 3,
-  "duration_per_stack": 10,
-  "effects": [
-    {
-      "effect": "toomanyorigins:soul_shield",
-      "is_ambient": false,
-      "show_particles": false,
-      "show_icon": false
+  "type": "origins:multiple",
+  "projectile_immunity": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:projectile"
+    },
+    "modifier": {
+      "name": "Immunity to projectiles",
+      "operation": "multiply_total",
+      "value": -1
+    },
+    "condition": {
+      "type": "origins:relative_health",
+      "comparison": "<=",
+      "compare_to": 0.5
     }
-  ],
+  },
+  "wither_resistance": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "name": "Soul shield damage resisted",
+      "operation": "multiply_total",
+      "value": -0.2
+    },
+    "condition": {
+      "type": "origins:relative_health",
+      "comparison": "<=",
+      "compare_to": 0.5
+    }
+  },
   "condition": {
     "type": "origins:relative_health",
     "comparison": "<=",

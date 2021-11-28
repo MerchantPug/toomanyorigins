@@ -6,7 +6,6 @@
   "mixins": [
     "BlockMixin",
     "DragonFireballEntityMixin",
-    "EntityMixin",
     "LivingEntityMixin"
   ],
   "injectors": {

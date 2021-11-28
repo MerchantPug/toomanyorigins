@@ -12,32 +12,30 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import io.github.merchantpug.toomanyorigins.TooManyOrigins;
 
-import java.util.Map;
-
 public class TMOBlocks {
-    public static final Block WITHERED_BEETROOTS = new WitheredBeetrootsBlock(FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
-    public static final Block WITHERED_CARROTS = new WitheredCarrotsBlock(FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
-    public static final Block WITHERED_POTATOES = new WitheredPotatoesBlock(FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
-    public static final Block WITHERED_MELON_STEM = new WitheredStemBlock(() -> {
-        return Items.MELON_SEEDS;
-    },(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM)));
-        public static final Block WITHERED_PUMPKIN_STEM = new WitheredStemBlock(() -> {
-        return Items.PUMPKIN_SEEDS;
-    },(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM)));
-    public static final Block WITHERED_WHEAT = new WitheredCropBlock(FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+    public static final Block WITHERED_BEETROOTS = new WitheredCropBlock(() -> Items.BEETROOT_SEEDS, FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+    public static final Block WITHERED_CARROTS = new WitheredCropBlock(() -> Items.CARROT, FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+    public static final Block WITHERED_POTATOES = new WitheredCropBlock(() -> Items.POTATO, FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+    public static final Block WITHERED_MELON_STEM = new WitheredStemBlock(() -> Items.MELON_SEEDS, AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM));
+    public static final Block WITHERED_PUMPKIN_STEM = new WitheredStemBlock(() -> Items.PUMPKIN_SEEDS, AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM));
+    public static final Block WITHERED_WHEAT = new WitheredCropBlock(() -> Items.WHEAT_SEEDS, FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+
+    public static final Block WITHERED_CROP = new WitheredCropBlock(() -> TMOItems.WITHERED_CROP_SEEDS, FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+    public static final Block WITHERED_STEM = new WitheredCropBlock(() -> TMOItems.WITHERED_STEM_SEEDS, FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 
     public static void register() {
-        register("withered_beetroots", WITHERED_BEETROOTS, false, null);
-        register("withered_carrots", WITHERED_CARROTS, false, null);
-        register("withered_potatoes", WITHERED_POTATOES, false, null);
-        register("withered_melon_stem", WITHERED_MELON_STEM, false, null);
-        register("withered_pumpkin_stem", WITHERED_PUMPKIN_STEM, false, null);
-        register("withered_wheat", WITHERED_WHEAT, false, null);
+        register("withered_beetroots", WITHERED_BEETROOTS);
+        register("withered_carrots", WITHERED_CARROTS);
+        register("withered_potatoes", WITHERED_POTATOES);
+        register("withered_melon_stem", WITHERED_MELON_STEM);
+        register("withered_pumpkin_stem", WITHERED_PUMPKIN_STEM);
+        register("withered_wheat", WITHERED_WHEAT);
+        register("withered_crop", WITHERED_CROP);
+        register("withered_stem", WITHERED_STEM);
     }
 
-    public static void register(String blockName, Block block)
-    {
-        register(blockName, block, true, null);
+    public static void register(String blockName, Block block) {
+        register(blockName, block, false, null);
     }
 
     public static void register(String blockName, Block block, boolean withBlockItem, ItemGroup itemGroup) {

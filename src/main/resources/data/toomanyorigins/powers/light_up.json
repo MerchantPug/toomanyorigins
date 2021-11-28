@@ -21,21 +21,34 @@
       },
       {
         "type": "toomanyorigins:swing_hand",
-        "hand": "mainhand"
+        "hand": "MAIN_HAND"
       }
     ]
   },
   "condition": {
-    "type": "toomanyorigins:looking_at",
+    "type": "toomanyorigins:raycast",
     "block_condition": {
       "type": "origins:in_tag",
       "tag": "toomanyorigins:lightable"
     }
+  },
+  "key": {
+    "key": "key.origins.primary_active",
+    "continuous": false
   },
   "hud_render": {
     "should_render": true,
     "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
     "bar_index": 1
   },
-  "hidden": true
+  "badges": [
+    {
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "origins.gui.badge.active"
+    },
+    {
+      "sprite": "toomanyorigins:textures/gui/badge/furnace.png",
+      "text": "toomanyorigins.gui.badge.furnace"
+    }
+  ]
 }

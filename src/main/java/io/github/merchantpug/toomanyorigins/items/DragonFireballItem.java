@@ -22,7 +22,7 @@ public class DragonFireballItem extends Item {
         if (!world.isClient) {
             SmallDragonFireballEntity smallDragonFireballEntity = new SmallDragonFireballEntity(world, user);
             smallDragonFireballEntity.setItem(itemStack);
-            smallDragonFireballEntity.setProperties(user, user.getPitch(), user.getYaw(), 0.0F, 0.5F, 1.0F);
+            smallDragonFireballEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 0.5F, 1.0F);
             world.spawnEntity(smallDragonFireballEntity);
         }
 

@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.9-SNAPSHOT'
+	id 'fabric-loom' version '0.10-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -47,8 +47,10 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modImplementation "com.github.apace100:origins-fabric:${project.origins_version}"
-	modImplementation "com.github.MerchantPug:apugli:${project.apugli_version}"
+	modImplementation ("com.github.apace100:origins-fabric:${project.origins_version}")
+	modImplementation("com.github.MerchantPug:apugli:${project.apugli_version}") {
+		exclude module: 'pehkui'
+	}
 	include "com.github.MerchantPug:apugli:${project.apugli_version}"
 }
 

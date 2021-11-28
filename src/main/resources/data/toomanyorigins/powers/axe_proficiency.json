@@ -1,0 +1,65 @@
+{
+  "type": "origins:multiple",
+  "plus_one_axes": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "name": "Axe proficiency bonus",
+      "value": 1.0,
+      "operation": "addition"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "toomanyorigins:plus_one_axes"
+        }
+      }
+    }
+  },
+  "plus_two_axes": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "name": "Axe proficiency bonus",
+      "value": 2.0,
+      "operation": "addition"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "toomanyorigins:plus_two_axes"
+        }
+      }
+    }
+  },
+  "plus_one_axe_toolip": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "toomanyorigins:plus_one_axes"
+      }
+    },
+    "text": {
+      "translate": "gui.toomanyorigins.plus_one_attack_damage",
+      "color": "blue"
+    }
+  },
+  "plus_two_axe_toolip": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "toomanyorigins:plus_two_axes"
+      }
+    },
+    "text": {
+      "translate": "gui.toomanyorigins.plus_two_attack_damage",
+      "color": "blue"
+    }
+  }
+}
