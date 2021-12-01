@@ -8,9 +8,6 @@
   "origin.toomanyorigins.hisskin.name": "Hiss-kin",
   "origin.toomanyorigins.hisskin.description": "This evolutionary path of creeper learned to control their explosions as to not harm the environment around them as a get-away tactic.",
 
-  "origin.toomanyorigins.minotaur.name": "Minotaur",
-  "origin.toomanyorigins.minotaur.description": "Former protectors of the stronghold, the Minotaur now spend their days grazing on the grass covered fields.",
-
   "origin.toomanyorigins.swarm.name": "Swarm",
   "origin.toomanyorigins.swarm.description": "These hive independent group of bees choose to stick together to overcome the obstacles of the outside world.",
 
@@ -72,20 +69,6 @@
   "death.attack.overheat": "%1$s incinerated their insides",
   "death.attack.overheat.player": "%1$s incinerated their insides whilst trying to escape %2$s",
   "death.attack.overheat.player.item": "%1$s incinerated their insides whilst trying to escape %2$s using %3$s",
-
-  "power.toomanyorigins.mow_hay.name": "Mow Hay",
-  "power.toomanyorigins.mow_hay.description": "You are able to eat grass and wheat blocks while your mainhand is empty. You are also able to eat them in item form.",
-  "power.toomanyorigins.delicious_dairy.name": "Delicious Dairy",
-  "power.toomanyorigins.delicious_dairy.description": "You are able to milk yourself with your active ability. Other players are also able to milk you.",
-  "power.toomanyorigins.axe_proficiency.name": "Axe Proficiency",
-  "power.toomanyorigins.axe_proficiency.description": "You deal extra damage when attacking with an axe.",
-  "power.toomanyorigins.status_immunity.name": "Calcium",
-  "power.toomanyorigins.status_immunity.description": "You are immune to all status effects.",
-  "power.toomanyorigins.cake_is_a_lie.name": "The Cake is a Lie",
-  "power.toomanyorigins.cake_is_a_lie.description": "You are unable to digest normal sources of food.",
-
-  "gui.toomanyorigins.plus_one_attack_damage": "+1 Attack Damage",
-  "gui.toomanyorigins.plus_two_attack_damage": "+2 Attack Damage",
 
   "power.toomanyorigins.hover.name": "Hover",
   "power.toomanyorigins.hover.description": "Being made up of multiple bees, you are able to hover midair whenever you are falling.",

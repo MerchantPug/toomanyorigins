@@ -10,6 +10,6 @@
 		"origins:arthropod"
 	],
 	"icon": "minecraft:honeycomb",
-	"order": 2,
-	"impact": 2
+	"order": 7,
+	"impact": 1
 }

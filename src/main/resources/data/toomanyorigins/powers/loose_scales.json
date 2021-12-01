@@ -6,7 +6,7 @@
     "compare_to": 0
   },
   "modifier": {
-    "value": 0.4,
-    "operation": "multiply_base"
+    "value": 0.5,
+    "operation": "multiply_total"
   }
 }

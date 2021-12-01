@@ -16,7 +16,7 @@
     "key": "key.origins.primary_active",
     "continuous": false
   },
-  "modifier": {
+  "charged_modifier": {
     "operation": "multiply_base",
     "value": 1.5
   },
