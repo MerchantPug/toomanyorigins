@@ -6,7 +6,8 @@
 		"toomanyorigins:sugary_delicacy",
 		"toomanyorigins:large_leap",
 		"toomanyorigins:lightweight",
-		"origins:vegetarian"
+		"origins:vegetarian",
+		"toomanyorigins:lucky_footing"
 	],
 	"icon": "minecraft:rabbit_foot",
 	"order": 5,

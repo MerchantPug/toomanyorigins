@@ -2,7 +2,7 @@
   "type": "origins:modify_jump",
   "modifier": {
     "name": "Bonus jump force while sneaking",
-    "value": 1.0,
+    "value": 0.75,
     "operation": "multiply_base"
   },
   "condition": {

@@ -1,0 +1,18 @@
+{
+  "type": "origins:modify_damage_taken",
+  "damage_condition": {
+    "type": "origins:name",
+    "name": "fall"
+  },
+  "modifier": {
+    "name": "Immunity to projectiles",
+    "operation": "multiply_total",
+    "value": -1
+  },
+  "condition": {
+    "type": "origins:fall_distance",
+    "comparison": "<=",
+    "compare_to": 4
+  },
+  "hidden": true
+}
