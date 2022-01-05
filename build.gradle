@@ -48,9 +48,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	modImplementation ("com.github.apace100:origins-fabric:${project.origins_version}")
-	modImplementation("com.github.merchantpug:apugli:${project.apugli_version}") {
-		exclude module: 'pehkui'
-	}
+	modImplementation("com.github.merchantpug:apugli:${project.apugli_version}")
 	include "com.github.merchantpug:apugli:${project.apugli_version}"
 }
 
