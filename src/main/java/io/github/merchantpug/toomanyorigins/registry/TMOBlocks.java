@@ -21,7 +21,7 @@ public class TMOBlocks {
     public static final Block WITHERED_WHEAT = new WitheredCropBlock(() -> Items.WHEAT_SEEDS, FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
 
     public static final Block WITHERED_CROP = new WitheredCropBlock(() -> TMOItems.WITHERED_CROP_SEEDS, FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
-    public static final Block WITHERED_STEM = new WitheredCropBlock(() -> TMOItems.WITHERED_STEM_SEEDS, FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+    public static final Block WITHERED_STEM = new WitheredStemBlock(() -> TMOItems.WITHERED_STEM_SEEDS, FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM));
 
     public static void register() {
         register("withered_beetroots", WITHERED_BEETROOTS);
