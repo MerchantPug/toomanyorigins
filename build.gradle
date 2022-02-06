@@ -54,6 +54,10 @@ allprojects {
         }
     }
 
+    processResources {
+        from(rootProject.rootDir.absolutePath) include("EdwinMindcraftLICENSE")
+    }
+
     java {
         withSourcesJar()
     }

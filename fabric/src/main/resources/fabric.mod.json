@@ -24,7 +24,6 @@
       "io.github.merchantpug.toomanyorigins.fabric.TooManyOriginsFabricClient"
     ]
   },
-  "accessWidener": "toomanyorigins.accessWidener",
   "mixins": [
     "toomanyorigins.mixins.json",
     "toomanyorigins.fabric.mixins.json"

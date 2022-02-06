@@ -6,10 +6,6 @@ configurations {
     shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
 }
 
-loom {
-    accessWidener = file("src/main/resources/toomanyorigins.accessWidener")
-}
-
 architectury {
     platformSetupLoomIde()
     fabric()
@@ -31,6 +27,9 @@ dependencies {
     }
 
     modApi group: 'com.github.apace100', name: 'origins-fabric', version: "${rootProject.origins_fabric_version}"
+
+    modApi group: 'com.github.MerchantPug.apugli', name: 'Apugli-1.16.5-fabric', version: "${rootProject.apugli_version}"
+    include group: 'com.github.MerchantPug.apugli', name: 'Apugli-1.16.5-fabric', version: "${rootProject.apugli_version}"
 }
 
 processResources {

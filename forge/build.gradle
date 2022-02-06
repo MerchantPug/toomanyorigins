@@ -31,7 +31,8 @@ dependencies {
     modApi "me.shedaniel:architectury-forge:${rootProject.architectury_version}"
     modApi "me.shedaniel.cloth:cloth-config-forge:${rootProject.clothconfig_version}"
     modApi "top.theillusivec4.caelus:caelus-forge:${rootProject.caelus_forge_version}"
-    modApi group: 'com.github.EdwinMindcraft.origins-architectury', name: 'Origins-1.16.5-forge', version: "0.7.3.9"
+    modApi group: 'com.github.EdwinMindcraft.origins-architectury', name: 'Origins-1.16.5-forge', version: "${rootProject.origins_architectury_version}"
+    modApi group: 'com.github.MerchantPug.apugli', name: 'Apugli-1.16.5-forge', version: "${rootProject.apugli_version}"
 
     implementation(project(path: ":common")) {
         transitive = false
@@ -53,7 +54,6 @@ processResources {
 }
 shadowJar {
     exclude "fabric.mod.json"
-    exclude "toomanyorigins.accessWidener"
 
     configurations = [project.configurations.shadowCommon]
     classifier "dev-shadow"

@@ -6,9 +6,6 @@
   "mixins": [
     "AttributePowerMixin",
     "FireballAreaEffectCloudMixin",
-    "LivingEntityMixin",
     "SmallDragonFireballEntityMixin"
-  ],
-  "client": [
   ]
 }

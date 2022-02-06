@@ -235,7 +235,7 @@ public class FireballAreaEffectCloudEntity extends Entity {
                         this.affectedEntities.put(livingEntity, this.age + this.reapplicationDelay);
 
                         if (owner == null) {
-                            livingEntity.damage(TMODamageSources.DRAGON_MAGIC, damage);
+                            livingEntity.damage(TMODamageSources.dragonMagic(), damage);
                         } else {
                             if (livingEntity != owner) {
                                 livingEntity.damage(TMODamageSources.dragonMagic(this, getOwner()), damage);

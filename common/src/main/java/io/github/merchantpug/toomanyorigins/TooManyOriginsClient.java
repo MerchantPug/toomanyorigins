@@ -14,7 +14,7 @@ import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 
 public class TooManyOriginsClient {
     @Environment(EnvType.CLIENT)
-    public static void register() {
+    public static void init() {
         EntityRenderers.register(TMOEntities.SMALL_DRAGON_FIREBALL,
                 (dispatcher) -> new FlyingItemEntityRenderer<>(dispatcher, MinecraftClient.getInstance().getItemRenderer()));
         EntityRenderers.register(TMOEntities.FIREBALL_AREA_EFFECT_CLOUD, FireballAreaEffectCloudEntityRenderer::new);

@@ -9,8 +9,6 @@ import net.minecraft.entity.effect.StatusEffectType;
 import net.minecraft.entity.player.PlayerEntity;
 
 public class ZombifyingStatusEffect extends StatusEffect {
-    int mobUpdate;
-
     public ZombifyingStatusEffect() {
         super(StatusEffectType.HARMFUL,
                 0x274121);
@@ -19,17 +17,9 @@ public class ZombifyingStatusEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
         if (this == TMOEffects.ZOMBIFYING) {
             if (entity instanceof PlayerEntity) {
-                if (mobUpdate > 0) {
-                    entity.damage(TMODamageSources.ZOMBIFICATION, 1.0F);
-                    mobUpdate -= 1;
-                }
-                ((PlayerEntity)entity).addExhaustion(4F);
-            } else {
-                if (mobUpdate > 0) {
-                    entity.damage(TMODamageSources.ZOMBIFICATION, 2.0F);
-                    mobUpdate -= 1;
-                }
+                ((PlayerEntity) entity).addExhaustion(4.0F);
             }
+            entity.damage(TMODamageSources.zombification(), 1.0F);
         }
     }
 
@@ -41,10 +31,5 @@ public class ZombifyingStatusEffect extends StatusEffect {
         } else {
             return true;
         }
-    }
-
-    public void onApplied(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        mobUpdate = 2 >> amplifier;
-        super.onApplied(entity, attributes, amplifier);
     }
 }

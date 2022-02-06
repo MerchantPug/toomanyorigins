@@ -8,22 +8,17 @@ import org.apache.logging.log4j.Logger;
 public class TooManyOrigins {
     public static final String MODID = "toomanyorigins";
     public static final Logger LOGGER = LogManager.getLogger(TooManyOrigins.class);
+    public static String VERSION = "";
 
-    public static void register() {
-        LOGGER.info("TooManyOrigins is initializing. Enjoy!");
+    public static void init() {
+        LOGGER.info("Apugli " + VERSION + " is initializing. Powering up your powered up game.");
+
         TMOBlocks.register();
         TMOEffects.register();
         TMOEntities.register();
         TMOItems.register();
-        TMOPowers.init();
+        TMOPowers.register();
         TMOSounds.register();
-
-        TMOBlockActions.register();
-        TMOEntityActions.register();
-
-        TMOBlockConditions.register();
-        TMODamageConditions.register();
-        TMOEntityConditions.register();
     }
 
     public static Identifier identifier(String path) {

@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 public class TooManyOriginsFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        TooManyOriginsClient.register();
+        TooManyOriginsClient.init();
         TooManyOriginsClient.setup();
     }
 }

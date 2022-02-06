@@ -11,7 +11,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @OnlyIn(Dist.CLIENT)
 public class TooManyOriginsForgeClient {
     public static void initialize() {
-        TooManyOriginsClient.register();
+        TooManyOriginsClient.init();
         FMLJavaModLoadingContext.get().getModEventBus().addListener(TooManyOriginsForgeClient::clientSetup);
     }
 

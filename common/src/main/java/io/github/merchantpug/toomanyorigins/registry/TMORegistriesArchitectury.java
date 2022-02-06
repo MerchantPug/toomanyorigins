@@ -43,10 +43,6 @@ public class TMORegistriesArchitectury {
     public static final Registry<StatusEffect> STATUS_EFFECTS;
     public static final Registry<SoundEvent> SOUNDS;
 
-    public TMORegistriesArchitectury() {
-
-    }
-
     static {
         Registries registries = REGISTRIES.get();
         ITEMS = registries.get(net.minecraft.util.registry.Registry.ITEM_KEY);

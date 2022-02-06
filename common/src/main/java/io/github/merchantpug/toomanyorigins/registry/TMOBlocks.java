@@ -16,16 +16,16 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class TMOBlocks {
-    public static final Block WITHERED_BEETROOTS = new WitheredBeetrootsBlock(BlockProperties.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
-    public static final Block WITHERED_CARROTS = new WitheredCarrotsBlock(BlockProperties.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
-    public static final Block WITHERED_POTATOES = new WitheredPotatoesBlock(BlockProperties.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
-    public static final Block WITHERED_MELON_STEM = new WitheredStemBlock(() -> {
-        return Items.MELON_SEEDS;
-    },(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM)));
-        public static final Block WITHERED_PUMPKIN_STEM = new WitheredStemBlock(() -> {
-        return Items.PUMPKIN_SEEDS;
-    },(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM)));
-    public static final Block WITHERED_WHEAT = new WitheredCropBlock(BlockProperties.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+    public static final Block WITHERED_BEETROOTS = new WitheredCropBlock(() -> Items.BEETROOT_SEEDS, BlockProperties.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+    public static final Block WITHERED_CARROTS = new WitheredCropBlock(() -> Items.CARROT, BlockProperties.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+    public static final Block WITHERED_POTATOES = new WitheredCropBlock(() -> Items.POTATO, BlockProperties.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+    public static final Block WITHERED_MELON_STEM = new WitheredStemBlock(() -> Items.MELON_SEEDS, (AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM)));
+        public static final Block WITHERED_PUMPKIN_STEM = new WitheredStemBlock(() -> Items.PUMPKIN_SEEDS, (AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM)));
+    public static final Block WITHERED_WHEAT = new WitheredCropBlock(() -> Items.WHEAT_SEEDS, BlockProperties.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+
+    public static final Block WITHERED_CROP = new WitheredCropBlock(() -> TMOItems.WITHERED_CROP_SEEDS, BlockProperties.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP));
+    public static final Block WITHERED_STEM = new WitheredStemBlock(() -> TMOItems.WITHERED_STEM_SEEDS, BlockProperties.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.STEM));
+
 
     public static void register() {
         register("withered_beetroots", WITHERED_BEETROOTS, false, null);

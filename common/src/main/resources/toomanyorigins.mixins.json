@@ -4,21 +4,7 @@
   "package": "io.github.merchantpug.toomanyorigins.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "BlockMixin",
-    "CooldownPowerAccessor",
-    "DamageEnchantmentMixin",
     "DragonFireballEntityMixin",
-    "EntityMixin",
-    "ExplosionMixin",
-    "HungerManagerMixin",
-    "ItemConditionsMixin",
-    "ItemStackMixin",
     "LivingEntityMixin"
-  ],
-  "client": [
-    "AbstractClientPlayerEntityMixin",
-    "GameRendererMixin",
-    "LivingEntityRendererMixin",
-    "PlayerEntityRendererMixin"
   ]
 }
