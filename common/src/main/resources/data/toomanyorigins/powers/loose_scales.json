@@ -1,0 +1,7 @@
+{
+  "type": "toomanyorigins:simple_modifier",
+  "modifier": {
+    "value": 0.4,
+    "operation": "multiply_total"
+  }
+}

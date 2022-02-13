@@ -14,10 +14,9 @@ architectury {
 
 loom {
     useFabricMixin = true
-    mixinConfigs = [
-        "toomanyorigins.mixins.json",
-        "toomanyorigins.forge.mixins.json"
-    ]
+    mixinConfig "toomanyorigins.mixins.json"
+    mixinConfig "toomanyorigins.forge.mixins.json"
+
     launches {
         client {
             property 'mixin.debug', 'true'
@@ -52,8 +51,10 @@ processResources {
         expand "version": project.version
     }
 }
+
 shadowJar {
     exclude "fabric.mod.json"
+    exclude "apugli.accessWidener"
 
     configurations = [project.configurations.shadowCommon]
     classifier "dev-shadow"

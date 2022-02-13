@@ -18,7 +18,7 @@ public class ModifyDragonFireballPower extends ValueModifyingPower {
     private final float maxRadius;
     private final int duration;
 
-    public static PowerFactory<?> getFactory() {
+    public static PowerFactory<?> createFactory() {
         return new PowerFactory<>(new Identifier(TooManyOrigins.MODID, "modify_dragon_fireball"),
                 new SerializableData()
                         .add("damage_modifier", SerializableDataType.ATTRIBUTE_MODIFIER, null)

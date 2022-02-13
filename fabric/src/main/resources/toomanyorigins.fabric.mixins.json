@@ -4,7 +4,8 @@
   "package": "io.github.merchantpug.toomanyorigins.mixin.fabric",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "AttributePowerMixin"
+    "AttributePowerMixin",
+    "ServerPlayerEntityMixin"
   ],
   "client": [
     "ClientPlayNetworkHandlerMixin"

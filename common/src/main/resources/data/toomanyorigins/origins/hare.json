@@ -1,11 +1,13 @@
 {
 	"powers": [
 		"toomanyorigins:bunny_hop",
+		"toomanyorigins:bunny_hop_active",
 		"toomanyorigins:photophobia",
 		"toomanyorigins:sugary_delicacy",
 		"toomanyorigins:large_leap",
 		"toomanyorigins:lightweight",
-		"origins:vegetarian"
+		"origins:vegetarian",
+		"toomanyorigins:lucky_footing"
 	],
 	"icon": "minecraft:rabbit_foot",
 	"order": 5,

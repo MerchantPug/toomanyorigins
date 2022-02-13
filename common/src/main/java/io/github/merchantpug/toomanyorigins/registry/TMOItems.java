@@ -17,6 +17,6 @@ public class TMOItems {
     public static void register() {
         TMORegistriesArchitectury.ITEMS.register(new Identifier(TooManyOrigins.MODID, "dragon_fireball"), () -> DRAGON_FIREBALL);
         TMORegistriesArchitectury.ITEMS.register(new Identifier(TooManyOrigins.MODID, "withered_crop_seeds"), () -> WITHERED_CROP_SEEDS);
-        TMORegistriesArchitectury.ITEMS.register(new Identifier(TooManyOrigins.MODID, "withered_crop_seeds"), () -> WITHERED_STEM_SEEDS);
+        TMORegistriesArchitectury.ITEMS.register(new Identifier(TooManyOrigins.MODID, "withered_stem_seeds"), () -> WITHERED_STEM_SEEDS);
     }
 }

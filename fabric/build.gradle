@@ -6,15 +6,29 @@ configurations {
     shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
 }
 
+loom {
+    mixinConfigs = ["toomanyorigins.mixins.json", "toomanyorigins.fabric.mixins.json"]
+}
+
 architectury {
     platformSetupLoomIde()
     fabric()
 }
 
+repositories {
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://maven.terraformersmc.com/' }
+}
+
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
+    modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
     // Remove the next line if you don't want to depend on the API
     modApi "me.shedaniel:architectury-fabric:${rootProject.architectury_version}"
+    modImplementation group: 'com.github.apace100', name: 'origins-fabric', version: "${rootProject.origins_fabric_version}"
+
+    modImplementation group: 'com.github.MerchantPug.apugli', name: 'Apugli-1.16.5-fabric', version: "${rootProject.apugli_version}"
+    include group: 'com.github.MerchantPug.apugli', name: 'Apugli-1.16.5-fabric', version: "${rootProject.apugli_version}"
 
     implementation(project(path: ":common")) {
         transitive = false
@@ -25,11 +39,6 @@ dependencies {
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) {
         transitive = false
     }
-
-    modApi group: 'com.github.apace100', name: 'origins-fabric', version: "${rootProject.origins_fabric_version}"
-
-    modApi group: 'com.github.MerchantPug.apugli', name: 'Apugli-1.16.5-fabric', version: "${rootProject.apugli_version}"
-    include group: 'com.github.MerchantPug.apugli', name: 'Apugli-1.16.5-fabric', version: "${rootProject.apugli_version}"
 }
 
 processResources {
@@ -62,7 +71,7 @@ java {
 sourcesJar {
     def commonSources = project(":common").remapSourcesJar
     dependsOn commonSources
-    exclude 'toomanyorigins.accessWidener'
+    from zipTree(commonSources.output)
 }
 
 publishing {
@@ -84,3 +93,4 @@ publishing {
         // Add repositories to publish to here.
     }
 }
+

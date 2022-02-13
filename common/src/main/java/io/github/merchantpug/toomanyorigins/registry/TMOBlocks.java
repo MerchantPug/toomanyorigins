@@ -34,6 +34,8 @@ public class TMOBlocks {
         register("withered_melon_stem", WITHERED_MELON_STEM, false, null);
         register("withered_pumpkin_stem", WITHERED_PUMPKIN_STEM, false, null);
         register("withered_wheat", WITHERED_WHEAT, false, null);
+        register("withered_crop", WITHERED_CROP, false, null);
+        register("withered_stem", WITHERED_STEM, false, null);
     }
 
     public static void register(String blockName, Block block)

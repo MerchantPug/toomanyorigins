@@ -15,7 +15,7 @@
     "continuous": false
   },
   "condition": {
-    "type": "toomanyorigins:looking_at",
+    "type": "toomanyorigins:raycast",
     "block_condition": {
       "type": "origins:in_tag",
       "tag": "toomanyorigins:lightable"

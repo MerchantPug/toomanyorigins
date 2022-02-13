@@ -1,5 +1,10 @@
 {
-  "type": "toomanyorigins:entity_group",
-  "group": "smiteable",
+  "type": "apugli:modify_enchantment_damage_taken",
+  "enchantment": "minecraft:smite",
+  "base_value": "2.5",
+  "modifier": {
+    "operation": "addition",
+    "value": 2.5
+  },
   "hidden": true
 }

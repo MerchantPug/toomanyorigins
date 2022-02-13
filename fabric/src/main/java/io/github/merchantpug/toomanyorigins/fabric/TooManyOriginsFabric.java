@@ -8,9 +8,9 @@ import net.fabricmc.loader.api.FabricLoader;
 public class TooManyOriginsFabric implements ModInitializer {
     @Override
     public void onInitialize() {
-        TooManyOrigins.init();
-        FabricLoader.getInstance().getModContainer(Apugli.MODID).ifPresent(modContainer -> {
+        FabricLoader.getInstance().getModContainer(TooManyOrigins.MODID).ifPresent(modContainer -> {
             TooManyOrigins.VERSION = modContainer.getMetadata().getVersion().getFriendlyString();
         });
+        TooManyOrigins.init();
     }
 }

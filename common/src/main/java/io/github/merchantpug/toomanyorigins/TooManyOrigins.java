@@ -1,5 +1,6 @@
 package io.github.merchantpug.toomanyorigins;
 
+import io.github.merchantpug.apugli.util.ApugliNamespaceAlias;
 import io.github.merchantpug.toomanyorigins.registry.*;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
@@ -11,7 +12,7 @@ public class TooManyOrigins {
     public static String VERSION = "";
 
     public static void init() {
-        LOGGER.info("Apugli " + VERSION + " is initializing. Powering up your powered up game.");
+        LOGGER.info("TooManyOrigins " + VERSION + " is initializing. Enjoy!");
 
         TMOBlocks.register();
         TMOEffects.register();
@@ -19,6 +20,8 @@ public class TooManyOrigins {
         TMOItems.register();
         TMOPowers.register();
         TMOSounds.register();
+
+        ApugliNamespaceAlias.addAlias("toomanyorigins");
     }
 
     public static Identifier identifier(String path) {

@@ -30,7 +30,7 @@ side = "BOTH"
 [[dependencies.toomanyorigins]]
 modId = "architectury"
 mandatory = true
-versionRange = "[1.1.55,)"
+versionRange = "[1.10.142,)"
 ordering = "AFTER"
 side = "BOTH"
 
@@ -38,5 +38,12 @@ side = "BOTH"
 modId = "origins"
 mandatory = true
 versionRange = "[0.7.3.8,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.toomanyorigins]]
+modId = "apugli"
+mandatory = true
+versionRange = "[1.3.0,)"
 ordering = "AFTER"
 side = "BOTH"

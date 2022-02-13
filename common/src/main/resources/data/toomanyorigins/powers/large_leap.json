@@ -1,12 +1,11 @@
 {
   "type": "origins:modify_jump",
   "modifier": {
-    "name": "Bonus jump force while standing still",
-    "value": 0.5,
+    "name": "Bonus jump force while sneaking",
+    "value": 0.75,
     "operation": "multiply_base"
   },
   "condition": {
-    "type": "origins:moving",
-    "inverted": true
+    "type": "origins:sneaking"
   }
 }

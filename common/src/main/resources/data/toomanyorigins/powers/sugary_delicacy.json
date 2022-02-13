@@ -1,22 +1,22 @@
 {
   "type": "origins:modify_food",
+  "entity_action": {
+    "type": "origins:change_resource",
+    "resource": "toomanyorigins:bunny_hop",
+    "change": 15,
+    "operation": "set"
+  },
   "item_condition": {
     "type": "origins:ingredient",
     "ingredient": {
       "tag": "toomanyorigins:carrots"
     }
   },
-  "food_modifier": {
-    "name": "Increased food points",
-    "operation": "addition",
-    "value": 4.0
-  },
-  "entity_action": {
-    "type": "origins:apply_effect",
-    "effect": {
-      "effect": "minecraft:speed",
-      "duration": 160,
-      "amplifier": 0
-    }
+  "always_edible": true,
+  "condition": {
+    "type": "origins:resource",
+    "resource": "toomanyorigins:bunny_hop",
+    "comparison": "<",
+    "compare_to": 15
   }
 }

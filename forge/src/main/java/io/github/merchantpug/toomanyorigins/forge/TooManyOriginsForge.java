@@ -1,5 +1,6 @@
 package io.github.merchantpug.toomanyorigins.forge;
 
+import io.github.apace100.origins.networking.forge.ForgeNetworkHandler;
 import me.shedaniel.architectury.platform.forge.EventBuses;
 import io.github.merchantpug.toomanyorigins.TooManyOrigins;
 import net.minecraftforge.api.distmarker.Dist;
@@ -21,5 +22,10 @@ public class TooManyOriginsForge {
         TooManyOrigins.init();
 
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> TooManyOriginsForgeClient::initialize);
+    }
+
+    static {
+        ForgeNetworkHandler.initializeNetwork();
+        Class<?>[] init = new Class[]{TooManyOriginsForgeEventHandler.class};
     }
 }

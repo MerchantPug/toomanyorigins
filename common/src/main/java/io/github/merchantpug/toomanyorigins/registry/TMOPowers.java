@@ -13,9 +13,11 @@ import net.minecraft.util.Identifier;
 public class TMOPowers {
 
     public static final PowerType<TargetActionOnHitPower> DEATHLY_BITE = new PowerTypeReference(new Identifier(TooManyOrigins.MODID, "deathly_bite"));
+    public static final PowerType<SimpleValueModifierPower> LOOSE_SCALES = new PowerTypeReference(TooManyOrigins.identifier("loose_scales"));
 
     public static void register() {
-        register(ModifyDragonFireballPower.getFactory());
+        register(ModifyDragonFireballPower.createFactory());
+        register(SimpleValueModifierPower.createFactory());
     }
 
     @ExpectPlatform

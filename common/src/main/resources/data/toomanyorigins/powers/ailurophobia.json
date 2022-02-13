@@ -26,7 +26,7 @@
           "type": "origins:entity_type",
           "entity_type": "minecraft:cat"
         },
-        "radius": 7.0,
+        "radius": 15.0,
         "comparison": ">=",
         "compare_to": 1
       },
@@ -36,7 +36,7 @@
           "type": "origins:entity_type",
           "entity_type": "minecraft:ocelot"
         },
-        "radius": 7.0,
+        "radius": 15.0,
         "comparison": ">=",
         "compare_to": 1
       }

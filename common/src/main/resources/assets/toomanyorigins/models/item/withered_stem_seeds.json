@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "toomanyorigins:item/withered_stem_seeds"
+  }
+}

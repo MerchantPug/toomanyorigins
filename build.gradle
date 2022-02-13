@@ -9,15 +9,12 @@ architectury {
     minecraft = rootProject.minecraft_version
 }
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(8)
-
 subprojects {
     apply plugin: "forgified-fabric-loom"
 
     loom {
         silentMojangMappingsLicense()
     }
-
     dependencies {
         minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
         // The following line declares the mojmap mappings, you may use other mappings as well
@@ -31,12 +28,6 @@ allprojects {
     apply plugin: "java"
     apply plugin: "architectury-plugin"
     apply plugin: "maven-publish"
-
-    java {
-        toolchain {
-            languageVersion = JavaLanguageVersion.of(8)
-        }
-    }
 
     archivesBaseName = rootProject.archives_base_name
     version = rootProject.mod_version
@@ -52,10 +43,33 @@ allprojects {
         flatDir {
             dir rootProject.file('libs')
         }
+        mavenLocal()
     }
 
     processResources {
-        from(rootProject.rootDir.absolutePath) include("EdwinMindcraftLICENSE")
+        def environment = System.getenv("ENVIRONMENT");
+        if (environment != "production") {
+            from(rootProject.rootDir.absolutePath + "/testdata") { into 'data' }
+            from(rootProject.rootDir.absolutePath + "/testassets") { into 'assets' }
+        }
+    }
+
+    tasks.named("processResources") {
+        inputs.property("environment") {
+            System.getenv("ENVIRONMENT") || null
+        }
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+
+        // The Minecraft launcher currently installs Java 8 for users, so your mod probably wants to target Java 8 too
+        // JDK 9 introduced a new way of specifying this that will make sure no newer classes or methods are used.
+        // We'll use that if it's available, but otherwise we'll use the older option.
+        def targetVersion = 8
+        if (JavaVersion.current().isJava9Compatible()) {
+            options.release = targetVersion
+        }
     }
 
     java {

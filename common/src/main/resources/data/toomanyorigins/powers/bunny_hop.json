@@ -1,18 +1,12 @@
 {
   "type": "toomanyorigins:bunny_hop",
-  "cooldown": 900,
+  "min": 0,
+  "max": 60,
   "hud_render": {
     "should_render": true,
     "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
-    "bar_index": 6
+    "bar_index": 7
   },
-  "key": {
-    "key": "key.origins.primary_active",
-    "continuous": false
-  },
-  "increase_per_tick": 0.000375,
-  "ability_velocity": 15,
-  "max_velocity": 0.015,
-  "tick_rate": 10,
-  "sound": "toomanyorigins:origin.hare.dash"
+  "increase_per_tick": 0.00025,
+  "tick_rate": 10
 }

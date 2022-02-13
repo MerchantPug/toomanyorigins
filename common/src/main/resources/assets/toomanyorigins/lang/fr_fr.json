@@ -61,9 +61,6 @@
   "death.attack.overheat": "%1$s a été incinéré de l'intérieur",
   "death.attack.overheat.player": "%1$s a été incinéré de l'intérieur en essayant de fuir %2$s",
   "death.attack.overheat.player.item": "%1$s a été incinéré de l'intérieur en essayant de fuir %2$s par %3$s",
-  "death.attack.jumpExplosion": "%1$s a explopser",
-  "death.attack.jumpExplosion.player": "%1$s c'est fais exploser par %2$s",
-  "death.attack.jumpExplosion.player.item": "%1$s c'est fais exploser par %2$s en utilisant %3$s",
 
   "power.toomanyorigins.deathly_bite.name": "Morsure Mortelle",
   "power.toomanyorigins.deathly_bite.description": "Ton attaque de melée inflige l'effet Zombifié sur mes entités qui ne sont pas des morts vivants durant un petit momentn. Frapper n'importe quelle villageois qui a cet effet le zombifie.",
@@ -80,8 +77,6 @@
   "death.attack.zombification": "%1$s a pourri",
   "death.attack.zombification.player": "%1$s a pourri en essayant d'échapper à %2$s",
   "death.attack.zombification.player.item": "%1$s a pourri en essayant d'échapper à %2$s par %3$s",
-  "death.attack.indirectZombification": "%1$s c'est fais infecté par %2$s",
-  "death.attack.indirectZombification.item": "%1$s c'est fais infecté par %2$s en utilisant %3$s",
 
   "power.toomanyorigins.black_thumb.name": "Pouce Noir",
   "power.toomanyorigins.black_thumb.description": "Tu répend la pourriture sur toutes les cultures de l'Overworld que tu plante, les empéchants de pousser.",
