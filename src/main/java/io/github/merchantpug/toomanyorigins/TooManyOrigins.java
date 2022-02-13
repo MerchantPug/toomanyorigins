@@ -28,7 +28,7 @@ public class TooManyOrigins implements ModInitializer {
 		TMOEffects.register();
 		TMOEntities.register();
 		TMOItems.register();
-		TMOPowers.init();
+		TMOPowers.register();
 		TMOSounds.register();
 
 		NamespaceAlias.addAlias(MODID, "apugli");

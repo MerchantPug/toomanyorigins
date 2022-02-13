@@ -1,12 +1,14 @@
 {
   "type": "origins:modify_damage_taken",
   "bientity_condition": {
-    "type": "toomanyorigins:rotation",
+    "type": "origins:relative_rotation",
+    "actor_rotation": "head",
+    "target_rotation": "body",
     "comparison": ">",
     "compare_to": 0
   },
   "modifier": {
-    "value": 0.5,
+    "value": 0.4,
     "operation": "multiply_total"
   }
 }

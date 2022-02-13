@@ -18,7 +18,7 @@
   },
   "charged_modifier": {
     "operation": "multiply_base",
-    "value": 1.5
+    "value": 0.5
   },
   "amount": 2.0,
   "use_charged": true,

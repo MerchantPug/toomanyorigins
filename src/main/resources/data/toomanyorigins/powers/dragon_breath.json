@@ -28,7 +28,7 @@
       "text": "origins.gui.badge.active"
     },
     {
-      "sprite": "toomanyorigins:textures/gui/badge/no_furnace.png",
+      "sprite": "origins:textures/gui/badge/info.png",
       "text": "toomanyorigins.gui.badge.no_furnace"
     }
   ]
