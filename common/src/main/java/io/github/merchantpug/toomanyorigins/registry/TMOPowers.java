@@ -17,6 +17,7 @@ public class TMOPowers {
 
     public static void register() {
         register(ModifyDragonFireballPower.createFactory());
+        register(PreventShaderTogglePower.createFactory());
         register(SimpleValueModifierPower.createFactory());
     }
 

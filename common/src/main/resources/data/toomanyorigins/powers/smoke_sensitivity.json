@@ -41,6 +41,10 @@
       "radius": 5.0
     }
   },
+  "prevent_shader_disable": {
+    "type": "toomanyorigins:prevent_shader_toggle",
+    "shader": "minecraft:shaders/post/blobs2.json"
+  },
   "force_smoke_render": {
     "type": "toomanyorigins:force_particle_render",
     "particles": [
