@@ -25,6 +25,7 @@ SOFTWARE.
 package io.github.merchantpug.toomanyorigins.registry;
 
 import io.github.apace100.origins.power.factory.PowerFactory;
+import io.github.apace100.origins.registry.ModRegistriesArchitectury;
 import io.github.merchantpug.toomanyorigins.TooManyOrigins;
 import me.shedaniel.architectury.registry.Registries;
 import me.shedaniel.architectury.registry.Registry;
@@ -33,9 +34,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.Item;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.Lazy;
-import net.minecraft.util.registry.RegistryKey;
 
 public class TMORegistriesArchitectury {
     public static final Lazy<Registries> REGISTRIES = new Lazy<>(() -> Registries.get(TooManyOrigins.MODID));
@@ -47,9 +46,10 @@ public class TMORegistriesArchitectury {
     public static final Registry<StatusEffect> STATUS_EFFECTS;
     public static final Registry<SoundEvent> SOUNDS;
 
+    // TODO - Get power factory registry outside of using the same one without it having a chance of crashing the game
     static {
         Registries registries = REGISTRIES.get();
-        POWER_FACTORY = registries.get(RegistryKey.ofRegistry(new Identifier("origins", "power_factory")));
+        POWER_FACTORY = ModRegistriesArchitectury.POWER_FACTORY;
         ITEMS = registries.get(net.minecraft.util.registry.Registry.ITEM_KEY);
         BLOCKS = registries.get(net.minecraft.util.registry.Registry.BLOCK_KEY);
         ENTITY_TYPES = registries.get(net.minecraft.util.registry.Registry.ENTITY_TYPE_KEY);
