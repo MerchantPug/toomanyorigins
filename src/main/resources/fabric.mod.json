@@ -36,6 +36,6 @@
     "fabric": ">=0.43.0",
     "minecraft": "1.18.x",
     "java": ">=17",
-    "origins": ">=1.2.0"
+    "origins": ">=1.3.1"
   }
 }
