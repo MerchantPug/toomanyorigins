@@ -8,20 +8,6 @@
         "action": {
           "type": "toomanyorigins:bonemeal"
         },
-        "z": 1
-      },
-      {
-        "type": "origins:offset",
-        "action": {
-          "type": "toomanyorigins:bonemeal"
-        },
-        "z": -1
-      },
-      {
-        "type": "origins:offset",
-        "action": {
-          "type": "toomanyorigins:bonemeal"
-        },
         "x": 1
       },
       {
@@ -30,6 +16,20 @@
           "type": "toomanyorigins:bonemeal"
         },
         "x": -1
+      },
+      {
+        "type": "origins:offset",
+        "action": {
+          "type": "toomanyorigins:bonemeal"
+        },
+        "z": 1
+      },
+      {
+        "type": "origins:offset",
+        "action": {
+          "type": "toomanyorigins:bonemeal"
+        },
+        "z": -1
       }
     ]
   },
