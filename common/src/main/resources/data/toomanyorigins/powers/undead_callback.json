@@ -1,16 +1,14 @@
 {
   "type": "origins:action_on_callback",
   "entity_action_chosen": {
-    "type": "origins:change_resource",
+    "type": "toomanyorigins:set_resource",
     "resource": "toomanyorigins:burn_timer",
-    "change": 0,
-    "operation": "SET"
+    "value": 0
   },
   "entity_action_respawned": {
-    "type": "origins:change_resource",
+    "type": "toomanyorigins:set_resource",
     "resource": "toomanyorigins:burn_timer",
-    "change": 0,
-    "operation": "SET"
+    "value": 0
   },
   "hidden": true
 }
