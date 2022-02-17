@@ -22,35 +22,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-package io.github.merchantpug.toomanyorigins.registry;
+package io.github.merchantpug.toomanyorigins.registry.forge;
 
+import io.github.apace100.origins.Origins;
 import io.github.apace100.origins.power.factory.PowerFactory;
-import io.github.apace100.origins.registry.ModRegistriesArchitectury;
 import io.github.merchantpug.toomanyorigins.TooManyOrigins;
 import me.shedaniel.architectury.registry.Registries;
 import me.shedaniel.architectury.registry.Registry;
-import net.minecraft.block.Block;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.item.Item;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Lazy;
+import net.minecraft.util.registry.RegistryKey;
 
-public class TMORegistriesArchitectury {
+public class TMORegistriesArchitecturyForge {
     public static final Lazy<Registries> REGISTRIES = new Lazy<>(() -> Registries.get(TooManyOrigins.MODID));
 
-    public static final Registry<Item> ITEMS;
-    public static final Registry<Block> BLOCKS;
-    public static final Registry<EntityType<?>> ENTITY_TYPES;
-    public static final Registry<StatusEffect> STATUS_EFFECTS;
-    public static final Registry<SoundEvent> SOUNDS;
+    public static final Registry<PowerFactory<?>> POWER_FACTORY;
 
     static {
         Registries registries = REGISTRIES.get();
-        ITEMS = registries.get(net.minecraft.util.registry.Registry.ITEM_KEY);
-        BLOCKS = registries.get(net.minecraft.util.registry.Registry.BLOCK_KEY);
-        ENTITY_TYPES = registries.get(net.minecraft.util.registry.Registry.ENTITY_TYPE_KEY);
-        STATUS_EFFECTS = registries.get(net.minecraft.util.registry.Registry.MOB_EFFECT_KEY);
-        SOUNDS = registries.get(net.minecraft.util.registry.Registry.SOUND_EVENT_KEY);
+        POWER_FACTORY = registries.get(RegistryKey.ofRegistry(Origins.identifier("power_factory")));
     }
 }
