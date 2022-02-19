@@ -9,6 +9,6 @@ public class TMOSounds {
     public static final SoundEvent ORIGIN_HARE_DASH = new SoundEvent(new Identifier("toomanyorigins", "origin.hare.dash"));
 
     public static void register() {
-        Registry.register(Registry.SOUND_EVENT, new Identifier("toomanyorigins", "origin.hare.dash"), ORIGIN_HARE_DASH);
+        Registry.register(Registry.SOUND_EVENT, ORIGIN_HARE_DASH.getId(), ORIGIN_HARE_DASH);
     }
 }
