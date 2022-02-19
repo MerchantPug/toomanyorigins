@@ -8,7 +8,7 @@
     "compare_to": 0
   },
   "modifier": {
-    "value": 0.4,
+    "value": 0.35,
     "operation": "multiply_total"
   }
 }
