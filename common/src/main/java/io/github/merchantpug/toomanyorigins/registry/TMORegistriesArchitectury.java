@@ -24,8 +24,6 @@ SOFTWARE.
 
 package io.github.merchantpug.toomanyorigins.registry;
 
-import io.github.apace100.origins.power.factory.PowerFactory;
-import io.github.apace100.origins.registry.ModRegistriesArchitectury;
 import io.github.merchantpug.toomanyorigins.TooManyOrigins;
 import me.shedaniel.architectury.registry.Registries;
 import me.shedaniel.architectury.registry.Registry;
