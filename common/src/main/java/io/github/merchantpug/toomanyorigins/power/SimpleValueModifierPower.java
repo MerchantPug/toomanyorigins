@@ -1,6 +1,5 @@
 package io.github.merchantpug.toomanyorigins.power;
 
-import io.github.apace100.origins.power.Power;
 import io.github.apace100.origins.power.PowerType;
 import io.github.apace100.origins.power.ValueModifyingPower;
 import io.github.apace100.origins.power.factory.PowerFactory;
@@ -15,24 +14,21 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class SimpleValueModifierPower extends ValueModifyingPower {
     public static PowerFactory<?> createFactory() {
         return new PowerFactory<>(new Identifier(TooManyOrigins.MODID, "simple_modifier"),
                 new SerializableData()
-                        .add("damage_modifier", SerializableDataType.ATTRIBUTE_MODIFIER, null)
-                        .add("damage_modifiers", SerializableDataType.ATTRIBUTE_MODIFIERS, null),
+                        .add("modifier", SerializableDataType.ATTRIBUTE_MODIFIER, null)
+                        .add("modifiers", SerializableDataType.ATTRIBUTE_MODIFIERS, null),
                 data ->
                         (type, player) -> {
                             SimpleValueModifierPower power = new SimpleValueModifierPower(type, player);
-                            if (data.isPresent("damage_modifier")) {
-                                power.addModifier(data.getModifier("damage_modifier"));
+                            if (data.isPresent("modifier")) {
+                                power.addModifier(data.getModifier("modifier"));
                             }
-                            if (data.isPresent("damage_modifiers")) {
-                                ((List<EntityAttributeModifier>)data.get("damage_modifiers")).forEach(power::addModifier);
+                            if (data.isPresent("modifiers")) {
+                                ((List<EntityAttributeModifier>)data.get("modifiers")).forEach(power::addModifier);
                             }
                             return power;
                         })
