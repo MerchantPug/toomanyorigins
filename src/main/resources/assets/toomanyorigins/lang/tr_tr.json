@@ -70,8 +70,8 @@
   "death.attack.overheat.player": "%1$s, %2$s den kaçmaya çalışırken içini fitilledi.",
   "death.attack.overheat.player.item": "%1$s, %3$s kullanan %2$s den kaçmaya çalışırken içini fitilledi.",
 
-  "power.toomanyorigins.hover.name": "Süzül",
-  "power.toomanyorigins.hover.description": "Birçok arıdan yapılmış olman, havadayken süzülebilmeni sağlar.",
+  "power.toomanyorigins.hover_toggle.name": "Süzül",
+  "power.toomanyorigins.hover_toggle.description": "Birçok arıdan yapılmış olman, havadayken süzülebilmeni sağlar.",
   "power.toomanyorigins.smoke_sensitivity.name": "Duman Duyarlılığı",
   "power.toomanyorigins.smoke_sensitivity.description": "Dumanın yakınındayken hislerin azalır.",
   "power.toomanyorigins.pollination.name": "Polen",
@@ -121,5 +121,9 @@
   "block.toomanyorigins.withered_pumpkin_stem": "Solmuş Balkabağı Sapı",
   "block.toomanyorigins.withered_wheat": "Solmuş Buğday",
   "block.toomanyorigins.withered_crop": "Solmuş Ekim",
-  "block.toomanyorigins.withered_stem": "Solmuş Sap"
+  "block.toomanyorigins.withered_stem": "Solmuş Sap",
+
+  "text.autoconfig.toomanyorigins.title": "TooManyOrigins Ayarları",
+  "text.autoconfig.toomanyorigins.option.dragonFireballMixin": "Ender Ejderhası Ateş Topu Karışım Ayarları",
+  "text.autoconfig.toomanyorigins.option.dragonFireballMixin.shouldFireballDamageUndead": "Ateş Topu Ölü Yaratıklara Hasar Verir"
 }

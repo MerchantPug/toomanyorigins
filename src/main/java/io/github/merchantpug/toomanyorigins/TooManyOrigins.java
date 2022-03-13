@@ -2,6 +2,9 @@ package io.github.merchantpug.toomanyorigins;
 
 import io.github.apace100.apoli.util.NamespaceAlias;
 import io.github.merchantpug.toomanyorigins.registry.*;
+import io.github.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
@@ -11,6 +14,8 @@ public class TooManyOrigins implements ModInitializer {
 	public static final String MODID = "toomanyorigins";
 	public static final Logger LOGGER = LogManager.getLogger(TooManyOrigins.class);
 	public static String VERSION = "";
+
+	public static TooManyOriginsConfig config;
 
 	@Override
 	public void onInitialize() {
@@ -32,5 +37,8 @@ public class TooManyOrigins implements ModInitializer {
 		TMOSounds.register();
 
 		NamespaceAlias.addAlias(MODID, "apugli");
+
+		AutoConfig.register(TooManyOriginsConfig.class, JanksonConfigSerializer::new);
+		TooManyOrigins.config = AutoConfig.getConfigHolder(TooManyOriginsConfig.class).getConfig();
 	}
 }
