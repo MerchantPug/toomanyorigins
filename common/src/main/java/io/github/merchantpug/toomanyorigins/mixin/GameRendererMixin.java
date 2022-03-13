@@ -24,7 +24,6 @@ SOFTWARE.
 package io.github.merchantpug.toomanyorigins.mixin;
 
 import io.github.apace100.origins.component.OriginComponent;
-import io.github.merchantpug.apugli.Apugli;
 import io.github.merchantpug.toomanyorigins.power.PreventShaderTogglePower;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

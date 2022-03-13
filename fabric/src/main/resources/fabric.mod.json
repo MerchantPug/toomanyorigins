@@ -5,7 +5,9 @@
   "name": "TooManyOrigins",
   "description": "Origins addon that serves as an extension to the original mod.",
   "authors": [
-    "Pug",
+    "MerchantPug"
+  ],
+  "contributors": [
     "Omniv",
     "PapaPepsmAn"
   ],
@@ -22,6 +24,9 @@
     ],
     "client": [
       "io.github.merchantpug.toomanyorigins.fabric.TooManyOriginsFabricClient"
+    ],
+    "modmenu": [
+      "io.github.merchantpug.toomanyorigins.fabric.integration.TMOModMenuIntegration"
     ]
   },
   "mixins": [

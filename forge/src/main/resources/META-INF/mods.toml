@@ -8,7 +8,8 @@ logoFile="tmo_icon.png"
 displayURL="https://github.com/MerchantPug/toomanyorigins/"
 version = "${version}"
 displayName = "TooManyOrigins"
-authors = "Pug, Omniv, PapaPepsmAn"
+authors = "MerchantPug"
+credits = "Omniv, PapaPepsmAn"
 description = '''
 Origins addon that serves as an extension to the original mod.
 '''

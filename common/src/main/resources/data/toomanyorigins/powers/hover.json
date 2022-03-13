@@ -51,7 +51,7 @@
       "resource": "*:*_inactive",
       "provider": "*:*_active"
     },
-    "interval": 2,
+    "interval": 1,
     "condition": {
       "type": "origins:and",
       "conditions": [
@@ -115,11 +115,5 @@
       "key": "key.origins.primary_active"
     }
   },
-  "toggle": {
-    "type": "origins:toggle",
-    "active_by_default": true,
-    "key": {
-      "key": "key.thisdoesntexist"
-    }
-  }
+  "hidden": true
 }

@@ -28,6 +28,9 @@
   "power.toomanyorigins.zenith_scales.name": "Zênite de Escamas",
   "power.toomanyorigins.zenith_scales.description": "Você tem 2 corações a mais que humanos.",
 
+  "toomanyorigins.gui.badge.furnace": "Olhe para um bloco iluminável para usar este poder.",
+  "toomanyorigins.gui.badge.no_furnace": "Não olhe para um bloco iluminável para usar este poder.",
+
   "item.toomanyorigins.dragon_fireball": "Bola de Fogo Dracônica",
   "entity.toomanyorigins.fireball_area_effect_cloud": "Nuvem de área de efeito da bola de fogo",
   "death.attack.dragonMagic": "%1$s foi assado no bafo do dragão",
@@ -67,8 +70,8 @@
   "death.attack.overheat.player": "%1$s incinerou suas entranhas enquanto tentava escapar de %2$s",
   "death.attack.overheat.player.item": "%1$s incinerou suas entranhas enquanto tentava escapar de %2$s usando %3$s",
 
-  "power.toomanyorigins.hover.name": "Flutuar",
-  "power.toomanyorigins.hover.description": "Sendo feito de várias abelhas, você pode planar no ar sempre que estiver caindo.",
+  "power.toomanyorigins.hover_toggle.name": "Flutuar",
+  "power.toomanyorigins.hover_toggle.description": "Sendo feito de várias abelhas, você pode planar no ar sempre que estiver caindo.",
   "power.toomanyorigins.smoke_sensitivity.name": "Sensibilidade à Fumaça",
   "power.toomanyorigins.smoke_sensitivity.description": "Seus sentidos são reduzidos quando próximo de fumaça.",
   "power.toomanyorigins.pollination.name": "Polinização",

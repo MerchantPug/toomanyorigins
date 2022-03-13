@@ -28,6 +28,9 @@
   "power.toomanyorigins.zenith_scales.name": "Ejderha Derisi",
   "power.toomanyorigins.zenith_scales.description": "İnsanlardan 2 daha fazla kalbin var.",
 
+  "toomanyorigins.gui.badge.furnace": "Bu gücü kullanmak için yakılabilir bir bloğa bak.",
+  "toomanyorigins.gui.badge.no_furnace": "Bu gücü kullanmak için yakılabilir bir bloğa bakma.",  
+
   "item.toomanyorigins.dragon_fireball": "Ejderha Ateştopu",
   "entity.toomanyorigins.fireball_area_effect_cloud": "Ateş Topu Alan Etkisi Bulutu",
   "death.attack.dragonMagic": "%1$s ejderha nefesinde kavruldu",
@@ -67,8 +70,8 @@
   "death.attack.overheat.player": "%1$s, %2$s den kaçmaya çalışırken içini fitilledi.",
   "death.attack.overheat.player.item": "%1$s, %3$s kullanan %2$s den kaçmaya çalışırken içini fitilledi.",
 
-  "power.toomanyorigins.hover.name": "Süzül",
-  "power.toomanyorigins.hover.description": "Birçok arıdan yapılmış olman, havadayken süzülebilmeni sağlar.",
+  "power.toomanyorigins.hover_toggle.name": "Süzül",
+  "power.toomanyorigins.hover_toggle.description": "Birçok arıdan yapılmış olman, havadayken süzülebilmeni sağlar.",
   "power.toomanyorigins.smoke_sensitivity.name": "Duman Duyarlılığı",
   "power.toomanyorigins.smoke_sensitivity.description": "Dumanın yakınındayken hislerin azalır.",
   "power.toomanyorigins.pollination.name": "Polen",
