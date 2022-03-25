@@ -19,8 +19,30 @@ You are able to add Apugli as a dependency to your workspace through adding thes
 ```gradle
 repositories {
     maven {
-    	url "https://jitpack.io"
-    }
+		url "https://jitpack.io"
+	}
+	maven {
+		name = "Ladysnake Libs"
+		url = 'https://ladysnake.jfrog.io/artifactory/mods'
+	}
+	maven {
+		url = 'https://maven.cafeteria.dev'
+		content {
+			includeGroup 'net.adriantodt.fabricmc'
+		}
+	}
+	maven {
+		url "https://maven.jamieswhiteshirt.com/libs-release"
+		content {
+			includeGroup "com.jamieswhiteshirt"
+		}
+	}
+	maven {
+		url "https://maven.shedaniel.me/"
+	}
+	maven {
+		url "https://maven.terraformersmc.com/"
+	}
 }
 
 dependencies {
