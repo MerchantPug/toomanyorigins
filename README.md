@@ -9,42 +9,16 @@ Please don't write the mod's name with spaces.
 
 ## Documentation
 If you'd like to use TooManyOrigins (Apugli) for Origins datapacking you can read up on the [Documentation](https://apugli.readthedocs.io/en/latest/).
-It's recommended to have some knowledge about Origins before doing so.
+It's recommended to have some knowledge about the task before doing so.
 
-## Implementing the library into your project
+## Implementing the addon into your project
 
-You are able to add Apugli as a dependency to your workspace through adding these to your project.
+You are able to add TooManyOrigins as a dependency (preferably an optional one) to your workspace through adding these to your project.
+
+Please follow the guide from the [Origins Documentation](https://origins.readthedocs.io/en/latest/guides/addon/workspace_setup/) for general Origins Addon setup, this only covers how to get TMO into your workspace.
 
 **build.gradle**
 ```gradle
-repositories {
-    maven {
-		url "https://jitpack.io"
-	}
-	maven {
-		name = "Ladysnake Libs"
-		url = 'https://ladysnake.jfrog.io/artifactory/mods'
-	}
-	maven {
-		url = 'https://maven.cafeteria.dev'
-		content {
-			includeGroup 'net.adriantodt.fabricmc'
-		}
-	}
-	maven {
-		url "https://maven.jamieswhiteshirt.com/libs-release"
-		content {
-			includeGroup "com.jamieswhiteshirt"
-		}
-	}
-	maven {
-		url "https://maven.shedaniel.me/"
-	}
-	maven {
-		url "https://maven.terraformersmc.com/"
-	}
-}
-
 dependencies {
     modImplementation "com.github.MerchantPug:toomanyorigins:${project.tmo_version}"
 }
