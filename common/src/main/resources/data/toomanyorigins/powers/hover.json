@@ -1,30 +1,159 @@
 {
   "type": "origins:multiple",
-  "active": {
+  "hover": {
     "type": "toomanyorigins:hover",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_active_resource",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        {
+          "type": "toomanyorigins:velocity",
+          "y": 0.0,
+          "comparison": ">="
+        },
+        {
+          "type": "toomanyorigins:key_pressed",
+          "key": {
+            "key": "key.jump",
+            "continuous": true
+          }
+        },
+        {
+          "type": "origins:climbing",
+          "inverted": true
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": "0",
+          "inverted": true
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:lava",
+          "comparison": ">",
+          "compare_to": "0",
+          "inverted": true
+        },
+        {
+          "type": "origins:fall_flying",
+          "inverted": true
+        },
+        {
+          "type": "toomanyorigins:riding",
+          "inverted": true
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle_resource"
+        }
+      ]
+    }
+  },
+  "deplete_while_using": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_active_resource",
+          "change": -1
+        },
+        {
+          "type": "toomanyorigins:set_resource",
+          "resource": "*:*_recharge_condition_resource",
+          "value": 0
+        }
+      ]
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_hover"
+    }
+  },
+  "recharge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_active_resource",
+      "change": 2
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_hover",
+          "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_recharge_condition_resource",
+          "comparison": "==",
+          "compare_to": 10
+        }
+      ]
+    }
+  },
+  "recharge_condition_increase": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_recharge_condition_resource",
+      "change": 1
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:on_block"
+            },
+            {
+              "type": "toomanyorigins:riding"
+            }
+          ]
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_hover",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "active_resource": {
+    "type": "origins:resource",
     "min": 0,
     "max": 60,
     "start_value": 60,
-    "recharge_while_inactive": true,
     "hud_render": {
       "should_render": true,
       "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
       "bar_index": 8,
       "condition": {
         "type": "origins:power_active",
-        "power": "*:*_toggle"
+        "power": "*:*_toggle_resource"
       }
-    },
-    "key": {
-      "key": "key.jump",
-      "continuous": true
     },
     "condition": {
       "type": "origins:power_active",
-      "power": "*:*_toggle"
+      "power": "*:*_toggle_resource"
     }
   },
-  "inactive": {
+  "inactive_resource": {
     "type": "origins:resource",
     "min": 0,
     "max": 60,
@@ -34,22 +163,30 @@
       "bar_index": 9,
       "condition": {
         "type": "origins:power_active",
-        "power": "*:*_toggle",
+        "power": "*:*_toggle_resource",
         "inverted": true
       }
     },
     "condition": {
       "type": "origins:power_active",
-      "power": "*:*_toggle",
+      "power": "*:*_toggle_resource",
       "inverted": true
+    }
+  },
+  "recharge_condition_resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 10,
+    "hud_render": {
+      "should_render": false
     }
   },
   "sync_values": {
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "toomanyorigins:resource_transfer",
-      "resource": "*:*_inactive",
-      "provider": "*:*_active"
+      "resource": "*:*_inactive_resource",
+      "provider": "*:*_active_resource"
     },
     "interval": 1,
     "condition": {
@@ -58,61 +195,23 @@
         {
           "type": "toomanyorigins:compare_resource",
           "resource": "*:*_inactive",
-          "compare_to": "*:*_active",
+          "compare_to": "*:*_inactive_resource",
           "comparison": "==",
           "inverted": true
         },
         {
           "type": "origins:power_active",
-          "power": "*:*_toggle",
+          "power": "*:*_toggle_resource",
           "inverted": true
         }
       ]
     }
   },
-  "toggle_key": {
-    "type": "origins:active_self",
-    "entity_action": {
-      "type": "origins:if_else",
-      "condition": {
-        "type": "origins:power_active",
-        "power": "*:*_toggle"
-      },
-      "if_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "toomanyorigins:toggle",
-            "power": "*:*_toggle"
-          },
-          {
-            "type": "toomanyorigins:resource_transfer",
-            "resource": "*:*_inactive",
-            "provider": "*:*_active"
-          }
-        ]
-      },
-      "else_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "toomanyorigins:toggle",
-            "power": "*:*_toggle"
-          },
-          {
-            "type": "toomanyorigins:resource_transfer",
-            "resource": "*:*_active",
-            "provider": "*:*_inactive"
-          }
-        ]
-      }
-    },
-    "cooldown": 1,
-    "hud_render": {
-      "should_render": false
-    },
+  "toggle_resource": {
+    "type": "origins:toggle",
+    "active_by_default": true,
     "key": {
-      "key": "key.origins.primary_active"
+      "key": "null"
     }
   },
   "hidden": true

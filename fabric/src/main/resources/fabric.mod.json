@@ -39,6 +39,6 @@
     "minecraft": ">=1.16.4",
     "architectury": ">=1.10.142",
     "origins": ">=0.7.3",
-    "apugli": ">=1.3.0"
+    "apugli": ">=1.6.2.1"
   }
 }
