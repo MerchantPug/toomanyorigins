@@ -51,7 +51,7 @@
         },
         {
           "type": "origins:power_active",
-          "power": "*:*_toggle"
+          "power": "*:*_toggle_resource"
         }
       ]
     }
@@ -146,12 +146,12 @@
       "bar_index": 8,
       "condition": {
         "type": "origins:power_active",
-        "power": "*:*_toggle"
+        "power": "*:*_toggle_resource"
       }
     },
     "condition": {
       "type": "origins:power_active",
-      "power": "*:*_toggle"
+      "power": "*:*_toggle_resource"
     }
   },
   "inactive_resource": {
@@ -164,13 +164,13 @@
       "bar_index": 9,
       "condition": {
         "type": "origins:power_active",
-        "power": "*:*_toggle",
+        "power": "*:*_toggle_resource",
         "inverted": true
       }
     },
     "condition": {
       "type": "origins:power_active",
-      "power": "*:*_toggle",
+      "power": "*:*_toggle_resource",
       "inverted": true
     }
   },
@@ -202,55 +202,18 @@
         },
         {
           "type": "origins:power_active",
-          "power": "*:*_toggle",
+          "power": "*:*_toggle_resource",
           "inverted": true
         }
       ]
     }
   },
-  "toggle_key": {
-    "type": "origins:active_self",
-    "entity_action": {
-      "type": "origins:if_else",
-      "condition": {
-        "type": "origins:power_active",
-        "power": "*:*_toggle"
-      },
-      "if_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:toggle",
-            "power": "*:*_toggle"
-          },
-          {
-            "type": "toomanyorigins:resource_transfer",
-            "resource": "*:*_inactive_resource",
-            "provider": "*:*_active_resource"
-          }
-        ]
-      },
-      "else_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:toggle",
-            "power": "*:*_toggle"
-          },
-          {
-            "type": "toomanyorigins:resource_transfer",
-            "resource": "*:*_active_resource",
-            "provider": "*:*_inactive_resource"
-          }
-        ]
-      }
-    },
-    "cooldown": 1,
-    "hud_render": {
-      "should_render": false
-    },
+  "toggle_resource": {
+    "type": "origins:toggle",
+    "active_by_default": true,
     "key": {
-      "key": "key.saveToolbarActivator"
+      "key": "null"
     }
-  }
+  },
+  "hidden": true
 }

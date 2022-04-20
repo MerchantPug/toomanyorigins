@@ -4,7 +4,7 @@
     "type": "origins:equipped_item_action",
     "equipment_slot": "head",
     "action": {
-      "type": "origins:damage"
+      "type": "toomanyorigins:damage"
     }
   },
   "interval": 180,

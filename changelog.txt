@@ -1,0 +1,8 @@
+## TooManyOrigins v0.5.1 (Fabric 1.18.2)
+**Compatibility**
+- Updated dependencies in fabric.mod.json
+
+**Bugfixes**
+- Undead should now properly play the helmet breaking animation upon having a broken helmet
+- Swarm no longer displays a hidden power
+- Swarm's toggle keybind is now displayed as the correct key

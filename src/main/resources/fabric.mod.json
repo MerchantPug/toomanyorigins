@@ -34,10 +34,11 @@
     "toomanyorigins.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.12.3",
     "fabric": ">=0.43.0",
-    "minecraft": "1.18.x",
+    "minecraft": "1.18.2",
     "java": ">=17",
-    "origins": ">=1.3.1"
+    "origins": ">=1.4.1",
+    "apugli": ">=1.6.2"
   }
 }
