@@ -1,5 +1,6 @@
 package io.github.merchantpug.toomanyorigins.entity;
 
+import dev.onyxstudios.cca.api.v3.component.ComponentContainer;
 import io.github.apace100.apoli.component.PowerHolderComponent;
 import io.github.merchantpug.toomanyorigins.power.ModifyDragonFireballPower;
 import io.github.merchantpug.toomanyorigins.registry.TMOEntities;
@@ -14,6 +15,7 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Iterator;
 import java.util.List;
@@ -95,5 +97,10 @@ public class SmallDragonFireballEntity extends ThrownItemEntity {
             double f = this.getZ() + vec3d.z;
             this.world.addParticle(ParticleTypes.DRAGON_BREATH, d, e, f, (this.random.nextDouble() - this.random.nextDouble() + 0.2D) * 0.1D, Math.abs(this.random.nextDouble() - this.random.nextDouble() + 0.2D) * 0.1D, (this.random.nextDouble() - this.random.nextDouble() + 0.2D) * 0.1D);
         }
+    }
+
+    @Override
+    public @NotNull ComponentContainer getComponentContainer() {
+        return ComponentContainer.EMPTY;
     }
 }

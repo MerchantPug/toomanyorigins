@@ -3,6 +3,8 @@ package io.github.merchantpug.toomanyorigins.entity;
 import com.google.common.collect.Maps;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import dev.onyxstudios.cca.api.v3.component.ComponentContainer;
+import io.github.merchantpug.toomanyorigins.mixin.AreaEffectCloudEntityAccessor;
 import io.github.merchantpug.toomanyorigins.registry.TMODamageSources;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.command.argument.ParticleEffectArgumentType;
@@ -27,30 +29,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class FireballAreaEffectCloudEntity extends Entity {
-    private static final Logger LOGGER = LogManager.getLogger();
-    private static final TrackedData<Float> RADIUS;
-    private static final TrackedData<Integer> COLOR;
-    private static final TrackedData<Boolean> WAITING;
-    private static final TrackedData<ParticleEffect> PARTICLE_ID;
-    private final Map<Entity, Integer> affectedEntities;
-    private int duration;
-    private int waitTime;
-    private int reapplicationDelay;
-    private boolean customColor;
-    private int durationOnUse;
-    private float radiusOnUse;
-    private float radiusGrowth;
-    private LivingEntity owner;
-    private UUID ownerUuid;
+public class FireballAreaEffectCloudEntity extends AreaEffectCloudEntity {
     private float damage;
 
     public FireballAreaEffectCloudEntity(EntityType<? extends FireballAreaEffectCloudEntity> entityType, World world) {
         super(entityType, world);
-        this.affectedEntities = Maps.newHashMap();
-        this.duration = 600;
-        this.waitTime = 20;
-        this.reapplicationDelay = 20;
         this.noClip = true;
         this.damage = 6.0F;
         this.setRadius(3.0F);
@@ -61,63 +44,12 @@ public class FireballAreaEffectCloudEntity extends Entity {
         this.updatePosition(x, y, z);
     }
 
-    protected void initDataTracker() {
-        this.getDataTracker().startTracking(COLOR, 0);
-        this.getDataTracker().startTracking(RADIUS, 0.5F);
-        this.getDataTracker().startTracking(WAITING, false);
-        this.getDataTracker().startTracking(PARTICLE_ID, ParticleTypes.ENTITY_EFFECT);
-    }
-
-    public void setRadius(float radius) {
-        if (!this.world.isClient) {
-            this.getDataTracker().set(RADIUS, radius);
-        }
-
-    }
-
     public void calculateDimensions() {
         double d = this.getX();
         double e = this.getY();
         double f = this.getZ();
         super.calculateDimensions();
         this.updatePosition(d, e, f);
-    }
-
-    public float getRadius() {
-        return (Float)this.getDataTracker().get(RADIUS);
-    }
-
-    public int getColor() {
-        return (Integer)this.getDataTracker().get(COLOR);
-    }
-
-    public void setColor(int rgb) {
-        this.customColor = true;
-        this.getDataTracker().set(COLOR, rgb);
-    }
-
-    public ParticleEffect getParticleType() {
-        return this.getDataTracker().get(PARTICLE_ID);
-    }
-
-    public void setParticleType(ParticleEffect particle) {
-        this.getDataTracker().set(PARTICLE_ID, particle);
-    }
-
-    protected void setWaiting(boolean waiting) {
-        this.getDataTracker().set(WAITING, waiting);
-    }
-
-    public boolean isWaiting() {
-        return (Boolean)this.getDataTracker().get(WAITING);
-    }
-
-    public int getDuration() {
-        return this.duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
     }
 
     public float getDamage() {
@@ -178,12 +110,12 @@ public class FireballAreaEffectCloudEntity extends Entity {
                 }
             }
         } else {
-            if (this.age >= this.waitTime + this.duration) {
+            if (this.age >= this.getWaitTime() + this.getDuration()) {
                 this.discard();
                 return;
             }
 
-            boolean bl2 = this.age < this.waitTime;
+            boolean bl2 = this.age < this.getWaitTime();
             if (bl != bl2) {
                 this.setWaiting(bl2);
             }
@@ -192,8 +124,8 @@ public class FireballAreaEffectCloudEntity extends Entity {
                 return;
             }
 
-            if (this.radiusGrowth != 0.0F) {
-                f += this.radiusGrowth;
+            if (this.getRadiusGrowth() != 0.0F) {
+                f += this.getRadiusGrowth();
                 if (f < 0.5F) {
                     this.discard();
                     return;
@@ -203,7 +135,7 @@ public class FireballAreaEffectCloudEntity extends Entity {
             }
 
             if (this.age % 5 == 0) {
-                Iterator iterator = this.affectedEntities.entrySet().iterator();
+                Iterator iterator = ((AreaEffectCloudEntityAccessor)this).getAffectedEntities().entrySet().iterator();
 
                 while(iterator.hasNext()) {
                     Map.Entry<Entity, Integer> entry = (Map.Entry)iterator.next();
@@ -225,25 +157,25 @@ public class FireballAreaEffectCloudEntity extends Entity {
                                 }
 
                                 livingEntity = (LivingEntity)var25.next();
-                            } while(this.affectedEntities.containsKey(livingEntity));
+                            } while(((AreaEffectCloudEntityAccessor)this).getAffectedEntities().containsKey(livingEntity));
 
                             double d = livingEntity.getX() - this.getX();
                             double e = livingEntity.getZ() - this.getZ();
                             z = d * d + e * e;
                         } while(!(z <= (double)(f * f)));
 
-                        this.affectedEntities.put(livingEntity, this.age + this.reapplicationDelay);
+                        ((AreaEffectCloudEntityAccessor)this).getAffectedEntities().put(livingEntity, this.age + ((AreaEffectCloudEntityAccessor)this).getReapplicationDelay());
 
-                        if (owner == null) {
+                        if (getOwner() == null) {
                             livingEntity.damage(TMODamageSources.DRAGON_MAGIC, damage);
                         } else {
-                            if (livingEntity != owner) {
+                            if (livingEntity != getOwner()) {
                                 livingEntity.damage(TMODamageSources.dragonMagic(this, getOwner()), damage);
                             }
                         }
 
-                        if (this.radiusOnUse != 0.0F) {
-                            f += this.radiusOnUse;
+                        if (this.getRadiusOnUse() != 0.0F) {
+                            f += this.getRadiusOnUse();
                             if (f < 0.5F) {
                                 this.discard();
                                 return;
@@ -252,9 +184,9 @@ public class FireballAreaEffectCloudEntity extends Entity {
                             this.setRadius(f);
                         }
 
-                        if (this.durationOnUse != 0) {
-                            this.duration += this.durationOnUse;
-                            if (this.duration <= 0) {
+                        if (this.getDurationOnUse() != 0) {
+                            this.setDuration(this.getDuration() + this.getDurationOnUse());
+                            if (this.getDuration() <= 0) {
                                 this.discard();
                                 return;
                             }
@@ -265,83 +197,15 @@ public class FireballAreaEffectCloudEntity extends Entity {
         }
     }
 
-    public void setRadiusGrowth(float growth) {
-        this.radiusGrowth = growth;
-    }
-
-    public void setWaitTime(int ticks) {
-        this.waitTime = ticks;
-    }
-
-    public void setOwner(LivingEntity owner) {
-        this.owner = owner;
-        this.ownerUuid = owner == null ? null : owner.getUuid();
-    }
-
-    public LivingEntity getOwner() {
-        if (this.owner == null && this.ownerUuid != null && this.world instanceof ServerWorld) {
-            Entity entity = ((ServerWorld)this.world).getEntity(this.ownerUuid);
-            if (entity instanceof LivingEntity) {
-                this.owner = (LivingEntity)entity;
-            }
-        }
-
-        return this.owner;
-    }
 
     protected void readCustomDataFromNbt(NbtCompound nbt) {
-        this.age = nbt.getInt("Age");
-        this.duration = nbt.getInt("Duration");
-        this.waitTime = nbt.getInt("WaitTime");
-        this.reapplicationDelay = nbt.getInt("ReapplicationDelay");
-        this.durationOnUse = nbt.getInt("DurationOnUse");
-        this.radiusOnUse = nbt.getFloat("RadiusOnUse");
-        this.radiusGrowth = nbt.getFloat("RadiusPerTick");
+        super.readCustomDataFromNbt(nbt);
         this.damage = nbt.getFloat("Damage");
-        this.setRadius(nbt.getFloat("Radius"));
-        if (nbt.containsUuid("Owner")) {
-            this.ownerUuid = nbt.getUuid("Owner");
-        }
-
-        if (nbt.contains("Particle", 8)) {
-            try {
-                this.setParticleType(ParticleEffectArgumentType.readParameters(new StringReader(nbt.getString("Particle"))));
-            } catch (CommandSyntaxException var5) {
-                LOGGER.warn((String)"Couldn't load custom particle {}", (Object)nbt.getString("Particle"), (Object)var5);
-            }
-        }
-
-        if (nbt.contains("Color", 99)) {
-            this.setColor(nbt.getInt("Color"));
-        }
     }
 
     protected void writeCustomDataToNbt(NbtCompound nbt) {
-        nbt.putInt("Age", this.age);
-        nbt.putInt("Duration", this.duration);
-        nbt.putInt("WaitTime", this.waitTime);
-        nbt.putInt("ReapplicationDelay", this.reapplicationDelay);
-        nbt.putInt("DurationOnUse", this.durationOnUse);
-        nbt.putFloat("RadiusOnUse", this.radiusOnUse);
-        nbt.putFloat("RadiusPerTick", this.radiusGrowth);
+        super.writeCustomDataToNbt(nbt);
         nbt.putFloat("Damage", this.damage);
-        nbt.putFloat("Radius", this.getRadius());
-        nbt.putString("Particle", this.getParticleType().asString());
-        if (this.ownerUuid != null) {
-            nbt.putUuid("Owner", this.ownerUuid);
-        }
-
-        if (this.customColor) {
-            nbt.putInt("Color", this.getColor());
-        }
-    }
-
-    public void onTrackedDataSet(TrackedData<?> data) {
-        if (RADIUS.equals(data)) {
-            this.calculateDimensions();
-        }
-
-        super.onTrackedDataSet(data);
     }
 
     public PistonBehavior getPistonBehavior() {
@@ -354,12 +218,5 @@ public class FireballAreaEffectCloudEntity extends Entity {
 
     public EntityDimensions getDimensions(EntityPose pose) {
         return EntityDimensions.changing(this.getRadius() * 2.0F, 0.5F);
-    }
-
-    static {
-        RADIUS = DataTracker.registerData(FireballAreaEffectCloudEntity.class, TrackedDataHandlerRegistry.FLOAT);
-        COLOR = DataTracker.registerData(FireballAreaEffectCloudEntity.class, TrackedDataHandlerRegistry.INTEGER);
-        WAITING = DataTracker.registerData(FireballAreaEffectCloudEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
-        PARTICLE_ID = DataTracker.registerData(FireballAreaEffectCloudEntity.class, TrackedDataHandlerRegistry.PARTICLE);
     }
 }

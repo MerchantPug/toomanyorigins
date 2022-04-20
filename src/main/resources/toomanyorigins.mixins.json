@@ -4,6 +4,7 @@
   "package": "io.github.merchantpug.toomanyorigins.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "AreaEffectCloudEntityAccessor",
     "DragonFireballEntityMixin",
     "LivingEntityMixin",
     "SittingFlamingPhaseMixin"

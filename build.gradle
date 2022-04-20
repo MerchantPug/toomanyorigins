@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.10-SNAPSHOT'
+	id 'fabric-loom' version '0.11-SNAPSHOT'
 	id 'maven-publish'
 	id 'com.matthewprenger.cursegradle' version '1.4.0'
 	id 'com.modrinth.minotaur' version '2.1.1'
@@ -172,8 +172,8 @@ curseforge {
 		project {
 			id = project.cf_project_id
 			releaseType = project.cf_release_type
-			if (project.hasProperty("cf_game_versions")) {
-				def gameVersions = project.cf_game_versions.split(", ")
+			if (project.hasProperty("cf_minecraft_versions")) {
+				def gameVersions = project.cf_minecraft_versions.split(", ")
 				gameVersions.each { String gameVersion ->
 					addGameVersion gameVersion
 				}
@@ -223,8 +223,8 @@ modrinth {
 			loaders = [ project.mr_modloader ]
 		}
 
-		if(project.hasProperty("mr_release_versions")) {
-			gameVersions = project.mr_release_versions.split(", ") as List
+		if(project.hasProperty("mr_minecraft_versions")) {
+			gameVersions = project.mr_minecraft_versions.split(", ") as List
 		}
 
 		def deps = []
