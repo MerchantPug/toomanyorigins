@@ -17,6 +17,10 @@ loom {
     mixinConfig "toomanyorigins.mixins.json"
     mixinConfig "toomanyorigins.forge.mixins.json"
 
+    mixinConfig "apugli.mixins.json"
+    mixinConfig "apugli.forge.mixins.json"
+    mixinConfig "apugli.origins.forge.mixins.json"
+
     launches {
         client {
             property 'mixin.debug', 'true'
