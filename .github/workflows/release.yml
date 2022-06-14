@@ -7,9 +7,6 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
-    container:
-      image: eclipse-temurin:17-jdk
-      options: --user root
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -28,38 +25,38 @@ jobs:
           gradle-version: wrapper
           arguments: clean build
 
-  - name: Publish (CurseForge/Modrinth)
-      uses: Kir-Antipov/mc-publish@v3.0
-      with:
-        # Modrinth
-        modrinth-id: 1qeWG44Y
-        modrinth-featured: true
-        modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+      - name: Publish (CurseForge/Modrinth)
+        uses: Kir-Antipov/mc-publish@v3.0
+        with:
+          # Modrinth
+          modrinth-id: 1qeWG44Y
+          modrinth-featured: true
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
 
-        # CurseForge
-        curseforge-id: 579886
-        curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          # CurseForge
+          curseforge-id: 579886
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
-        # Config
-        name: TooManyOrigins v0.6.0 (Fabric 1.19)
-        version: v0.6.0+1.19-fabric
-        version-type: release
-        changelog-file: CHANGELOG.md
-        files-primary: build/libs/!(*-@(dev|sources)).jar
-        files-secondary: ""
+          # Config
+          name: TooManyOrigins v0.6.0 (Fabric 1.19)
+          version: v0.6.0+1.19-fabric
+          version-type: release
+          changelog-file: CHANGELOG.md
+          files-primary: build/libs/!(*-@(dev|sources)).jar
+          files-secondary: ""
 
-        loaders: |
-          fabric
-          quilt
-        game-versions: |
-          1.19
-        dependencies: |
-          fabric-api | depends | *
-        java: |
-          17
+          loaders: |
+            fabric
+            quilt
+          game-versions: |
+            1.19
+          dependencies: |
+            fabric-api | depends | *
+          java: |
+            17
 
-        retry-attempts: 2
-        retry-delay: 10000
+          retry-attempts: 2
+          retry-delay: 10000
 
       - name: Publish (GitHub)
         uses: Kir-Antipov/mc-publish@v3.0
