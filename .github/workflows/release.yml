@@ -30,12 +30,12 @@ jobs:
         uses: Kir-Antipov/mc-publish@v3.0
         with:
           # Modrinth
-          modrinth-id: 1qeWG44Y
+          modrinth-id: xDjN28OB
           modrinth-featured: true
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
 
           # CurseForge
-          curseforge-id: 579886
+          curseforge-id: 469658
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           # Config
