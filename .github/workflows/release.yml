@@ -11,15 +11,80 @@ jobs:
       image: eclipse-temurin:17-jdk
       options: --user root
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-      - name: Validate gradle wrapper
-        uses: gradle/wrapper-validation-action@v1
-      - name: Upload releases
-        run: ./gradlew build publish curseforge github modrinth --stacktrace
-        env:
-          CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: "temurin"
+          java-version: 17
+
+      - name: Build
+        uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: wrapper
+          arguments: clean build
+
+  - name: Publish (CurseForge/Modrinth)
+      uses: Kir-Antipov/mc-publish@v3.0
+      with:
+        # Modrinth
+        modrinth-id: 1qeWG44Y
+        modrinth-featured: true
+        modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+
+        # CurseForge
+        curseforge-id: 579886
+        curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+
+        # Config
+        name: TooManyOrigins v0.6.0 (Fabric 1.19)
+        version: v0.6.0+1.19-fabric
+        version-type: release
+        changelog-file: CHANGELOG.md
+        files-primary: build/libs/!(*-@(dev|sources)).jar
+        files-secondary: ""
+
+        loaders: |
+          fabric
+          quilt
+        game-versions: |
+          1.19
+        dependencies: |
+          fabric-api | depends | *
+        java: |
+          17
+
+        retry-attempts: 2
+        retry-delay: 10000
+
+      - name: Publish (GitHub)
+        uses: Kir-Antipov/mc-publish@v3.0
+        with:
+          # GitHub
+          github-tag: v0.6.0
+          github-draft: false
+          github-prerelease: false
+          github-commitish: 1.19-fabric
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          name: TooManyOrigins v0.6.0 (Fabric 1.19)
+          version: v0.6.0+1.19-fabric
+          version-type: release
+          changelog-file: CHANGELOG.md
+
+          loaders: |
+            fabric
+            quilt
+          game-versions: |
+            1.19
+          dependencies: |
+            fabric-api | depends | *
+          java: |
+            17
+
+          retry-attempts: 2
+          retry-delay: 10000

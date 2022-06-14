@@ -1,7 +1,7 @@
 {
   "type": "origins:modify_damage_taken",
   "damage_condition": {
-    "type": "toomanyorigins:explosive"
+    "type": "origins:explosive"
   },
   "modifier": {
     "value": -1,

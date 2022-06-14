@@ -21,24 +21,24 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.merchantpug.toomanyorigins.TooManyOrigins"
+      "com.github.merchantpug.toomanyorigins.TooManyOrigins"
     ],
     "client": [
-      "io.github.merchantpug.toomanyorigins.TooManyOriginsClient"
+      "com.github.merchantpug.toomanyorigins.TooManyOriginsClient"
     ],
     "modmenu": [
-      "io.github.merchantpug.toomanyorigins.integration.TMOModMenuIntegration"
+      "com.github.merchantpug.toomanyorigins.integration.TMOModMenuIntegration"
     ]
   },
   "mixins": [
     "toomanyorigins.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.12.3",
-    "fabric": ">=0.43.0",
-    "minecraft": "1.18.2",
+    "fabricloader": ">=0.13.3",
+    "fabric": ">=0.54.0",
+    "minecraft": "1.19.x",
     "java": ">=17",
-    "origins": ">=1.4.1",
-    "apugli": ">=1.6.2"
+    "origins": ">=1.6.1",
+    "apugli": ">=1.7.0"
   }
 }
