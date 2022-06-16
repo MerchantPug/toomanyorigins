@@ -1,6 +1,32 @@
+/*
+MIT License
+
+Copyright (c) 2021 apace100
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+ */
+
 package com.github.merchantpug.toomanyorigins;
 
+import com.github.merchantpug.toomanyorigins.networking.TMOPacketsC2S;
 import com.github.merchantpug.toomanyorigins.registry.*;
+import com.github.merchantpug.toomanyorigins.util.TooManyOriginsServerConfig;
 import io.github.apace100.apoli.util.NamespaceAlias;
 import com.github.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
 import com.github.merchantpug.apugli.Apugli;
@@ -8,6 +34,7 @@ import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,6 +45,7 @@ public class TooManyOrigins implements ModInitializer {
 	public static int[] SEMVER;
 
 	public static TooManyOriginsConfig config;
+	public static TooManyOriginsServerConfig serverConfig;
 
 	@Override
 	public void onInitialize() {
@@ -43,10 +71,19 @@ public class TooManyOrigins implements ModInitializer {
 		TMOPowers.register();
 		TMOSounds.register();
 
-		Apugli.addDependentModid(MODID);
+		Apugli.addDependent(MODID, "1.7.2");
 		NamespaceAlias.addAlias(MODID, "apugli");
 
 		AutoConfig.register(TooManyOriginsConfig.class, JanksonConfigSerializer::new);
-		TooManyOrigins.config = AutoConfig.getConfigHolder(TooManyOriginsConfig.class).getConfig();
+		config = AutoConfig.getConfigHolder(TooManyOriginsConfig.class).getConfig();
+
+		AutoConfig.register(TooManyOriginsServerConfig.class, JanksonConfigSerializer::new);
+		serverConfig = AutoConfig.getConfigHolder(TooManyOriginsServerConfig.class).getConfig();
+
+		TMOPacketsC2S.register();
+	}
+
+	public static Identifier identifier(String path) {
+		return new Identifier(MODID, path);
 	}
 }
