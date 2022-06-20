@@ -53,6 +53,7 @@ jobs:
             1.19
           dependencies: |
             fabric-api | depends | *
+            origins | depends | *
           java: |
             17
 
