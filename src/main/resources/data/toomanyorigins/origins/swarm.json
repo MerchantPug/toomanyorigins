@@ -1,10 +1,10 @@
 {
 	"powers": [
 		"toomanyorigins:hover",
-		"toomanyorigins:stinging_pains",
-		"toomanyorigins:unity",
 		"toomanyorigins:pollination",
 		"toomanyorigins:calming_aura",
+		"toomanyorigins:stinging_pains",
+		"toomanyorigins:unity",
 		"toomanyorigins:beekeeper",
 		"origins:arthropod"
 	],
