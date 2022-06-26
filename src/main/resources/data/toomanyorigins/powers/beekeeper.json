@@ -1,3 +1,4 @@
 {
-  "type": "apugli:prevent_bee_anger"
+  "type": "apugli:prevent_bee_anger",
+  "hidden": true
 }

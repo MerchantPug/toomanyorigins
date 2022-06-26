@@ -1,0 +1,47 @@
+{
+  "type": "toomanyorigins:action_on_target_death",
+  "bientity_action": {
+    "type": "origins:actor_action",
+    "action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:exhaust",
+          "amount": 12.0
+        },
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:unity_recharge_hearts",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:unity_health_state",
+                "comparison": ">",
+                "compare_to": 0
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "resource": "*:unity_recharge_hearts",
+            "change": 0,
+            "operation": "SET"
+          }
+        }
+      ]
+    }
+  },
+  "bientity_condition": {
+    "type": "origins:target_condition",
+    "condition": {
+      "type": "toomanyorigins:hostile"
+    }
+  }
+}
