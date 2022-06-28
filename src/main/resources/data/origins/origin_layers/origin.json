@@ -1,11 +1,7 @@
 {
   "replace": false,
   "origins": [
-    "toomanyorigins:dragonborn",
-    "toomanyorigins:hare",
     "toomanyorigins:hisskin",
-    "toomanyorigins:swarm",
-    "toomanyorigins:undead",
-    "toomanyorigins:withered"
+    "toomanyorigins:swarm"
   ]
 }
