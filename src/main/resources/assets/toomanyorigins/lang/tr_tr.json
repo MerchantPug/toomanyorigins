@@ -20,8 +20,8 @@
     "power.toomanyorigins.overheat.description": "Baktığın herhangi bir objeden uzağa tepebilirsin. Bu işlem size hasar verir.",
     "power.toomanyorigins.aerial_stability.name": "Hava Stabilliği",
     "power.toomanyorigins.aerial_stability.description": "Aşağıya doğru hızınız biraz azaltılmış.",
-    "power.toomanyorigins.conductor.name": "İletken",
-    "power.toomanyorigins.conductor.description": "Yıldırım çarptıpında şarjlı olursunuz.",
+    "power.toomanyorigins.conductive.name": "İletken",
+    "power.toomanyorigins.conductive.description": "Yıldırım çarptıpında şarjlı olursunuz.",
     "power.toomanyorigins.stubby_legs.name": "Güdük Bacaklar",
     "power.toomanyorigins.stubby_legs.description": "Kısa bacakların ayaktayken yavaş hareket etmeni sağlar.",
   
@@ -59,7 +59,7 @@
   
     "text.autoconfig.toomanyorigins.title": "TooManyOrigins Ayarları",
     "text.autoconfig.toomanyorigins.option.dragonFireballMixin": "Ender Ejderhası Ateş Topu Karışım Ayarları",
-    "text.autoconfig.toomanyorigins.option.dragonFireballMixin.shouldFireballDamageUndead": "Ateş Topu Ölü Yaratıklara Hasar Verir"
+    "text.autoconfig.toomanyorigins.option.dragonFireballMixin.shouldFireballDamageUndead": "Ateş Topu Ölü Yaratıklara Hasar Verir",
   
     "toomanyorigins.gui.version_mismatch": "Bu server başka bir TooManyOrigins versiyonu (v%1$s) çalıştırıyor ve sende mevcut olan versiyonla uyumlu değil (v%2$s)."
   }
