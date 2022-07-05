@@ -3,6 +3,9 @@
 **General**
 - Reworded descriptions to open up more player interpretation.
 
+**Translations**
+- Updated Turkish translation.
+
 **Hiss-kin**
 - Overheat is now less effective when the user is touching water.
 - Overheat self damage type now counts as explosive damage instead of fire damage.
@@ -17,6 +20,7 @@
 
 **Swarm**
 - Made internal changes to the Hover power.
+- Can no longer recharge hover when fully submerged in water or touching lava.
 - Changed to Impact 2.
 - Beekeeper is now a hidden power.
 - Removed Expendable.
