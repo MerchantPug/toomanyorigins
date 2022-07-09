@@ -1,4 +1,4 @@
-## TooManyOrigins v0.6.2 (Fabric 1.19)
+## TooManyOrigins v0.6.3 (Fabric 1.19)
 **[A]** means a relevant Apugli change.
 
 **Bugfixes**
@@ -8,3 +8,6 @@
 **Dependencies**
 - Updated Apugli to v1.8.2.
 - **[A]** Apugli will have its server/client version check disabled if the mod is inside another mod. (This does not work on Quilt, the check will be performed anyway there).
+
+**Miscellaneous**
+- Change version structure to MODVERSION+MCVERSION-fabric.
