@@ -29,7 +29,6 @@ import com.github.merchantpug.toomanyorigins.registry.*;
 import com.github.merchantpug.toomanyorigins.util.TooManyOriginsServerConfig;
 import io.github.apace100.apoli.util.NamespaceAlias;
 import com.github.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
-import com.github.merchantpug.apugli.Apugli;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
@@ -71,7 +70,6 @@ public class TooManyOrigins implements ModInitializer {
 		TMOPowers.register();
 		TMOSounds.register();
 
-		Apugli.addDependent(MODID, "1.7.2");
 		NamespaceAlias.addAlias(MODID, "apugli");
 
 		AutoConfig.register(TooManyOriginsConfig.class, JanksonConfigSerializer::new);

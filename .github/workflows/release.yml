@@ -27,7 +27,7 @@ jobs:
         run: ./gradlew clean build
 
       - name: Publish (CurseForge/Modrinth)
-        uses: Kir-Antipov/mc-publish@v3.0
+        uses: Kir-Antipov/mc-publish@v3.1
         with:
           # Modrinth
           modrinth-id: xDjN28OB
@@ -54,7 +54,7 @@ jobs:
           dependencies: |
             fabric-api | depends | *
             origins | depends | *
-            apugli | includes | v1.8.0+1.19-fabric
+            apugli | includes | v1.8.2+1.19-fabric
           java: |
             17
 
@@ -65,7 +65,7 @@ jobs:
         uses: Kir-Antipov/mc-publish@v3.0
         with:
           # GitHub
-          github-tag: v0.6.2+1.19+fabric
+          github-tag: v0.6.2-1.19-fabric
           github-draft: false
           github-prerelease: false
           github-commitish: 1.19-fabric
