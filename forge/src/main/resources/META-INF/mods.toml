@@ -1,5 +1,6 @@
 modLoader="javafml"
 loaderVersion="[35,)"
+issueTrackerURL = "https://github.com/MerchantPug/toomanyorigins/issues"
 license="MIT"
 
 [[mods]]

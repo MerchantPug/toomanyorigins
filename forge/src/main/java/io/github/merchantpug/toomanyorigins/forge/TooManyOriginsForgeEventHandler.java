@@ -1,6 +1,5 @@
 package io.github.merchantpug.toomanyorigins.forge;
 
-import io.github.merchantpug.apugli.Apugli;
 import io.github.merchantpug.toomanyorigins.TooManyOrigins;
 import io.github.merchantpug.toomanyorigins.power.SimpleValueModifierPower;
 import io.github.merchantpug.toomanyorigins.registry.TMOPowers;

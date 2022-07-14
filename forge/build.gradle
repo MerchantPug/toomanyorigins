@@ -3,6 +3,7 @@ plugins {
 }
 
 configurations {
+    shade
     shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
     dev
 }
@@ -16,10 +17,6 @@ loom {
     useFabricMixin = true
     mixinConfig "toomanyorigins.mixins.json"
     mixinConfig "toomanyorigins.forge.mixins.json"
-
-    mixinConfig "apugli.mixins.json"
-    mixinConfig "apugli.forge.mixins.json"
-    mixinConfig "apugli.origins.forge.mixins.json"
 
     launches {
         client {
@@ -46,9 +43,6 @@ dependencies {
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) {
         transitive = false
     }
-    shadowCommon(group: 'com.github.MerchantPug.apugli', name: 'Apugli-1.16.5-forge', version: "${rootProject.apugli_version}") {
-        transitive = false
-    }
 }
 
 processResources {
@@ -59,69 +53,12 @@ processResources {
     }
 }
 
-import com.github.jengelman.gradle.plugins.shadow.transformers.Transformer
-import com.github.jengelman.gradle.plugins.shadow.transformers.TransformerContext
-import shadow.org.apache.tools.zip.ZipOutputStream
-import shadow.org.apache.tools.zip.ZipEntry
-
-import java.nio.charset.Charset
-
-class ModsTransformer implements Transformer {
-
-    private final List<String> lines = new ArrayList<>();
-
-    @Override
-    boolean canTransformResource(FileTreeElement element) {
-        return element.getRelativePath().getPathString().equalsIgnoreCase("META-INF/mods.toml");
-    }
-
-    @Override
-    void transform(TransformerContext context) {
-        List<String> result = new ArrayList<>();
-        try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(context.getIs()))
-            while (true) {
-                String line = reader.readLine();
-                if (line == null)
-                    break;
-                result.add(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if (!this.lines.isEmpty())
-            result.removeIf({ x -> x.startsWith("modLoader=") || x.startsWith("loaderVersion=") || x.startsWith("license=") || x.startsWith("issueTrackerURL=") || x.startsWith("showAsResourcePack=") });
-        this.lines.addAll(result);
-    }
-
-    @Override
-    boolean hasTransformedResource() {
-        return !this.lines.isEmpty();
-    }
-
-    @Override
-    void modifyOutputStream(ZipOutputStream jos, boolean preserveFileTimestamps) {
-        ZipEntry entry = new ZipEntry("META-INF/mods.toml");
-        try {
-            entry.setTime(TransformerContext.getEntryTimestamp(preserveFileTimestamps, entry.getTime()))
-            jos.putNextEntry(entry)
-            jos.write(this.lines.stream().reduce({ x, y -> x + "\n" + y }).orElse("").getBytes(Charset.forName("UTF-8")))
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        this.lines.clear();
-    }
-}
-
 shadowJar {
     exclude "fabric.mod.json"
     exclude "toomanyorigins.accessWidener"
 
     configurations = [project.configurations.shadowCommon]
     classifier "dev-shadow"
-
-    transform(new ModsTransformer())
 }
 
 remapJar {
