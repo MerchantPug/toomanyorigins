@@ -20,13 +20,13 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.merchantpug.toomanyorigins.fabric.TooManyOriginsFabric"
+      "com.github.merchantpug.toomanyorigins.fabric.TooManyOriginsFabric"
     ],
     "client": [
-      "io.github.merchantpug.toomanyorigins.fabric.TooManyOriginsFabricClient"
+      "com.github.merchantpug.toomanyorigins.fabric.TooManyOriginsFabricClient"
     ],
     "modmenu": [
-      "io.github.merchantpug.toomanyorigins.fabric.integration.TMOModMenuIntegration"
+      "com.github.merchantpug.toomanyorigins.fabric.integration.TMOModMenuIntegration"
     ]
   },
   "mixins": [
@@ -39,6 +39,6 @@
     "minecraft": ">=1.16.4",
     "architectury": ">=1.10.142",
     "origins": ">=0.7.3",
-    "apugli": ">=1.6.2.2"
+    "apugli": ">=1.7.0"
   }
 }

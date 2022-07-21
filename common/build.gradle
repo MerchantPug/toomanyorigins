@@ -5,7 +5,7 @@ dependencies {
     // Remove the next line if you don't want to depend on the API
     modApi "me.shedaniel:architectury:${rootProject.architectury_version}"
     modApi group: 'com.github.EdwinMindcraft.origins-architectury', name: 'Origins-1.16.5', version: "${rootProject.origins_architectury_version}"
-    modApi group: 'com.github.MerchantPug.apugli', name: 'Apugli-1.16.5', version: "${rootProject.apugli_version}"
+    modApi group: 'com.github.merchantpug', name: 'Apugli', version: "${rootProject.apugli_version}"
 
 }
 

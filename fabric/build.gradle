@@ -27,8 +27,8 @@ dependencies {
     modApi "me.shedaniel:architectury-fabric:${rootProject.architectury_version}"
     modImplementation group: 'com.github.apace100', name: 'origins-fabric', version: "${rootProject.origins_fabric_version}"
 
-    modImplementation group: 'com.github.MerchantPug.apugli', name: 'Apugli-1.16.5-fabric', version: "${rootProject.apugli_version}"
-    include group: 'com.github.MerchantPug.apugli', name: 'Apugli-1.16.5-fabric', version: "${rootProject.apugli_version}"
+    modImplementation group: 'com.github.merchantpug', name: 'Apugli-fabric', version: "${rootProject.apugli_version}"
+    include group: 'com.github.merchantpug', name: 'Apugli-fabric', version: "${rootProject.apugli_version}"
 
     implementation(project(path: ":common")) {
         transitive = false

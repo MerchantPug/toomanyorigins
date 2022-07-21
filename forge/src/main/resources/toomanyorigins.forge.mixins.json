@@ -1,7 +1,7 @@
 {
   "required": false,
   "minVersion": "0.8",
-  "package": "io.github.merchantpug.toomanyorigins.mixin.forge",
+  "package": "com.github.merchantpug.toomanyorigins.mixin.forge",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "AttributePowerMixin",
