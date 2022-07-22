@@ -1,0 +1,7 @@
+{
+  "type": "toomanyorigins:modify_soul_speed",
+  "modifier": {
+    "operation": "addition",
+    "value": 1
+  }
+}

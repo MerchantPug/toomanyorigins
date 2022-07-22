@@ -1,6 +1,7 @@
 ## TooManyOrigins v1.0.0-beta.1
 ### Origins
 **General**
+- Reworked every origin. If you would like to have the old origins, you are able to use the Legacy Content Config Options.
 - Reworded descriptions to open up more player interpretation.
 
 **Translations**
@@ -21,8 +22,9 @@
 **Swarm**
 - Changed to Impact 2.
 - Made internal changes to the Hover power.
-- Can no longer recharge hover when fully submerged in water or touching lava.
+- Can no longer recharge hover touching water or lava.
 - Beekeeper is now a hidden power.
 - Removed Expendable.
 - Removed Smoke Sensitivity.
+- Removed hidden Aerial Affinity power.
 - Added Stinging Pains and Unity downsides in place of the above two downsides.

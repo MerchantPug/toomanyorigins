@@ -89,20 +89,10 @@
     },
     "interval": 1,
     "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:power_active",
-          "power": "*:*_hover",
-          "inverted": true
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:*_recharge_condition_resource",
-          "comparison": "==",
-          "compare_to": 10
-        }
-      ]
+      "type": "origins:resource",
+      "resource": "*:*_recharge_condition_resource",
+      "comparison": "==",
+      "compare_to": 10
     }
   },
   "recharge_condition_increase": {
@@ -130,8 +120,8 @@
         {
           "type": "origins:fluid_height",
           "fluid": "minecraft:water",
-          "comparison": "<",
-          "compare_to": "1.4"
+          "comparison": "==",
+          "compare_to": "0"
         },
         {
           "type": "origins:fluid_height",

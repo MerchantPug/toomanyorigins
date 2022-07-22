@@ -1,0 +1,36 @@
+{
+  "type": "origins:active_self",
+  "cooldown": 600,
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:change_resource",
+        "resource": "toomanyorigins:bunny_hop",
+        "change": 10
+      },
+      {
+        "type": "origins:spawn_particles",
+        "particle": "minecraft:cloud",
+        "speed": 0.2,
+        "count": 7
+      },
+      {
+        "type": "origins:play_sound",
+        "sound": "toomanyorigins:origin.hare.dash"
+      }
+    ]
+  },
+  "hud_render": {
+    "should_render": true,
+    "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
+    "bar_index": 6
+  },
+  "condition": {
+    "type": "origins:resource",
+    "resource": "toomanyorigins:bunny_hop",
+    "comparison": "<",
+    "compare_to": 60
+  },
+  "hidden": true
+}

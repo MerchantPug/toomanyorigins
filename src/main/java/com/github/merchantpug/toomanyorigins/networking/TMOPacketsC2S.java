@@ -25,15 +25,20 @@ SOFTWARE.
 package com.github.merchantpug.toomanyorigins.networking;
 
 import com.github.merchantpug.toomanyorigins.TooManyOrigins;
+import com.github.merchantpug.toomanyorigins.util.TooManyOriginsServerConfig;
 import net.fabricmc.fabric.api.networking.v1.*;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerLoginNetworkHandler;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TMOPacketsC2S {
     public static void register() {
-        if(TooManyOrigins.serverConfig.performVersionCheck) {
+        if(TooManyOriginsServerConfig.performVersionCheck) {
             ServerLoginConnectionEvents.QUERY_START.register(TMOPacketsC2S::handshake);
             ServerLoginNetworking.registerGlobalReceiver(TMOPackets.HANDSHAKE, TMOPacketsC2S::handleHandshakeReply);
         }
@@ -59,6 +64,38 @@ public class TMOPacketsC2S {
                     }
                 }
                 serverLoginNetworkHandler.disconnect(Text.translatable("toomanyorigins.gui.version_mismatch", TooManyOrigins.VERSION, clientVersionString));
+                return;
+            }
+            boolean legacyMismatch = false;
+            List<MutableText> mismatchedOriginTranslationKeys = new ArrayList<>();
+
+            boolean clientLegacyDragonbornEnabled = packetByteBuf.readBoolean();
+            if (TooManyOrigins.legacyDragonbornContentRegistered && !clientLegacyDragonbornEnabled) {
+                mismatchedOriginTranslationKeys.add(Text.translatable("origin.toomanyorigins.dragonborn.name"));
+                legacyMismatch = true;
+            }
+
+            boolean clientLegacyUndeadEnabled = packetByteBuf.readBoolean();
+            if (TooManyOrigins.legacyUndeadContentRegistered && !clientLegacyUndeadEnabled) {
+                mismatchedOriginTranslationKeys.add(Text.translatable("origin.toomanyorigins.undead.name"));
+                legacyMismatch = true;
+            }
+
+            boolean clientLegacyWitheredEnabled = packetByteBuf.readBoolean();
+            if (TooManyOrigins.legacyWitheredContentRegistered && !clientLegacyWitheredEnabled) {
+                mismatchedOriginTranslationKeys.add(Text.translatable("origin.toomanyorigins.withered.name"));
+                legacyMismatch = true;
+            }
+
+            if (legacyMismatch) {
+                MutableText originText = Text.literal("");
+                for (int i = 0; i < mismatchedOriginTranslationKeys.size(); i++) {
+                    originText.append(mismatchedOriginTranslationKeys.get(i));
+                    if (i < mismatchedOriginTranslationKeys.size() - 1) {
+                        originText.append(", ");
+                    }
+                }
+                serverLoginNetworkHandler.disconnect(Text.translatable("toomanyorigins.gui.legacy_mismatch", originText));
             }
         } else {
             serverLoginNetworkHandler.disconnect(Text.literal("This server requires you to install the TooManyOrigins mod (v" + TooManyOrigins.VERSION + ") to play."));

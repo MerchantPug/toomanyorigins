@@ -39,6 +39,13 @@ repositories {
 	maven {
 		url "https://maven.terraformersmc.com/"
 	}
+	maven {
+		name = "Modrinth"
+		url = "https://api.modrinth.com/maven"
+		content {
+			includeGroup "maven.modrinth"
+		}
+	}
 }
 
 dependencies {
@@ -53,6 +60,9 @@ dependencies {
 	modImplementation ("com.github.apace100:origins-fabric:${project.origins_version}")
 	modImplementation("com.github.merchantpug:apugli:${project.apugli_version}")
 	include "com.github.merchantpug:apugli:${project.apugli_version}"
+
+	modImplementation "maven.modrinth:midnightlib:${project.midnightlib_version}"
+	include "maven.modrinth:midnightlib:${project.midnightlib_version}"
 }
 
 processResources {

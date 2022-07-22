@@ -1,0 +1,10 @@
+{
+  "type": "toomanyorigins:energy_swirl",
+  "texture_location": "minecraft:textures/entity/wither/wither_armor.png",
+  "speed": 0.01,
+  "condition": {
+    "type": "origins:power_active",
+    "power": "toomanyorigins:soul_shield"
+  },
+  "hidden": true
+}

@@ -1,0 +1,19 @@
+{
+  "type": "origins:modify_food",
+  "item_condition": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "item": "minecraft:rotten_flesh"
+    }
+  },
+  "food_modifier": {
+    "name": "Increased food points from rotten flesh",
+    "operation": "addition",
+    "value": 5.0
+  },
+  "saturation_modifier": {
+    "name": "Increased saturation points from rotten flesh",
+    "operation": "addition",
+    "value": 0.5
+  }
+}

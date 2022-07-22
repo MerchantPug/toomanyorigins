@@ -1,0 +1,219 @@
+{
+  "type": "origins:multiple",
+  "hover": {
+    "type": "toomanyorigins:hover",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_active_resource",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        {
+          "type": "toomanyorigins:velocity",
+          "y": 0.0,
+          "comparison": ">="
+        },
+        {
+          "type": "toomanyorigins:key_pressed",
+          "key": {
+            "key": "key.jump",
+            "continuous": true
+          }
+        },
+        {
+          "type": "origins:climbing",
+          "inverted": true
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": "0",
+          "inverted": true
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:lava",
+          "comparison": ">",
+          "compare_to": "0",
+          "inverted": true
+        },
+        {
+          "type": "origins:fall_flying",
+          "inverted": true
+        },
+        {
+          "type": "origins:riding",
+          "inverted": true
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle_resource"
+        }
+      ]
+    }
+  },
+  "deplete_while_using": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_active_resource",
+          "change": -1
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_recharge_condition_resource",
+          "change": 0,
+          "operation": "SET"
+        }
+      ]
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_hover"
+    }
+  },
+  "recharge": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_active_resource",
+      "change": 2
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_hover",
+          "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_recharge_condition_resource",
+          "comparison": "==",
+          "compare_to": 10
+        }
+      ]
+    }
+  },
+  "recharge_condition_increase": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_recharge_condition_resource",
+      "change": 1
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:on_block"
+            },
+            {
+              "type": "origins:riding"
+            }
+          ]
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_hover",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "active_resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 60,
+    "start_value": 60,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
+      "bar_index": 8,
+      "condition": {
+        "type": "origins:power_active",
+        "power": "*:*_toggle_resource"
+      }
+    },
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_toggle_resource"
+    }
+  },
+  "inactive_resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 60,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
+      "bar_index": 9,
+      "condition": {
+        "type": "origins:power_active",
+        "power": "*:*_toggle_resource",
+        "inverted": true
+      }
+    },
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_toggle_resource",
+      "inverted": true
+    }
+  },
+  "recharge_condition_resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 10,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+  "sync_values": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "toomanyorigins:resource_transfer",
+      "resource": "*:*_inactive_resource",
+      "provider": "*:*_active_resource"
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "toomanyorigins:compare_resource",
+          "resource": "*:*_inactive",
+          "compare_to": "*:*_inactive_resource",
+          "comparison": "==",
+          "inverted": true
+        },
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle_resource",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "toggle_resource": {
+    "type": "origins:toggle",
+    "active_by_default": true,
+    "key": {
+      "key": "null"
+    }
+  },
+  "hidden": true
+}

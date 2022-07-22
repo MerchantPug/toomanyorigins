@@ -1,0 +1,37 @@
+{
+  "type": "origins:multiple",
+  "projectile_immunity": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:projectile"
+    },
+    "modifier": {
+      "name": "Immunity to projectiles",
+      "operation": "multiply_total",
+      "value": -1
+    },
+    "condition": {
+      "type": "origins:relative_health",
+      "comparison": "<=",
+      "compare_to": 0.5
+    }
+  },
+  "wither_resistance": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "name": "Soul shield damage resisted",
+      "operation": "multiply_total",
+      "value": -0.2
+    },
+    "condition": {
+      "type": "origins:relative_health",
+      "comparison": "<=",
+      "compare_to": 0.5
+    }
+  },
+  "condition": {
+    "type": "origins:relative_health",
+    "comparison": "<=",
+    "compare_to": 0.5
+  }
+}

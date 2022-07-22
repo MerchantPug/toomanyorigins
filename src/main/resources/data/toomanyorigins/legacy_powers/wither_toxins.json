@@ -1,0 +1,25 @@
+{
+  "type": "origins:target_action_on_hit",
+  "entity_action": {
+    "type": "origins:apply_effect",
+    "effect": {
+      "effect": "minecraft:wither",
+      "amplifier": 1,
+      "duration": 100
+    }
+  },
+  "cooldown": 120,
+  "hud_render": {
+    "should_render": true,
+    "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
+    "bar_index": 3
+  },
+  "damage_condition": {
+    "type": "origins:name",
+    "name": "player"
+  },
+  "target_condition": {
+    "type": "toomanyorigins:can_have_effect",
+    "effect": "minecraft:wither"
+  }
+}

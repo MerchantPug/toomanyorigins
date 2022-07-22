@@ -1,20 +1,17 @@
 {
+  "origin.toomanyorigins.dragonborn.name": "Dragonborn",
+
+  "origin.toomanyorigins.hare.name": "Hare",
+
   "origin.toomanyorigins.hisskin.name": "Hiss-kin",
   "origin.toomanyorigins.hisskin.description": "This distant relative of the creeper utilises its explosions as a get-away tactic.",
 
   "origin.toomanyorigins.swarm.name": "Swarm",
   "origin.toomanyorigins.swarm.description": "These hive independent insects are proficient farmers that avoid conflict.",
 
-  "item.toomanyorigins.dragon_fireball": "Dragon Fireball",
-  "entity.toomanyorigins.fireball_area_effect_cloud": "Fireball Area Effect Cloud",
-  "death.attack.dragonMagic": "%1$s was roasted in dragon breath",
-  "death.attack.dragonMagic.player": "%1$s was roasted in dragon breath whilst trying to escape %2$s",
-  "death.attack.dragonMagic.player.item": "%1$s was roasted in dragon breath whilst trying to escape %2$s using %3$s",
-  "death.attack.indirectDragonMagic": "%1$s was roasted in dragon breath by %2$s",
-  "death.attack.indirectDragonMagic.item": "%1$s was roasted in dragon breath by %2$s using %3$s",
-  "effect.toomanyorigins.end_fire": "End Fire",
+  "origin.toomanyorigins.undead.name": "Undead",
 
-  "subtitles.origin.hare.dash": "Hare dashes",
+  "origin.toomanyorigins.withered.name": "Withered",
 
   "power.toomanyorigins.overheat.name": "Overheat",
   "power.toomanyorigins.overheat.description": "You can rocket jump away from any object you are looking at, harming yourself in the process.",
@@ -41,25 +38,122 @@
   "power.toomanyorigins.unity.name": "Unity",
   "power.toomanyorigins.unity.description": "You lose maximum hearts of health dependent on your hunger level.",
 
+  "toomanyorigins.midnightconfig.title": "TooManyOrigins Configuration",
+  "toomanyorigins.midnightconfig.dragonFireballMixinOptions": "Ender Dragon Fireball Mixin Options",
+  "toomanyorigins.midnightconfig.shouldFireballDamageUndead": "Fireball Damages Undead Entities",
+  "toomanyorigins.midnightconfig.legacyContentOptions": "Legacy Content Options (Requires Restart)",
+  "toomanyorigins.midnightconfig.legacyDragonbornEnabled": "Legacy Dragonborn",
+  "toomanyorigins.midnightconfig.legacyHareEnabled": "Legacy Hare",
+  "toomanyorigins.midnightconfig.legacyHisskinEnabled": "Legacy Hiss-kin",
+  "toomanyorigins.midnightconfig.legacySwarmEnabled": "Legacy Swarm",
+  "toomanyorigins.midnightconfig.legacyUndeadEnabled": "Legacy Undead",
+  "toomanyorigins.midnightconfig.legacyWitheredEnabled": "Legacy Withered",
+
+  "toomanyorigins.gui.version_mismatch": "This server is running a different version of TooManyOrigins (v%1$s) which is incompatible with the one you have installed (v%2$s).",
+  "toomanyorigins.gui.legacy_mismatch": "This server is running legacy content for specific TooManyOrigins origins (%1$s). Enable these in your config and relaunch your game.",
+
+
+
+  "origin.legacy_toomanyorigins.dragonborn.description": "Half Human, Half Dragon. Their ferocious breath and structure makes the inhabitants of The End bow before them.",
+
+  "power.legacy_toomanyorigins.dragon_breath.name": "Draconic Breath",
+  "power.legacy_toomanyorigins.dragon_breath.description": "You are able to conjure a ball of armour-piercing draconic flame that leaves a lingering cloud wherever it lands.",
+  "power.legacy_toomanyorigins.light_up.name": "Wyrmsmith's Touch",
+  "power.legacy_toomanyorigins.light_up.description": "You can light furnaces, campfires and brewing stands with your breath alone.",
+  "power.legacy_toomanyorigins.no_knockback.name": "Steady Stance",
+  "power.legacy_toomanyorigins.no_knockback.description": "You stand strong and proud against your foes, taking no knockback from their attacks.",
+  "power.legacy_toomanyorigins.loose_scales.name": "Loose Scales",
+  "power.legacy_toomanyorigins.loose_scales.description": "Because of some loose scales on your back, you take more damage when hit from behind.",
+  "power.legacy_toomanyorigins.zenith_dragonhide.name": "Zenith Dragonhide",
+  "power.legacy_toomanyorigins.zenith_dragonhide.description": "You have 2 more hearts of health than humans.",
+
+  "toomanyorigins.gui.badge.furnace": "Look at a lightable block to use this power.",
+  "toomanyorigins.gui.badge.no_furnace": "Do not look at a lightable block to use this power.",
+
+  "item.toomanyorigins.dragon_fireball": "Dragon Fireball",
+  "entity.toomanyorigins.fireball_area_effect_cloud": "Fireball Area Effect Cloud",
+  "death.attack.dragonMagic": "%1$s was roasted in dragon breath",
+  "death.attack.dragonMagic.player": "%1$s was roasted in dragon breath whilst trying to escape %2$s",
+  "death.attack.dragonMagic.player.item": "%1$s was roasted in dragon breath whilst trying to escape %2$s using %3$s",
+  "death.attack.indirectDragonMagic": "%1$s was roasted in dragon breath by %2$s",
+  "death.attack.indirectDragonMagic.item": "%1$s was roasted in dragon breath by %2$s using %3$s",
+  "effect.toomanyorigins.end_fire": "End Fire",
+
+  "origin.legacy_toomanyorigins.hare.description": "A race of burrow dwelling rabbits that had attained a level of awareness akin to humans. They inherited their proficient mobility.",
+
+  "power.legacy_toomanyorigins.bunny_hop.name": "Bunny Hop",
+  "power.legacy_toomanyorigins.bunny_hop.description": "You build up momentum while in the air which is added to your movement speed. You keep built up momentum momentarily while on the ground. You may also gain momentum with your active ability.",
+  "power.legacy_toomanyorigins.moon_leap.name": "Moon Leap",
+  "power.legacy_toomanyorigins.moon_leap.description": "While sneaking your jump height has increases.",
+  "power.legacy_toomanyorigins.sugary_delicacy.name": "Sugary Delicacy",
+  "power.legacy_toomanyorigins.sugary_delicacy.description": "Eating carrots and golden carrots fills your bunny hop momentum up to a quarter.",
+  "power.legacy_toomanyorigins.photophobia.name": "Photophobia",
+  "power.legacy_toomanyorigins.photophobia.description": "You are unable to sleep in bright light.",
+  "power.legacy_toomanyorigins.lightweight.name": "Lightweight",
+  "power.legacy_toomanyorigins.lightweight.description": "You have 2 less hearts of health than humans.",
+
+  "subtitles.origin.hare.dash": "Hare dashes",
+  "toomanyorigins.hare_sleep_fail": "You need less light to sleep",
+
+  "origin.legacy_toomanyorigins.hisskin.description": "This evolutionary path of creeper learned to control their explosions as to not harm the environment around them as a get-away tactic.",
+
+  "power.legacy_toomanyorigins.overheat.name": "Overheat",
+  "power.legacy_toomanyorigins.overheat.description": "You can rocket jump away from any object you're looking at. This sets your inner gunpowder on fire harming you in the process.",
+  "power.legacy_toomanyorigins.blast_immunity.name": "Blast Resistant Skin",
+  "power.legacy_toomanyorigins.blast_immunity.description": "You are immune to all forms of explosive damage.",
+  "power.legacy_toomanyorigins.conductor.name": "Conductor",
+  "power.legacy_toomanyorigins.conductor.description": "When struck by lightning, you become charged.",
+  "power.legacy_toomanyorigins.sneaking_steps.name": "Sneaking Steps",
+  "power.legacy_toomanyorigins.sneaking_steps.description": "As you are used to sneaking up on your prey, you move slightly slower.",
+  "power.legacy_toomanyorigins.ailurophobia.name": "Ailurophobia",
+  "power.legacy_toomanyorigins.ailurophobia.description": "Being near cats or ocelots weakens and makes you slower.",
+
+  "origin.legacy_toomanyorigins.swarm.description": "These hive independent group of bees choose to stick together to overcome the obstacles of the outside world.",
+
+  "power.legacy_toomanyorigins.hover_toggle.name": "Hover",
+  "power.legacy_toomanyorigins.hover_toggle.description": "Being made up of multiple bees, you are able to hover midair whenever you are falling.",
+  "power.legacy_toomanyorigins.smoke_sensitivity.name": "Smoke Sensitivity",
+  "power.legacy_toomanyorigins.smoke_sensitivity.description": "Your senses are lessened when near smoke.",
+  "power.legacy_toomanyorigins.expendable.name": "Expendable",
+  "power.legacy_toomanyorigins.expendable.description": "You have 3 less hearts of health than humans.",
+  "power.legacy_toomanyorigins.beekeeper.name": "Beekeeper",
+  "power.legacy_toomanyorigins.beekeeper.description": "Taking honey and honeycomb from a hive does not anger bees.",
+
+  "origin.legacy_toomanyorigins.undead.description": "A rare genetic mutation allows this race to keep their humanity despite suffering the effects of the Infection.",
+
+  "power.legacy_toomanyorigins.deathly_bite.name": "Deathly Bite",
+  "power.legacy_toomanyorigins.deathly_bite.description": "Your melee attacks inflict a Zombifying effect on non undead mobs for a short time. Hitting any villager that has this effect zombifies them.",
+  "power.legacy_toomanyorigins.no_helmet_burn.name": "Husk of a Former Self",
+  "power.legacy_toomanyorigins.no_helmet_burn.description": "After 1 minute and 30 seconds of spawning in you burn in sunlight unless headwear is worn.",
+  "power.legacy_toomanyorigins.cannibalism.name": "Cannibalism",
+  "power.legacy_toomanyorigins.cannibalism.description": "Rotten Flesh is more nutritious for you.",
+  "power.legacy_toomanyorigins.opposite_day.name": "Opposite Day",
+  "power.legacy_toomanyorigins.opposite_day.description": "Instant Health and Instant Damage have the reverse effect. You are also immune to Hunger and Zombifying.",
+  "power.legacy_toomanyorigins.lacerated_liver.name": "Lacerated Liver",
+  "power.legacy_toomanyorigins.lacerated_liver.description": "Foods that aren't rotten flesh are less saturating for you.",
+
   "effect.toomanyorigins.zombifying": "Zombifying",
   "death.attack.zombification": "%1$s rotted away",
   "death.attack.zombification.player": "%1$s rotted away whilst trying to escape %2$s",
   "death.attack.zombification.player.item": "%1$s rotted away whilst trying to escape %2$s using %3$s",
 
+  "origin.legacy_toomanyorigins.withered.description": "Originally human, their ancestors have paid the price for harnessing the chaotic power of the Wither.",
+
+  "power.legacy_toomanyorigins.black_thumb.name": "Black Thumb",
+  "power.legacy_toomanyorigins.black_thumb.description": "You spread decay to any overworld crops you plant, making them unable to grow.",
+  "power.legacy_toomanyorigins.spirit_strider.name": "Spirit Strider",
+  "power.legacy_toomanyorigins.spirit_strider.description": "You have one extra level of Soul Speed at all times.",
+  "power.legacy_toomanyorigins.soul_shield.name": "Soul Shield",
+  "power.legacy_toomanyorigins.soul_shield.description": "When you are at 50% of your maximum health or below, you create a soul projection around yourself, making yourself more resistant to damage and immune to projectiles.",
+  "power.legacy_toomanyorigins.wither_immunity.name": "Infused Veins",
+  "power.legacy_toomanyorigins.wither_immunity.description": "You are immune to the Wither effect.",
+  "power.legacy_toomanyorigins.wither_toxins.name": "Wither Toxins",
+  "power.legacy_toomanyorigins.wither_toxins.description": "Your melee attacks inflict the Wither effect for a short time.",
+  "power.legacy_toomanyorigins.weariness.name": "Weariness",
+  "power.legacy_toomanyorigins.weariness.description": "As animals are weary around you, you are unable to breed animals.",
+
   "item.toomanyorigins.withered_crop_seeds": "Withered Crop Seeds",
   "item.toomanyorigins.withered_stem_seeds": "Withered Stem Seeds",
-  "block.toomanyorigins.withered_beetroots": "Withered Beetroots",
-  "block.toomanyorigins.withered_carrots": "Withered Carrots",
-  "block.toomanyorigins.withered_melon_stem": "Withered Melon Stem",
-  "block.toomanyorigins.withered_potatoes": "Withered Potatoes",
-  "block.toomanyorigins.withered_pumpkin_stem": "Withered Pumpkin Stem",
-  "block.toomanyorigins.withered_wheat": "Withered Wheat",
   "block.toomanyorigins.withered_crop": "Withered Crop",
-  "block.toomanyorigins.withered_stem": "Withered Stem",
-
-  "text.autoconfig.toomanyorigins.title": "TooManyOrigins Configuration",
-  "text.autoconfig.toomanyorigins.option.dragonFireballMixin": "Ender Dragon Fireball Mixin Options",
-  "text.autoconfig.toomanyorigins.option.dragonFireballMixin.shouldFireballDamageUndead": "Fireball Damages Undead Entities",
-
-  "toomanyorigins.gui.version_mismatch": "This server is running a different version of TooManyOrigins (v%1$s) which is incompatible with the one you have installed (v%2$s)."
+  "block.toomanyorigins.withered_stem": "Withered Stem"
 }

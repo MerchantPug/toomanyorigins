@@ -1,0 +1,25 @@
+{
+  "type": "origins:target_action_on_hit",
+  "entity_action": {
+    "type": "origins:apply_effect",
+    "effect": {
+      "effect": "toomanyorigins:zombifying",
+      "amplifier": 0,
+      "duration": 90
+    }
+  },
+  "cooldown": 160,
+  "hud_render": {
+    "should_render": true,
+    "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
+    "bar_index": 4
+  },
+  "damage_condition": {
+    "type": "origins:name",
+    "name": "player"
+  },
+  "target_condition": {
+    "type": "toomanyorigins:can_have_effect",
+    "effect": "toomanyorigins:zombifying"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "origins:multiple",
+  "change_crops": {
+    "type": "toomanyorigins:modify_block_placed",
+    "block": "toomanyorigins:withered_crop",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "toomanyorigins:crop_seeds"
+      }
+    }
+  },
+  "change_stems": {
+    "type": "toomanyorigins:modify_block_placed",
+    "block": "toomanyorigins:withered_stem",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "toomanyorigins:stem_seeds"
+      }
+    }
+  }
+}

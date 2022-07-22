@@ -52,6 +52,9 @@ public class TMOPacketsS2C {
         for(int i = 0; i < TooManyOrigins.SEMVER.length; i++) {
             buf.writeInt(TooManyOrigins.SEMVER[i]);
         }
+        buf.writeBoolean(TooManyOrigins.legacyDragonbornContentRegistered);
+        buf.writeBoolean(TooManyOrigins.legacyUndeadContentRegistered);
+        buf.writeBoolean(TooManyOrigins.legacyWitheredContentRegistered);
         TooManyOriginsClient.isServerRunningTMO = true;
         return CompletableFuture.completedFuture(buf);
     }

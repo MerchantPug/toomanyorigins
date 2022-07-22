@@ -1,0 +1,22 @@
+{
+  "type": "origins:modify_food",
+  "entity_action": {
+    "type": "origins:change_resource",
+    "resource": "toomanyorigins:bunny_hop",
+    "change": 15,
+    "operation": "set"
+  },
+  "item_condition": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "toomanyorigins:carrots"
+    }
+  },
+  "always_edible": true,
+  "condition": {
+    "type": "origins:resource",
+    "resource": "toomanyorigins:bunny_hop",
+    "comparison": "<",
+    "compare_to": 15
+  }
+}

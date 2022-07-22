@@ -1,7 +1,9 @@
 package com.github.merchantpug.toomanyorigins.mixin;
 
+import com.github.merchantpug.toomanyorigins.TooManyOrigins;
 import com.github.merchantpug.toomanyorigins.registry.TMOEffects;
 import com.github.merchantpug.toomanyorigins.registry.TMOPowers;
+import com.github.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
 import net.minecraft.entity.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
@@ -35,7 +37,7 @@ public abstract class LivingEntityMixin extends Entity {
     private void zombifyVillagerOnDeath(DamageSource source, CallbackInfo ci) {
         if (!this.isRemoved()) {
             if ((LivingEntity)(Object)this instanceof VillagerEntity) {
-                if ((this.hasStatusEffect(TMOEffects.ZOMBIFYING) && source.getName().equals("zombification")) || TMOPowers.DEATHLY_BITE.isActive(source.getAttacker()) && TMOPowers.DEATHLY_BITE.get(source.getAttacker()).canUse()) {
+                if (TooManyOriginsConfig.legacyUndeadEnabled && (this.hasStatusEffect(TMOEffects.ZOMBIFYING) && source.getName().equals("zombification") || TMOPowers.LEGACY_DEATHLY_BITE.isActive(source.getAttacker()) && TMOPowers.LEGACY_DEATHLY_BITE.get(source.getAttacker()).canUse())) {
                     VillagerEntity villagerEntity = (VillagerEntity)(Object)this;
                     ZombieVillagerEntity zombieVillagerEntity = villagerEntity.convertTo(EntityType.ZOMBIE_VILLAGER, false);
                     if (zombieVillagerEntity != null) {
@@ -55,7 +57,7 @@ public abstract class LivingEntityMixin extends Entity {
     private void makeUndeadImmuneToEffects(StatusEffectInstance effect, CallbackInfoReturnable<Boolean> cir) {
         StatusEffect statusEffect = effect.getEffectType();
         if (this.getGroup() == EntityGroup.UNDEAD) {
-            if (statusEffect == TMOEffects.ZOMBIFYING) {
+            if (TooManyOriginsConfig.legacyUndeadEnabled && statusEffect == TMOEffects.ZOMBIFYING) {
                 cir.setReturnValue(false);
             }
         }

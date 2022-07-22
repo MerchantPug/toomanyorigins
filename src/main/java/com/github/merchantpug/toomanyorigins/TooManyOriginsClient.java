@@ -24,29 +24,18 @@ SOFTWARE.
 
 package com.github.merchantpug.toomanyorigins;
 
-import com.github.merchantpug.apugli.Apugli;
-import com.github.merchantpug.apugli.ApugliClient;
 import com.github.merchantpug.toomanyorigins.networking.TMOPacketsS2C;
 import com.github.merchantpug.toomanyorigins.registry.TMOBlocks;
 import com.github.merchantpug.toomanyorigins.registry.TMOEntities;
-import io.netty.util.concurrent.Future;
-import io.netty.util.concurrent.GenericFutureListener;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.network.ClientLoginNetworkHandler;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.EmptyEntityRenderer;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
-import net.minecraft.network.PacketByteBuf;
-
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Consumer;
 
 public class TooManyOriginsClient implements ClientModInitializer {
     public static boolean isServerRunningTMO = false;
@@ -56,33 +45,20 @@ public class TooManyOriginsClient implements ClientModInitializer {
     public void onInitializeClient() {
         TMOPacketsS2C.register();
 
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_BEETROOTS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_CARROTS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_CROP, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_MELON_STEM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_POTATOES, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_PUMPKIN_STEM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_STEM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_WHEAT, RenderLayer.getCutout());
+        if (TooManyOrigins.legacyWitheredContentRegistered) {
+            BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_CROP, RenderLayer.getCutout());
+            BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_STEM, RenderLayer.getCutout());
 
-        EntityRendererRegistry.register(TMOEntities.SMALL_DRAGON_FIREBALL, FlyingItemEntityRenderer::new);
-        EntityRendererRegistry.register(TMOEntities.FIREBALL_AREA_EFFECT_CLOUD, EmptyEntityRenderer::new);
-
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
-            int k = 255;
-            int l = 0;
-            return k << 8 | l;
-        }, TMOBlocks.WITHERED_PUMPKIN_STEM, TMOBlocks.WITHERED_MELON_STEM, TMOBlocks.WITHERED_STEM);
-    }
-
-    @Environment(EnvType.CLIENT)
-    private static CompletableFuture<PacketByteBuf> handleHandshake(MinecraftClient minecraftClient, ClientLoginNetworkHandler clientLoginNetworkHandler, PacketByteBuf packetByteBuf, Consumer<GenericFutureListener<? extends Future<? super Void>>> genericFutureListenerConsumer) {
-        PacketByteBuf buf = PacketByteBufs.create();
-        buf.writeInt(TooManyOrigins.SEMVER.length);
-        for(int i = 0; i < TooManyOrigins.SEMVER.length; i++) {
-            buf.writeInt(TooManyOrigins.SEMVER[i]);
+            ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
+                int k = 255;
+                int l = 0;
+                return k << 8 | l;
+            }, TMOBlocks.WITHERED_STEM);
         }
-        TooManyOriginsClient.isServerRunningTMO = true;
-        return CompletableFuture.completedFuture(buf);
+
+        if (TooManyOrigins.legacyDragonbornContentRegistered) {
+            EntityRendererRegistry.register(TMOEntities.SMALL_DRAGON_FIREBALL, FlyingItemEntityRenderer::new);
+            EntityRendererRegistry.register(TMOEntities.FIREBALL_AREA_EFFECT_CLOUD, EmptyEntityRenderer::new);
+        }
     }
 }
