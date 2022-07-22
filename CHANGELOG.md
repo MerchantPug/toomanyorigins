@@ -1,7 +1,7 @@
-## TooManyOrigins v1.0.0-beta.1
+## TooManyOrigins v1.0.0
 ### Origins
 **General**
-- Reworked every origin. If you would like to have the old origins, you are able to use the Legacy Content Config Options.
+- Reworked every origin. If you would like to have the old origins, you are able to use the legacy content config options.
 - Reworded descriptions to open up more player interpretation.
 
 **Translations**
@@ -28,3 +28,6 @@
 - Removed Smoke Sensitivity.
 - Removed hidden Aerial Affinity power.
 - Added Stinging Pains and Unity downsides in place of the above two downsides.
+
+**Misc**
+- Changed config options from Cloth Config to MidnightLib Config.
