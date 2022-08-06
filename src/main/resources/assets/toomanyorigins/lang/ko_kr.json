@@ -123,7 +123,7 @@
   "block.toomanyorigins.withered_crop": "시든 작물",
   "block.toomanyorigins.withered_stem": "시든 줄기",
 
-  "text.autoconfig.toomanyorigins.title": "TooManyOrigins 구성",
-  "text.autoconfig.toomanyorigins.option.dragonFireballMixin": "엔더 드래곤 화염구 블렌드 설정",
-  "text.autoconfig.toomanyorigins.option.dragonFireballMixin.shouldFireballDamageUndead": "화염구가 언데드에게 피해를 입힘"
+  "toomanyorigins.midnightconfig.title": "TooManyOrigins 구성",
+  "toomanyorigins.midnightconfig.dragonFireballMixinOptions": "§n엔더 드래곤 화염구 블렌드 설정§r",
+  "toomanyorigins.midnightconfig.shouldFireballDamageUndead": "화염구가 언데드에게 피해를 입힘"
 }

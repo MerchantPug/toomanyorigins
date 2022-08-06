@@ -123,9 +123,9 @@
   "block.toomanyorigins.withered_crop": "Withered Crop",
   "block.toomanyorigins.withered_stem": "Withered Stem",
 
-  "text.autoconfig.toomanyorigins.title": "TooManyOrigins Configuration",
-  "text.autoconfig.toomanyorigins.option.dragonFireballMixin": "Ender Dragon Fireball Mixin Options",
-  "text.autoconfig.toomanyorigins.option.dragonFireballMixin.shouldFireballDamageUndead": "Fireball Damages Undead Entities",
+  "toomanyorigins.midnightconfig.title": "TooManyOrigins Configuration",
+  "toomanyorigins.midnightconfig.dragonFireballMixinOptions": "§nEnder Dragon Fireball Mixin Options§r",
+  "toomanyorigins.midnightconfig.shouldFireballDamageUndead": "Fireball Damages Undead Entities",
 
   "toomanyorigins.gui.version_mismatch": "This server is running a different version of TooManyOrigins (v%1$s) which is incompatible with the one you have installed (v%2$s)."
 }

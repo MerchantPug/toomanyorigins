@@ -123,7 +123,7 @@
   "block.toomanyorigins.withered_crop": "Solmuş Ekim",
   "block.toomanyorigins.withered_stem": "Solmuş Sap",
 
-  "text.autoconfig.toomanyorigins.title": "TooManyOrigins Ayarları",
-  "text.autoconfig.toomanyorigins.option.dragonFireballMixin": "Ender Ejderhası Ateş Topu Karışım Ayarları",
-  "text.autoconfig.toomanyorigins.option.dragonFireballMixin.shouldFireballDamageUndead": "Ateş Topu Ölü Yaratıklara Hasar Verir"
+  "toomanyorigins.midnightconfig.title": "TooManyOrigins Ayarları",
+  "toomanyorigins.midnightconfig.dragonFireballMixinOptions": "§nEnder Ejderhası Ateş Topu Karışım Ayarları§r",
+  "toomanyorigins.midnightconfig.shouldFireballDamageUndead": "Ateş Topu Ölü Yaratıklara Hasar Verir"
 }

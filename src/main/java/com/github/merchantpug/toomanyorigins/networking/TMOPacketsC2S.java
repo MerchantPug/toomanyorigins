@@ -25,6 +25,8 @@ SOFTWARE.
 package com.github.merchantpug.toomanyorigins.networking;
 
 import com.github.merchantpug.toomanyorigins.TooManyOrigins;
+import com.github.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
+import com.github.merchantpug.toomanyorigins.util.TooManyOriginsServerConfig;
 import net.fabricmc.fabric.api.networking.v1.*;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.MinecraftServer;
@@ -33,7 +35,7 @@ import net.minecraft.text.Text;
 
 public class TMOPacketsC2S {
     public static void register() {
-        if(TooManyOrigins.serverConfig.performVersionCheck) {
+        if(TooManyOriginsServerConfig.performVersionCheck) {
             ServerLoginConnectionEvents.QUERY_START.register(TMOPacketsC2S::handshake);
             ServerLoginNetworking.registerGlobalReceiver(TMOPackets.HANDSHAKE, TMOPacketsC2S::handleHandshakeReply);
         }

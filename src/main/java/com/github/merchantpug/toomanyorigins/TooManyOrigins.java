@@ -27,10 +27,9 @@ package com.github.merchantpug.toomanyorigins;
 import com.github.merchantpug.toomanyorigins.networking.TMOPacketsC2S;
 import com.github.merchantpug.toomanyorigins.registry.*;
 import com.github.merchantpug.toomanyorigins.util.TooManyOriginsServerConfig;
+import eu.midnightdust.lib.config.MidnightConfig;
 import io.github.apace100.apoli.util.NamespaceAlias;
 import com.github.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.util.Identifier;
@@ -42,10 +41,6 @@ public class TooManyOrigins implements ModInitializer {
 	public static final Logger LOGGER = LogManager.getLogger(TooManyOrigins.class);
 	public static String VERSION = "";
 	public static int[] SEMVER;
-
-	public static TooManyOriginsConfig config;
-	public static TooManyOriginsServerConfig serverConfig;
-
 	@Override
 	public void onInitialize() {
 		FabricLoader.getInstance().getModContainer(MODID).ifPresent(modContainer -> {
@@ -72,11 +67,8 @@ public class TooManyOrigins implements ModInitializer {
 
 		NamespaceAlias.addAlias(MODID, "apugli");
 
-		AutoConfig.register(TooManyOriginsConfig.class, JanksonConfigSerializer::new);
-		config = AutoConfig.getConfigHolder(TooManyOriginsConfig.class).getConfig();
-
-		AutoConfig.register(TooManyOriginsServerConfig.class, JanksonConfigSerializer::new);
-		serverConfig = AutoConfig.getConfigHolder(TooManyOriginsServerConfig.class).getConfig();
+		MidnightConfig.init(MODID, TooManyOriginsConfig.class);
+		MidnightConfig.init(MODID + "_server", TooManyOriginsServerConfig.class);
 
 		TMOPacketsC2S.register();
 	}
