@@ -27,7 +27,7 @@ jobs:
         run: ./gradlew clean build
 
       - name: Publish (CurseForge/Modrinth)
-        uses: Kir-Antipov/mc-publish@v3.0
+        uses: Kir-Antipov/mc-publish@v3.1
         with:
           # Modrinth
           modrinth-id: xDjN28OB
@@ -39,8 +39,8 @@ jobs:
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           # Config
-          name: TooManyOrigins v0.6.2 (Fabric 1.19)
-          version: v0.6.2+1.19-fabric
+          name: TooManyOrigins v1.0.0 (Fabric/Quilt 1.19)
+          version: v1.0.0+1.19-fabric
           version-type: release
           changelog-file: CHANGELOG.md
           files-primary: build/libs/!(*-@(dev|sources)).jar
@@ -51,10 +51,12 @@ jobs:
             quilt
           game-versions: |
             1.19
+            1.19.1
+            1.19.2
           dependencies: |
             fabric-api | depends | *
             origins | depends | *
-            apugli | includes | v1.8.0+1.19-fabric
+            apugli | includes | v1.9.0+1.19-fabric
           java: |
             17
 
@@ -62,17 +64,17 @@ jobs:
           retry-delay: 10000
 
       - name: Publish (GitHub)
-        uses: Kir-Antipov/mc-publish@v3.0
+        uses: Kir-Antipov/mc-publish@v3.1
         with:
           # GitHub
-          github-tag: v0.6.2+1.19+fabric
+          github-tag: v1.0.0-1.19-fabric
           github-draft: false
           github-prerelease: false
           github-commitish: 1.19-fabric
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          name: TooManyOrigins v0.6.2 (Fabric 1.19)
-          version: v0.6.2+1.19-fabric
+          name: TooManyOrigins v1.0.0 (Fabric/Quilt 1.19)
+          version: v1.0.0+1.19-fabric
           version-type: release
           changelog-file: CHANGELOG.md
 
@@ -81,6 +83,8 @@ jobs:
             quilt
           game-versions: |
             1.19
+            1.19.1
+            1.19.2
           java: |
             17
 
