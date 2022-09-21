@@ -15,6 +15,10 @@ group = project.maven_group
 
 repositories {
 	maven {
+		name = "Pug's Maven"
+		url = 'https://maven.merchantpug.net/releases/'
+	}
+	maven {
 		url "https://jitpack.io"
 	}
 	maven {
@@ -58,8 +62,8 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	modImplementation ("com.github.apace100:origins-fabric:${project.origins_version}")
-	modImplementation("com.github.merchantpug:apugli:${project.apugli_version}")
-	include "com.github.merchantpug:apugli:${project.apugli_version}"
+	modImplementation("net.merchantpug:apugli:${project.apugli_version}")
+	include "net.merchantpug:apugli:${project.apugli_version}"
 }
 
 processResources {
@@ -91,23 +95,26 @@ jar {
 	from "LICENSE"
 }
 
-// configure the maven publication
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
-			// add all the jars that should be included when publishing to maven
-			artifact(remapJar) {
-				builtBy remapJar
-			}
-			artifact(sourcesJar) {
-				builtBy remapSourcesJar
+			afterEvaluate {
+				artifact remapJar
+				artifact(sourcesJar.archiveFile) {
+					classifier = "sources"
+					builtBy remapSourcesJar
+				}
 			}
 		}
 	}
-
-	// select the repositories you want to publish to
 	repositories {
-		// uncomment to publish to the local maven
-		// mavenLocal()
+		maven {
+			name = "merchantpug"
+			url = "https://maven.merchantpug.net/releases"
+			credentials(PasswordCredentials)
+			authentication {
+				create("basic", BasicAuthentication)
+			}
+		}
 	}
 }

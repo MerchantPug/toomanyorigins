@@ -1,10 +1,8 @@
 **[A]** means a relevant Apugli change.
 
 **Bugfixes**
-- [A] Fixed some issues with Swarm's hover.
-
-**Config**
-- Changed config dependency to MidnightLib.
+- [A] Swarm's Beekeeper power no longer angers nearby players.
+- [A] Fixed Withered's Soul Shield power not rendering an overlay.
 
 **Dependencies**
-- [A] Updated Apugli to v1.9.0.
+- [A] Updated Apugli to v1.9.1.

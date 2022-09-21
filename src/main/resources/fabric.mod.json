@@ -21,13 +21,13 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.github.merchantpug.toomanyorigins.TooManyOrigins"
+      "net.merchantpug.toomanyorigins.TooManyOrigins"
     ],
     "client": [
-      "com.github.merchantpug.toomanyorigins.TooManyOriginsClient"
+      "net.merchantpug.toomanyorigins.TooManyOriginsClient"
     ],
     "modmenu": [
-      "com.github.merchantpug.toomanyorigins.integration.TMOModMenuIntegration"
+      "net.merchantpug.toomanyorigins.integration.TMOModMenuIntegration"
     ]
   },
   "mixins": [
