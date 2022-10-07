@@ -1,9 +1,8 @@
 **[A]** means a relevant Apugli change.
 
 **Bugfixes**
-- [A] Swarm's Beekeeper power no longer angers nearby players.
-- [A] Fixed Withered's Soul Shield power not rendering an overlay.
-- Fix typo in Hare Moon Leap power
+- [A] Fix crash with Swarm's particle detection on other client player entities.
 
 **Dependencies**
-- [A] Updated Apugli to v1.9.1.
+- Updated Apugli to v1.9.3+1.19-fabric
+- Removed Apugli test powers from release.
