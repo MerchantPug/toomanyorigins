@@ -70,7 +70,7 @@ jobs:
           github-tag: v0.6.6+1.19-fabric
           github-draft: false
           github-prerelease: false
-          github-commitish: 1.19-fabric
+          github-commitish: fabric/1.19
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
           name: TooManyOrigins v0.6.6 (Fabric/Quilt 1.19)
