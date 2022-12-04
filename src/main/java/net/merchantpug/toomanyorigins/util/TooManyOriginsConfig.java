@@ -7,4 +7,7 @@ public class TooManyOriginsConfig extends MidnightConfig {
     public static Comment dragonFireballMixinOptions;
     @Entry
     public static boolean shouldFireballDamageUndead = true;
+
+    @Server
+    public static boolean performVersionCheck = true;
 }

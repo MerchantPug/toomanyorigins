@@ -25,7 +25,6 @@ SOFTWARE.
 package net.merchantpug.toomanyorigins;
 
 import net.merchantpug.toomanyorigins.networking.TMOPacketsC2S;
-import net.merchantpug.toomanyorigins.util.TooManyOriginsServerConfig;
 import eu.midnightdust.lib.config.MidnightConfig;
 import io.github.apace100.apoli.util.NamespaceAlias;
 import net.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
@@ -68,7 +67,6 @@ public class TooManyOrigins implements ModInitializer {
 		NamespaceAlias.addAlias(MODID, "apugli");
 
 		MidnightConfig.init(MODID, TooManyOriginsConfig.class);
-		MidnightConfig.init(MODID + "_server", TooManyOriginsServerConfig.class);
 
 		TMOPacketsC2S.register();
 	}
