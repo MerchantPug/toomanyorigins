@@ -8,3 +8,6 @@
 
 **Dependencies**
 - Updated Apugli to v1.11.1+1.19-fabric.
+
+**License**
+- Changed license to LGPL-3 (previously MIT).
