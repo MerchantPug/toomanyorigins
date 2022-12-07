@@ -42,12 +42,10 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class LegacyContentManager extends SinglePreparationResourceReloader<Set<String>> implements IdentifiableResourceReloadListener {
-    private static int highestPriority = 0;
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().create();
 
     @Override
     protected Set<String> prepare(ResourceManager manager, Profiler profiler) {
-        highestPriority = 0;
         Set<String> enabledSet = new HashSet<>();
         Iterator<Map.Entry<Identifier, Resource>> iterator = manager.findResources("toomanyorigins", (id) -> id.getPath().equals("toomanyorigins/legacy_content.json")).entrySet().iterator();
         Set<String> resourcesHandled = new HashSet<>();
@@ -67,8 +65,6 @@ public class LegacyContentManager extends SinglePreparationResourceReloader<Set<
                                     enabledSet.add(string);
                                 }
                             });
-                            if (jsonObject.has("loading_priority") && jsonObject.get("loading_priority").getAsInt() > highestPriority)
-                                highestPriority = jsonObject.get("loading_priority").getAsInt();
                         }
                     } catch (Throwable e) {
                         TooManyOrigins.LOGGER.error("There was a problem reading TooManyOrigins legacy content file from pack '" + resource.getResourcePackName() + "'. (skipping): " + e.getMessage());
@@ -93,10 +89,5 @@ public class LegacyContentManager extends SinglePreparationResourceReloader<Set<
     @Override
     public Identifier getFabricId() {
         return TooManyOrigins.identifier("legacy_content");
-    }
-
-
-    protected static void disableAll(Set<String> set) {
-        set.clear();
     }
 }
