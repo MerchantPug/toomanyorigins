@@ -1,13 +1,7 @@
-**[A]** means a relevant Apugli change.
+*The Nice Update*
 
-**Bugfixes**
-- [A] Fixed packet overload issues.
+**Data**
+- Unhardcoded killing a villager with Deathly Bite's cooldown off turning the villager into a zombie.
 
-**Config**
-- Moved server config values to common config. These values do not appear in the ingame config screen.
-
-**Dependencies**
-- Updated Apugli to v1.11.1+1.19-fabric.
-
-**License**
-- Changed license to LGPL-3 (previously MIT).
+**Miscellaneous**
+- Updated mod icon.

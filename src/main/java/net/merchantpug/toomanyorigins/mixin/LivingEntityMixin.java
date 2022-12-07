@@ -33,20 +33,16 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(method = "onDeath", at = @At("HEAD"))
     private void zombifyVillagerOnDeath(DamageSource source, CallbackInfo ci) {
-        if (!this.isRemoved()) {
-            if ((LivingEntity)(Object)this instanceof VillagerEntity) {
-                if ((this.hasStatusEffect(TMOEffects.ZOMBIFYING) && source.getName().equals("zombification")) || TMOPowers.DEATHLY_BITE.isActive(source.getAttacker()) && TMOPowers.DEATHLY_BITE.get(source.getAttacker()).canUse()) {
-                    VillagerEntity villagerEntity = (VillagerEntity)(Object)this;
-                    ZombieVillagerEntity zombieVillagerEntity = villagerEntity.convertTo(EntityType.ZOMBIE_VILLAGER, false);
-                    if (zombieVillagerEntity != null) {
-                        zombieVillagerEntity.initialize((ServerWorldAccess)villagerEntity.world, villagerEntity.world.getLocalDifficulty(zombieVillagerEntity.getBlockPos()), SpawnReason.CONVERSION, new ZombieEntity.ZombieData(false, true), null);
-                        zombieVillagerEntity.setVillagerData(villagerEntity.getVillagerData());
-                        zombieVillagerEntity.setGossipData(villagerEntity.getGossip().serialize(NbtOps.INSTANCE).getValue());
-                        zombieVillagerEntity.setOfferData(villagerEntity.getOffers().toNbt());
-                        zombieVillagerEntity.setXp(villagerEntity.getExperience());
-                        villagerEntity.world.syncWorldEvent(null, WorldEvents.ZOMBIE_INFECTS_VILLAGER, zombieVillagerEntity.getBlockPos(), 0);
-                    }
-                }
+        if (!this.isRemoved() && (LivingEntity)(Object)this instanceof VillagerEntity && this.hasStatusEffect(TMOEffects.ZOMBIFYING) && source.getName().equals("zombification")) {
+            VillagerEntity villagerEntity = (VillagerEntity)(Object)this;
+            ZombieVillagerEntity zombieVillagerEntity = villagerEntity.convertTo(EntityType.ZOMBIE_VILLAGER, false);
+            if (zombieVillagerEntity != null) {
+                zombieVillagerEntity.initialize((ServerWorldAccess)villagerEntity.world, villagerEntity.world.getLocalDifficulty(zombieVillagerEntity.getBlockPos()), SpawnReason.CONVERSION, new ZombieEntity.ZombieData(false, true), null);
+                zombieVillagerEntity.setVillagerData(villagerEntity.getVillagerData());
+                zombieVillagerEntity.setGossipData(villagerEntity.getGossip().serialize(NbtOps.INSTANCE).getValue());
+                zombieVillagerEntity.setOfferData(villagerEntity.getOffers().toNbt());
+                zombieVillagerEntity.setXp(villagerEntity.getExperience());
+                villagerEntity.world.syncWorldEvent(null, WorldEvents.ZOMBIE_INFECTS_VILLAGER, zombieVillagerEntity.getBlockPos(), 0);
             }
         }
     }
@@ -54,10 +50,8 @@ public abstract class LivingEntityMixin extends Entity {
     @Inject(method = "canHaveStatusEffect", at = @At("HEAD"), cancellable = true)
     private void makeUndeadImmuneToEffects(StatusEffectInstance effect, CallbackInfoReturnable<Boolean> cir) {
         StatusEffect statusEffect = effect.getEffectType();
-        if (this.getGroup() == EntityGroup.UNDEAD) {
-            if (statusEffect == TMOEffects.ZOMBIFYING) {
-                cir.setReturnValue(false);
-            }
+        if (this.getGroup() == EntityGroup.UNDEAD && statusEffect == TMOEffects.ZOMBIFYING) {
+            cir.setReturnValue(false);
         }
     }
 }
