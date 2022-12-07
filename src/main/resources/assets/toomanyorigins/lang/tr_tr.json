@@ -44,6 +44,7 @@
   
     "toomanyorigins.gui.version_mismatch": "Bu server başka bir TooManyOrigins versiyonu (v%1$s) çalıştırıyor ve sende mevcut olan versiyonla uyumlu değil (v%2$s).",
     "toomanyorigins.content.disabled": "Devre Dışı",
+    "toomanyorigins.content.disabled_message": "Eski TooManyOrigins modülü '%1$s' devre dışı. 'data/toomanyorigins/legacy_content.json' dosya konumunda bulunan bir datapack ile etkinleştiriniz.",
 
     "origin.legacytoomanyorigins.dragonborn.description": "Yarı İnsan, Yarı Ejderha. Vahşi nefesleri ve yapıları Son'un diğer sakinlerinin onlara baş eğmelerini sağlar.",
 
