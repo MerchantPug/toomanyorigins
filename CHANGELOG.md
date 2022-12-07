@@ -6,8 +6,7 @@
 
 **Datapacking**
 - Added built-in Legacy TooManyOrigins datapack.
-- Added `legacy_content.json` file found in the datapack directory `data/toomanyorigins/legacy_content.json`, this is able to enable any legacy content that the pack may need by setting a value in the json file to `true`. This can enable `dragon_fireball`, `withered_crops` and `zombifying`.
-- Clients will have legacy content synced upon joining a server.
+- Added `legacy_content.json` file found in the datapack directory `data/toomanyorigins/legacy_content.json`, this is able to enable any legacy content that the pack may need by setting a value in the json file to `true`. This can enable `dragon_fireball`, `withered_crops` and `zombifying`. This will be synced with clients.
 
 **Translations**
 - Updated Korean translation. (Thanks Snap_Lan)
