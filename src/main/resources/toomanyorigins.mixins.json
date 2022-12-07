@@ -7,10 +7,6 @@
     "AreaEffectCloudEntityAccessor",
     "DragonFireballEntityMixin",
     "LivingEntityMixin",
-    "OriginLayerAccessor",
-    "OriginRegistryAccessor",
-    "PowerTypeRegistryAccessor",
-    "PowerTypesAccessor",
     "SittingFlamingPhaseMixin"
   ],
   "injectors": {

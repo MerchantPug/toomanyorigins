@@ -24,32 +24,38 @@ SOFTWARE.
 
 package com.github.merchantpug.toomanyorigins;
 
-import com.github.merchantpug.apugli.Apugli;
-import com.github.merchantpug.apugli.util.ApugliConfig;
-import com.github.merchantpug.apugli.util.ApugliServerConfig;
-import com.github.merchantpug.toomanyorigins.integration.LegacyContentRegistrationEvent;
+import com.github.merchantpug.toomanyorigins.data.LegacyContentManager;
+import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
+import com.github.merchantpug.toomanyorigins.networking.TMOPackets;
 import com.github.merchantpug.toomanyorigins.networking.TMOPacketsC2S;
 import com.github.merchantpug.toomanyorigins.registry.*;
-import com.github.merchantpug.toomanyorigins.util.TooManyOriginsServerConfig;
 import eu.midnightdust.lib.config.MidnightConfig;
 import io.github.apace100.apoli.util.NamespaceAlias;
 import com.github.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
-import io.github.apace100.origins.integration.OriginDataLoadedCallback;
+import io.github.apace100.calio.resource.OrderedResourceListenerInitializer;
+import io.github.apace100.calio.resource.OrderedResourceListenerManager;
+import io.github.apace100.origins.Origins;
+import io.netty.buffer.Unpooled;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class TooManyOrigins implements ModInitializer {
+import java.util.List;
+import java.util.Map;
+
+public class TooManyOrigins implements ModInitializer, OrderedResourceListenerInitializer {
 	public static final String MODID = "toomanyorigins";
 	public static final Logger LOGGER = LogManager.getLogger("TooManyOrigins");
 	public static String VERSION = "";
 	public static int[] SEMVER;
-
-	public static boolean legacyDragonbornContentRegistered = false;
-	public static boolean legacyUndeadContentRegistered = false;
-	public static boolean legacyWitheredContentRegistered = false;
 
 	@Override
 	public void onInitialize() {
@@ -66,10 +72,21 @@ public class TooManyOrigins implements ModInitializer {
 			for(int i = 0; i < SEMVER.length; i++) {
 				SEMVER[i] = Integer.parseInt(splitVersion[i]);
 			}
+
+			ResourceManagerHelper.registerBuiltinResourcePack(TooManyOrigins.identifier("legacytoomanyorigins"), modContainer, "Legacy TooManyOrigins", ResourcePackActivationType.NORMAL);
 		});
 		LOGGER.info("TooManyOrigins " + VERSION + " is initializing. Enjoy!");
 
+		ServerLifecycleEvents.SYNC_DATA_PACK_CONTENTS.register((player, joined) -> {
+			PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
+			List<String> stringList = LegacyContentRegistry.asStream().filter(Map.Entry::getValue).map(Map.Entry::getKey).toList();
+			buf.writeInt(stringList.size());
+			stringList.forEach(buf::writeString);
+			ServerPlayNetworking.send(player, TMOPackets.SYNC_LEGACY_CONTENT, buf);
+		});
+
 		MidnightConfig.init(TooManyOrigins.MODID, TooManyOriginsConfig.class);
+		LegacyContentRegistry.init();
 
 		TMOBlocks.register();
 		TMOEffects.register();
@@ -81,22 +98,15 @@ public class TooManyOrigins implements ModInitializer {
 		NamespaceAlias.addAlias(MODID, "apugli");
 
 		TMOPacketsC2S.register();
-		OriginDataLoadedCallback.EVENT.register(LegacyContentRegistrationEvent::onDataLoaded);
-
-		if (TooManyOriginsConfig.legacyDragonbornEnabled) {
-			legacyDragonbornContentRegistered = true;
-		}
-
-		if (TooManyOriginsConfig.legacyUndeadEnabled) {
-			legacyUndeadContentRegistered = true;
-		}
-
-		if (TooManyOriginsConfig.legacyWitheredEnabled) {
-			legacyWitheredContentRegistered = true;
-		}
 	}
 
 	public static Identifier identifier(String path) {
 		return new Identifier(MODID, path);
+	}
+
+	@Override
+	public void registerResourceListeners(OrderedResourceListenerManager manager) {
+		Identifier originData = Origins.identifier("origins");
+		manager.register(ResourceType.SERVER_DATA, new LegacyContentManager()).after(originData).complete();
 	}
 }

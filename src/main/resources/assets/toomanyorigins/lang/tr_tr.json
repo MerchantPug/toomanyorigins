@@ -1,20 +1,17 @@
 {
+    "origin.toomanyorigins.dragonborn.name": "Dragonborn",
+
+    "origin.toomanyorigins.hare.name": "Hare",
+
     "origin.toomanyorigins.hisskin.name": "Hiss-kin",
     "origin.toomanyorigins.hisskin.description": "Creeper'ın bu uzak akrabası patlamalarını kaçış taktiği olarak kullanır.",
   
     "origin.toomanyorigins.swarm.name": "Swarm",
     "origin.toomanyorigins.swarm.description": "Kovandan bağımsız olan bu böcekler kavgadan uzak duran uzman çiftçilerdir.",
-  
-    "item.toomanyorigins.dragon_fireball": "Ejderha Ateştopu",
-    "entity.toomanyorigins.fireball_area_effect_cloud": "Ateş Topu Alan Etkisi Bulutu",
-    "death.attack.dragonMagic": "%1$s ejderha nefesinde kavruldu",
-    "death.attack.dragonMagic.player": "%1$s, %2$s dan kaçmaya çalışırken ejderha nefesinde kavrultuldu.",
-    "death.attack.dragonMagic.player.item": "%1$s, %3$s kullanan %2$sden kaçmaya çalışırken ejderha nefesinde kavrultuldu.",
-    "death.attack.indirectDragonMagic": "%1$s, %2$s tarafından ejderha nefesinde kavrultuldu.",
-    "death.attack.indirectDragonMagic.item": "%1$s, %3$s kullanan %2$s tarafından ejderha nefesinde kavrultuldu.",
-    "effect.toomanyorigins.end_fire": "End Ateşi",
-  
-    "subtitles.origin.hare.dash": "Hare şıçrar",
+
+    "origin.toomanyorigins.undead.name": "Undead",
+
+    "origin.toomanyorigins.withered.name": "Withered",
   
     "power.toomanyorigins.overheat.name": "Overheat",
     "power.toomanyorigins.overheat.description": "Baktığın herhangi bir objeden uzağa tepebilirsin. Bu işlem size hasar verir.",
@@ -40,26 +37,114 @@
     "power.toomanyorigins.stinging_pains.description": "Düşman canlıları direkt olarak öldürdüğünde acıkırsın.",
     "power.toomanyorigins.unity.name": "Birlik",
     "power.toomanyorigins.unity.description": "Açlık seviyene bağlı olarak maksimum can kaybedersin.",
+
+    "toomanyorigins.midnightconfig.title": "TooManyOrigins Ayarları",
+    "toomanyorigins.midnightconfig.dragonFireballMixinOptions": "Ender Ejderhası Ateş Topu Karışım Ayarları",
+    "toomanyorigins.midnightconfig.shouldFireballDamageUndead": "Ateş Topu Ölü Yaratıklara Hasar Verir",
   
+    "toomanyorigins.gui.version_mismatch": "Bu server başka bir TooManyOrigins versiyonu (v%1$s) çalıştırıyor ve sende mevcut olan versiyonla uyumlu değil (v%2$s).",
+    "toomanyorigins.content.disabled": "Devre Dışı",
+
+    "origin.legacytoomanyorigins.dragonborn.description": "Yarı İnsan, Yarı Ejderha. Vahşi nefesleri ve yapıları Son'un diğer sakinlerinin onlara baş eğmelerini sağlar.",
+
+    "power.legacytoomanyorigins.dragon_breath.name": "Ejderha Nefesi",
+    "power.legacytoomanyorigins.dragon_breath.description": "Zırh Delen Ejderhası Ateşi olan ve çarptığı yerde kısa süreliğine kalıcı bir bulut bırakan bir top atabilirsin.",
+    "power.legacytoomanyorigins.no_knockback.name": "Sabit Duruş",
+    "power.legacytoomanyorigins.no_knockback.description": "Düşmanlarına karşı güç ve gururunla durursun, bu sayede saldılarından savrulmassın.",
+    "power.legacytoomanyorigins.light_up.name": "Wyrmsmith'in Dokunuşu",
+    "power.legacytoomanyorigins.light_up.description": "Fırınları, kamp ateşlerini ve iksir standlarını nefesinle yakabilirsin.",
+    "power.legacytoomanyorigins.loose_scales.name": "İnce Deri",
+    "power.legacytoomanyorigins.loose_scales.description": "Arkandaki ince derinden dolayı arkandan daha fazla hasar alırsın.",
+    "power.legacytoomanyorigins.zenith_dragonhide.name": "Ejderha Derisi",
+    "power.legacytoomanyorigins.zenith_dragonhide.description": "İnsanlardan 2 daha fazla kalbin var.",
+
+    "legacytoomanyorigins.gui.badge.furnace": "Bu gücü kullanmak için yakılabilir bir bloğa bak.",
+    "legacytoomanyorigins.gui.badge.no_furnace": "Bu gücü kullanmak için yakılabilir bir bloğa bakma.",
+
+    "item.toomanyorigins.dragon_fireball": "Ejderha Ateştopu",
+    "entity.toomanyorigins.fireball_area_effect_cloud": "Ateş Topu Alan Etkisi Bulutu",
+    "death.attack.dragonMagic": "%1$s ejderha nefesinde kavruldu",
+    "death.attack.dragonMagic.player": "%1$s, %2$s dan kaçmaya çalışırken ejderha nefesinde kavrultuldu.",
+    "death.attack.dragonMagic.player.item": "%1$s, %3$s kullanan %2$sden kaçmaya çalışırken ejderha nefesinde kavrultuldu.",
+    "death.attack.indirectDragonMagic": "%1$s, %2$s tarafından ejderha nefesinde kavrultuldu.",
+    "death.attack.indirectDragonMagic.item": "%1$s, %3$s kullanan %2$s tarafından ejderha nefesinde kavrultuldu.",
+    "effect.toomanyorigins.end_fire": "End Ateşi",
+
+    "origin.legacytoomanyorigins.hare.description": "İnsanlara yakın derecede zekaya sahip ve yaptıkları oyuklarda yaşayan bir tavşan türü. Atalarından onlara hareketlilikleri miras kaldı.",
+
+    "power.legacytoomanyorigins.bunny_hop.name": "Tavşan Zıplaması",
+    "power.legacytoomanyorigins.bunny_hop.description": "Havadayken momentumun gittikçe artar ve hareket hızına eklenir. Yere iniş yaptığında momentumun kısa bir süreden sonra sıfırlanır. Ayrıca özelliğinle momentum kazanabilirsin.",
+    "power.legacytoomanyorigins.moon_leap.name": "Uzun Şıçrama",
+    "power.legacytoomanyorigins.moon_leap.description": "Eğilirken, zıplama uzunluğun artar.",
+    "power.legacytoomanyorigins.sugary_delicacy.name": "Şekerli Lezzet",
+    "power.legacytoomanyorigins.sugary_delicacy.description": "Havuç ve altın havuç yemek tavşan zıplaması momentumunu en fazla çeyreğine kadar doldurur.",
+    "power.legacytoomanyorigins.photophobia.name": "Fotofobi",
+    "power.legacytoomanyorigins.photophobia.description": "Yüksek ışıkta uyuyamazsın.",
+    "power.legacytoomanyorigins.lightweight.name": "Zayıf",
+    "power.legacytoomanyorigins.lightweight.description": "İnsanlara göre 2 daha az kalbin var.",
+
+    "subtitles.origin.hare.dash": "Hare şıçrar",
+    "legacytoomanyorigins.hare_sleep_fail": "Uyumak için daha az ışığa ihtiyacın var",
+
+    "origin.legacytoomanyorigins.hisskin.description": "Creeper'ın bu evrim aşaması patlamalarını kontrol altına alarak etrafına zarar vermeden patlamayı öğrendi ve bunu kendi yararına kullanıyor.",
+
+    "power.legacytoomanyorigins.overheat.name": "Aşırı Isınma",
+    "power.legacytoomanyorigins.overheat.description": "Baktığın yerin tersine tepebilirsin. Bu işlem senin içindeki barutu fitiller ve sana hasar verir.",
+    "power.legacytoomanyorigins.blast_immunity.name": "Patlamaya Dirençli Deri",
+    "power.legacytoomanyorigins.blast_immunity.description": "Her türlü patlayıcı hasara karşı dayanıklısın.",
+    "power.legacytoomanyorigins.conductor.name": "Kondüktör",
+    "power.legacytoomanyorigins.conductor.description": "Olduğun yere yıldırım çarptığında şarjlı olursun ve güçlenirsin.",
+    "power.legacytoomanyorigins.sneaking_steps.name": "Sinsi Adımlar",
+    "power.legacytoomanyorigins.sneaking_steps.description": "Avına gizlice yaklaşmaya alıştığın için biraz daha yavaş hareket edersin.",
+    "power.legacytoomanyorigins.ailurophobia.name": "Ailurofobi",
+    "power.legacytoomanyorigins.ailurophobia.description": "Kedilerin veya oseloların yanında olmak seni zayıflatır ve yavaşlatır.",
+
+    "origin.legacytoomanyorigins.swarm.description": "Bu kovan dışında yaşayan özgür arılar dış dünyanın engellerine karşı çıkabilmek için yapışık biçimde yaşamayı tercih eder.",
+
+    "power.legacytoomanyorigins.hover_toggle.name": "Süzül",
+    "power.legacytoomanyorigins.hover_toggle.description": "Birçok arıdan yapılmış olman, havadayken süzülebilmeni sağlar.",
+    "power.legacytoomanyorigins.smoke_sensitivity.name": "Duman Duyarlılığı",
+    "power.legacytoomanyorigins.smoke_sensitivity.description": "Dumanın yakınındayken hislerin azalır.",
+    "power.legacytoomanyorigins.expendable.name": "Zayıf",
+    "power.legacytoomanyorigins.expendable.description": "İnsanlara göre 3 daha az kalbin var.",
+    "power.legacytoomanyorigins.beekeeper.name": "Arıcı",
+    "power.legacytoomanyorigins.beekeeper.description": "Kovanlarından bal yada bal peteği alman arıları kızgınlaştırmaz.",
+
+    "origin.legacytoomanyorigins.undead.description": "Nadir bir genetik mutasyon bu ırka hastalığın etkilerinden acı çekmelerine rağmen insanlıklarını kaybetmemelerini sağlar.",
+
+    "power.legacytoomanyorigins.deathly_bite.name": "Ölümcül Isırık",
+    "power.legacytoomanyorigins.deathly_bite.description": "Yakın dövüş saldırıların ölü olmayan canlılara zombileştirici etki enfekte edersin. Bunu köylüleri zombiye dönüştürmek için kullanabilirsin.",
+    "power.legacytoomanyorigins.no_helmet_burn.name": "Sıcak Dayanıksızlığı",
+    "power.legacytoomanyorigins.no_helmet_burn.description": "Spawn olduktan 1 dakika 30 saniye sonra kafanda kask yoksa güneşte yanmaya başlarsın.",
+    "power.legacytoomanyorigins.cannibalism.name": "Yamyamlık",
+    "power.legacytoomanyorigins.cannibalism.description": "Çürük et senin için daha besleyici.",
+    "power.legacytoomanyorigins.opposite_day.name": "Ters Gün",
+    "power.legacytoomanyorigins.opposite_day.description": "Anında Hasar ve Anında Sağlık efekti senin üzerinde ters. Ayrıca açlığa ve zombileşmeye dirençlisin.",
+    "power.legacytoomanyorigins.lacerated_liver.name": "Yırtık Karaciğer",
+    "power.legacytoomanyorigins.lacerated_liver.description": "Çürük et olmayan yemekler senin için daha az doyurucu.",
+
     "effect.toomanyorigins.zombifying": "Zombileşme",
     "death.attack.zombification": "%1$s çürüdü",
     "death.attack.zombification.player": "%1$s, %2$s den kaçmaya çalışırken çürüdü.",
     "death.attack.zombification.player.item": "%1$s, %3$s kullanan %2$s den kaçmaya çalışırken çürüdü.",
-  
+
+    "origin.legacytoomanyorigins.withered.description": "Orijinal olarak insan Withered'ın ataları Wither'ın kaotik gücünden yararlanmasının bedelini ödeyenlerdir.",
+
+    "power.legacytoomanyorigins.black_thumb.name": "Solduran Dokunuş",
+    "power.legacytoomanyorigins.black_thumb.description": "Diktiğin tüm dünyaya ait bitkiler solar.",
+    "power.legacytoomanyorigins.spirit_strider.name": "Ruh Gezer",
+    "power.legacytoomanyorigins.spirit_strider.description": "Her zaman ekstra bir Ruh Hızı levelin var.",
+    "power.legacytoomanyorigins.soul_shield.name": "Ruh Kalkanı",
+    "power.legacytoomanyorigins.soul_shield.description": "Maximum canının yarısı veya daha azındaysan, etrafında bir ruh kalkanı oluşturursun, bu kalkan seni hasara karşı daha dayanıklı olmanı ve atılabilir nesnelerden etkilenmemeni sağlar.",
+    "power.legacytoomanyorigins.wither_immunity.name": "Wither Bağışıklılığı",
+    "power.legacytoomanyorigins.wither_immunity.description": "Wither efektine bağışıklılığın var.",
+    "power.legacytoomanyorigins.wither_toxins.name": "Wither Hasarı",
+    "power.legacytoomanyorigins.wither_toxins.description": "Yakın dövüş saldırıların kısa süreliğine wither efekti verir.",
+    "power.legacytoomanyorigins.weariness.name": "Bitkinlik",
+    "power.legacytoomanyorigins.weariness.description": "Hayvanlar etrafında Bitkin olduğundan, hayvanları çiftleştiremezsin.",
+
     "item.toomanyorigins.withered_crop_seeds": "Solmuş Ekim Tohumu",
     "item.toomanyorigins.withered_stem_seeds": "Solmuş Sap Tohumu",
-    "block.toomanyorigins.withered_beetroots": "Solmuş Pancar",
-    "block.toomanyorigins.withered_carrots": "Solmuş Havuç",
-    "block.toomanyorigins.withered_melon_stem": "Solmuş Karpuz Sapı",
-    "block.toomanyorigins.withered_potatoes": "Solmuş Patates",
-    "block.toomanyorigins.withered_pumpkin_stem": "Solmuş Balkabağı Sapı",
-    "block.toomanyorigins.withered_wheat": "Solmuş Buğday",
     "block.toomanyorigins.withered_crop": "Solmuş Ekim",
-    "block.toomanyorigins.withered_stem": "Solmuş Sap",
-  
-    "text.autoconfig.toomanyorigins.title": "TooManyOrigins Ayarları",
-    "text.autoconfig.toomanyorigins.option.dragonFireballMixin": "Ender Ejderhası Ateş Topu Karışım Ayarları",
-    "text.autoconfig.toomanyorigins.option.dragonFireballMixin.shouldFireballDamageUndead": "Ateş Topu Ölü Yaratıklara Hasar Verir",
-  
-    "toomanyorigins.gui.version_mismatch": "Bu server başka bir TooManyOrigins versiyonu (v%1$s) çalıştırıyor ve sende mevcut olan versiyonla uyumlu değil (v%2$s)."
-  }
+    "block.toomanyorigins.withered_stem": "Solmuş Sap"
+}

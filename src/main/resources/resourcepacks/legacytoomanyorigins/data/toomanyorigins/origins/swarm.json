@@ -1,0 +1,18 @@
+{
+  "loading_priority": 1,
+  "powers": [
+    "toomanyorigins:hover",
+    "toomanyorigins:hover_toggle",
+    "toomanyorigins:smoke_sensitivity",
+    "toomanyorigins:pollination",
+    "toomanyorigins:calming_aura",
+    "toomanyorigins:expendable",
+    "toomanyorigins:beekeeper",
+    "toomanyorigins:aerial_affinity",
+    "origins:arthropod"
+  ],
+  "icon": "minecraft:honeycomb",
+  "order": 7,
+  "impact": 1,
+  "description": "origin.legacytoomanyorigins.swarm.description"
+}

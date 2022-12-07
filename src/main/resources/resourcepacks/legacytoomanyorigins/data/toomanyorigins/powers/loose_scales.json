@@ -1,0 +1,16 @@
+{
+  "type": "origins:modify_damage_taken",
+  "bientity_condition": {
+    "type": "origins:relative_rotation",
+    "actor_rotation": "head",
+    "target_rotation": "body",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "modifier": {
+    "value": 0.35,
+    "operation": "multiply_total"
+  },
+  "name": "power.legacytoomanyorigins.loose_scales.name",
+  "description": "power.legacytoomanyorigins.loose_scales.description"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "toomanyorigins:modify_soul_speed",
+  "modifier": {
+    "operation": "addition",
+    "value": 1
+  },
+  "name": "power.legacytoomanyorigins.spirit_strider.name",
+  "description": "power.legacytoomanyorigins.spirit_strider.description"
+}

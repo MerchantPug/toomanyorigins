@@ -13,18 +13,6 @@ public class TooManyOriginsConfig extends MidnightConfig {
     @Entry
     public static boolean shouldFireballDamageUndead = true;
 
-    @Comment
-    public static Comment legacyContentOptions;
-    @Entry
-    public static boolean legacyDragonbornEnabled = false;
-    @Entry
-    public static boolean legacyHareEnabled = false;
-    @Entry
-    public static boolean legacyHisskinEnabled = false;
-    @Entry
-    public static boolean legacySwarmEnabled = false;
-    @Entry
-    public static boolean legacyUndeadEnabled = false;
-    @Entry
-    public static boolean legacyWitheredEnabled = false;
+    @Server
+    public static boolean performVersionCheck = true;
 }

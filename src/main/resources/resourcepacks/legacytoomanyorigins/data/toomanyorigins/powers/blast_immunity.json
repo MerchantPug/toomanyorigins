@@ -1,0 +1,12 @@
+{
+  "type": "origins:modify_damage_taken",
+  "damage_condition": {
+    "type": "origins:explosive"
+  },
+  "modifier": {
+    "value": -1,
+    "operation": "multiply_total"
+  },
+  "name": "power.legacytoomanyorigins.blast_immunity.name",
+  "description": "power.legacytoomanyorigins.blast_immunity.description"
+}

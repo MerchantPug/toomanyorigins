@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 @Mixin(DragonFireballEntity.class)
 public class DragonFireballEntityMixin {
     @ModifyArg(method = "onCollision", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/effect/StatusEffectInstance;<init>(Lnet/minecraft/entity/effect/StatusEffect;II)V"))
-    private StatusEffect statusEffect(StatusEffect effect) {
+    private StatusEffect swapOutDragonEffect(StatusEffect effect) {
         if (TooManyOriginsConfig.shouldFireballDamageUndead) {
             return effect = TMOEffects.END_FIRE;
         }

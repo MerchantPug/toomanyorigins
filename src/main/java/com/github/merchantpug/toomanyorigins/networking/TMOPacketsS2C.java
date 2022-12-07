@@ -26,16 +26,24 @@ package com.github.merchantpug.toomanyorigins.networking;
 
 import com.github.merchantpug.toomanyorigins.TooManyOrigins;
 import com.github.merchantpug.toomanyorigins.TooManyOriginsClient;
+import com.github.merchantpug.toomanyorigins.data.LegacyContentManager;
+import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientLoginNetworking;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientLoginNetworkHandler;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.network.PacketByteBuf;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
@@ -43,6 +51,22 @@ public class TMOPacketsS2C {
     @Environment(EnvType.CLIENT)
     public static void register() {
         ClientLoginNetworking.registerGlobalReceiver(TMOPackets.HANDSHAKE, TMOPacketsS2C::handleHandshake);
+
+        ClientPlayConnectionEvents.INIT.register((clientPlayNetworkHandler, minecraftClient) -> {
+            ClientPlayNetworking.registerReceiver(TMOPackets.SYNC_LEGACY_CONTENT, TMOPacketsS2C::onSyncLegacyContentToggles);
+        });
+    }
+
+    private static void onSyncLegacyContentToggles(MinecraftClient client, ClientPlayNetworkHandler handler, PacketByteBuf buf, PacketSender sender) {
+        int enabledContentSize = buf.readInt();
+        HashSet<String> stringSet = new HashSet<>();
+        for (int i = 0; i < enabledContentSize; ++i) {
+            stringSet.add(buf.readString());
+        }
+        client.execute(() -> {
+            LegacyContentRegistry.disableAll();
+            stringSet.forEach(LegacyContentRegistry::enable);
+        });
     }
 
     @Environment(EnvType.CLIENT)
@@ -52,9 +76,6 @@ public class TMOPacketsS2C {
         for(int i = 0; i < TooManyOrigins.SEMVER.length; i++) {
             buf.writeInt(TooManyOrigins.SEMVER[i]);
         }
-        buf.writeBoolean(TooManyOrigins.legacyDragonbornContentRegistered);
-        buf.writeBoolean(TooManyOrigins.legacyUndeadContentRegistered);
-        buf.writeBoolean(TooManyOrigins.legacyWitheredContentRegistered);
         TooManyOriginsClient.isServerRunningTMO = true;
         return CompletableFuture.completedFuture(buf);
     }

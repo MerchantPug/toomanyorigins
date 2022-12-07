@@ -1,0 +1,14 @@
+{
+  "powers": [
+    "toomanyorigins:dragon_breath",
+    "toomanyorigins:light_up",
+    "origins:carnivore",
+    "toomanyorigins:no_knockback",
+    "toomanyorigins:loose_scales",
+    "toomanyorigins:zenith_scales"
+  ],
+  "icon": "minecraft:dragon_breath",
+  "order": 8,
+  "impact": 1,
+  "description": "origin.legacytoomanyorigins.dragonborn.description"
+}

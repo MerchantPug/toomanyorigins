@@ -9,7 +9,6 @@ import net.minecraft.util.registry.Registry;
 import com.github.merchantpug.toomanyorigins.TooManyOrigins;
 
 public class TMOPowers {
-    public static final PowerType<TargetActionOnHitPower> LEGACY_DEATHLY_BITE = new PowerTypeReference(new Identifier("legacy_" + TooManyOrigins.MODID, "deathly_bite"));
 
     public static void register() {
         register(ModifyDragonFireballPower.createFactory());

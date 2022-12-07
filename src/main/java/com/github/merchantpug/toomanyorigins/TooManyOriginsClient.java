@@ -24,6 +24,7 @@ SOFTWARE.
 
 package com.github.merchantpug.toomanyorigins;
 
+import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import com.github.merchantpug.toomanyorigins.networking.TMOPacketsS2C;
 import com.github.merchantpug.toomanyorigins.registry.TMOBlocks;
 import com.github.merchantpug.toomanyorigins.registry.TMOEntities;
@@ -31,6 +32,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.networking.v1.ClientLoginConnectionEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.render.RenderLayer;
@@ -45,20 +47,14 @@ public class TooManyOriginsClient implements ClientModInitializer {
     public void onInitializeClient() {
         TMOPacketsS2C.register();
 
-        if (TooManyOrigins.legacyWitheredContentRegistered) {
-            BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_CROP, RenderLayer.getCutout());
-            BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_STEM, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_CROP, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_STEM, RenderLayer.getCutout());
 
-            ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
-                int k = 255;
-                int l = 0;
-                return k << 8 | l;
-            }, TMOBlocks.WITHERED_STEM);
-        }
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> 255 << 8, TMOBlocks.WITHERED_STEM);
 
-        if (TooManyOrigins.legacyDragonbornContentRegistered) {
-            EntityRendererRegistry.register(TMOEntities.SMALL_DRAGON_FIREBALL, FlyingItemEntityRenderer::new);
-            EntityRendererRegistry.register(TMOEntities.FIREBALL_AREA_EFFECT_CLOUD, EmptyEntityRenderer::new);
-        }
+        ClientLoginConnectionEvents.DISCONNECT.register((handler, client) -> LegacyContentRegistry.disableAll());
+
+        EntityRendererRegistry.register(TMOEntities.SMALL_DRAGON_FIREBALL, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(TMOEntities.FIREBALL_AREA_EFFECT_CLOUD, EmptyEntityRenderer::new);
     }
 }

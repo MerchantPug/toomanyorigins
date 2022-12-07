@@ -12,11 +12,11 @@
     "PapaPepsmAn"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/toomanyorigins/",
+    "homepage": "https://modrinth.com/mod/toomanyorigins/",
     "sources": "https://github.com/MerchantPug/toomanyorigins/",
     "issues": "https://github.com/MerchantPug/toomanyorigins/issues/"
   },
-  "license": "MIT",
+  "license": "LGPL-3",
   "icon": "assets/toomanyorigins/icon.png",
   "environment": "*",
   "entrypoints": {
@@ -28,6 +28,9 @@
     ],
     "modmenu": [
       "com.github.merchantpug.toomanyorigins.integration.TMOModMenuIntegration"
+    ],
+    "calio:ordered-resource-listener": [
+      "com.github.merchantpug.toomanyorigins.TooManyOrigins"
     ]
   },
   "mixins": [
@@ -39,6 +42,6 @@
     "minecraft": "1.19.x",
     "java": ">=17",
     "origins": ">=1.6.1",
-    "apugli": ">=1.9.0-beta.1"
+    "apugli": ">=1.11.1"
   }
 }
