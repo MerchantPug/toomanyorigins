@@ -44,6 +44,7 @@
   
     "toomanyorigins.gui.version_mismatch": "이 서버는 사용자가 설치한 버전(v%2$s)과 호환되지 않는 다른 버전의 TooManyOrigins(v%1$s)를 실행 중입니다.",
     "toomanyorigins.content.disabled": "꺼짐",
+    "toomanyorigins.content.disabled_message": "레거시 TooManyOrigins 모듈 '%1$s'이 꺼졌습니다. 파일 'data/toomanyorigins/legacy_content.json' 에서 데이터팩을 통해 활성화하십시오.",
 
     "origin.legacytoomanyorigins.dragonborn.description": "Half Human, Half Dragon. Their ferocious breath and structure makes the inhabitants of The End bow before them.",
 
