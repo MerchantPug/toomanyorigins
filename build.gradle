@@ -57,8 +57,8 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	// Origins
-	// modImplementation ("com.github.eggohito:origins-fabric:${project.origins_version}")
-	// Temporary fix (Thank you Eggohito)
+	// modImplementation ("com.github.apace100:origins-fabric:${project.origins_version}")
+	// Temporary fix (Thank you eggohito)
 	modImplementation ("com.github.eggohito:origins-fabric:${project.origins_version}")
 
 	// MerchantPug Maven Apugli
