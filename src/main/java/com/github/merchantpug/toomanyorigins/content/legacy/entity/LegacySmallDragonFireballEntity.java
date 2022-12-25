@@ -1,4 +1,4 @@
-package com.github.merchantpug.toomanyorigins.content.entity.legacy;
+package com.github.merchantpug.toomanyorigins.content.legacy.entity;
 
 import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import com.github.merchantpug.toomanyorigins.power.ModifyDragonFireballPower;

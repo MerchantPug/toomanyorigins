@@ -1,7 +1,7 @@
 package com.github.merchantpug.toomanyorigins.registry;
 
-import com.github.merchantpug.toomanyorigins.content.item.legacy.LegacyDragonFireballItem;
-import com.github.merchantpug.toomanyorigins.content.item.legacy.WitheredCropAliasedBlockItem;
+import com.github.merchantpug.toomanyorigins.content.legacy.item.LegacyDragonFireballItem;
+import com.github.merchantpug.toomanyorigins.content.legacy.item.WitheredCropAliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;

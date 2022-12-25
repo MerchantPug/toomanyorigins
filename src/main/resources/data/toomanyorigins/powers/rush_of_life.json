@@ -1,0 +1,32 @@
+{
+  "type": "toomanyorigins:modify_soul_speed",
+  "modifier": {
+    "operation": "min_total",
+    "value": 1
+  },
+  "block_condition": {
+    "type": "origins:constant",
+    "value": true
+  },
+  "condition": {
+    "type": "toomanyorigins:attack_target_condition",
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:health",
+            "comparison": "<=",
+            "compare_to": 6
+          },
+          {
+            "type": "origins:relative_health",
+            "comparison": "<",
+            "compare_to": 0.4
+          }
+        ]
+      }
+    }
+  }
+}

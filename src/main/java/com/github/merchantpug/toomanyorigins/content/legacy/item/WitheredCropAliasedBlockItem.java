@@ -1,4 +1,4 @@
-package com.github.merchantpug.toomanyorigins.content.item.legacy;
+package com.github.merchantpug.toomanyorigins.content.legacy.item;
 
 import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import net.minecraft.block.Block;

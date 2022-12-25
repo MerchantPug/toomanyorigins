@@ -39,7 +39,7 @@
     "power.toomanyorigins.unity.description": "허기짐 레벨에 따라 최대 체력을 잃습니다.",
 
     "toomanyorigins.midnightconfig.title": "TooManyOrigins 구성",
-    "toomanyorigins.midnightconfig.dragonFireballMixinOptions": "엔더 드래곤 화염구 믹스인 옵션",
+    "toomanyorigins.midnightconfig.dragonFireballMixinOptions": "§n엔더 드래곤 화염구 믹스인 옵션§r",
     "toomanyorigins.midnightconfig.shouldFireballDamageUndead": "화염구가 언데드 엔티티에 피해를 줍니다",
   
     "toomanyorigins.gui.version_mismatch": "이 서버는 사용자가 설치한 버전(v%2$s)과 호환되지 않는 다른 버전의 TooManyOrigins(v%1$s)를 실행 중입니다.",

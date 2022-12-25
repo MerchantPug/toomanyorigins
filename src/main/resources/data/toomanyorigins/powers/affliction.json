@@ -1,0 +1,392 @@
+{
+  "type": "origins:multiple",
+  "wither_hit": {
+    "type": "toomanyorigins:action_on_projectile_hit",
+    "hud_render": {
+      "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
+      "bar_index": 3
+    },
+    "cooldown": 160,
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:apply_effect",
+        "effect": {
+          "effect": "minecraft:wither",
+          "duration": 100,
+          "amplifier": 1
+        }
+      }
+    },
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:in_tag",
+                "tag": "toomanyorigins:withered_projectiles"
+              },
+              {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:in_tag",
+                        "tag": "toomanyorigins:potionable_arrows",
+                        "inverted": true
+                      },
+                      {
+                        "type": "origins:in_tag",
+                        "tag": "toomanyorigins:tridents",
+                        "inverted": true
+                      }
+                    ]
+                  },
+                  {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:in_tag",
+                        "tag": "toomanyorigins:potionable_arrows"
+                      },
+                      {
+                        "type": "origins:command",
+                        "command": "execute if data entity @s Potion",
+                        "comparison": "==",
+                        "compare_to": 0
+                      },
+                      {
+                        "type": "origins:or",
+                        "conditions": [
+                          {
+                            "type": "origins:nbt",
+                            "nbt": "{Fire:-1s}"
+                          },
+                          {
+                            "type": "origins:nbt",
+                            "nbt": "{Fire:0s}"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:in_tag",
+                        "tag": "toomanyorigins:tridents"
+                      },
+                      {
+                        "type": "origins:or",
+                        "conditions": [
+                          {
+                            "type": "origins:in_rain",
+                            "inverted": true
+                          },
+                          {
+                            "type": "origins:and",
+                            "conditions": [
+                              {
+                                "type": "origins:in_rain"
+                              },
+                              {
+                                "type": "origins:predicate",
+                                "predicate": "toomanyorigins:weather/is_thunderstorm",
+                                "inverted": true
+                              }
+                            ]
+                          },
+                          {
+                            "type": "toomanyorigins:trident_enchantment",
+                            "enchantment": "minecraft:channeling",
+                            "comparison": "==",
+                            "compare_to": 0
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "toomanyorigins:can_have_effect",
+                "effect": "minecraft:wither"
+              },
+              {
+                "type": "origins:health",
+                "comparison": ">",
+                "compare_to": 6
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "projectile_in_ground": {
+    "type": "toomanyorigins:projectile_action_over_time",
+    "interval": 5,
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "toomanyorigins:spawn_particles",
+        "particle": {
+          "type": "minecraft:entity_effect"
+        },
+        "count": 1,
+        "spread": {
+          "x": 0.5,
+          "y": 1.0,
+          "z": 0.5
+        },
+        "velocity": {
+          "x": 0.207843137,
+          "y": 0.16470588235,
+          "z": 0.15294117647
+        }
+      }
+    },
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:in_tag",
+            "tag": "toomanyorigins:withered_projectiles"
+          },
+          {
+            "type": "origins:nbt",
+            "nbt": "{inGround:1b}"
+          },
+          {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:in_tag",
+                    "tag": "toomanyorigins:potionable_arrows",
+                    "inverted": true
+                  },
+                  {
+                    "type": "origins:in_tag",
+                    "tag": "toomanyorigins:tridents",
+                    "inverted": true
+                  }
+                ]
+              },
+              {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:in_tag",
+                    "tag": "toomanyorigins:potionable_arrows"
+                  },
+                  {
+                    "type": "origins:command",
+                    "command": "execute if data entity @s Potion",
+                    "comparison": "==",
+                    "compare_to": 0
+                  },
+                  {
+                    "type": "origins:or",
+                    "conditions": [
+                      {
+                        "type": "origins:nbt",
+                        "nbt": "{Fire:-1s}"
+                      },
+                      {
+                        "type": "origins:nbt",
+                        "nbt": "{Fire:0s}"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:in_tag",
+                    "tag": "toomanyorigins:tridents"
+                  },
+                  {
+                    "type": "origins:or",
+                    "conditions": [
+                      {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                      },
+                      {
+                        "type": "origins:and",
+                        "conditions": [
+                          {
+                            "type": "origins:in_rain"
+                          },
+                          {
+                            "type": "origins:predicate",
+                            "predicate": "toomanyorigins:weather/is_thunderstorm",
+                            "inverted": true
+                          }
+                        ]
+                      },
+                      {
+                        "type": "toomanyorigins:trident_enchantment",
+                        "enchantment": "minecraft:channeling",
+                        "comparison": "==",
+                        "compare_to": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "projectile_out_of_ground": {
+    "type": "toomanyorigins:projectile_action_over_time",
+    "interval": 1,
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "toomanyorigins:spawn_particles",
+        "particle": {
+          "type": "minecraft:entity_effect"
+        },
+        "count": 2,
+        "spread": {
+          "x": 0.5,
+          "y": 1.0,
+          "z": 0.5
+        },
+        "velocity": {
+          "x": 0.207843137,
+          "y": 0.16470588235,
+          "z": 0.15294117647
+        }
+      }
+    },
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:in_tag",
+            "tag": "toomanyorigins:withered_projectiles"
+          },
+          {
+            "type": "origins:nbt",
+            "nbt": "{inGround:1b}",
+            "inverted": true
+          },
+          {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:in_tag",
+                    "tag": "toomanyorigins:potionable_arrows",
+                    "inverted": true
+                  },
+                  {
+                    "type": "origins:in_tag",
+                    "tag": "toomanyorigins:tridents",
+                    "inverted": true
+                  }
+                ]
+              },
+              {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:in_tag",
+                    "tag": "toomanyorigins:potionable_arrows"
+                  },
+                  {
+                    "type": "origins:command",
+                    "command": "execute if data entity @s Potion",
+                    "comparison": "==",
+                    "compare_to": 0
+                  },
+                  {
+                    "type": "origins:or",
+                    "conditions": [
+                      {
+                        "type": "origins:nbt",
+                        "nbt": "{Fire:-1s}"
+                      },
+                      {
+                        "type": "origins:nbt",
+                        "nbt": "{Fire:0s}"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:in_tag",
+                    "tag": "toomanyorigins:tridents"
+                  },
+                  {
+                    "type": "origins:or",
+                    "conditions": [
+                      {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                      },
+                      {
+                        "type": "origins:and",
+                        "conditions": [
+                          {
+                            "type": "origins:in_rain"
+                          },
+                          {
+                            "type": "origins:predicate",
+                            "predicate": "toomanyorigins:weather/is_thunderstorm",
+                            "inverted": true
+                          }
+                        ]
+                      },
+                      {
+                        "type": "toomanyorigins:trident_enchantment",
+                        "enchantment": "minecraft:channeling",
+                        "comparison": "==",
+                        "compare_to": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

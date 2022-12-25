@@ -1,7 +1,7 @@
 package com.github.merchantpug.toomanyorigins.registry;
 
-import com.github.merchantpug.toomanyorigins.content.block.legacy.WitheredCropBlock;
-import com.github.merchantpug.toomanyorigins.content.block.legacy.WitheredStemBlock;
+import com.github.merchantpug.toomanyorigins.content.legacy.block.WitheredCropBlock;
+import com.github.merchantpug.toomanyorigins.content.legacy.block.WitheredStemBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;

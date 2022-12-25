@@ -1,0 +1,14 @@
+{
+  "powers": [
+    "toomanyorigins:affliction",
+    "toomanyorigins:drainage",
+    "origins:nether_spawn",
+    "toomanyorigins:hell_raised",
+    "toomanyorigins:rush_of_life",
+    "toomanyorigins:heterotroph",
+    "toomanyorigins:unholy"
+  ],
+  "icon": "minecraft:wither_rose",
+  "order": 4,
+  "impact": 3
+}

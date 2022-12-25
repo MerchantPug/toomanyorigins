@@ -1,4 +1,4 @@
-package com.github.merchantpug.toomanyorigins.content.item.legacy;
+package com.github.merchantpug.toomanyorigins.content.legacy.item;
 
 import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import net.minecraft.client.item.TooltipContext;
@@ -15,7 +15,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
-import com.github.merchantpug.toomanyorigins.content.entity.legacy.LegacySmallDragonFireballEntity;
+import com.github.merchantpug.toomanyorigins.content.legacy.entity.LegacySmallDragonFireballEntity;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;

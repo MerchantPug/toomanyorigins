@@ -1,12 +1,12 @@
 package com.github.merchantpug.toomanyorigins.registry;
 
-import com.github.merchantpug.toomanyorigins.content.entity.legacy.LegacyFireballAreaEffectCloudEntity;
+import com.github.merchantpug.toomanyorigins.content.legacy.entity.LegacyFireballAreaEffectCloudEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import com.github.merchantpug.toomanyorigins.TooManyOrigins;
-import com.github.merchantpug.toomanyorigins.content.entity.legacy.LegacySmallDragonFireballEntity;
+import com.github.merchantpug.toomanyorigins.content.legacy.entity.LegacySmallDragonFireballEntity;
 
 public class TMOEntities {
     public static final EntityType<LegacySmallDragonFireballEntity> SMALL_DRAGON_FIREBALL = FabricEntityTypeBuilder.<LegacySmallDragonFireballEntity>create(SpawnGroup.MISC, LegacySmallDragonFireballEntity::new).dimensions(EntityDimensions.fixed(0.25f, 0.25f)).trackable(64, 10).build();

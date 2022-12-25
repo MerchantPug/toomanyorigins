@@ -1,4 +1,4 @@
-package com.github.merchantpug.toomanyorigins.content.effect.legacy;
+package com.github.merchantpug.toomanyorigins.content.legacy.effect;
 
 import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import com.github.merchantpug.toomanyorigins.registry.TMODamageSources;

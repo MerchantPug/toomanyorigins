@@ -2,7 +2,7 @@ package com.github.merchantpug.toomanyorigins.registry;
 
 import com.github.merchantpug.toomanyorigins.content.effect.ChargedStatusEffect;
 import com.github.merchantpug.toomanyorigins.content.effect.EndFireStatusEffect;
-import com.github.merchantpug.toomanyorigins.content.effect.legacy.ZombifyingStatusEffect;
+import com.github.merchantpug.toomanyorigins.content.legacy.effect.ZombifyingStatusEffect;
 import net.minecraft.entity.effect.InstantStatusEffect;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.util.Identifier;

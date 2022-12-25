@@ -39,7 +39,7 @@
     "power.toomanyorigins.unity.description": "Açlık seviyene bağlı olarak maksimum can kaybedersin.",
 
     "toomanyorigins.midnightconfig.title": "TooManyOrigins Ayarları",
-    "toomanyorigins.midnightconfig.dragonFireballMixinOptions": "Ender Ejderhası Ateş Topu Karışım Ayarları",
+    "toomanyorigins.midnightconfig.dragonFireballMixinOptions": "§nEnder Ejderhası Ateş Topu Karışım Ayarları§r",
     "toomanyorigins.midnightconfig.shouldFireballDamageUndead": "Ateş Topu Ölü Yaratıklara Hasar Verir",
   
     "toomanyorigins.gui.version_mismatch": "Bu server başka bir TooManyOrigins versiyonu (v%1$s) çalıştırıyor ve sende mevcut olan versiyonla uyumlu değil (v%2$s).",

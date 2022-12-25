@@ -39,9 +39,9 @@ jobs:
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           # Config
-          name: TooManyOrigins v1.0.0 (Fabric/Quilt 1.19)
-          version: v1.0.0+1.19-fabric
-          version-type: release
+          name: TooManyOrigins v1.0.0-beta.7 (Fabric/Quilt 1.19)
+          version: v1.0.0-beta.7+1.19-fabric
+          version-type: beta
           changelog-file: CHANGELOG.md
           files-primary: build/libs/!(*-@(dev|sources)).jar
           files-secondary: ""
@@ -56,7 +56,7 @@ jobs:
           dependencies: |
             fabric-api | depends | *
             origins | depends | *
-            apugli | includes | v1.9.0+1.19-fabric
+            apugli | includes | v1.12.0+1.19-fabric
           java: |
             17
 
@@ -67,15 +67,15 @@ jobs:
         uses: Kir-Antipov/mc-publish@v3.1
         with:
           # GitHub
-          github-tag: v1.0.0-1.19-fabric
+          github-tag: v1.0.0-beta.7+1.19-fabric
           github-draft: false
-          github-prerelease: false
-          github-commitish: 1.19-fabric
+          github-prerelease: true
+          github-commitish: fabric/rework
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          name: TooManyOrigins v1.0.0 (Fabric/Quilt 1.19)
-          version: v1.0.0+1.19-fabric
-          version-type: release
+          name: TooManyOrigins v1.0.0-beta.7 (Fabric/Quilt 1.19)
+          version: v1.0.0-beta.7+1.19-fabric
+          version-type: beta
           changelog-file: CHANGELOG.md
 
           loaders: |
