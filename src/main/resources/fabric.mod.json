@@ -3,7 +3,7 @@
   "id": "toomanyorigins",
   "version": "${version}",
   "name": "TooManyOrigins",
-  "description": "Origins addon that serves as an extension to the original mod.",
+  "description": "An Origins addon that serves as an extension to the original mod.",
   "authors": [
     "MerchantPug"
   ],
@@ -42,6 +42,6 @@
     "minecraft": "1.19.x",
     "java": ">=17",
     "origins": ">=1.6.1",
-    "apugli": ">=1.11.1"
+    "apugli": ">=1.12.0"
   }
 }
