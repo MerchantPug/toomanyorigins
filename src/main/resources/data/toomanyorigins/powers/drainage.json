@@ -1,5 +1,5 @@
 {
-  "type": "origins:action_on_hit",
+  "type": "toomanyorigins:action_on_target_death",
   "bientity_action": {
     "type": "origins:if_else_list",
     "actions": [
@@ -109,18 +109,5 @@
       "comparison": "==",
       "compare_to": 0
     }
-  },
-  "damage_condition": {
-    "type": "origins:or",
-    "conditions": [
-      {
-        "type": "origins:name",
-        "name": "player"
-      },
-      {
-        "type": "origins:name",
-        "name": "player.item"
-      }
-    ]
   }
 }

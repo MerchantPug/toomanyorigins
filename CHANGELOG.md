@@ -29,11 +29,10 @@ This nether bound origin focuses on gaining food in the nether by draining hunge
 
 **Withered**
 - Tl;dr now has a new set of powers as well as a new gameplay focus.
-- Removed `Wither Toxins`, `Black Thumb`, `Weariness` `Spirit Strider`, `Soul Shield` and `Infused Veins` powers.
+- Removed `Wither Toxins`, `Black Thumb`, `Weariness` `Soul Shield` and `Infused Veins` powers.
 - Added `Affliction` power in place of Wither Toxins, of which inflicts Wither II on entities hit with certain projectiles.
-- Added `Drainage` power, of which fills your hunger upon killing entities through physical contact.
+- Added `Drainage` power, of which feeds you upon killing entities.
 - Added` Hell-Raised` power, of which gives you alternative recipes for bow related items.
-- Added `Rush of Life` power, of which allows you to utilise one level of soul speed outside of normal conditions when your current target falls under a certain health threshold.
 - Added `Heterotroph` power, of which makes food items less nourishing for you.
 
 **Hiss-kin**
