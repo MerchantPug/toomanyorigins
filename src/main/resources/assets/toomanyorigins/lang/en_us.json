@@ -45,8 +45,8 @@
     "power.toomanyorigins.drainage.description": "Upon killing a target through physical contact, you drain their life force, filling your hunger.",
     "power.toomanyorigins.hell_raised.name": "Hell-Raised",
     "power.toomanyorigins.hell_raised.description": "You gain access to alternative recipes for bow-related items.",
-    "power.toomanyorigins.rush_of_life.name": "Rush of Life",
-    "power.toomanyorigins.rush_of_life.description": "When your current attack target falls under a low health threshold, you are able to utilise one level of soul speed outside of normal conditions.",
+    "power.toomanyorigins.spirit_strider.name": "Spirit Strider",
+    "power.toomanyorigins.spirit_strider.description": "You have one extra level of Soul Speed at all times.",
     "power.toomanyorigins.heterotroph.name": "Heterotroph",
     "power.toomanyorigins.heterotroph.description": "Food items are less nourishing for you.",
 
@@ -146,8 +146,6 @@
 
     "power.legacytoomanyorigins.black_thumb.name": "Black Thumb",
     "power.legacytoomanyorigins.black_thumb.description": "You spread decay to any overworld crops you plant, making them unable to grow.",
-    "power.legacytoomanyorigins.spirit_strider.name": "Spirit Strider",
-    "power.legacytoomanyorigins.spirit_strider.description": "You have one extra level of Soul Speed at all times.",
     "power.legacytoomanyorigins.soul_shield.name": "Soul Shield",
     "power.legacytoomanyorigins.soul_shield.description": "When you are at 50% of your maximum health or below, you create a soul projection around yourself, making yourself more resistant to damage and immune to projectiles.",
     "power.legacytoomanyorigins.wither_immunity.name": "Infused Veins",
