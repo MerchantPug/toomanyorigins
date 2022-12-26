@@ -1,5 +1,5 @@
 ### Re-added Withered origin.
-This nether bound origin focuses on gaining food in the nether by draining hunger from any unfortunate soul that may cross their path. This origin is applicable to players who enjoy their combat at a distance and then going all in against their targets.
+This nether bound origin focuses on gaining food in the nether by draining hunger from any unfortunate soul that may cross their path. This origin was made around the idea of having an easier time gaining food in the nether.
 
 **Config**
 - Fireball Damages Undead Entities now defaults to false. Not overwriting vanilla behavior unless set to true.
