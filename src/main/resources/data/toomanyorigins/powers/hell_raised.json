@@ -11,7 +11,7 @@
           "item": "minecraft:stick"
         },
         "$": {
-          "item": "minecraft:tripwire_hook"
+          "item": "minecraft:gold_nugget"
         },
         "&": {
           "item": "minecraft:gold_ingot"
