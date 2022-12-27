@@ -17,7 +17,7 @@
           "action": {
             "type": "origins:feed",
             "food": 4,
-            "saturation": 0.2
+            "saturation": 0.1
           }
         }
       },
@@ -45,7 +45,7 @@
           "action": {
             "type": "origins:feed",
             "food": 6,
-            "saturation": 0.6
+            "saturation": 0.3
           }
         }
       },
@@ -73,7 +73,7 @@
           "action": {
             "type": "origins:feed",
             "food": 8,
-            "saturation": 1.2
+            "saturation": 0.6
           }
         }
       },
@@ -96,7 +96,7 @@
           "action": {
             "type": "origins:feed",
             "food": 8,
-            "saturation": 1.6
+            "saturation": 0.8
           }
         }
       }
