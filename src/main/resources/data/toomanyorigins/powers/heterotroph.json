@@ -4,10 +4,5 @@
     "name": "Heterotroph decreased food points",
     "operation": "multiply_total",
     "value": -0.5
-  },
-  "saturation_modifier": {
-    "name": "Heterotroph decreased saturation points",
-    "operation": "multiply_total",
-    "value": -0.5
   }
 }
