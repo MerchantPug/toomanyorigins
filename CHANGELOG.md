@@ -32,7 +32,7 @@ This nether bound origin focuses on gaining food in the nether by draining hunge
 - Removed `Wither Toxins`, `Black Thumb`, `Weariness` `Soul Shield` and `Infused Veins` powers.
 - Added `Affliction` power in place of Wither Toxins, of which inflicts Wither II on entities hit with certain projectiles.
 - Added `Drainage` power, of which feeds you upon killing entities.
-- Added` Hell-Raised` power, of which gives you alternative recipes for bow related items.
+- Added` Hell-Raised` power, of which gives you an alternative recipe for arrows.
 - Added `Heterotroph` power, of which makes food items less nourishing for you.
 
 **Hiss-kin**
