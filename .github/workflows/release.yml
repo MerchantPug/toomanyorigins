@@ -40,7 +40,7 @@ jobs:
 
           # Config
           name: TooManyOrigins v1.0.0-beta.7 (Fabric/Quilt 1.19)
-          version: v1.0.0-beta.7+1.19-fabric
+          version: 1.0.0-beta.7+1.19-fabric
           version-type: beta
           changelog-file: CHANGELOG.md
           files-primary: build/libs/!(*-@(dev|sources)).jar
@@ -64,17 +64,17 @@ jobs:
           retry-delay: 10000
 
       - name: Publish (GitHub)
-        uses: Kir-Antipov/mc-publish@v3.1
+        uses: Kir-Antipov/mc-publish@v3.2
         with:
           # GitHub
-          github-tag: v1.0.0-beta.7+1.19-fabric
+          github-tag: 1.0.0-beta.7+1.19-fabric
           github-draft: false
           github-prerelease: true
           github-commitish: fabric/rework
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          name: TooManyOrigins v1.0.0-beta.7 (Fabric/Quilt 1.19)
-          version: v1.0.0-beta.7+1.19-fabric
+          name: TooManyOrigins 1.0.0-beta.7 (Fabric/Quilt 1.19)
+          version: 1.0.0-beta.7+1.19-fabric
           version-type: beta
           changelog-file: CHANGELOG.md
 
