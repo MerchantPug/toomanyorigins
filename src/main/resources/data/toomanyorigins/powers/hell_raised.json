@@ -1,61 +1,28 @@
 {
-  "type": "origins:multiple",
-  "golden_crossbow": {
-    "type": "origins:recipe",
-    "recipe": {
-      "id": "toomanyorigins:hell_raised/golden_crossbow",
-      "type": "minecraft:crafting_shaped",
-      "category": "equipment",
-      "key": {
-        "#": {
-          "item": "minecraft:stick"
-        },
-        "$": {
-          "item": "minecraft:gold_nugget"
-        },
-        "&": {
-          "item": "minecraft:gold_ingot"
-        },
-        "~": {
-          "item": "minecraft:string"
-        }
+  "type": "origins:recipe",
+  "recipe": {
+    "id": "toomanyorigins:hell_raised/weavable_arrows",
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+      "#": {
+        "item": "minecraft:stick"
       },
-      "pattern": [
-        "#&#",
-        "~$~",
-        " # "
-      ],
-      "result": {
-        "item": "minecraft:crossbow"
-      }
-    }
-  },
-  "weavable_arrows": {
-    "type": "origins:recipe",
-    "recipe": {
-      "id": "toomanyorigins:hell_raised/weavable_arrows",
-      "type": "minecraft:crafting_shaped",
-      "category": "equipment",
-      "key": {
-        "#": {
-          "item": "minecraft:stick"
-        },
-        "X": {
-          "item": "minecraft:flint"
-        },
-        "Y": {
-          "tag": "toomanyorigins:weavable_nether_plants"
-        }
+      "X": {
+        "item": "minecraft:flint"
       },
-      "pattern": [
-        "X",
-        "#",
-        "Y"
-      ],
-      "result": {
-        "count": 4,
-        "item": "minecraft:arrow"
+      "Y": {
+        "tag": "toomanyorigins:weavable_nether_plants"
       }
+    },
+    "pattern": [
+      "X",
+      "#",
+      "Y"
+    ],
+    "result": {
+      "count": 4,
+      "item": "minecraft:arrow"
     }
   }
 }
