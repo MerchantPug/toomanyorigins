@@ -26,5 +26,37 @@
   },
   "amount": 2.0,
   "use_charged": true,
-  "velocity": 1.0
+  "velocity": 1.0,
+  "targetable_bientity_condition": {
+    "type": "origins:target_condition",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:living"
+        },
+        {
+          "type": "origins:in_tag",
+          "tag": "toomanyorigins:ignore_rocket_jump",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "damage_bientity_condition": {
+    "type": "origins:target_condition",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:living"
+        },
+        {
+          "type": "origins:in_tag",
+          "tag": "toomanyorigins:ignore_rocket_jump_damage",
+          "inverted": true
+        }
+      ]
+    }
+  }
 }
