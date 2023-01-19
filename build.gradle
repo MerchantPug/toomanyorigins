@@ -62,12 +62,12 @@ dependencies {
 	modImplementation ("com.github.eggohito:origins-fabric:${project.origins_version}")
 
 	// MerchantPug Maven Apugli
-	// modImplementation("net.merchantpug:apugli:${project.apugli_version}")
-	// include "net.merchantpug:apugli:${project.apugli_version}"
+	modImplementation("net.merchantpug:apugli:${project.apugli_version}")
+	include "net.merchantpug:apugli:${project.apugli_version}"
 
 	// JitPack Apugli (Not preferable, use only for dev builds).
-	modImplementation("com.github.merchantpug:apugli:${project.apugli_version}")
-	include "com.github.merchantpug:apugli:${project.apugli_version}"
+	// modImplementation("com.github.merchantpug:apugli:${project.apugli_version}")
+	// include "com.github.merchantpug:apugli:${project.apugli_version}"
 }
 
 processResources {
