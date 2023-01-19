@@ -31,7 +31,7 @@
       "attribute": "generic.max_health",
       "operation": "addition",
       "value": -6.0,
-      "name": "Decreased health when below 15 food level"
+      "name": "Decreased health when below 13 food level"
     },
     "condition": {
       "type": "origins:resource",
@@ -55,7 +55,7 @@
         {
           "type": "origins:food_level",
           "comparison": "<",
-          "compare_to": 15
+          "compare_to": 13
         },
         {
           "type": "origins:food_level",
@@ -86,7 +86,7 @@
         {
           "type": "origins:food_level",
           "comparison": ">=",
-          "compare_to": 15
+          "compare_to": 13
         },
         {
           "type": "origins:resource",
@@ -166,7 +166,7 @@
     },
     "interval": 1
   },
-  "reset_health_ten_hearts": {
+  "reset_health": {
     "type": "origins:action_over_time",
     "rising_action": {
       "type": "origins:and",
@@ -191,45 +191,8 @@
         {
           "type": "origins:resource",
           "resource": "*:*_health_state",
-          "comparison": "==",
-          "compare_to": 1
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:*_recharge_hearts",
-          "comparison": "==",
-          "compare_to": 221
-        }
-      ]
-    }
-  },
-  "reset_health_seven_hearts": {
-    "type": "origins:action_over_time",
-    "rising_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:change_resource",
-          "resource": "*:*_health_state",
-          "change": 1,
-          "operation": "SET"
-        },
-        {
-          "type": "origins:change_resource",
-          "resource": "*:*_recharge_hearts",
-          "change": 0,
-          "operation": "SET"
-        }
-      ]
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "resource": "*:*_health_state",
-          "comparison": "==",
-          "compare_to": 2
+          "comparison": ">",
+          "compare_to": 0
         },
         {
           "type": "origins:resource",
