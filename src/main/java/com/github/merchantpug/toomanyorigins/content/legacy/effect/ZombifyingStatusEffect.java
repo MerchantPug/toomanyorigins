@@ -1,5 +1,6 @@
 package com.github.merchantpug.toomanyorigins.content.legacy.effect;
 
+import com.github.merchantpug.toomanyorigins.data.LegacyContentModules;
 import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import com.github.merchantpug.toomanyorigins.registry.TMODamageSources;
 import com.github.merchantpug.toomanyorigins.registry.TMOEffects;
@@ -17,10 +18,10 @@ public class ZombifyingStatusEffect extends StatusEffect {
     }
 
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
-        if (LegacyContentRegistry.isContentDisabled(LegacyContentRegistry.ZOMBIFYING)) {
+        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.ZOMBIFYING)) {
             entity.removeStatusEffect(TMOEffects.ZOMBIFYING);
             if (!entity.world.isClient) {
-                entity.sendMessage(Text.translatable("toomanyorigins.content.disabled_message", LegacyContentRegistry.ZOMBIFYING).formatted(Formatting.RED));
+                entity.sendMessage(Text.translatable("toomanyorigins.content.disabled_message", LegacyContentModules.ZOMBIFYING).formatted(Formatting.RED));
             }
             return;
         }
@@ -31,7 +32,7 @@ public class ZombifyingStatusEffect extends StatusEffect {
     }
 
     public boolean canApplyUpdateEffect(int duration, int amplifier) {
-        if (LegacyContentRegistry.isContentDisabled(LegacyContentRegistry.ZOMBIFYING))
+        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.ZOMBIFYING))
             return true;
         int k;
         k = 25 >> amplifier;

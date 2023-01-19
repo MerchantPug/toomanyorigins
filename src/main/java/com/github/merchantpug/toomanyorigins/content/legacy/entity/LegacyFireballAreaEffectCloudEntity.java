@@ -1,5 +1,6 @@
 package com.github.merchantpug.toomanyorigins.content.legacy.entity;
 
+import com.github.merchantpug.toomanyorigins.data.LegacyContentModules;
 import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import com.github.merchantpug.toomanyorigins.mixin.AreaEffectCloudEntityAccessor;
 import com.github.merchantpug.toomanyorigins.registry.TMODamageSources;
@@ -29,14 +30,14 @@ public class LegacyFireballAreaEffectCloudEntity extends AreaEffectCloudEntity {
         this.noClip = true;
         this.damage = 6.0F;
         this.setRadius(3.0F);
-        if (LegacyContentRegistry.isContentDisabled(LegacyContentRegistry.DRAGON_FIREBALL))
+        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.DRAGON_FIREBALL))
             this.discard();
     }
 
     public LegacyFireballAreaEffectCloudEntity(World world, double x, double y, double z) {
         this(TMOEntities.FIREBALL_AREA_EFFECT_CLOUD, world);
         this.updatePosition(x, y, z);
-        if (LegacyContentRegistry.isContentDisabled(LegacyContentRegistry.DRAGON_FIREBALL))
+        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.DRAGON_FIREBALL))
             this.discard();
     }
 
@@ -49,8 +50,8 @@ public class LegacyFireballAreaEffectCloudEntity extends AreaEffectCloudEntity {
     }
 
     public void setOwner(@Nullable LivingEntity owner) {
-        if (LegacyContentRegistry.isContentDisabled(LegacyContentRegistry.DRAGON_FIREBALL) && owner != null) {
-            owner.sendMessage(Text.translatable("toomanyorigins.content.disabled_message", LegacyContentRegistry.DRAGON_FIREBALL).formatted(Formatting.RED));
+        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.DRAGON_FIREBALL) && owner != null) {
+            owner.sendMessage(Text.translatable("toomanyorigins.content.disabled_message", LegacyContentModules.DRAGON_FIREBALL).formatted(Formatting.RED));
         }
         super.setOwner(owner);
     }

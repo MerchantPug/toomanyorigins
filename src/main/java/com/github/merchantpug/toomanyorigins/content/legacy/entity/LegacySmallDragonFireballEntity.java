@@ -1,5 +1,6 @@
 package com.github.merchantpug.toomanyorigins.content.legacy.entity;
 
+import com.github.merchantpug.toomanyorigins.data.LegacyContentModules;
 import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import com.github.merchantpug.toomanyorigins.power.ModifyDragonFireballPower;
 import com.github.merchantpug.toomanyorigins.registry.TMOEntities;
@@ -23,13 +24,13 @@ public class LegacySmallDragonFireballEntity extends ThrownItemEntity {
 
     public LegacySmallDragonFireballEntity(EntityType<? extends LegacySmallDragonFireballEntity> entityType, World world) {
         super(entityType, world);
-        if (LegacyContentRegistry.isContentDisabled(LegacyContentRegistry.DRAGON_FIREBALL))
+        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.DRAGON_FIREBALL))
             this.discard();
     }
 
     public LegacySmallDragonFireballEntity(World world, LivingEntity owner) {
         super(TMOEntities.SMALL_DRAGON_FIREBALL, owner, world);
-        if (LegacyContentRegistry.isContentDisabled(LegacyContentRegistry.DRAGON_FIREBALL)) {
+        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.DRAGON_FIREBALL)) {
             this.discard();
         }
     }

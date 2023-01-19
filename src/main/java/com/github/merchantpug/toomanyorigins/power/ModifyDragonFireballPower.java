@@ -1,5 +1,7 @@
 package com.github.merchantpug.toomanyorigins.power;
 
+import com.github.merchantpug.toomanyorigins.data.LegacyContentModules;
+import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import io.github.apace100.apoli.power.PowerType;
 import io.github.apace100.apoli.power.ValueModifyingPower;
 import io.github.apace100.apoli.power.factory.PowerFactory;
@@ -8,7 +10,6 @@ import io.github.apace100.calio.data.SerializableData;
 import io.github.apace100.calio.data.SerializableDataTypes;
 import com.github.merchantpug.toomanyorigins.TooManyOrigins;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -45,6 +46,9 @@ public class ModifyDragonFireballPower extends ValueModifyingPower {
         this.minRadius = minRadius;
         this.maxRadius = maxRadius;
         this.duration = duration;
+        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.DRAGON_FIREBALL)) {
+            TooManyOrigins.LOGGER.warn("Tried loading 'toomanyorigins:modify_dragon_fireball' power type from power with identifier {}. Please enable the 'dragon_fireball' module inside a datapack at 'data/toomanyorigins/legacy_content.json', without this, the power will do nothing.", type.getIdentifier());
+        }
     }
 
     public float getMinRadius() {

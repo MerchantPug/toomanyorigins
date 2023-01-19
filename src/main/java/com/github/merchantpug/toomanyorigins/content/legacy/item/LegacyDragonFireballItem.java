@@ -1,5 +1,6 @@
 package com.github.merchantpug.toomanyorigins.content.legacy.item;
 
+import com.github.merchantpug.toomanyorigins.data.LegacyContentModules;
 import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
@@ -27,9 +28,9 @@ public class LegacyDragonFireballItem extends Item {
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
-        if (LegacyContentRegistry.isContentDisabled(LegacyContentRegistry.DRAGON_FIREBALL)) {
+        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.DRAGON_FIREBALL)) {
             if (!user.world.isClient) {
-                user.sendMessage(Text.translatable("toomanyorigins.content.disabled_message", LegacyContentRegistry.DRAGON_FIREBALL).formatted(Formatting.RED));
+                user.sendMessage(Text.translatable("toomanyorigins.content.disabled_message", LegacyContentModules.DRAGON_FIREBALL).formatted(Formatting.RED));
             }
             user.getItemCooldownManager().set(this, 20);
             return TypedActionResult.pass(itemStack);
@@ -52,13 +53,13 @@ public class LegacyDragonFireballItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if (LegacyContentRegistry.isContentDisabled(LegacyContentRegistry.DRAGON_FIREBALL))
+        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.DRAGON_FIREBALL))
             tooltip.add(Text.translatable("toomanyorigins.content.disabled").formatted(Formatting.GRAY));
     }
 
     @Override
     public void appendStacks(ItemGroup group, DefaultedList<ItemStack> stacks) {
-        if (LegacyContentRegistry.isContentDisabled(LegacyContentRegistry.DRAGON_FIREBALL) || !this.isIn(group)) return;
+        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.DRAGON_FIREBALL) || !this.isIn(group)) return;
         stacks.add(new ItemStack(this));
     }
 }

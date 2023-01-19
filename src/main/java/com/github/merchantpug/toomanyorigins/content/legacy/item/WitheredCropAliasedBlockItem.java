@@ -1,5 +1,6 @@
 package com.github.merchantpug.toomanyorigins.content.legacy.item;
 
+import com.github.merchantpug.toomanyorigins.data.LegacyContentModules;
 import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -22,11 +23,11 @@ public class WitheredCropAliasedBlockItem extends AliasedBlockItem {
     }
 
     protected boolean place(ItemPlacementContext context, BlockState state) {
-        if (LegacyContentRegistry.isContentDisabled(LegacyContentRegistry.WITHERED_CROPS)) {
+        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.WITHERED_CROPS)) {
             if (context.getPlayer() != null) {
                 PlayerEntity player = context.getPlayer();
                 if (!player.world.isClient) {
-                    player.sendMessage(Text.translatable("toomanyorigins.content.disabled_message", LegacyContentRegistry.WITHERED_CROPS).formatted(Formatting.RED));
+                    player.sendMessage(Text.translatable("toomanyorigins.content.disabled_message", LegacyContentModules.WITHERED_CROPS).formatted(Formatting.RED));
                 }
                 player.getItemCooldownManager().set(this, 20);
             }
@@ -37,13 +38,13 @@ public class WitheredCropAliasedBlockItem extends AliasedBlockItem {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if (LegacyContentRegistry.isContentDisabled(LegacyContentRegistry.WITHERED_CROPS))
+        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.WITHERED_CROPS))
             tooltip.add(Text.translatable("toomanyorigins.content.disabled").setStyle(Style.EMPTY.withColor(TextColor.fromFormatting(Formatting.GRAY))));
     }
 
     @Override
     public void appendStacks(ItemGroup group, DefaultedList<ItemStack> stacks) {
-        if (LegacyContentRegistry.isContentDisabled(LegacyContentRegistry.WITHERED_CROPS) || !this.isIn(group)) return;
+        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.WITHERED_CROPS) || !this.isIn(group)) return;
         stacks.add(new ItemStack(this));
     }
 }
