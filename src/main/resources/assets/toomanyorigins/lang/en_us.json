@@ -47,8 +47,9 @@
     "power.toomanyorigins.hell_raised.description": "You gain access to an alternative recipe for arrows.",
     "power.toomanyorigins.spirit_strider.name": "Spirit Strider",
     "power.toomanyorigins.spirit_strider.description": "You have one extra level of soul speed at all times.",
-    "power.toomanyorigins.heterotroph.name": "Heterotroph",
-    "power.toomanyorigins.heterotroph.description": "Food items are less nourishing for you.",
+    "power.toomanyorigins.deathly_digestion.name": "Deathly Digestion",
+    "power.toomanyorigins.deathly_digestion.description": "Food items are less nourishing for you.",
+    "toomanyorigins.gui.badge.overworld_exhaustion": "While not in the nether, you exhaust much quicker.",
 
     "toomanyorigins.midnightconfig.title": "TooManyOrigins Configuration",
     "toomanyorigins.midnightconfig.dragonFireballMixinOptions": "§nEnder Dragon Fireball Mixin Options§r",
