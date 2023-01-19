@@ -1,15 +1,15 @@
-### Re-added Withered origin.
-This nether bound origin focuses on gaining food in the nether by draining hunger from any unfortunate soul that may cross their path. This origin was made around the idea of having an easier time gaining food in the nether.
+**Origins**
+- Hiss-kin Charged duration decreased to 8 minutes (previously 20 minutes).
+- Swarm's Unity now activates 7 maximum hearts when you have 13 hunger as opposed to 15.
+- Swarm's Unity now only needs to recharge once instead of twice after leaving 4 maximum hearts.
+- Withered's `Heterotroph` power has been renamed to `Deathly Digestion`.
+- Withered's Deahtly Digestion now exhausts you quicker whilst you are not in the Nether.
 
-**Config**
-- Fireball Damages Undead Entities now defaults to false. Not overwriting vanilla behavior unless set to true.
+**Language**
+- Updated Turkish translation (Hexasan - PR #54)
 
-**Internal Changes**
-- The Legacy TooManyOrigins Data Pack's description is now translatable text.
-- Moved legacy content to their own files.
-- Stubby Legs modifier name has been updated to reflect the power name change.
-
-*Older betas can be found inside the Pug's Modzone Discord*
+**Misc**
+- Updated license to follow SPDX format.
 
 ---
 
@@ -23,17 +23,17 @@ This nether bound origin focuses on gaining food in the nether by draining hunge
 - Added `legacy_content.json` file found in the data pack directory `data/toomanyorigins/legacy_content.json`, this is able to enable any legacy content that the pack may need by setting a value in the json file to `true`. This can enable `dragon_fireball`, `withered_crops` and `zombifying`. This will be synced with clients.
 
 **Translations**
-- Updated Korean translation. (Thanks Snap_Lan)
-- Updated Turkish translation. (Thanks Hexasan)
+- Updated Korean translation. (Snap_Lan)
+- Updated Turkish translation. (Hexasan)
 - Removed all translations that have not been listed here. They have become obsolete as a result of this update.
 
 **Withered**
-- Tl;dr now has a new set of powers as well as a new gameplay focus.
+- Tl;dr, the origin now has a new set of powers as well as a new gameplay focus.
 - Removed `Wither Toxins`, `Black Thumb`, `Weariness` `Soul Shield` and `Infused Veins` powers.
 - Added `Affliction` power in place of Wither Toxins, of which inflicts Wither II on entities hit with certain projectiles.
 - Added `Drainage` power, of which feeds you upon killing entities.
 - Added` Hell-Raised` power, of which gives you an alternative recipe for arrows.
-- Added `Heterotroph` power, of which makes food items less nourishing for you.
+- Added `Deathly Digestion` power, of which makes food items less nourishing for you and exhausts you quicker whilst not in the Nether.
 
 **Hiss-kin**
 - Overheat is now less effective when the user is touching water.
@@ -43,7 +43,7 @@ This nether bound origin focuses on gaining food in the nether by draining hunge
 - Added a 2.5% chance to redirect naturally spawned lightning strikes to the user as a hidden power.
 - `Ailurophobia` is now purely a visual effect and hidden. Now comes into play when near a Feline origin.
 - Removed `Blast Resistant Hide`.
-- Added `Aerial Stability` power in place of Blast Resistant Hide, of which
+- Added `Aerial Stability` power in place of Blast Resistant Hide, of which lowers your falling velocity.
 - Renamed `Conductor` to `Conductive`.
 - Renamed `Sneaking Steps` to `Stubby Legs`, you are now 25% slower instead of 5% slower.
 
