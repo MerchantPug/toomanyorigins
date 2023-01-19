@@ -1,7 +1,7 @@
 **Origins**
 - Hiss-kin Charged duration decreased to 8 minutes (previously 20 minutes).
 - Swarm's Unity now activates 7 maximum hearts when you have 13 hunger as opposed to 15.
-- Swarm's Unity now only needs to recharge once instead of twice after leaving 4 maximum hearts.
+- Swarm's Unity now only needs to recharge once instead of twice after leaving 4 maximum hearts and into a food level with 10 hearts maximum.
 - Withered's `Heterotroph` power has been renamed to `Deathly Digestion`.
 - Withered's Deahtly Digestion now exhausts you quicker whilst you are not in the Nether.
 
@@ -45,6 +45,7 @@
 - Removed `Blast Resistant Hide`.
 - Added `Aerial Stability` power in place of Blast Resistant Hide, of which lowers your falling velocity.
 - Renamed `Conductor` to `Conductive`.
+- `Conductive` now gives you 8 minutes of the Charged status effect (previously 20).
 - Renamed `Sneaking Steps` to `Stubby Legs`, you are now 25% slower instead of 5% slower.
 
 **Swarm**
