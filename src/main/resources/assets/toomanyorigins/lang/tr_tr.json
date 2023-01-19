@@ -47,8 +47,9 @@
     "power.toomanyorigins.hell_raised.description": "Oklar için alternatif bir tarife erişimin var.",
     "power.toomanyorigins.spirit_strider.name": "Ruh Gezer",
     "power.toomanyorigins.spirit_strider.description": "Her zaman bir seviye ekstra ruh hızın var.",
-    "power.toomanyorigins.heterotroph.name": "Heterotrof",
-    "power.toomanyorigins.heterotroph.description": "Yemek eşyaları senin için daha az doyurucu.",
+    "power.toomanyorigins.deathly_digestion.name": "Ölümcül Sindirme",
+    "power.toomanyorigins.deathly_digestion.description": "Yemek eşyaları senin için daha az doyurucu.",
+    "toomanyorigins.gui.badge.overworld_exhaustion": "Nether'da değilken çok daha çabuk acıkırsın.",
 
     "toomanyorigins.midnightconfig.title": "TooManyOrigins Ayarları",
     "toomanyorigins.midnightconfig.dragonFireballMixinOptions": "§nEnder Ejderhası Ateş Topu Karışım Ayarları§r",
