@@ -7,7 +7,7 @@
       "effect": {
         "effect": "toomanyorigins:charged",
         "amplifier": 0,
-        "duration": 24000
+        "duration": 9600
       }
     },
     "damage_condition": {
