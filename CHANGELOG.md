@@ -3,7 +3,7 @@
 - Made Withered's cooldown bar texture more legible.
 
 **Libraries**
-- Updated Apugli to v1.12.0+1.19
+- Updated Apugli to v1.12.1+1.19
 
 **Misc.**
 - Update license in fabric.mod.json.
