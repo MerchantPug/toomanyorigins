@@ -1,0 +1,30 @@
+{
+  "type": "origins:multiple",
+  "less_food_gain": {
+    "type": "origins:modify_food",
+    "food_modifier": {
+      "name": "Deahtly digestion decreased food points",
+      "operation": "multiply_total",
+      "value": -0.5
+    }
+  },
+  "more_exhaustion": {
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "name": "Deathly digestion increased exhaustion",
+      "operation": "multiply_base",
+      "value": 0.75
+    },
+    "condition": {
+      "type": "origins:dimension",
+      "dimension": "minecraft:the_nether",
+      "inverted": true
+    }
+  },
+  "badges": [
+    {
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "toomanyorigins.gui.badge.overworld_exhaustion"
+    }
+  ]
+}

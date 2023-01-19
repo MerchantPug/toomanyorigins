@@ -1,8 +1,0 @@
-{
-  "type": "origins:modify_food",
-  "food_modifier": {
-    "name": "Heterotroph decreased food points",
-    "operation": "multiply_total",
-    "value": -0.5
-  }
-}
