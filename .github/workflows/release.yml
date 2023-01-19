@@ -39,8 +39,8 @@ jobs:
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           # Config
-          name: TooManyOrigins v0.6.9 (Fabric/Quilt 1.19)
-          version: 0.6.9+1.19-fabric
+          name: TooManyOrigins v0.7.0 (Fabric/Quilt 1.19)
+          version: 0.7.0+1.19-fabric
           version-type: release
           changelog-file: CHANGELOG.md
           files-primary: build/libs/!(*-@(dev|sources)).jar
@@ -67,14 +67,14 @@ jobs:
         uses: Kir-Antipov/mc-publish@v3.0
         with:
           # GitHub
-          github-tag: 0.6.9+1.19-fabric
+          github-tag: 0.7.0+1.19-fabric
           github-draft: false
           github-prerelease: false
           github-commitish: fabric/1.19
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          name: TooManyOrigins v0.6.9 (Fabric/Quilt 1.19)
-          version: 0.6.9+1.19-fabric
+          name: TooManyOrigins v0.7.0 (Fabric/Quilt 1.19)
+          version: 0.7.0+1.19-fabric
           version-type: release
           changelog-file: CHANGELOG.md
 
