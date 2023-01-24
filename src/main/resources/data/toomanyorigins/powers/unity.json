@@ -60,38 +60,12 @@
         {
           "type": "origins:food_level",
           "comparison": ">",
-          "compare_to": 12
+          "compare_to": 6
         },
         {
           "type": "origins:resource",
           "resource": "*:*_health_state",
           "comparison": "<",
-          "compare_to": 1
-        }
-      ]
-    },
-    "interval": 1
-  },
-  "trigger_seven_heart_cooldown": {
-    "type": "origins:action_over_time",
-    "rising_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_recharge_hearts",
-      "change": 1,
-      "operation": "SET"
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:food_level",
-          "comparison": ">=",
-          "compare_to": 13
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:*_health_state",
-          "comparison": "==",
           "compare_to": 1
         }
       ]
@@ -140,7 +114,7 @@
     },
     "interval": 1
   },
-  "trigger_four_heart_cooldown": {
+  "recharge_hearts_trigger": {
     "type": "origins:action_over_time",
     "rising_action": {
       "type": "origins:change_resource",
@@ -149,18 +123,39 @@
       "operation": "SET"
     },
     "condition": {
-      "type": "origins:and",
+      "type": "origins:or",
       "conditions": [
         {
-          "type": "origins:food_level",
-          "comparison": ">=",
-          "compare_to": 6
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:food_level",
+              "comparison": ">",
+              "compare_to": 12
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:*_health_state",
+              "comparison": "==",
+              "compare_to": 1
+            }
+          ]
         },
         {
-          "type": "origins:resource",
-          "resource": "*:*_health_state",
-          "comparison": "==",
-          "compare_to": 2
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:food_level",
+              "comparison": ">",
+              "compare_to": 6
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:*_health_state",
+              "comparison": "==",
+              "compare_to": 2
+            }
+          ]
         }
       ]
     },
