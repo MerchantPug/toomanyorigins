@@ -137,6 +137,56 @@
       ]
     }
   },
+  "reset_recharge_resource": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_recharge_condition_resource",
+      "change": 0,
+      "operation": "SET"
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_recharge_condition_resource",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:or",
+              "conditions": [
+                {
+                  "type": "origins:on_block"
+                },
+                {
+                  "type": "origins:riding"
+                }
+              ]
+            },
+            {
+              "type": "origins:fluid_height",
+              "fluid": "minecraft:water",
+              "comparison": "==",
+              "compare_to": "0"
+            },
+            {
+              "type": "origins:fluid_height",
+              "fluid": "minecraft:lava",
+              "comparison": "==",
+              "compare_to": "0"
+            }
+          ],
+          "inverted": true
+        }
+      ]
+    }
+  },
   "active_resource": {
     "type": "origins:resource",
     "min": 0,
