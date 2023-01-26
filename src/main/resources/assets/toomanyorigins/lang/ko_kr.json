@@ -32,13 +32,13 @@
   "toomanyorigins.gui.badge.no_furnace": "이 힘을 사용하기 위해 가벼울 수 있는 블록을 쳐다보지 마십시오.",
 
   "item.toomanyorigins.dragon_fireball": "드래곤 화염구",
-  "entity.toomanyorigins.fireball_area_effect_cloud": "화염구 지역 구름 효과",
-  "death.attack.dragonMagic": "%1$s이(가) 용의 숨결로 구워졌습니다.",
-  "death.attack.dragonMagic.player": "%1$s은(는) %2$s을(를) 탈출하는 동안 용의 숨결에 구워졌습니다.",
-  "death.attack.dragonMagic.player.item": "%1$s은(는) %3$s을(를) 사용하여 %2$s을(를) 탈출하려고 시도하는 동안 용의 숨결에 구워졌습니다.",
-  "death.attack.indirectDragonMagic": "%1$s은(는) %2$s이(가) 용의 숨결로 구웠습니다.",
-  "death.attack.indirectDragonMagic.item": "%3$s을(를) 사용하여 %2$s이(가) %1$s을(를) 용의 숨결로 구웠습니다.",
-  "effect.toomanyorigins.end_fire": "엔드 파이어",
+  "entity.toomanyorigins.fireball_area_effect_cloud": "화염구 영역 효과 구름",
+  "death.attack.dragonMagic": "%1$s이(가) 용의 숨결로 구워졌습니다",
+  "death.attack.dragonMagic.player": "%2$s에서 탈출하려고 시도하는 동안 %1$s이(가) 용의 숨결에 구워졌습니다",
+  "death.attack.dragonMagic.player.item": "%1$s이(가) %3$s을(를) 사용하여 %2$s에서 탈출하려고 시도하는 동안 용의 숨결에 구워졌습니다",
+  "death.attack.indirectDragonMagic": "%1$s이(가) %2$s에 의해 용의 숨결로 구워졌습니다",
+  "death.attack.indirectDragonMagic.item": "%1$s이(가) %3$s을(를) 사용하여 %2$s이(가) 용의 숨결로 구웠습니다",
+  "effect.toomanyorigins.end_fire": "발사 종료",
 
   "power.toomanyorigins.bunny_hop.name": "버니합",
   "power.toomanyorigins.bunny_hop.description": "공중에 있는 동안 이동 속도에 추가되는 추진력을 축적합니다. 당신은 지상에 있는 동안 순간적으로 추진력을 유지합니다. 활성 능력으로 추진력을 얻을 수도 있습니다.",
@@ -51,7 +51,7 @@
   "power.toomanyorigins.lightweight.name": "경량",
   "power.toomanyorigins.lightweight.description": "당신은 인간보다 심장이 2개 적습니다.",
 
-  "subtitles.origin.hare.dash": "토까의 대시",
+  "subtitles.origin.hare.dash": "토끼 대시",
   "toomanyorigins.hare_sleep_fail": "잠을 잘 때 빛이 덜 필요하다",
 
   "power.toomanyorigins.overheat.name": "과열",
@@ -66,18 +66,18 @@
   "power.toomanyorigins.ailurophobia.description": "고양이나 오셀롯 근처에 있으면 약해지고 느려집니다.",
 
   "effect.toomanyorigins.charged": "충전됨",
-  "death.attack.overheat": "%1$s이(가) 내부를 소각했습니다.",
-  "death.attack.overheat.player": "%1$s은(는) %2$s을(를) 탈출하려고 시도하는 동안 내부를 소각했습니다.",
-  "death.attack.overheat.player.item": "%1$s은(는) %3$s을(를) 사용하여 %2$s을(를) 탈출하려고 시도하는 동안 내부를 소각했습니다.",
+  "death.attack.overheat": "%1$s이(가) 내부를 소각했습니다",
+  "death.attack.overheat.player": "%1$s이(가) %2$s에서 탈출하려고 시도하는 동안 내부를 소각했습니다",
+  "death.attack.overheat.player.item": "%1$s이(가) %3$s을(를) 사용하여 %2$s에서 탈출하려고 시도하는 동안 내부를 소각했습니다",
 
   "power.toomanyorigins.hover_toggle.name": "호버",
   "power.toomanyorigins.hover_toggle.description": "여러 벌로 이루어져 있어 떨어질 때마다 공중에 떠 있을 수 있습니다.",
   "power.toomanyorigins.smoke_sensitivity.name": "연기 감도",
   "power.toomanyorigins.smoke_sensitivity.description": "연기 근처에 있으면 감각이 줄어듭니다.",
   "power.toomanyorigins.pollination.name": "수분",
-  "power.toomanyorigins.pollination.description": "은신하지 않는 동안 뼛가루에 꽃가루가 주입되어 인접한 4개의 블록에 추가로 영향을 줄 수 있습니다.",
-  "power.toomanyorigins.calming_aura.name": "사육 아루아",
-  "power.toomanyorigins.calming_aura.description": "당신이 사육한 동물은 다시 사육될 때까지 기다릴 필요가 없습니다.",
+  "power.toomanyorigins.pollination.description": "웅크리지 않는 동안 뼛가루를 사용하면 근처의 4개 블록에 추가로 영향을 줍니다.",
+  "power.toomanyorigins.calming_aura.name": "차분한 아우라",
+  "power.toomanyorigins.calming_aura.description": "당신이 기르는 동물은 다시 사육될 때까지 기다릴 필요가 없습니다.",
   "power.toomanyorigins.expendable.name": "소모품",
   "power.toomanyorigins.expendable.description": "인간보다 심장이 3개 적습니다.",
   "power.toomanyorigins.beekeeper.name": "양봉가",
@@ -95,9 +95,9 @@
   "power.toomanyorigins.lacerated_liver.description": "썩은 고기가 아닌 음식은 포만감이 덜합니다.",
 
   "effect.toomanyorigins.zombifying": "좀비화",
-  "death.attack.zombification": "%1$s 썩음",
-  "death.attack.zombification.player": "%2$s을(를) 탈출하는 동안 %1$s이(가) 부패했습니다.",
-  "death.attack.zombification.player.item": "%3$s을(를) 사용하여 %2$s을(를) 탈출하는 동안 %1$s이(가) 부패했습니다.",
+  "death.attack.zombification": "%1$s가 썩었습니다",
+  "death.attack.zombification.player": "%2$s에서 탈출하는 동안 %1$s이(가) 썩었습니다",
+  "death.attack.zombification.player.item": "%3$s을(를) 사용하여 %2$s에서 탈출하려고 시도하는 동안 %1$s이(가) 썩었습니다",
 
   "power.toomanyorigins.black_thumb.name": "검은 엄지",
   "power.toomanyorigins.black_thumb.description": "당신은 당신이 심는 모든 오버월드 작물에 부패를 퍼뜨려 그들이 자랄 수 없도록 만듭니다.",
@@ -112,18 +112,14 @@
   "power.toomanyorigins.weariness.name": "싫증",
   "power.toomanyorigins.weariness.description": "동물들이 주변에 지쳐 있기 때문에 동물을 키울 수 없습니다.",
 
-  "item.toomanyorigins.withered_crop_seeds": "시든 작물 씨앗",
-  "item.toomanyorigins.withered_stem_seeds": "시든 줄기 씨앗",
-  "block.toomanyorigins.withered_beetroots": "시든 사탕무 뿌리",
-  "block.toomanyorigins.withered_carrots": "시든 당근",
-  "block.toomanyorigins.withered_melon_stem": "시든 수박 줄기",
-  "block.toomanyorigins.withered_potatoes": "시든 감자",
-  "block.toomanyorigins.withered_pumpkin_stem": "시든 호박 줄기",
-  "block.toomanyorigins.withered_wheat": "시든 밀",
-  "block.toomanyorigins.withered_crop": "시든 작물",
-  "block.toomanyorigins.withered_stem": "시든 줄기",
+  "item.toomanyorigins.withered_crop_seeds": "마른 작물 씨앗",
+  "item.toomanyorigins.withered_stem_seeds": "마른 줄기 씨앗",
+  "block.toomanyorigins.withered_crop": "마른 작물",
+  "block.toomanyorigins.withered_stem": "마른 줄기",
 
   "toomanyorigins.midnightconfig.title": "TooManyOrigins 구성",
-  "toomanyorigins.midnightconfig.dragonFireballMixinOptions": "§n엔더 드래곤 화염구 블렌드 설정§r",
-  "toomanyorigins.midnightconfig.shouldFireballDamageUndead": "화염구가 언데드에게 피해를 입힘"
+  "toomanyorigins.midnightconfig.dragonFireballMixinOptions": "§n엔더 드래곤 화염구 믹스인 옵션§r",
+  "toomanyorigins.midnightconfig.shouldFireballDamageUndead": "화염구가 언데드 엔티티에 피해를 줍니다",
+
+  "toomanyorigins.gui.version_mismatch": "이 서버는 사용자가 설치한 버전(v%2$s)과 호환되지 않는 다른 버전의 TooManyOrigins(v%1$s)를 실행 중입니다."
 }
