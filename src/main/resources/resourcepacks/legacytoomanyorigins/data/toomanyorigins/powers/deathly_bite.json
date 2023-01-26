@@ -17,7 +17,7 @@
       ]
     },
     "if_action": {
-      "type": "apugli:zombify_villager"
+      "type": "toomanyorigins:zombify_villager"
     },
     "else_action": {
       "type": "origins:apply_effect",

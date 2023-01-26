@@ -32,32 +32,32 @@
   "use_charged": true,
   "horizontal_velocity": 1.2,
   "targetable_bientity_condition": {
-    "type": "apoli:target_condition",
+    "type": "origins:target_condition",
     "condition": {
-      "type": "apoli:and",
+      "type": "origins:and",
       "conditions": [
         {
-          "type": "apoli:living"
+          "type": "origins:living"
         },
         {
-          "type": "apoli:in_tag",
-          "tag": "apugli:ignore_rocket_jump",
+          "type": "origins:in_tag",
+          "tag": "toomanyorigins:ignore_rocket_jump",
           "inverted": true
         }
       ]
     }
   },
   "damage_bientity_condition": {
-    "type": "apoli:target_condition",
+    "type": "origins:target_condition",
     "condition": {
-      "type": "apoli:and",
+      "type": "origins:and",
       "conditions": [
         {
-          "type": "apoli:living"
+          "type": "origins:living"
         },
         {
-          "type": "apoli:in_tag",
-          "tag": "apugli:ignore_rocket_jump_damage",
+          "type": "origins:in_tag",
+          "tag": "toomanyorigins:ignore_rocket_jump_damage",
           "inverted": true
         }
       ]

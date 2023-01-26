@@ -1,5 +1,5 @@
 {
-  "type": "apugli:modify_enchantment_damage_taken",
+  "type": "toomanyorigins:modify_enchantment_damage_taken",
   "enchantment": "minecraft:smite",
   "base_value": 0,
   "modifier": {

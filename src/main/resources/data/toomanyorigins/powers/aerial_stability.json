@@ -1,5 +1,5 @@
 {
-  "type": "apoli:modify_velocity",
+  "type": "origins:modify_velocity",
   "modifiers": [
     {
       "operation": "multiply_total_additive",
@@ -14,10 +14,10 @@
     "Y"
   ],
   "condition": {
-    "type": "apoli:and",
+    "type": "origins:and",
     "conditions": [
       {
-        "type": "apugli:velocity",
+        "type": "toomanyorigins:velocity",
         "axes": [
           "Y"
         ],
@@ -25,25 +25,25 @@
         "comparison": ">="
       },
       {
-        "type": "apoli:fluid_height",
+        "type": "origins:fluid_height",
         "fluid": "minecraft:water",
         "comparison": ">",
         "compare_to": "0",
         "inverted": true
       },
       {
-        "type": "apoli:fluid_height",
+        "type": "origins:fluid_height",
         "fluid": "minecraft:lava",
         "comparison": ">",
         "compare_to": "0",
         "inverted": true
       },
       {
-        "type": "apoli:fall_flying",
+        "type": "origins:fall_flying",
         "inverted": true
       },
       {
-        "type": "apoli:riding",
+        "type": "origins:riding",
         "inverted": true
       }
     ]
