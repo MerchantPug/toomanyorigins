@@ -6,12 +6,6 @@
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:resource",
-          "resource": "*:*_active_resource",
-          "comparison": ">",
-          "compare_to": 0
-        },
-        {
           "type": "toomanyorigins:velocity",
           "y": 0.0,
           "comparison": ">="
@@ -50,29 +44,32 @@
           "inverted": true
         },
         {
+          "type": "origins:food_level",
+          "comparison": ">",
+          "compare_to": 6
+        },
+        {
           "type": "origins:power_active",
           "power": "*:*_toggle_resource"
         }
       ]
     }
   },
-  "deplete_while_using": {
+  "deplete_hunger_while_using": {
     "type": "origins:action_over_time",
     "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:change_resource",
-          "resource": "*:*_active_resource",
-          "change": -1
-        },
-        {
-          "type": "origins:change_resource",
-          "resource": "*:*_recharge_condition_resource",
-          "change": 0,
-          "operation": "SET"
-        }
-      ]
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:sprinting"
+      },
+      "if_action": {
+        "type": "origins:exhaust",
+        "amount": 0.00375
+      },
+      "else_action": {
+        "type": "origins:exhaust",
+        "amount": 0.0025
+      }
     },
     "interval": 1,
     "condition": {
@@ -80,251 +77,22 @@
       "power": "*:*_hover"
     }
   },
-  "recharge": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_active_resource",
-      "change": 2
-    },
-    "interval": 1,
-    "condition": {
-      "type": "origins:resource",
-      "resource": "*:*_recharge_condition_resource",
-      "comparison": "==",
-      "compare_to": 10
-    }
-  },
-  "recharge_condition_increase": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_recharge_condition_resource",
-      "change": 1
-    },
-    "interval": 1,
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:or",
-          "conditions": [
-            {
-              "type": "origins:on_block"
-            },
-            {
-              "type": "origins:riding"
-            }
-          ]
-        },
-        {
-          "type": "origins:fluid_height",
-          "fluid": "minecraft:water",
-          "comparison": "==",
-          "compare_to": "0"
-        },
-        {
-          "type": "origins:fluid_height",
-          "fluid": "minecraft:lava",
-          "comparison": "==",
-          "compare_to": "0"
-        },
-        {
-          "type": "origins:power_active",
-          "power": "*:*_hover",
-          "inverted": true
-        }
-      ]
-    }
-  },
-  "reset_recharge_resource": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_recharge_condition_resource",
-      "change": 0,
-      "operation": "SET"
-    },
-    "interval": 1,
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "resource": "*:*_recharge_condition_resource",
-          "comparison": ">",
-          "compare_to": 0
-        },
-        {
-          "type": "origins:and",
-          "conditions": [
-            {
-              "type": "origins:or",
-              "conditions": [
-                {
-                  "type": "origins:on_block"
-                },
-                {
-                  "type": "origins:riding"
-                }
-              ]
-            },
-            {
-              "type": "origins:fluid_height",
-              "fluid": "minecraft:water",
-              "comparison": "==",
-              "compare_to": "0"
-            },
-            {
-              "type": "origins:fluid_height",
-              "fluid": "minecraft:lava",
-              "comparison": "==",
-              "compare_to": "0"
-            }
-          ],
-          "inverted": true
-        }
-      ]
-    }
-  },
-  "active_resource": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 60,
-    "start_value": 60,
-    "hud_render": {
-      "should_render": true,
-      "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
-      "bar_index": 8,
-      "condition": {
-        "type": "origins:and",
-        "conditions": [
-          {
-            "type": "origins:power_active",
-            "power": "*:*_toggle_resource"
-          },
-          {
-            "type": "origins:resource",
-            "resource": "*:*_active_resource",
-            "comparison": "==",
-            "compare_to": 60,
-            "inverted": true
-          }
-        ]
-      }
-    },
-    "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle_resource"
-    }
-  },
-  "inactive_resource": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 60,
-    "hud_render": {
-      "should_render": true,
-      "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
-      "bar_index": 9,
-      "condition": {
-        "type": "origins:power_active",
-        "power": "*:*_toggle_resource",
-        "inverted": true
-      }
-    },
-    "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle_resource",
-      "inverted": true
-    }
-  },
-  "recharge_condition_resource": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 10,
-    "hud_render": {
-      "should_render": false
-    }
-  },
-  "sync_values": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "toomanyorigins:resource_transfer",
-      "resource": "*:*_inactive_resource",
-      "provider": "*:*_active_resource"
-    },
-    "interval": 1,
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "toomanyorigins:compare_resource",
-          "resource": "*:*_inactive",
-          "compare_to": "*:*_inactive_resource",
-          "comparison": "==",
-          "inverted": true
-        },
-        {
-          "type": "origins:power_active",
-          "power": "*:*_toggle_resource",
-          "inverted": true
-        }
-      ]
-    }
-  },
-  "toggle": {
-    "type": "origins:active_self",
-    "entity_action": {
-      "type": "origins:if_else",
-      "condition": {
-        "type": "origins:power_active",
-        "power": "*:hover_toggle_resource"
-      },
-      "if_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:toggle",
-            "power": "*:hover_toggle_resource"
-          },
-          {
-            "type": "toomanyorigins:resource_transfer",
-            "resource": "*:hover_inactive_resource",
-            "provider": "*:hover_active_resource"
-          }
-        ]
-      },
-      "else_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:toggle",
-            "power": "*:hover_toggle_resource"
-          },
-          {
-            "type": "toomanyorigins:resource_transfer",
-            "resource": "*:hover_active_resource",
-            "provider": "*:hover_inactive_resource"
-          }
-        ]
-      }
-    },
-    "cooldown": 1,
-    "hud_render": {
-      "should_render": false
-    },
-    "key": {
-      "key": "key.origins.primary_active"
-    }
-  },
   "toggle_resource": {
     "type": "origins:toggle",
     "active_by_default": true,
     "key": {
-      "key": "null"
+      "key": "key.origins.primary_active"
     }
   },
   "badges": [
+    {
+      "type": "toomanyorigins:defined_keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "origins.gui.badge.active",
+      "key": {
+        "key": "key.jump"
+      }
+    },
     {
       "sprite": "origins:textures/gui/badge/toggle.png",
       "text": "origins.gui.badge.toggle"

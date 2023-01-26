@@ -1,15 +1,24 @@
 **Origins**
 - Hiss-kin Charged duration decreased to 8 minutes (previously 20 minutes).
-- Swarm's Unity now activates 7 maximum hearts when you have 13 hunger as opposed to 15.
+
+- Swarm's Hover now operates on hunger as opposed to resource bars, you now exhaust when using it instead.
+- Swarm's Hover is unable to be used when their hunger is below sprinting level.
+- Swarm's Calming Aura no longer works on animals that can attack other entities. (Defined in the entity type tag `toomanyorigins:ignore_calming_aura`, Cats, Hoglins and Wolves by default).
+- Swarm's Stinging Pains now exhausts 1 hunger shank as opposed to 2 hunger shanks.
+- Swarm's Unity now activates 7 maximum hearts when you have 12 hunger as opposed to 14.
 - Swarm's Unity now only needs to recharge once instead of twice after leaving 4 maximum hearts and into a food level with 10 hearts maximum.
+
 - Withered's `Heterotroph` power has been renamed to `Deathly Digestion`.
 - Withered's Deahtly Digestion now exhausts you quicker whilst you are not in the Nether.
 
 **Language**
-- Updated Turkish translation (Hexasan - PR #54, #55)
+- Updated Turkish translation (Hexasan - PR #54, #55).
 
 **Misc**
 - Updated license to follow SPDX format.
+
+**Bugfixes**
+- Fixed incorrect tags in both Overheat power JSONs.
 
 ---
 
@@ -50,8 +59,8 @@
 
 **Swarm**
 - Changed to Impact 2.
-- Made internal changes to the Hover power.
-- You can no longer recharge hover touching water or lava.
+- Swarm's Hover now operates on hunger as opposed to resource bars, you now exhaust when using it instead.
+- Swarm's Hover is unable to be used when their hunger is below sprinting level.
 - `Beekeeper` is now a hidden power.
 - Removed `Expendable` power.
 - Removed `Smoke Sensitivity` power.

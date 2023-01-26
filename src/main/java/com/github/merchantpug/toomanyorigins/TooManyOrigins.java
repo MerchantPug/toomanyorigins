@@ -88,6 +88,7 @@ public class TooManyOrigins implements ModInitializer, OrderedResourceListenerIn
 		MidnightConfig.init(TooManyOrigins.MODID, TooManyOriginsConfig.class);
 		LegacyContentRegistry.init();
 
+		TMOBadges.register();
 		TMOBlocks.register();
 		TMOEffects.register();
 		TMOEntities.register();

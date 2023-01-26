@@ -136,8 +136,14 @@
             {
               "type": "origins:resource",
               "resource": "*:*_health_state",
+              "comparison": ">",
+              "compare_to": 0
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:*_recharge_hearts",
               "comparison": "==",
-              "compare_to": 1
+              "compare_to": 0
             }
           ]
         },
@@ -152,8 +158,14 @@
             {
               "type": "origins:resource",
               "resource": "*:*_health_state",
+              "comparison": ">",
+              "compare_to": 1
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:*_recharge_hearts",
               "comparison": "==",
-              "compare_to": 2
+              "compare_to": 0
             }
           ]
         }
