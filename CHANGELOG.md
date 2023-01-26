@@ -1,9 +1,6 @@
-**Content**
-- Hiss-kin's rocket jumps now have two related entity type tags, one to define what can't be bounced off with rocket jumps `toomanyorigins:ignore_rocket_jump` and one tag to define what can't be damaged by rocket jumps. Both of these will not target non living entities by default.
-- Made Withered's cooldown bar texture more legible.
-
-**Libraries**
-- Updated Apugli to v1.12.1+1.19
+**Lang**
+- Ported lang changes from rework branch to main (Turkish and Korean).
 
 **Misc.**
-- Update license in fabric.mod.json.
+- Alias all mentions of `apugli` to `toomanyorigins` inside powers.
+- Remove legacy Withered crop types.
