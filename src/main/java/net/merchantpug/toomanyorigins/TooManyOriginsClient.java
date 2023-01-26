@@ -66,15 +66,4 @@ public class TooManyOriginsClient implements ClientModInitializer {
             return k << 8 | l;
         }, TMOBlocks.WITHERED_STEM);
     }
-
-    @Environment(EnvType.CLIENT)
-    private static CompletableFuture<PacketByteBuf> handleHandshake(MinecraftClient minecraftClient, ClientLoginNetworkHandler clientLoginNetworkHandler, PacketByteBuf packetByteBuf, Consumer<GenericFutureListener<? extends Future<? super Void>>> genericFutureListenerConsumer) {
-        PacketByteBuf buf = PacketByteBufs.create();
-        buf.writeInt(TooManyOrigins.SEMVER.length);
-        for(int i = 0; i < TooManyOrigins.SEMVER.length; i++) {
-            buf.writeInt(TooManyOrigins.SEMVER[i]);
-        }
-        TooManyOriginsClient.isServerRunningTMO = true;
-        return CompletableFuture.completedFuture(buf);
-    }
 }
