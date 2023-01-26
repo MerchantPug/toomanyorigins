@@ -14,7 +14,7 @@
 - Withered's Deahtly Digestion now exhausts you quicker whilst you are not in the Nether.
 
 **Language**
-- Updated Turkish translation (Hexasan - PR #54, #55).
+- Updated Turkish translation (Hexasan - PR #54, #55, #56).
 
 **Misc**
 - Updated license to follow SPDX format.
