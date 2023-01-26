@@ -64,11 +64,11 @@
       },
       "if_action": {
         "type": "origins:exhaust",
-        "amount": 0.0075
+        "amount": 0.06
       },
       "else_action": {
         "type": "origins:exhaust",
-        "amount": 0.005
+        "amount": 0.04
       }
     },
     "interval": 1,

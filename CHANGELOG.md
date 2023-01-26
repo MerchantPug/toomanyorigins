@@ -59,8 +59,9 @@
 
 **Swarm**
 - Changed to Impact 2.
-- Swarm's Hover now operates on hunger as opposed to resource bars, you now exhaust when using it instead.
-- Swarm's Hover is unable to be used when their hunger is below sprinting level.
+- `Hover` now operates on hunger as opposed to resource bars, you now exhaust when using it instead.
+- `Hover` is unable to be used when the Swarm's hunger is below sprinting level. 
+- `Calming Aura` no longer works on animals that can attack other players or hostile mobs. (Defined in the entity type tag `toomanyorigins:ignore_calming_aura`, Foxes, Hoglins and Wolves by default).
 - `Beekeeper` is now a hidden power.
 - Removed `Expendable` power.
 - Removed `Smoke Sensitivity` power.
