@@ -32,7 +32,7 @@ jobs:
         with:
           # Modrinth
           modrinth-id: xDjN28OB
-          modrinth-featured: true
+          modrinth-featured: false
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
 
           # CurseForge
