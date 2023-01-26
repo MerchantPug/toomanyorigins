@@ -60,15 +60,49 @@
     "entity_action": {
       "type": "origins:if_else",
       "condition": {
-        "type": "origins:sprinting"
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "toomanyorigins:velocity",
+            "axes": [
+              "x"
+            ],
+            "compare_to": 0.05,
+            "comparison": ">"
+          },
+          {
+            "type": "toomanyorigins:velocity",
+            "axes": [
+              "x"
+            ],
+            "compare_to": 0.05,
+            "comparison": "<"
+          },
+          {
+            "type": "toomanyorigins:velocity",
+            "axes": [
+              "z"
+            ],
+            "compare_to": 0.05,
+            "comparison": ">"
+          },
+          {
+            "type": "toomanyorigins:velocity",
+            "axes": [
+              "z"
+            ],
+            "compare_to": 0.05,
+            "comparison": ">"
+          }
+        ]
       },
       "if_action": {
         "type": "origins:exhaust",
-        "amount": 0.06
+        "amount": 0.08
       },
       "else_action": {
         "type": "origins:exhaust",
-        "amount": 0.04
+        "amount": 0.06
       }
     },
     "interval": 1,
