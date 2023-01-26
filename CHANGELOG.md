@@ -1,12 +1,14 @@
-**Origins**
-- Hiss-kin Charged duration decreased to 8 minutes (previously 20 minutes).
+*As always these features are subject to change.*
 
-- Swarm's Hover now operates on hunger as opposed to resource bars, you now exhaust when using it instead.
-- Swarm's Hover is unable to be used when their hunger is below sprinting level.
-- Swarm's Calming Aura no longer works on animals that can attack other players or hostile mobs. (Defined in the entity type tag `toomanyorigins:ignore_calming_aura`, Foxes, Hoglins and Wolves by default).
-- Swarm's Stinging Pains now exhausts 1 hunger shank as opposed to 2 hunger shanks.
-- Swarm's Unity now activates 7 maximum hearts when you have 12 hunger as opposed to 14.
-- Swarm's Unity now only needs to recharge once instead of twice after leaving 4 maximum hearts and into a food level with 10 hearts maximum.
+**Origins**
+- Hiss-kin Charged duration gained from `Conductive` decreased to 8 minutes (previously 20 minutes).
+
+- Swarm's `Hover` now operates on hunger as opposed to resource bars, you now exhaust when using it instead.
+- Swarm's `Hover` is unable to be used when their hunger is below sprinting level.
+- Swarm's `Calming Aura` no longer works on animals that can attack other players or hostile mobs. (Defined in the entity type tag `toomanyorigins:ignore_calming_aura`, Foxes, Llamas, Hoglins and Wolves by default).
+- Swarm's `Stinging Pains` now exhausts 1 hunger shank as opposed to 2 hunger shanks.
+- Swarm's `Unity` now activates 7 maximum hearts when you have 12 hunger as opposed to 14.
+- Swarm's `Unity` now only needs to recharge once instead of twice after leaving 4 maximum hearts and into a food level with 10 hearts maximum.
 
 - Withered's `Heterotroph` power has been renamed to `Deathly Digestion`.
 - Withered's Deahtly Digestion now exhausts you quicker whilst you are not in the Nether.
@@ -61,7 +63,7 @@
 - Changed to Impact 2.
 - `Hover` now operates on hunger as opposed to resource bars, you now exhaust when using it instead.
 - `Hover` is unable to be used when the Swarm's hunger is below sprinting level. 
-- `Calming Aura` no longer works on animals that can attack other players or hostile mobs. (Defined in the entity type tag `toomanyorigins:ignore_calming_aura`, Foxes, Hoglins and Wolves by default).
+- `Calming Aura` no longer works on animals that can attack other players or hostile mobs. (Defined in the entity type tag `toomanyorigins:ignore_calming_aura`, Foxes, Llamas, Hoglins and Wolves by default).
 - `Beekeeper` is now a hidden power.
 - Removed `Expendable` power.
 - Removed `Smoke Sensitivity` power.
