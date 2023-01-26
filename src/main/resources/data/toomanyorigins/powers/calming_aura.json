@@ -1,5 +1,5 @@
 {
-  "type": "apugli:modify_breeding_cooldown",
+  "type": "toomanyorigins:modify_breeding_cooldown",
   "modifier": {
     "operation": "multiply_base",
     "value": -1
