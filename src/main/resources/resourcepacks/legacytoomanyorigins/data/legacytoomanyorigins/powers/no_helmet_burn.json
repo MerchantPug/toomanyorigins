@@ -1,13 +1,7 @@
 {
-  "type": "origins:action_over_time",
-  "entity_action": {
-    "type": "origins:equipped_item_action",
-    "equipment_slot": "head",
-    "action": {
-      "type": "toomanyorigins:damage"
-    }
-  },
-  "interval": 180,
+  "type": "origins:burn",
+  "interval": 20,
+  "burn_duration": 3,
   "condition": {
     "type": "origins:and",
     "conditions": [
@@ -23,9 +17,14 @@
             {
               "type": "origins:ingredient",
               "ingredient": {
-                "tag": "toomanyorigins:ignore_head_slot"
-              },
-              "inverted": true
+                "item": "minecraft:air"
+              }
+            },
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "tag": "legacytoomanyorigins:ignore_head_slot"
+              }
             }
           ]
         }
@@ -38,5 +37,6 @@
       }
     ]
   },
-  "hidden": true
+  "name": "power.legacytoomanyorigins.no_helmet_burn.name",
+  "description": "power.legacytoomanyorigins.no_helmet_burn.description"
 }

@@ -1,11 +1,11 @@
 {
   "loading_priority": 1,
   "powers": [
-    "toomanyorigins:overheat",
-    "toomanyorigins:conductor",
-    "toomanyorigins:blast_immunity",
-    "toomanyorigins:sneaking_steps",
-    "toomanyorigins:ailurophobia"
+    "legacytoomanyorigins:overheat",
+    "legacytoomanyorigins:conductor",
+    "legacytoomanyorigins:blast_immunity",
+    "legacytoomanyorigins:sneaking_steps",
+    "legacytoomanyorigins:ailurophobia"
   ],
   "icon": "minecraft:gunpowder",
   "order": 6,

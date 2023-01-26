@@ -9,7 +9,7 @@
   "item_condition": {
     "type": "origins:ingredient",
     "ingredient": {
-      "tag": "toomanyorigins:carrots"
+      "tag": "legacytoomanyorigins:carrots"
     }
   },
   "always_edible": true,

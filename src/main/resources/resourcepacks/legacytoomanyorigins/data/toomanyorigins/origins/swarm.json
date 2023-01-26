@@ -1,14 +1,14 @@
 {
   "loading_priority": 1,
   "powers": [
-    "toomanyorigins:hover",
-    "toomanyorigins:hover_toggle",
-    "toomanyorigins:smoke_sensitivity",
+    "legacytoomanyorigins:hover",
+    "legacytoomanyorigins:hover_toggle",
+    "legacytoomanyorigins:smoke_sensitivity",
     "toomanyorigins:pollination",
-    "toomanyorigins:calming_aura",
-    "toomanyorigins:expendable",
-    "toomanyorigins:beekeeper",
-    "toomanyorigins:aerial_affinity",
+    "legacytoomanyorigins:calming_aura",
+    "legacytoomanyorigins:expendable",
+    "legacytoomanyorigins:beekeeper",
+    "legacytoomanyorigins:aerial_affinity",
     "origins:arthropod"
   ],
   "icon": "minecraft:honeycomb",

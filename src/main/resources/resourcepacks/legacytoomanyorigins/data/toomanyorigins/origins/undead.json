@@ -1,16 +1,16 @@
 {
   "powers": [
-    "toomanyorigins:burn_timer",
-    "toomanyorigins:deathly_bite",
-    "toomanyorigins:no_helmet_burn",
-    "toomanyorigins:opposite_day",
-    "toomanyorigins:cannibalism",
-    "toomanyorigins:lacerated_liver",
-    "toomanyorigins:damage_helmet_when_in_sun",
+    "legacytoomanyorigins:burn_timer",
+    "legacytoomanyorigins:deathly_bite",
+    "legacytoomanyorigins:no_helmet_burn",
+    "legacytoomanyorigins:opposite_day",
+    "legacytoomanyorigins:cannibalism",
+    "legacytoomanyorigins:lacerated_liver",
+    "legacytoomanyorigins:damage_helmet_when_in_sun",
     "toomanyorigins:unholy",
-    "toomanyorigins:zombify_hit",
-    "toomanyorigins:undead_immunities",
-    "toomanyorigins:undead_callback"
+    "legacytoomanyorigins:zombify_hit",
+    "legacytoomanyorigins:undead_immunities",
+    "legacytoomanyorigins:undead_callback"
   ],
   "icon": "minecraft:rotten_flesh",
   "order": 3,

@@ -18,7 +18,7 @@
     "type": "toomanyorigins:raycast",
     "block_condition": {
       "type": "origins:in_tag",
-      "tag": "toomanyorigins:lightable"
+      "tag": "legacytoomanyorigins:lightable"
     },
     "inverted": true
   },

@@ -1,13 +1,13 @@
 {
   "powers": [
-    "toomanyorigins:wither_toxins",
+    "legacytoomanyorigins:wither_toxins",
     "origins:nether_spawn",
-    "toomanyorigins:black_thumb",
-    "toomanyorigins:weariness",
-    "toomanyorigins:scorched_structure",
-    "toomanyorigins:soul_shield",
-    "toomanyorigins:soul_shield_overlay",
-    "toomanyorigins:wither_immunity",
+    "legacytoomanyorigins:black_thumb",
+    "legacytoomanyorigins:weariness",
+    "legacytoomanyorigins:scorched_structure",
+    "legacytoomanyorigins:soul_shield",
+    "legacytoomanyorigins:soul_shield_overlay",
+    "legacytoomanyorigins:wither_immunity",
     "toomanyorigins:unholy"
   ],
   "icon": "minecraft:wither_rose",

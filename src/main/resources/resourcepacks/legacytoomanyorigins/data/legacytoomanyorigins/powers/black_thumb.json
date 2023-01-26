@@ -6,7 +6,7 @@
     "item_condition": {
       "type": "origins:ingredient",
       "ingredient": {
-        "tag": "toomanyorigins:crop_seeds"
+        "tag": "legacytoomanyorigins:crop_seeds"
       }
     }
   },
@@ -16,7 +16,7 @@
     "item_condition": {
       "type": "origins:ingredient",
       "ingredient": {
-        "tag": "toomanyorigins:stem_seeds"
+        "tag": "legacytoomanyorigins:stem_seeds"
       }
     }
   },
