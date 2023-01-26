@@ -54,14 +54,8 @@ public class TooManyOriginsClient implements ClientModInitializer {
     public void onInitializeClient() {
         TMOPacketsS2C.register();
 
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_BEETROOTS, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_CARROTS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_CROP, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_MELON_STEM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_POTATOES, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_PUMPKIN_STEM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_STEM, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_WHEAT, RenderLayer.getCutout());
 
         EntityRendererRegistry.register(TMOEntities.SMALL_DRAGON_FIREBALL, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(TMOEntities.FIREBALL_AREA_EFFECT_CLOUD, EmptyEntityRenderer::new);
@@ -70,7 +64,7 @@ public class TooManyOriginsClient implements ClientModInitializer {
             int k = 255;
             int l = 0;
             return k << 8 | l;
-        }, TMOBlocks.WITHERED_PUMPKIN_STEM, TMOBlocks.WITHERED_MELON_STEM, TMOBlocks.WITHERED_STEM);
+        }, TMOBlocks.WITHERED_STEM);
     }
 
     @Environment(EnvType.CLIENT)
