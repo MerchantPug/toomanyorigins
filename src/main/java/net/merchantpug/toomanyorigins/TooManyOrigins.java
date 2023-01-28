@@ -24,6 +24,7 @@ SOFTWARE.
 
 package net.merchantpug.toomanyorigins;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.merchantpug.toomanyorigins.networking.TMOPacketsC2S;
 import eu.midnightdust.lib.config.MidnightConfig;
 import io.github.apace100.apoli.util.NamespaceAlias;
@@ -31,6 +32,7 @@ import net.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.merchantpug.toomanyorigins.registry.*;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -60,7 +62,14 @@ public class TooManyOrigins implements ModInitializer {
 		TMOBlocks.register();
 		TMOEffects.register();
 		TMOEntities.register();
+
 		TMOItems.register();
+
+		// TODO: Insert creative menu stuff here.
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> entries.add(TMOItems.DRAGON_FIREBALL));
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> entries.add(TMOItems.WITHERED_CROP_SEEDS));
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> entries.add(TMOItems.WITHERED_STEM_SEEDS));
+
 		TMOPowers.register();
 		TMOSounds.register();
 

@@ -4,8 +4,9 @@ import net.merchantpug.toomanyorigins.entity.FireballAreaEffectCloudEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.merchantpug.toomanyorigins.entity.SmallDragonFireballEntity;
 import net.minecraft.entity.*;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import net.merchantpug.toomanyorigins.TooManyOrigins;
 
 public class TMOEntities {
@@ -18,7 +19,7 @@ public class TMOEntities {
     }
 
     public static void register() {
-        Registry.register(Registry.ENTITY_TYPE, new Identifier(TooManyOrigins.MODID, "small_dragon_fireball"), SMALL_DRAGON_FIREBALL);
-        Registry.register(Registry.ENTITY_TYPE, new Identifier(TooManyOrigins.MODID, "fireball_area_effect_cloud"), FIREBALL_AREA_EFFECT_CLOUD);
+        Registry.register(Registries.ENTITY_TYPE, new Identifier(TooManyOrigins.MODID, "small_dragon_fireball"), SMALL_DRAGON_FIREBALL);
+        Registry.register(Registries.ENTITY_TYPE, new Identifier(TooManyOrigins.MODID, "fireball_area_effect_cloud"), FIREBALL_AREA_EFFECT_CLOUD);
     }
 }

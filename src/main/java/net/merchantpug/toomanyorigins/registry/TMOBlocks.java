@@ -6,10 +6,10 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import net.merchantpug.toomanyorigins.TooManyOrigins;
 
 public class TMOBlocks {
@@ -22,13 +22,13 @@ public class TMOBlocks {
     }
 
     public static void register(String blockName, Block block) {
-        register(blockName, block, false, null);
+        register(blockName, block, false);
     }
 
-    public static void register(String blockName, Block block, boolean withBlockItem, ItemGroup itemGroup) {
-        Registry.register(Registry.BLOCK, new Identifier(TooManyOrigins.MODID, blockName), block);
+    public static void register(String blockName, Block block, boolean withBlockItem) {
+        Registry.register(Registries.BLOCK, new Identifier(TooManyOrigins.MODID, blockName), block);
         if(withBlockItem) {
-            Registry.register(Registry.ITEM, new Identifier(TooManyOrigins.MODID, blockName), new BlockItem(block, new Item.Settings().group(itemGroup)));
+            Registry.register(Registries.ITEM, new Identifier(TooManyOrigins.MODID, blockName), new BlockItem(block, new Item.Settings()));
         }
     }
 }
