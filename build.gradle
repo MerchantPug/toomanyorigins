@@ -134,7 +134,7 @@ curseforge {
 			id = cf_project_id
 			changelog = new File("$project.rootDir/CHANGELOG.md").getText('UTF-8')
 			changelogType = 'markdown'
-			releaseType = 'release'
+			releaseType = 'beta'
 			java_versions.split(", ").each { String javaVersion ->
 				addGameVersion javaVersion
 			}
@@ -168,7 +168,7 @@ modrinth {
 		token = System.getenv("MODRINTH_TOKEN")
 		projectId = mr_project_id
 		versionNumber = "${project.version}"
-		versionType = "release"
+		versionType = "beta"
 		versionName = "v$project.version Fabric/Quilt"
 		changelog = new File("$project.rootDir/CHANGELOG.md").getText('UTF-8')
 		uploadFile = remapJar
@@ -192,6 +192,7 @@ githubRelease {
 		owner = gh_owner
 		repo = gh_repo
 		tagName = version
+		prerelease = true
 		targetCommitish = gh_commitish
 		releaseName = "v$project.version Fabric/Quilt"
 		body {
