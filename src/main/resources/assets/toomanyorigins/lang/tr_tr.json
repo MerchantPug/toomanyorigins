@@ -29,13 +29,13 @@
     "death.attack.overheat.player.item": "%1$s, %3$s kullanan %2$s'den kaçmaya çalışırken içini fitilledi.",
   
     "power.toomanyorigins.hover.name": "Süzül",
-    "power.toomanyorigins.hover.description": "Düşeceğin zaman havada asılı kalabilirsin, bu şüreçte biraz acıkırsın.",
+    "power.toomanyorigins.hover.description": "Düşeceğin zaman havada asılı kalabilirsin, bu şüreç seni yorar ve uzak mesafe silah kullanamamanı sağlar.",
     "power.toomanyorigins.pollination.name": "Tozlaşma",
     "power.toomanyorigins.pollination.description": "Eğilmiyorken kemik tozu kullanmak yanlardaki 4 bloğa da etki eder.",
     "power.toomanyorigins.calming_aura.name": "Sakin Aura",
     "power.toomanyorigins.calming_aura.description": "Çiftleştirdiğin saldırgan olmayan hayvanların tekrar çiftleşebilmesi için beklemene gerek yok.",
     "power.toomanyorigins.stinging_pains.name": "Batırmanın Acısı",
-    "power.toomanyorigins.stinging_pains.description": "Düşman canlıları doğrudan öldürdüğünde acıkırsın.",
+    "power.toomanyorigins.stinging_pains.description": "Düşman canlılara doğrudan hasar vermek seni yorar.",
     "power.toomanyorigins.unity.name": "Birlik",
     "power.toomanyorigins.unity.description": "Maksimum canın, açlık seviyene bağlı.",
 
@@ -48,8 +48,7 @@
     "power.toomanyorigins.spirit_strider.name": "Ruh Gezer",
     "power.toomanyorigins.spirit_strider.description": "Her zaman bir seviye ekstra ruh hızın var.",
     "power.toomanyorigins.deathly_digestion.name": "Ölümcül Sindiriş",
-    "power.toomanyorigins.deathly_digestion.description": "Yemek eşyaları senin için daha az doyurucu.",
-    "toomanyorigins.gui.badge.overworld_exhaustion": "Nether'da değilken çok daha çabuk acıkırsın.",
+    "power.toomanyorigins.deathly_digestion.description": "Nether'da değil isen daha çabuk yorulursun ve yemeklerden tamamen yararlanamazsın.",
 
     "toomanyorigins.midnightconfig.title": "TooManyOrigins Ayarları",
     "toomanyorigins.midnightconfig.dragonFireballMixinOptions": "§nEnder Ejderhası Ateş Topu Karışım Ayarları§r",
@@ -58,6 +57,7 @@
     "toomanyorigins.gui.version_mismatch": "Bu server başka bir TooManyOrigins versiyonu (v%1$s) çalıştırıyor ve sende mevcut olan versiyonla uyumlu değil (v%2$s).",
     "toomanyorigins.content.disabled": "Devre Dışı",
     "toomanyorigins.content.disabled_message": "Eski TooManyOrigins modülü '%1$s' devre dışı. 'data/toomanyorigins/legacy_content.json' dosya konumunda bulunan bir datapack ile etkinleştiriniz.",
+    "dataPack.legacytoomanyorigins.name": "Eski TooManyOrigins",
     "dataPack.legacytoomanyorigins.description": "Bütün rework öncesi TooManyOrigins içeriklerini geri getirir.",
 
     "origin.legacytoomanyorigins.dragonborn.description": "Yarı İnsan, Yarı Ejderha. Vahşi nefesleri ve yapıları End'in diğer sakinlerinin onlara baş eğmelerini sağlar.",
