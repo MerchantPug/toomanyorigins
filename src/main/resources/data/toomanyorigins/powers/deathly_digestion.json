@@ -20,11 +20,5 @@
       "dimension": "minecraft:the_nether",
       "inverted": true
     }
-  },
-  "badges": [
-    {
-      "sprite": "origins:textures/gui/badge/info.png",
-      "text": "toomanyorigins.gui.badge.overworld_exhaustion"
-    }
-  ]
+  }
 }
