@@ -2,6 +2,7 @@
   "type": "origins:multiple",
   "hover": {
     "type": "toomanyorigins:hover",
+    "step_assist": 0.6,
     "condition": {
       "type": "origins:and",
       "conditions": [
@@ -58,52 +59,27 @@
   "deplete_hunger_while_using": {
     "type": "origins:action_over_time",
     "entity_action": {
-      "type": "origins:if_else",
-      "condition": {
-        "type": "origins:or",
-        "conditions": [
-          {
-            "type": "toomanyorigins:velocity",
-            "axes": [
-              "x"
-            ],
-            "compare_to": 0.05,
-            "comparison": ">"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "toomanyorigins:moving"
           },
-          {
-            "type": "toomanyorigins:velocity",
-            "axes": [
-              "x"
-            ],
-            "compare_to": 0.05,
-            "comparison": "<"
+          "if_action": {
+            "type": "origins:exhaust",
+            "amount": 0.08
           },
-          {
-            "type": "toomanyorigins:velocity",
-            "axes": [
-              "z"
-            ],
-            "compare_to": 0.05,
-            "comparison": ">"
-          },
-          {
-            "type": "toomanyorigins:velocity",
-            "axes": [
-              "z"
-            ],
-            "compare_to": 0.05,
-            "comparison": ">"
+          "else_action": {
+            "type": "origins:exhaust",
+            "amount": 0.04
           }
-        ]
-      },
-      "if_action": {
-        "type": "origins:exhaust",
-        "amount": 0.08
-      },
-      "else_action": {
-        "type": "origins:exhaust",
-        "amount": 0.06
-      }
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_cooldown"
+        }
+      ]
     },
     "interval": 1,
     "condition": {
@@ -111,11 +87,41 @@
       "power": "*:*_hover"
     }
   },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 20
+  },
   "toggle_resource": {
     "type": "origins:toggle",
     "active_by_default": true,
     "key": {
       "key": "key.origins.primary_active"
+    }
+  },
+  "prevent_items": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "toomanyorigins:unusable_while_hovering"
+          }
+        },
+        {
+          "type": "origins:enchantment",
+          "enchantment": "minecraft:riptide",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_cooldown",
+      "comparison": ">",
+      "compare_to": 0
     }
   },
   "badges": [

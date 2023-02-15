@@ -1,5 +1,5 @@
 {
-  "type": "toomanyorigins:action_on_target_death",
+  "type": "toomanyorigins:action_on_harm",
   "bientity_action": {
     "type": "origins:actor_action",
     "action": {
@@ -7,7 +7,7 @@
       "actions": [
         {
           "type": "origins:exhaust",
-          "amount": 8.0
+          "amount": 0.6
         },
         {
           "type": "origins:if_else",
