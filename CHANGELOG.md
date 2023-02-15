@@ -7,6 +7,9 @@
 
 - Moved mention of exhausting much quicker in `Deathly Digestion` out of a badge and into the description.
 
+**Bugfixes**
+- Fixed Swarm's `Hover` power breaking upon swapping dimensions.
+
 ---
 
 ## Full Changelog Compared to 0.x.x
