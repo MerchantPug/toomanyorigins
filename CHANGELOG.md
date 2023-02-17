@@ -11,7 +11,7 @@
 - Fixed Swarm's `Hover` power breaking upon swapping dimensions.
 
 **Internal**
-- Updated dev environment to 1.19.2.
+- Updated dev environment to 1.19.2. The mod should still be compatible with 1.19 environments.
 - The legacy content resource reloader now runs before loading powers instead of after Origins on Origins v1.7.1. On older versions for 1.19, it's left up in the air as to what loads first.
 
 ---
