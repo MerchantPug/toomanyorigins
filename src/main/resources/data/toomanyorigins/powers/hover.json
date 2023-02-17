@@ -76,8 +76,19 @@
           }
         },
         {
-          "type": "origins:trigger_cooldown",
-          "power": "*:*_cooldown"
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_prevention_state",
+            "comparison": "==",
+            "compare_to": 0
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_prevention_state",
+            "change": 1,
+            "operation": "SET"
+          }
         }
       ]
     },
@@ -87,15 +98,39 @@
       "power": "*:*_hover"
     }
   },
-  "cooldown": {
-    "type": "origins:cooldown",
-    "cooldown": 20
-  },
   "toggle_resource": {
     "type": "origins:toggle",
     "active_by_default": true,
     "key": {
       "key": "key.origins.primary_active"
+    }
+  },
+  "prevention_state": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1
+  },
+  "prevention_reset": {
+    "type": "origins:action_over_time",
+    "rising_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_prevention_state",
+      "change": 0,
+      "operation": "SET"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:on_block"
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_prevention_state",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
     }
   },
   "prevent_items": {
@@ -118,10 +153,28 @@
       ]
     },
     "condition": {
-      "type": "origins:resource",
-      "resource": "*:*_cooldown",
-      "comparison": ">",
-      "compare_to": 0
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_hover"
+        },
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:on_block",
+              "inverted": true
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:*_prevention_state",
+              "comparison": "==",
+              "compare_to": 1
+            }
+          ]
+        }
+      ]
     }
   },
   "badges": [
