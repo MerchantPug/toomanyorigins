@@ -25,7 +25,7 @@ SOFTWARE.
 package com.github.merchantpug.toomanyorigins;
 
 import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
-import com.github.merchantpug.toomanyorigins.networking.TMOPacketsS2C;
+import com.github.merchantpug.toomanyorigins.networking.TMOPackets;
 import com.github.merchantpug.toomanyorigins.registry.TMOBlocks;
 import com.github.merchantpug.toomanyorigins.registry.TMOEntities;
 import net.fabricmc.api.ClientModInitializer;
@@ -45,7 +45,7 @@ public class TooManyOriginsClient implements ClientModInitializer {
     @Override
     @Environment(EnvType.CLIENT)
     public void onInitializeClient() {
-        TMOPacketsS2C.register();
+        TMOPackets.registerS2C();
 
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TMOBlocks.WITHERED_STEM, RenderLayer.getCutout());

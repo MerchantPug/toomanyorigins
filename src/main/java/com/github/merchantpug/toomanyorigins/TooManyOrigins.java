@@ -24,34 +24,27 @@ SOFTWARE.
 
 package com.github.merchantpug.toomanyorigins;
 
-import com.github.merchantpug.toomanyorigins.data.LegacyContentManager;
 import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import com.github.merchantpug.toomanyorigins.networking.TMOPackets;
-import com.github.merchantpug.toomanyorigins.networking.TMOPacketsC2S;
+import com.github.merchantpug.toomanyorigins.networking.s2c.SyncLegacyContentPacket;
 import com.github.merchantpug.toomanyorigins.registry.*;
 import eu.midnightdust.lib.config.MidnightConfig;
 import io.github.apace100.apoli.util.NamespaceAlias;
 import com.github.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
-import io.github.apace100.calio.resource.OrderedResourceListenerInitializer;
-import io.github.apace100.calio.resource.OrderedResourceListenerManager;
-import io.github.apace100.origins.Origins;
-import io.netty.buffer.Unpooled;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
-public class TooManyOrigins implements ModInitializer, OrderedResourceListenerInitializer {
+public class TooManyOrigins implements ModInitializer {
 	public static final String MODID = "toomanyorigins";
 	public static final Logger LOGGER = LogManager.getLogger("TooManyOrigins");
 	public static String VERSION = "";
@@ -78,11 +71,8 @@ public class TooManyOrigins implements ModInitializer, OrderedResourceListenerIn
 		LOGGER.info("TooManyOrigins " + VERSION + " is initializing. Enjoy!");
 
 		ServerLifecycleEvents.SYNC_DATA_PACK_CONTENTS.register((player, joined) -> {
-			PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
-			List<String> stringList = LegacyContentRegistry.asStream().filter(Map.Entry::getValue).map(Map.Entry::getKey).toList();
-			buf.writeInt(stringList.size());
-			stringList.forEach(buf::writeString);
-			ServerPlayNetworking.send(player, TMOPackets.SYNC_LEGACY_CONTENT, buf);
+			Set<String> stringList = LegacyContentRegistry.asStream().filter(Map.Entry::getValue).map(Map.Entry::getKey).collect(Collectors.toSet());
+			TMOPackets.sendS2C(new SyncLegacyContentPacket(stringList), player);
 		});
 
 		MidnightConfig.init(TooManyOrigins.MODID, TooManyOriginsConfig.class);
@@ -98,16 +88,10 @@ public class TooManyOrigins implements ModInitializer, OrderedResourceListenerIn
 
 		NamespaceAlias.addAlias(MODID, "apugli");
 
-		TMOPacketsC2S.register();
+		TMOPackets.registerC2S();
 	}
 
 	public static Identifier identifier(String path) {
 		return new Identifier(MODID, path);
-	}
-
-	@Override
-	public void registerResourceListeners(OrderedResourceListenerManager manager) {
-		Identifier originData = Origins.identifier("origins");
-		manager.register(ResourceType.SERVER_DATA, new LegacyContentManager()).after(originData).complete();
 	}
 }
