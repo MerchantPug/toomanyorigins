@@ -37,6 +37,6 @@ public record SyncLegacyContentPacket(Set<String> enabledModules) implements TMO
 
     @Override
     public Identifier getId() {
-        return null;
+        return ID;
     }
 }

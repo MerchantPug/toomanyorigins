@@ -24,11 +24,13 @@ SOFTWARE.
 
 package com.github.merchantpug.toomanyorigins;
 
+import com.github.merchantpug.toomanyorigins.data.LegacyContentManager;
 import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import com.github.merchantpug.toomanyorigins.networking.TMOPackets;
 import com.github.merchantpug.toomanyorigins.networking.s2c.SyncLegacyContentPacket;
 import com.github.merchantpug.toomanyorigins.registry.*;
 import eu.midnightdust.lib.config.MidnightConfig;
+import io.github.apace100.apoli.power.PowerTypes;
 import io.github.apace100.apoli.util.NamespaceAlias;
 import com.github.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
 import net.fabricmc.api.ModInitializer;
@@ -36,6 +38,7 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -89,6 +92,13 @@ public class TooManyOrigins implements ModInitializer {
 		NamespaceAlias.addAlias(MODID, "apugli");
 
 		TMOPackets.registerC2S();
+
+		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new LegacyContentManager());
+
+		FabricLoader.getInstance().getModContainer("origins").ifPresent(modContainer -> {
+			if (!modContainer.getMetadata().getVersion().getFriendlyString().equals("1.7.1")) return;
+			PowerTypes.DEPENDENCIES.add(TooManyOrigins.identifier("legacy_content"));
+		});
 	}
 
 	public static Identifier identifier(String path) {

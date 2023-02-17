@@ -83,6 +83,9 @@ public class LegacyContentManager extends SinglePreparationResourceReloader<Set<
     @Override
     protected void apply(Set<String> prepared, ResourceManager manager, Profiler profiler) {
         LegacyContentRegistry.disableAll();
+        if (!prepared.isEmpty()) {
+            TooManyOrigins.LOGGER.info("Successfully enabled {} TooManyOrigins legacy content modules.", prepared.size());
+        }
         prepared.forEach(LegacyContentRegistry::enable);
     }
 

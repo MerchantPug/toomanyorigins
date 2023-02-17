@@ -28,9 +28,6 @@
     ],
     "modmenu": [
       "com.github.merchantpug.toomanyorigins.integration.TMOModMenuIntegration"
-    ],
-    "calio:ordered-resource-listener": [
-      "com.github.merchantpug.toomanyorigins.TooManyOrigins"
     ]
   },
   "mixins": [
