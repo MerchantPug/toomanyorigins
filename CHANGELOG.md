@@ -31,12 +31,11 @@
 - Removed all translations that have not been listed here. They have become obsolete as a result of this update.
 
 **Withered**
-- Tl;dr, the origin now has a new set of powers as well as a new gameplay focus.
 - Removed `Wither Toxins`, `Black Thumb`, `Weariness` `Soul Shield` and `Infused Veins` powers.
-- Added `Affliction` power in place of Wither Toxins, of which inflicts Wither II on entities hit with certain projectiles.
-- Added `Drainage` power, of which feeds you upon killing entities.
-- Added` Hell-Raised` power, of which gives you an alternative recipe for arrows.
-- Added `Deathly Digestion` power, of which makes food items less nourishing for you and exhausts you quicker whilst not in the Nether.
+- Added `Affliction` power in place of Wither Toxins, which inflicts Wither II on entities hit with certain projectiles.
+- Added `Drainage` power, which feeds you upon killing entities.
+- Added` Hell-Raised` power, which gives you an alternative recipe for arrows.
+- Added `Deathly Digestion` power, which makes food items less nourishing for you and exhausts you quicker whilst not in the Nether.
 
 **Hiss-kin**
 - Overheat is now less effective when the user is touching water.
@@ -46,7 +45,7 @@
 - Added a 2.5% chance to redirect naturally spawned lightning strikes to the user as a hidden power.
 - `Ailurophobia` is now purely a visual effect and hidden. Now comes into play when near a Feline origin.
 - Removed `Blast Resistant Hide`.
-- Added `Aerial Stability` power in place of Blast Resistant Hide, of which lowers your falling velocity.
+- Added `Aerial Stability` power in place of Blast Resistant Hide, which lowers your falling velocity.
 - Renamed `Conductor` to `Conductive`.
 - `Conductive` now gives you 8 minutes of the Charged status effect (previously 20).
 - Renamed `Sneaking Steps` to `Stubby Legs`, you are now 25% slower instead of 5% slower.
@@ -61,5 +60,5 @@
 - Removed `Expendable` power.
 - Removed `Smoke Sensitivity` power.
 - Removed hidden `Aerial Affinity` power.
-- Added `Stinging Pains`, of which exhausts you upon harming hostile mobs.
-- Added `Unity` power, of which makes you lose maximum health based on how much hunger you have.
+- Added `Stinging Pains`, which exhausts you upon harming hostile mobs.
+- Added `Unity` power, which makes you lose maximum health based on how much hunger you have.
