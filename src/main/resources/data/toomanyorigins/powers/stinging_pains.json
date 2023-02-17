@@ -7,7 +7,7 @@
       "actions": [
         {
           "type": "origins:exhaust",
-          "amount": 0.6
+          "amount": 0.4
         },
         {
           "type": "origins:if_else",
