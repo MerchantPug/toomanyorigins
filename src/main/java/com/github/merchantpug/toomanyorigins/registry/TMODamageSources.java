@@ -10,10 +10,10 @@ import net.minecraft.world.explosion.Explosion;
 
 public class TMODamageSources {
 
-    public static final DamageSource DRAGON_MAGIC = ((DamageSourceAccessor)DamageSourceAccessor.createDamageSource("dragonMagic")).callSetBypassesArmor().setUsesMagic();
-    public static final DamageSource ZOMBIFICATION = ((DamageSourceAccessor)((DamageSourceAccessor)DamageSourceAccessor.createDamageSource("zombification")).callSetBypassesArmor()).callSetUnblockable();
+    public static final DamageSource DRAGON_MAGIC = DamageSourceAccessor.createDamageSource("dragonMagic").setBypassesArmor().setUsesMagic();
+    public static final DamageSource ZOMBIFICATION = DamageSourceAccessor.createDamageSource("zombification").setBypassesArmor().setUnblockable();
 
     public static DamageSource dragonMagic(Entity magic, Entity attacker) {
-        return ((DamageSourceAccessor)new ProjectileDamageSource("indirectDragonMagic", magic, attacker)).callSetBypassesArmor().setUsesMagic();
+        return new ProjectileDamageSource("indirectDragonMagic", magic, attacker).setBypassesArmor().setUsesMagic();
     }
 }

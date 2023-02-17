@@ -25,6 +25,7 @@ SOFTWARE.
 package com.github.merchantpug.toomanyorigins;
 
 import com.github.merchantpug.toomanyorigins.data.LegacyContentManager;
+import com.github.merchantpug.toomanyorigins.data.LegacyContentModules;
 import com.github.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import com.github.merchantpug.toomanyorigins.networking.TMOPackets;
 import com.github.merchantpug.toomanyorigins.networking.s2c.SyncLegacyContentPacket;
@@ -35,9 +36,11 @@ import io.github.apace100.apoli.util.NamespaceAlias;
 import com.github.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
@@ -93,12 +96,22 @@ public class TooManyOrigins implements ModInitializer {
 
 		TMOPackets.registerC2S();
 
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+			if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.DRAGON_FIREBALL)) return;
+			entries.add(TMOItems.DRAGON_FIREBALL);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
+			if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.WITHERED_CROPS)) return;
+			entries.add(TMOItems.WITHERED_CROP_SEEDS);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
+			if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.WITHERED_CROPS)) return;
+			entries.add(TMOItems.WITHERED_STEM_SEEDS);
+		});
+
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new LegacyContentManager());
 
-		FabricLoader.getInstance().getModContainer("origins").ifPresent(modContainer -> {
-			if (!modContainer.getMetadata().getVersion().getFriendlyString().equals("1.7.1")) return;
-			PowerTypes.DEPENDENCIES.add(TooManyOrigins.identifier("legacy_content"));
-		});
+		PowerTypes.DEPENDENCIES.add(TooManyOrigins.identifier("legacy_content"));
 	}
 
 	public static Identifier identifier(String path) {

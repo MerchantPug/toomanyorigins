@@ -7,9 +7,10 @@ import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import com.github.merchantpug.toomanyorigins.TooManyOrigins;
 
 public class TMOBlocks {
@@ -20,13 +21,13 @@ public class TMOBlocks {
     }
 
     public static Block register(String blockName, Block block) {
-        return register(blockName, block, false, null);
+        return register(blockName, block, false);
     }
 
-    public static Block register(String blockName, Block block, boolean withBlockItem, ItemGroup itemGroup) {
+    public static Block register(String blockName, Block block, boolean withBlockItem) {
         if(withBlockItem) {
-            Registry.register(Registry.ITEM, new Identifier(TooManyOrigins.MODID, blockName), new BlockItem(block, new Item.Settings().group(itemGroup)));
+            Registry.register(Registries.ITEM, new Identifier(TooManyOrigins.MODID, blockName), new BlockItem(block, new Item.Settings()));
         }
-        return Registry.register(Registry.BLOCK, new Identifier(TooManyOrigins.MODID, blockName), block);
+        return Registry.register(Registries.BLOCK, new Identifier(TooManyOrigins.MODID, blockName), block);
     }
 }

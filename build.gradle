@@ -61,13 +61,11 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	// Origins
-	// modImplementation ("com.github.apace100:origins-fabric:${project.origins_version}")
-	// Temporary fix (Thank you eggohito)
-	modImplementation ("com.github.eggohito:origins-fabric:${project.origins_version}")
+	modImplementation ("com.github.apace100:origins-fabric:${project.origins_version}")
 
 	// MerchantPug Maven Apugli
 	modImplementation("net.merchantpug:apugli:${project.apugli_version}") {
-		exclude group: "com.github.eggohito", module: "apoli"
+		exclude group: "com.github.apace100", module: "apoli"
 	}
 	include "net.merchantpug:apugli:${project.apugli_version}"
 

@@ -56,10 +56,4 @@ public class LegacyDragonFireballItem extends Item {
         if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.DRAGON_FIREBALL))
             tooltip.add(Text.translatable("toomanyorigins.content.disabled").formatted(Formatting.GRAY));
     }
-
-    @Override
-    public void appendStacks(ItemGroup group, DefaultedList<ItemStack> stacks) {
-        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.DRAGON_FIREBALL) || !this.isIn(group)) return;
-        stacks.add(new ItemStack(this));
-    }
 }

@@ -41,10 +41,4 @@ public class WitheredCropAliasedBlockItem extends AliasedBlockItem {
         if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.WITHERED_CROPS))
             tooltip.add(Text.translatable("toomanyorigins.content.disabled").setStyle(Style.EMPTY.withColor(TextColor.fromFormatting(Formatting.GRAY))));
     }
-
-    @Override
-    public void appendStacks(ItemGroup group, DefaultedList<ItemStack> stacks) {
-        if (LegacyContentRegistry.isContentDisabled(LegacyContentModules.WITHERED_CROPS) || !this.isIn(group)) return;
-        stacks.add(new ItemStack(this));
-    }
 }

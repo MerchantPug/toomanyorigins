@@ -1,18 +1,8 @@
 *As always these features are subject to change.*
 
-**Origins**
-- Swarm's `Hover` power now has step assist for collisions near the top or bottom of the player's hitbox.
-- You are now unable to use ranged weapons (defined through the item tag `toomanyorigins:unusable_while_hovering`) whilst hovering as a Swarm. This does not effect items with the Riptide enchantment.
-- Swarm's `Stinging Pains` now exhausts you a small amount based on individual values of damage dealt instead of a full amount on kill.
-
-- Moved mention of exhausting much quicker in `Deathly Digestion` out of a badge and into the description.
-
-**Bugfixes**
-- Fixed Swarm's `Hover` power breaking upon swapping dimensions.
-
-**Internal**
-- Updated dev environment to 1.19.2. The mod should still be compatible with 1.19 environments.
-- The legacy content resource reloader now runs before loading powers instead of after Origins on Origins v1.7.1. On older versions for 1.19, it's left up in the air as to what loads first.
+**Dependencies**
+- Updated to Minecraft 1.19.3.
+- Dependencies have been updated accordingly.
 
 ---
 
