@@ -29,7 +29,7 @@
     "death.attack.overheat.player.item": "%1$s incinerated their insides whilst trying to escape %2$s using %3$s",
 
     "power.toomanyorigins.hover.name": "Hover",
-    "power.toomanyorigins.hover.description": "You are able to hover midair whenever you would be falling, exhausting you and making you unable to use ranged weapons during the process.",
+    "power.toomanyorigins.hover.description": "You are able to hover midair whenever you would be falling, exhausting and making you unable to use ranged weapons during the process.",
     "power.toomanyorigins.pollination.name": "Pollination",
     "power.toomanyorigins.pollination.description": "While you aren't sneaking, using bone meal additionally affects the 4 adjacent blocks.",
     "power.toomanyorigins.calming_aura.name": "Calming Aura",
