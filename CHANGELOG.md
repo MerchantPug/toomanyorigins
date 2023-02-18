@@ -8,6 +8,7 @@
 - Moved mention of exhausting much quicker in `Deathly Digestion` out of a badge and into the description.
 
 **Bugfixes**
+- Fixed Charged status effect not boosting Hiss-kin's rocket jump.
 - Fixed Swarm's `Hover` power breaking upon swapping dimensions.
 
 **Internal**
