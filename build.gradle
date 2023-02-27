@@ -2,7 +2,7 @@ plugins {
 	id 'fabric-loom' version '0.12-SNAPSHOT'
 	id 'maven-publish'
 	id 'com.matthewprenger.cursegradle' version '1.4.0'
-	id 'com.modrinth.minotaur' version '2.1.1'
+	id 'com.modrinth.minotaur' version '2.+'
 	id "com.github.breadmoirai.github-release" version "2.2.12"
 }
 
