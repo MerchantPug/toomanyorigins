@@ -118,3 +118,76 @@ publishing {
 		}
 	}
 }
+
+curseforge {
+	if (System.getenv("CURSEFORGE_TOKEN") != null) {
+		apiKey = System.getenv("CURSEFORGE_TOKEN")
+		project {
+			id = cf_project_id
+			changelog = new File("$project.rootDir/CHANGELOG.md").getText('UTF-8')
+			changelogType = 'markdown'
+			releaseType = 'release'
+			java_versions.split(", ").each { String javaVersion ->
+				addGameVersion javaVersion
+			}
+
+			mod_loaders.split(", ").each { String loader ->
+				addGameVersion loader
+			}
+
+			game_versions.split(", ").each { String gameVersion ->
+				addGameVersion gameVersion
+			}
+
+			mainArtifact(remapJar) {
+				displayName = "v$project.version Fabric/Quilt"
+				relations {
+					required_deps.split(", ").each { String project ->
+						requiredDependency project
+					}
+
+					embedded_deps.split(", ").each { String project ->
+						embeddedLibrary project
+					}
+				}
+			}
+		}
+	}
+}
+
+modrinth {
+	if (System.getenv("MODRINTH_TOKEN") != null) {
+		token = System.getenv("MODRINTH_TOKEN")
+		projectId = mr_project_id
+		versionNumber = "${project.version}"
+		versionType = "release"
+		versionName = "v$project.version Fabric/Quilt"
+		changelog = new File("$project.rootDir/CHANGELOG.md").getText('UTF-8')
+		uploadFile = remapJar
+		gameVersions = game_versions.split(", ").toList()
+		loaders = mod_loaders.split(", ").collect { String loader -> loader.toLowerCase(Locale.ROOT) }
+		dependencies {
+			required_deps.split(", ").each { String project ->
+				required.project project
+			}
+
+			embedded_deps.split(", ").each { String project ->
+				embedded.project project
+			}
+		}
+	}
+}
+
+githubRelease {
+	if (System.getenv("GITHUB_TOKEN") != null) {
+		token = System.getenv("GITHUB_TOKEN")
+		owner = gh_owner
+		repo = gh_repo
+		tagName = version
+		targetCommitish = gh_commitish
+		releaseName = "v$project.version Fabric/Quilt"
+		body {
+			new File("$project.rootDir/CHANGELOG.md").getText('UTF-8')
+		}
+	}
+}
