@@ -7,7 +7,8 @@
         "condition": {
           "type": "origins:target_condition",
           "condition": {
-            "type": "toomanyorigins:max_health",
+            "type": "origins:attribute",
+            "attribute": "minecraft:generic.max_health",
             "compare_to": "15.0",
             "comparison": "<"
           }
@@ -28,12 +29,14 @@
             "type": "origins:and",
             "conditions": [
               {
-                "type": "toomanyorigins:max_health",
+                "type": "origins:attribute",
+                "attribute": "minecraft:generic.max_health",
                 "compare_to": "15.0",
                 "comparison": ">="
               },
               {
-                "type": "toomanyorigins:max_health",
+                "type": "origins:attribute",
+                "attribute": "minecraft:generic.max_health",
                 "compare_to": "30.0",
                 "comparison": "<"
               }
@@ -56,7 +59,8 @@
             "type": "origins:and",
             "conditions": [
               {
-                "type": "toomanyorigins:max_health",
+                "type": "origins:attribute",
+                "attribute": "minecraft:generic.max_health",
                 "compare_to": "30.0",
                 "comparison": ">="
               }
