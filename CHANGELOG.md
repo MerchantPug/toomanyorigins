@@ -2,6 +2,7 @@
 
 **Origins**
 - Swarm's `Hover` power now has step assist for collisions near the top or bottom of the player's hitbox.
+- Swarm's `Hover` power no longer exhausts the player in creative.
 - You are now unable to use ranged weapons (defined through the item tag `toomanyorigins:unusable_while_hovering`) whilst hovering as a Swarm. This does not effect items with the Riptide enchantment.
 - Swarm's `Stinging Pains` now exhausts you a small amount based on individual values of damage dealt instead of a full amount on kill.
 
