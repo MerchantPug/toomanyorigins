@@ -1,9 +1,10 @@
+[A] means an Apugli related change.
+
 **Bugfixes**
-- Added `toomanyorigins:charged` to `apugli:charged_effects` tag.
+- [A] fixed Swarm being unable to use hover upon leaving a dimension.
 
-**Lang**
-- Ported lang changes from rework branch to main (Turkish and Korean).
+**Dependencies**
+- Updated Apugli to v1.13.2.
 
-**Misc.**
-- Alias all mentions of `apugli` to `toomanyorigins` inside powers.
-- Remove legacy Withered crop types.
+**Miscellaneous**
+- Dropped unnecessary -fabric at the end of the mod's versioning schema.
