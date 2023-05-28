@@ -1,0 +1,215 @@
+import net.darkhax.curseforgegradle.TaskPublishCurseForge
+
+buildscript {
+    repositories {
+        maven { url 'https://maven.minecraftforge.net' }
+        maven { url 'https://repo.spongepowered.org/repository/maven-public/' }
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url 'https://maven.parchmentmc.org' }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version '5.+'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id 'eclipse'
+    id 'org.spongepowered.mixin' version '0.7-SNAPSHOT'
+    id 'maven-publish'
+    id "net.darkhax.curseforgegradle" version "1.0.7"
+    id "com.modrinth.minotaur" version "2.+"
+}
+
+archivesBaseName = "${mod_name}"
+version = "${rootProject.version}+${minecraft_version}-forge"
+
+jarJar.enable()
+
+repositories {
+    maven {
+        name = "Pug's Maven"
+        url = 'https://maven.merchantpug.net/releases/'
+    }
+
+    maven { url 'https://maven.theillusivec4.top' }
+
+    maven {
+        name = "JitPack"
+        url = 'https://jitpack.io'
+    }
+}
+
+mixin {
+    add sourceSets.main, "toomanyorigins.refmap.json"
+
+    config "${mod_id}.mixins.json"
+    config "${mod_id}.forge.mixins.json"
+}
+
+minecraft {
+    mappings channel: 'parchment', version: "${parchment_version}-${minecraft_version}"
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            ideaModule "${rootProject.name}.${project.name}.test"
+            taskName 'Client'
+            args "-mixin.config=${mod_id}.mixins.json", "-mixin.config=${mod_id}.forge.mixins.json"
+            mods {
+                create(mod_id) {
+                    source sourceSets.main
+                    source sourceSets.test
+                    source project(":Common").sourceSets.main
+                    source project(":Common").sourceSets.test
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+            ideaModule "${rootProject.name}.${project.name}.test"
+            taskName 'Server'
+            args "-mixin.config=${mod_id}.mixins.json", "-mixin.config=${mod_id}.forge.mixins.json"
+            mods {
+                create(mod_id) {
+                    source sourceSets.main
+                    source sourceSets.test
+                    source project(":Common").sourceSets.main
+                    source project(":Common").sourceSets.test
+                }
+            }
+        }
+
+        data {
+            workingDirectory project.file('run')
+            ideaModule "${rootProject.name}.${project.name}.main"
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            taskName 'Data'
+            args "-mixin.config=${mod_id}.mixins.json", "-mixin.config=${mod_id}.forge.mixins.json"
+            mods {
+                create(mod_id) {
+                    source sourceSets.main
+                    source project(":Common").sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+sourceSets.main.resources.srcDir 'src/generated/resources'
+
+dependencies {
+    //Forge
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    //Apoli
+    implementation fg.deobf("com.github.MerchantPug.origins-forge:calio-forge:${origins_forge_version}")
+    implementation fg.deobf("com.github.MerchantPug.origins-forge:apoli-forge:${origins_forge_version}")
+    implementation fg.deobf("com.github.MerchantPug.origins-forge:origins-forge:${origins_forge_version}")
+    implementation fg.deobf("net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-forge")
+    //Caelus
+    implementation fg.deobf("top.theillusivec4.caelus:caelus-forge:${minecraft_version}-${caelus_version}")
+    // AdditionalEntityAttributes
+    implementation(fg.deobf("com.github.EdwinMindcraft.AdditionalEntityAttributes:Forge:${aea_forge_version}") {
+        exclude group: 'net.minecraftforge'
+    })
+    //Mixin
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    //Service
+    compileOnly group:'com.google.auto.service', name:'auto-service', version:'1.0.1'
+    annotationProcessor group:'com.google.auto.service', name:'auto-service', version:'1.0.1'
+    //Relying on the Common Project for sure
+    implementation project(":Common")
+}
+
+tasks.withType(JavaCompile) {
+    source(project(":Common").sourceSets.main.allSource)
+}
+
+processResources {
+    from project(':Common').sourceSets.main.resources
+
+    inputs.property 'version', project.version
+
+    filesMatching('META-INF/mods.toml') {
+        expand 'version': project.version
+    }
+}
+
+processTestResources {
+    outputs.upToDateWhen { false }
+    from project(":Common").sourceSets.test.resources
+
+    filesMatching('META-INF/mods.toml') {
+        expand 'version': project.version
+    }
+}
+
+tasks.jarJar.configure {
+    archiveClassifier = ""
+}
+
+reobf {
+    jarJar {}
+}
+
+jar.finalizedBy('reobfJar')
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId project.group
+            artifactId project.archivesBaseName
+            version project.version
+            artifact jar
+        }
+    }
+
+    repositories {
+        maven {
+            name = "merchantpug"
+            url = "https://maven.merchantpug.net/releases"
+            credentials(PasswordCredentials)
+            authentication {
+                create("basic", BasicAuthentication)
+            }
+        }
+        mavenLocal()
+    }
+}
+
+tasks.register('publishCurseForge', TaskPublishCurseForge) {
+    disableVersionDetection()
+    apiToken = System.getenv("CURSEFORGE_TOKEN")
+
+    def mainFile = upload(cf_project_id, jar)
+    mainFile.displayName = "Forge v${rootProject.version}+${minecraft_version}"
+    mainFile.releaseType = "release"
+    mainFile.changelog = new File("$project.rootDir/CHANGELOG.md").getText('UTF-8')
+    mainFile.changelogType = "markdown"
+    forge_mod_loaders.split(", ").each {
+        mainFile.addModLoader(it)
+    }
+    forge_game_versions.split(", ").each {
+        mainFile.addGameVersion(it)
+    }
+    java_versions.split(", ").each {
+        mainFile.addJavaVersion(it)
+    }
+    cf_forge_optional_deps.split(", ").each {
+        mainFile.addOptional(it)
+    }
+}
+
+modrinth {
+    token = System.getenv("MODRINTH_TOKEN")
+    projectId = mr_project_id
+    versionNumber = "${version}"
+    versionType = "release"
+    versionName = "Forge v${rootProject.version}+${minecraft_version}"
+    changelog = new File("$project.rootDir/CHANGELOG.md").getText('UTF-8')
+    uploadFile = jar
+    gameVersions = forge_game_versions.split(", ").toList()
+    loaders = forge_mod_loaders.split(", ").collect { return it.toLowerCase(Locale.ROOT) }
+}
