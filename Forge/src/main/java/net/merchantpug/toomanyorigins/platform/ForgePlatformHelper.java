@@ -1,9 +1,5 @@
 package net.merchantpug.toomanyorigins.platform;
 
-import net.merchantpug.apugli.network.ApugliPacketHandler;
-import net.merchantpug.toomanyorigins.action.factory.IActionFactory;
-import net.merchantpug.toomanyorigins.network.TMOPacketHandler;
-import net.merchantpug.toomanyorigins.networking.c2s.TMOPacketC2S;
 import net.merchantpug.toomanyorigins.platform.services.IPlatformHelper;
 import com.google.auto.service.AutoService;
 import io.github.apace100.apoli.util.modifier.ModifierUtil;
@@ -54,16 +50,6 @@ public class ForgePlatformHelper implements IPlatformHelper {
     @Override
     public double applyModifiers(LivingEntity living, List<?> modifiers, double value) {
         return ModifierUtil.applyModifiers(living, (List<ConfiguredModifier<?>>) modifiers, value);
-    }
-
-    @Override
-    public void sendC2S(TMOPacketC2S packet) {
-        TMOPacketHandler.sendC2S(packet);
-    }
-
-    @Override
-    public void registerEntityAction(String name, IActionFactory<Entity> action) {
-
     }
 
     @Override

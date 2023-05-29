@@ -75,14 +75,10 @@ dependencies {
         officialMojangMappings()
         parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
     }
-    //Apoli
+    // Origins
     modCompileOnly "com.github.eggohito:origins-fabric:${origins_fabric_version}"
-    compileOnly "net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-common"
-    //Mixin
-    compileOnly group:'org.spongepowered', name:'mixin', version:'0.8.5'
-    compileOnly group: 'org.ow2.asm', name: 'asm-tree', version: '9.4'
-    //JSR305
-    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
+    // Apugli
+    modCompileOnly "net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-fabric"
 }
 
 publishing {

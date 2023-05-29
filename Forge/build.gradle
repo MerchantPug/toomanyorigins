@@ -103,10 +103,11 @@ sourceSets.main.resources.srcDir 'src/generated/resources'
 dependencies {
     //Forge
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    //Apoli
+    //Origins
     implementation fg.deobf("com.github.MerchantPug.origins-forge:calio-forge:${origins_forge_version}")
     implementation fg.deobf("com.github.MerchantPug.origins-forge:apoli-forge:${origins_forge_version}")
     implementation fg.deobf("com.github.MerchantPug.origins-forge:origins-forge:${origins_forge_version}")
+    //Apugli
     implementation fg.deobf("net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-forge")
     //Caelus
     implementation fg.deobf("top.theillusivec4.caelus:caelus-forge:${minecraft_version}-${caelus_version}")

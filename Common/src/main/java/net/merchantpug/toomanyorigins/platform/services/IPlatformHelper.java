@@ -1,8 +1,6 @@
 package net.merchantpug.toomanyorigins.platform.services;
 
 import io.github.apace100.calio.data.SerializableDataType;
-import net.merchantpug.toomanyorigins.action.factory.IActionFactory;
-import net.merchantpug.toomanyorigins.networking.c2s.TMOPacketC2S;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 
@@ -52,10 +50,6 @@ public interface IPlatformHelper {
      * @return The modified value.
      */
     double applyModifiers(LivingEntity living, List<?> modifiers, double value);
-
-    void sendC2S(TMOPacketC2S packet);
-
-    void registerEntityAction(String name, IActionFactory<Entity> action);
 
     /**
      * Get the modified reach distance for the entity, Fabric uses REA and Forge uses its own attribute.
