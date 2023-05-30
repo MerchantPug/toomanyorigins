@@ -40,6 +40,5 @@
       "minecraft:campfire_cosy_smoke",
       "minecraft:campfire_signal_smoke"
     ]
-  },
-  "name": "power.toomanyorigins.smoke_sensitivity.name"
+  }
 }

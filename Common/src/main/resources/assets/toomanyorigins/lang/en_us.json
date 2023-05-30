@@ -46,6 +46,8 @@
   "power.toomanyorigins.large_leap.description": "While sneaking your jump height is increased.",
   "power.toomanyorigins.sugary_delicacy.name": "Sugary Delicacy",
   "power.toomanyorigins.sugary_delicacy.description": "Eating carrots and golden carrots fills your bunny hop momentum up to a quarter.",
+  "power.toomanyorigins.photophobia.name": "Photophobia",
+  "power.toomanyorigins.photophobia.description": "You are unable to sleep in bright light.",
   "power.toomanyorigins.lightweight.name": "Lightweight",
   "power.toomanyorigins.lightweight.description": "You have 2 less hearts of health than humans.",
 
@@ -72,7 +74,6 @@
   "power.toomanyorigins.hover_toggle.description": "Being made up of multiple bees, you are able to hover midair whenever you are falling.",
   "power.toomanyorigins.smoke_sensitivity.name": "Smoke Sensitivity",
   "power.toomanyorigins.smoke_sensitivity.description": "Your senses are lessened when near smoke.",
-  "power.toomanyorigins.smoke_exhaustion.description": "You require more to function whilst near smoke, exhausting you in the process.",
   "power.toomanyorigins.pollination.name": "Pollination",
   "power.toomanyorigins.pollination.description": "While you aren't sneaking, your bone meal is infused with pollen, allowing it to additionally affect the 4 adjacent blocks.",
   "power.toomanyorigins.calming_aura.name": "Calming Aura",

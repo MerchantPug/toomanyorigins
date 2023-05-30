@@ -46,6 +46,8 @@
   "power.toomanyorigins.large_leap.description": "웅크리는 동안 점프 높이가 증가합니다.",
   "power.toomanyorigins.sugary_delicacy.name": "달콤한 진미",
   "power.toomanyorigins.sugary_delicacy.description": "당근과 황금 당근을 먹으면 토끼 홉 기세가 최대 4분의 1까지 채워집니다.",
+  "power.toomanyorigins.photophobia.name": "빛 공포증",
+  "power.toomanyorigins.photophobia.description": "당신은 밝은 곳에서 잠을 잘 수 없습니다.",
   "power.toomanyorigins.lightweight.name": "경량화",
   "power.toomanyorigins.lightweight.description": "당신은 보통 인간보다 하트가 2개 적습니다.",
 
@@ -117,5 +119,5 @@
 
   "toomanyorigins.config.shouldFireballDamageUndead": "화염구의 언데드 엔티티 공격 ",
 
-  "toomanyorigins.gui.version_mismatch": "이 서버에서 설치한 버전(v%2$s)과 호환되지 않는 다른 버전의 TooManyOrigins(v%1$s)를 실행하고 있습니다."
+  "toomanyorigins.gui.version_mismatch": "이 서버에서 설치한 버전(v%2$s)과 호환되지 않는 다른 버전의 TooManyOrigins(v%1$s)를 실행하고 있습니다.",
 }

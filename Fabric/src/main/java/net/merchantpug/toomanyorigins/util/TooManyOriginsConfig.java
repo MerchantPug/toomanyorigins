@@ -4,7 +4,7 @@ import eu.midnightdust.lib.config.MidnightConfig;
 
 // TODO: Introduce an in-house config library.
 public class TooManyOriginsConfig extends MidnightConfig {
-    @Entry
+    @Server
     public static boolean shouldFireballDamageUndead = true;
 
     @Server

@@ -27,7 +27,6 @@ package net.merchantpug.toomanyorigins.networking;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
 import net.fabricmc.fabric.api.client.networking.v1.ClientLoginNetworking;
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.fabricmc.fabric.api.networking.v1.ServerLoginConnectionEvents;
@@ -35,7 +34,6 @@ import net.fabricmc.fabric.api.networking.v1.ServerLoginNetworking;
 import net.merchantpug.toomanyorigins.TooManyOrigins;
 import net.merchantpug.toomanyorigins.TooManyOriginsFabric;
 import net.merchantpug.toomanyorigins.client.TooManyOriginsFabricClient;
-import net.merchantpug.toomanyorigins.networking.c2s.TMOPacketC2S;
 import net.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientHandshakePacketListenerImpl;
@@ -54,10 +52,6 @@ public class TMOPackets {
 
     public static void registerS2C() {
         ClientLoginNetworking.registerGlobalReceiver(TMOPackets.HANDSHAKE, TMOPackets::handleHandshake);
-    }
-
-    public static void sendC2S(TMOPacketC2S packet) {
-        ClientPlayNetworking.send(packet.getFabricId(), packet.toBuf());
     }
 
     private static CompletableFuture<FriendlyByteBuf> handleHandshake(Minecraft minecraftClient, ClientHandshakePacketListenerImpl clientLoginNetworkHandler, FriendlyByteBuf packetByteBuf, Consumer<GenericFutureListener<? extends Future<? super Void>>> genericFutureListenerConsumer) {
