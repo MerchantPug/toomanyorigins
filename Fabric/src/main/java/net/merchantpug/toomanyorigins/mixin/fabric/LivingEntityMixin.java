@@ -1,5 +1,6 @@
 package net.merchantpug.toomanyorigins.mixin.fabric;
 
+import net.merchantpug.toomanyorigins.registry.TMODamageTypes;
 import net.merchantpug.toomanyorigins.registry.TMOEffects;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.level.ServerLevel;
@@ -31,12 +32,12 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(method = "die", at = @At("HEAD"))
     private void zombifyVillagerOnDeath(DamageSource source, CallbackInfo ci) {
-        if (!this.level.isClientSide && !this.isRemoved() && (LivingEntity) (Object) this instanceof Villager villager && this.hasEffect(TMOEffects.ZOMBIFYING.get()) && source.msgId.equals("zombification")) {
+        if (!this.level.isClientSide && !this.isRemoved() && (LivingEntity) (Object) this instanceof Villager villager && this.hasEffect(TMOEffects.ZOMBIFYING.get()) && source.is(TMODamageTypes.ZOMBIFICATION)) {
             ZombieVillager zombieVillager = villager.convertTo(EntityType.ZOMBIE_VILLAGER, false);
             if (zombieVillager != null) {
                 zombieVillager.finalizeSpawn(((ServerLevel) level), level.getCurrentDifficultyAt(zombieVillager.blockPosition()), MobSpawnType.CONVERSION, new Zombie.ZombieGroupData(false, true), null);
                 zombieVillager.setVillagerData(villager.getVillagerData());
-                zombieVillager.setGossips(villager.getGossips().store(NbtOps.INSTANCE).getValue());
+                zombieVillager.setGossips(villager.getGossips().store(NbtOps.INSTANCE));
                 zombieVillager.setTradeOffers(villager.getOffers().createTag());
                 zombieVillager.setVillagerXp(villager.getVillagerXp());
             }

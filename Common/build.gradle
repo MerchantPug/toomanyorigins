@@ -73,10 +73,10 @@ dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
     mappings loom.layered() {
         officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
+        parchment("org.parchmentmc.data:parchment-1.19.3:${parchment_version}@zip")
     }
     // Origins
-    modCompileOnly "com.github.eggohito:origins-fabric:${origins_fabric_version}"
+    modCompileOnly "com.github.MerchantPug:origins-fabric:${origins_fabric_version}"
     // Apugli
     modCompileOnly "net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-fabric"
 }

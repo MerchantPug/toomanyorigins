@@ -25,10 +25,14 @@ SOFTWARE.
 package net.merchantpug.toomanyorigins;
 
 import eu.midnightdust.lib.config.MidnightConfig;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.merchantpug.toomanyorigins.networking.TMOPackets;
+import net.merchantpug.toomanyorigins.registry.TMOItems;
 import net.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 
 public class TooManyOriginsFabric implements ModInitializer {
 	public static String VERSION = "";
@@ -51,6 +55,10 @@ public class TooManyOriginsFabric implements ModInitializer {
 		});
 		TooManyOrigins.LOG.info("TooManyOrigins " + VERSION + " is initializing. Enjoy!");
 		TooManyOrigins.init();
+
+		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(entries -> entries.accept(TMOItems.DRAGON_FIREBALL.get()));
+		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries -> entries.accept(TMOItems.WITHERED_CROP_SEEDS.get()));
+		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries -> entries.accept(TMOItems.WITHERED_STEM_SEEDS.get()));
 
 		MidnightConfig.init(TooManyOrigins.MOD_ID, TooManyOriginsConfig.class);
 

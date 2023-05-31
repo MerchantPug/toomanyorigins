@@ -24,6 +24,8 @@
 
 **Dependencies**
 - Updated Apugli to v2.1.0.
+- Ported to 1.19.4
+- Changed all deprecated damage source references to the new damage type format.
 
 **Bugfixes**
 - Fixed the resource transfer between disabled Swarm Hover and enabled Swarm Hover referencing an invalid power.

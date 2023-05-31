@@ -1,7 +1,7 @@
 package net.merchantpug.toomanyorigins.entity;
 
 import net.merchantpug.toomanyorigins.mixin.AreaEffectCloudEntityAccessor;
-import net.merchantpug.toomanyorigins.registry.TMODamageSources;
+import net.merchantpug.toomanyorigins.registry.TMODamageTypes;
 import net.merchantpug.toomanyorigins.registry.TMOEntityTypes;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -144,10 +144,10 @@ public class FireballAreaEffectCloudEntity extends AreaEffectCloud {
                         ((AreaEffectCloudEntityAccessor)this).getAffectedEntities().put(livingEntity, this.tickCount + ((AreaEffectCloudEntityAccessor)this).getReapplicationDelay());
 
                         if (getOwner() == null) {
-                            livingEntity.hurt(TMODamageSources.DRAGON_MAGIC, damage);
+                            livingEntity.hurt(this.level.damageSources().magic(), damage);
                         } else {
                             if (livingEntity != getOwner()) {
-                                livingEntity.hurt(TMODamageSources.dragonMagic(this, getOwner()), damage);
+                                livingEntity.hurt(this.level.damageSources().indirectMagic(this, getOwner()), damage);
                             }
                         }
 
