@@ -1,6 +1,9 @@
 package net.merchantpug.toomanyorigins.platform;
 
+import io.github.apace100.origins.badge.BadgeFactory;
+import io.github.edwinmindcraft.origins.common.registry.OriginRegisters;
 import net.merchantpug.toomanyorigins.TooManyOrigins;
+import net.merchantpug.toomanyorigins.badge.factory.IBadgeFactory;
 import net.merchantpug.toomanyorigins.data.ApoliForgeDataTypes;
 import net.merchantpug.toomanyorigins.mixin.forge.FabricPowerFactoryAccessor;
 import net.merchantpug.toomanyorigins.platform.services.IPowerHelper;
@@ -107,6 +110,12 @@ public class ForgePowerHelper implements IPowerHelper<Holder<ConfiguredPower<?, 
         }
         TooManyOrigins.LOG.warn("Failed to set resource for power [{}], because it doesn't hold any resource!", powerId.orElse(null));
         return OptionalInt.empty();
+    }
+
+    @Override
+    public <F extends IBadgeFactory> Supplier<BadgeFactory> registerBadge(String name, Class<F> badgeClass) {
+        F factory = Services.load(badgeClass);
+        return TMORegisters.BADGE_FACTORIES.register(name, () -> new BadgeFactory(TooManyOrigins.asResource(name), factory.getSerializableData(), factory.getFactoryCreator()));
     }
 
 }

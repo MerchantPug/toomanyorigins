@@ -70,8 +70,8 @@
   "death.attack.overheat.player": "%1$s спалили свої нутрощi, поки намагався втекти від %2$s",
   "death.attack.overheat.player.item": "%1$s спалили свої нутрощi, поки намагався втекти від %2$s використовуючого %3$s",
 
-  "power.toomanyorigins.hover_toggle.name": "Паріння",
-  "power.toomanyorigins.hover_toggle.description": "Будучи роєм бджіл, ви здатні парити в повітрі, пiд час падiння.",
+  "power.toomanyorigins.hover.name": "Паріння",
+  "power.toomanyorigins.hover.description": "Будучи роєм бджіл, ви здатні парити в повітрі, пiд час падiння.",
   "power.toomanyorigins.smoke_sensitivity.name": "Чутливість до Диму",
   "power.toomanyorigins.smoke_sensitivity.description": "Ваші почуття слабшають, коли ви знаходитесь поряд з димом.",
   "power.toomanyorigins.pollination.name": "Запилення",

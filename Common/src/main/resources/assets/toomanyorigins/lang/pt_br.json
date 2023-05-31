@@ -70,8 +70,8 @@
   "death.attack.overheat.player": "%1$s incinerou suas entranhas enquanto tentava escapar de %2$s",
   "death.attack.overheat.player.item": "%1$s incinerou suas entranhas enquanto tentava escapar de %2$s usando %3$s",
 
-  "power.toomanyorigins.hover_toggle.name": "Flutuar",
-  "power.toomanyorigins.hover_toggle.description": "Sendo feito de várias abelhas, você pode planar no ar sempre que estiver caindo.",
+  "power.toomanyorigins.hover.name": "Flutuar",
+  "power.toomanyorigins.hover.description": "Sendo feito de várias abelhas, você pode planar no ar sempre que estiver caindo.",
   "power.toomanyorigins.smoke_sensitivity.name": "Sensibilidade à Fumaça",
   "power.toomanyorigins.smoke_sensitivity.description": "Seus sentidos são reduzidos quando próximo de fumaça.",
   "power.toomanyorigins.pollination.name": "Polinização",

@@ -70,8 +70,8 @@
   "death.attack.overheat.player": "%1$s incinerated their insides whilst trying to escape %2$s",
   "death.attack.overheat.player.item": "%1$s incinerated their insides whilst trying to escape %2$s using %3$s",
 
-  "power.toomanyorigins.hover_toggle.name": "Hover",
-  "power.toomanyorigins.hover_toggle.description": "Being made up of multiple bees, you are able to hover midair whenever you are falling.",
+  "power.toomanyorigins.hover.name": "Hover",
+  "power.toomanyorigins.hover.description": "Being made up of multiple bees, you are able to hover midair whenever you are falling.",
   "power.toomanyorigins.smoke_sensitivity.name": "Smoke Sensitivity",
   "power.toomanyorigins.smoke_sensitivity.description": "Your senses are lessened when near smoke.",
   "power.toomanyorigins.pollination.name": "Pollination",

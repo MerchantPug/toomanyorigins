@@ -160,10 +160,6 @@
           }
         ]
       }
-    },
-    "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle_resource"
     }
   },
   "inactive_resource": {
@@ -179,11 +175,6 @@
         "power": "*:*_toggle_resource",
         "inverted": true
       }
-    },
-    "condition": {
-      "type": "origins:power_active",
-      "power": "*:*_toggle_resource",
-      "inverted": true
     }
   },
   "recharge_condition_resource": {
@@ -227,5 +218,36 @@
       "key": "null"
     }
   },
-  "hidden": true
+  "toggle": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:toggle",
+      "power": "*:hover_toggle_resource"
+    },
+    "cooldown": 1,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.origins.primary_active"
+    }
+  },
+  "badges": [
+    {
+      "type": "toomanyorigins:defined_keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "origins.gui.badge.active",
+      "key": {
+        "key": "key.jump"
+      }
+    },
+    {
+      "type": "toomanyorigins:defined_keybind",
+      "sprite": "origins:textures/gui/badge/toggle.png",
+      "text": "origins.gui.badge.toggle",
+      "key": {
+        "key": "key.origins.primary_active"
+      }
+    }
+  ]
 }

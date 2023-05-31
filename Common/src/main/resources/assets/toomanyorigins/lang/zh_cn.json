@@ -70,8 +70,8 @@
     "death.attack.overheat.player":"%1$s在试图逃离%2$s时焚烧了他们的内脏",
     "death.attack.overheat.player.item":"%1$s在试图使用%3$s逃离%2$s时焚烧了他们的内脏",
     
-    "power.toomanyorigins.hover_toggle.name":"悬停",
-    "power.toomanyorigins.hover_toggle.description":"你由多只蜜蜂组成，你可以在半空中消耗能量短暂停留",
+    "power.toomanyorigins.hover.name":"悬停",
+    "power.toomanyorigins.hover.description":"你由多只蜜蜂组成，你可以在半空中消耗能量短暂停留",
     "power.toomanyorigins.smoke_sensitivity.name":"烟雾敏感",
     "power.toomanyorigins.smoke_sensitivity.description":"靠近烟雾时你的感官会减弱",
     "power.toomanyorigins.pollination.name":"授粉",

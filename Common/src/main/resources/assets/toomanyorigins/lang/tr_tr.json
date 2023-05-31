@@ -70,8 +70,8 @@
   "death.attack.overheat.player": "%1$s, %2$s'den kaçmaya çalışırken içini fitilledi.",
   "death.attack.overheat.player.item": "%1$s, %3$s kullanan %2$s'den kaçmaya çalışırken içini fitilledi.",
 
-  "power.toomanyorigins.hover_toggle.name": "Süzül",
-  "power.toomanyorigins.hover_toggle.description": "Birçok arıdan yapılmış olman, havadayken süzülebilmeni sağlar.",
+  "power.toomanyorigins.hover.name": "Süzül",
+  "power.toomanyorigins.hover.description": "Birçok arıdan yapılmış olman, havadayken süzülebilmeni sağlar.",
   "power.toomanyorigins.smoke_sensitivity.name": "Duman Duyarlılığı",
   "power.toomanyorigins.smoke_sensitivity.description": "Dumanın yakınındayken hislerin azalır.",
   "power.toomanyorigins.calming_aura.name": "Sakin Aura",

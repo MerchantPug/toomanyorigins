@@ -70,8 +70,8 @@
 	"death.attack.overheat.player": "%1$s membakar isi perut mereka saat mencoba melarikan diri dari %2$s",
 	"death.attack.overheat.player.item": "%1$s membakar isi perut mereka saat mencoba melarikan diri dari %2$s menggunakan %3$s",
 
-	"power.toomanyorigins.hover_toggle.name": "Mengambang",
-	"power.toomanyorigins.hover_toggle.description": "Terdiri dari banyak lebah, Anda dapat melayang di udara setiap kali Anda jatuh.",
+	"power.toomanyorigins.hover.name": "Mengambang",
+	"power.toomanyorigins.hover.description": "Terdiri dari banyak lebah, Anda dapat melayang di udara setiap kali Anda jatuh.",
 	"power.toomanyorigins.smoke_sensitivity.name": "Sensitivitas Asap",
 	"power.toomanyorigins.smoke_sensitivity.description": "Indra Anda berkurang ketika dekat asap.",
 	"power.toomanyorigins.pollination.name": "Penyerbukan",

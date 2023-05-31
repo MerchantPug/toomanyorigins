@@ -70,8 +70,8 @@
   "death.attack.overheat.player": "%1$s сожгли свои внутренности, пока пытались сбежать от %2$s",
   "death.attack.overheat.player.item": "%1$s сожгли свои внутренности, пока пытались сбежать от %2$s использующего %3$s",
 
-  "power.toomanyorigins.hover_toggle.name": "Парение",
-  "power.toomanyorigins.hover_toggle.description": "Будучи состоящим из роя пчел, вы можете парить в воздухе, когда падаете.",
+  "power.toomanyorigins.hover.name": "Парение",
+  "power.toomanyorigins.hover.description": "Будучи состоящим из роя пчел, вы можете парить в воздухе, когда падаете.",
   "power.toomanyorigins.smoke_sensitivity.name": "Чувствительность к Дыму",
   "power.toomanyorigins.smoke_sensitivity.description": "Ваши чувства ослабевают, когда вы находитесь рядом с дымом.",
   "power.toomanyorigins.pollination.name": "Опыление",

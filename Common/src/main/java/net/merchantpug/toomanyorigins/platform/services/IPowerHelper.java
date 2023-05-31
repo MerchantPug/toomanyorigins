@@ -1,5 +1,7 @@
 package net.merchantpug.toomanyorigins.platform.services;
 
+import io.github.apace100.origins.badge.BadgeFactory;
+import net.merchantpug.toomanyorigins.badge.factory.IBadgeFactory;
 import net.merchantpug.toomanyorigins.power.factory.SimplePowerFactory;
 import net.merchantpug.toomanyorigins.power.factory.SpecialPowerFactory;
 import io.github.apace100.apoli.power.Power;
@@ -27,19 +29,21 @@ public interface IPowerHelper<T> {
     <P extends Power> boolean hasPower(LivingEntity entity, SimplePowerFactory<P> factory);
     
     <P> boolean hasPower(LivingEntity entity, SpecialPowerFactory<P> factory);
-    
+
     SerializableDataType<T> getPowerTypeDataType();
-    
+
     OptionalInt getResource(LivingEntity entity, T powerType);
-    
+
     default OptionalInt getResource(LivingEntity entity, SerializableData.Instance data, String fieldName) {
         return getResource(entity, data.get(fieldName));
     }
-    
+
     OptionalInt setResource(LivingEntity entity, T powerType, int value);
-    
+
     default OptionalInt setResource(LivingEntity entity, SerializableData.Instance data, String fieldName, int value) {
         return setResource(entity, data.get(fieldName), value);
     }
-    
+
+    <F extends IBadgeFactory> Supplier<BadgeFactory> registerBadge(String name, Class<F> badgeClass);
+
 }

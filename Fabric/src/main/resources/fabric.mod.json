@@ -25,9 +25,6 @@
     ],
     "client": [
       "net.merchantpug.toomanyorigins.client.TooManyOriginsFabricClient"
-    ],
-    "modmenu": [
-      "net.merchantpug.toomanyorigins.integration.TMOModMenuIntegration"
     ]
   },
   "mixins": [

@@ -13,6 +13,7 @@ public class TooManyOrigins {
     public static final Logger LOG = LoggerFactory.getLogger(MOD_NAME);
 
     public static void init() {
+        TMOBadges.register();
         TMOBlocks.register();
         TMOEffects.register();
         TMOEntityTypes.register();
@@ -24,7 +25,7 @@ public class TooManyOrigins {
     }
     
     public static ResourceLocation asResource(String name) {
-        return new ResourceLocation(name);
+        return new ResourceLocation(MOD_ID, name);
     }
     
 }

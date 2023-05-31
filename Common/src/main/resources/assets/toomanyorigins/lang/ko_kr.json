@@ -70,8 +70,8 @@
   "death.attack.overheat.player": "%1$s이(가) %2$s을(를) 탈출하려다 내부를 소각했습니다",
   "death.attack.overheat.player.item": "%1$s이(가) %3$s을(를) 사용하여 %2$s을(를) 탈출하려 시도하는 동안 내부를 소각했습니다.",
 
-  "power.toomanyorigins.hover_toggle.name": "호버",
-  "power.toomanyorigins.hover_toggle.description": "다수의 벌로 구성되어 있기 때문에 떨어질 때마다 공중에 떠 있을 수 있습니다.",
+  "power.toomanyorigins.hover.name": "호버",
+  "power.toomanyorigins.hover.description": "다수의 벌로 구성되어 있기 때문에 떨어질 때마다 공중에 떠 있을 수 있습니다.",
   "power.toomanyorigins.smoke_sensitivity.name": "연기 감도",
   "power.toomanyorigins.smoke_sensitivity.description": "연기 근처에 있으면 감각이 약해집니다.",
   "power.toomanyorigins.pollination.name": "수분",
