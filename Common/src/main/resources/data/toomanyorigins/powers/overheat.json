@@ -147,7 +147,7 @@
     "should_render": false
   },
   "key": {
-    "key": "key.saveToolbarActivator",
+    "key": "key.origins.primary_active",
     "continuous": false
   },
   "condition": {
