@@ -149,7 +149,9 @@
   },
   "cooldown": 5,
   "hud_render": {
-    "should_render": false
+    "should_render": true,
+    "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
+    "bar_index": 2
   },
   "key": {
     "key": "key.origins.primary_active",
