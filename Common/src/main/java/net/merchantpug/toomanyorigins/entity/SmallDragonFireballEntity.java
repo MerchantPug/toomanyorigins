@@ -53,12 +53,12 @@ public class SmallDragonFireballEntity extends ThrowableItemProjectile {
                 areaEffectCloudEntity.setWaitTime(0);
                 float minRadius = TMOPowers.MODIFY_DRAGON_FIREBALL.get().modifyMinRadius(this.getOwner(), 1.125F);
                 float maxRadius = TMOPowers.MODIFY_DRAGON_FIREBALL.get().modifyMaxRadius(this.getOwner(), 2.25F);
-                int duration = (int) TMOPowers.MODIFY_DRAGON_FIREBALL.get().modifyMaxRadius(this.getOwner(), 60);
-                float damage = TMOPowers.MODIFY_DRAGON_FIREBALL.get().modifyMaxRadius(this.getOwner(), 6.0F);
+                int duration = (int) TMOPowers.MODIFY_DRAGON_FIREBALL.get().modifyDuration(this.getOwner(), 60);
+                float damage = TMOPowers.MODIFY_DRAGON_FIREBALL.get().modifyDamage(this.getOwner(), 6.0F);
                 areaEffectCloudEntity.setRadius(minRadius);
                 areaEffectCloudEntity.setDuration(duration);
                 areaEffectCloudEntity.setDamage(damage);
-                areaEffectCloudEntity.setRadius((maxRadius - areaEffectCloudEntity.getRadius()) / (float)areaEffectCloudEntity.getDuration());
+                areaEffectCloudEntity.setRadiusPerTick((maxRadius - areaEffectCloudEntity.getRadius()) / (float)areaEffectCloudEntity.getDuration());
                 if (!list.isEmpty()) {
                     for (LivingEntity livingEntity : list) {
                         double d = this.distanceToSqr(livingEntity);
