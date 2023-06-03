@@ -104,7 +104,7 @@ public class FireballAreaEffectCloudEntity extends AreaEffectCloud {
 
             if (this.tickCount % 5 == 0) {
                 ((AreaEffectCloudEntityAccessor)this).getAffectedEntities().entrySet().removeIf(entry -> this.tickCount >= entry.getValue());
-                List<LivingEntity> list2 = this.level.getEntitiesOfClass(LivingEntity.class, this.getBoundingBox());
+                List<LivingEntity> list2 = this.level.getEntitiesOfClass(LivingEntity.class, this.getBoundingBox(), living -> living != this.getOwner());
                 if (!list2.isEmpty()) {
                     for (LivingEntity livingEntity : list2) {
                         if (!((AreaEffectCloudEntityAccessor)this).getAffectedEntities().containsKey(livingEntity) && livingEntity.isAffectedByPotions()) {
