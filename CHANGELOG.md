@@ -3,7 +3,7 @@
 **Origins**
 - Hiss-kin's Overheat power has been rewritten from the ground up.
 - Overheat now applies more velocity in horizontal directions than it did before.
-- Swarm's Hover power now has an active bag alongside the toggle badge.
+- Swarm's Hover power now has an active badge alongside the toggle badge.
 - Swarm's Hover power's resource bar is now hidden when it is full.
 - Swarm's Hover power now has step assist.
 - Removed Photophobia from Hare.
