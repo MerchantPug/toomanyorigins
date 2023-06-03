@@ -108,7 +108,9 @@ dependencies {
     implementation fg.deobf("com.github.MerchantPug.origins-forge:apoli-forge:${origins_forge_version}")
     implementation fg.deobf("com.github.MerchantPug.origins-forge:origins-forge:${origins_forge_version}")
     //Apugli
-    implementation fg.deobf("net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-forge")
+    implementation(jarJar(fg.deobf("net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-forge"))) {
+        jarJar.ranged(it, "[${apugli_version},)")
+    }
     //Caelus
     implementation fg.deobf("top.theillusivec4.caelus:caelus-forge:${minecraft_version}-${caelus_version}")
     // AdditionalEntityAttributes
