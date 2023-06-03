@@ -9,6 +9,9 @@
 - Removed Photophobia from Hare.
   - The power still exists in the data of the mod, it's just not used on Hare.
 
+**Textures**
+- Updated TooManyOrigins resource bars. (Thanks Omniv)
+
 **Datapacking**
 - Added `min_radius_modifier`, `min_radius_modifiers`, `max_radius_modifier`, `max_radius_modifiers`, `duration_modifier` and `duration_modifiers` fields to the `toomanyorigins:modify_dragon_fireball` power type.
 - Added `damage` field to the `toomanyorigin:modify_dragon_fireball` power type for consistency sake.
