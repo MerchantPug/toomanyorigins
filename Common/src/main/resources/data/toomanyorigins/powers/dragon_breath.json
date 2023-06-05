@@ -20,6 +20,10 @@
       "type": "origins:in_tag",
       "tag": "toomanyorigins:lightable"
     },
+    "bientity_condition": {
+      "type": "origins:constant",
+      "value": false
+    },
     "inverted": true
   },
   "badges": [
