@@ -51,7 +51,7 @@
   "power.toomanyorigins.lightweight.name": "Zayıf",
   "power.toomanyorigins.lightweight.description": "İnsanlardan 2 kalp daha az canınız var.",
 
-  "subtitles.origin.hare.dash": "Hare şıçrıyor",
+  "subtitles.origin.hare.dash": "Hare şıçradı",
   "toomanyorigins.hare_sleep_fail": "Uyumak için daha az ışığa ihtiyacın var",
 
   "power.toomanyorigins.overheat.name": "Aşırı Isınma",
@@ -71,7 +71,7 @@
   "death.attack.overheat.player.item": "%1$s, %3$s kullanan %2$s'den kaçmaya çalışırken içini fitilledi.",
 
   "power.toomanyorigins.hover.name": "Süzül",
-  "power.toomanyorigins.hover.description": "Birçok arıdan yapılmış olman, havadayken süzülebilmeni sağlar.",
+  "power.toomanyorigins.hover.description": "Birçok arıdan yapılmış olman, havada asılı kalabilmeni sağlar.",
   "power.toomanyorigins.smoke_sensitivity.name": "Duman Duyarlılığı",
   "power.toomanyorigins.smoke_sensitivity.description": "Dumanın yakınındayken hislerin azalır.",
   "power.toomanyorigins.calming_aura.name": "Sakin Aura",
@@ -90,7 +90,7 @@
   "power.toomanyorigins.cannibalism.name": "Yamyamlık",
   "power.toomanyorigins.cannibalism.description": "Çürük et senin için daha besleyici.",
   "power.toomanyorigins.opposite_day.name": "Ters Gün",
-  "power.toomanyorigins.opposite_day.description": "Anında Hasar ve Anında Sağlık efekti senin üzerinde ters. Ayrıca açlığa ve zombileşmeye dirençlisin.",
+  "power.toomanyorigins.opposite_day.description": "Anında Hasar ve Anında Sağlık etkileri senin üzerinde ters. Ayrıca açlığa ve zombileşmeye dirençlisin.",
   "power.toomanyorigins.lacerated_liver.name": "Yırtık Karaciğer",
   "power.toomanyorigins.lacerated_liver.description": "Çürük et olmayan yemekler senin için daha az doyurucu.",
 
@@ -100,17 +100,17 @@
   "death.attack.zombification.player.item": "%1$s, %3$s kullanan %2$s'den kaçmaya çalışırken çürüdü.",
 
   "power.toomanyorigins.black_thumb.name": "Solduran Dokunuş",
-  "power.toomanyorigins.black_thumb.description": "Diktiğin tüm dünyaya ait bitkiler solar.",
+  "power.toomanyorigins.black_thumb.description": "Diktiğin dünyaya ait bitkiler solar ve büyüyemez.",
   "power.toomanyorigins.scorched_structure.name": "Ruh Gezer",
   "power.toomanyorigins.scorched_structure.description": "Her zaman ekstra bir Ruh Hızı seviyen var.",
   "power.toomanyorigins.soul_shield.name": "Ruh Kalkanı",
-  "power.toomanyorigins.soul_shield.description": "Maximum canının yarısı veya daha azındaysan, etrafında bir ruh kalkanı oluşturursun, bu kalkan seni hasara karşı daha dayanıklı olmanı ve atılabilir nesnelerden etkilenmemeni sağlar.",
-  "power.toomanyorigins.wither_immunity.name": "Wither Bağışıklılığı",
-  "power.toomanyorigins.wither_immunity.description": "Wither efektine bağışıklılığın var.",
+  "power.toomanyorigins.soul_shield.description": "Canın %50 veya aşağısı ise, etrafında bir ruh kalkanı oluşturursun, bu seni hasara karşı dayanıklı olmanı ve atılabilir nesnelerin seni incitmemesini sağlar.",
+  "power.toomanyorigins.wither_immunity.name": "İçli Dışlı",
+  "power.toomanyorigins.wither_immunity.description": "Solma etkisine bağışıksın.",
   "power.toomanyorigins.wither_toxins.name": "Wither Hasarı",
   "power.toomanyorigins.wither_toxins.description": "Yakın dövüş saldırıların kısa süreliğine wither efekti verir.",
   "power.toomanyorigins.weariness.name": "Bitkinlik",
-  "power.toomanyorigins.weariness.description": "Hayvanlar etrafında Bitkin olduğundan, hayvanları çiftleştiremezsin.",
+  "power.toomanyorigins.weariness.description": "Hayvanlar etrafında bitkin olduğundan onları çiftleştiremezsin.",
 
   "item.toomanyorigins.withered_crop_seeds": "Solmuş Ekim Tohumu",
   "item.toomanyorigins.withered_stem_seeds": "Solmuş Sap Tohumu",
