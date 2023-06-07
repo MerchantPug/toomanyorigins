@@ -20,9 +20,9 @@ public class EndFireStatusEffect extends InstantenousMobEffect {
     public void applyInstantenousEffect(Entity source, Entity attacker, LivingEntity target, int amplifier, double proximity) {
         int j = (int)(proximity * (double)(6 << amplifier) + 0.5D);
         if (source == null) {
-            target.hurt(target.level.damageSources().source(TMODamageTypes.DRAGON_MAGIC), (float)j);
+            target.hurt(target.level.damageSources().magic(), (float)j);
         } else {
-            target.hurt(target.level.damageSources().source(TMODamageTypes.INDIRECT_DRAGON_MAGIC, source, attacker), (float)j);
+            target.hurt(target.level.damageSources().indirectMagic(source, attacker), (float)j);
         }
     }
 }
