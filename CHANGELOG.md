@@ -4,12 +4,13 @@
 - Hiss-kin's Overheat power has been rewritten from the ground up.
 - Overheat now applies more velocity in horizontal directions than it did before.
 - Removed Photophobia from Hare.
-- The power still exists in the data of the mod, it's just not used on Hare.
+  - The power still exists in the data of the mod, it's just not used on Hare.
 - Swarm's Hover power now has an active badge alongside the toggle badge.
 - Swarm's Hover power's resource bar is now hidden when it is full.
 - Swarm's Hover power now has step assist.
 - Swarm's Smoke Sensitivity power has been reworked to exhaust the player when they are around smoke.
   - This change was made for the sake of accessibility when it comes to players with impaired hearing or sight, as well as the risk of triggering epilepsy when the condition of this power flashes.
+  - The old power still exists in the mod under the original id of `toomanyorigins:smoke_sensitivity`, this new one is under `toomanyorigins:smoke_exhaustion`.
 
 **Textures**
 - Updated TooManyOrigins resource bars. (Thanks Omniv)
