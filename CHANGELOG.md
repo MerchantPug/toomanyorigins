@@ -3,11 +3,13 @@
 **Origins**
 - Hiss-kin's Overheat power has been rewritten from the ground up.
 - Overheat now applies more velocity in horizontal directions than it did before.
+- Removed Photophobia from Hare.
+- The power still exists in the data of the mod, it's just not used on Hare.
 - Swarm's Hover power now has an active badge alongside the toggle badge.
 - Swarm's Hover power's resource bar is now hidden when it is full.
 - Swarm's Hover power now has step assist.
-- Removed Photophobia from Hare.
-  - The power still exists in the data of the mod, it's just not used on Hare.
+- Swarm's Smoke Sensitivity power has been reworked to exhaust the player when they are around smoke.
+  - This change was made for the sake of accessibility when it comes to players with impaired hearing or sight, as well as the risk of triggering epilepsy when the condition of this power flashes.
 
 **Textures**
 - Updated TooManyOrigins resource bars. (Thanks Omniv)
@@ -26,9 +28,7 @@
 - `shouldFireballDamageUndead` is now a serversided config option.
 
 **Dependencies**
-- Updated Apugli to v2.1.0.
-- Ported to 1.19.4
-- Changed all deprecated damage source references to the new damage type format.
+- Updated Apugli to v2.3.0.
 
 **Bugfixes**
 - Fixed the resource transfer between disabled Swarm Hover and enabled Swarm Hover referencing an invalid power.

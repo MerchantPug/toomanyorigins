@@ -74,6 +74,7 @@
   "power.toomanyorigins.hover.description": "Being made up of multiple bees, you are able to hover midair whenever you are falling.",
   "power.toomanyorigins.smoke_sensitivity.name": "Smoke Sensitivity",
   "power.toomanyorigins.smoke_sensitivity.description": "Your senses are lessened when near smoke.",
+  "power.toomanyorigins.smoke_exhaustion.description": "You exhaust quicker whilst near smoke.",
   "power.toomanyorigins.pollination.name": "Pollination",
   "power.toomanyorigins.pollination.description": "While you aren't sneaking, your bone meal is infused with pollen, allowing it to additionally affect the 4 adjacent blocks.",
   "power.toomanyorigins.calming_aura.name": "Calming Aura",
