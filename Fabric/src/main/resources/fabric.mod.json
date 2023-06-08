@@ -17,7 +17,7 @@
     "issues": "https://github.com/MerchantPug/toomanyorigins/issues/"
   },
   "license": "MIT",
-  "icon": "assets/toomanyorigins/icon.png",
+  "icon": "pack.png",
   "environment": "*",
   "entrypoints": {
     "main": [
