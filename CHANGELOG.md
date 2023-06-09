@@ -31,6 +31,10 @@
 **Config**
 - `shouldFireballDamageUndead` is now a serversided config option.
 
+**Translation**
+- Updated Korean translation (Snap_lan_) #60
+- Updated Turkish translation (Hexasan) #61
+
 **Dependencies**
 - Updated Apugli to v2.3.0.
 
