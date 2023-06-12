@@ -1,3 +1,4 @@
 {
-  "type": "toomanyorigins:prevent_bee_anger"
+  "type": "toomanyorigins:prevent_bee_anger",
+  "hidden": true
 }

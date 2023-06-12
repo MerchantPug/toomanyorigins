@@ -1,0 +1,89 @@
+{
+  "type": "toomanyorigins:action_on_target_death",
+  "bientity_action": {
+    "type": "origins:if_else_list",
+    "actions": [
+      {
+        "condition": {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:attribute",
+            "attribute": "minecraft:generic.max_health",
+            "compare_to": "15.0",
+            "comparison": "<"
+          }
+        },
+        "action": {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:feed",
+            "food": 4,
+            "saturation": 0.3
+          }
+        }
+      },
+      {
+        "condition": {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:attribute",
+                "attribute": "minecraft:generic.max_health",
+                "compare_to": "15.0",
+                "comparison": ">="
+              },
+              {
+                "type": "origins:attribute",
+                "attribute": "minecraft:generic.max_health",
+                "compare_to": "30.0",
+                "comparison": "<"
+              }
+            ]
+          }
+        },
+        "action": {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:feed",
+            "food": 6,
+            "saturation": 0.6
+          }
+        }
+      },
+      {
+        "condition": {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:attribute",
+                "attribute": "minecraft:generic.max_health",
+                "compare_to": "30.0",
+                "comparison": ">="
+              }
+            ]
+          }
+        },
+        "action": {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:feed",
+            "food": 8,
+            "saturation": 0.8
+          }
+        }
+      }
+    ]
+  },
+  "bientity_condition": {
+    "type": "origins:target_condition",
+    "condition": {
+      "type": "origins:health",
+      "comparison": "==",
+      "compare_to": 0
+    }
+  }
+}

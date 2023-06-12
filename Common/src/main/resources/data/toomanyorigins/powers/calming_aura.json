@@ -1,7 +1,15 @@
 {
   "type": "toomanyorigins:modify_breeding_cooldown",
   "modifier": {
-    "operation": "multiply_base",
-    "value": -1
+    "operation": "set_base",
+    "value": 20
+  },
+  "bientity_condition": {
+    "type": "origins:target_condition",
+    "condition": {
+      "type": "origins:in_tag",
+      "tag": "toomanyorigins:ignore_calming_aura"
+    },
+    "inverted": true
   }
 }

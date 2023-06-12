@@ -1,0 +1,43 @@
+{
+  "type": "origins:multiple",
+  "grant_effect": {
+    "type": "origins:self_action_when_hit",
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "toomanyorigins:charged",
+        "amplifier": 0,
+        "duration": 9600
+      }
+    },
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "lightningBolt"
+    },
+    "cooldown": 20
+  },
+  "fall_damage_reduction": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "fall.player"
+        },
+        {
+          "type": "origins:name",
+          "name": "fall"
+        }
+      ]
+    },
+    "modifier": {
+      "operation": "multiply_base_additive",
+      "value": -0.4
+    },
+    "condition": {
+      "type": "origins:status_effect",
+      "effect": "toomanyorigins:charged"
+    }
+  }
+}
