@@ -1,4 +1,5 @@
 {
+  "type": "origins:multiple",
   "feed_on_death": {
     "type": "toomanyorigins:action_on_target_death",
     "bientity_action": {
