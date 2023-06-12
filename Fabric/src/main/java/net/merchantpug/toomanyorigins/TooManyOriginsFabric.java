@@ -1,7 +1,7 @@
 package net.merchantpug.toomanyorigins;
 
 import eu.midnightdust.lib.config.MidnightConfig;
-import net.merchantpug.toomanyorigins.networking.TMOPackets;
+import net.merchantpug.toomanyorigins.network.TMOPackets;
 import net.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;

@@ -1,6 +1,6 @@
 package net.merchantpug.toomanyorigins.registry;
 
-import net.merchantpug.toomanyorigins.items.DragonFireballItem;
+import net.merchantpug.toomanyorigins.content.legacy.items.DragonFireballItem;
 import net.merchantpug.toomanyorigins.registry.services.RegistrationProvider;
 import net.merchantpug.toomanyorigins.registry.services.RegistryObject;
 import net.minecraft.core.Registry;

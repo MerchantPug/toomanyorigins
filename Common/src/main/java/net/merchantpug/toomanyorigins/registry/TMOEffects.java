@@ -1,8 +1,8 @@
 package net.merchantpug.toomanyorigins.registry;
 
-import net.merchantpug.toomanyorigins.effect.ChargedStatusEffect;
-import net.merchantpug.toomanyorigins.effect.EndFireStatusEffect;
-import net.merchantpug.toomanyorigins.effect.ZombifyingStatusEffect;
+import net.merchantpug.toomanyorigins.content.effect.ChargedStatusEffect;
+import net.merchantpug.toomanyorigins.content.effect.EndFireStatusEffect;
+import net.merchantpug.toomanyorigins.content.legacy.effect.ZombifyingStatusEffect;
 import net.merchantpug.toomanyorigins.TooManyOrigins;
 import net.merchantpug.toomanyorigins.registry.services.RegistrationProvider;
 import net.merchantpug.toomanyorigins.registry.services.RegistryObject;

@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.merchantpug.toomanyorigins.TooManyOrigins;
-import net.merchantpug.toomanyorigins.networking.TMOPackets;
+import net.merchantpug.toomanyorigins.network.TMOPackets;
 import net.merchantpug.toomanyorigins.registry.TMOBlocks;
 import net.merchantpug.toomanyorigins.registry.TMOEntityTypes;
 import net.minecraft.client.renderer.RenderType;

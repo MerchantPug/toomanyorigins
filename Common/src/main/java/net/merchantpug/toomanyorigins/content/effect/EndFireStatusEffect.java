@@ -1,4 +1,4 @@
-package net.merchantpug.toomanyorigins.effect;
+package net.merchantpug.toomanyorigins.content.effect;
 
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.InstantenousMobEffect;

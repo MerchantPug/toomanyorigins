@@ -1,0 +1,4 @@
+[submodule "legacy-toomanyorigins"]
+	path = Fabric/src/main/resources/resourcepacks/legacy-toomanyorigins
+	url = git@github.com:MerchantPug/legacy-toomanyorigins-datapack.git
+	branch = 1.19.2/main

@@ -1,8 +1,11 @@
-package net.merchantpug.toomanyorigins.networking;
+package net.merchantpug.toomanyorigins.network;
 
+import io.netty.buffer.Unpooled;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
 import net.fabricmc.fabric.api.client.networking.v1.ClientLoginNetworking;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.fabricmc.fabric.api.networking.v1.ServerLoginConnectionEvents;
@@ -10,6 +13,8 @@ import net.fabricmc.fabric.api.networking.v1.ServerLoginNetworking;
 import net.merchantpug.toomanyorigins.TooManyOrigins;
 import net.merchantpug.toomanyorigins.TooManyOriginsFabric;
 import net.merchantpug.toomanyorigins.client.TooManyOriginsFabricClient;
+import net.merchantpug.toomanyorigins.network.s2c.SyncLegacyContentPacket;
+import net.merchantpug.toomanyorigins.network.s2c.TMOPacketS2C;
 import net.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientHandshakePacketListenerImpl;
@@ -21,6 +26,7 @@ import net.minecraft.server.network.ServerLoginPacketListenerImpl;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class TMOPackets {
     public static final ResourceLocation HANDSHAKE = TooManyOrigins.asResource("handshake");
@@ -28,10 +34,17 @@ public class TMOPackets {
 
     public static void registerS2C() {
         ClientLoginNetworking.registerGlobalReceiver(TMOPackets.HANDSHAKE, TMOPackets::handleHandshake);
+        ClientPlayConnectionEvents.INIT.register((clientPlayNetworkHandler, minecraftClient) -> {
+            ClientPlayNetworking.registerReceiver(SyncLegacyContentPacket.ID, createS2CHandler(SyncLegacyContentPacket::decode, SyncLegacyContentPacket::handle));
+        });
+    }
+
+    private static <T extends TMOPacketS2C> ClientPlayNetworking.PlayChannelHandler createS2CHandler(Function<FriendlyByteBuf, T> decode, Consumer<T> handler) {
+        return (client, _handler, buf, responseSender) -> handler.accept(decode.apply(buf));
     }
 
     private static CompletableFuture<FriendlyByteBuf> handleHandshake(Minecraft minecraftClient, ClientHandshakePacketListenerImpl clientLoginNetworkHandler, FriendlyByteBuf packetByteBuf, Consumer<GenericFutureListener<? extends Future<? super Void>>> genericFutureListenerConsumer) {
-        FriendlyByteBuf buf = PacketByteBufs.create();
+        FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
         buf.writeInt(TooManyOriginsFabric.SEMVER.length);
         for(int i = 0; i < TooManyOriginsFabric.SEMVER.length; i++) {
             buf.writeInt(TooManyOriginsFabric.SEMVER[i]);

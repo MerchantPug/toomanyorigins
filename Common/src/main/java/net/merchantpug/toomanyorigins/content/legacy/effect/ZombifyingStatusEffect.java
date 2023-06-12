@@ -1,4 +1,4 @@
-package net.merchantpug.toomanyorigins.effect;
+package net.merchantpug.toomanyorigins.content.legacy.effect;
 
 import net.merchantpug.toomanyorigins.registry.TMODamageSources;
 import net.minecraft.world.effect.MobEffect;
