@@ -1,0 +1,213 @@
+{
+  "type": "origins:multiple",
+  "recharge_hearts": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 221
+  },
+  "health_state": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 2
+  },
+  "tick_resource": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_recharge_hearts",
+      "change": 1
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_recharge_hearts",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "interval": 1
+  },
+  "health_drop_seven_hearts": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "generic.max_health",
+      "operation": "addition",
+      "value": -6.0,
+      "name": "Decreased health when below 13 food level"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_health_state",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "tick_rate": 1
+  },
+  "update_state_seven_hearts": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_health_state",
+      "change": 1,
+      "operation": "SET"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:food_level",
+          "comparison": "<",
+          "compare_to": 13
+        },
+        {
+          "type": "origins:food_level",
+          "comparison": ">",
+          "compare_to": 6
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_health_state",
+          "comparison": "<",
+          "compare_to": 1
+        }
+      ]
+    },
+    "interval": 1
+  },
+  "health_drop_four_hearts": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "generic.max_health",
+      "operation": "addition",
+      "value": -6.0,
+      "name": "Decreased health when below 6 food level"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_health_state",
+      "comparison": ">",
+      "compare_to": 1
+    },
+    "tick_rate": 1
+  },
+  "update_state_four_hearts": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_health_state",
+      "change": 2,
+      "operation": "SET"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:food_level",
+          "comparison": "<=",
+          "compare_to": 6
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_health_state",
+          "comparison": "<",
+          "compare_to": 2
+        }
+      ]
+    },
+    "interval": 1
+  },
+  "recharge_hearts_trigger": {
+    "type": "origins:action_over_time",
+    "rising_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_recharge_hearts",
+      "change": 1,
+      "operation": "SET"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:food_level",
+              "comparison": ">",
+              "compare_to": 12
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:*_health_state",
+              "comparison": ">",
+              "compare_to": 0
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:*_recharge_hearts",
+              "comparison": "==",
+              "compare_to": 0
+            }
+          ]
+        },
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:food_level",
+              "comparison": ">",
+              "compare_to": 6
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:*_health_state",
+              "comparison": ">",
+              "compare_to": 1
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:*_recharge_hearts",
+              "comparison": "==",
+              "compare_to": 0
+            }
+          ]
+        }
+      ]
+    },
+    "interval": 1
+  },
+  "reset_health": {
+    "type": "origins:action_over_time",
+    "rising_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_health_state",
+          "change": 0,
+          "operation": "SET"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_recharge_hearts",
+          "change": 0,
+          "operation": "SET"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_health_state",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_recharge_hearts",
+          "comparison": "==",
+          "compare_to": 221
+        }
+      ]
+    }
+  }
+}

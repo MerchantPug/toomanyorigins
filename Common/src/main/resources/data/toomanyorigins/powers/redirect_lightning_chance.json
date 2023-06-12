@@ -1,0 +1,5 @@
+{
+  "type": "toomanyorigins:redirect_lightning",
+  "chance": 0.025,
+  "hidden": true
+}

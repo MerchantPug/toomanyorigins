@@ -1,15 +1,14 @@
 {
 	"powers": [
 		"toomanyorigins:hover",
-		"toomanyorigins:smoke_exhaustion",
 		"toomanyorigins:pollination",
 		"toomanyorigins:calming_aura",
-		"toomanyorigins:expendable",
+		"toomanyorigins:stinging_pains",
+		"toomanyorigins:unity",
 		"toomanyorigins:beekeeper",
-		"toomanyorigins:aerial_affinity",
 		"origins:arthropod"
 	],
 	"icon": "minecraft:honeycomb",
-	"order": 7,
-	"impact": 1
+	"order": 2,
+	"impact": 2
 }

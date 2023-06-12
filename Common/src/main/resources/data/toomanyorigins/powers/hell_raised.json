@@ -1,0 +1,28 @@
+{
+  "type": "origins:recipe",
+  "recipe": {
+    "id": "toomanyorigins:hell_raised/weavable_arrows",
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+      "#": {
+        "item": "minecraft:stick"
+      },
+      "X": {
+        "item": "minecraft:flint"
+      },
+      "Y": {
+        "tag": "toomanyorigins:weavable_nether_plants"
+      }
+    },
+    "pattern": [
+      "X",
+      "#",
+      "Y"
+    ],
+    "result": {
+      "count": 4,
+      "item": "minecraft:arrow"
+    }
+  }
+}
