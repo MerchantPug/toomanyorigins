@@ -3,6 +3,7 @@ package net.merchantpug.toomanyorigins.content.legacy.item;
 import net.merchantpug.toomanyorigins.content.legacy.entity.SmallDragonFireballEntity;
 import net.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -10,9 +11,14 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class DragonFireballItem extends Item {
     public DragonFireballItem(Properties settings) {
@@ -42,5 +48,16 @@ public class DragonFireballItem extends Item {
         }
 
         return InteractionResultHolder.sidedSuccess(itemStack, world.isClientSide());
+    }
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag context) {
+        if (!LegacyContentRegistry.isDragonFireballEnabled())
+            tooltip.add(Component.translatable("toomanyorigins.content.disabled").withStyle(ChatFormatting.GRAY));
+    }
+
+    @Override
+    public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> stacks) {
+        if (!LegacyContentRegistry.isDragonFireballEnabled() || !this.allowedIn(group)) return;
+        stacks.add(new ItemStack(this));
     }
 }

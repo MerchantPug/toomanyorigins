@@ -45,11 +45,6 @@
           "inverted": true
         },
         {
-          "type": "origins:food_level",
-          "comparison": ">",
-          "compare_to": 6
-        },
-        {
           "type": "origins:power_active",
           "power": "*:*_toggle_resource"
         }
@@ -64,8 +59,18 @@
         {
           "type": "origins:if_else",
           "condition": {
-            "type": "origins:gamemode",
-            "gamemode": "creative",
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:gamemode",
+                "gamemode": "creative"
+              },
+              {
+                "type": "origins:food_level",
+                "comparison": ">",
+                "compare_to": 6
+              }
+            ],
             "inverted": true
           },
           "if_action": {
@@ -86,16 +91,11 @@
         {
           "type": "origins:if_else",
           "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_prevention_state",
-            "comparison": "==",
-            "compare_to": 0
+            "type": "origins:using_item"
           },
           "if_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_prevention_state",
-            "change": 1,
-            "operation": "SET"
+            "type": "origins:exhaust",
+            "amount": 0.04
           }
         }
       ]
@@ -111,78 +111,6 @@
     "active_by_default": true,
     "key": {
       "key": "key.origins.primary_active"
-    }
-  },
-  "prevention_state": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 1
-  },
-  "prevention_reset": {
-    "type": "origins:action_over_time",
-    "rising_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_prevention_state",
-      "change": 0,
-      "operation": "SET"
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:on_block"
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:*_prevention_state",
-          "comparison": "==",
-          "compare_to": 1
-        }
-      ]
-    }
-  },
-  "prevent_items": {
-    "type": "origins:prevent_item_use",
-    "item_condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:ingredient",
-          "ingredient": {
-            "tag": "toomanyorigins:unusable_while_hovering"
-          }
-        },
-        {
-          "type": "origins:enchantment",
-          "enchantment": "minecraft:riptide",
-          "comparison": "==",
-          "compare_to": 0
-        }
-      ]
-    },
-    "condition": {
-      "type": "origins:or",
-      "conditions": [
-        {
-          "type": "origins:power_active",
-          "power": "*:*_hover"
-        },
-        {
-          "type": "origins:and",
-          "conditions": [
-            {
-              "type": "origins:on_block",
-              "inverted": true
-            },
-            {
-              "type": "origins:resource",
-              "resource": "*:*_prevention_state",
-              "comparison": "==",
-              "compare_to": 1
-            }
-          ]
-        }
-      ]
     }
   },
   "badges": [

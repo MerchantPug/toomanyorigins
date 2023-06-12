@@ -22,7 +22,7 @@
           "Y"
         ],
         "compare_to": 0.0,
-        "comparison": ">="
+        "comparison": "<"
       },
       {
         "type": "origins:fluid_height",

@@ -1,5 +1,8 @@
 package net.merchantpug.toomanyorigins;
 
+import net.merchantpug.toomanyorigins.data.LegacyContentRegistry;
+import net.merchantpug.toomanyorigins.network.TMOPacketHandler;
+import net.merchantpug.toomanyorigins.network.s2c.SyncLegacyContentPacket;
 import net.merchantpug.toomanyorigins.registry.TMOEffects;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.level.ServerLevel;
@@ -10,14 +13,21 @@ import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.monster.ZombieVillager;
 import net.minecraft.world.entity.npc.Villager;
+import net.minecraftforge.event.OnDatapackSyncEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.network.PacketDistributor;
 
 @Mod.EventBusSubscriber(modid = TooManyOrigins.MOD_ID)
 public class TooManyOriginsEventHandler {
+
+    @SubscribeEvent
+    public static void onDatapackSync(OnDatapackSyncEvent event) {
+        TMOPacketHandler.INSTANCE.send(PacketDistributor.PLAYER.with(event::getPlayer), new SyncLegacyContentPacket(LegacyContentRegistry.isDragonFireballEnabled(), LegacyContentRegistry.areWitheredCropsEnabled(), LegacyContentRegistry.isZombifyingEffectEnabled()));
+    }
 
     @SubscribeEvent
     public static void onEntityDeath(LivingDeathEvent event) {
