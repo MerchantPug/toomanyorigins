@@ -29,7 +29,7 @@
     "death.attack.overheat.player.item": "%1$s incinerated their insides whilst trying to escape %2$s using %3$s",
 
     "power.toomanyorigins.hover.name": "Hover",
-    "power.toomanyorigins.hover.description": "You are able to hover midair whenever you would be falling, exhausting and making you unable to use ranged weapons during the process.",
+    "power.toomanyorigins.hover.description": "You are able to hover midair whenever you would be falling, exhausting you in the process.",
     "power.toomanyorigins.pollination.name": "Pollination",
     "power.toomanyorigins.pollination.description": "While you aren't sneaking, using bone meal additionally affects the 4 adjacent blocks.",
     "power.toomanyorigins.calming_aura.name": "Calming Aura",
@@ -48,7 +48,7 @@
     "power.toomanyorigins.spirit_strider.name": "Spirit Strider",
     "power.toomanyorigins.spirit_strider.description": "You have one extra level of soul speed at all times.",
     "power.toomanyorigins.deathly_digestion.name": "Deathly Digestion",
-    "power.toomanyorigins.deathly_digestion.description": "Food items are less nourishing and you exhaust much quicker whilst not in the Nether.",
+    "power.toomanyorigins.deathly_digestion.description": "Food items are less nourishing for you.",
 
     "toomanyorigins.midnightconfig.title": "TooManyOrigins Configuration",
     "toomanyorigins.midnightconfig.dragonFireballMixinOptions": "§nEnder Dragon Fireball Mixin Options§r",
