@@ -24,9 +24,9 @@
     "power.toomanyorigins.stubby_legs.description": "Your shorter legs make you move slower on foot.",
 
     "effect.toomanyorigins.charged": "Charged",
-    "death.attack.overheat": "%1$s incinerated their insides",
-    "death.attack.overheat.player": "%1$s incinerated their insides whilst trying to escape %2$s",
-    "death.attack.overheat.player.item": "%1$s incinerated their insides whilst trying to escape %2$s using %3$s",
+    "death.attack.buildup": "The buildup was too much for %1$s",
+    "death.attack.buildup.player": "The buildup whilst trying to escape %2$s was too much for %1$s",
+    "death.attack.buildup.player.item": "The buildup whilst trying to escape %2$s whilst using %3$s was too much for %1$s",
 
     "power.toomanyorigins.hover.name": "Hover",
     "power.toomanyorigins.hover.description": "You are able to hover midair whenever you would be falling, exhausting you in the process.",
@@ -113,6 +113,10 @@
     "power.legacytoomanyorigins.sneaking_steps.description": "As you are used to sneaking up on your prey, you move slightly slower.",
     "power.legacytoomanyorigins.ailurophobia.name": "Ailurophobia",
     "power.legacytoomanyorigins.ailurophobia.description": "Being near cats or ocelots weakens and makes you slower.",
+
+    "death.attack.overheat": "%1$s incinerated their insides",
+    "death.attack.overheat.player": "%1$s incinerated their insides whilst trying to escape %2$s",
+    "death.attack.overheat.player.item": "%1$s incinerated their insides whilst trying to escape %2$s using %3$s",
 
     "origin.legacytoomanyorigins.swarm.description": "These hive independent group of bees choose to stick together to overcome the obstacles of the outside world.",
 

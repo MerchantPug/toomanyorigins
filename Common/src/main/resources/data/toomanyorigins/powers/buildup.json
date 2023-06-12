@@ -28,7 +28,7 @@
             "if_action": {
               "type": "origins:damage",
               "source": {
-                "name": "overheat",
+                "name": "buildup",
                 "bypasses_armor": "true",
                 "explosive": "true",
                 "unblockable": "true"
