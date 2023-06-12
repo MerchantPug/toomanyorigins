@@ -1,9 +1,7 @@
-package net.merchantpug.toomanyorigins.entity;
+package net.merchantpug.toomanyorigins.content.legacy.entity;
 
-import net.merchantpug.toomanyorigins.TooManyOrigins;
 import net.merchantpug.toomanyorigins.registry.TMOEntityTypes;
 import net.merchantpug.toomanyorigins.registry.TMOItems;
-import io.github.apace100.apoli.component.PowerHolderComponent;
 import net.merchantpug.toomanyorigins.registry.TMOPowers;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.entity.Entity;
@@ -16,7 +14,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class SmallDragonFireballEntity extends ThrowableItemProjectile {

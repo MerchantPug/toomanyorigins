@@ -1,4 +1,4 @@
-package net.merchantpug.toomanyorigins.effect;
+package net.merchantpug.toomanyorigins.content.effect;
 
 import net.merchantpug.toomanyorigins.registry.TMODamageTypes;
 import net.minecraft.world.damagesource.DamageSource;

@@ -1,7 +1,7 @@
 package net.merchantpug.toomanyorigins.registry;
 
-import net.merchantpug.toomanyorigins.entity.FireballAreaEffectCloudEntity;
-import net.merchantpug.toomanyorigins.entity.SmallDragonFireballEntity;
+import net.merchantpug.toomanyorigins.content.legacy.entity.FireballAreaEffectCloudEntity;
+import net.merchantpug.toomanyorigins.content.legacy.entity.SmallDragonFireballEntity;
 import net.merchantpug.toomanyorigins.TooManyOrigins;
 import net.merchantpug.toomanyorigins.registry.services.RegistrationProvider;
 import net.merchantpug.toomanyorigins.registry.services.RegistryObject;

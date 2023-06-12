@@ -1,6 +1,6 @@
-package net.merchantpug.toomanyorigins.items;
+package net.merchantpug.toomanyorigins.content.legacy.items;
 
-import net.merchantpug.toomanyorigins.entity.SmallDragonFireballEntity;
+import net.merchantpug.toomanyorigins.content.legacy.entity.SmallDragonFireballEntity;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;

@@ -1,4 +1,4 @@
-package net.merchantpug.toomanyorigins.entity;
+package net.merchantpug.toomanyorigins.content.legacy.entity;
 
 import net.merchantpug.toomanyorigins.mixin.AreaEffectCloudEntityAccessor;
 import net.merchantpug.toomanyorigins.registry.TMODamageTypes;
