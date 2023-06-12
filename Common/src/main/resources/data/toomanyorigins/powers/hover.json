@@ -9,7 +9,7 @@
         {
           "type": "toomanyorigins:velocity",
           "y": 0.0,
-          "comparison": ">="
+          "comparison": "<="
         },
         {
           "type": "toomanyorigins:key_pressed",
@@ -95,7 +95,7 @@
           },
           "if_action": {
             "type": "origins:exhaust",
-            "amount": 0.04
+            "amount": 0.06
           }
         }
       ]
