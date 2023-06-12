@@ -167,7 +167,7 @@ tasks.register('curseforge', TaskPublishCurseForge) {
 
     def mainFile = upload(cf_project_id, remapJar)
     mainFile.displayName = "Fabric v${rootProject.version}+${minecraft_version}"
-    mainFile.releaseType = "release"
+    mainFile.releaseType = "beta"
     mainFile.changelog = new File("$project.rootDir/CHANGELOG.md").getText('UTF-8')
     mainFile.changelogType = "markdown"
     fabric_mod_loaders.split(", ").each {
@@ -191,7 +191,7 @@ modrinth {
     token = System.getenv("MODRINTH_TOKEN")
     projectId = mr_project_id
     versionNumber = "${version}"
-    versionType = "release"
+    versionType = "beta"
     versionName = "Fabric/Quilt v${rootProject.version}+${minecraft_version}"
     changelog = new File("$project.rootDir/CHANGELOG.md").getText('UTF-8')
     uploadFile = remapJar

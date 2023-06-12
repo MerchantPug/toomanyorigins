@@ -190,7 +190,7 @@ tasks.register('curseforge', TaskPublishCurseForge) {
 
     def mainFile = upload(cf_project_id, jar)
     mainFile.displayName = "Forge v${rootProject.version}+${minecraft_version}"
-    mainFile.releaseType = "release"
+    mainFile.releaseType = "beta"
     mainFile.changelog = new File("$project.rootDir/CHANGELOG.md").getText('UTF-8')
     mainFile.changelogType = "markdown"
     forge_mod_loaders.split(", ").each {
@@ -214,7 +214,7 @@ modrinth {
     token = System.getenv("MODRINTH_TOKEN")
     projectId = mr_project_id
     versionNumber = "${version}"
-    versionType = "release"
+    versionType = "beta"
     versionName = "Forge v${rootProject.version}+${minecraft_version}"
     changelog = new StringBuilder("# Requires [Origins Forge v${origins_forge_version}](https://www.curseforge.com/minecraft/mc-mods/origins-forge)\n\n").append(new File("$project.rootDir/CHANGELOG.md").getText('UTF-8')).toString()
     uploadFile = jar
