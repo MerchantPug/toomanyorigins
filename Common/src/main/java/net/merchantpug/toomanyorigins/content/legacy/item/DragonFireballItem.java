@@ -1,6 +1,9 @@
-package net.merchantpug.toomanyorigins.content.legacy.items;
+package net.merchantpug.toomanyorigins.content.legacy.item;
 
 import net.merchantpug.toomanyorigins.content.legacy.entity.SmallDragonFireballEntity;
+import net.merchantpug.toomanyorigins.data.LegacyContentRegistry;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -18,6 +21,13 @@ public class DragonFireballItem extends Item {
 
     public InteractionResultHolder<ItemStack> use(Level world, Player user, InteractionHand hand) {
         ItemStack itemStack = user.getItemInHand(hand);
+        if (!LegacyContentRegistry.isDragonFireballEnabled()) {
+            if (!user.level.isClientSide) {
+                user.sendSystemMessage(Component.translatable("toomanyorigins.content.disabled_message", LegacyContentRegistry.DRAGON_FIREBALL).withStyle(ChatFormatting.RED));
+            }
+            user.getCooldowns().addCooldown(this, 20);
+            return InteractionResultHolder.pass(itemStack);
+        }
         world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENDER_DRAGON_SHOOT, SoundSource.PLAYERS, 0.5F, 0.4F / (user.getRandom().nextFloat() * 0.4F + 0.8F));
         if (!world.isClientSide) {
             SmallDragonFireballEntity smallDragonFireballEntity = new SmallDragonFireballEntity(world, user);

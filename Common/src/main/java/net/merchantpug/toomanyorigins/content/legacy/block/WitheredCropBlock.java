@@ -1,4 +1,4 @@
-package net.merchantpug.toomanyorigins.content.legacy.blocks;
+package net.merchantpug.toomanyorigins.content.legacy.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -40,7 +40,8 @@ public class WitheredCropBlock extends BushBlock {
         return floor.is(Blocks.FARMLAND);
     }
 
-    public void randomDisplayTick(BlockState state, Level world, BlockPos pos, RandomSource random) {
+    @Override
+    public void animateTick(BlockState state, Level world, BlockPos pos, RandomSource random) {
         VoxelShape voxelShape = this.getShape(state, world, pos, CollisionContext.empty());
         Vec3 vec3d = voxelShape.bounds().getCenter();
         double d = (double)pos.getX() + vec3d.x;

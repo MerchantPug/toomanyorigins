@@ -1,14 +1,18 @@
 package net.merchantpug.toomanyorigins.content.legacy.entity;
 
+import net.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import net.merchantpug.toomanyorigins.mixin.AreaEffectCloudEntityAccessor;
 import net.merchantpug.toomanyorigins.registry.TMODamageTypes;
 import net.merchantpug.toomanyorigins.registry.TMOEntityTypes;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -25,6 +29,15 @@ public class FireballAreaEffectCloudEntity extends AreaEffectCloud {
     public FireballAreaEffectCloudEntity(Level world, double x, double y, double z) {
         this(TMOEntityTypes.FIREBALL_AREA_EFFECT_CLOUD.get(), world);
         this.setPos(x, y, z);
+    }
+
+    @Override
+    public void setOwner(@Nullable LivingEntity owner) {
+        super.setOwner(owner);
+        if (LegacyContentRegistry.isDragonFireballEnabled() && owner != null) {
+            owner.sendSystemMessage(Component.translatable("toomanyorigins.content.disabled_message", LegacyContentRegistry.DRAGON_FIREBALL).withStyle(ChatFormatting.RED));
+            this.discard();
+        }
     }
 
     public float getDamage() {

@@ -1,9 +1,12 @@
 package net.merchantpug.toomanyorigins.content.legacy.entity;
 
+import net.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import net.merchantpug.toomanyorigins.registry.TMOEntityTypes;
 import net.merchantpug.toomanyorigins.registry.TMOItems;
 import net.merchantpug.toomanyorigins.registry.TMOPowers;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -14,6 +17,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class SmallDragonFireballEntity extends ThrowableItemProjectile {
@@ -28,6 +32,15 @@ public class SmallDragonFireballEntity extends ThrowableItemProjectile {
 
     public SmallDragonFireballEntity(Level world, double x, double y, double z) {
         super(TMOEntityTypes.SMALL_DRAGON_FIREBALL.get(), x, y, z, world);
+    }
+
+    @Override
+    public void setOwner(@Nullable Entity owner) {
+        super.setOwner(owner);
+        if (LegacyContentRegistry.isDragonFireballEnabled() && owner != null) {
+            owner.sendSystemMessage(Component.translatable("toomanyorigins.content.disabled_message", LegacyContentRegistry.DRAGON_FIREBALL).withStyle(ChatFormatting.RED));
+            this.discard();
+        }
     }
 
     @Override

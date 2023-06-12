@@ -1,7 +1,7 @@
 package net.merchantpug.toomanyorigins.registry;
 
-import net.merchantpug.toomanyorigins.content.legacy.blocks.WitheredCropBlock;
-import net.merchantpug.toomanyorigins.content.legacy.blocks.WitheredStemBlock;
+import net.merchantpug.toomanyorigins.content.legacy.block.WitheredCropBlock;
+import net.merchantpug.toomanyorigins.content.legacy.block.WitheredStemBlock;
 import net.merchantpug.toomanyorigins.registry.services.RegistrationProvider;
 import net.merchantpug.toomanyorigins.registry.services.RegistryObject;
 import net.minecraft.core.Registry;
