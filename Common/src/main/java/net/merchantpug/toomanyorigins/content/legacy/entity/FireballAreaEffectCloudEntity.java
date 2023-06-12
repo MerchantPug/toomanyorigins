@@ -34,7 +34,7 @@ public class FireballAreaEffectCloudEntity extends AreaEffectCloud {
     @Override
     public void setOwner(@Nullable LivingEntity owner) {
         super.setOwner(owner);
-        if (LegacyContentRegistry.isDragonFireballEnabled() && owner != null) {
+        if (!LegacyContentRegistry.isDragonFireballEnabled() && owner != null) {
             owner.sendSystemMessage(Component.translatable("toomanyorigins.content.disabled_message", LegacyContentRegistry.DRAGON_FIREBALL).withStyle(ChatFormatting.RED));
             this.discard();
         }

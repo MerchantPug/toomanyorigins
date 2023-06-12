@@ -14,8 +14,8 @@
     "origin.toomanyorigins.withered.name": "Withered",
     "origin.toomanyorigins.withered.description": "A result of their ancestors harnessing the chaotic power of the Wither, they drain the life force out of those they kill.",
 
-    "power.toomanyorigins.overheat.name": "Overheat",
-    "power.toomanyorigins.overheat.description": "You can rocket jump away from any object you are looking at, harming yourself in the process.",
+    "power.toomanyorigins.buildup.name": "Buildup",
+    "power.toomanyorigins.buildup.description": "You are able to rocket jump away from any object you are looking at, you can use this whilst on cooldown, but it will harm you.",
     "power.toomanyorigins.aerial_stability.name": "Aerial Stability",
     "power.toomanyorigins.aerial_stability.description": "Your downward velocity is slightly lowered.",
     "power.toomanyorigins.conductive.name": "Conductive",

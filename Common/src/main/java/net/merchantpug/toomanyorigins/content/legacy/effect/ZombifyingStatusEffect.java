@@ -17,7 +17,7 @@ public class ZombifyingStatusEffect extends MobEffect {
     }
 
     public void applyEffectTick(LivingEntity entity, int amplifier) {
-        if (LegacyContentRegistry.isZombifyingEffectEnabled()) {
+        if (!LegacyContentRegistry.isZombifyingEffectEnabled()) {
             entity.removeEffect(TMOEffects.ZOMBIFYING.get());
             if (!entity.level.isClientSide) {
                 entity.sendSystemMessage(Component.translatable("toomanyorigins.content.disabled_message", LegacyContentRegistry.ZOMBIFYING).withStyle(ChatFormatting.RED));
