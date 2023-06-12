@@ -117,6 +117,8 @@ dependencies {
     implementation(fg.deobf("com.github.EdwinMindcraft.AdditionalEntityAttributes:Forge:${aea_forge_version}") {
         exclude group: 'net.minecraftforge'
     })
+    //MixinExtras
+    implementation(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:${mixin_extras_version}"))
     //Mixin
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     //Service
