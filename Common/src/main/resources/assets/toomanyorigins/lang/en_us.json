@@ -120,6 +120,7 @@
     "power.legacytoomanyorigins.hover_toggle.description": "Being made up of multiple bees, you are able to hover midair whenever you are falling.",
     "power.legacytoomanyorigins.smoke_sensitivity.name": "Smoke Sensitivity",
     "power.legacytoomanyorigins.smoke_sensitivity.description": "Your senses are lessened when near smoke.",
+    "power.legacytoomanyorigins.smoke_exhaustion.description": "You exhaust quicker whilst near smoke.",
     "power.legacytoomanyorigins.calming_aura.description": "Animals bred by you do not have to wait to be bred again.",
     "power.legacytoomanyorigins.expendable.name": "Expendable",
     "power.legacytoomanyorigins.expendable.description": "You have 3 less hearts of health than humans.",
