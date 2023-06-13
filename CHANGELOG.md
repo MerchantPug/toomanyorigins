@@ -7,6 +7,7 @@
 - Rocket jump explosions no longer deal extra knockback to their targets.
 - Swarm is now able to Hover when below 3 hunger icons, but you do not use up any hunger whilst hovering at this food value.
 - Instead of being unable to use certain items whilst hovering, Swarm is now exhausted upon using any item whilst hovering.
+- Removed the above a threshold of health check from Withered's affliction power.
 - Withered is now slightly fed upon dealing damage to a target using the wither effect.
 
 ### Miscellaneous
