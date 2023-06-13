@@ -5,6 +5,7 @@ import io.github.apace100.apoli.power.PowerTypes;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.merchantpug.toomanyorigins.data.LegacyContentManagerFabric;
 import net.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import net.merchantpug.toomanyorigins.network.TMOPackets;
@@ -32,7 +33,9 @@ public class TooManyOriginsFabric implements ModInitializer {
 			for(int i = 0; i < SEMVER.length; i++) {
 				SEMVER[i] = Integer.parseInt(splitVersion[i]);
 			}
+			ResourceManagerHelper.registerBuiltinResourcePack(TooManyOrigins.asResource("legacytoomanyorigins"), modContainer, "Legacy TooManyOrigins", ResourcePackActivationType.NORMAL);
 		});
+
 		TooManyOrigins.LOG.info("TooManyOrigins " + VERSION + " is initializing. Enjoy!");
 		TooManyOrigins.init();
 
