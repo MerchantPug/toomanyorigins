@@ -90,7 +90,7 @@
     }
   },
   "feed_on_wither_damage": {
-    "type": "origins:action_on_hit",
+    "type": "toomanyorigins:action_on_target_hurt",
     "bientity_action": {
       "type": "origins:actor_action",
       "action": {
