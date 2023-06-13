@@ -27,12 +27,7 @@
             },
             "if_action": {
               "type": "origins:damage",
-              "source": {
-                "name": "buildup",
-                "bypasses_armor": "true",
-                "explosive": "true",
-                "unblockable": "true"
-              },
+              "damage_type": "toomanyorigins:buildup",
               "amount": 2
             }
           },

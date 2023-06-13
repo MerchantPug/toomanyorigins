@@ -1,5 +1,5 @@
 {
   "exhaustion": 0.1,
-  "message_id": "overheat",
+  "message_id": "buildup",
   "scaling": "never"
 }
