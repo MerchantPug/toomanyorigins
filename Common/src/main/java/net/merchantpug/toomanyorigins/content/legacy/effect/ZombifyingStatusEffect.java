@@ -1,7 +1,7 @@
 package net.merchantpug.toomanyorigins.content.legacy.effect;
 
 import net.merchantpug.toomanyorigins.data.LegacyContentRegistry;
-import net.merchantpug.toomanyorigins.registry.TMODamageSources;
+import net.merchantpug.toomanyorigins.registry.TMODamageTypes;
 import net.merchantpug.toomanyorigins.registry.TMOEffects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -27,7 +27,7 @@ public class ZombifyingStatusEffect extends MobEffect {
         if (entity instanceof Player player) {
             player.causeFoodExhaustion(4.0F);
         }
-        entity.hurt(TMODamageSources.ZOMBIFICATION, 1.0F);
+        entity.hurt(entity.level.damageSources().source(TMODamageTypes.ZOMBIFICATION), 1.0F);
     }
 
     public boolean isDurationEffectTick(int duration, int amplifier) {

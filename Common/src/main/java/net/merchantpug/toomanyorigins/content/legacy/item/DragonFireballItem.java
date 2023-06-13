@@ -55,9 +55,4 @@ public class DragonFireballItem extends Item {
             tooltip.add(Component.translatable("toomanyorigins.content.disabled").withStyle(ChatFormatting.GRAY));
     }
 
-    @Override
-    public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> stacks) {
-        if (!LegacyContentRegistry.isDragonFireballEnabled() || !this.allowedIn(group)) return;
-        stacks.add(new ItemStack(this));
-    }
 }

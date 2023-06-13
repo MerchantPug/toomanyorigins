@@ -42,9 +42,4 @@ public class WitheredCropAliasedBlockItem extends ItemNameBlockItem {
             tooltip.add(Component.translatable("toomanyorigins.content.disabled").withStyle(ChatFormatting.GRAY));
     }
 
-    @Override
-    public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> stacks) {
-        if (!LegacyContentRegistry.areWitheredCropsEnabled() || !this.allowedIn(group)) return;
-        stacks.add(new ItemStack(this));
-    }
 }
