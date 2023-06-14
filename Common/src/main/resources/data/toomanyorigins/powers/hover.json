@@ -59,43 +59,58 @@
         {
           "type": "origins:if_else",
           "condition": {
-            "type": "origins:or",
+            "type": "origins:and",
             "conditions": [
               {
                 "type": "origins:gamemode",
-                "gamemode": "creative"
+                "gamemode": "creative",
+                "inverted": true
               },
               {
                 "type": "origins:food_level",
                 "comparison": ">",
                 "compare_to": 6
               }
-            ],
-            "inverted": true
+            ]
           },
           "if_action": {
             "type": "origins:if_else",
             "condition": {
-              "type": "toomanyorigins:moving"
+              "type": "origins:sprinting"
             },
             "if_action": {
               "type": "origins:exhaust",
-              "amount": 0.08
+              "amount": 0.05
             },
             "else_action": {
               "type": "origins:exhaust",
-              "amount": 0.04
+              "amount": 0.02
             }
           }
         },
         {
           "type": "origins:if_else",
           "condition": {
-            "type": "origins:using_item"
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:gamemode",
+                "gamemode": "creative",
+                "inverted": true
+              },
+              {
+                "type": "origins:food_level",
+                "comparison": ">",
+                "compare_to": 6
+              },
+              {
+                "type": "origins:using_item"
+              }
+            ]
           },
           "if_action": {
             "type": "origins:exhaust",
-            "amount": 0.06
+            "amount": 0.03
           }
         }
       ]
