@@ -23,17 +23,17 @@ public class MobEffectMixin {
         toomanyorigins$target = livingEntity;
     }
 
-    @ModifyExpressionValue(method = "applyInstantenousEffect", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/world/entity/LivingEntity;isInvertedHealAndHarm()Z", ordinal = 0))
+    @ModifyExpressionValue(method = "applyInstantenousEffect", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;isInvertedHealAndHarm()Z", ordinal = 0))
     private boolean toomanyorigins$shouldApplyInstantEffect0(boolean original) {
         return original || !(toomanyorigins$indirectSource instanceof EnderDragon && Services.POWER.hasPower(toomanyorigins$target, TMOPowers.TAKE_DAMAGE_FROM_ENDER_DRAGON_FIREBALL.get()));
     }
 
-    @ModifyExpressionValue(method = "applyInstantenousEffect", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/world/entity/LivingEntity;isInvertedHealAndHarm()Z", ordinal = 1))
+    @ModifyExpressionValue(method = "applyInstantenousEffect", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;isInvertedHealAndHarm()Z", ordinal = 1))
     private boolean toomanyorigins$shouldApplyInstantEffect1(boolean original) {
         return original || !(toomanyorigins$indirectSource instanceof EnderDragon && Services.POWER.hasPower(toomanyorigins$target, TMOPowers.TAKE_DAMAGE_FROM_ENDER_DRAGON_FIREBALL.get()));
     }
 
-    @ModifyExpressionValue(method = "applyInstantenousEffect", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/world/entity/LivingEntity;isInvertedHealAndHarm()Z", ordinal = 2))
+    @ModifyExpressionValue(method = "applyInstantenousEffect", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;isInvertedHealAndHarm()Z", ordinal = 2))
     private boolean toomanyorigins$shouldApplyInstantEffect2(boolean original) {
         return original || !(toomanyorigins$indirectSource instanceof EnderDragon && Services.POWER.hasPower(toomanyorigins$target, TMOPowers.TAKE_DAMAGE_FROM_ENDER_DRAGON_FIREBALL.get()));
     }
