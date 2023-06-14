@@ -87,6 +87,10 @@ repositories {
         name = 'ParchmentMC'
         url = 'https://maven.parchmentmc.org'
     }
+    maven {
+        name "ryanliptak"
+        url "https://maven.ryanliptak.com/"
+    }
 }
 
 dependencies {
@@ -117,6 +121,8 @@ dependencies {
     annotationProcessor group:'com.google.auto.service', name:'auto-service', version:'1.0.1'
     //Relying on the Common Project for sure
     implementation project(path: ":Common", configuration: "namedElements")
+    // AppleSkin
+    modRuntimeOnly("squeek.appleskin:appleskin-fabric:mc${minecraft_version}-${appleskin_fabric_version}")
 }
 
 processResources {
