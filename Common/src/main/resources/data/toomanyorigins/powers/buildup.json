@@ -42,6 +42,10 @@
           },
           {
             "type": "origins:if_else",
+            "condition": {
+              "type": "toomanyorigins:status_effect_tag",
+              "tag": "apugli:charged_effects"
+            },
             "if_action": {
               "type": "toomanyorigins:add_velocity",
               "z": -1.5,
@@ -71,10 +75,6 @@
                   "value": 2.6
                 }
               ]
-            },
-            "condition": {
-              "type": "toomanyorigins:status_effect_tag",
-              "tag": "apugli:charged_effects"
             },
             "else_action": {
               "type": "toomanyorigins:add_velocity",
