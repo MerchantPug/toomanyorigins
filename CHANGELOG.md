@@ -18,6 +18,10 @@
 - Removed the above a threshold of health check from Withered's affliction power.
 - Withered is now slightly fed upon dealing damage to a target using the wither effect.
 
+### Datapacking
+- Added `toomanyorigins:take_damage_from_ender_dragon_fireball` power type.
+  - The above is now used on Legacy TooManyOrigins' Undead.
+
 ### Miscellaneous
 - Updated for parity with TooManyOrigins v0.8.1.
 - Updated Apugli to v2.3.2.
