@@ -59,19 +59,9 @@
         {
           "type": "origins:if_else",
           "condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:gamemode",
-                "gamemode": "creative",
-                "inverted": true
-              },
-              {
-                "type": "origins:food_level",
-                "comparison": ">",
-                "compare_to": 6
-              }
-            ]
+            "type": "origins:gamemode",
+            "gamemode": "creative",
+            "inverted": true
           },
           "if_action": {
             "type": "origins:if_else",
@@ -97,11 +87,6 @@
                 "type": "origins:gamemode",
                 "gamemode": "creative",
                 "inverted": true
-              },
-              {
-                "type": "origins:food_level",
-                "comparison": ">",
-                "compare_to": 6
               },
               {
                 "type": "origins:using_item"
