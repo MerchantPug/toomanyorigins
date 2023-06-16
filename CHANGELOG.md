@@ -10,7 +10,7 @@
 **Swarm**
 - Lowered the exhaustion rate of Swarm's Hover power by around half.
 - Swarm's Hover exhaustion rate is only increased while sprinting instead of moving.
-- Swarm is now able to Hover when below 3 hunger icons, but you do not use up any hunger whilst hovering at this food value.
+- Swarm is now able to Hover when below 3 hunger icons.
 - Instead of being unable to use certain items whilst hovering, Swarm is now exhausted upon using any item whilst hovering.
 - Increased the rate at which a Swarm exhausts upon hitting a hostile mob.
 
