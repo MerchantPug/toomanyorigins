@@ -8,10 +8,11 @@
 - Rocket jump explosions no longer deal extra knockback to their targets.
 
 **Swarm**
-- Lowered the exhaustion rate of Swarm's Hover power by half.
-- Swarm's exhaustion rate is only increased while sprinting instead of moving.
+- Lowered the exhaustion rate of Swarm's Hover power by around half.
+- Swarm's Hover exhaustion rate is only increased while sprinting instead of moving.
 - Swarm is now able to Hover when below 3 hunger icons, but you do not use up any hunger whilst hovering at this food value.
 - Instead of being unable to use certain items whilst hovering, Swarm is now exhausted upon using any item whilst hovering.
+- Increased the rate at which a Swarm exhausts upon hitting a hostile mob.
 
 **Withered**
 - Removed the above a threshold of health check from Withered's affliction power.
