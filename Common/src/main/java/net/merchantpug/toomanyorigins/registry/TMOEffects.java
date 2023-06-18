@@ -18,8 +18,10 @@ public class TMOEffects {
 
     public static final RegistryObject<MobEffect> CHARGED = register("charged",
             () -> new ChargedStatusEffect().addAttributeModifier(Attributes.MOVEMENT_SPEED, "c12451f1-b2a4-47aa-88ef-3f11b1b21e5e", 0.20000000298023224D, AttributeModifier.Operation.MULTIPLY_TOTAL));
-    public static final RegistryObject<EndFireStatusEffect> END_FIRE = register("end_fire", EndFireStatusEffect::new);
     public static final RegistryObject<ZombifyingStatusEffect> ZOMBIFYING = register("zombifying", ZombifyingStatusEffect::new);
+
+    @Deprecated(forRemoval = true, since = "1.0.0")
+    public static final RegistryObject<EndFireStatusEffect> END_FIRE = register("end_fire", EndFireStatusEffect::new);
 
     public static void register() {
     }

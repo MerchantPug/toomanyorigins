@@ -79,6 +79,8 @@ dependencies {
     modCompileOnly "com.github.eggohito:origins-fabric:${origins_fabric_version}"
     // Apugli
     modCompileOnly "net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-fabric"
+    // MixinExtras
+    annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:${mixin_extras_version}")
 }
 
 publishing {

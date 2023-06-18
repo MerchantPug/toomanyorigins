@@ -5,8 +5,7 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "AreaEffectCloudEntityAccessor",
-    "DragonFireballEntityMixin",
-    "SittingFlamingPhaseMixin"
+    "MobEffectMixin"
   ],
   "injectors": {
     "defaultRequire": 1

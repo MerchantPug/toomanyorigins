@@ -107,22 +107,25 @@ dependencies {
     implementation fg.deobf("com.github.MerchantPug.origins-forge:calio-forge:${origins_forge_version}")
     implementation fg.deobf("com.github.MerchantPug.origins-forge:apoli-forge:${origins_forge_version}")
     implementation fg.deobf("com.github.MerchantPug.origins-forge:origins-forge:${origins_forge_version}")
-    //Apugli
+    // Apugli
     implementation(jarJar(fg.deobf("net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-forge"))) {
         jarJar.ranged(it, "[${apugli_version},)")
     }
-    //Caelus
+    // Caelus
     implementation fg.deobf("top.theillusivec4.caelus:caelus-forge:${minecraft_version}-${caelus_version}")
     // AdditionalEntityAttributes
     implementation(fg.deobf("com.github.EdwinMindcraft.AdditionalEntityAttributes:Forge:${aea_forge_version}") {
         exclude group: 'net.minecraftforge'
     })
-    //Mixin
+    // MixinExtras
+    implementation(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:${mixin_extras_version}"))
+    implementation("com.github.llamalad7.mixinextras:mixinextras-forge:${mixin_extras_version}")
+    // Mixin
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-    //Service
+    // Service
     compileOnly group:'com.google.auto.service', name:'auto-service', version:'1.0.1'
     annotationProcessor group:'com.google.auto.service', name:'auto-service', version:'1.0.1'
-    //Relying on the Common Project for sure
+    // Relying on the Common Project for sure
     implementation project(":Common")
 }
 
