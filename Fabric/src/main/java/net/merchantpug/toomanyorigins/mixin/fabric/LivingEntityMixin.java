@@ -36,7 +36,7 @@ public abstract class LivingEntityMixin extends Entity {
             if (zombieVillager != null) {
                 zombieVillager.finalizeSpawn(((ServerLevel) level), level.getCurrentDifficultyAt(zombieVillager.blockPosition()), MobSpawnType.CONVERSION, new Zombie.ZombieGroupData(false, true), null);
                 zombieVillager.setVillagerData(villager.getVillagerData());
-                zombieVillager.setGossips(villager.getGossips().store(NbtOps.INSTANCE).getValue());
+                zombieVillager.setGossips(villager.getGossips().store(NbtOps.INSTANCE));
                 zombieVillager.setTradeOffers(villager.getOffers().createTag());
                 zombieVillager.setVillagerXp(villager.getVillagerXp());
             }

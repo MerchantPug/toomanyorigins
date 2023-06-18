@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minecraft:entity/enderdragon/dragon_fireball"
+    "layer0": "toomanyorigins:item/dragon_fireball"
   }
 }
