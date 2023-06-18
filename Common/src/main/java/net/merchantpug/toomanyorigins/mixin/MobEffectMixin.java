@@ -25,17 +25,17 @@ public class MobEffectMixin {
 
     @ModifyExpressionValue(method = "applyInstantenousEffect", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;isInvertedHealAndHarm()Z", ordinal = 0))
     private boolean toomanyorigins$shouldApplyInstantEffect0(boolean original) {
-        return original || !(toomanyorigins$indirectSource instanceof EnderDragon && Services.POWER.hasPower(toomanyorigins$target, TMOPowers.TAKE_DAMAGE_FROM_ENDER_DRAGON_FIREBALL.get()));
+        return original && (!Services.POWER.hasPower(toomanyorigins$target, TMOPowers.TAKE_DAMAGE_FROM_ENDER_DRAGON_FIREBALL.get()) || toomanyorigins$indirectSource instanceof EnderDragon);
     }
 
     @ModifyExpressionValue(method = "applyInstantenousEffect", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;isInvertedHealAndHarm()Z", ordinal = 1))
     private boolean toomanyorigins$shouldApplyInstantEffect1(boolean original) {
-        return original || !(toomanyorigins$indirectSource instanceof EnderDragon && Services.POWER.hasPower(toomanyorigins$target, TMOPowers.TAKE_DAMAGE_FROM_ENDER_DRAGON_FIREBALL.get()));
+        return original && (!Services.POWER.hasPower(toomanyorigins$target, TMOPowers.TAKE_DAMAGE_FROM_ENDER_DRAGON_FIREBALL.get()) || !(toomanyorigins$indirectSource instanceof EnderDragon));
     }
 
     @ModifyExpressionValue(method = "applyInstantenousEffect", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;isInvertedHealAndHarm()Z", ordinal = 2))
     private boolean toomanyorigins$shouldApplyInstantEffect2(boolean original) {
-        return original || !(toomanyorigins$indirectSource instanceof EnderDragon && Services.POWER.hasPower(toomanyorigins$target, TMOPowers.TAKE_DAMAGE_FROM_ENDER_DRAGON_FIREBALL.get()));
+        return original && (!Services.POWER.hasPower(toomanyorigins$target, TMOPowers.TAKE_DAMAGE_FROM_ENDER_DRAGON_FIREBALL.get()) || !(toomanyorigins$indirectSource instanceof EnderDragon));
     }
 
 }
