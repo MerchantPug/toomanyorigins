@@ -1,9 +1,7 @@
 package net.merchantpug.toomanyorigins.entity;
 
-import net.merchantpug.toomanyorigins.TooManyOrigins;
 import net.merchantpug.toomanyorigins.registry.TMOEntityTypes;
 import net.merchantpug.toomanyorigins.registry.TMOItems;
-import io.github.apace100.apoli.component.PowerHolderComponent;
 import net.merchantpug.toomanyorigins.registry.TMOPowers;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.entity.Entity;
