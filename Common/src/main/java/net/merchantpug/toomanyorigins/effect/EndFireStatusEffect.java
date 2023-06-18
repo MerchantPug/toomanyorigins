@@ -9,6 +9,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 
+@Deprecated
 public class EndFireStatusEffect extends InstantenousMobEffect {
 
     public EndFireStatusEffect() {
