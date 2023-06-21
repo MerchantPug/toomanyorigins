@@ -1,3 +1,6 @@
+## Origins
+- Increased the visibility of Swarm's Smoke Sensitivity's overlay.
+
 ## Power Types
 - Added `toomanyorigins:take_damage_from_ender_dragon_fireball` power type from the rework. 
   - The above is now used on Undead.
