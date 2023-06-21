@@ -1,9 +1,4 @@
-## Power Types
-- Added `toomanyorigins:take_damage_from_ender_dragon_fireball` power type from the rework. 
-  - The above is now used on Undead.
-
-## Config
-- Removed `shouldFireballDamageUndead` from the TooManyOrigins config.
+- Forward ported TooManyOrigins 0.9.0+1.19.2 to 1.19.3.
 
 ## Dependencies
-- Updated Apugli to v2.4.1.
+- Updated Apugli to v2.4.2.
