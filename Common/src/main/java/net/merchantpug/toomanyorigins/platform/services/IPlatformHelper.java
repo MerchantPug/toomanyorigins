@@ -33,7 +33,6 @@ public interface IPlatformHelper {
 
     /**
      * Apply generic modifier objects to value for a certain living entity.
-     * @param living The living entity involved in the modification.
      * @param modifiers Generic modifiers.
      * @param value The value to be modified.
      * @return The modified value.
