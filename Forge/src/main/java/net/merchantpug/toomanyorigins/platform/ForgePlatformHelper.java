@@ -1,15 +1,18 @@
 package net.merchantpug.toomanyorigins.platform;
 
+import io.github.apace100.apoli.util.AttributeUtil;
+import net.merchantpug.apugli.condition.FabricDamageCondition;
+import net.merchantpug.apugli.condition.factory.IConditionFactory;
+import net.merchantpug.apugli.registry.ApugliRegisters;
 import net.merchantpug.toomanyorigins.platform.services.IPlatformHelper;
 import com.google.auto.service.AutoService;
-import io.github.apace100.apoli.util.modifier.ModifierUtil;
 import io.github.apace100.calio.data.SerializableDataType;
 import io.github.apace100.calio.data.SerializableDataTypes;
-import io.github.edwinmindcraft.apoli.api.power.configuration.ConfiguredModifier;
+import net.merchantpug.toomanyorigins.registry.TMORegisters;
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraftforge.common.extensions.IForgePlayer;
+import net.minecraft.util.Tuple;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;
 
@@ -38,28 +41,12 @@ public class ForgePlatformHelper implements IPlatformHelper {
     }
 
     @Override
-    public SerializableDataType<?> getModifierDataType() {
-        return SerializableDataTypes.ATTRIBUTE_MODIFIER;
+    public double applyModifiers(List<AttributeModifier> modifiers, double value) {
+        return AttributeUtil.applyModifiers(modifiers, value);
     }
 
-    @Override
-    public SerializableDataType<?> getModifiersDataType() {
-        return SerializableDataTypes.ATTRIBUTE_MODIFIERS;
-    }
-
-    @Override
-    public double applyModifiers(LivingEntity living, List<?> modifiers, double value) {
-        return ModifierUtil.applyModifiers(living, (List<ConfiguredModifier<?>>) modifiers, value);
-    }
-
-    @Override
-    public double getReachDistance(Entity entity) {
-        return entity instanceof IForgePlayer player ? player.getReachDistance() : 4.5;
-    }
-
-    @Override
-    public double getAttackRange(Entity entity) {
-        return entity instanceof IForgePlayer player ? player.getAttackRange() : 3;
+    public void registerDamage(String name, IConditionFactory<Tuple<DamageSource, Float>> condition) {
+        TMORegisters.DAMAGE_CONDITIONS.register(name, () -> new FabricDamageCondition(condition.getSerializableData(), condition::check));
     }
 
 }

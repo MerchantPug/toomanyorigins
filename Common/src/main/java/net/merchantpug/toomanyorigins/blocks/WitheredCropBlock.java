@@ -2,7 +2,6 @@ package net.merchantpug.toomanyorigins.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.monster.Ravager;
 import net.minecraft.world.item.Item;
@@ -20,6 +19,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import java.util.Random;
 import java.util.function.Supplier;
 
 public class WitheredCropBlock extends BushBlock {
@@ -40,7 +40,8 @@ public class WitheredCropBlock extends BushBlock {
         return floor.is(Blocks.FARMLAND);
     }
 
-    public void randomDisplayTick(BlockState state, Level world, BlockPos pos, RandomSource random) {
+    @Override
+    public void animateTick(BlockState state, Level world, BlockPos pos, Random random) {
         VoxelShape voxelShape = this.getShape(state, world, pos, CollisionContext.empty());
         Vec3 vec3d = voxelShape.bounds().getCenter();
         double d = (double)pos.getX() + vec3d.x;

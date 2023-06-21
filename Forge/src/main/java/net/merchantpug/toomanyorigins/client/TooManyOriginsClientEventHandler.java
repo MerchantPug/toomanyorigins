@@ -6,8 +6,8 @@ import net.merchantpug.toomanyorigins.registry.TMOEntityTypes;
 import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -15,8 +15,8 @@ import net.minecraftforge.fml.common.Mod;
 public class TooManyOriginsClientEventHandler {
 
     @SubscribeEvent
-    public static void registerColorHandlers(RegisterColorHandlersEvent.Block event) {
-        event.register((state, world, pos, tintIndex) -> {
+    public static void registerColorHandlers(ColorHandlerEvent.Block event) {
+        event.getBlockColors().register((state, world, pos, tintIndex) -> {
             int k = 255;
             int l = 0;
             return k << 8 | l;

@@ -20,6 +20,7 @@ plugins {
     id 'maven-publish'
     id "net.darkhax.curseforgegradle" version "1.0.7"
     id "com.modrinth.minotaur" version "2.+"
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 archivesBaseName = "${mod_name}"
@@ -31,6 +32,10 @@ repositories {
     maven {
         name = "Pug's Maven"
         url = 'https://maven.merchantpug.net/releases/'
+    }
+
+    maven {
+        url "https://cursemaven.com"
     }
 
     maven { url 'https://maven.theillusivec4.top' }
@@ -101,22 +106,16 @@ minecraft {
 sourceSets.main.resources.srcDir 'src/generated/resources'
 
 dependencies {
-    //Forge
+    // Forge
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    //Origins
-    implementation fg.deobf("com.github.MerchantPug.origins-forge:calio-forge:${origins_forge_version}")
-    implementation fg.deobf("com.github.MerchantPug.origins-forge:apoli-forge:${origins_forge_version}")
-    implementation fg.deobf("com.github.MerchantPug.origins-forge:origins-forge:${origins_forge_version}")
+    // Origins
+    implementation fg.deobf("curse.maven:origins-forge-474438:${origins_forge_fileid}")
     // Apugli
     implementation(jarJar(fg.deobf("net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-forge"))) {
         jarJar.ranged(it, "[${apugli_version},)")
     }
     // Caelus
-    implementation fg.deobf("top.theillusivec4.caelus:caelus-forge:${minecraft_version}-${caelus_version}")
-    // AdditionalEntityAttributes
-    implementation(fg.deobf("com.github.EdwinMindcraft.AdditionalEntityAttributes:Forge:${aea_forge_version}") {
-        exclude group: 'net.minecraftforge'
-    })
+    implementation(fg.deobf("top.theillusivec4.caelus:caelus-forge:1.18.1-${caelus_version}"))
     // MixinExtras
     implementation(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:${mixin_extras_version}"))
     implementation("com.github.llamalad7.mixinextras:mixinextras-forge:${mixin_extras_version}")
@@ -203,11 +202,8 @@ tasks.register('curseforge', TaskPublishCurseForge) {
     java_versions.split(", ").each {
         mainFile.addJavaVersion(it)
     }
-    cf_forge_optional_deps.split(", ").each {
-        mainFile.addOptional(it)
-    }
-    common_embedded_deps.split(", ").each {
-        mainFile.addEmbedded(it)
+    forge_required_deps.split(", ").each {
+        mainFile.addRequirement(it)
     }
 }
 
@@ -217,13 +213,13 @@ modrinth {
     versionNumber = "${version}"
     versionType = "release"
     versionName = "Forge v${rootProject.version}+${minecraft_version}"
-    changelog = new StringBuilder("# Requires [Origins Forge v${origins_forge_version}](https://www.curseforge.com/minecraft/mc-mods/origins-forge)\n\n").append(new File("$project.rootDir/CHANGELOG.md").getText('UTF-8')).toString()
+    changelog = new StringBuilder("# Requires [Origins Forge v1.4.1.4 or above](https://www.curseforge.com/minecraft/mc-mods/origins-forge)\n\n").append(new File("$project.rootDir/CHANGELOG.md").getText('UTF-8')).toString()
     uploadFile = jar
     gameVersions = forge_game_versions.split(", ").toList()
     loaders = forge_mod_loaders.split(", ").collect { return it.toLowerCase(Locale.ROOT) }
     dependencies {
-        common_embedded_deps.split(", ").each {
-            embedded.project it
+        forge_required_deps.split(", ").each {
+            required.project it
         }
     }
 }

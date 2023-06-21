@@ -30,7 +30,8 @@ public class WitheredStemBlock extends BushBlock {
         return Block.box(7.0D, 0.0D, 7.0D, 9.0D, 2.0D, 9.0D);
     }
 
-    public void randomDisplayTick(BlockState state, Level world, BlockPos pos, Random random) {
+    @Override
+    public void animateTick(BlockState state, Level world, BlockPos pos, Random random) {
         VoxelShape voxelShape = this.getShape(state, world, pos, CollisionContext.empty());
         Vec3 vec3d = voxelShape.bounds().getCenter();
         double d = (double)pos.getX() + vec3d.x;

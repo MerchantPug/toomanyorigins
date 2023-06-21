@@ -76,11 +76,11 @@ dependencies {
         parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
     }
     // Origins
-    modCompileOnly "com.github.eggohito:origins-fabric:${origins_fabric_version}"
+    modCompileOnly "com.github.apace100:origins-fabric:${origins_fabric_version}"
     // Apugli
     modCompileOnly "net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-fabric"
     // MixinExtras
-    annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:${mixin_extras_version}")
+    annotationProcessor("com.github.LlamaLad7:MixinExtras:${mixin_extras_version}")
 }
 
 publishing {

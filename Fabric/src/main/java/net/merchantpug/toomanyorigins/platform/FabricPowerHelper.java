@@ -1,9 +1,6 @@
 package net.merchantpug.toomanyorigins.platform;
 
-import io.github.apace100.origins.badge.BadgeFactory;
-import io.github.apace100.origins.badge.BadgeManager;
 import net.merchantpug.toomanyorigins.TooManyOrigins;
-import net.merchantpug.toomanyorigins.badge.factory.IBadgeFactory;
 import net.merchantpug.toomanyorigins.platform.services.IPowerHelper;
 import net.merchantpug.toomanyorigins.power.factory.SimplePowerFactory;
 import net.merchantpug.toomanyorigins.power.factory.SpecialPowerFactory;
@@ -18,13 +15,11 @@ import io.github.apace100.apoli.power.PowerTypeReference;
 import io.github.apace100.apoli.power.VariableIntPower;
 import io.github.apace100.apoli.power.factory.PowerFactory;
 import io.github.apace100.calio.data.SerializableDataType;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.OptionalInt;
-import java.util.function.Supplier;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
 @AutoService(IPowerHelper.class)
@@ -115,16 +110,6 @@ public class FabricPowerHelper implements IPowerHelper<PowerTypeReference> {
         }
         TooManyOrigins.LOG.warn("Failed to set resource for power [{}], because it doesn't hold any resource!", powerType.getIdentifier());
         return OptionalInt.empty();
-    }
-
-    @Override
-    public <F extends IBadgeFactory> Supplier<BadgeFactory> registerBadge(String name, Class<F> badgeClass) {
-        F factory = Services.load(badgeClass);
-        ResourceLocation resource = TooManyOrigins.asResource(name);
-        if (BadgeManager.REGISTRY.getFactory(resource) == null) {
-            BadgeManager.register(new BadgeFactory(resource, factory.getSerializableData(), factory.getFactoryCreator()));
-        }
-        return () -> (BadgeFactory) BadgeManager.REGISTRY.getFactory(resource);
     }
 
 }

@@ -15,6 +15,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientHandshakePacketListenerImpl;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerLoginPacketListenerImpl;
@@ -65,10 +67,10 @@ public class TMOPackets {
                             clientVersionString.append(".");
                         }
                     }
-                    serverLoginNetworkHandler.disconnect(Component.translatable("toomanyorigins.gui.version_mismatch", TooManyOriginsFabric.VERSION, clientVersionString));
+                    serverLoginNetworkHandler.disconnect(new TranslatableComponent("toomanyorigins.gui.version_mismatch", TooManyOriginsFabric.VERSION, clientVersionString));
                 }
             } else {
-                serverLoginNetworkHandler.disconnect(Component.literal("This server requires you to install the TooManyOrigins mod (v" + TooManyOriginsFabric.VERSION + ") to play."));
+                serverLoginNetworkHandler.disconnect(new TextComponent("This server requires you to install the TooManyOrigins mod (v" + TooManyOriginsFabric.VERSION + ") to play."));
             }
         }
     }

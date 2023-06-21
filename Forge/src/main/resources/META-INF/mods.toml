@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[43,)"
+loaderVersion="[40,)"
 license="MIT"
 issueTrackerURL="https://github.com/MerchantPug/apugli/issues"
 
@@ -16,20 +16,20 @@ description="An origins addon that adds origins inspired by the base mod."
 [[dependencies.toomanyorigins]]
 modId="forge"
 mandatory=true
-versionRange="[43.2,)"
+versionRange="[40.2.3,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.toomanyorigins]]
 modId="minecraft"
 mandatory=true
-versionRange="[1.19.2,1.19.3)"
+versionRange="[1.18.2,1.19)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.toomanyorigins]]
 modId="origins"
 mandatory=true
-versionRange="[1.19.2-1.7.1.0,)"
+versionRange="[1.18.2-1.4.1.4,)"
 ordering="AFTER"
 side="BOTH"

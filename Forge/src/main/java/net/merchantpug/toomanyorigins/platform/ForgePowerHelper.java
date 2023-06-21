@@ -1,9 +1,6 @@
 package net.merchantpug.toomanyorigins.platform;
 
-import io.github.apace100.origins.badge.BadgeFactory;
-import io.github.edwinmindcraft.origins.common.registry.OriginRegisters;
 import net.merchantpug.toomanyorigins.TooManyOrigins;
-import net.merchantpug.toomanyorigins.badge.factory.IBadgeFactory;
 import net.merchantpug.toomanyorigins.data.ApoliForgeDataTypes;
 import net.merchantpug.toomanyorigins.mixin.forge.FabricPowerFactoryAccessor;
 import net.merchantpug.toomanyorigins.platform.services.IPowerHelper;
@@ -19,18 +16,16 @@ import io.github.edwinmindcraft.apoli.api.ApoliAPI;
 import io.github.edwinmindcraft.apoli.api.component.IPowerContainer;
 import io.github.edwinmindcraft.apoli.api.power.configuration.ConfiguredPower;
 import io.github.edwinmindcraft.apoli.fabric.FabricPowerFactory;
-import net.minecraft.core.Holder;
 import net.minecraft.world.entity.LivingEntity;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("unchecked")
 @AutoService(IPowerHelper.class)
-public class ForgePowerHelper implements IPowerHelper<Holder<ConfiguredPower<?, ?>>> {
+public class ForgePowerHelper implements IPowerHelper<ConfiguredPower<?, ?>> {
 
     @Override
     public io.github.edwinmindcraft.apoli.api.power.factory.PowerFactory<?> unwrapSimpleFactory(PowerFactory<?> factory) {
@@ -51,14 +46,14 @@ public class ForgePowerHelper implements IPowerHelper<Holder<ConfiguredPower<?, 
     @Override
     public <P extends Power> List<P> getPowers(LivingEntity entity, SimplePowerFactory<P> factory) {
         return IPowerContainer.getPowers(entity, (FabricPowerFactory<P>) factory.getWrapped()).stream()
-                .map(holder -> ((FabricPowerFactoryAccessor<P>) holder.get().getFactory()).invokeGetPower(holder.get(), entity))
+                .map(power -> ((FabricPowerFactoryAccessor<P>) power.getFactory()).invokeGetPower(power, entity))
                 .collect(Collectors.toList());
     }
 
     @Override
     public <P> List<P> getPowers(LivingEntity entity, SpecialPowerFactory<P> factory) {
         return IPowerContainer.getPowers(entity, (io.github.edwinmindcraft.apoli.api.power.factory.PowerFactory<?>) factory)
-                .stream().map(holder -> (P) holder.get()).collect(Collectors.toList());
+                .stream().map(power -> (P) power).collect(Collectors.toList());
     }
 
     @Override
@@ -72,50 +67,32 @@ public class ForgePowerHelper implements IPowerHelper<Holder<ConfiguredPower<?, 
     }
 
     @Override
-    public SerializableDataType<Holder<ConfiguredPower<?, ?>>> getPowerTypeDataType() {
-        return ApoliForgeDataTypes.POWER_TYPE;
+    public SerializableDataType<ConfiguredPower<?, ?>> getPowerTypeDataType() {
+        return ApoliForgeDataTypes.POWER_TYPE.get();
     }
 
     @Override
-    public OptionalInt getResource(LivingEntity entity, Holder<ConfiguredPower<?, ?>> holder) {
-        var powerId = holder.unwrapKey();
-        if (holder.isBound()) {
-            ConfiguredPower<?, ?> power = holder.get();
-            if (IPowerContainer.get(entity).resolve().flatMap(container -> {
-                if (container == null) return Optional.empty();
-                return powerId.map(container::hasPower);
-            }).orElse(false)) {
-                return power.getValue(entity);
-            }
+    public OptionalInt getResource(LivingEntity entity, ConfiguredPower<?, ?> power) {
+        var powerId = power.getRegistryName();
+        if (IPowerContainer.get(entity).resolve().map(container -> container.hasPower(powerId)).orElse(false)) {
+            return power.getValue(entity);
         }
-        TooManyOrigins.LOG.warn("Failed to get resource for power [{}], because it doesn't hold any resource!", powerId.orElse(null));
+        TooManyOrigins.LOG.warn("Failed to get resource for power [{}], because it doesn't hold any resource!", powerId);
         return OptionalInt.empty();
     }
 
     @Override
-    public OptionalInt setResource(LivingEntity entity, Holder<ConfiguredPower<?, ?>> holder, int value) {
-        var powerId = holder.unwrapKey();
-        if (holder.isBound()) {
-            ConfiguredPower<?, ?> power = holder.get();
-            if (IPowerContainer.get(entity).resolve().flatMap(container -> {
-                if (container == null) return Optional.empty();
-                return powerId.map(container::hasPower);
-            }).orElse(false)) {
-                OptionalInt result = power.assign(entity, value);
-                if (result.isPresent()) {
-                    ApoliAPI.synchronizePowerContainer(entity);
-                    return result;
-                }
+    public OptionalInt setResource(LivingEntity entity, ConfiguredPower<?, ?> power, int value) {
+        var powerId = power.getRegistryName();
+        if (IPowerContainer.get(entity).resolve().map(container -> container.hasPower(powerId)).orElse(false)) {
+            OptionalInt result = power.assign(entity, value);
+            if (result.isPresent()) {
+                ApoliAPI.synchronizePowerContainer(entity);
+                return result;
             }
         }
-        TooManyOrigins.LOG.warn("Failed to set resource for power [{}], because it doesn't hold any resource!", powerId.orElse(null));
+        TooManyOrigins.LOG.warn("Failed to set resource for power [{}], because it doesn't hold any resource!", powerId);
         return OptionalInt.empty();
-    }
-
-    @Override
-    public <F extends IBadgeFactory> Supplier<BadgeFactory> registerBadge(String name, Class<F> badgeClass) {
-        F factory = Services.load(badgeClass);
-        return TMORegisters.BADGE_FACTORIES.register(name, () -> new BadgeFactory(TooManyOrigins.asResource(name), factory.getSerializableData(), factory.getFactoryCreator()));
     }
 
 }

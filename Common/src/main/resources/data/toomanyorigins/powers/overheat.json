@@ -26,27 +26,7 @@
             "horizontal_modifier": {
               "operation": "multiply_total",
               "value": 0.2
-            },
-            "horizontal_post_modifiers": [
-              {
-                "operation": "min_total",
-                "value": -3.3
-              },
-              {
-                "operation": "max_total",
-                "value": 3.3
-              }
-            ],
-            "vertical_post_modifiers": [
-              {
-                "operation": "min_total",
-                "value": -2.6
-              },
-              {
-                "operation": "max_total",
-                "value": 2.6
-              }
-            ]
+            }
           },
           "condition": {
             "type": "toomanyorigins:status_effect_tag",
@@ -60,27 +40,7 @@
             "horizontal_modifier": {
               "operation": "multiply_total",
               "value": 0.2
-            },
-            "horizontal_post_modifiers": [
-              {
-                "operation": "min_total",
-                "value": -2.2
-              },
-              {
-                "operation": "max_total",
-                "value": 2.2
-              }
-            ],
-            "vertical_post_modifiers": [
-              {
-                "operation": "min_total",
-                "value": -1.8
-              },
-              {
-                "operation": "max_total",
-                "value": 1.8
-              }
-            ]
+            }
           }
         },
         {

@@ -4,12 +4,12 @@ import com.google.auto.service.AutoService;
 import io.github.apace100.apoli.power.Power;
 import io.github.apace100.apoli.power.PowerType;
 import io.github.apace100.apoli.power.factory.PowerFactory;
-import io.github.apace100.apoli.util.modifier.Modifier;
 import io.github.apace100.calio.data.SerializableData;
 import net.merchantpug.toomanyorigins.TooManyOrigins;
 import net.merchantpug.toomanyorigins.power.factory.ModifyDragonFireballPowerFactory;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -30,22 +30,22 @@ public class ModifyDragonFireballPower extends PowerFactory<ModifyDragonFireball
     }
 
     @Override
-    public List<?> getDamageModifiers(Instance power, Entity entity) {
+    public List<AttributeModifier> getDamageModifiers(Instance power, Entity entity) {
         return power.damageModifiers;
     }
 
     @Override
-    public List<?> getMinRadiusModifiers(Instance power, Entity entity) {
+    public List<AttributeModifier> getMinRadiusModifiers(Instance power, Entity entity) {
         return power.minRadiusModifiers;
     }
 
     @Override
-    public List<?> getMaxRadiusModifiers(Instance power, Entity entity) {
+    public List<AttributeModifier> getMaxRadiusModifiers(Instance power, Entity entity) {
         return power.maxRadiusModifiers;
     }
 
     @Override
-    public List<?> getDurationModifiers(Instance power, Entity entity) {
+    public List<AttributeModifier> getDurationModifiers(Instance power, Entity entity) {
         return power.durationModifiers;
     }
 
@@ -56,22 +56,22 @@ public class ModifyDragonFireballPower extends PowerFactory<ModifyDragonFireball
 
     public static class Instance extends Power {
         private final SerializableData.Instance data;
-        private final List<Modifier> damageModifiers = new LinkedList<>();
-        private final List<Modifier> minRadiusModifiers = new LinkedList<>();
-        private final List<Modifier> maxRadiusModifiers = new LinkedList<>();
-        private final List<Modifier> durationModifiers = new LinkedList<>();
+        private final List<AttributeModifier> damageModifiers = new LinkedList<>();
+        private final List<AttributeModifier> minRadiusModifiers = new LinkedList<>();
+        private final List<AttributeModifier> maxRadiusModifiers = new LinkedList<>();
+        private final List<AttributeModifier> durationModifiers = new LinkedList<>();
     
         public Instance(PowerType<?> type, LivingEntity entity, SerializableData.Instance data) {
             super(type, entity);
             this.data = data;
-            data.<Modifier>ifPresent("damage_modifier", damageModifiers::add);
-            data.<List<Modifier>>ifPresent("damage_modifiers", damageModifiers::addAll);
-            data.<Modifier>ifPresent("min_radius_modifier", minRadiusModifiers::add);
-            data.<List<Modifier>>ifPresent("min_radius_modifiers", minRadiusModifiers::addAll);
-            data.<Modifier>ifPresent("max_radius_modifier", maxRadiusModifiers::add);
-            data.<List<Modifier>>ifPresent("max_radius_modifiers", maxRadiusModifiers::addAll);
-            data.<Modifier>ifPresent("duration_modifier", durationModifiers::add);
-            data.<List<Modifier>>ifPresent("duration_modifiers", durationModifiers::addAll);
+            data.<AttributeModifier>ifPresent("damage_modifier", damageModifiers::add);
+            data.<List<AttributeModifier>>ifPresent("damage_modifiers", damageModifiers::addAll);
+            data.<AttributeModifier>ifPresent("min_radius_modifier", minRadiusModifiers::add);
+            data.<List<AttributeModifier>>ifPresent("min_radius_modifiers", minRadiusModifiers::addAll);
+            data.<AttributeModifier>ifPresent("max_radius_modifier", maxRadiusModifiers::add);
+            data.<List<AttributeModifier>>ifPresent("max_radius_modifiers", maxRadiusModifiers::addAll);
+            data.<AttributeModifier>ifPresent("duration_modifier", durationModifiers::add);
+            data.<List<AttributeModifier>>ifPresent("duration_modifiers", durationModifiers::addAll);
         }
 
     }

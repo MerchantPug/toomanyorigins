@@ -7,6 +7,7 @@ import io.github.edwinmindcraft.apoli.api.power.factory.PowerFactory;
 import net.merchantpug.toomanyorigins.power.configuration.ModifyDragonFireballConfiguration;
 import net.merchantpug.toomanyorigins.power.factory.ModifyDragonFireballPowerFactory;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 
 import java.util.List;
 
@@ -21,22 +22,22 @@ public class ModifyDragonFireballPower extends PowerFactory<ModifyDragonFireball
     }
 
     @Override
-    public List<?> getDamageModifiers(ConfiguredPower<ModifyDragonFireballConfiguration, ?> power, Entity entity) {
+    public List<AttributeModifier> getDamageModifiers(ConfiguredPower<ModifyDragonFireballConfiguration, ?> power, Entity entity) {
         return power.getConfiguration().damageModifiers();
     }
 
     @Override
-    public List<?> getMinRadiusModifiers(ConfiguredPower<ModifyDragonFireballConfiguration, ?> power, Entity entity) {
+    public List<AttributeModifier> getMinRadiusModifiers(ConfiguredPower<ModifyDragonFireballConfiguration, ?> power, Entity entity) {
         return power.getConfiguration().minRadiusModifiers();
     }
 
     @Override
-    public List<?> getMaxRadiusModifiers(ConfiguredPower<ModifyDragonFireballConfiguration, ?> power, Entity entity) {
+    public List<AttributeModifier> getMaxRadiusModifiers(ConfiguredPower<ModifyDragonFireballConfiguration, ?> power, Entity entity) {
         return power.getConfiguration().maxRadiusModifiers();
     }
 
     @Override
-    public List<?> getDurationModifiers(ConfiguredPower<ModifyDragonFireballConfiguration, ?> power, Entity entity) {
+    public List<AttributeModifier> getDurationModifiers(ConfiguredPower<ModifyDragonFireballConfiguration, ?> power, Entity entity) {
         return power.getConfiguration().durationModifiers();
     }
 

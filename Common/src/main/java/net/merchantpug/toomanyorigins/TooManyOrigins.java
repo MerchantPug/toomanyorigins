@@ -13,13 +13,14 @@ public class TooManyOrigins {
     public static final Logger LOG = LoggerFactory.getLogger(MOD_NAME);
 
     public static void init() {
-        TMOBadges.register();
         TMOBlocks.register();
         TMOEffects.register();
         TMOEntityTypes.register();
         TMOItems.register();
         TMOPowers.register();
         TMOSounds.register();
+
+        TMODamageConditions.registerAll();
 
         NamespaceAlias.addAlias(MOD_ID, "apugli");
     }

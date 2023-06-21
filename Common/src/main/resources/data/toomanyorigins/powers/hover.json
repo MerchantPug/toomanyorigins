@@ -8,7 +8,7 @@
       "conditions": [
         {
           "type": "origins:resource",
-          "resource": "*:*_active_resource",
+          "resource": "toomanyorigins:hover_active_resource",
           "comparison": ">",
           "compare_to": 0
         },
@@ -52,7 +52,7 @@
         },
         {
           "type": "origins:power_active",
-          "power": "*:*_toggle_resource"
+          "power": "toomanyorigins:hover_toggle_resource"
         }
       ]
     }
@@ -64,12 +64,12 @@
       "actions": [
         {
           "type": "origins:change_resource",
-          "resource": "*:*_active_resource",
+          "resource": "toomanyorigins:hover_active_resource",
           "change": -1
         },
         {
           "type": "origins:change_resource",
-          "resource": "*:*_recharge_condition_resource",
+          "resource": "toomanyorigins:hover_recharge_condition_resource",
           "change": 0,
           "operation": "SET"
         }
@@ -78,14 +78,14 @@
     "interval": 1,
     "condition": {
       "type": "origins:power_active",
-      "power": "*:*_hover"
+      "power": "toomanyorigins:hover_hover"
     }
   },
   "recharge": {
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:change_resource",
-      "resource": "*:*_active_resource",
+      "resource": "toomanyorigins:hover_active_resource",
       "change": 2
     },
     "interval": 1,
@@ -94,12 +94,12 @@
       "conditions": [
         {
           "type": "origins:power_active",
-          "power": "*:*_hover",
+          "power": "toomanyorigins:hover_hover",
           "inverted": true
         },
         {
           "type": "origins:resource",
-          "resource": "*:*_recharge_condition_resource",
+          "resource": "toomanyorigins:hover_recharge_condition_resource",
           "comparison": "==",
           "compare_to": 10
         }
@@ -110,7 +110,7 @@
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:change_resource",
-      "resource": "*:*_recharge_condition_resource",
+      "resource": "toomanyorigins:hover_recharge_condition_resource",
       "change": 1
     },
     "interval": 1,
@@ -130,7 +130,7 @@
         },
         {
           "type": "origins:power_active",
-          "power": "*:*_hover",
+          "power": "toomanyorigins:hover_hover",
           "inverted": true
         }
       ]
@@ -150,11 +150,11 @@
         "conditions": [
           {
             "type": "origins:power_active",
-            "power": "*:*_toggle_resource"
+            "power": "toomanyorigins:hover_toggle_resource"
           },
           {
             "type": "origins:resource",
-            "resource": "*:*_active_resource",
+            "resource": "toomanyorigins:hover_active_resource",
             "comparison": "<",
             "compare_to": 60
           }
@@ -172,7 +172,7 @@
       "bar_index": 9,
       "condition": {
         "type": "origins:power_active",
-        "power": "*:*_toggle_resource",
+        "power": "toomanyorigins:hover_toggle_resource",
         "inverted": true
       }
     }
@@ -189,8 +189,8 @@
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "toomanyorigins:resource_transfer",
-      "resource": "*:*_inactive_resource",
-      "provider": "*:*_active_resource",
+      "resource": "toomanyorigins:hover_inactive_resource",
+      "provider": "toomanyorigins:hover_active_resource",
       "operation": "SET"
     },
     "interval": 1,
@@ -199,13 +199,13 @@
       "conditions": [
         {
           "type": "toomanyorigins:compare_resource",
-          "resource": "*:*_active_resource",
-          "compare_to": "*:*_inactive_resource",
+          "resource": "toomanyorigins:hover_active_resource",
+          "compare_to": "toomanyorigins:hover_inactive_resource",
           "comparison": "!="
         },
         {
           "type": "origins:power_active",
-          "power": "*:*_toggle_resource",
+          "power": "toomanyorigins:hover_toggle_resource",
           "inverted": true
         }
       ]
@@ -231,23 +231,5 @@
     "key": {
       "key": "key.origins.primary_active"
     }
-  },
-  "badges": [
-    {
-      "type": "toomanyorigins:defined_keybind",
-      "sprite": "origins:textures/gui/badge/active.png",
-      "text": "origins.gui.badge.active",
-      "key": {
-        "key": "key.jump"
-      }
-    },
-    {
-      "type": "toomanyorigins:defined_keybind",
-      "sprite": "origins:textures/gui/badge/toggle.png",
-      "text": "origins.gui.badge.toggle",
-      "key": {
-        "key": "key.origins.primary_active"
-      }
-    }
-  ]
+  }
 }

@@ -2,6 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "net.merchantpug.toomanyorigins.mixin",
+  "plugin": "net.merchantpug.toomanyorigins.TooManyOriginsMixinPlugin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "AreaEffectCloudEntityAccessor",

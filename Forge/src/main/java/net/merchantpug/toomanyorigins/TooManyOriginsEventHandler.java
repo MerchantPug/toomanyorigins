@@ -11,7 +11,7 @@ import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.monster.ZombieVillager;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.living.MobEffectEvent;
+import net.minecraftforge.event.entity.living.PotionEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -21,7 +21,7 @@ public class TooManyOriginsEventHandler {
 
     @SubscribeEvent
     public static void onEntityDeath(LivingDeathEvent event) {
-        if (!event.getEntity().level.isClientSide && !event.getEntity().isRemoved() && event.getEntity() instanceof Villager villager && event.getEntity().hasEffect(TMOEffects.ZOMBIFYING.get()) && event.getSource().msgId.equals("zombification")) {
+        if (!event.getEntity().level.isClientSide && !event.getEntity().isRemoved() && event.getEntity() instanceof Villager villager && ((Villager) event.getEntity()).hasEffect(TMOEffects.ZOMBIFYING.get()) && event.getSource().msgId.equals("zombification")) {
             ZombieVillager zombieVillager = villager.convertTo(EntityType.ZOMBIE_VILLAGER, false);
             if (zombieVillager != null) {
                 zombieVillager.finalizeSpawn(((ServerLevel) villager.level), villager.level.getCurrentDifficultyAt(zombieVillager.blockPosition()), MobSpawnType.CONVERSION, new Zombie.ZombieGroupData(false, true), null);
@@ -34,9 +34,9 @@ public class TooManyOriginsEventHandler {
     }
 
     @SubscribeEvent
-    public static void modifyEffectApplicability(MobEffectEvent.Applicable event) {
-        MobEffect statusEffect = event.getEffectInstance().getEffect();
-        if (event.getEntity().getMobType() == MobType.UNDEAD && statusEffect.equals(TMOEffects.ZOMBIFYING.get())) {
+    public static void modifyEffectApplicability(PotionEvent.PotionApplicableEvent event) {
+        MobEffect statusEffect = event.getPotionEffect().getEffect();
+        if (event.getEntityLiving().getMobType() == MobType.UNDEAD && statusEffect.equals(TMOEffects.ZOMBIFYING.get())) {
             event.setResult(Event.Result.DENY);
         }
     }
