@@ -9,4 +9,4 @@
 - Removed `shouldFireballDamageUndead` from the TooManyOrigins config.
 
 ## Dependencies
-- Updated Apugli to v2.4.1.
+- Updated Apugli to v2.4.2.
