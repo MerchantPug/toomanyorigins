@@ -3,3 +3,6 @@
 
 ### Config
 - Removed `shouldFireballDamageUndead` setting in config.
+
+### Dependencies
+- Updated built-in Apugli version to 2.4.2.
