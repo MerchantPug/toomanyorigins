@@ -26,8 +26,6 @@ public class TooManyOriginsForge {
         TooManyOrigins.LOG.info("TooManyOrigins " + VERSION + " is initializing. Enjoy!");
         TooManyOrigins.init();
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, TMOConfigs.SERVER_SPECS);
-
         eventBus.addListener((FMLCommonSetupEvent event) -> TMOPacketHandler.register());
     }
 }

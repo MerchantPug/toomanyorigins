@@ -7,7 +7,6 @@ import java.util.ServiceLoader;
 
 public class Services {
 
-    public static final IConfigHelper CONFIG = load(IConfigHelper.class);
     public static final IPowerHelper<?> POWER = load(IPowerHelper.class);
     public static final IPlatformHelper PLATFORM = load(IPlatformHelper.class);
 
