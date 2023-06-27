@@ -1,6 +1,10 @@
-- Backported to 1.18.2.
-  - This version will not be actively maintained. Updates will only happen if a critical bug pops up.
-  - Please read the changelogs between 0,9,0 and the previous 1.18.2 version for a full changelog.
-- This version also lacks the velocity clamp on Hiss-kin's rocket jump, go wild I guess...
+[A] - Apugli related change.
+### Bugfixes
+- [A] Fixed a crash involving killed entities without an attacker or kill credit. (Notably Create's trains).
+- [FABRIC] Fixed Swarm's Calming Aura power not functioning properly.
+- [FABRIC] Fixed Withered's Weary power not functioning properly.
+- Fixed Withered's Black Thumb power not functioning properly.
+- Fixed Withered Crop/Stem not displaying smoke particles.
 
-- Requires at least Forge Loader 40.2.3 or at least Fabric Loader 0.14.11.
+### Dependencies
+- Updated Apugli to v2.4.4
