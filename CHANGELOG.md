@@ -1,12 +1,10 @@
-## Origins
-- Increased the visibility of Swarm's Smoke Sensitivity's overlay.
+[A] - Apugli related change.
+### Bugfixes
+- [A] Fixed a crash involving killed entities without an attacker or kill credit. (Notably Create's trains).
+- [FABRIC] Fixed Swarm's Calming Aura power not functioning properly.
+- [FABRIC] Fixed Withered's Weary power not functioning properly.
+- Fixed Withered's Black Thumb power not functioning properly.
+- Fixed Withered Crop/Stem not displaying smoke particles.
 
-## Power Types
-- Added `toomanyorigins:take_damage_from_ender_dragon_fireball` power type from the rework. 
-  - The above is now used on Undead.
-
-## Config
-- Removed `shouldFireballDamageUndead` from the TooManyOrigins config.
-
-## Dependencies
-- Updated Apugli to v2.4.2.
+### Dependencies
+- Updated Apugli to v2.4.4
