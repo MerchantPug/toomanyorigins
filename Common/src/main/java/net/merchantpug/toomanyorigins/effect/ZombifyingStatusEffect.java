@@ -16,7 +16,7 @@ public class ZombifyingStatusEffect extends MobEffect {
         if (entity instanceof Player player) {
             player.causeFoodExhaustion(4.0F);
         }
-        entity.hurt(entity.level.damageSources().source(TMODamageTypes.ZOMBIFICATION), 1.0F);
+        entity.hurt(entity.level().damageSources().source(TMODamageTypes.ZOMBIFICATION), 1.0F);
     }
 
     public boolean isDurationEffectTick(int duration, int amplifier) {
