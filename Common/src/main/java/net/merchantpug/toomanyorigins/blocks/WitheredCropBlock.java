@@ -40,15 +40,15 @@ public class WitheredCropBlock extends BushBlock {
         return floor.is(Blocks.FARMLAND);
     }
 
-    public void randomDisplayTick(BlockState state, Level world, BlockPos pos, RandomSource random) {
-        VoxelShape voxelShape = this.getShape(state, world, pos, CollisionContext.empty());
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        VoxelShape voxelShape = this.getShape(state, level, pos, CollisionContext.empty());
         Vec3 vec3d = voxelShape.bounds().getCenter();
         double d = (double)pos.getX() + vec3d.x;
         double e = (double)pos.getZ() + vec3d.z;
 
         for(int i = 0; i < 2; ++i) {
             if (random.nextBoolean()) {
-                world.addParticle(ParticleTypes.SMOKE, d + random.nextDouble() / 5.0D, (double)pos.getY() + (0.5D - random.nextDouble()), e + random.nextDouble() / 5.0D, 0.0D, 0.0D, 0.0D);
+                level.addParticle(ParticleTypes.SMOKE, d + random.nextDouble() / 5.0D, (double)pos.getY() + (0.5D - random.nextDouble()), e + random.nextDouble() / 5.0D, 0.0D, 0.0D, 0.0D);
             }
         }
     }
