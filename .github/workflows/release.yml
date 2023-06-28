@@ -19,6 +19,10 @@ jobs:
       image: eclipse-temurin:17-jdk
       options: --user root
     steps:
+      - name: Install git on container
+        run: |
+          apt update
+          apt install -y git
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
