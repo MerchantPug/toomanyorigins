@@ -26,26 +26,26 @@ public class WitheredStemBlock extends BushBlock {
         this.pickBlockItem = pickBlockItem;
     }
 
-    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return Block.box(7.0D, 0.0D, 7.0D, 9.0D, 2.0D, 9.0D);
     }
 
     @Override
-    public void animateTick(BlockState state, Level world, BlockPos pos, RandomSource random) {
-        VoxelShape voxelShape = this.getShape(state, world, pos, CollisionContext.empty());
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        VoxelShape voxelShape = this.getShape(state, level, pos, CollisionContext.empty());
         Vec3 vec3d = voxelShape.bounds().getCenter();
         double d = (double)pos.getX() + vec3d.x;
         double e = (double)pos.getZ() + vec3d.z;
 
         for(int i = 0; i < 1; ++i) {
             if (random.nextBoolean()) {
-                world.addParticle(ParticleTypes.SMOKE, d + random.nextDouble() / 5.0D, (double)pos.getY() + (0.5D - random.nextDouble()), e + random.nextDouble() / 5.0D, 0.0D, 0.0D, 0.0D);
+                level.addParticle(ParticleTypes.SMOKE, d + random.nextDouble() / 5.0D, (double)pos.getY() + (0.5D - random.nextDouble()), e + random.nextDouble() / 5.0D, 0.0D, 0.0D, 0.0D);
             }
         }
     }
 
     @Override
-    public boolean canSurvive(BlockState floor, LevelReader world, BlockPos pos) {
+    public boolean canSurvive(BlockState floor, LevelReader level, BlockPos pos) {
         return floor.is(Blocks.FARMLAND);
     }
 
