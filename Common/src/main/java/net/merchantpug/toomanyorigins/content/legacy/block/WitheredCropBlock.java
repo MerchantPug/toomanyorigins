@@ -31,39 +31,39 @@ public class WitheredCropBlock extends BushBlock {
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
     }
 
     @Override
-    public boolean canSurvive(BlockState floor, LevelReader world, BlockPos pos) {
+    public boolean canSurvive(BlockState floor, LevelReader level, BlockPos pos) {
         return floor.is(Blocks.FARMLAND);
     }
 
     @Override
-    public void animateTick(BlockState state, Level world, BlockPos pos, RandomSource random) {
-        VoxelShape voxelShape = this.getShape(state, world, pos, CollisionContext.empty());
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        VoxelShape voxelShape = this.getShape(state, level, pos, CollisionContext.empty());
         Vec3 vec3d = voxelShape.bounds().getCenter();
         double d = (double)pos.getX() + vec3d.x;
         double e = (double)pos.getZ() + vec3d.z;
 
         for(int i = 0; i < 2; ++i) {
             if (random.nextBoolean()) {
-                world.addParticle(ParticleTypes.SMOKE, d + random.nextDouble() / 5.0D, (double)pos.getY() + (0.5D - random.nextDouble()), e + random.nextDouble() / 5.0D, 0.0D, 0.0D, 0.0D);
+                level.addParticle(ParticleTypes.SMOKE, d + random.nextDouble() / 5.0D, (double)pos.getY() + (0.5D - random.nextDouble()), e + random.nextDouble() / 5.0D, 0.0D, 0.0D, 0.0D);
             }
         }
     }
 
     @Override
-    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
-        if (entity instanceof Ravager && world.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
-            world.destroyBlock(pos, true, entity);
+    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+        if (entity instanceof Ravager && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
+            level.destroyBlock(pos, true, entity);
         }
-        super.entityInside(state, world, pos, entity);
+        super.entityInside(state, level, pos, entity);
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
         return new ItemStack(this.pickBlockItem.get());
     }
 }
