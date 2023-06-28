@@ -1,5 +1,8 @@
 [A] means an Apugli related change.
 
+### Origins
+- Hiss-kin's rocket jump's explosion causes entity knockback again.
+
 ### Bugfixes
 - Fixed `take_damage_from_ender_dragon_fireball` power type.
 
