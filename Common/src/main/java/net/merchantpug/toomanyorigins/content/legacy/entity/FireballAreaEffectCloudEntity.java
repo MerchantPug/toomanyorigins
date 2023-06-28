@@ -52,7 +52,7 @@ public class FireballAreaEffectCloudEntity extends AreaEffectCloud {
         super.baseTick();
         boolean bl = this.isWaiting();
         float f = this.getRadius();
-        if (this.level.isClientSide) {
+        if (this.level().isClientSide) {
             ParticleOptions particleOptions = this.getParticle();
             int i;
             float g;
@@ -88,7 +88,7 @@ public class FireballAreaEffectCloudEntity extends AreaEffectCloud {
                     p = (0.5 - this.random.nextDouble()) * 0.15;
                 }
 
-                this.level.addAlwaysVisibleParticle(particleOptions, d, e, l, n, o, p);
+                this.level().addAlwaysVisibleParticle(particleOptions, d, e, l, n, o, p);
             }
         } else {
             if (this.tickCount >= this.getWaitTime() + this.getDuration()) {
@@ -117,7 +117,7 @@ public class FireballAreaEffectCloudEntity extends AreaEffectCloud {
 
             if (this.tickCount % 5 == 0) {
                 ((AreaEffectCloudEntityAccessor)this).getAffectedEntities().entrySet().removeIf(entry -> this.tickCount >= entry.getValue());
-                List<LivingEntity> list2 = this.level.getEntitiesOfClass(LivingEntity.class, this.getBoundingBox(), living -> living != this.getOwner());
+                List<LivingEntity> list2 = this.level().getEntitiesOfClass(LivingEntity.class, this.getBoundingBox(), living -> living != this.getOwner());
                 if (!list2.isEmpty()) {
                     for (LivingEntity livingEntity : list2) {
                         if (!((AreaEffectCloudEntityAccessor)this).getAffectedEntities().containsKey(livingEntity) && livingEntity.isAffectedByPotions()) {

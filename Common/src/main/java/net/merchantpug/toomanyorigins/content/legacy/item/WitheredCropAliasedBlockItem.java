@@ -26,7 +26,7 @@ public class WitheredCropAliasedBlockItem extends ItemNameBlockItem {
         if (!LegacyContentRegistry.areWitheredCropsEnabled()) {
             if (context.getPlayer() != null) {
                 Player player = context.getPlayer();
-                if (!player.level.isClientSide) {
+                if (!player.level().isClientSide) {
                     player.sendSystemMessage(Component.translatable("toomanyorigins.content.disabled_message", LegacyContentRegistry.WITHERED_CROPS).withStyle(ChatFormatting.RED));
                 }
                 player.getCooldowns().addCooldown(this, 20);

@@ -1,6 +1,7 @@
 package net.merchantpug.toomanyorigins.registry;
 
 import net.merchantpug.toomanyorigins.content.legacy.item.DragonFireballItem;
+import net.merchantpug.toomanyorigins.content.legacy.item.WitheredCropAliasedBlockItem;
 import net.merchantpug.toomanyorigins.registry.services.RegistrationProvider;
 import net.merchantpug.toomanyorigins.registry.services.RegistryObject;
 import net.minecraft.core.Registry;
@@ -19,10 +20,10 @@ public class TMOItems {
             () -> new DragonFireballItem(new Item.Properties().stacksTo(16)));
 
     public static final RegistryObject<Item> WITHERED_CROP_SEEDS = register("withered_crop_seeds",
-            () -> new ItemNameBlockItem(TMOBlocks.WITHERED_CROP.get(), (new Item.Properties())));
+            () -> new WitheredCropAliasedBlockItem(TMOBlocks.WITHERED_CROP.get(), (new Item.Properties())));
 
     public static final RegistryObject<Item> WITHERED_STEM_SEEDS = register("withered_stem_seeds",
-            () -> new ItemNameBlockItem(TMOBlocks.WITHERED_STEM.get(), (new Item.Properties())));
+            () -> new WitheredCropAliasedBlockItem(TMOBlocks.WITHERED_STEM.get(), (new Item.Properties())));
 
 
     private static <T extends Item> RegistryObject<T> register(String name, Supplier<T> item) {

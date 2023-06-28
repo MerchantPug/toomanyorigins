@@ -59,6 +59,7 @@ repositories {
         url = 'https://maven.parchmentmc.org'
     }
     mavenCentral()
+    mavenLocal()
 }
 
 loom {
@@ -76,7 +77,7 @@ dependencies {
         parchment("org.parchmentmc.data:parchment-1.19.3:${parchment_version}@zip")
     }
     // Origins
-    modCompileOnly "com.github.MerchantPug:origins-fabric:${origins_fabric_version}"
+    modCompileOnly "com.github.apace100:origins-fabric:${origins_fabric_version}"
     // Apugli
     modCompileOnly "net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-fabric"
 }
