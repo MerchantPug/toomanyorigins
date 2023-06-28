@@ -49,15 +49,11 @@ public class DragonFireballItem extends Item {
 
         return InteractionResultHolder.sidedSuccess(itemStack, world.isClientSide());
     }
+
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag context) {
         if (!LegacyContentRegistry.isDragonFireballEnabled())
             tooltip.add(Component.translatable("toomanyorigins.content.disabled").withStyle(ChatFormatting.GRAY));
     }
 
-    @Override
-    public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> stacks) {
-        if (!LegacyContentRegistry.isDragonFireballEnabled() || !this.allowedIn(group)) return;
-        stacks.add(new ItemStack(this));
-    }
 }
