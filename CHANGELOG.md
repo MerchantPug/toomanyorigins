@@ -1,8 +1,8 @@
-### Power Types
-- Fixed `take_damage_from_ender_dragon_fireball` power type not working as intended.
+[A] means an Apugli related change.
 
-### Config
-- Removed `shouldFireballDamageUndead` setting in config.
+### Bugfixes
+- Fixed `take_damage_from_ender_dragon_fireball` power type.
 
-### Dependencies
-- Updated built-in Apugli version to 2.4.2.
+### Miscellaneous
+- Updated for parity with TooManyOrigins v0.9.1.
+- Updated Apugli to v2.4.4.
