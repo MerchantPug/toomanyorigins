@@ -1,6 +1,10 @@
 ### Re-introduced Hare origin.
 The Hare origin is about traversing difficult terrain and mobility, with your trusty hops, no terrain will stop you, even water surfaces, just don't fall into the water...
 
+### Swarm Changes
+- Beekeeper is no longer hidden.
+- Unity no longer has a cooldown between changing the amount of hearts that the player has.
+
 ### Dependencies
 - Updated Apugli to v2.5.0
 - Now includes Water Walking Fix.
