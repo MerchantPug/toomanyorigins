@@ -59,6 +59,7 @@ repositories {
         url = 'https://maven.parchmentmc.org'
     }
     mavenCentral()
+    mavenLocal()
 }
 
 loom {

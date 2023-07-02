@@ -1,0 +1,76 @@
+{
+  "type": "origins:multiple",
+  "fastfall": {
+    "type": "origins:modify_velocity",
+    "modifier": {
+      "name": "Bonus falling velocity whilst sneaking",
+      "value": 0.6,
+      "operation": "multiply_total_multiplicative"
+    },
+    "axes": [
+      "y"
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "toomanyorigins:velocity",
+          "axes": [
+            "y"
+          ],
+          "compare_to": 0.0,
+          "comparison": "<="
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": "0",
+          "inverted": true
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:lava",
+          "comparison": ">",
+          "compare_to": "0",
+          "inverted": true
+        },
+        {
+          "type": "origins:fall_flying",
+          "inverted": true
+        },
+        {
+          "type": "origins:riding",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "fall_damage_reduction": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "fall"
+        },
+        {
+          "type": "origins:name",
+          "name": "fall.player"
+        }
+      ]
+    },
+    "modifier": {
+      "name": "Immune to fall damage while sneaking",
+      "operation": "multiply_total_multiplicative",
+      "value": -1.0
+    },
+    "condition": {
+      "type": "origins:sneaking"
+    }
+  }
+}

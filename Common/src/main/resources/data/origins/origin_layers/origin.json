@@ -1,6 +1,7 @@
 {
   "replace": false,
   "origins": [
+    "toomanyorigins:hare",
     "toomanyorigins:hisskin",
     "toomanyorigins:swarm",
     "toomanyorigins:withered"

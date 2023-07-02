@@ -1,0 +1,10 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Step height increase from power",
+    "attribute": "forge:step_height_addition",
+    "value": 0.6,
+    "operation": "addition"
+  },
+  "hidden": true
+}

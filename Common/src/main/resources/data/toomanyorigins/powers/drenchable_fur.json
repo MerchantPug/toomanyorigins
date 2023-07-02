@@ -1,0 +1,9 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "attribute": "additionalentityattributes:water_speed",
+    "operation": "multiply_total",
+    "value": -0.5,
+    "name": "Decreased swim speed"
+  }
+}
