@@ -1,0 +1,8 @@
+{
+  "type": "toomanyorigins:step_assist",
+  "lower_height": 0.6,
+  "condition": {
+    "type": "toomanyorigins:grounded",
+    "inverted": true
+  }
+}
