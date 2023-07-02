@@ -220,6 +220,9 @@ tasks.register('curseforge', TaskPublishCurseForge) {
     common_embedded_deps.split(", ").each {
         mainFile.addEmbedded(it)
     }
+    forge_embedded_deps.split(", ").each {
+        mainFile.addEmbedded(it)
+    }
 }
 
 modrinth {
@@ -234,6 +237,9 @@ modrinth {
     loaders = forge_mod_loaders.split(", ").collect { return it.toLowerCase(Locale.ROOT) }
     dependencies {
         common_embedded_deps.split(", ").each {
+            embedded.project it
+        }
+        forge_embedded_deps.split(", ").each {
             embedded.project it
         }
     }
