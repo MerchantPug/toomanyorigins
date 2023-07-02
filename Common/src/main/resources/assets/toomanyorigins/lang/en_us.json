@@ -53,7 +53,7 @@
     "power.toomanyorigins.unity.name": "Unity",
     "power.toomanyorigins.unity.description": "You lose maximum hearts of health dependent on your hunger level.",
     "power.toomanyorigins.beekeeper.name": "Beekeeper",
-    "power.toomanyorigins.beekeeper.description": "You will not anger bees upon taking anything from their hive.",
+    "power.toomanyorigins.beekeeper.description": "You will not anger bees upon taking from their hive.",
 
     "power.toomanyorigins.affliction.name": "Affliction",
     "power.toomanyorigins.affliction.description": "Some projectiles will inflict Wither upon hitting a target.",
