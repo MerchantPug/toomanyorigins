@@ -52,6 +52,8 @@
     "power.toomanyorigins.stinging_pains.description": "You exhaust whenever you harm hostile entities through direct means.",
     "power.toomanyorigins.unity.name": "Unity",
     "power.toomanyorigins.unity.description": "You lose maximum hearts of health dependent on your hunger level.",
+    "power.toomanyorigins.beekeeper.name": "Beekeeper",
+    "power.toomanyorigins.beekeeper.description": "You will not anger bees upon taking anything from their hive.",
 
     "power.toomanyorigins.affliction.name": "Affliction",
     "power.toomanyorigins.affliction.description": "Certain projectiles will inflict Wither upon hitting a target.",
@@ -142,7 +144,6 @@
     "power.legacytoomanyorigins.calming_aura.description": "Animals bred by you do not have to wait to be bred again.",
     "power.legacytoomanyorigins.expendable.name": "Expendable",
     "power.legacytoomanyorigins.expendable.description": "You have 3 less hearts of health than humans.",
-    "power.legacytoomanyorigins.beekeeper.name": "Beekeeper",
     "power.legacytoomanyorigins.beekeeper.description": "Taking honey and honeycomb from a hive does not anger bees.",
 
     "origin.legacytoomanyorigins.undead.description": "A rare genetic mutation allows this race to keep their humanity despite suffering the effects of the Infection.",
