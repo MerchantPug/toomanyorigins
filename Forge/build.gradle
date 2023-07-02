@@ -39,6 +39,14 @@ repositories {
         name = "JitPack"
         url = 'https://jitpack.io'
     }
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+        content {
+            includeGroup "maven.modrinth"
+        }
+    }
+    mavenLocal()
 }
 
 mixin {
@@ -121,6 +129,10 @@ dependencies {
     implementation(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:${mixin_extras_version}"))
     //Mixin
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    // Water Walking Fix
+    implementation(jarJar(fg.deobf("maven.modrinth:water-walking-fix-forge:${wwf_version}"))) {
+        jarJar.ranged(it, "[${wwf_version},)")
+    }
     //Service
     compileOnly group:'com.google.auto.service', name:'auto-service', version:'1.0.1'
     annotationProcessor group:'com.google.auto.service', name:'auto-service', version:'1.0.1'

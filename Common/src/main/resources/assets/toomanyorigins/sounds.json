@@ -5,5 +5,12 @@
       "toomanyorigins:origin/hare/dash1",
       "toomanyorigins:origin/hare/dash2"
     ]
+  },
+  "origin.hare.max_speed": {
+    "subtitle": "subtitles.origin.hare.max_speed",
+    "sounds": [
+      "toomanyorigins:origin/hare/dash1",
+      "toomanyorigins:origin/hare/dash2"
+    ]
   }
 }

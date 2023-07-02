@@ -1,0 +1,15 @@
+{
+  "powers": [
+    "toomanyorigins:hot_hops",
+    "toomanyorigins:superfall",
+    "origins:fragile",
+    "origins:vegetarian",
+    "toomanyorigins:drenchable_fur",
+    "toomanyorigins:waterskipper",
+    "toomanyorigins:small_appetite",
+    "toomanyorigins:extra_step_height"
+  ],
+  "icon": "minecraft:rabbit_foot",
+  "order": 5,
+  "impact": 1
+}

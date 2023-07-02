@@ -120,6 +120,8 @@ dependencies {
     //Service
     compileOnly group:'com.google.auto.service', name:'auto-service', version:'1.0.1'
     annotationProcessor group:'com.google.auto.service', name:'auto-service', version:'1.0.1'
+    // Water Walking Fix
+    include(modImplementation("maven.modrinth:water-walking-fix:${wwf_version}"))
     //Relying on the Common Project for sure
     implementation project(path: ":Common", configuration: "namedElements")
     // AppleSkin
