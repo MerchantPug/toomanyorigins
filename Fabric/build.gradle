@@ -190,6 +190,9 @@ tasks.register('curseforge', TaskPublishCurseForge) {
     common_embedded_deps.split(", ").each {
         mainFile.addEmbedded(it)
     }
+    fabric_embedded_deps.split(", ").each {
+        mainFile.addEmbedded(it)
+    }
 }
 
 modrinth {
@@ -206,8 +209,10 @@ modrinth {
         fabric_required_deps.split(", ").each {
             required.project it
         }
-
         common_embedded_deps.split(", ").each {
+            embedded.project it
+        }
+        fabric_embedded_deps.split(", ").each {
             embedded.project it
         }
     }
