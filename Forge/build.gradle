@@ -46,6 +46,7 @@ repositories {
             includeGroup "maven.modrinth"
         }
     }
+    maven { url "https://maven.ryanliptak.com/" }
     mavenLocal()
 }
 
@@ -138,6 +139,8 @@ dependencies {
     annotationProcessor group:'com.google.auto.service', name:'auto-service', version:'1.0.1'
     //Relying on the Common Project for sure
     implementation project(":Common")
+    // AppleSkin
+    runtimeOnly("squeek.appleskin:appleskin-forge:mc1.19-${appleskin_forge_version}")
 }
 
 tasks.withType(JavaCompile) {
