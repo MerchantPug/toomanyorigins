@@ -42,9 +42,13 @@
   "jump_action": {
     "type": "toomanyorigins:action_on_jump",
     "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_resource",
-      "change": 1
+      "type": "apoli:side",
+      "chance": "server",
+      "action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_resource",
+        "change": 1
+      }
     },
     "condition": {
       "type": "origins:or",
@@ -154,6 +158,10 @@
               "resource": "*:*_cooldown",
               "comparison": "==",
               "compare_to": 0
+            },
+            {
+              "type": "origins:sprinting",
+              "inverted": true
             }
           ]
         },
@@ -173,6 +181,10 @@
     "condition": {
       "type": "origins:or",
       "conditions": [
+        {
+          "type": "origins:sprinting",
+          "inverted": true
+        },
         {
           "type": "origins:fluid_height",
           "fluid": "minecraft:water",

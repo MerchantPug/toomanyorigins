@@ -2,7 +2,7 @@
     "origin.toomanyorigins.dragonborn.name": "Dragonborn",
 
     "origin.toomanyorigins.hare.name": "Hare",
-    "origin.toomanyorigins.hare.description": "Bnuuy",
+    "origin.toomanyorigins.hare.description": "A race of well-travelled intelligent rabbits that hop at such a speed they can skip across water.",
 
     "origin.toomanyorigins.hisskin.name": "Hiss-kin",
     "origin.toomanyorigins.hisskin.description": "This distant relative of the creeper utilises its explosions as a get-away tactic.",
@@ -26,7 +26,7 @@
     "power.toomanyorigins.small_appetite.name": "Small Appetite",
     "power.toomanyorigins.small_appetite.description": "You exhaust slower than others, thus you are able to eat less.",
 
-    "subtitles.origin.hare.max_speed": "Hare reaches maximum speed",
+    "subtitles.origin.hare.max_speed": "Hare speeds up",
 
     "power.toomanyorigins.buildup.name": "Buildup",
     "power.toomanyorigins.buildup.description": "You are able to rocket jump away from any object you are looking at, you can use this whilst on cooldown, but it will harm you.",

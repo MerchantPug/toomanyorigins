@@ -3,7 +3,7 @@
   "modifier": {
     "attribute": "additionalentityattributes:water_speed",
     "operation": "multiply_total",
-    "value": -0.5,
+    "value": -0.4,
     "name": "Decreased swim speed"
   }
 }

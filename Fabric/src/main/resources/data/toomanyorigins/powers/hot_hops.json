@@ -1,0 +1,208 @@
+{
+  "type": "origins:multiple",
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 7,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",
+      "bar_index": 7,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_resource",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    },
+    "max_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:spawn_particles",
+          "particle": "minecraft:cloud",
+          "count": 8,
+          "speed": 0.4,
+          "offset_y": 0.0
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "toomanyorigins:origin.hare.max_speed"
+        }
+      ]
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 10,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+  "jump_action": {
+    "type": "toomanyorigins:action_on_jump",
+    "entity_action": {
+      "type": "apoli:side",
+      "side": "server",
+      "action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_resource",
+        "change": 1
+      }
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:sprinting"
+        },
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:fluid_height",
+              "fluid": "minecraft:water",
+              "comparison": ">",
+              "compare_to": 0.0
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:*_resource",
+              "comparison": "==",
+              "compare_to": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "air_speed": {
+    "type": "origins:modify_air_speed",
+    "modifier": {
+      "operation": "add_base_early",
+      "value": 0.00125,
+      "modifier": {
+        "name": "Bonus air speed from stored momentum",
+        "operation": "multiply_total_multiplicative",
+        "value": 0.0,
+        "resource": "*:*_resource"
+      }
+    }
+  },
+  "fov": {
+    "type": "toomanyorigins:modify_fov",
+    "modifier": {
+      "operation": "multiply_base_multiplicative",
+      "value": 0.025,
+      "modifier": {
+        "name": "Additional FOV from stored momentum",
+        "operation": "multiply_total_multiplicative",
+        "value": 0.0,
+        "resource": "*:*_resource"
+      }
+    },
+    "change_divisor": 1.25,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_resource",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
+  "extra_max_fov": {
+    "type": "toomanyorigins:modify_fov",
+    "modifier": {
+      "name": "Additional FOV from maximum momentum",
+      "operation": "multiply_total_multiplicative",
+      "value": 0.05
+    },
+    "change_divisor": 2,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_resource",
+      "comparison": "==",
+      "compare_to": 7
+    }
+  },
+  "reset": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:water",
+            "comparison": ">",
+            "compare_to": 0.4
+          },
+          {
+            "type": "toomanyorigins:grounded"
+          }
+        ]
+      },
+      "if_action": {
+        "type": "origins:if_else",
+        "condition": {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:fluid_height",
+              "fluid": "minecraft:water",
+              "comparison": ">",
+              "compare_to": 0.4
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:*_cooldown",
+              "comparison": "==",
+              "compare_to": 0
+            },
+            {
+              "type": "origins:sprinting",
+              "inverted": true
+            }
+          ]
+        },
+        "if_action": {
+          "type": "origins:change_resource",
+          "resource": "*:*_resource",
+          "change": 0,
+          "operation": "SET"
+        }
+      },
+      "else_action": {
+        "type": "origins:trigger_cooldown",
+        "power": "*:*_cooldown"
+      }
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:sprinting",
+          "inverted": true
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.4
+        },
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:resource",
+              "resource": "*:*_resource",
+              "comparison": ">",
+              "compare_to": 0
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
