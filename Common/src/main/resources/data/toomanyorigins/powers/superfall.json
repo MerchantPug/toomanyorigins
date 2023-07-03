@@ -70,7 +70,8 @@
       "value": -1.0
     },
     "condition": {
-      "type": "origins:sneaking"
+      "type": "origins:power_active",
+      "power": "*:*_fastfall"
     }
   }
 }

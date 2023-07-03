@@ -7,7 +7,8 @@
     "toomanyorigins:drenchable_fur",
     "toomanyorigins:waterskipper",
     "toomanyorigins:small_appetite",
-    "toomanyorigins:extra_step_height"
+    "toomanyorigins:extra_step_height",
+    "toomanyorigins:prevent_movement_checks"
   ],
   "icon": "minecraft:rabbit_foot",
   "order": 5,

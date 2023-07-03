@@ -203,5 +203,29 @@
         }
       ]
     }
+  },
+  "jump_action": {
+    "type": "toomanyorigins:action_on_jump",
+    "entity_action": {
+      "type": "origins:exhaust",
+      "amount": 4.0
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": "<=",
+          "compare_to": 0.4
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": ">",
+          "compare_to": 0.0
+        }
+      ]
+    }
   }
 }
