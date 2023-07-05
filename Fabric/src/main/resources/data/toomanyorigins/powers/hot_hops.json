@@ -179,28 +179,28 @@
     },
     "interval": 1,
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:sprinting",
-          "inverted": true
-        },
-        {
-          "type": "origins:fluid_height",
-          "fluid": "minecraft:water",
-          "comparison": ">",
-          "compare_to": 0.4
-        },
-        {
-          "type": "origins:and",
+          "type": "origins:or",
           "conditions": [
             {
-              "type": "origins:resource",
-              "resource": "*:*_resource",
+              "type": "origins:sprinting",
+              "inverted": true
+            },
+            {
+              "type": "origins:fluid_height",
+              "fluid": "minecraft:water",
               "comparison": ">",
-              "compare_to": 0
+              "compare_to": 0.4
             }
           ]
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_resource",
+          "comparison": ">",
+          "compare_to": 0
         }
       ]
     }
