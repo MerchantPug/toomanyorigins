@@ -1,13 +1,13 @@
 {
-    "powers": [
-        "toomanyorigins:buildup",
-        "toomanyorigins:aerial_stability",
-        "toomanyorigins:stubby_legs",
-        "toomanyorigins:conductive",
-        "toomanyorigins:ailurophobia",
-        "toomanyorigins:redirect_lightning_chance"
-    ],
-    "icon": "minecraft:gunpowder",
-    "order": 6,
-    "impact": 1
+  "powers": [
+    "toomanyorigins:buildup",
+    "toomanyorigins:aerial_stability",
+    "toomanyorigins:stubby_legs",
+    "toomanyorigins:conductive",
+    "toomanyorigins:ailurophobia",
+    "toomanyorigins:redirect_lightning_chance"
+  ],
+  "icon": "minecraft:gunpowder",
+  "order": 6,
+  "impact": 1
 }
