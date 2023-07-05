@@ -51,29 +51,7 @@
       }
     },
     "condition": {
-      "type": "origins:or",
-      "conditions": [
-        {
-          "type": "origins:sprinting"
-        },
-        {
-          "type": "origins:and",
-          "conditions": [
-            {
-              "type": "origins:fluid_height",
-              "fluid": "minecraft:water",
-              "comparison": ">",
-              "compare_to": 0.0
-            },
-            {
-              "type": "origins:resource",
-              "resource": "*:*_resource",
-              "comparison": "==",
-              "compare_to": 7
-            }
-          ]
-        }
-      ]
+      "type": "origins:sprinting"
     }
   },
   "air_speed": {
@@ -158,10 +136,6 @@
               "resource": "*:*_cooldown",
               "comparison": "==",
               "compare_to": 0
-            },
-            {
-              "type": "origins:sprinting",
-              "inverted": true
             }
           ]
         },
@@ -179,28 +153,77 @@
     },
     "interval": 1,
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:sprinting",
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:fluid_height",
+              "fluid": "minecraft:water",
+              "comparison": ">",
+              "compare_to": 0.4
+            }
+          ]
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_resource",
+          "comparison": ">",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "allow_sprinting": {
+    "type": "toomanyorigins:sprinting",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking",
           "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:hot_hops_resource",
+          "comparison": "==",
+          "compare_to": 7
         },
         {
           "type": "origins:fluid_height",
           "fluid": "minecraft:water",
           "comparison": ">",
-          "compare_to": 0.4
+          "compare_to": 0.0
         },
         {
-          "type": "origins:and",
+          "type": "origins:resource",
+          "resource": "*:*_disabled_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:or",
           "conditions": [
             {
-              "type": "origins:resource",
-              "resource": "*:*_resource",
+              "type": "origins:gamemode",
+              "gamemode": "creative"
+            },
+            {
+              "type": "origins:food_level",
               "comparison": ">",
-              "compare_to": 0
+              "compare_to": 6
             }
           ]
+        },
+        {
+          "type": "origins:using_item",
+          "inverted": true
+        },
+        {
+          "type": "origins:status_effect",
+          "effect": "minecraft:blindness",
+          "inverted": true
         }
       ]
     }
