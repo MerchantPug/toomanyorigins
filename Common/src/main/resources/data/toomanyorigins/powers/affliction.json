@@ -113,8 +113,7 @@
                                 "type": "origins:in_rain"
                               },
                               {
-                                "type": "origins:predicate",
-                                "predicate": "toomanyorigins:weather/is_thunderstorm",
+                                "type": "toomanyorigins:thundering",
                                 "inverted": true
                               }
                             ]
@@ -264,8 +263,7 @@
                                 "type": "origins:in_rain"
                               },
                               {
-                                "type": "origins:predicate",
-                                "predicate": "toomanyorigins:weather/is_thunderstorm",
+                                "type": "toomanyorigins:thundering",
                                 "inverted": true
                               }
                             ]
@@ -404,8 +402,7 @@
                                 "type": "origins:in_rain"
                               },
                               {
-                                "type": "origins:predicate",
-                                "predicate": "toomanyorigins:weather/is_thunderstorm",
+                                "type": "toomanyorigins:thundering",
                                 "inverted": true
                               }
                             ]
