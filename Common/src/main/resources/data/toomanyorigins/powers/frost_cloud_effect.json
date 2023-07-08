@@ -13,37 +13,96 @@
       "change": 1
     }
   },
-  "speed_modification": {
+  "speed_modification_mob": {
     "type": "origins:modify_attribute",
     "attribute": "minecraft:generic.movement_speed",
     "modifiers": [
       {
+        "name": "Reduced movement speed from frost cloud",
         "operation": "multiply_base_additive",
         "value": 0.0,
         "resource": "*:*_resource",
         "modifier": [
           {
             "operation": "multiply_base_multiplicative",
-            "value": -1.02
+            "value": -1.05
           }
         ]
+      },
+      {
+        "operation": "min_total",
+        "value": 0.0
       }
-    ]
+    ],
+    "condition": {
+      "type": "origins:entity_type",
+      "entity_type": "minecraft:player",
+      "inverted": true
+    }
   },
-  "air_speed_modification": {
+  "air_speed_modification_mob": {
     "type": "origins:modify_air_speed",
     "modifiers": [
       {
+        "name": "Reduced air speed from frost cloud",
         "operation": "multiply_base_additive",
         "value": 0.0,
         "resource": "*:*_resource",
         "modifier": [
           {
             "operation": "multiply_base_multiplicative",
-            "value": -1.02
+            "value": -1.05
           }
         ]
+      },
+      {
+        "operation": "min_total",
+        "value": 0.0
       }
-    ]
+    ],
+    "condition": {
+      "type": "origins:entity_type",
+      "entity_type": "minecraft:player",
+      "inverted": true
+    }
+  },
+  "speed_modification_player": {
+    "type": "origins:modify_attribute",
+    "attribute": "minecraft:generic.movement_speed",
+    "modifiers": {
+      "name": "Reduced movement speed from frost cloud",
+      "operation": "multiply_base_additive",
+      "value": 0.0,
+      "resource": "*:*_resource",
+      "modifier": [
+        {
+          "operation": "multiply_base_multiplicative",
+          "value": -1.02
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:entity_type",
+      "entity_type": "minecraft:player"
+    }
+  },
+  "air_speed_modification_player": {
+    "type": "origins:modify_air_speed",
+    "modifiers": {
+      "name": "Reduced air speed from frost cloud",
+      "operation": "multiply_base_additive",
+      "value": 0.0,
+      "resource": "*:*_resource",
+      "modifier": [
+        {
+          "operation": "multiply_base_multiplicative",
+          "value": -1.02
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:entity_type",
+      "entity_type": "minecraft:player"
+    }
   }
 }

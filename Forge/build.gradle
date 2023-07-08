@@ -140,7 +140,7 @@ dependencies {
     //Relying on the Common Project for sure
     implementation project(":Common")
     // AppleSkin
-    runtimeOnly("squeek.appleskin:appleskin-forge:mc1.19-${appleskin_forge_version}")
+    runtimeOnly(fg.deobf("squeek.appleskin:appleskin-forge:mc1.19-${appleskin_forge_version}"))
 }
 
 tasks.withType(JavaCompile) {

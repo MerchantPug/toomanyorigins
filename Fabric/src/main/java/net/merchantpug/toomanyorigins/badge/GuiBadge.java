@@ -11,13 +11,13 @@ import net.merchantpug.toomanyorigins.util.GuiBackground;
 import net.merchantpug.toomanyorigins.util.GuiContent;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.List;
 import java.util.function.Function;
 
 public record GuiBadge(SerializableData.Instance data) implements IGuiBadge<PowerType<?>> {
-
 
     @Override
     public GuiBackground getBackground() {
@@ -27,6 +27,16 @@ public record GuiBadge(SerializableData.Instance data) implements IGuiBadge<Powe
     @Override
     public List<List<GuiContent>> getContent() {
         return data.get("content");
+    }
+
+    @Override
+    public Component getPrefix() {
+        return data.get("prefix");
+    }
+
+    @Override
+    public Component getSuffix() {
+        return data.get("suffix");
     }
 
     @Override

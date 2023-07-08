@@ -7,8 +7,11 @@ import net.merchantpug.toomanyorigins.registry.TMOBadges;
 import net.merchantpug.toomanyorigins.util.GuiBackground;
 import net.merchantpug.toomanyorigins.util.GuiContent;
 import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.screens.inventory.tooltip.ClientTextTooltip;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.core.NonNullList;
+import net.minecraft.network.chat.Component;
+import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.util.Mth;
 
 import java.util.LinkedList;
@@ -21,11 +24,26 @@ public interface IGuiBadge<P> extends IBadge<P> {
         return true;
     }
 
+
+    static void addLines(List<ClientTooltipComponent> tooltips, Component text, Font textRenderer, int widthLimit) {
+        if(textRenderer.width(text) > widthLimit) {
+            for(FormattedCharSequence orderedText : textRenderer.split(text, widthLimit)) {
+                tooltips.add(new ClientTextTooltip(orderedText));
+            }
+        } else {
+            tooltips.add(new ClientTextTooltip(text.getVisualOrderText()));
+        }
+    }
+
     @Override
     default List<ClientTooltipComponent> generateTooltipComponents(P power, int widthLimit, float time, Font textRenderer) {
         List<ClientTooltipComponent> tooltips = new LinkedList<>();
         NonNullList<GuiContent> contentList = peekContent(time);
-        tooltips.add(new GuiTooltipComponent(getBackground(), contentList));
+        if (getPrefix() != null)
+            addLines(tooltips, getPrefix(), textRenderer, widthLimit);
+        tooltips.add(new GuiTooltipComponent(getBackground(), contentList, Mth.floor(time / 30)));
+        if (getSuffix() != null)
+            addLines(tooltips, getSuffix(), textRenderer, widthLimit);
         return tooltips;
     }
 
@@ -47,6 +65,8 @@ public interface IGuiBadge<P> extends IBadge<P> {
     @Override
     default SerializableData.Instance toData(SerializableData.Instance instance) {
         instance.set("sprite", spriteId());
+        instance.set("prefix", getPrefix());
+        instance.set("suffix", getSuffix());
         instance.set("background", getBackground());
         instance.set("content", getContent());
         return instance;
@@ -60,5 +80,9 @@ public interface IGuiBadge<P> extends IBadge<P> {
     GuiBackground getBackground();
 
     List<List<GuiContent>> getContent();
+
+    Component getPrefix();
+
+    Component getSuffix();
 
 }
