@@ -18,6 +18,7 @@ public class TooManyOrigins {
         TMOEffects.register();
         TMOEntityTypes.register();
         TMOItems.register();
+        TMOParticleTypes.register();
         TMOPowers.register();
         TMOSounds.register();
 

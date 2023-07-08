@@ -1,6 +1,9 @@
 ### Re-introduced Hare origin.
 The Hare origin is about traversing difficult terrain and mobility, with your trusty hops, no terrain will stop you, even water surfaces, just don't fall into the water...
 
+### Re-introduced Dragonborn origin.
+The Dragonborn origin has grown quite more potent during the events of TooManyOrigins Pre and TooManyOrigins One, now drawing from the elements for their breath. However, they may have let this get to their head a bit as they won't be using bows and the sort anymore.
+
 ### Swarm Changes
 - Beekeeper is no longer hidden.
 - Unity no longer has a cooldown between changing the amount of hearts that the player has.
@@ -23,17 +26,6 @@ The Hare origin is about traversing difficult terrain and mobility, with your tr
 - Updated Turkish translation. (Hexasan)
 - Removed all translations that have not been listed here. They have become obsolete as a result of this update.
 
-### Hare
-- Renamed `Bunny Hop` to `Hot Hops`.
-- `Hot Hops` now updates upon jumping instead of whilst in the air.
-- Lowered `Hot Hops`' resource to reach maximum after 6 jumps.
-- Removed `Moon Leap` and `Sugary Delicacy`.
-- Replaced `Lightweight` with base origins' `Fragile`.
-- Added `Waterskipper` power, which allows you to stand on the surface of water for a short time whilst at maximum hopping speed.
-- Added `Small Appetite` power, which makes you exhaust less.
-- Added `Drenchable Fur` power, which makes you unable to move as quickly whilst in water.
-- Hare now has step assist as a hidden power.
-
 ### Hiss-kin
 - Renamed `Overheat` to `Buildup`
 - `Buildup`'s self damage will only damage you if you use the power whilst it is on cooldown.
@@ -49,6 +41,34 @@ The Hare origin is about traversing difficult terrain and mobility, with your tr
 - Renamed `Conductor` to `Conductive`.
 - `Conductive` now gives you 8 minutes of the Charged status effect (previously 20).
 - Renamed `Sneaking Steps` to `Stubby Legs`, you are now 25% slower instead of 5% slower.
+
+### Hare
+- Renamed `Bunny Hop` to `Hot Hops`.
+- `Hot Hops` now updates upon jumping instead of whilst in the air.
+- Lowered `Hot Hops`' resource to reach maximum after 6 jumps.
+- Removed `Moon Leap` and `Sugary Delicacy`.
+- Replaced `Lightweight` with base origins' `Fragile`.
+- Added `Waterskipper` power, which allows you to stand on the surface of water for a short time whilst at maximum hopping speed.
+- Added `Small Appetite` power, which makes you exhaust less.
+- Added `Drenchable Fur` power, which makes you unable to move as quickly whilst in water.
+- Hare now has step assist as a hidden power.
+
+### Dragonborn
+- Overhauled `Draconic Breath` to have 3 different breath types. Fire, Frost and Thunder. These can swapped between by holding a respective item in your main/offhand and using the power.
+  - **Fire**
+    - No longer damages entities within the area effect cloud, it instead makes entities that aren't you inside the effect cloud receive more damage from sources.
+    - Removed `Wyrmsmith's Touch` power. It is now built into the Fire breath type projectile when it hits a lightable block.
+    - The above effect no longer affects Brewing Stands.
+    - A Dragonborn starts with this breath type but it is still able to be swapped to using Coal or Charcoal.
+  - **Frost**
+    - Frost gradually slows down entities within the area effect cloud.
+    - The projectile can freeze water surfaces, this is similar to the effects of Frost Walker.
+    - Can be swapped to with Snowballs.
+  - **Thunder**
+    - Thunder deals damage to entities inside the AoE that aren't you upon an entity in the AoE taking damage.
+    - The projectile can activate lightning rods or summon lightning on lightning rods if it is thundering.
+    - Can be swapped to with Copper Ingots.
+- Renamed `Zenith Dragonhide` to `Zenith Scales`, it now only reduces 20% of knockback dealt instead of complete immunity.
 
 ### Swarm
 - Changed to Impact 2.

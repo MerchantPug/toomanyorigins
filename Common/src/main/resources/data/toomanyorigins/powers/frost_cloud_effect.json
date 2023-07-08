@@ -1,0 +1,49 @@
+{
+  "type": "origins:multiple",
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 40
+  },
+  "tick": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_resource",
+      "change": 1
+    }
+  },
+  "speed_modification": {
+    "type": "origins:modify_attribute",
+    "attribute": "minecraft:generic.movement_speed",
+    "modifiers": [
+      {
+        "operation": "multiply_base_additive",
+        "value": 0.0,
+        "resource": "*:*_resource",
+        "modifier": [
+          {
+            "operation": "multiply_base_multiplicative",
+            "value": -1.02
+          }
+        ]
+      }
+    ]
+  },
+  "air_speed_modification": {
+    "type": "origins:modify_air_speed",
+    "modifiers": [
+      {
+        "operation": "multiply_base_additive",
+        "value": 0.0,
+        "resource": "*:*_resource",
+        "modifier": [
+          {
+            "operation": "multiply_base_multiplicative",
+            "value": -1.02
+          }
+        ]
+      }
+    ]
+  }
+}

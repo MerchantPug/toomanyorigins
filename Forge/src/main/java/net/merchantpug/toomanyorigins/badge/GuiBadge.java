@@ -6,6 +6,9 @@ import io.github.apace100.origins.badge.Badge;
 import io.github.edwinmindcraft.apoli.api.power.IActivePower;
 import io.github.edwinmindcraft.apoli.api.power.configuration.ConfiguredPower;
 import net.merchantpug.toomanyorigins.badge.factory.IDefinedKeybindBadgeFactory;
+import net.merchantpug.toomanyorigins.badge.factory.IGuiBadgeFactory;
+import net.merchantpug.toomanyorigins.util.GuiBackground;
+import net.merchantpug.toomanyorigins.util.GuiContent;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -13,22 +16,8 @@ import net.minecraft.resources.ResourceLocation;
 import java.util.List;
 import java.util.function.Function;
 
-public record DefinedKeybindBadge(SerializableData.Instance data) implements IDefinedKeybindBadge<ConfiguredPower<?, ?>> {
+public record GuiBadge(SerializableData.Instance data) implements IGuiBadge<ConfiguredPower<?, ?>> {
 
-    @Override
-    public String getText() {
-        return data.getString("text");
-    }
-
-    @Override
-    public String getKeyName() {
-        return ((IActivePower.Key)data.get("key")).key();
-    }
-
-    @Override
-    public <K> K getKey() {
-        return data.get("key");
-    }
 
     @Override
     public ResourceLocation spriteId() {
@@ -36,12 +25,23 @@ public record DefinedKeybindBadge(SerializableData.Instance data) implements IDe
     }
 
     @Override
-    public List<ClientTooltipComponent> getTooltipComponents(ConfiguredPower<?, ?> configuredPower, int i, float v, Font font) {
-        return IDefinedKeybindBadge.super.generateTooltipComponents(configuredPower, i, v, font);
+    public GuiBackground getBackground() {
+        return data.get("background");
     }
 
-    @AutoService(IDefinedKeybindBadgeFactory.class)
-    public static class Factory implements IDefinedKeybindBadgeFactory {
+    @Override
+    public List<List<GuiContent>> getContent() {
+        return data.get("content");
+    }
+
+    @Override
+    public List<ClientTooltipComponent> getTooltipComponents(ConfiguredPower<?, ?> configuredPower, int i, float v, Font font) {
+        return IGuiBadge.super.generateTooltipComponents(configuredPower, i, v, font);
+    }
+
+
+    @AutoService(IGuiBadgeFactory.class)
+    public static class Factory implements IGuiBadgeFactory {
 
         public Factory() {
 
@@ -49,8 +49,9 @@ public record DefinedKeybindBadge(SerializableData.Instance data) implements IDe
 
         @Override
         public Function<SerializableData.Instance, Badge> getFactoryCreator() {
-            return DefinedKeybindBadge::new;
+            return GuiBadge::new;
         }
 
     }
+
 }

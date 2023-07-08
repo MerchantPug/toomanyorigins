@@ -1,0 +1,31 @@
+{
+  "type": "origins:prevent_item_use",
+  "item_condition": {
+    "type": "origins:or",
+    "conditions": [
+      {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "toomanyorigins:projectile_based"
+        }
+      },
+      {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "toomanyorigins:enchantable_with_riptide"
+            }
+          },
+          {
+            "type": "origins:enchantment",
+            "enchantment": "minecraft:riptide",
+            "comparison": "==",
+            "compare_to": 0
+          }
+        ]
+      }
+    ]
+  }
+}
