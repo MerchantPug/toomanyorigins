@@ -9,13 +9,17 @@ The Dragonborn origin has grown quite more potent during the events of TooManyOr
 - Unity no longer has a cooldown between changing the amount of hearts that the player has.
 
 ### Dependencies
-- Updated Apugli to v2.5.0
+- Updated Apugli to v2.5.0.
 - Now includes Water Walking Fix.
+
+### Miscellaneous
+- Every Origins' order in the origins menu has been changed, TooManyOrigins' origins should now be found later but should always be together.
 
 # Full Changelog Compared to 0.x.x
 ### General
 - Reworked every origin. If you would like to have the old origins, you are able to use the legacy content built-in data pack.
 - Reworded many descriptions to open up more player interpretation.
+- Every Origins' order in the origins menu has been changed, TooManyOrigins' origins should now be found later but should always be together.
 
 ### Datapacking
 - Added built-in Legacy TooManyOrigins data pack.
@@ -54,9 +58,11 @@ The Dragonborn origin has grown quite more potent during the events of TooManyOr
 - Hare now has step assist as a hidden power.
 
 ### Dragonborn
+- Removed `Carnivore`, `Zenith Dragonhide`, and `Loose Scales` powers.
 - Overhauled `Draconic Breath` to have 3 different breath types. Fire, Frost and Thunder. These can swapped between by holding a respective item in your main/offhand and using the power.
   - **Fire**
     - No longer damages entities within the area effect cloud, it instead makes entities that aren't you inside the effect cloud receive more damage from sources.
+    - 
     - Removed `Wyrmsmith's Touch` power. It is now built into the Fire breath type projectile when it hits a lightable block.
     - The above effect no longer affects Brewing Stands.
     - A Dragonborn starts with this breath type but it is still able to be swapped to using Coal or Charcoal.
@@ -68,7 +74,10 @@ The Dragonborn origin has grown quite more potent during the events of TooManyOr
     - Thunder deals damage to entities inside the AoE that aren't you upon an entity in the AoE taking damage.
     - The projectile can activate lightning rods or summon lightning on lightning rods if it is thundering.
     - Can be swapped to with Copper Ingots.
-- Renamed `Zenith Dragonhide` to `Zenith Scales`, it now only reduces 20% of knockback dealt instead of complete immunity.
+- Renamed `Steady Stance` to `Zenith Scales`, it now only reduces 20% of knockback dealt instead of complete immunity.
+- Added `Block Synergistics`, which doesn't do anything other than have a description to explain that the projectile can interact with blocks.
+- Added `Weaponry Pride`, which makes you unable to use ranged weapons such as Bows, Crossbows, and Tridents that don't have Riptide, and Snowballs.
+- Added `Rough Claws`, which makes durability loss on tools more potent.
 
 ### Swarm
 - Changed to Impact 2.
