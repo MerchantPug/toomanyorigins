@@ -1,0 +1,9 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Zenith Scales knockback resistance increase",
+    "attribute": "minecraft:generic.knockback_resistance",
+    "value": 0.2,
+    "operation": "addition"
+  }
+}

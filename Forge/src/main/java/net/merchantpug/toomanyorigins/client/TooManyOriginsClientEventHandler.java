@@ -1,13 +1,16 @@
 package net.merchantpug.toomanyorigins.client;
 
 import net.merchantpug.toomanyorigins.TooManyOrigins;
+import net.merchantpug.toomanyorigins.client.particle.CustomDragonBreathParticle;
 import net.merchantpug.toomanyorigins.registry.TMOBlocks;
 import net.merchantpug.toomanyorigins.registry.TMOEntityTypes;
+import net.merchantpug.toomanyorigins.registry.TMOParticleTypes;
 import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -27,6 +30,11 @@ public class TooManyOriginsClientEventHandler {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(TMOEntityTypes.SMALL_DRAGON_FIREBALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(TMOEntityTypes.FIREBALL_AREA_EFFECT_CLOUD.get(), NoopRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerParticleProviders(RegisterParticleProvidersEvent event) {
+        event.register(TMOParticleTypes.CUSTOM_DRAGON_BREATH.get(), CustomDragonBreathParticle.Provider::new);
     }
 
 }

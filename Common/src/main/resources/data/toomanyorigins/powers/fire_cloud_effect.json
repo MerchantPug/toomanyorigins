@@ -1,0 +1,8 @@
+{
+  "type": "origins:modify_damage_taken",
+  "modifier": {
+    "name": "Extra damage taken from Dragonborn fire cloud",
+    "operation": "addition",
+    "value": 3.0
+  }
+}
