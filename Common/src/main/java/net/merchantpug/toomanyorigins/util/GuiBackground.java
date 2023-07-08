@@ -4,4 +4,4 @@ import net.minecraft.resources.ResourceLocation;
 
 import javax.annotation.Nullable;
 
-public record GuiBackground(ResourceLocation location, int u, int v, int textureWidth, int textureHeight) { }
+public record GuiBackground(ResourceLocation location, float uOffset, float vOffset, int uWidth, int vHeight) { }

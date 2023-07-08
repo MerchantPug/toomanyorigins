@@ -5,6 +5,8 @@ import io.github.apace100.calio.data.SerializableData;
 import io.github.apace100.calio.data.SerializableDataType;
 import io.github.apace100.calio.data.SerializableDataTypes;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.List;
@@ -13,56 +15,77 @@ public class TMODataTypes {
 
     public static final SerializableDataType<GuiBackground> GUI_BACKGROUND = SerializableDataType.compound(GuiBackground.class, new SerializableData()
                     .add("texture_location", SerializableDataTypes.IDENTIFIER)
-                    .add("u", SerializableDataTypes.INT, 0)
-                    .add("v", SerializableDataTypes.INT, 0)
-                    .add("texture_width", SerializableDataTypes.INT, -1)
-                    .add("texture_height", SerializableDataTypes.INT, -1),
+                    .add("u_offset", SerializableDataTypes.FLOAT, 0.0F)
+                    .add("v_offset", SerializableDataTypes.FLOAT, 0.0F)
+                    .add("u_width", SerializableDataTypes.INT, -1)
+                    .add("v_height", SerializableDataTypes.INT, -1),
             data -> new GuiBackground(data.getId("texture_location"),
-                    data.getInt("u"), data.getInt("v"),
-                    data.getInt("texture_width"), data.getInt("texture_height")),
+                    data.getFloat("u_offset"), data.getFloat("v_offset"),
+                    data.getInt("u_width"), data.getInt("v_height")),
             (data, background) -> {
                 SerializableData.Instance inst = data.new Instance();
                 inst.set("texture_location", background.location());
-                inst.set("u", background.u());
-                inst.set("v", background.v());
-                inst.set("texture_width", background.textureWidth());
-                inst.set("texture_height", background.textureHeight());
+                inst.set("u_offset", background.uOffset());
+                inst.set("v_offset", background.vOffset());
+                inst.set("u_width", background.uWidth());
+                inst.set("v_height", background.vHeight());
                 return inst;
             });
 
     public static final SerializableDataType<GuiContent> SINGLE_GUI_CONTENT = SerializableDataType.compound(GuiContent.class, new SerializableData()
                     .add("texture_location", SerializableDataTypes.IDENTIFIER, null)
                     .add("stack", SerializableDataTypes.ITEM_STACK, null)
+                    .add("item_tag", SerializableDataTypes.ITEM_TAG, null)
                     .add("x", SerializableDataTypes.INT, 0)
                     .add("y", SerializableDataTypes.INT, 0)
-                    .add("u", SerializableDataTypes.INT, 0)
-                    .add("v", SerializableDataTypes.INT, 0)
-                    .add("texture_width", SerializableDataTypes.INT, -1)
-                    .add("texture_height", SerializableDataTypes.INT, -1),
+                    .add("u_offset", SerializableDataTypes.FLOAT, 0.0F)
+                    .add("v_offset", SerializableDataTypes.FLOAT, 0.0F)
+                    .add("u_width", SerializableDataTypes.INT, -1)
+                    .add("v_height", SerializableDataTypes.INT, -1),
             data -> {
-                Either<ResourceLocation, ItemStack> either;
+                Either<ResourceLocation, Either<ItemStack, TagKey<Item>>> either;
                 if (data.isPresent("texture_location")) {
                     either = Either.left(data.getId("texture_location"));
                 } else if (data.isPresent("stack")) {
-                    either = Either.right(data.get("stack"));
+                    either = Either.right(Either.left(data.get("stack")));
+                } else if (data.isPresent("item_tag")) {
+                    either = Either.right(Either.right(data.get("item_tag")));
                 } else {
                     throw new NullPointerException("Gui Content data type requires either `texture_location` or `stack` field.");
                 }
                 return new GuiContent(either,
                         data.getInt("x"), data.getInt("y"),
-                        data.getInt("u"), data.getInt("v"),
-                        data.getInt("texture_width"), data.getInt("texture_height"));
+                        data.getFloat("u_offset"), data.getFloat("v_offset"),
+                        data.getInt("u_width"), data.getInt("v_height"));
             },
-            (data, texture) -> {
+            (data, content) -> {
                 SerializableData.Instance inst = data.new Instance();
-                inst.set("texture_location", texture.content().left().orElse(null));
-                inst.set("stack", texture.content().right().orElse(null));
-                inst.set("x", texture.x());
-                inst.set("y", texture.y());
-                inst.set("u", texture.u());
-                inst.set("v", texture.v());
-                inst.set("texture_width", texture.textureWidth());
-                inst.set("texture_height", texture.textureHeight());
+                if (content.content().left().isPresent()) {
+                    inst.set("texture_location", content.content().left().get());
+                } else {
+                    inst.set("texture_location", null);
+                }
+                if (content.content().right().isPresent()) {
+                    if (content.content().right().get().left().isPresent()) {
+                        inst.set("stack", content.content().right().get().left().get());
+                        inst.set("item_tag", null);
+                    } else if (content.content().right().get().right().isPresent()) {
+                        inst.set("item_tag", content.content().right().get().right().get());
+                        inst.set("stack", null);
+                    } else {
+                        inst.set("stack", null);
+                        inst.set("item_tag", null);
+                    }
+                } else {
+                    inst.set("stack", null);
+                    inst.set("item_tag", null);
+                }
+                inst.set("x", content.x());
+                inst.set("y", content.y());
+                inst.set("u_offset", content.uOffset());
+                inst.set("v_offset", content.vOffset());
+                inst.set("u_width", content.uWidth());
+                inst.set("v_height", content.vHeight());
                 return inst;
             });
 

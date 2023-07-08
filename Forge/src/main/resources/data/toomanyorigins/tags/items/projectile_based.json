@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:tools/bows",
+    "#forge:tools/crossbows",
+    "#forge:tools/tridents",
+    "minecraft:snowball"
+  ]
+}

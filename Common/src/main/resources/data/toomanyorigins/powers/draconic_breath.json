@@ -322,7 +322,8 @@
                       "type": "origins:if_else",
                       "condition": {
                         "type": "origins:gamemode",
-                        "gamemode": "creative"
+                        "gamemode": "creative",
+                        "inverted": true
                       },
                       "if_action": {
                         "type": "origins:equipped_item_action",
@@ -830,23 +831,40 @@
       "type": "toomanyorigins:gui",
       "sprite": "origins:textures/gui/badge/info.png",
       "background": {
-        "texture_location":"toomanyorigins:textures/gui/fireball_badge_gui.png"
+        "texture_location":"toomanyorigins:textures/gui/fireball_badge_gui.png",
+        "u_width": 68,
+        "v_height": 50
       },
       "content": [
         {
           "texture_location": "minecraft:textures/entity/enderdragon/dragon_fireball.png",
-          "x": 9,
-          "y": 9
+          "x": 8,
+          "y": 8
         },
         {
           "texture_location": "toomanyorigins:textures/entity/dragonborn_fireball_frost.png",
-          "x": 27,
-          "y": 9
+          "x": 26,
+          "y": 8
         },
         {
           "texture_location": "toomanyorigins:textures/entity/dragonborn_fireball_thunder.png",
-          "x": 45,
-          "y": 9
+          "x": 44,
+          "y": 8
+        },
+        {
+          "item_tag": "toomanyorigins:fireball_activators",
+          "x": 8,
+          "y": 26
+        },
+        {
+          "item_tag": "toomanyorigins:frostball_activators",
+          "x": 26,
+          "y": 26
+        },
+        {
+          "item_tag": "toomanyorigins:thunderball_activators",
+          "x": 44,
+          "y": 26
         }
       ]
     }
