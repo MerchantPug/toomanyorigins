@@ -686,7 +686,7 @@
 
                                   "type": "origins:block_action_at",
                                   "block_action": {
-                                    "type": "toomanyorigins:area_of_effect",
+                                    "type": "origins:area_of_effect",
                                     "radius": 4,
                                     "shape": "SPHERE",
                                     "block_action": {
