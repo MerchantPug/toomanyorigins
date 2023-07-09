@@ -49,7 +49,7 @@ The Dragonborn origin has grown quite more potent during the events of TooManyOr
 ### Hare
 - Renamed `Bunny Hop` to `Hot Hops`.
 - `Hot Hops` now updates upon jumping instead of whilst in the air.
-- Lowered `Hot Hops`' resource to reach maximum after 6 jumps.
+- Lowered `Hot Hops`' resource to reach maximum after 7 jumps.
 - Removed `Moon Leap` and `Sugary Delicacy`.
 - Replaced `Lightweight` with base origins' `Fragile`.
 - Added `Waterskipper` power, which allows you to stand on the surface of water for a short time whilst at maximum hopping speed.
