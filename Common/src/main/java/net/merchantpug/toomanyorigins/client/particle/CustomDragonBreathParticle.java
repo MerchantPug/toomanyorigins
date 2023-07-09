@@ -1,10 +1,10 @@
 package net.merchantpug.toomanyorigins.client.particle;
 
-import com.mojang.math.Vector3f;
 import net.merchantpug.toomanyorigins.content.particle.CustomDragonBreathParticleOptions;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.util.Mth;
+import org.joml.Vector3f;
 
 public class CustomDragonBreathParticle extends TextureSheetParticle {
    private boolean hasHitGround;

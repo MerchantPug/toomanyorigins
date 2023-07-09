@@ -5,14 +5,14 @@ import net.merchantpug.toomanyorigins.TooManyOrigins;
 import net.merchantpug.toomanyorigins.content.particle.CustomDragonBreathParticleOptions;
 import net.merchantpug.toomanyorigins.registry.services.RegistrationProvider;
 import net.merchantpug.toomanyorigins.registry.services.RegistryObject;
-import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.registries.BuiltInRegistries;
 
 import java.util.function.Function;
 
 public class TMOParticleTypes {
-    private static final RegistrationProvider<ParticleType<?>> PARTICLE_TYPES = RegistrationProvider.get(Registry.PARTICLE_TYPE, TooManyOrigins.MOD_ID);
+    private static final RegistrationProvider<ParticleType<?>> PARTICLE_TYPES = RegistrationProvider.get(BuiltInRegistries.PARTICLE_TYPE, TooManyOrigins.MOD_ID);
 
     public static final RegistryObject<ParticleType<CustomDragonBreathParticleOptions>> CUSTOM_DRAGON_BREATH = register("custom_dragon_breath", false, CustomDragonBreathParticleOptions.DESERIALIZER, (particleType) -> CustomDragonBreathParticleOptions.CODEC);
 
