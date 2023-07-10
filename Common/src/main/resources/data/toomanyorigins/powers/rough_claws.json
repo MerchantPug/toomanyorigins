@@ -1,9 +1,11 @@
 {
-  "type": "apugli:modify_durability_change",
-  "modifier": {
-    "operation": "add_base_early",
-    "value": -1
-  },
-  "comparison": "<",
-  "compare_to": 0
+  "type": "toomanyorigins:action_on_durability_change",
+  "decrease_action": {
+    "type": "origins:chance",
+    "action": {
+      "type": "toomanyorigins:damage",
+      "amount": 1
+    },
+    "chance": 0.4
+  }
 }

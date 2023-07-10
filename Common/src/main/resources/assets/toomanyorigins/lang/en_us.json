@@ -25,7 +25,7 @@
   "power.toomanyorigins.zenith_scales.name": "Zenith Scales",
   "power.toomanyorigins.zenith_scales.description": "You take reduced knockback when damaged.",
   "power.toomanyorigins.rough_claws.name": "Rough Claws",
-  "power.toomanyorigins.rough_claws.description": "Items use up more durability than usual.",
+  "power.toomanyorigins.rough_claws.description": "Items may use up more durability than usual.",
 
   "death.attack.dragonbornFireball": "%1$s was engulfed in elemental magic by %2$s",
   "death.attack.dragonbornFireball.item": "%1$s was engulfed in elemental magic by %2$s using %3$s",
