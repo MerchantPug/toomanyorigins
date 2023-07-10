@@ -1,7 +1,9 @@
 {
     "origin.toomanyorigins.dragonborn.name": "Dragonborn",
+    "origin.toomanyorigins.dragonborn.description": "Bu saygın yarı-ejderhalar, yılmaz güçlerine güç katmak için elementleri kullanır.",
 
     "origin.toomanyorigins.hare.name": "Hare",
+    "origin.toomanyorigins.hare.description": "Suyun üzerinde bile şıçrayabilecekleri hızla şıçrayan gezip görmüş zeki bir tavşan ırkı.",
 
     "origin.toomanyorigins.hisskin.name": "Hiss-kin",
     "origin.toomanyorigins.hisskin.description": "Creeper'ın akrabası olan Hiss-kin, patlamalarını kaçış amaçlı kullanır.",
@@ -14,20 +16,51 @@
     "origin.toomanyorigins.withered.name": "Withered",
     "origin.toomanyorigins.withered.description": "Atalarının Wither'ın kaotik gücünden yararlanması sonucu öldürdüklerinin yaşam enerjisini emerler.",
   
+    "power.toomanyorigins.draconic_breath.name": "Zalim Nefes",
+    "power.toomanyorigins.draconic_breath.description": "Bir elementsel nefes topu soluyabilirsin, nefesinin elementi belirli eşyalar tutarken değiştirilebilir.",
+    "power.toomanyorigins.block_synergistics.name": "Blok Sinerjileri",
+    "power.toomanyorigins.block_synergistics.description": "Belirli bloklar elementsel topun çarptığında farklı reaksiyon verebilirler.",
+    "power.toomanyorigins.weaponry_pride.name": "Gurur",
+    "power.toomanyorigins.weaponry_pride.description": "Gururun, seni herhangi bir menzilli silah kullanamaz hale getiriyor.",
+    "power.toomanyorigins.zenith_scales.name": "Ermiş Pullar",
+    "power.toomanyorigins.zenith_scales.description": "Hasar aldığında daha az savrulursun.",
+    "power.toomanyorigins.rough_claws.name": "Ayarsız Pençeler",
+    "power.toomanyorigins.rough_claws.description": "Aletlerin normale göre daha fazla dayanıklılık kullanabilir.",
+  
+    "death.attack.dragonbornFireball": "%1$s, %2$s tarafından elementsel büyüyle emildi",
+    "death.attack.dragonbornFireball.item": "%1$s, %3$s kullanan %2$s tarafından elementsel büyüyle emildi",
+
+    "death.attack.dragonbornShock": "%1$s şoku atlatamadı",
+    "death.attack.dragonbornShock.player": "%2$s'den kaçmaya çalışan %1$s şoku atlatamadı",
+    "death.attack.dragonbornShock.player.item": "%3$s kullanan %2$s'den kaçmaya çalışan %1$s şoku atlatamadı",
+  
+    "power.toomanyorigins.hot_hops.name": "Sekme",
+    "power.toomanyorigins.hot_hops.description": "Koşarken şıçraman ileri atılmanı sağlar, ileri atılma mesafen her şıçrayış ile artar.",
+    "power.toomanyorigins.superfall.name": "Süperfall",
+    "power.toomanyorigins.superfall.description": "Havada eğilerek daha hızlı düşebilirsin, böylece düşme hasarı almazsın.",
+    "power.toomanyorigins.drenchable_fur.name": "Islak Kürk",
+    "power.toomanyorigins.drenchable_fur.description": "Suya duyarlı bir canlı olarak, suda hızlı hareket edemezsin.",
+    "power.toomanyorigins.waterskipper.name": "Suda Sekme",
+    "power.toomanyorigins.waterskipper.description": "Maksimum sekme hızındayken kısa süreliğine suda durabilirsin.",
+    "power.toomanyorigins.small_appetite.name": "Küçük iştah",
+    "power.toomanyorigins.small_appetite.description": "Diğerlerinden yavaş yorulursun, yani daha az yemekle geçinebilirsin.",
+  
+    "subtitles.origin.hare.max_speed": "Hare hızlanıyor",
+  
     "power.toomanyorigins.buildup.name": "Salma",
-    "power.toomanyorigins.buildup.description": "Baktığın herhangi bir nesneden dışa doğru roket zıplayışı gerçekleştirebilirsin, bunu beklemeden kullanmak sana hasar verir.",  
+    "power.toomanyorigins.buildup.description": "Baktığın herhangi bir nesneden dışa doğru roket zıplayışı gerçekleştirebilirsin, bunu beklemeden kullanmak sana hasar verir.",
     "power.toomanyorigins.aerial_stability.name": "Hava Dengesi",
     "power.toomanyorigins.aerial_stability.description": "Aşağıya doğru hızın biraz azaltılmış.",
     "power.toomanyorigins.conductive.name": "İletken",
     "power.toomanyorigins.conductive.description": "Yıldırım tarafından çarpıldığında şarjlanırsın.",
     "power.toomanyorigins.stubby_legs.name": "Güdük Bacaklar",
-    "power.toomanyorigins.stubby_legs.description": "Kısa bacakların yüzünden ayakta daha yavaş yürürsün.",
+    "power.toomanyorigins.stubby_legs.description": "Kısa bacakların, ayakta daha yavaş yürümeni sağlar.",
   
     "effect.toomanyorigins.charged": "Şarjlı",
     "death.attack.buildup": "%1$s çok saldı",
     "death.attack.buildup.player": "%2$s'den kaçmaya çalışan %1$s çok saldı",
-    "death.attack.buildup.player.item": "%3$s kullanan  %2$s'den kaçmaya çalışan %1$s çok saldı",
-  
+    "death.attack.buildup.player.item": "%3$s kullanan %2$s'den kaçmaya çalışan %1$s çok saldı",
+
     "power.toomanyorigins.hover.name": "Süzül",
     "power.toomanyorigins.hover.description": "Düşeceğin zaman havada asılı kalabilirsin, bu şüreçte acıkırsın.",
     "power.toomanyorigins.pollination.name": "Polen Şaçma",
@@ -38,6 +71,8 @@
     "power.toomanyorigins.stinging_pains.description": "Düşman canlılara doğrudan hasar verdiğinde acıkırsın.",
     "power.toomanyorigins.unity.name": "Birlik",
     "power.toomanyorigins.unity.description": "Maksimum canın, açlık seviyene bağlı.",
+    "power.toomanyorigins.beekeeper.name": "Arıcı",
+    "power.toomanyorigins.beekeeper.description": "Kovanlarından alman arıları kızdırmaz.",
 
     "power.toomanyorigins.affliction.name": "Izdırap",
     "power.toomanyorigins.affliction.description": "Attığın oklar ve mızraklar canlılara Solma uygular.",
@@ -111,14 +146,14 @@
     "power.legacytoomanyorigins.conductor.description": "Olduğun yere yıldırım çarptığında şarjlı olursun ve güçlenirsin.",
     "power.legacytoomanyorigins.sneaking_steps.name": "Sinsi Adımlar",
     "power.legacytoomanyorigins.sneaking_steps.description": "Avına gizlice yaklaşmaya alıştığın için biraz daha yavaş hareket edersin.",
-    "power.legacytoomanyorigins.ailurophobia.name": "Ailurofobi",
+    "power.legacytoomanyorigins.ailurophobia.name": "Ailurofobi",   
     "power.legacytoomanyorigins.ailurophobia.description": "Kedilerin veya oseloların yanında olmak seni zayıflatır ve yavaşlatır.",
-
-    "origin.legacytoomanyorigins.swarm.description": "Kovan dışında yaşayan bu özgür arılar dış dünyanın engellerine karşı çıkabilmek için yapışık biçimde yaşamayı tercih eder.",
 
     "death.attack.overheat": "%1$s içini fitilledi",
     "death.attack.overheat.player": "%1$s, %2$s'den kaçmaya çalışırken içini fitilledi.",
     "death.attack.overheat.player.item": "%1$s, %3$s kullanan %2$s'den kaçmaya çalışırken içini fitilledi.",
+
+    "origin.legacytoomanyorigins.swarm.description": "Kovan dışında yaşayan bu özgür arılar dış dünyanın engellerine karşı çıkabilmek için yapışık biçimde yaşamayı tercih eder.",
 
     "power.legacytoomanyorigins.hover_toggle.name": "Süzül",
     "power.legacytoomanyorigins.hover_toggle.description": "Birçok arıdan yapılmış olman, havadayken süzülebilmeni sağlar.",
@@ -127,8 +162,7 @@
     "power.legacytoomanyorigins.smoke_exhaustion.description": "Dumana yakınken daha hızlı acıkırsın.",
     "power.legacytoomanyorigins.calming_aura.description": "Çiftleştirdiğin hayvanların tekrar çiftleşebilmesi için beklemene gerek yok.",
     "power.legacytoomanyorigins.expendable.name": "Zayıf",
-    "power.legacytoomanyorigins.expendable.description": "İnsanlardan 3 daha az kalbin var.",
-    "power.legacytoomanyorigins.beekeeper.name": "Arıcı",
+    "power.legacytoomanyorigins.expendable.description": "İnsanlardan 3 daha az kalbin var.",   
     "power.legacytoomanyorigins.beekeeper.description": "Kovanlarından bal yada bal peteği alman arıları kızgınlaştırmaz.",
 
     "origin.legacytoomanyorigins.undead.description": "Nadir bir genetik mutasyon bu ırka hastalığın etkilerinden acı çekmelerine rağmen insanlıklarını kaybetmemelerini sağlar.",
