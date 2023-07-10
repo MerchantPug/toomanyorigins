@@ -1,6 +1,6 @@
 {
   "type": "toomanyorigins:action_on_durability_change",
-  "decrease_action": {
+  "decrease_item_action": {
     "type": "origins:chance",
     "action": {
       "type": "toomanyorigins:damage",
