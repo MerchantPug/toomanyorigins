@@ -154,10 +154,18 @@
               "compare_to": 0.4
             },
             {
-              "type": "origins:resource",
-              "resource": "*:*_cooldown",
-              "comparison": "==",
-              "compare_to": 0
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_cooldown",
+                  "comparison": "==",
+                  "compare_to": 0
+                },
+                {
+                  "type": "toomanyorigins:grounded"
+                }
+              ]
             },
             {
               "type": "origins:sprinting",
@@ -193,6 +201,9 @@
               "fluid": "minecraft:water",
               "comparison": ">",
               "compare_to": 0.4
+            },
+            {
+              "type": "toomanyorigins:grounded"
             }
           ]
         },
