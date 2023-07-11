@@ -547,10 +547,10 @@
                 "bientity_action_on_miss": {
                   "type": "toomanyorigins:spawn_custom_effect_cloud",
                   "entity_id": "toomanyorigins:dragonborn_fireball_cloud",
-                  "radius": 1.4,
+                  "radius": 2.5,
                   "radius_on_use": 0.0,
                   "wait_time": 0,
-                  "radius_per_tick": 0.01,
+                  "radius_per_tick": -0.005,
                   "duration": 80,
                   "particle": "minecraft:dragon_breath",
                   "powers_to_apply": [
@@ -577,10 +577,10 @@
                     {
                       "type": "toomanyorigins:spawn_custom_effect_cloud",
                       "entity_id": "toomanyorigins:dragonborn_fireball_cloud",
-                      "radius": 1.4,
+                      "radius": 2.5,
                       "radius_on_use": 0.0,
                       "wait_time": 0,
-                      "radius_per_tick": 0.01,
+                      "radius_per_tick": -0.005,
                       "duration": 80,
                       "particle": "minecraft:dragon_breath",
                       "powers_to_apply": [
@@ -687,7 +687,7 @@
                                   "type": "origins:block_action_at",
                                   "block_action": {
                                     "type": "origins:area_of_effect",
-                                    "radius": 4,
+                                    "radius": 3,
                                     "shape": "SPHERE",
                                     "block_action": {
                                       "type": "origins:and",
@@ -698,8 +698,8 @@
                                         },
                                         {
                                           "type": "toomanyorigins:schedule_tick",
-                                          "min": 60,
-                                          "max": 120
+                                          "min": 20,
+                                          "max": 60
                                         },
                                         {
                                           "type": "origins:execute_command",
@@ -753,11 +753,11 @@
                     "bientity_action_on_miss": {
                       "type": "toomanyorigins:spawn_custom_effect_cloud",
                       "entity_id": "toomanyorigins:dragonborn_frostball_cloud",
-                      "radius": 1.4,
+                      "radius": 3.0,
                       "radius_on_use": 0.0,
                       "wait_time": 0,
-                      "radius_per_tick": 0.0075,
-                      "duration": 140,
+                      "radius_per_tick": -0.0025,
+                      "duration": 100,
                       "particle": {
                         "type": "toomanyorigins:custom_dragon_breath",
                         "params": "0.30196078431 0.16862745098 0.63529411764 1.0"
@@ -786,11 +786,11 @@
                         {
                           "type": "toomanyorigins:spawn_custom_effect_cloud",
                           "entity_id": "toomanyorigins:dragonborn_frostball_cloud",
-                          "radius": 1.4,
+                          "radius": 3.0,
                           "radius_on_use": 0.0,
                           "wait_time": 0,
-                          "radius_per_tick": 0.0075,
-                          "duration": 140,
+                          "radius_per_tick": -0.0025,
+                          "duration": 100,
                           "particle": {
                             "type": "toomanyorigins:custom_dragon_breath",
                             "params": "0.30196078431 0.16862745098 0.63529411764 1.0"
@@ -906,10 +906,10 @@
                     "bientity_action_on_miss": {
                       "type": "toomanyorigins:spawn_custom_effect_cloud",
                       "entity_id": "toomanyorigins:dragonborn_thunderball_cloud",
-                      "radius": 1.4,
+                      "radius": 3.0,
                       "radius_on_use": 0.0,
                       "wait_time": 0,
-                      "radius_per_tick": 0.02,
+                      "radius_per_tick": -0.0075,
                       "duration": 60,
                       "powers_to_apply": [
                         "toomanyorigins:thunder_cloud_effect"
@@ -939,10 +939,10 @@
                         {
                           "type": "toomanyorigins:spawn_custom_effect_cloud",
                           "entity_id": "toomanyorigins:dragonborn_thunderball_cloud",
-                          "radius": 1.4,
+                          "radius": 3.0,
                           "radius_on_use": 0.0,
                           "wait_time": 0,
-                          "radius_per_tick": 0.02,
+                          "radius_per_tick": -0.0075,
                           "duration": 60,
                           "powers_to_apply": [
                             "toomanyorigins:thunder_cloud_effect"
