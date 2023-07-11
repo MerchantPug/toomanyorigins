@@ -62,24 +62,24 @@ The Dragonborn origin has grown quite more potent during the events of TooManyOr
 - Overhauled `Draconic Breath` to have 3 different breath types. Fire, Frost and Thunder. These can swapped between by holding a respective item in your main/offhand and using the power.
   - **Fire**
     - No longer damages entities within the area effect cloud, it instead makes entities that aren't you inside the effect cloud receive more damage from sources.
-    - Fire Breath Cloud radius now starts at 1.4, lasts for 4 seconds, and ends at a radius of 2.2 (0.01 increase per tick).
+    - Fire Breath Cloud radius now starts at 2.5, lasts for 4 seconds, and decreases by 0.005 per tick.
     - Removed `Wyrmsmith's Touch` power. It is now built into the Fire breath type projectile when it hits a lightable block.
     - The above effect no longer affects Brewing Stands.
     - A Dragonborn starts with this breath type but it is still able to be swapped to using Coal or Charcoal.
   - **Frost**
     - Frost gradually slows down entities within the area effect cloud.
-    - Frost Breath Cloud radius starts at 1.4, lasts for 7 seconds, and ends at a radius of 2.45 (0.0075 increase per tick).
+    - Frost Breath Cloud radius starts at 3, lasts for 5 seconds, and decreases by 0.0025 per tick.
     - The projectile can freeze water surfaces, this is similar to the effects of Frost Walker.
     - Can be swapped to with Snowballs.
   - **Thunder**
     - Thunder deals damage to entities inside the AoE that aren't you upon an entity in the AoE taking damage.
-    - Thunder Breath Cloud radius starts at 1.4, lasts for 3 seconds, and ends at a radius of 2.6 (0.02 increase per tick).
+    - Thunder Breath Cloud radius starts at 3, lasts for 3 seconds, and decreases by 0.0075 per tick.
     - The projectile can activate lightning rods or summon lightning on lightning rods if it is thundering.
     - Can be swapped to with Copper Ingots.
 - Renamed `Steady Stance` to `Zenith Scales`, it now only reduces 20% of knockback dealt instead of complete immunity.
 - Added `Block Synergistics`, which doesn't do anything other than have a description to explain that the projectile can interact with blocks.
 - Added `Weaponry Pride`, which makes you unable to use ranged weapons such as Bows, Crossbows, and Tridents that don't have Riptide, and Snowballs.
-- Added `Rough Claws`, which makes durability loss on tools more potent.
+- Added `Rough Claws`, which may make an item lose 1 extra durability.
 
 ### Swarm
 - Changed to Impact 2.
