@@ -66,19 +66,30 @@
           "type": "origins:sprinting"
         },
         {
-          "type": "origins:and",
+          "type": "origins:or",
           "conditions": [
             {
               "type": "origins:fluid_height",
               "fluid": "minecraft:water",
-              "comparison": ">",
+              "comparison": "==",
               "compare_to": 0.0
             },
             {
-              "type": "origins:resource",
-              "resource": "*:*_resource",
-              "comparison": "==",
-              "compare_to": 7
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:fluid_height",
+                  "fluid": "minecraft:water",
+                  "comparison": ">",
+                  "compare_to": 0.0
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_resource",
+                  "comparison": "==",
+                  "compare_to": 7
+                }
+              ]
             }
           ]
         }
@@ -110,7 +121,7 @@
         "resource": "*:*_resource"
       }
     },
-    "change_divisor": 1.25,
+    "change_divisor": 8,
     "condition": {
       "type": "origins:resource",
       "resource": "*:*_resource",
@@ -125,7 +136,7 @@
       "operation": "multiply_total_multiplicative",
       "value": 0.05
     },
-    "change_divisor": 2,
+    "change_divisor": 1,
     "condition": {
       "type": "origins:resource",
       "resource": "*:*_resource",
