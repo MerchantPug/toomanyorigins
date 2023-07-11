@@ -9,10 +9,8 @@
         "type": "origins:target_action",
         "action": {
           "type": "origins:damage",
-          "source": {
-            "name": "dragonbornShock"
-          },
-          "amount": 2
+          "damage_type": "toomanyorigins:dragonborn_shock",
+          "amount": 4
         }
       },
       "bientity_condition": {
