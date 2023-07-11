@@ -38,6 +38,608 @@
     },
     "cooldown": 60
   },
+  "swap": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:equipped_item",
+                "equipment_slot": "MAINHAND",
+                "item_condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "toomanyorigins:on_cooldown",
+                      "inverted": true
+                    },
+                    {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "tag": "toomanyorigins:fireball_activators"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_resource",
+                "comparison": "!=",
+                "compare_to": 1
+              }
+            ]
+          },
+          {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:equipped_item",
+                "equipment_slot": "MAINHAND",
+                "item_condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "toomanyorigins:on_cooldown",
+                      "inverted": true
+                    },
+                    {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "tag": "toomanyorigins:frostball_activators"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_resource",
+                "comparison": "!=",
+                "compare_to": 2
+              }
+            ]
+          },
+          {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:equipped_item",
+                "equipment_slot": "MAINHAND",
+                "item_condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "toomanyorigins:on_cooldown",
+                      "inverted": true
+                    },
+                    {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "tag": "toomanyorigins:thunderball_activators"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_resource",
+                "comparison": "!=",
+                "compare_to": 3
+              }
+            ]
+          }
+        ]
+      },
+      "if_action": {
+        "type": "origins:if_else",
+        "condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:equipped_item",
+              "equipment_slot": "MAINHAND",
+              "item_condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "toomanyorigins:on_cooldown",
+                    "inverted": true
+                  },
+                  {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                      "tag": "toomanyorigins:fireball_activators"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:*_resource",
+              "comparison": "!=",
+              "compare_to": 1
+            }
+          ]
+        },
+        "if_action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:change_resource",
+              "resource": "*:*_resource",
+              "change": 1,
+              "operation": "SET"
+            },
+            {
+              "type": "origins:if_else",
+              "condition": {
+                "type": "origins:gamemode",
+                "gamemode": "creative",
+                "inverted": true
+              },
+              "if_action": {
+                "type": "origins:equipped_item_action",
+                "equipment_slot": "MAINHAND",
+                "action": {
+                  "type": "origins:consume",
+                  "amount": 1
+                }
+              }
+            },
+            {
+              "type": "toomanyorigins:item_cooldown",
+              "item_tags": [
+                "toomanyorigins:fireball_activators",
+                "toomanyorigins:frostball_activators",
+                "toomanyorigins:thunderball_activators"
+              ]
+            }
+          ]
+        },
+        "else_action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:equipped_item",
+                "equipment_slot": "MAINHAND",
+                "item_condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "toomanyorigins:on_cooldown",
+                      "inverted": true
+                    },
+                    {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "tag": "toomanyorigins:frostball_activators"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_resource",
+                "comparison": "!=",
+                "compare_to": 2
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 2,
+                "operation": "SET"
+              },
+              {
+                "type": "origins:if_else",
+                "condition": {
+                  "type": "origins:gamemode",
+                  "gamemode": "creative",
+                  "inverted": true
+                },
+                "if_action": {
+                  "type": "origins:equipped_item_action",
+                  "equipment_slot": "MAINHAND",
+                  "action": {
+                    "type": "origins:consume",
+                    "amount": 1
+                  }
+                }
+              },
+              {
+                "type": "toomanyorigins:item_cooldown",
+                "item_tags": [
+                  "toomanyorigins:fireball_activators",
+                  "toomanyorigins:frostball_activators",
+                  "toomanyorigins:thunderball_activators"
+                ]
+              }
+            ]
+          },
+          "else_action": {
+            "type": "origins:if_else",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:equipped_item",
+                  "equipment_slot": "MAINHAND",
+                  "item_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "toomanyorigins:on_cooldown",
+                        "inverted": true
+                      },
+                      {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                          "tag": "toomanyorigins:thunderball_activators"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_resource",
+                  "comparison": "!=",
+                  "compare_to": 3
+                }
+              ]
+            },
+            "if_action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:change_resource",
+                  "resource": "*:*_resource",
+                  "change": 3,
+                  "operation": "SET"
+                },
+                {
+                  "type": "origins:if_else",
+                  "condition": {
+                    "type": "origins:gamemode",
+                    "gamemode": "creative",
+                    "inverted": true
+                  },
+                  "if_action": {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "MAINHAND",
+                    "action": {
+                      "type": "origins:consume",
+                      "amount": 1
+                    }
+                  }
+                },
+                {
+                  "type": "toomanyorigins:item_cooldown",
+                  "item_tags": [
+                    "toomanyorigins:fireball_activators",
+                    "toomanyorigins:frostball_activators",
+                    "toomanyorigins:thunderball_activators"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "else_action": {
+        "type": "origins:if_else",
+        "condition": {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:equipped_item",
+                  "equipment_slot": "OFFHAND",
+                  "item_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "toomanyorigins:on_cooldown",
+                        "inverted": true
+                      },
+                      {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                          "tag": "toomanyorigins:fireball_activators"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_resource",
+                  "comparison": "!=",
+                  "compare_to": 1
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:equipped_item",
+                  "equipment_slot": "OFFHAND",
+                  "item_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "toomanyorigins:on_cooldown",
+                        "inverted": true
+                      },
+                      {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                          "tag": "toomanyorigins:frostball_activators"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_resource",
+                  "comparison": "!=",
+                  "compare_to": 2
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:equipped_item",
+                  "equipment_slot": "OFFHAND",
+                  "item_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "toomanyorigins:on_cooldown",
+                        "inverted": true
+                      },
+                      {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                          "tag": "toomanyorigins:thunderball_activators"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_resource",
+                  "comparison": "!=",
+                  "compare_to": 3
+                }
+              ]
+            }
+          ]
+        },
+        "if_action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:equipped_item",
+                "equipment_slot": "OFFHAND",
+                "item_condition": {
+                  "type": "origins:ingredient",
+                  "ingredient": {
+                    "tag": "toomanyorigins:fireball_activators"
+                  }
+                }
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_resource",
+                "comparison": "!=",
+                "compare_to": 1
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1,
+                "operation": "SET"
+              },
+              {
+                "type": "origins:if_else",
+                "condition": {
+                  "type": "origins:gamemode",
+                  "gamemode": "creative",
+                  "inverted": true
+                },
+                "if_action": {
+                  "type": "origins:equipped_item_action",
+                  "equipment_slot": "OFFHAND",
+                  "action": {
+                    "type": "origins:consume",
+                    "amount": 1
+                  }
+                }
+              },
+              {
+                "type": "toomanyorigins:item_cooldown",
+                "item_tags": [
+                  "toomanyorigins:fireball_activators",
+                  "toomanyorigins:frostball_activators",
+                  "toomanyorigins:thunderball_activators"
+                ]
+              }
+            ]
+          },
+          "else_action": {
+            "type": "origins:if_else",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:equipped_item",
+                  "equipment_slot": "MAINHAND",
+                  "item_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "toomanyorigins:on_cooldown",
+                        "inverted": true
+                      },
+                      {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                          "tag": "toomanyorigins:frostball_activators"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_resource",
+                  "comparison": "!=",
+                  "compare_to": 2
+                }
+              ]
+            },
+            "if_action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:change_resource",
+                  "resource": "*:*_resource",
+                  "change": 2,
+                  "operation": "SET"
+                },
+                {
+                  "type": "origins:if_else",
+                  "condition": {
+                    "type": "origins:gamemode",
+                    "gamemode": "creative",
+                    "inverted": true
+                  },
+                  "if_action": {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "OFFHAND",
+                    "action": {
+                      "type": "origins:consume",
+                      "amount": 1
+                    }
+                  }
+                },
+                {
+                  "type": "toomanyorigins:item_cooldown",
+                  "item_tags": [
+                    "toomanyorigins:fireball_activators",
+                    "toomanyorigins:frostball_activators",
+                    "toomanyorigins:thunderball_activators"
+                  ]
+                }
+              ]
+            },
+            "else_action": {
+              "type": "origins:if_else",
+              "condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "OFFHAND",
+                    "item_condition": {
+                      "type": "origins:and",
+                      "conditions": [
+                        {
+                          "type": "toomanyorigins:on_cooldown",
+                          "inverted": true
+                        },
+                        {
+                          "type": "origins:ingredient",
+                          "ingredient": {
+                            "tag": "toomanyorigins:thunderball_activators"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "origins:resource",
+                    "resource": "*:*_resource",
+                    "comparison": "!=",
+                    "compare_to": 3
+                  }
+                ]
+              },
+              "if_action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": 3,
+                    "operation": "SET"
+                  },
+                  {
+                    "type": "origins:if_else",
+                    "condition": {
+                      "type": "origins:gamemode",
+                      "gamemode": "creative",
+                      "inverted": true
+                    },
+                    "if_action": {
+                      "type": "origins:equipped_item_action",
+                      "equipment_slot": "OFFHAND",
+                      "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                      }
+                    }
+                  },
+                  {
+                    "type": "toomanyorigins:item_cooldown",
+                    "item_tags": [
+                      "toomanyorigins:fireball_activators",
+                      "toomanyorigins:frostball_activators",
+                      "toomanyorigins:thunderball_activators"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "cooldown": 1,
+    "key": {
+      "key": "key.use"
+    }
+  },
   "fireball": {
     "type": "origins:active_self",
     "hud_render": {
@@ -56,452 +658,12 @@
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:if_else",
-          "condition": {
-            "type": "origins:or",
-            "conditions": [
-              {
-                "type": "origins:and",
-                "conditions": [
-                  {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "MAINHAND",
-                    "item_condition": {
-                      "type": "origins:ingredient",
-                      "ingredient": {
-                        "tag": "toomanyorigins:fireball_activators"
-                      }
-                    }
-                  },
-                  {
-                    "type": "origins:resource",
-                    "resource": "*:*_resource",
-                    "comparison": "!=",
-                    "compare_to": 1
-                  }
-                ]
-              },
-              {
-                "type": "origins:and",
-                "conditions": [
-                  {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "MAINHAND",
-                    "item_condition": {
-                      "type": "origins:ingredient",
-                      "ingredient": {
-                        "tag": "toomanyorigins:frostball_activators"
-                      }
-                    }
-                  },
-                  {
-                    "type": "origins:resource",
-                    "resource": "*:*_resource",
-                    "comparison": "!=",
-                    "compare_to": 2
-                  }
-                ]
-              },
-              {
-                "type": "origins:and",
-                "conditions": [
-                  {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "MAINHAND",
-                    "item_condition": {
-                      "type": "origins:ingredient",
-                      "ingredient": {
-                        "tag": "toomanyorigins:thunderball_activators"
-                      }
-                    }
-                  },
-                  {
-                    "type": "origins:resource",
-                    "resource": "*:*_resource",
-                    "comparison": "!=",
-                    "compare_to": 3
-                  }
-                ]
-              }
-            ]
-          },
-          "if_action": {
-            "type": "origins:if_else",
-            "condition": {
-              "type": "origins:and",
-              "conditions": [
-                {
-                  "type": "origins:equipped_item",
-                  "equipment_slot": "MAINHAND",
-                  "item_condition": {
-                    "type": "origins:ingredient",
-                    "ingredient": {
-                      "tag": "toomanyorigins:fireball_activators"
-                    }
-                  }
-                },
-                {
-                  "type": "origins:resource",
-                  "resource": "*:*_resource",
-                  "comparison": "!=",
-                  "compare_to": 1
-                }
-              ]
-            },
-            "if_action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:change_resource",
-                  "resource": "*:*_resource",
-                  "change": 1,
-                  "operation": "SET"
-                },
-                {
-                  "type": "origins:if_else",
-                  "condition": {
-                    "type": "origins:gamemode",
-                    "gamemode": "creative",
-                    "inverted": true
-                  },
-                  "if_action": {
-                    "type": "origins:equipped_item_action",
-                    "equipment_slot": "MAINHAND",
-                    "action": {
-                      "type": "origins:consume",
-                      "amount": 1
-                    }
-                  }
-                }
-              ]
-            },
-            "else_action": {
-              "type": "origins:if_else",
-              "condition": {
-                "type": "origins:and",
-                "conditions": [
-                  {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "MAINHAND",
-                    "item_condition": {
-                      "type": "origins:ingredient",
-                      "ingredient": {
-                        "tag": "toomanyorigins:frostball_activators"
-                      }
-                    }
-                  },
-                  {
-                    "type": "origins:resource",
-                    "resource": "*:*_resource",
-                    "comparison": "!=",
-                    "compare_to": 2
-                  }
-                ]
-              },
-              "if_action": {
-                "type": "origins:and",
-                "actions": [
-                  {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_resource",
-                    "change": 2,
-                    "operation": "SET"
-                  },
-                  {
-                    "type": "origins:if_else",
-                    "condition": {
-                      "type": "origins:gamemode",
-                      "gamemode": "creative",
-                      "inverted": true
-                    },
-                    "if_action": {
-                      "type": "origins:equipped_item_action",
-                      "equipment_slot": "MAINHAND",
-                      "action": {
-                        "type": "origins:consume",
-                        "amount": 1
-                      }
-                    }
-                  }
-                ]
-              },
-              "else_action": {
-                "type": "origins:if_else",
-                "condition": {
-                  "type": "origins:and",
-                  "conditions": [
-                    {
-                      "type": "origins:equipped_item",
-                      "equipment_slot": "MAINHAND",
-                      "item_condition": {
-                        "type": "origins:ingredient",
-                        "ingredient": {
-                          "tag": "toomanyorigins:thunderball_activators"
-                        }
-                      }
-                    },
-                    {
-                      "type": "origins:resource",
-                      "resource": "*:*_resource",
-                      "comparison": "!=",
-                      "compare_to": 3
-                    }
-                  ]
-                },
-                "if_action": {
-                  "type": "origins:and",
-                  "actions": [
-                    {
-                      "type": "origins:change_resource",
-                      "resource": "*:*_resource",
-                      "change": 3,
-                      "operation": "SET"
-                    },
-                    {
-                      "type": "origins:if_else",
-                      "condition": {
-                        "type": "origins:gamemode",
-                        "gamemode": "creative",
-                        "inverted": true
-                      },
-                      "if_action": {
-                        "type": "origins:equipped_item_action",
-                        "equipment_slot": "MAINHAND",
-                        "action": {
-                          "type": "origins:consume",
-                          "amount": 1
-                        }
-                      }
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "else_action": {
-            "type": "origins:if_else",
-            "condition": {
-              "type": "origins:or",
-              "conditions": [
-                {
-                  "type": "origins:and",
-                  "conditions": [
-                    {
-                      "type": "origins:equipped_item",
-                      "equipment_slot": "OFFHAND",
-                      "item_condition": {
-                        "type": "origins:ingredient",
-                        "ingredient": {
-                          "tag": "toomanyorigins:fireball_activators"
-                        }
-                      }
-                    },
-                    {
-                      "type": "origins:resource",
-                      "resource": "*:*_resource",
-                      "comparison": "!=",
-                      "compare_to": 1
-                    }
-                  ]
-                },
-                {
-                  "type": "origins:and",
-                  "conditions": [
-                    {
-                      "type": "origins:equipped_item",
-                      "equipment_slot": "OFFHAND",
-                      "item_condition": {
-                        "type": "origins:ingredient",
-                        "ingredient": {
-                          "tag": "toomanyorigins:frostball_activators"
-                        }
-                      }
-                    },
-                    {
-                      "type": "origins:resource",
-                      "resource": "*:*_resource",
-                      "comparison": "!=",
-                      "compare_to": 2
-                    }
-                  ]
-                },
-                {
-                  "type": "origins:and",
-                  "conditions": [
-                    {
-                      "type": "origins:equipped_item",
-                      "equipment_slot": "OFFHAND",
-                      "item_condition": {
-                        "type": "origins:ingredient",
-                        "ingredient": {
-                          "tag": "toomanyorigins:thunderball_activators"
-                        }
-                      }
-                    },
-                    {
-                      "type": "origins:resource",
-                      "resource": "*:*_resource",
-                      "comparison": "!=",
-                      "compare_to": 3
-                    }
-                  ]
-                }
-              ]
-            },
-            "if_action": {
-              "type": "origins:if_else",
-              "condition": {
-                "type": "origins:and",
-                "conditions": [
-                  {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "OFFHAND",
-                    "item_condition": {
-                      "type": "origins:ingredient",
-                      "ingredient": {
-                        "tag": "toomanyorigins:fireball_activators"
-                      }
-                    }
-                  },
-                  {
-                    "type": "origins:resource",
-                    "resource": "*:*_resource",
-                    "comparison": "!=",
-                    "compare_to": 1
-                  }
-                ]
-              },
-              "if_action": {
-                "type": "origins:and",
-                "actions": [
-                  {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_resource",
-                    "change": 1,
-                    "operation": "SET"
-                  },
-                  {
-                    "type": "origins:if_else",
-                    "condition": {
-                      "type": "origins:gamemode",
-                      "gamemode": "creative",
-                      "inverted": true
-                    },
-                    "if_action": {
-                      "type": "origins:equipped_item_action",
-                      "equipment_slot": "OFFHAND",
-                      "action": {
-                        "type": "origins:consume",
-                        "amount": 1
-                      }
-                    }
-                  }
-                ]
-              },
-              "else_action": {
-                "type": "origins:if_else",
-                "condition": {
-                  "type": "origins:and",
-                  "conditions": [
-                    {
-                      "type": "origins:equipped_item",
-                      "equipment_slot": "MAINHAND",
-                      "item_condition": {
-                        "type": "origins:ingredient",
-                        "ingredient": {
-                          "tag": "toomanyorigins:frostball_activators"
-                        }
-                      }
-                    },
-                    {
-                      "type": "origins:resource",
-                      "resource": "*:*_resource",
-                      "comparison": "!=",
-                      "compare_to": 2
-                    }
-                  ]
-                },
-                "if_action": {
-                  "type": "origins:and",
-                  "actions": [
-                    {
-                      "type": "origins:change_resource",
-                      "resource": "*:*_resource",
-                      "change": 2,
-                      "operation": "SET"
-                    },
-                    {
-                      "type": "origins:if_else",
-                      "condition": {
-                        "type": "origins:gamemode",
-                        "gamemode": "creative",
-                        "inverted": true
-                      },
-                      "if_action": {
-                        "type": "origins:equipped_item_action",
-                        "equipment_slot": "OFFHAND",
-                        "action": {
-                          "type": "origins:consume",
-                          "amount": 1
-                        }
-                      }
-                    }
-                  ]
-                },
-                "else_action": {
-                  "type": "origins:if_else",
-                  "condition": {
-                    "type": "origins:and",
-                    "conditions": [
-                      {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "OFFHAND",
-                        "item_condition": {
-                          "type": "origins:ingredient",
-                          "ingredient": {
-                            "tag": "toomanyorigins:thunderball_activators"
-                          }
-                        }
-                      },
-                      {
-                        "type": "origins:resource",
-                        "resource": "*:*_resource",
-                        "comparison": "!=",
-                        "compare_to": 3
-                      }
-                    ]
-                  },
-                  "if_action": {
-                    "type": "origins:and",
-                    "actions": [
-                      {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_resource",
-                        "change": 3,
-                        "operation": "SET"
-                      },
-                      {
-                        "type": "origins:if_else",
-                        "condition": {
-                          "type": "origins:gamemode",
-                          "gamemode": "creative",
-                          "inverted": true
-                        },
-                        "if_action": {
-                          "type": "origins:equipped_item_action",
-                          "equipment_slot": "OFFHAND",
-                          "action": {
-                            "type": "origins:consume",
-                            "amount": 1
-                          }
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          }
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_frost_cooldown"
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_thunder_cooldown"
         },
         {
           "type": "origins:if_else_list",
@@ -569,9 +731,7 @@
                   "actions": [
                     {
                       "type": "origins:damage",
-                      "source": {
-                        "name": "dragonbornFireball"
-                      },
+                      "damage_type": "toomanyorigins:dragonborn_fireball",
                       "amount": 6
                     },
                     {
@@ -614,143 +774,167 @@
                 "compare_to": 2
               },
               "action": {
-                "type": "origins:and",
-                "actions": [
-                  {
-                    "type": "origins:trigger_cooldown",
-                    "power": "*:*_frost_cooldown"
-                  },
-                  {
-                    "type": "toomanyorigins:custom_projectile",
-                    "entity_id": "toomanyorigins:dragonborn_frostball",
-                    "texture_location": "toomanyorigins:textures/entity/dragonborn_fireball_frost.png",
-                    "speed": 0.8,
-                    "sound": "minecraft:entity.ender_dragon.shoot",
-                    "tick_bientity_action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:and",
-                        "actions": [
-                          {
-                            "type": "origins:spawn_particles",
-                            "particle": {
-                              "type": "toomanyorigins:custom_dragon_breath",
-                              "params": "0.30196078431 0.16862745098 0.63529411764 1.0"
-                            },
-                            "count": 1,
-                            "speed": 0.1,
-                            "spread": {
-                              "x": 0.25,
-                              "y": 0.0,
-                              "z": 0.25
-                            }
-                          },
-                          {
-                            "type": "origins:if_else",
-                            "condition": {
-                              "type": "origins:in_block_anywhere",
-                              "block_condition": {
-                                "type": "origins:and",
-                                "conditions": [
-                                  {
-                                    "type": "origins:offset",
-                                    "condition": {
-                                      "type": "toomanyorigins:air"
-                                    },
-                                    "y": 1
-                                  },
-                                  {
-                                    "type": "origins:fluid",
-                                    "fluid_condition": {
-                                      "type": "origins:and",
-                                      "conditions": [
-                                        {
-                                          "type": "origins:still"
-                                        },
-                                        {
-                                          "type": "origins:in_tag",
-                                          "tag": "minecraft:water"
-                                        }
-                                      ]
-                                    }
-                                  }
-                                ]
-                              },
-                              "comparison": ">",
-                              "compare_to": 0
-                            },
-                            "if_action": {
-                              "type": "origins:and",
-                              "actions": [
-                                {
-
-                                  "type": "origins:block_action_at",
-                                  "block_action": {
-                                    "type": "origins:area_of_effect",
-                                    "radius": 3,
-                                    "shape": "SPHERE",
-                                    "block_action": {
-                                      "type": "origins:and",
-                                      "actions": [
-                                        {
-                                          "type": "origins:set_block",
-                                          "block": "minecraft:frosted_ice"
-                                        },
-                                        {
-                                          "type": "toomanyorigins:schedule_tick",
-                                          "min": 20,
-                                          "max": 60
-                                        },
-                                        {
-                                          "type": "origins:execute_command",
-                                          "command": "particle toomanyorigins:custom_dragon_breath 0.30196078431 0.16862745098 0.63529411764 ~ ~ ~ 0.005 0.005 0.005 0.05 15"
-                                        }
-                                      ]
-                                    },
-                                    "block_condition": {
-                                      "type": "origins:and",
-                                      "conditions": [
-                                        {
-                                          "type": "origins:offset",
-                                          "condition": {
-                                            "type": "toomanyorigins:air"
-                                          },
-                                          "y": 1
-                                        },
-                                        {
-                                          "type": "origins:water_loggable",
-                                          "inverted": true
-                                        },
-                                        {
-                                          "type": "origins:fluid",
-                                          "fluid_condition": {
-                                            "type": "origins:and",
-                                            "conditions": [
-                                              {
-                                                "type": "origins:still"
-                                              },
-                                              {
-                                                "type": "origins:in_tag",
-                                                "tag": "minecraft:water"
-                                              }
-                                            ]
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  }
+                "type": "toomanyorigins:custom_projectile",
+                "entity_id": "toomanyorigins:dragonborn_frostball",
+                "texture_location": "toomanyorigins:textures/entity/dragonborn_fireball_frost.png",
+                "speed": 0.8,
+                "sound": "minecraft:entity.ender_dragon.shoot",
+                "tick_bientity_action": {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:spawn_particles",
+                        "particle": {
+                          "type": "toomanyorigins:custom_dragon_breath",
+                          "params": "0.30196078431 0.16862745098 0.63529411764 1.0"
+                        },
+                        "count": 1,
+                        "speed": 0.1,
+                        "spread": {
+                          "x": 0.25,
+                          "y": 0.0,
+                          "z": 0.25
+                        }
+                      },
+                      {
+                        "type": "origins:if_else",
+                        "condition": {
+                          "type": "origins:in_block_anywhere",
+                          "block_condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                              {
+                                "type": "origins:offset",
+                                "condition": {
+                                  "type": "toomanyorigins:air"
                                 },
-                                {
-                                  "type": "origins:execute_command",
-                                  "command": "kill @s"
+                                "y": 1
+                              },
+                              {
+                                "type": "origins:fluid",
+                                "fluid_condition": {
+                                  "type": "origins:and",
+                                  "conditions": [
+                                    {
+                                      "type": "origins:still"
+                                    },
+                                    {
+                                      "type": "origins:in_tag",
+                                      "tag": "minecraft:water"
+                                    }
+                                  ]
                                 }
-                              ]
+                              }
+                            ]
+                          },
+                          "comparison": ">",
+                          "compare_to": 0
+                        },
+                        "if_action": {
+                          "type": "origins:and",
+                          "actions": [
+                            {
+                              "type": "origins:block_action_at",
+                              "block_action": {
+                                "type": "origins:area_of_effect",
+                                "radius": 3,
+                                "shape": "SPHERE",
+                                "block_action": {
+                                  "type": "origins:and",
+                                  "actions": [
+                                    {
+                                      "type": "origins:set_block",
+                                      "block": "minecraft:frosted_ice"
+                                    },
+                                    {
+                                      "type": "toomanyorigins:schedule_tick",
+                                      "min": 20,
+                                      "max": 60
+                                    },
+                                    {
+                                      "type": "origins:execute_command",
+                                      "command": "particle toomanyorigins:custom_dragon_breath 0.30196078431 0.16862745098 0.63529411764 ~ ~ ~ 0.005 0.005 0.005 0.05 15"
+                                    }
+                                  ]
+                                },
+                                "block_condition": {
+                                  "type": "origins:and",
+                                  "conditions": [
+                                    {
+                                      "type": "origins:offset",
+                                      "condition": {
+                                        "type": "toomanyorigins:air"
+                                      },
+                                      "y": 1
+                                    },
+                                    {
+                                      "type": "origins:water_loggable",
+                                      "inverted": true
+                                    },
+                                    {
+                                      "type": "origins:fluid",
+                                      "fluid_condition": {
+                                        "type": "origins:and",
+                                        "conditions": [
+                                          {
+                                            "type": "origins:still"
+                                          },
+                                          {
+                                            "type": "origins:in_tag",
+                                            "tag": "minecraft:water"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            {
+                              "type": "origins:execute_command",
+                              "command": "kill @s"
                             }
-                          }
-                        ]
+                          ]
+                        }
                       }
+                    ]
+                  }
+                },
+                "bientity_action_on_miss": {
+                  "type": "toomanyorigins:spawn_custom_effect_cloud",
+                  "entity_id": "toomanyorigins:dragonborn_frostball_cloud",
+                  "radius": 3.0,
+                  "radius_on_use": 0.0,
+                  "wait_time": 0,
+                  "radius_per_tick": -0.0025,
+                  "duration": 100,
+                  "height_increase": 2,
+                  "particle": {
+                    "type": "toomanyorigins:custom_dragon_breath",
+                    "params": "0.30196078431 0.16862745098 0.63529411764 1.0"
+                  },
+                  "powers_to_apply": [
+                    "toomanyorigins:frost_cloud_effect"
+                  ],
+                  "bientity_condition": {
+                    "type": "origins:invert",
+                    "condition": {
+                      "type": "toomanyorigins:owner"
                     },
-                    "bientity_action_on_miss": {
+                    "inverted": true
+                  }
+                },
+                "owner_target_bientity_action_on_hit": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:damage",
+                      "damage_type": "toomanyorigins:dragonborn_fireball",
+                      "amount": 6
+                    },
+                    {
                       "type": "toomanyorigins:spawn_custom_effect_cloud",
                       "entity_id": "toomanyorigins:dragonborn_frostball_cloud",
                       "radius": 3.0,
@@ -758,6 +942,7 @@
                       "wait_time": 0,
                       "radius_per_tick": -0.0025,
                       "duration": 100,
+                      "height_increase": 2,
                       "particle": {
                         "type": "toomanyorigins:custom_dragon_breath",
                         "params": "0.30196078431 0.16862745098 0.63529411764 1.0"
@@ -772,52 +957,17 @@
                         },
                         "inverted": true
                       }
-                    },
-                    "owner_target_bientity_action_on_hit": {
-                      "type": "origins:and",
-                      "actions": [
-                        {
-                          "type": "origins:damage",
-                          "source": {
-                            "name": "dragonbornFireball"
-                          },
-                          "amount": 6
-                        },
-                        {
-                          "type": "toomanyorigins:spawn_custom_effect_cloud",
-                          "entity_id": "toomanyorigins:dragonborn_frostball_cloud",
-                          "radius": 3.0,
-                          "radius_on_use": 0.0,
-                          "wait_time": 0,
-                          "radius_per_tick": -0.0025,
-                          "duration": 100,
-                          "particle": {
-                            "type": "toomanyorigins:custom_dragon_breath",
-                            "params": "0.30196078431 0.16862745098 0.63529411764 1.0"
-                          },
-                          "powers_to_apply": [
-                            "toomanyorigins:frost_cloud_effect"
-                          ],
-                          "bientity_condition": {
-                            "type": "origins:invert",
-                            "condition": {
-                              "type": "toomanyorigins:owner"
-                            },
-                            "inverted": true
-                          }
-                        }
-                      ]
-                    },
-                    "bientity_condition": {
-                      "type": "origins:invert",
-                      "condition": {
-                        "type": "toomanyorigins:owner"
-                      },
-                      "inverted": true
-                    },
-                    "block_action_cancels_miss_action": true
-                  }
-                ]
+                    }
+                  ]
+                },
+                "bientity_condition": {
+                  "type": "origins:invert",
+                  "condition": {
+                    "type": "toomanyorigins:owner"
+                  },
+                  "inverted": true
+                },
+                "block_action_cancels_miss_action": true
               }
             },
             {
@@ -828,82 +978,106 @@
                 "compare_to": 3
               },
               "action": {
-                "type": "origins:and",
-                "actions": [
-                  {
-                    "type": "origins:trigger_cooldown",
-                    "power": "*:*_thunder_cooldown"
-                  },
-                  {
-                    "type": "toomanyorigins:custom_projectile",
-                    "entity_id": "toomanyorigins:dragonborn_thunderball",
-                    "texture_location": "toomanyorigins:textures/entity/dragonborn_fireball_thunder.png",
-                    "speed": 0.8,
-                    "sound": "minecraft:entity.ender_dragon.shoot",
-                    "tick_bientity_action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:spawn_particles",
-                        "particle": {
-                          "type": "toomanyorigins:custom_dragon_breath",
-                          "params": "0.86666666666 0.34509803921 0.56862745098 1.0"
-                        },
-                        "count": 1,
-                        "speed": 0.1,
-                        "spread": {
-                          "x": 0.25,
-                          "y": 0.0,
-                          "z": 0.25
-                        }
-                      }
+                "type": "toomanyorigins:custom_projectile",
+                "entity_id": "toomanyorigins:dragonborn_thunderball",
+                "texture_location": "toomanyorigins:textures/entity/dragonborn_fireball_thunder.png",
+                "speed": 0.8,
+                "sound": "minecraft:entity.ender_dragon.shoot",
+                "tick_bientity_action": {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:spawn_particles",
+                    "particle": {
+                      "type": "toomanyorigins:custom_dragon_breath",
+                      "params": "0.86666666666 0.34509803921 0.56862745098 1.0"
                     },
-                    "block_action_on_hit": {
-                      "type": "origins:and",
-                      "actions": [
-                        {
-                          "type": "origins:execute_command",
-                          "command": "particle toomanyorigins:custom_dragon_breath 0.86666666666 0.34509803921 0.56862745098 ~ ~ ~ 0.005 0.005 0.005 0.05 15"
-                        },
-                        {
-                          "type": "origins:if_else",
-                          "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                              {
-                                "type": "toomanyorigins:in_rain"
-                              },
-                              {
-                                "type": "toomanyorigins:thundering"
-                              }
-                            ]
+                    "count": 1,
+                    "speed": 0.1,
+                    "spread": {
+                      "x": 0.25,
+                      "y": 0.0,
+                      "z": 0.25
+                    }
+                  }
+                },
+                "block_action_on_hit": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:execute_command",
+                      "command": "particle toomanyorigins:custom_dragon_breath 0.86666666666 0.34509803921 0.56862745098 ~ ~ ~ 0.005 0.005 0.005 0.05 15"
+                    },
+                    {
+                      "type": "origins:if_else",
+                      "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                          {
+                            "type": "toomanyorigins:in_rain"
                           },
-                          "if_action": {
-                            "type": "origins:execute_command",
-                            "command": "summon minecraft:lightning_bolt ~ ~ ~"
-                          },
-                          "else_action": {
-                            "type": "origins:and",
-                            "actions": [
-                              {
-                                "type": "origins:modify_block_state",
-                                "property": "powered",
-                                "value": true
-                              },
-                              {
-                                "type": "toomanyorigins:schedule_tick",
-                                "min": 8,
-                                "max": 8
-                              }
-                            ]
+                          {
+                            "type": "toomanyorigins:thundering"
                           }
-                        }
-                      ]
+                        ]
+                      },
+                      "if_action": {
+                        "type": "origins:execute_command",
+                        "command": "summon minecraft:lightning_bolt ~ ~ ~"
+                      },
+                      "else_action": {
+                        "type": "origins:and",
+                        "actions": [
+                          {
+                            "type": "origins:modify_block_state",
+                            "property": "powered",
+                            "value": true
+                          },
+                          {
+                            "type": "toomanyorigins:schedule_tick",
+                            "min": 8,
+                            "max": 8
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "block_condition": {
+                  "type": "origins:in_tag",
+                  "tag": "toomanyorigins:lightning_rods"
+                },
+                "bientity_action_on_miss": {
+                  "type": "toomanyorigins:spawn_custom_effect_cloud",
+                  "entity_id": "toomanyorigins:dragonborn_thunderball_cloud",
+                  "radius": 3.0,
+                  "radius_on_use": 0.0,
+                  "wait_time": 0,
+                  "radius_per_tick": -0.0075,
+                  "duration": 60,
+                  "powers_to_apply": [
+                    "toomanyorigins:thunder_cloud_effect"
+                  ],
+                  "particle": {
+                    "type": "toomanyorigins:custom_dragon_breath",
+                    "params": "0.86666666666 0.34509803921 0.56862745098 1.0"
+                  },
+                  "bientity_condition": {
+                    "type": "origins:invert",
+                    "condition": {
+                      "type": "toomanyorigins:owner"
                     },
-                    "block_condition": {
-                      "type": "origins:in_tag",
-                      "tag": "toomanyorigins:lightning_rods"
+                    "inverted": true
+                  }
+                },
+                "owner_target_bientity_action_on_hit": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:damage",
+                      "damage_type": "toomanyorigins:dragonborn_fireball",
+                      "amount": 6
                     },
-                    "bientity_action_on_miss": {
+                    {
                       "type": "toomanyorigins:spawn_custom_effect_cloud",
                       "entity_id": "toomanyorigins:dragonborn_thunderball_cloud",
                       "radius": 3.0,
@@ -925,52 +1099,17 @@
                         },
                         "inverted": true
                       }
-                    },
-                    "owner_target_bientity_action_on_hit": {
-                      "type": "origins:and",
-                      "actions": [
-                        {
-                          "type": "origins:damage",
-                          "source": {
-                            "name": "dragonbornFireball"
-                          },
-                          "amount": 6
-                        },
-                        {
-                          "type": "toomanyorigins:spawn_custom_effect_cloud",
-                          "entity_id": "toomanyorigins:dragonborn_thunderball_cloud",
-                          "radius": 3.0,
-                          "radius_on_use": 0.0,
-                          "wait_time": 0,
-                          "radius_per_tick": -0.0075,
-                          "duration": 60,
-                          "powers_to_apply": [
-                            "toomanyorigins:thunder_cloud_effect"
-                          ],
-                          "particle": {
-                            "type": "toomanyorigins:custom_dragon_breath",
-                            "params": "0.86666666666 0.34509803921 0.56862745098 1.0"
-                          },
-                          "bientity_condition": {
-                            "type": "origins:invert",
-                            "condition": {
-                              "type": "toomanyorigins:owner"
-                            },
-                            "inverted": true
-                          }
-                        }
-                      ]
-                    },
-                    "bientity_condition": {
-                      "type": "origins:invert",
-                      "condition": {
-                        "type": "toomanyorigins:owner"
-                      },
-                      "inverted": true
-                    },
-                    "block_action_cancels_miss_action": true
-                  }
-                ]
+                    }
+                  ]
+                },
+                "bientity_condition": {
+                  "type": "origins:invert",
+                  "condition": {
+                    "type": "toomanyorigins:owner"
+                  },
+                  "inverted": true
+                },
+                "block_action_cancels_miss_action": true
               }
             }
           ]
