@@ -731,7 +731,10 @@
                   "actions": [
                     {
                       "type": "origins:damage",
-                      "damage_type": "toomanyorigins:dragonborn_fireball",
+                      "source": {
+                        "name": "dragonbornFireball",
+                        "projectile": true
+                      },
                       "amount": 6
                     },
                     {
@@ -931,7 +934,10 @@
                   "actions": [
                     {
                       "type": "origins:damage",
-                      "damage_type": "toomanyorigins:dragonborn_fireball",
+                      "source": {
+                        "name": "dragonbornFireball",
+                        "projectile": true
+                      },
                       "amount": 6
                     },
                     {
@@ -1074,7 +1080,10 @@
                   "actions": [
                     {
                       "type": "origins:damage",
-                      "damage_type": "toomanyorigins:dragonborn_fireball",
+                      "source": {
+                        "name": "dragonbornFireball",
+                        "projectile": true
+                      },
                       "amount": 6
                     },
                     {

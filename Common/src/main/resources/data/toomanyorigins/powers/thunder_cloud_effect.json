@@ -10,9 +10,11 @@
         "action": {
           "type": "origins:damage",
           "source": {
-            "name": "dragonbornShock"
+            "name": "dragonbornShock",
+            "bypasses_armor": true,
+            "magic": true
           },
-          "amount": 2
+          "amount": 4
         }
       },
       "bientity_condition": {
