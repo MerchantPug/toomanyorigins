@@ -41,11 +41,10 @@
   "swap": {
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:if_else",
-      "condition": {
-        "type": "origins:or",
-        "conditions": [
-          {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
             "type": "origins:and",
             "conditions": [
               {
@@ -72,140 +71,64 @@
                 "resource": "*:*_resource",
                 "comparison": "!=",
                 "compare_to": 1
-              }
-            ]
-          },
-          {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:equipped_item",
-                "equipment_slot": "MAINHAND",
-                "item_condition": {
-                  "type": "origins:and",
-                  "conditions": [
-                    {
-                      "type": "toomanyorigins:on_cooldown",
-                      "inverted": true
-                    },
-                    {
-                      "type": "origins:ingredient",
-                      "ingredient": {
-                        "tag": "toomanyorigins:frostball_activators"
-                      }
-                    }
-                  ]
-                }
               },
               {
                 "type": "origins:resource",
-                "resource": "*:*_resource",
-                "comparison": "!=",
-                "compare_to": 2
+                "resource": "*:*_fireball",
+                "comparison": "==",
+                "compare_to": 0
               }
             ]
           },
-          {
+          "action": {
             "type": "origins:and",
-            "conditions": [
+            "actions": [
               {
-                "type": "origins:equipped_item",
-                "equipment_slot": "MAINHAND",
-                "item_condition": {
-                  "type": "origins:and",
-                  "conditions": [
-                    {
-                      "type": "toomanyorigins:on_cooldown",
-                      "inverted": true
-                    },
-                    {
-                      "type": "origins:ingredient",
-                      "ingredient": {
-                        "tag": "toomanyorigins:thunderball_activators"
-                      }
-                    }
-                  ]
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 1,
+                "operation": "SET"
+              },
+              {
+                "type": "origins:if_else",
+                "condition": {
+                  "type": "origins:gamemode",
+                  "gamemode": "creative",
+                  "inverted": true
+                },
+                "if_action": {
+                  "type": "origins:equipped_item_action",
+                  "equipment_slot": "MAINHAND",
+                  "action": {
+                    "type": "origins:consume",
+                    "amount": 1
+                  }
                 }
               },
               {
-                "type": "origins:resource",
-                "resource": "*:*_resource",
-                "comparison": "!=",
-                "compare_to": 3
+                "type": "toomanyorigins:item_cooldown",
+                "item_tags": [
+                  "toomanyorigins:fireball_activators",
+                  "toomanyorigins:frostball_activators",
+                  "toomanyorigins:thunderball_activators"
+                ]
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_fireball"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_frost_cooldown"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_thunder_cooldown"
               }
             ]
           }
-        ]
-      },
-      "if_action": {
-        "type": "origins:if_else",
-        "condition": {
-          "type": "origins:and",
-          "conditions": [
-            {
-              "type": "origins:equipped_item",
-              "equipment_slot": "MAINHAND",
-              "item_condition": {
-                "type": "origins:and",
-                "conditions": [
-                  {
-                    "type": "toomanyorigins:on_cooldown",
-                    "inverted": true
-                  },
-                  {
-                    "type": "origins:ingredient",
-                    "ingredient": {
-                      "tag": "toomanyorigins:fireball_activators"
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "type": "origins:resource",
-              "resource": "*:*_resource",
-              "comparison": "!=",
-              "compare_to": 1
-            }
-          ]
         },
-        "if_action": {
-          "type": "origins:and",
-          "actions": [
-            {
-              "type": "origins:change_resource",
-              "resource": "*:*_resource",
-              "change": 1,
-              "operation": "SET"
-            },
-            {
-              "type": "origins:if_else",
-              "condition": {
-                "type": "origins:gamemode",
-                "gamemode": "creative",
-                "inverted": true
-              },
-              "if_action": {
-                "type": "origins:equipped_item_action",
-                "equipment_slot": "MAINHAND",
-                "action": {
-                  "type": "origins:consume",
-                  "amount": 1
-                }
-              }
-            },
-            {
-              "type": "toomanyorigins:item_cooldown",
-              "item_tags": [
-                "toomanyorigins:fireball_activators",
-                "toomanyorigins:frostball_activators",
-                "toomanyorigins:thunderball_activators"
-              ]
-            }
-          ]
-        },
-        "else_action": {
-          "type": "origins:if_else",
+        {
           "condition": {
             "type": "origins:and",
             "conditions": [
@@ -233,10 +156,16 @@
                 "resource": "*:*_resource",
                 "comparison": "!=",
                 "compare_to": 2
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_fireball",
+                "comparison": "==",
+                "compare_to": 0
               }
             ]
           },
-          "if_action": {
+          "action": {
             "type": "origins:and",
             "actions": [
               {
@@ -268,178 +197,108 @@
                   "toomanyorigins:frostball_activators",
                   "toomanyorigins:thunderball_activators"
                 ]
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_fireball"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_frost_cooldown"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_thunder_cooldown"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:equipped_item",
+                "equipment_slot": "MAINHAND",
+                "item_condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "toomanyorigins:on_cooldown",
+                      "inverted": true
+                    },
+                    {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "tag": "toomanyorigins:thunderball_activators"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_resource",
+                "comparison": "!=",
+                "compare_to": 3
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_fireball",
+                "comparison": "==",
+                "compare_to": 0
               }
             ]
           },
-          "else_action": {
-            "type": "origins:if_else",
-            "condition": {
-              "type": "origins:and",
-              "conditions": [
-                {
-                  "type": "origins:equipped_item",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 3,
+                "operation": "SET"
+              },
+              {
+                "type": "origins:if_else",
+                "condition": {
+                  "type": "origins:gamemode",
+                  "gamemode": "creative",
+                  "inverted": true
+                },
+                "if_action": {
+                  "type": "origins:equipped_item_action",
                   "equipment_slot": "MAINHAND",
-                  "item_condition": {
-                    "type": "origins:and",
-                    "conditions": [
-                      {
-                        "type": "toomanyorigins:on_cooldown",
-                        "inverted": true
-                      },
-                      {
-                        "type": "origins:ingredient",
-                        "ingredient": {
-                          "tag": "toomanyorigins:thunderball_activators"
-                        }
-                      }
-                    ]
+                  "action": {
+                    "type": "origins:consume",
+                    "amount": 1
                   }
-                },
-                {
-                  "type": "origins:resource",
-                  "resource": "*:*_resource",
-                  "comparison": "!=",
-                  "compare_to": 3
                 }
-              ]
-            },
-            "if_action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:change_resource",
-                  "resource": "*:*_resource",
-                  "change": 3,
-                  "operation": "SET"
-                },
-                {
-                  "type": "origins:if_else",
-                  "condition": {
-                    "type": "origins:gamemode",
-                    "gamemode": "creative",
-                    "inverted": true
-                  },
-                  "if_action": {
-                    "type": "origins:equipped_item_action",
-                    "equipment_slot": "MAINHAND",
-                    "action": {
-                      "type": "origins:consume",
-                      "amount": 1
-                    }
-                  }
-                },
-                {
-                  "type": "toomanyorigins:item_cooldown",
-                  "item_tags": [
-                    "toomanyorigins:fireball_activators",
-                    "toomanyorigins:frostball_activators",
-                    "toomanyorigins:thunderball_activators"
-                  ]
-                }
-              ]
-            }
+              },
+              {
+                "type": "toomanyorigins:item_cooldown",
+                "item_tags": [
+                  "toomanyorigins:fireball_activators",
+                  "toomanyorigins:frostball_activators",
+                  "toomanyorigins:thunderball_activators"
+                ]
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_fireball"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_frost_cooldown"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_thunder_cooldown"
+              }
+            ]
           }
-        }
-      },
-      "else_action": {
-        "type": "origins:if_else",
-        "condition": {
-          "type": "origins:or",
-          "conditions": [
-            {
-              "type": "origins:and",
-              "conditions": [
-                {
-                  "type": "origins:equipped_item",
-                  "equipment_slot": "OFFHAND",
-                  "item_condition": {
-                    "type": "origins:and",
-                    "conditions": [
-                      {
-                        "type": "toomanyorigins:on_cooldown",
-                        "inverted": true
-                      },
-                      {
-                        "type": "origins:ingredient",
-                        "ingredient": {
-                          "tag": "toomanyorigins:fireball_activators"
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "type": "origins:resource",
-                  "resource": "*:*_resource",
-                  "comparison": "!=",
-                  "compare_to": 1
-                }
-              ]
-            },
-            {
-              "type": "origins:and",
-              "conditions": [
-                {
-                  "type": "origins:equipped_item",
-                  "equipment_slot": "OFFHAND",
-                  "item_condition": {
-                    "type": "origins:and",
-                    "conditions": [
-                      {
-                        "type": "toomanyorigins:on_cooldown",
-                        "inverted": true
-                      },
-                      {
-                        "type": "origins:ingredient",
-                        "ingredient": {
-                          "tag": "toomanyorigins:frostball_activators"
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "type": "origins:resource",
-                  "resource": "*:*_resource",
-                  "comparison": "!=",
-                  "compare_to": 2
-                }
-              ]
-            },
-            {
-              "type": "origins:and",
-              "conditions": [
-                {
-                  "type": "origins:equipped_item",
-                  "equipment_slot": "OFFHAND",
-                  "item_condition": {
-                    "type": "origins:and",
-                    "conditions": [
-                      {
-                        "type": "toomanyorigins:on_cooldown",
-                        "inverted": true
-                      },
-                      {
-                        "type": "origins:ingredient",
-                        "ingredient": {
-                          "tag": "toomanyorigins:thunderball_activators"
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "type": "origins:resource",
-                  "resource": "*:*_resource",
-                  "comparison": "!=",
-                  "compare_to": 3
-                }
-              ]
-            }
-          ]
         },
-        "if_action": {
-          "type": "origins:if_else",
+        {
           "condition": {
             "type": "origins:and",
             "conditions": [
@@ -447,10 +306,19 @@
                 "type": "origins:equipped_item",
                 "equipment_slot": "OFFHAND",
                 "item_condition": {
-                  "type": "origins:ingredient",
-                  "ingredient": {
-                    "tag": "toomanyorigins:fireball_activators"
-                  }
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "toomanyorigins:on_cooldown",
+                      "inverted": true
+                    },
+                    {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "tag": "toomanyorigins:fireball_activators"
+                      }
+                    }
+                  ]
                 }
               },
               {
@@ -458,10 +326,16 @@
                 "resource": "*:*_resource",
                 "comparison": "!=",
                 "compare_to": 1
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_fireball",
+                "comparison": "==",
+                "compare_to": 0
               }
             ]
           },
-          "if_action": {
+          "action": {
             "type": "origins:and",
             "actions": [
               {
@@ -493,147 +367,193 @@
                   "toomanyorigins:frostball_activators",
                   "toomanyorigins:thunderball_activators"
                 ]
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_fireball"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_frost_cooldown"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_thunder_cooldown"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:equipped_item",
+                "equipment_slot": "OFFHAND",
+                "item_condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "toomanyorigins:on_cooldown",
+                      "inverted": true
+                    },
+                    {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "tag": "toomanyorigins:frostball_activators"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_resource",
+                "comparison": "!=",
+                "compare_to": 2
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_fireball",
+                "comparison": "==",
+                "compare_to": 0
               }
             ]
           },
-          "else_action": {
-            "type": "origins:if_else",
-            "condition": {
-              "type": "origins:and",
-              "conditions": [
-                {
-                  "type": "origins:equipped_item",
-                  "equipment_slot": "MAINHAND",
-                  "item_condition": {
-                    "type": "origins:and",
-                    "conditions": [
-                      {
-                        "type": "toomanyorigins:on_cooldown",
-                        "inverted": true
-                      },
-                      {
-                        "type": "origins:ingredient",
-                        "ingredient": {
-                          "tag": "toomanyorigins:frostball_activators"
-                        }
-                      }
-                    ]
-                  }
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 2,
+                "operation": "SET"
+              },
+              {
+                "type": "origins:if_else",
+                "condition": {
+                  "type": "origins:gamemode",
+                  "gamemode": "creative",
+                  "inverted": true
                 },
-                {
-                  "type": "origins:resource",
-                  "resource": "*:*_resource",
-                  "comparison": "!=",
-                  "compare_to": 2
+                "if_action": {
+                  "type": "origins:equipped_item_action",
+                  "equipment_slot": "OFFHAND",
+                  "action": {
+                    "type": "origins:consume",
+                    "amount": 1
+                  }
                 }
-              ]
-            },
-            "if_action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:change_resource",
-                  "resource": "*:*_resource",
-                  "change": 2,
-                  "operation": "SET"
-                },
-                {
-                  "type": "origins:if_else",
-                  "condition": {
-                    "type": "origins:gamemode",
-                    "gamemode": "creative",
-                    "inverted": true
-                  },
-                  "if_action": {
-                    "type": "origins:equipped_item_action",
-                    "equipment_slot": "OFFHAND",
-                    "action": {
-                      "type": "origins:consume",
-                      "amount": 1
-                    }
-                  }
-                },
-                {
-                  "type": "toomanyorigins:item_cooldown",
-                  "item_tags": [
-                    "toomanyorigins:fireball_activators",
-                    "toomanyorigins:frostball_activators",
-                    "toomanyorigins:thunderball_activators"
-                  ]
-                }
-              ]
-            },
-            "else_action": {
-              "type": "origins:if_else",
-              "condition": {
-                "type": "origins:and",
-                "conditions": [
-                  {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "OFFHAND",
-                    "item_condition": {
-                      "type": "origins:and",
-                      "conditions": [
-                        {
-                          "type": "toomanyorigins:on_cooldown",
-                          "inverted": true
-                        },
-                        {
-                          "type": "origins:ingredient",
-                          "ingredient": {
-                            "tag": "toomanyorigins:thunderball_activators"
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "type": "origins:resource",
-                    "resource": "*:*_resource",
-                    "comparison": "!=",
-                    "compare_to": 3
-                  }
+              },
+              {
+                "type": "toomanyorigins:item_cooldown",
+                "item_tags": [
+                  "toomanyorigins:fireball_activators",
+                  "toomanyorigins:frostball_activators",
+                  "toomanyorigins:thunderball_activators"
                 ]
               },
-              "if_action": {
-                "type": "origins:and",
-                "actions": [
-                  {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_resource",
-                    "change": 3,
-                    "operation": "SET"
-                  },
-                  {
-                    "type": "origins:if_else",
-                    "condition": {
-                      "type": "origins:gamemode",
-                      "gamemode": "creative",
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_fireball"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_frost_cooldown"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_thunder_cooldown"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:equipped_item",
+                "equipment_slot": "OFFHAND",
+                "item_condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "toomanyorigins:on_cooldown",
                       "inverted": true
                     },
-                    "if_action": {
-                      "type": "origins:equipped_item_action",
-                      "equipment_slot": "OFFHAND",
-                      "action": {
-                        "type": "origins:consume",
-                        "amount": 1
+                    {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "tag": "toomanyorigins:frostball_activators"
                       }
                     }
-                  },
-                  {
-                    "type": "toomanyorigins:item_cooldown",
-                    "item_tags": [
-                      "toomanyorigins:fireball_activators",
-                      "toomanyorigins:frostball_activators",
-                      "toomanyorigins:thunderball_activators"
-                    ]
-                  }
-                ]
+                  ]
+                }
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_resource",
+                "comparison": "!=",
+                "compare_to": 3
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_fireball",
+                "comparison": "==",
+                "compare_to": 0
               }
-            }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": 3,
+                "operation": "SET"
+              },
+              {
+                "type": "origins:if_else",
+                "condition": {
+                  "type": "origins:gamemode",
+                  "gamemode": "creative",
+                  "inverted": true
+                },
+                "if_action": {
+                  "type": "origins:equipped_item_action",
+                  "equipment_slot": "OFFHAND",
+                  "action": {
+                    "type": "origins:consume",
+                    "amount": 1
+                  }
+                }
+              },
+              {
+                "type": "toomanyorigins:item_cooldown",
+                "item_tags": [
+                  "toomanyorigins:fireball_activators",
+                  "toomanyorigins:frostball_activators",
+                  "toomanyorigins:thunderball_activators"
+                ]
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_fireball"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_frost_cooldown"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_thunder_cooldown"
+              }
+            ]
           }
         }
-      }
+      ]
     },
     "cooldown": 1,
     "key": {
