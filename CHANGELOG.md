@@ -64,18 +64,18 @@ The Dragonborn origin has grown quite more potent during the events of TooManyOr
     - The shared cooldown of each breath type has been reduced to 2 seconds (previously 4 seconds).
   - **Fire**
     - No longer damages entities within the area effect cloud, it instead makes entities that aren't you inside the effect cloud receive more damage from sources.
-    - Fire Breath Cloud radius now starts at 2.5, lasts for 4 seconds, and decreases by 0.005 per tick.
+    - Fire Breath Cloud radius now starts at 2.5, lasts for 5 seconds, and decreases by 0.00375 per tick.
     - Removed `Wyrmsmith's Touch` power. It is now built into the Fire breath type projectile when it hits a lightable block.
     - The above effect no longer affects Brewing Stands.
     - A Dragonborn starts with this breath type but it is still able to be swapped to using Coal or Charcoal.
   - **Frost**
     - Frost gradually slows down entities within the area effect cloud.
-    - Frost Breath Cloud radius starts at 3.5, lasts for 8 seconds, and decreases by 0.005 per tick.
+    - Frost Breath Cloud radius starts at 3.5, lasts for 9 seconds, and decreases by 0.00375 per tick.
     - The projectile can freeze water surfaces, this is similar to the effects of Frost Walker.
     - Can be swapped to with Snowballs.
   - **Thunder**
     - Thunder deals damage to entities inside the AoE that aren't you upon an entity in the AoE taking damage.
-    - Thunder Breath Cloud radius starts at 3, lasts for 6 seconds, and decreases by 0.005 per tick.
+    - Thunder Breath Cloud radius starts at 3, lasts for 7 seconds, and decreases by 0.00375 per tick.
     - The projectile can activate lightning rods or summon lightning on lightning rods if it is thundering.
     - Can be swapped to with Copper Ingots.
 - Renamed `Steady Stance` to `Zenith Scales`, it now only reduces 20% of knockback dealt instead of complete immunity.
