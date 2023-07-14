@@ -106,6 +106,10 @@
                 }
               },
               {
+                "type": "origins:swing_hand",
+                "hand": "MAIN_HAND"
+              },
+              {
                 "type": "toomanyorigins:item_cooldown",
                 "item_tags": [
                   "toomanyorigins:fireball_activators",
@@ -189,6 +193,10 @@
                     "amount": 1
                   }
                 }
+              },
+              {
+                "type": "origins:swing_hand",
+                "hand": "MAIN_HAND"
               },
               {
                 "type": "toomanyorigins:item_cooldown",
@@ -276,6 +284,10 @@
                 }
               },
               {
+                "type": "origins:swing_hand",
+                "hand": "MAIN_HAND"
+              },
+              {
                 "type": "toomanyorigins:item_cooldown",
                 "item_tags": [
                   "toomanyorigins:fireball_activators",
@@ -359,6 +371,10 @@
                     "amount": 1
                   }
                 }
+              },
+              {
+                "type": "origins:swing_hand",
+                "hand": "OFF_HAND"
               },
               {
                 "type": "toomanyorigins:item_cooldown",
@@ -446,6 +462,10 @@
                 }
               },
               {
+                "type": "origins:swing_hand",
+                "hand": "OFF_HAND"
+              },
+              {
                 "type": "toomanyorigins:item_cooldown",
                 "item_tags": [
                   "toomanyorigins:fireball_activators",
@@ -485,7 +505,7 @@
                     {
                       "type": "origins:ingredient",
                       "ingredient": {
-                        "tag": "toomanyorigins:frostball_activators"
+                        "tag": "toomanyorigins:thunderball_activators"
                       }
                     }
                   ]
@@ -529,6 +549,10 @@
                     "amount": 1
                   }
                 }
+              },
+              {
+                "type": "origins:swing_hand",
+                "hand": "OFF_HAND"
               },
               {
                 "type": "toomanyorigins:item_cooldown",
