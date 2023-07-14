@@ -632,7 +632,7 @@
                   "radius": 2.5,
                   "radius_on_use": 0.0,
                   "wait_time": 0,
-                  "radius_per_tick": -0.005,
+                  "radius_per_tick": -0.0025,
                   "duration": 80,
                   "particle": "minecraft:dragon_breath",
                   "powers_to_apply": [
@@ -660,7 +660,7 @@
                       "radius": 2.5,
                       "radius_on_use": 0.0,
                       "wait_time": 0,
-                      "radius_per_tick": -0.005,
+                      "radius_per_tick": -0.0025,
                       "duration": 80,
                       "particle": "minecraft:dragon_breath",
                       "powers_to_apply": [
@@ -825,11 +825,11 @@
                 "bientity_action_on_miss": {
                   "type": "toomanyorigins:spawn_custom_effect_cloud",
                   "entity_id": "toomanyorigins:dragonborn_frostball_cloud",
-                  "radius": 3.0,
+                  "radius": 3.5,
                   "radius_on_use": 0.0,
                   "wait_time": 0,
                   "radius_per_tick": -0.0025,
-                  "duration": 100,
+                  "duration": 160,
                   "height_increase": 2,
                   "particle": {
                     "type": "toomanyorigins:custom_dragon_breath",
@@ -857,11 +857,11 @@
                     {
                       "type": "toomanyorigins:spawn_custom_effect_cloud",
                       "entity_id": "toomanyorigins:dragonborn_frostball_cloud",
-                      "radius": 3.0,
+                      "radius": 3.5,
                       "radius_on_use": 0.0,
                       "wait_time": 0,
                       "radius_per_tick": -0.0025,
-                      "duration": 100,
+                      "duration": 160,
                       "height_increase": 2,
                       "particle": {
                         "type": "toomanyorigins:custom_dragon_breath",
@@ -972,8 +972,8 @@
                   "radius": 3.0,
                   "radius_on_use": 0.0,
                   "wait_time": 0,
-                  "radius_per_tick": -0.0075,
-                  "duration": 60,
+                  "radius_per_tick": -0.0025,
+                  "duration": 120,
                   "powers_to_apply": [
                     "toomanyorigins:thunder_cloud_effect"
                   ],
@@ -1003,8 +1003,8 @@
                       "radius": 3.0,
                       "radius_on_use": 0.0,
                       "wait_time": 0,
-                      "radius_per_tick": -0.0075,
-                      "duration": 60,
+                      "radius_per_tick": -0.0025,
+                      "duration": 120,
                       "powers_to_apply": [
                         "toomanyorigins:thunder_cloud_effect"
                       ],

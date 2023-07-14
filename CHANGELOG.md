@@ -68,12 +68,12 @@ The Dragonborn origin has grown quite more potent during the events of TooManyOr
     - A Dragonborn starts with this breath type but it is still able to be swapped to using Coal or Charcoal.
   - **Frost**
     - Frost gradually slows down entities within the area effect cloud.
-    - Frost Breath Cloud radius starts at 3, lasts for 5 seconds, and decreases by 0.0025 per tick.
+    - Frost Breath Cloud radius starts at 3.5, lasts for 8 seconds, and decreases by 0.005 per tick.
     - The projectile can freeze water surfaces, this is similar to the effects of Frost Walker.
     - Can be swapped to with Snowballs.
   - **Thunder**
     - Thunder deals damage to entities inside the AoE that aren't you upon an entity in the AoE taking damage.
-    - Thunder Breath Cloud radius starts at 3, lasts for 3 seconds, and decreases by 0.0075 per tick.
+    - Thunder Breath Cloud radius starts at 3, lasts for 6 seconds, and decreases by 0.005 per tick.
     - The projectile can activate lightning rods or summon lightning on lightning rods if it is thundering.
     - Can be swapped to with Copper Ingots.
 - Renamed `Steady Stance` to `Zenith Scales`, it now only reduces 20% of knockback dealt instead of complete immunity.

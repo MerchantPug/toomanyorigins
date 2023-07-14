@@ -1,8 +1,40 @@
 {
-  "type": "origins:modify_damage_taken",
-  "modifier": {
-    "name": "Extra damage taken from Dragonborn fire cloud",
-    "operation": "addition",
-    "value": 3.0
+  "type": "origins:multiple",
+  "damage_increase": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "name": "Extra damage taken from Dragonborn fire cloud",
+      "operation": "addition",
+      "value": 3.0
+    }
+  },
+  "killswitch_cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+  "start_killswitch": {
+    "type": "origins:action_on_callback",
+    "entity_action_gained": {
+      "type": "origins:trigger_cooldown",
+      "power": "*:*_killswitch_cooldown"
+    }
+  },
+  "killswitch": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "rising_action": {
+      "type": "origins:revoke_power",
+      "power": "*:*",
+      "source": "toomanyorigins:dragonborn_fireball_cloud"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_killswitch_cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    }
   }
 }
