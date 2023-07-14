@@ -21,7 +21,7 @@
         "compare_to": 2
       }
     },
-    "cooldown": 60
+    "cooldown": 40
   },
   "thunder_cooldown": {
     "type": "origins:cooldown",
@@ -36,7 +36,7 @@
         "compare_to": 3
       }
     },
-    "cooldown": 60
+    "cooldown": 40
   },
   "swap": {
     "type": "origins:active_self",
@@ -573,7 +573,7 @@
         "compare_to": 1
       }
     },
-    "cooldown": 60,
+    "cooldown": 40,
     "entity_action": {
       "type": "origins:and",
       "actions": [
