@@ -60,6 +60,8 @@ The Dragonborn origin has grown quite more potent during the events of TooManyOr
 ### Dragonborn
 - Removed `Carnivore`, `Zenith Dragonhide`, and `Loose Scales` powers.
 - Overhauled `Draconic Breath` to have 3 different breath types. Fire, Frost and Thunder. These can swapped between by holding a respective item in your main/offhand and using the power.
+  - **General**
+    - The shared cooldown of each breath type has been reduced to 2 seconds (previously 4 seconds).
   - **Fire**
     - No longer damages entities within the area effect cloud, it instead makes entities that aren't you inside the effect cloud receive more damage from sources.
     - Fire Breath Cloud radius now starts at 2.5, lasts for 4 seconds, and decreases by 0.005 per tick.
@@ -79,7 +81,7 @@ The Dragonborn origin has grown quite more potent during the events of TooManyOr
 - Renamed `Steady Stance` to `Zenith Scales`, it now only reduces 20% of knockback dealt instead of complete immunity.
 - Added `Block Synergistics`, which doesn't do anything other than have a description to explain that the projectile can interact with blocks.
 - Added `Weaponry Pride`, which makes you unable to use ranged weapons such as Bows, Crossbows, and Tridents that don't have Riptide, and Snowballs.
-- Added `Rough Claws`, which may make an item lose 1 extra durability.
+- Added `Rough Claws`, which has a chance to make an item lose 1 extra durability upon durability usage.
 
 ### Swarm
 - Changed to Impact 2.
