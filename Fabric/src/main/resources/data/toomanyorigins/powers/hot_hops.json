@@ -60,7 +60,7 @@
       }
     },
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:sprinting"

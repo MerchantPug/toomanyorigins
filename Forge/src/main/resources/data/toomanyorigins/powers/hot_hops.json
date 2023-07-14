@@ -34,7 +34,7 @@
   },
   "cooldown": {
     "type": "origins:cooldown",
-    "cooldown": 10,
+    "cooldown": 20,
     "hud_render": {
       "should_render": false
     }
@@ -45,13 +45,55 @@
       "type": "apoli:side",
       "chance": "server",
       "action": {
-        "type": "origins:change_resource",
-        "resource": "*:*_resource",
-        "change": 1
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": 1
+          },
+          {
+            "type": "origins:trigger_cooldown",
+            "power": "*:*_cooldown"
+          }
+        ]
       }
     },
     "condition": {
-      "type": "origins:sprinting"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sprinting"
+        },
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:fluid_height",
+              "fluid": "minecraft:water",
+              "comparison": "==",
+              "compare_to": 0.0
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:fluid_height",
+                  "fluid": "minecraft:water",
+                  "comparison": ">",
+                  "compare_to": 0.0
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_resource",
+                  "comparison": "==",
+                  "compare_to": 7
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   },
   "air_speed": {
@@ -79,7 +121,7 @@
         "resource": "*:*_resource"
       }
     },
-    "change_divisor": 1.25,
+    "change_divisor": 8,
     "condition": {
       "type": "origins:resource",
       "resource": "*:*_resource",
@@ -94,7 +136,7 @@
       "operation": "multiply_total_multiplicative",
       "value": 0.05
     },
-    "change_divisor": 2,
+    "change_divisor": 1,
     "condition": {
       "type": "origins:resource",
       "resource": "*:*_resource",
@@ -116,116 +158,49 @@
             "compare_to": 0.4
           },
           {
-            "type": "toomanyorigins:grounded"
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:*_cooldown",
+                "comparison": "==",
+                "compare_to": 0
+              },
+              {
+                "type": "toomanyorigins:grounded"
+              }
+            ]
+          },
+          {
+            "type": "origins:sprinting",
+            "inverted": true
           }
         ]
       },
       "if_action": {
-        "type": "origins:if_else",
-        "condition": {
-          "type": "origins:or",
-          "conditions": [
-            {
-              "type": "origins:fluid_height",
-              "fluid": "minecraft:water",
-              "comparison": ">",
-              "compare_to": 0.4
-            },
-            {
-              "type": "origins:resource",
-              "resource": "*:*_cooldown",
-              "comparison": "==",
-              "compare_to": 0
-            }
-          ]
-        },
-        "if_action": {
-          "type": "origins:change_resource",
-          "resource": "*:*_resource",
-          "change": 0,
-          "operation": "SET"
-        }
+        "type": "origins:change_resource",
+        "resource": "*:*_resource",
+        "change": 0,
+        "operation": "SET"
       },
       "else_action": {
-        "type": "origins:trigger_cooldown",
-        "power": "*:*_cooldown"
+        "type": "origins:if_else",
+        "condition": {
+          "type": "toomanyorigins:grounded",
+          "inverted": true
+        },
+        "if_action": {
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_cooldown"
+        }
       }
     },
     "interval": 1,
     "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:or",
-          "conditions": [
-            {
-              "type": "origins:fluid_height",
-              "fluid": "minecraft:water",
-              "comparison": ">",
-              "compare_to": 0.4
-            }
-          ]
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:*_resource",
-          "comparison": ">",
-          "compare_to": 0
-        }
-      ]
-    }
-  },
-  "allow_sprinting": {
-    "type": "toomanyorigins:sprinting",
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:sneaking",
-          "inverted": true
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:hot_hops_resource",
-          "comparison": "==",
-          "compare_to": 7
-        },
-        {
-          "type": "origins:fluid_height",
-          "fluid": "minecraft:water",
-          "comparison": ">",
-          "compare_to": 0.0
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:*_disabled_cooldown",
-          "comparison": "==",
-          "compare_to": 0
-        },
-        {
-          "type": "origins:or",
-          "conditions": [
-            {
-              "type": "origins:gamemode",
-              "gamemode": "creative"
-            },
-            {
-              "type": "origins:food_level",
-              "comparison": ">",
-              "compare_to": 6
-            }
-          ]
-        },
-        {
-          "type": "origins:using_item",
-          "inverted": true
-        },
-        {
-          "type": "origins:status_effect",
-          "effect": "minecraft:blindness",
-          "inverted": true
-        }
-      ]
+      "type": "origins:resource",
+      "resource": "*:*_resource",
+      "comparison": ">",
+      "compare_to": 0
     }
   }
 }
