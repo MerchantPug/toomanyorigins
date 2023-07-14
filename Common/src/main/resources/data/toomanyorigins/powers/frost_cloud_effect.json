@@ -3,7 +3,7 @@
   "resource": {
     "type": "origins:resource",
     "min": 0,
-    "max": 80
+    "max": 30
   },
   "tick": {
     "type": "origins:action_over_time",
@@ -26,9 +26,13 @@
         "modifier": [
           {
             "operation": "multiply_base_multiplicative",
-            "value": -1.0125
+            "value": -1.0333
           }
         ]
+      },
+      {
+        "operation": "min_total",
+        "value": 0.0
       }
     ],
     "condition": {
@@ -48,9 +52,13 @@
         "modifier": [
           {
             "operation": "multiply_base_multiplicative",
-            "value": -1.0125
+            "value": -1.0333
           }
         ]
+      },
+      {
+        "operation": "min_total",
+        "value": 0.0
       }
     ],
     "condition": {
@@ -70,7 +78,7 @@
       "modifier": [
         {
           "operation": "multiply_base_multiplicative",
-          "value": -1.01
+          "value": -1.026666666666
         }
       ]
     },
@@ -89,13 +97,42 @@
       "modifier": [
         {
           "operation": "multiply_base_multiplicative",
-          "value": -1.01
+          "value": -1.026666666666
         }
       ]
     },
     "condition": {
       "type": "origins:entity_type",
       "entity_type": "minecraft:player"
+    }
+  },
+  "killswitch_cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 180,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+  "start_killswitch": {
+    "type": "origins:action_on_callback",
+    "entity_action_gained": {
+      "type": "origins:trigger_cooldown",
+      "power": "*:*_killswitch_cooldown"
+    }
+  },
+  "killswitch": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "rising_action": {
+      "type": "origins:revoke_power",
+      "power": "*:*",
+      "source": "toomanyorigins:dragonborn_frostball_cloud"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_killswitch_cooldown",
+      "comparison": "==",
+      "compare_to": 0
     }
   }
 }
