@@ -40,6 +40,8 @@
   "power.toomanyorigins.superfall.description": "By sneaking while in the air you are able to fall at a faster rate, preventing fall damage.",
   "power.toomanyorigins.drenchable_fur.name": "Drenchable Fur",
   "power.toomanyorigins.drenchable_fur.description": "As a creature susceptible to water, you are unable to move as quickly whilst in water.",
+  "power.toomanyorigins.frail.name": "Frail",
+  "power.toomanyorigins.frail.description": "You receive more damage from non-entity sources.",
   "power.toomanyorigins.waterskipper.name": "Waterskipper",
   "power.toomanyorigins.waterskipper.description": "You are able to stand on the surface of water for a short amount of time whilst at maximum hopping speed.",
   "power.toomanyorigins.small_appetite.name": "Small Appetite",
