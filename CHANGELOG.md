@@ -7,6 +7,9 @@
 ### Dependencies
 - Bumped Apugli to 2.5.1.
 
+### Bugfixes
+- Fixed server config not containing `performVersionCheck`.
+
 # Full Changelog Compared to 0.x.x
 ### General
 - Reworked every origin. If you would like to have the old origins, you are able to use the legacy content built-in data pack.
