@@ -1,19 +1,5 @@
-### Re-introduced Hare origin.
-The Hare origin is about traversing difficult terrain and mobility, with your trusty hops, no terrain will stop you, even water surfaces, just don't fall into the water...
-
-### Re-introduced Dragonborn origin.
-The Dragonborn origin has grown quite more potent during the events of TooManyOrigins Pre and TooManyOrigins One, now drawing from the elements for their breath. However, they may have let this get to their head a bit as they won't be using bows and the sort anymore.
-
-### Swarm Changes
-- Beekeeper is no longer hidden.
-- Unity no longer has a cooldown between changing the amount of hearts that the player has.
-
 ### Dependencies
-- Updated Apugli to v2.5.0.
-- Now includes Water Walking Fix.
-
-### Miscellaneous
-- Every Origins' order in the origins menu has been changed, TooManyOrigins' origins should now be found later but should always be together.
+- Bumped Apugli to 2.5.1
 
 # Full Changelog Compared to 0.x.x
 ### General
