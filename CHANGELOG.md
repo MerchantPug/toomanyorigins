@@ -8,6 +8,7 @@
 - Bumped Apugli to 2.5.1.
 
 ### Bugfixes
+- Fixed server config not containing `performVersionCheck`.
 - [1.19.2] Fixed Dragonborn Fireball power not functioning due to an erroring power JSON.
 
 # Full Changelog Compared to 0.x.x
