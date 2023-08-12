@@ -1,8 +1,11 @@
 ### Origins
 - Replaced Fragile on Hare with a new power, Frail, which makes the Hare take 1 more damage from non player sources.
 
+### Language
+- Updated Turkish translation. - Hexasan #67
+
 ### Dependencies
-- Bumped Apugli to 2.5.1
+- Bumped Apugli to 2.5.1.
 
 # Full Changelog Compared to 0.x.x
 ### General
