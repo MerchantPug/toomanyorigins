@@ -1,8 +1,14 @@
 ### Origins
 - Replaced Fragile on Hare with a new power, Frail, which makes the Hare take 1 more damage from non player sources.
 
+### Language
+- Updated Turkish translation. - Hexasan #67
+
 ### Dependencies
-- Bumped Apugli to 2.5.1
+- Bumped Apugli to 2.5.1.
+
+### Bugfixes
+- [1.19.2] Fixed Dragonborn Fireball power not functioning due to an erroring power JSON.
 
 # Full Changelog Compared to 0.x.x
 ### General
@@ -15,8 +21,8 @@
 - Added `legacy_content.json` file found in the data pack directory `data/toomanyorigins/legacy_content.json`, this is able to enable any legacy content that the pack may need by setting a value in the json file to `true`. This can enable `dragon_fireball`, `withered_crops` and `zombifying`. This will be synced with clients.
 
 ### Translations
-- Updated Korean translation. (Snap_Lan)
-- Updated Turkish translation. (Hexasan)
+- Updated Korean translation. - Snap_Lan
+- Updated Turkish translation. - Hexasan
 - Removed all translations that have not been listed here. They have become obsolete as a result of this update.
 
 ### Hiss-kin
