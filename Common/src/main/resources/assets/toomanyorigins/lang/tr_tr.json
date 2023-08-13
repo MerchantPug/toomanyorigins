@@ -40,9 +40,11 @@
     "power.toomanyorigins.superfall.description": "Havada eğilerek daha hızlı düşebilirsin, böylece düşme hasarı almazsın.",
     "power.toomanyorigins.drenchable_fur.name": "Islak Kürk",
     "power.toomanyorigins.drenchable_fur.description": "Suya duyarlı bir canlı olarak, suda hızlı hareket edemezsin.",
+    "power.toomanyorigins.frail.name": "Kendi Düşen Ağlamaz",
+    "power.toomanyorigins.frail.description": "Hasar aldığında kaynağı başka canlılar değilse ekstra hasar alırsın.",
     "power.toomanyorigins.waterskipper.name": "Suda Sekme",
     "power.toomanyorigins.waterskipper.description": "Maksimum atılma hızındayken kısa süreliğine suda durabilirsin.",
-    "power.toomanyorigins.small_appetite.name": "Küçük iştah",
+    "power.toomanyorigins.small_appetite.name": "İştahsız",
     "power.toomanyorigins.small_appetite.description": "Diğerlerinden yavaş yorulursun, yani daha az yemekle geçinebilirsin.",
   
     "subtitles.origin.hare.max_speed": "Hare hızlanıyor",
@@ -76,7 +78,7 @@
 
     "power.toomanyorigins.affliction.name": "Izdırap",
     "power.toomanyorigins.affliction.description": "Attığın oklar ve mızraklar canlılara Solma uygular.",
-    "power.toomanyorigins.drainage.name": "Emiş",
+    "power.toomanyorigins.drainage.name": "Ruh Emişi",
     "power.toomanyorigins.drainage.description": "Bir düşman öldürdüğünde yaşam enerjisini emersin, bu açlığını doldurur.",
     "power.toomanyorigins.hell_raised.name": "Cehennemli",
     "power.toomanyorigins.hell_raised.description": "Oklar için alternatif bir tarife erişimin var.",
