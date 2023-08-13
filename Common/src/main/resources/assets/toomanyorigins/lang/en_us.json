@@ -78,8 +78,8 @@
 
   "power.toomanyorigins.affliction.name": "Affliction",
   "power.toomanyorigins.affliction.description": "Some projectiles will inflict Wither upon hitting a target.",
-  "power.toomanyorigins.drainage.name": "Drainage",
-  "power.toomanyorigins.drainage.description": "Upon killing an enemy, you drain their life force, filling your hunger.",
+  "power.toomanyorigins.soul_siphon.name": "Soul Siphon",
+  "power.toomanyorigins.soul_siphon.description": "Upon killing an enemy, you drain their life force, filling your hunger.",
   "power.toomanyorigins.hell_raised.name": "Hell-Raised",
   "power.toomanyorigins.hell_raised.description": "You gain access to an alternative recipe for arrows.",
   "power.toomanyorigins.spirit_strider.name": "Spirit Strider",
