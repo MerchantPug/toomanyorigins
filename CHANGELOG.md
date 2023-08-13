@@ -1,5 +1,5 @@
 ### Origins
-- Replaced Fragile on Hare with a new power, Frail, which makes the Hare take 1 more damage from non player sources.
+- Replaced Fragile on Hare with a new power, Frail, which makes the Hare take 1 more damage from non entity sources.
 
 ### Language
 - Updated Turkish translation. - Hexasan #67
@@ -47,7 +47,7 @@
 - `Hot Hops` now updates upon jumping instead of whilst in the air.
 - Lowered `Hot Hops`' resource to reach maximum after 7 jumps.
 - Removed `Moon Leap` and `Sugary Delicacy`.
-- Replaced `Lightweight` with `Frail`, which makes the Hare take 1 more damage from non player sources.
+- Replaced `Lightweight` with `Frail`, which makes the Hare take 1 more damage from non entity sources.
 - Added `Waterskipper` power, which allows you to stand on the surface of water for a short time whilst at maximum hopping speed.
 - Added `Small Appetite` power, which makes you exhaust less.
 - Added `Drenchable Fur` power, which makes you unable to move as quickly whilst in water.
