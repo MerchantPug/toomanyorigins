@@ -1,15 +1,8 @@
 ### Origins
-- Replaced Fragile on Hare with a new power, Frail, which makes the Hare take 1 more damage from non entity sources.
-
-### Language
-- Updated Turkish translation. - Hexasan #67
-
-### Dependencies
-- Bumped Apugli to 2.5.1.
+- Renamed `Drainage` on Withered to `Soul Siphon`.
 
 ### Bugfixes
-- Fixed server config not containing `performVersionCheck`.
-- [1.19.2] Fixed Dragonborn Fireball power not functioning due to an erroring power JSON.
+- Fixed Swarm's `Stinging Pains` referencing an invalid power.
 
 # Full Changelog Compared to 0.x.x
 ### General
@@ -22,8 +15,8 @@
 - Added `legacy_content.json` file found in the data pack directory `data/toomanyorigins/legacy_content.json`, this is able to enable any legacy content that the pack may need by setting a value in the json file to `true`. This can enable `dragon_fireball`, `withered_crops` and `zombifying`. This will be synced with clients.
 
 ### Translations
-- Updated Korean translation. - Snap_Lan
-- Updated Turkish translation. - Hexasan
+- Updated Korean translation. (Snap_Lan)
+- Updated Turkish translation. (Hexasan)
 - Removed all translations that have not been listed here. They have become obsolete as a result of this update.
 
 ### Hiss-kin
@@ -94,6 +87,6 @@
 ### Withered
 - Removed `Wither Toxins`, `Black Thumb`, `Weariness` `Soul Shield` and `Infused Veins` powers.
 - Added `Affliction` power in place of Wither Toxins, which inflicts Wither II on entities hit with certain projectiles.
-- Added `Drainage` power, which feeds you upon killing entities or from damage dealt through affliction.
+- Added `Soul Siphon` power, which feeds you upon killing entities or from damage dealt through affliction.
 - Added` Hell-Raised` power, which gives you an alternative recipe for arrows.
 - Added `Deathly Digestion` power, which makes food items less nourishing for you and exhausts you quicker whilst not in the Nether.
