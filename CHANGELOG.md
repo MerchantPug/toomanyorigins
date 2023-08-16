@@ -6,6 +6,9 @@
 ### Bugfixes
 - Fixed Hiss-kin's Conductive power not functioning when they are invulnerable to lightning damage.
 
+### Translations
+- Updated Turkish translation - Hexasan - #73
+
 # Full Changelog Compared to 0.x.x
 ### General
 - Reworked every origin. If you would like to have the old origins, you are able to use the legacy content built-in data pack.
