@@ -1,10 +1,5 @@
 {
   "type": "origins:multiple",
-  "resource": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 40
-  },
   "particles": {
     "type": "origins:particle",
     "particle": {
@@ -21,44 +16,19 @@
       "z": 0.05
     }
   },
-  "tick": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_resource",
-      "change": 1
+  "freeze": {
+    "type": "toomanyorigins:freeze",
+    "modifier": {
+      "operation": "multiply_base_multiplicative",
+      "value": -0.7
     },
-    "interval": 1
+    "should_damage": false
   },
-  "speed_modification": {
-    "type": "origins:modify_attribute",
-    "attribute": "minecraft:generic.movement_speed",
-    "modifiers": {
-      "name": "Reduced movement speed from frost cloud",
-      "operation": "multiply_base_additive",
-      "value": 0.0,
-      "resource": "*:*_resource",
-      "modifier": [
-        {
-          "operation": "multiply_base_multiplicative",
-          "value": -1.02
-        }
-      ]
-    }
-  },
-  "air_speed_modification": {
+  "air_freeze": {
     "type": "origins:modify_air_speed",
-    "modifiers": {
-      "name": "Reduced air speed from frost cloud",
-      "operation": "multiply_base_additive",
-      "value": 0.0,
-      "resource": "*:*_resource",
-      "modifier": [
-        {
-          "operation": "multiply_base_multiplicative",
-          "value": -1.02
-        }
-      ]
+    "modifier": {
+      "operation": "add_base_early",
+      "value": -0.05
     }
   },
   "killswitch_cooldown": {
