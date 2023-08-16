@@ -14,7 +14,7 @@
     "type": "origins:target_condition",
     "condition": {
       "type": "toomanyorigins:entity_in_radius",
-      "radius": 1.0,
+      "radius": 2.0,
       "bientity_condition": {
         "type": "origins:target_condition",
         "condition": {
