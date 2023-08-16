@@ -1,121 +1,52 @@
 {
-  "type": "origins:multiple",
-  "damage_other_entities": {
-    "type": "origins:action_when_hit",
-    "bientity_action": {
-      "type": "origins:target_action",
-      "action": {
-        "type": "origins:area_of_effect",
-        "radius": 12.0,
-        "bientity_action": {
-          "type": "origins:target_action",
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:damage",
-                "damage_type": "toomanyorigins:dragonborn_shock",
-                "amount": 4
-              },
-              {
-                "type": "origins:spawn_particles",
-                "particle": {
-                  "type": "toomanyorigins:custom_dragon_breath",
-                  "params": "1.0 0.0 0.4862745098"
-                },
-                "count": 12,
-                "speed": 0.05,
-                "spread": {
-                  "x": 0.05,
-                  "y": 0.1,
-                  "z": 0.05
-                }
-              }
-            ]
-          }
-        },
-        "bientity_condition": {
-          "type": "origins:target_condition",
-          "condition": {
-            "type": "toomanyorigins:entity_in_radius",
-            "radius": 1.0,
-            "bientity_condition": {
-              "type": "origins:and",
-              "conditions": [
-                {
-                  "type": "origins:target_condition",
-                  "condition": {
-                    "type": "toomanyorigins:custom_entity_id",
-                    "entity_id": "toomanyorigins:dragonborn_thunderball_cloud"
-                  }
-                },
-                {
-                  "type": "toomanyorigins:owner",
-                  "inverted": true
-                }
-              ]
-            },
-            "comparison": ">",
-            "compare_to": 0
-          }
-        }
-      }
-    },
-    "bientity_condition": {
-      "type": "origins:actor_condition",
-      "condition": {
-        "type": "toomanyorigins:entity_in_radius",
-        "radius": 10.0,
-        "bientity_condition": {
-          "type": "origins:and",
-          "conditions": [
-            {
-              "type": "origins:target_condition",
-              "condition": {
-                "type": "toomanyorigins:custom_entity_id",
-                "entity_id": "toomanyorigins:dragonborn_thunderball_cloud"
-              }
-            },
-            {
-              "type": "toomanyorigins:owner"
-            }
-          ]
-        },
-        "comparison": ">",
-        "compare_to": 0
-      }
-    }
+  "type": "toomanyorigins:damage_nearby_when_hit",
+  "source": {
+    "name": "dragonbornShock",
+    "bypasses_armor": true,
+    "magic": true
   },
-  "killswitch_cooldown": {
-    "type": "origins:cooldown",
-    "cooldown": 160,
-    "hud_render": {
-      "should_render": false
-    }
+  "radius": 10.0,
+  "modifier": {
+    "operation": "multiply_base_multiplicative",
+    "value": -0.6
   },
-  "start_killswitch": {
-    "type": "origins:action_on_callback",
-    "entity_action_gained": {
-      "type": "origins:delay",
-      "ticks": 1,
-      "action": {
-        "type": "origins:trigger_cooldown",
-        "power": "*:*_killswitch_cooldown"
-      }
-    }
-  },
-  "killswitch": {
-    "type": "origins:action_over_time",
-    "interval": 20,
-    "rising_action": {
-      "type": "origins:revoke_power",
-      "power": "*:*",
-      "source": "toomanyorigins:dragonborn_thunderball_cloud"
-    },
+  "self_nearby_bientity_condition": {
+    "type": "origins:target_condition",
     "condition": {
-      "type": "origins:resource",
-      "resource": "*:*_killswitch_cooldown",
-      "comparison": "==",
+      "type": "toomanyorigins:entity_in_radius",
+      "radius": 10.0,
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "toomanyorigins:custom_entity_id",
+          "entity_id": "toomanyorigins:dragonborn_thunderball_cloud"
+        }
+      },
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
+  "attacker_self_bientity_condition": {
+    "type": "origins:actor_condition",
+    "condition": {
+      "type": "toomanyorigins:entity_in_radius",
+      "radius": 10.0,
+      "bientity_condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "toomanyorigins:custom_entity_id",
+              "entity_id": "toomanyorigins:dragonborn_thunderball_cloud"
+            }
+          },
+          {
+            "type": "toomanyorigins:owner"
+          }
+        ]
+      },
+      "comparison": ">",
       "compare_to": 0
     }
   }

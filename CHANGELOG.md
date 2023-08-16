@@ -1,3 +1,7 @@
+### Gameplay
+- Dragonborn's Frost Cloud now uses the Freezing system of powder snow minus the damage.
+- Dragonborn's Thunder Cloud now deals 40% of the triggering attack's damage to affected entities instead of a flat rate of 4 damage. 
+
 ### Bugfixes
 - Fixed Hiss-kin's Conductive power not functioning when they are invulnerable to lightning damage.
 
