@@ -1,6 +1,5 @@
 package net.merchantpug.toomanyorigins;
 
-import eu.midnightdust.lib.config.MidnightConfig;
 import io.github.apace100.apoli.power.PowerTypes;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -9,10 +8,8 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.merchantpug.toomanyorigins.data.LegacyContentManagerFabric;
 import net.merchantpug.toomanyorigins.data.LegacyContentRegistry;
-import net.merchantpug.toomanyorigins.network.TMOPackets;
 import net.merchantpug.toomanyorigins.network.s2c.SyncLegacyContentPacket;
 import net.merchantpug.toomanyorigins.registry.TMOItems;
-import net.merchantpug.toomanyorigins.util.TooManyOriginsConfig;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.network.chat.Component;
@@ -57,10 +54,6 @@ public class TooManyOriginsFabric implements ModInitializer {
 			entries.accept(TMOItems.WITHERED_CROP_SEEDS.get());
 			entries.accept(TMOItems.WITHERED_STEM_SEEDS.get());
 		});
-
-		MidnightConfig.init(TooManyOrigins.MOD_ID, TooManyOriginsConfig.class);
-
-		TMOPackets.registerC2S();
 
 		ResourceManagerHelper.get(PackType.SERVER_DATA).registerReloadListener(new LegacyContentManagerFabric());
 
