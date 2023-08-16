@@ -19,16 +19,16 @@
   "freeze": {
     "type": "toomanyorigins:freeze",
     "modifier": {
-      "operation": "multiply_base_multiplicative",
-      "value": -0.7
+      "operation": "set_total",
+      "value": 40
     },
     "should_damage": false
   },
-  "air_freeze": {
+  "air_slowdown": {
     "type": "origins:modify_air_speed",
     "modifier": {
-      "operation": "add_base_early",
-      "value": -0.05
+      "operation": "multiply_total_multiplicative",
+      "value": -0.1
     }
   },
   "killswitch_cooldown": {
