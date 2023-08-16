@@ -1,8 +1,5 @@
-### Origins
-- Renamed `Drainage` on Withered to `Soul Siphon`.
-
 ### Bugfixes
-- Fixed Swarm's `Stinging Pains` referencing an invalid power.
+- Fixed Hiss-kin's Conductive power not functioning when they are invulnerable to lightning damage.
 
 # Full Changelog Compared to 0.x.x
 ### General

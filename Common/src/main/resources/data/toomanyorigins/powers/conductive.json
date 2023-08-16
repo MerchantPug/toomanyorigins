@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "grant_effect": {
-    "type": "origins:self_action_when_hit",
+    "type": "toomanyorigins:action_when_lightning_struck",
     "entity_action": {
       "type": "origins:apply_effect",
       "effect": {
@@ -9,10 +9,6 @@
         "amplifier": 0,
         "duration": 9600
       }
-    },
-    "damage_condition": {
-      "type": "origins:name",
-      "name": "lightningBolt"
     },
     "cooldown": 20
   },
