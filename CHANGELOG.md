@@ -4,10 +4,13 @@
 - Dragonborn's Thunder Cloud should now only deal damage whilst the entity is inside the cloud.
 
 ### Bugfixes
-- Fixed Hiss-kin's Conductive power not functioning when they are invulnerable to lightning damage.
+- Fixed Hiss-kin's Conductive power not functioning when they are invulnerable to lightning damage. 
 
 ### Translations
 - Updated Turkish translation - Hexasan - #73
+
+### Miscellaneous
+- Remove `toomanyorigins:handshake` packet, its related config, and related code. - #74
 
 # Full Changelog Compared to 0.x.x
 ### General
