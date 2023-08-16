@@ -1,10 +1,6 @@
 {
   "type": "toomanyorigins:damage_nearby_when_hit",
-  "source": {
-    "name": "dragonbornShock",
-    "bypasses_armor": true,
-    "magic": true
-  },
+  "damage_type": "toomanyorigins:dragonborn_shock",
   "radius": 10.0,
   "modifier": {
     "operation": "multiply_base_multiplicative",
@@ -14,7 +10,7 @@
     "type": "origins:target_condition",
     "condition": {
       "type": "toomanyorigins:entity_in_radius",
-      "radius": 10.0,
+      "radius": 1.0,
       "bientity_condition": {
         "type": "origins:target_condition",
         "condition": {

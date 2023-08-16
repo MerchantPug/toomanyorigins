@@ -30,9 +30,8 @@
   "death.attack.dragonbornFireball": "%1$s was engulfed in elemental magic by %2$s",
   "death.attack.dragonbornFireball.item": "%1$s was engulfed in elemental magic by %2$s using %3$s",
 
-  "death.attack.dragonbornShock": "%1$s couldn't handle the shock they were in",
-  "death.attack.dragonbornShock.player": "%1$s couldn't handle the shock they were in whilst trying to escape %2$s",
-  "death.attack.dragonbornShock.player.item": "%1$s couldn't handle the shock they were in whilst trying to escape %2$s whilst using %3$s",
+  "death.attack.dragonbornShock": "%1$s couldn't handle the shock from %2%s",
+  "death.attack.dragonbornShock.item": "%1$s couldn't handle the shock from %2%s using %3$s",
 
   "power.toomanyorigins.hot_hops.name": "Hot Hops",
   "power.toomanyorigins.hot_hops.description": "Hopping while sprinting allows you leap forward, the amount you leap increases after each hop.",
