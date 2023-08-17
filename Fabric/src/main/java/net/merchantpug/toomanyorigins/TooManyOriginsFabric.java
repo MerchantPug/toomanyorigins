@@ -14,7 +14,7 @@ import net.minecraft.server.packs.PackType;
 
 public class TooManyOriginsFabric implements ModInitializer {
 	public static String VERSION = "";
-	public static int[] SEMVER;
+
 	@Override
 	public void onInitialize() {
 		FabricLoader.getInstance().getModContainer(TooManyOrigins.MOD_ID).ifPresent(modContainer -> {
@@ -24,11 +24,6 @@ public class TooManyOriginsFabric implements ModInitializer {
 			}
 			if(VERSION.contains("-")) {
 				VERSION = VERSION.split("-")[0];
-			}
-			String[] splitVersion = VERSION.split("\\.");
-			SEMVER = new int[splitVersion.length];
-			for(int i = 0; i < SEMVER.length; i++) {
-				SEMVER[i] = Integer.parseInt(splitVersion[i]);
 			}
 			ResourceManagerHelper.registerBuiltinResourcePack(TooManyOrigins.asResource("legacytoomanyorigins"), modContainer, "Legacy TooManyOrigins", ResourcePackActivationType.NORMAL);
 		});
