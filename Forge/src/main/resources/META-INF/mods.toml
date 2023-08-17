@@ -40,3 +40,10 @@ mandatory=true
 versionRange="[2.6.2,)"
 ordering="AFTER"
 side="BOTH"
+
+[[dependencies.toomanyorigins]]
+modId="apugli"
+mandatory=true
+versionRange="[2.6.2,)"
+ordering="AFTER"
+side="BOTH"
