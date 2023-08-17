@@ -9,6 +9,9 @@
 ### Translations
 - Updated Turkish translation - Hexasan - #73
 
+### Dependencies
+- Updated Apugli to 2.6.2
+
 ### Miscellaneous
 - Remove `toomanyorigins:handshake` packet, its related config, and related code. - #74
 
