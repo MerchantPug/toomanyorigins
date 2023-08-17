@@ -206,6 +206,9 @@ tasks.register('curseforge', TaskPublishCurseForge) {
     java_versions.split(", ").each {
         mainFile.addJavaVersion(it)
     }
+    forge_required_deps.split(", ").each {
+        mainFile.addRequirement(it)
+    }
     cf_forge_optional_deps.split(", ").each {
         mainFile.addOptional(it)
     }
@@ -220,11 +223,14 @@ modrinth {
     versionNumber = "${version}"
     versionType = "release"
     versionName = "Forge v${rootProject.version}+${minecraft_version}"
-    changelog = new StringBuilder("# Requires [Origins Forge v${origins_forge_version}](https://www.curseforge.com/minecraft/mc-mods/origins-forge)\n\n").append(new File("$project.rootDir/CHANGELOG.md").getText('UTF-8')).toString()
+    changelog = new StringBuilder(new File("$project.rootDir/CHANGELOG.md").getText('UTF-8'))
     uploadFile = jar
     gameVersions = forge_game_versions.split(", ").toList()
     loaders = forge_mod_loaders.split(", ").collect { return it.toLowerCase(Locale.ROOT) }
     dependencies {
+        forge_required_deps.split(", ").each {
+            required.project it
+        }
         common_embedded_deps.split(", ").each {
             embedded.project it
         }
