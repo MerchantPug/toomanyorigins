@@ -33,3 +33,10 @@ mandatory=true
 versionRange="[1.19.2-1.7.1.0,)"
 ordering="AFTER"
 side="BOTH"
+
+[[dependencies.toomanyorigins]]
+modId="apugli"
+mandatory=true
+versionRange="[2.6.2,)"
+ordering="AFTER"
+side="BOTH"
