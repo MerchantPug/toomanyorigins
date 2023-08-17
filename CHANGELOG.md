@@ -1,2 +1,8 @@
-- Port to 1.20.1
-    - This version should also work on 1.20!
+### Bugfixes
+- Fixed Hiss-kin's Conductor power not functioning when they are invulnerable to lightning damage. - 66
+
+### Dependencies
+- Updated Apugli to 2.6.2
+
+### Miscellaneous
+- Remove `toomanyorigins:handshake` packet, its related config, and related code. - #74
