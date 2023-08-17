@@ -1,10 +1,8 @@
-[A] - Apugli related change.
 ### Bugfixes
-- [A] Fixed a crash involving killed entities without an attacker or kill credit. (Notably Create's trains).
-- [FABRIC] Fixed Swarm's Calming Aura power not functioning properly.
-- [FABRIC] Fixed Withered's Weary power not functioning properly.
-- Fixed Withered's Black Thumb power not functioning properly.
-- Fixed Withered Crop/Stem not displaying smoke particles.
+- Fixed Hiss-kin's Conductor power not functioning when they are invulnerable to lightning damage. - 66
 
 ### Dependencies
-- Updated Apugli to v2.4.4
+- Updated Apugli to 2.6.2
+
+### Miscellaneous
+- Remove `toomanyorigins:handshake` packet, its related config, and related code. - #74
