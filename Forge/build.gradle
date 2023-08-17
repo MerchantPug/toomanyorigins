@@ -38,6 +38,9 @@ repositories {
     maven {
         name = "JitPack"
         url = 'https://jitpack.io'
+        content {
+            excludeGroup "io.github.edwinmindcraft"
+        }
     }
 }
 
@@ -104,9 +107,9 @@ dependencies {
     //Forge
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     //Origins
-    implementation fg.deobf("com.github.MerchantPug.origins-forge:calio-forge:${origins_forge_version}")
-    implementation fg.deobf("com.github.MerchantPug.origins-forge:apoli-forge:${origins_forge_version}")
-    implementation fg.deobf("com.github.MerchantPug.origins-forge:origins-forge:${origins_forge_version}")
+    implementation fg.deobf("io.github.edwinmindcraft:calio-forge:${minecraft_version}-${calio_forge_version}")
+    implementation fg.deobf("io.github.edwinmindcraft:apoli-forge:${minecraft_version}-${apoli_forge_version}")
+    implementation fg.deobf("io.github.edwinmindcraft:origins-forge:${minecraft_version}-${origins_forge_version}")
     // Apugli
     implementation(jarJar(fg.deobf("net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-forge"))) {
         jarJar.ranged(it, "[${apugli_version},)")
