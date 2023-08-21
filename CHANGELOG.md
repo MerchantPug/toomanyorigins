@@ -1,8 +1,9 @@
+[A] Notes an Apugli related change.
+
 ### Bugfixes
-- Fixed Hiss-kin's Conductor power not functioning when they are invulnerable to lightning damage. - 66
+- [A] Fixed Custom Projectile texture warning message happening whilst NBT hasn't been set.
+- [A] Fixed crash involving setting a value to null particles.
 
 ### Dependencies
-- Updated Apugli to 2.6.2
-
-### Miscellaneous
-- Remove `toomanyorigins:handshake` packet, its related config, and related code. - #74
+- Updated Apugli to 2.6.3
+- Updated Mixin Extras to 0.2.0-beta.9
