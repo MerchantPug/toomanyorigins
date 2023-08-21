@@ -1,19 +1,11 @@
-### Gameplay
-- Dragonborn's Frost Cloud now uses the Freezing system of powder snow minus the damage.
-- Dragonborn's Thunder Cloud now deals 40% of the triggering attack's damage to affected entities instead of a flat rate of 4 damage. 
-- Dragonborn's Thunder Cloud should now only deal damage whilst the entity is inside the cloud.
+[A] Notes an Apugli related change.
 
 ### Bugfixes
-- Fixed Hiss-kin's Conductive power not functioning when they are invulnerable to lightning damage. 
-
-### Translations
-- Updated Turkish translation - Hexasan - #73
+- [A] Fixed Custom Projectile texture warning message happening whilst NBT hasn't been set.
+- [A] Fixed a crash involving setting a value to null particles.
 
 ### Dependencies
-- Updated Apugli to 2.6.2
-
-### Miscellaneous
-- Remove `toomanyorigins:handshake` packet, its related config, and related code. - #74
+- Updated Apugli to 2.6.3
 
 # Full Changelog Compared to 0.x.x
 ### General
