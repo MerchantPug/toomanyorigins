@@ -1,11 +1,11 @@
 [A] Notes an Apugli related change.
 
 ### Bugfixes
-- [A] Fixed Custom Projectile texture warning message happening whilst NBT hasn't been set.
-- [A] Fixed a crash involving setting a value to null particles.
+- [A] Fixed incompatibility with 2 handed weapons in Better Combat.
+- [A] Actually fixed crash involving setting a value to null particles.
 
 ### Dependencies
-- Updated Apugli to 2.6.3
+- Updated Apugli to 2.6.5
 
 # Full Changelog Compared to 0.x.x
 ### General
