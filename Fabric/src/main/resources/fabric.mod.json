@@ -3,7 +3,7 @@
   "id": "toomanyorigins",
   "version": "${version}",
   "name": "TooManyOrigins",
-  "description": "An addon to Origins in the spirit of the original mod.",
+  "description": "An addon to Origins loosely inspired by the original mod.",
   "authors": [
     "MerchantPug"
   ],
