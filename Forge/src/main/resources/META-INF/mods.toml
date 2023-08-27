@@ -11,7 +11,7 @@ displayName="TooManyOrigins"
 displayURL="https://github.com/MerchantPug/toomanyorigins"
 logoFile="pack.png"
 authors="MerchantPug"
-description="An addon to Origins in the spirit of the original mod."
+description="An addon to Origins loosely inspired by the original mod."
 
 [[dependencies.toomanyorigins]]
 modId="forge"
