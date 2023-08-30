@@ -77,7 +77,9 @@ dependencies {
         parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
     }
     // Origins
-    modCompileOnly "com.github.eggohito:origins-fabric:${origins_fabric_version}"
+    modCompileOnly("com.github.apace100:calio:${calio_fabric_version}") { transitive false }
+    modCompileOnly("com.github.eggohito:apoli:${apoli_fabric_version}") { transitive false }
+    modCompileOnly("com.github.eggohito:origins-fabric:${origins_fabric_version}") { transitive false }
     // Apugli
     modCompileOnly "net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-fabric"
 }
