@@ -29,10 +29,10 @@ repositories {
 
 dependencies {
     // For Common sourcesets
-    compileOnly(net.merchantpug:TooManyOrigins:${project.tmo_version}-common")
+    compileOnly("net.merchantpug:TooManyOrigins:${project.tmo_version}-common")
     
     // For Fabric/Quilt Loom
-    modImplementation(include("net.merchantpug:TooManyOrigins:${project.tmo_version}-fabric"))
+    modImplementation("net.merchantpug:TooManyOrigins:${project.tmo_version}-fabric")
     
     // For ForgeGradle
     implementation(fg.deobf("net.merchantpug:TooManyOrigins:${project.tmo_version}-forge"))
