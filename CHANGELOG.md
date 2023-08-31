@@ -2,6 +2,7 @@
 
 ### Bugfixes
 - [A] [FORGE] Fixed a start-up crash caused by a mixin compilation error.
+- Fixed builder id of Dragonborn related entities not having a namespace.
 
 ### Dependencies
 - Updated Apugli to 2.6.6. This version's changelog can be read [here](https://github.com/MerchantPug/apugli/releases/tag/2.6.6%2B1.20.1)
