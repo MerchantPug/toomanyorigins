@@ -95,7 +95,7 @@ dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
     mappings loom.layered() {
         officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-1.19.3:${parchment_version}@zip")
+        parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
     }
     //Fabric
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
@@ -119,6 +119,7 @@ dependencies {
 
 processResources {
     from project(":Common").sourceSets.main.resources
+    exclude "toomanyorigins.common.accesswidener"
 
     inputs.property "version", project.version
 

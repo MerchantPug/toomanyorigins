@@ -1,0 +1,3 @@
+accessWidener   v1  named
+accessible method net/minecraft/world/damagesource/DamageSources source (Lnet/minecraft/resources/ResourceKey;)Lnet/minecraft/world/damagesource/DamageSource;
+accessible method net/minecraft/world/damagesource/DamageSources source (Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/world/damagesource/DamageSource;
