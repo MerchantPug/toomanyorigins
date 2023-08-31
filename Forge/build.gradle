@@ -156,6 +156,7 @@ tasks.withType(JavaCompile) {
 
 processResources {
     from project(':Common').sourceSets.main.resources
+    exclude "toomanyorigins.common.accesswidener"
 
     inputs.property 'version', project.version
 

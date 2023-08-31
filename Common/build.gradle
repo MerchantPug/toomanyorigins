@@ -18,41 +18,8 @@ repositories {
         url = 'https://repo.spongepowered.org/repository/maven-public/'
     }
     maven {
-        name = "Ladysnake Libs"
-        url = 'https://maven.ladysnake.org/releases'
-    }
-    maven {
         name = "JitPack"
         url = 'https://jitpack.io'
-    }
-    maven {
-        name = "Cafeteria"
-        url = 'https://maven.cafeteria.dev'
-        content {
-            includeGroup 'net.adriantodt.fabricmc'
-        }
-    }
-    maven {
-        name = "Jamie's White Shirt"
-        url "https://maven.jamieswhiteshirt.com/libs-release"
-        content {
-            includeGroup "com.jamieswhiteshirt"
-        }
-    }
-    maven {
-        name = "Shedaniel"
-        url "https://maven.shedaniel.me/"
-    }
-    maven {
-        name = "TerraformersMC"
-        url "https://maven.terraformersmc.com/"
-    }
-    maven {
-        name = "Modrinth"
-        url = "https://api.modrinth.com/maven"
-        content {
-            includeGroup "maven.modrinth"
-        }
     }
     maven {
         name = 'ParchmentMC'
@@ -63,6 +30,7 @@ repositories {
 }
 
 loom {
+    accessWidenerPath = file("src/main/resources/toomanyorigins.common.accesswidener")
     shareCaches()
     mixin {
         useLegacyMixinAp = false
@@ -74,7 +42,7 @@ dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
     mappings loom.layered() {
         officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-1.19.3:${parchment_version}@zip")
+        parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
     }
     // Origins
     modCompileOnly("com.github.apace100:calio:${calio_fabric_version}") { transitive false }
@@ -82,7 +50,9 @@ dependencies {
     modCompileOnly("com.github.apace100:origins-fabric:${origins_fabric_version}") { transitive false }
     // Apugli
     modCompileOnly("net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-fabric") { transitive false }
-    // Mixin
+    // MixinExtras
+    compileOnly(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:${mixin_extras_version}"))
+    //Mixin
     compileOnly group:'org.spongepowered', name:'mixin', version:'0.8.5'
     compileOnly group: 'org.ow2.asm', name: 'asm-tree', version: '9.4'
 }
@@ -116,7 +86,6 @@ githubRelease {
     token = System.getenv("GITHUB_TOKEN")
     owner = gh_owner
     repo = gh_repo
-    prerelease = true
     tagName = "${rootProject.version}+${minecraft_version}"
     targetCommitish = gh_commitish
     releaseName = "$project.mod_name v${rootProject.version}+${minecraft_version}"
