@@ -110,14 +110,6 @@
                 "hand": "MAIN_HAND"
               },
               {
-                "type": "toomanyorigins:item_cooldown",
-                "item_tags": [
-                  "toomanyorigins:fireball_activators",
-                  "toomanyorigins:frostball_activators",
-                  "toomanyorigins:thunderball_activators"
-                ]
-              },
-              {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_fireball"
               },
@@ -128,6 +120,14 @@
               {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_thunder_cooldown"
+              },
+              {
+                "type": "toomanyorigins:item_cooldown",
+                "item_tags": [
+                  "toomanyorigins:fireball_activators",
+                  "toomanyorigins:frostball_activators",
+                  "toomanyorigins:thunderball_activators"
+                ]
               }
             ]
           }
@@ -199,14 +199,6 @@
                 "hand": "MAIN_HAND"
               },
               {
-                "type": "toomanyorigins:item_cooldown",
-                "item_tags": [
-                  "toomanyorigins:fireball_activators",
-                  "toomanyorigins:frostball_activators",
-                  "toomanyorigins:thunderball_activators"
-                ]
-              },
-              {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_fireball"
               },
@@ -217,6 +209,14 @@
               {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_thunder_cooldown"
+              },
+              {
+                "type": "toomanyorigins:item_cooldown",
+                "item_tags": [
+                  "toomanyorigins:fireball_activators",
+                  "toomanyorigins:frostball_activators",
+                  "toomanyorigins:thunderball_activators"
+                ]
               }
             ]
           }
@@ -288,14 +288,6 @@
                 "hand": "MAIN_HAND"
               },
               {
-                "type": "toomanyorigins:item_cooldown",
-                "item_tags": [
-                  "toomanyorigins:fireball_activators",
-                  "toomanyorigins:frostball_activators",
-                  "toomanyorigins:thunderball_activators"
-                ]
-              },
-              {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_fireball"
               },
@@ -306,6 +298,14 @@
               {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_thunder_cooldown"
+              },
+              {
+                "type": "toomanyorigins:item_cooldown",
+                "item_tags": [
+                  "toomanyorigins:fireball_activators",
+                  "toomanyorigins:frostball_activators",
+                  "toomanyorigins:thunderball_activators"
+                ]
               }
             ]
           }
@@ -377,14 +377,6 @@
                 "hand": "OFF_HAND"
               },
               {
-                "type": "toomanyorigins:item_cooldown",
-                "item_tags": [
-                  "toomanyorigins:fireball_activators",
-                  "toomanyorigins:frostball_activators",
-                  "toomanyorigins:thunderball_activators"
-                ]
-              },
-              {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_fireball"
               },
@@ -395,6 +387,14 @@
               {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_thunder_cooldown"
+              },
+              {
+                "type": "toomanyorigins:item_cooldown",
+                "item_tags": [
+                  "toomanyorigins:fireball_activators",
+                  "toomanyorigins:frostball_activators",
+                  "toomanyorigins:thunderball_activators"
+                ]
               }
             ]
           }
@@ -466,14 +466,6 @@
                 "hand": "OFF_HAND"
               },
               {
-                "type": "toomanyorigins:item_cooldown",
-                "item_tags": [
-                  "toomanyorigins:fireball_activators",
-                  "toomanyorigins:frostball_activators",
-                  "toomanyorigins:thunderball_activators"
-                ]
-              },
-              {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_fireball"
               },
@@ -484,6 +476,14 @@
               {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_thunder_cooldown"
+              },
+              {
+                "type": "toomanyorigins:item_cooldown",
+                "item_tags": [
+                  "toomanyorigins:fireball_activators",
+                  "toomanyorigins:frostball_activators",
+                  "toomanyorigins:thunderball_activators"
+                ]
               }
             ]
           }
@@ -555,14 +555,6 @@
                 "hand": "OFF_HAND"
               },
               {
-                "type": "toomanyorigins:item_cooldown",
-                "item_tags": [
-                  "toomanyorigins:fireball_activators",
-                  "toomanyorigins:frostball_activators",
-                  "toomanyorigins:thunderball_activators"
-                ]
-              },
-              {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_fireball"
               },
@@ -573,6 +565,14 @@
               {
                 "type": "origins:trigger_cooldown",
                 "power": "*:*_thunder_cooldown"
+              },
+              {
+                "type": "toomanyorigins:item_cooldown",
+                "item_tags": [
+                  "toomanyorigins:fireball_activators",
+                  "toomanyorigins:frostball_activators",
+                  "toomanyorigins:thunderball_activators"
+                ]
               }
             ]
           }
