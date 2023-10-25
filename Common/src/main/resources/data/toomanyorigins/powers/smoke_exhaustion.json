@@ -1,0 +1,55 @@
+{
+  "type": "origins:multiple",
+  "exhaustion": {
+    "type": "toomanyorigins:client_action_over_time",
+    "entity_action": {
+      "type": "toomanyorigins:packet",
+      "side": "SERVER",
+      "action": {
+        "type": "origins:exhaust",
+        "amount": 0.1
+      }
+    },
+    "condition": {
+      "type": "toomanyorigins:particle_in_radius",
+      "particles": [
+        "large_smoke",
+        "campfire_cosy_smoke",
+        "campfire_signal_smoke"
+      ],
+      "compare_to": 5,
+      "radius": 5.0
+    }
+  },
+  "overlay": {
+    "type": "origins:overlay",
+    "texture": "minecraft:textures/misc/nausea.png",
+    "strength": 0.6,
+    "red": 0.4,
+    "green": 0.5,
+    "blue": 0.56,
+    "draw_mode": "nausea",
+    "draw_phase": "above_hud",
+    "hide_with_hud": true,
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "toomanyorigins:particle_in_radius",
+      "particles": [
+        "large_smoke",
+        "campfire_cosy_smoke",
+        "campfire_signal_smoke"
+      ],
+      "compare_to": 5,
+      "radius": 5.0
+    }
+  },
+  "modders_hate_her": {
+    "type": "toomanyorigins:force_particle_render",
+    "particles": [
+      "minecraft:large_smoke",
+      "minecraft:campfire_cosy_smoke",
+      "minecraft:campfire_signal_smoke"
+    ]
+  },
+  "name": "power.toomanyorigins.smoke_sensitivity.name"
+}

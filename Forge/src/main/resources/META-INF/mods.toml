@@ -11,7 +11,7 @@ displayName="TooManyOrigins"
 displayURL="https://github.com/MerchantPug/toomanyorigins"
 logoFile="pack.png"
 authors="MerchantPug"
-description="An addon to Origins loosely inspired by the original mod."
+description="An addon to Origins loosely inspired by the original mod. "
 
 [[dependencies.toomanyorigins]]
 modId="forge"
@@ -30,14 +30,7 @@ side="BOTH"
 [[dependencies.toomanyorigins]]
 modId="origins"
 mandatory=true
-versionRange="[1.19.2-1.7.1.1,)"
-ordering="AFTER"
-side="BOTH"
-
-[[dependencies.toomanyorigins]]
-modId="apugli"
-mandatory=true
-versionRange="[2.6.2,)"
+versionRange="[1.19.2-1.7.1.0,)"
 ordering="AFTER"
 side="BOTH"
 

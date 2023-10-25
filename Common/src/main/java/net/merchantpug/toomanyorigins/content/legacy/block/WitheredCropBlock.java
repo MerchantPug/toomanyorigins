@@ -1,4 +1,4 @@
-package net.merchantpug.toomanyorigins.content.legacy.block;
+package net.merchantpug.toomanyorigins.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -31,16 +31,15 @@ public class WitheredCropBlock extends BushBlock {
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
     }
 
     @Override
-    public boolean canSurvive(BlockState floor, LevelReader level, BlockPos pos) {
+    public boolean canSurvive(BlockState floor, LevelReader world, BlockPos pos) {
         return floor.is(Blocks.FARMLAND);
     }
 
-    @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         VoxelShape voxelShape = this.getShape(state, level, pos, CollisionContext.empty());
         Vec3 vec3d = voxelShape.bounds().getCenter();
@@ -55,15 +54,15 @@ public class WitheredCropBlock extends BushBlock {
     }
 
     @Override
-    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if (entity instanceof Ravager && level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
-            level.destroyBlock(pos, true, entity);
+    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
+        if (entity instanceof Ravager && world.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
+            world.destroyBlock(pos, true, entity);
         }
-        super.entityInside(state, level, pos, entity);
+        super.entityInside(state, world, pos, entity);
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
         return new ItemStack(this.pickBlockItem.get());
     }
 }

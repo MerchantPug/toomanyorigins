@@ -1,4 +1,4 @@
-package net.merchantpug.toomanyorigins.content.legacy.block;
+package net.merchantpug.toomanyorigins.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -26,11 +26,10 @@ public class WitheredStemBlock extends BushBlock {
         this.pickBlockItem = pickBlockItem;
     }
 
-    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return Block.box(7.0D, 0.0D, 7.0D, 9.0D, 2.0D, 9.0D);
     }
 
-    @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         VoxelShape voxelShape = this.getShape(state, level, pos, CollisionContext.empty());
         Vec3 vec3d = voxelShape.bounds().getCenter();
@@ -45,7 +44,7 @@ public class WitheredStemBlock extends BushBlock {
     }
 
     @Override
-    public boolean canSurvive(BlockState floor, LevelReader level, BlockPos pos) {
+    public boolean canSurvive(BlockState floor, LevelReader world, BlockPos pos) {
         return floor.is(Blocks.FARMLAND);
     }
 
@@ -53,5 +52,4 @@ public class WitheredStemBlock extends BushBlock {
     public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
         return new ItemStack(this.pickBlockItem.get());
     }
-
 }

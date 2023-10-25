@@ -1,7 +1,6 @@
 package net.merchantpug.toomanyorigins.registry;
 
 import net.merchantpug.toomanyorigins.platform.Services;
-import net.merchantpug.toomanyorigins.power.CancelOutSprintDisableOnHitPower;
 import net.merchantpug.toomanyorigins.power.DamageFromDragonFireballPower;
 import net.merchantpug.toomanyorigins.power.factory.ModifyDragonFireballPowerFactory;
 import net.merchantpug.toomanyorigins.power.factory.SimplePowerFactory;
@@ -11,7 +10,6 @@ import java.util.function.Supplier;
 
 @SuppressWarnings("rawtypes")
 public class TMOPowers {
-    public static final Supplier<CancelOutSprintDisableOnHitPower.Factory> CANCEL_OUT_SPRINT_DISABLE_ON_HIT = register(new CancelOutSprintDisableOnHitPower.Factory());
     public static final Supplier<ModifyDragonFireballPowerFactory> MODIFY_DRAGON_FIREBALL = register("modify_dragon_fireball", ModifyDragonFireballPowerFactory.class);
     public static final Supplier<DamageFromDragonFireballPower.Factory> TAKE_DAMAGE_FROM_ENDER_DRAGON_FIREBALL = register(new DamageFromDragonFireballPower.Factory());
 
