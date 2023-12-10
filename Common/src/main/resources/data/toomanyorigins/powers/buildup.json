@@ -134,20 +134,32 @@
         "value": 0.5
       },
       "targetable_bientity_condition": {
-        "type": "origins:target_condition",
-        "condition": {
-          "type": "origins:and",
-          "conditions": [
-            {
-              "type": "origins:living"
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:invert",
+            "condition": {
+              "type": "origins:riding_recursive"
             },
-            {
-              "type": "origins:in_tag",
-              "tag": "toomanyorigins:ignore_rocket_jump",
-              "inverted": true
+            "inverted": true
+          },
+          {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:living"
+                },
+                {
+                  "type": "origins:in_tag",
+                  "tag": "toomanyorigins:ignore_rocket_jump",
+                  "inverted": true
+                }
+              ]
             }
-          ]
-        }
+          }
+        ]
       },
       "explosion_damage_bientity_condition": {
         "type": "origins:target_condition",
