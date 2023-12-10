@@ -732,7 +732,7 @@
                         "type": "origins:spawn_particles",
                         "particle": {
                           "type": "toomanyorigins:custom_dragon_breath",
-                          "params": "0.30196078431 0.16862745098 0.63529411764"
+                          "params": "0.298039 0.0 0.862745"
                         },
                         "count": 1,
                         "speed": 0.1,
@@ -799,7 +799,7 @@
                                     },
                                     {
                                       "type": "origins:execute_command",
-                                      "command": "particle toomanyorigins:custom_dragon_breath 0.30196078431 0.16862745098 0.63529411764 ~ ~ ~ 0.005 0.005 0.005 0.05 15"
+                                      "command": "particle toomanyorigins:custom_dragon_breath 0.298039 0.0 0.862745 ~ ~ ~ 0.005 0.005 0.005 0.05 15"
                                     }
                                   ]
                                 },
@@ -857,7 +857,7 @@
                   "height_increase": 2,
                   "particle": {
                     "type": "toomanyorigins:custom_dragon_breath",
-                    "params": "0.30196078431 0.16862745098 0.63529411764"
+                    "params": "0.298039 0.0 0.862745"
                   },
                   "powers_to_apply": [
                     "toomanyorigins:frost_cloud_effect"
@@ -889,7 +889,7 @@
                       "height_increase": 2,
                       "particle": {
                         "type": "toomanyorigins:custom_dragon_breath",
-                        "params": "0.30196078431 0.16862745098 0.63529411764"
+                        "params": "0.298039 0.0 0.862745"
                       },
                       "powers_to_apply": [
                         "toomanyorigins:frost_cloud_effect"
@@ -933,7 +933,7 @@
                     "type": "origins:spawn_particles",
                     "particle": {
                       "type": "toomanyorigins:custom_dragon_breath",
-                      "params": "0.86666666666 0.34509803921 0.56862745098"
+                      "params": "0.976470 0.0 0.658823"
                     },
                     "count": 1,
                     "speed": 0.1,
@@ -949,7 +949,7 @@
                   "actions": [
                     {
                       "type": "origins:execute_command",
-                      "command": "particle toomanyorigins:custom_dragon_breath 0.86666666666 0.34509803921 0.56862745098 ~ ~ ~ 0.005 0.005 0.005 0.05 15"
+                      "command": "particle toomanyorigins:custom_dragon_breath 0.976470 0.0 0.658823 ~ ~ ~ 0.005 0.005 0.005 0.05 15"
                     },
                     {
                       "type": "origins:if_else",
@@ -1003,7 +1003,7 @@
                   ],
                   "particle": {
                     "type": "toomanyorigins:custom_dragon_breath",
-                    "params": "0.86666666666 0.34509803921 0.56862745098"
+                    "params": "0.976470 0.0 0.658823"
                   },
                   "bientity_condition": {
                     "type": "origins:invert",
@@ -1034,7 +1034,7 @@
                       ],
                       "particle": {
                         "type": "toomanyorigins:custom_dragon_breath",
-                        "params": "0.86666666666 0.34509803921 0.56862745098"
+                        "params": "0.976470 0.0 0.658823"
                       },
                       "bientity_condition": {
                         "type": "origins:invert",

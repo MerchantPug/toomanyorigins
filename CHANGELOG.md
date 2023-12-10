@@ -3,7 +3,10 @@
 # Changelog compared to 1.0.0-beta.19
 
 ### Origins
-- Withered's `Affliction` now functions with piercing.
+- `Withered`'s `Affliction` now functions with piercing.
+- `Dragonborn`'s Frost and Thunder `Draconic Breath` particles should now be more consistent with their fire counterpart.
+- Set off-coloured particles for hit effects with `Draconic Breath` to their default counterparts.
+- `Draconic Breath` hit effects now show more particles.
 
 ### General
 - Re-enabled Forge module.

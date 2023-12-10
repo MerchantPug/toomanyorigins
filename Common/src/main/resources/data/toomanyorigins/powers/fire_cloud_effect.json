@@ -15,10 +15,9 @@
       "action": {
         "type": "origins:spawn_particles",
         "particle": {
-          "type": "toomanyorigins:custom_dragon_breath",
-          "params": "0.8745098039 0.4431372549 1.0"
+          "type": "minecraft:dragon_breath"
         },
-        "count": 12,
+        "count": 16,
         "speed": 0.05,
         "spread": {
           "x": 0.05,
