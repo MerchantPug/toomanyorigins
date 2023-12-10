@@ -4,6 +4,7 @@ import net.merchantpug.toomanyorigins.data.LegacyContentRegistry;
 import net.merchantpug.toomanyorigins.network.TMOPacketHandler;
 import net.merchantpug.toomanyorigins.network.s2c.SyncLegacyContentPacket;
 import net.merchantpug.toomanyorigins.registry.TMOEffects;
+import net.merchantpug.toomanyorigins.registry.TMOItems;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
@@ -13,6 +14,8 @@ import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.monster.ZombieVillager;
 import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.OnDatapackSyncEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
@@ -40,6 +43,16 @@ public class TooManyOriginsEventHandler {
                 zombieVillager.setTradeOffers(villager.getOffers().createTag());
                 zombieVillager.setVillagerXp(villager.getVillagerXp());
             }
+        }
+    }
+
+    @SubscribeEvent
+    public static void buildCreativeModeTabs(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.COMBAT && LegacyContentRegistry.isDragonFireballEnabled()) {
+            event.accept(TMOItems.DRAGON_FIREBALL.get());
+        } else if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS && LegacyContentRegistry.areWitheredCropsEnabled()) {
+            event.accept(TMOItems.WITHERED_CROP_SEEDS.get());
+            event.accept(TMOItems.WITHERED_STEM_SEEDS.get());
         }
     }
 
