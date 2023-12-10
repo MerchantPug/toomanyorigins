@@ -166,13 +166,18 @@ processTestResources {
 
 tasks.jarJar.configure {
     archiveClassifier = ""
+    dependsOn('reobfJar')
 }
 
 reobf {
     jarJar {}
 }
 
-jar.finalizedBy('reobfJar')
+jar.finalizedBy('reobfJarJar')
+
+tasks.withType(AbstractPublishToMaven) {
+    dependsOn('jarJar')
+}
 
 publishing {
     publications {
