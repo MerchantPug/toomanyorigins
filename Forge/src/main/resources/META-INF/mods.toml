@@ -30,7 +30,7 @@ side="BOTH"
 [[dependencies.toomanyorigins]]
 modId="origins"
 mandatory=true
-versionRange="[1.20.1-1.10.0.0,)"
+versionRange="[1.20.1-1.10.0.4,)"
 ordering="AFTER"
 side="BOTH"
 
