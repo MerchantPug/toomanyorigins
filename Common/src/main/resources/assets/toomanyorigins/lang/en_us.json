@@ -93,8 +93,9 @@
   "toomanyorigins.gui.version_mismatch": "This server is running a different version of TooManyOrigins (v%1$s) which is incompatible with the one you have installed (v%2$s).",
   "toomanyorigins.content.disabled": "Disabled",
   "toomanyorigins.content.disabled_message": "Legacy TooManyOrigins module '%1$s' is disabled. Please enable it through a datapack at the file location 'data/toomanyorigins/legacy_content.json'.",
-  "dataPack.legacytoomanyorigins.name": "Legacy TooManyOrigins",
-  "dataPack.legacytoomanyorigins.description": "Brings back all of the pre-rework TooManyOrigins content.",
+  "dataPack.toomanyorigins.legacytoomanyorigins.name": "Legacy TooManyOrigins",
+  "dataPack.toomanyorigins.legacytoomanyorigins.description": "Brings back all of the pre-rework TooManyOrigins content.",
+  "pack.source.toomanyorigins": "built-in: TooManyOrigins",
 
   "origin.legacytoomanyorigins.dragonborn.description": "Half Human, Half Dragon. Their ferocious breath and structure makes the inhabitants of The End bow before them.",
 

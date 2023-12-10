@@ -28,7 +28,7 @@ public class TooManyOriginsFabric implements ModInitializer {
 			if(VERSION.contains("-")) {
 				VERSION = VERSION.split("-")[0];
 			}
-			ResourceManagerHelper.registerBuiltinResourcePack(TooManyOrigins.asResource("legacytoomanyorigins"), modContainer, Component.translatable("dataPack.legacytoomanyorigins.name"), ResourcePackActivationType.NORMAL);
+			ResourceManagerHelper.registerBuiltinResourcePack(TooManyOrigins.asResource("legacytoomanyorigins"), modContainer, Component.translatable("dataPack.toomanyorigins.legacytoomanyorigins.name"), ResourcePackActivationType.NORMAL);
 		});
 
 		TooManyOrigins.LOG.info("TooManyOrigins " + VERSION + " is initializing. Enjoy!");

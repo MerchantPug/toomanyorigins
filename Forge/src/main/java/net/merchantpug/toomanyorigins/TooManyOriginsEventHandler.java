@@ -1,12 +1,18 @@
 package net.merchantpug.toomanyorigins;
 
 import net.merchantpug.toomanyorigins.data.LegacyContentRegistry;
+import net.merchantpug.toomanyorigins.data.ModFilePackResources;
 import net.merchantpug.toomanyorigins.network.TMOPacketHandler;
 import net.merchantpug.toomanyorigins.network.s2c.SyncLegacyContentPacket;
 import net.merchantpug.toomanyorigins.registry.TMOEffects;
 import net.merchantpug.toomanyorigins.registry.TMOItems;
+import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.NbtOps;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
@@ -15,13 +21,17 @@ import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.monster.ZombieVillager;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.OnDatapackSyncEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.forgespi.language.IModFileInfo;
+import net.minecraftforge.forgespi.locating.IModFile;
 import net.minecraftforge.network.PacketDistributor;
 
 @Mod.EventBusSubscriber(modid = TooManyOrigins.MOD_ID)
@@ -43,6 +53,18 @@ public class TooManyOriginsEventHandler {
                 zombieVillager.setTradeOffers(villager.getOffers().createTag());
                 zombieVillager.setVillagerXp(villager.getVillagerXp());
             }
+        }
+    }
+
+    @SubscribeEvent
+    public static void addPackFinders(AddPackFindersEvent event) {
+        if (event.getPackType() == PackType.SERVER_DATA) {
+            IModFileInfo info = ModList.get().getModFileById(TooManyOrigins.MOD_ID);
+            if (info == null) {
+                return;
+            }
+            IModFile file = info.getFile();
+            event.addRepositorySource(consumer -> consumer.accept(Pack.readMetaAndCreate(TooManyOrigins.asResource("legacytoomanyorigins").toString(), Component.translatable("dataPack.toomanyorigins.legacytoomanyorigins.name"), false, (s) -> new ModFilePackResources("bovinesandbuttercups/mojang", file, "resourcepacks/mojang"), PackType.SERVER_DATA, Pack.Position.TOP, PackSource.create(c -> Component.translatable("pack.nameAndSource", c, Component.translatable("pack.source.toomanyorigins")).withStyle(ChatFormatting.GRAY), false))));
         }
     }
 
