@@ -31,12 +31,4 @@ public class TooManyOriginsForge {
         TMOPacketHandler.register();
     }
 
-    @Mod.EventBusSubscriber(modid = TooManyOrigins.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-    public static class TMOForgeBusEventHandler {
-        @SubscribeEvent
-        public static void addReloadListeners(AddReloadListenerEvent event) {
-            event.addListener(new LegacyContentManager());
-        }
-    }
-
 }
