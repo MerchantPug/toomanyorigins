@@ -47,18 +47,4 @@ public class FabricPlatformHelper implements IPlatformHelper {
         return ModifierUtil.applyModifiers(entity, (List<Modifier>) modifiers, value);
     }
 
-    @Override
-    public double getReachDistance(Entity entity) {
-        double base = (entity instanceof Player player && player.getAbilities().instabuild) ? 5 : 4.5;
-        return (entity instanceof LivingEntity living && isModLoaded("reach-entity-attributes")) ?
-                ReachEntityAttributes.getReachDistance(living, base) : base;
-    }
-
-    @Override
-    public double getAttackRange(Entity entity) {
-        double base = (entity instanceof Player player && player.getAbilities().instabuild) ? 6 : 3;
-        return (entity instanceof LivingEntity living && isModLoaded("reach-entity-attributes")) ?
-                ReachEntityAttributes.getAttackRange(living, base) : base;
-    }
-
 }

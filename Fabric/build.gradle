@@ -16,14 +16,6 @@ loom {
     shareCaches()
     mixin.defaultRefmapName = "toomanyorigins.refmap.json"
 
-    mods {
-        register("toomanyorigins") {
-            sourceSet(project(":Common").sourceSets.main)
-            sourceSet(project(":Common").sourceSets.test)
-            sourceSet(sourceSets.main)
-            sourceSet(sourceSets.test)
-        }
-    }
     runs {
         client {
             client()
@@ -87,6 +79,7 @@ repositories {
         name = 'ParchmentMC'
         url = 'https://maven.parchmentmc.org'
     }
+    mavenCentral()
     mavenLocal()
 }
 
@@ -107,7 +100,7 @@ dependencies {
     //Apugli
     include(modImplementation("net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-fabric"))
     // MixinExtras
-    implementation(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-fabric:${mixin_extras_version}"))
+    implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:${mixin_extras_version}"))
     //JSR305
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     //Service

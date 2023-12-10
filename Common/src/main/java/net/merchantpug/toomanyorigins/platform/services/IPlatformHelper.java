@@ -51,18 +51,4 @@ public interface IPlatformHelper {
      */
     double applyModifiers(LivingEntity living, List<?> modifiers, double value);
 
-    /**
-     * Get the modified reach distance for the entity, Fabric uses REA and Forge uses its own attribute.
-     * @param entity The entity to check.
-     * @return The reach distance of the entity.
-     */
-    double getReachDistance(Entity entity);
-
-    /**
-     * Get the modified attack range for the entity, Fabric uses REA and Forge uses its own attribute.
-     * @param entity The entity to check.
-     * @return The attack range of the entity.
-     */
-    double getAttackRange(Entity entity);
-
 }

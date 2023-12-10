@@ -31,12 +31,12 @@ public class TooManyOriginsEventHandler {
 
     @SubscribeEvent
     public static void onEntityDeath(LivingDeathEvent event) {
-        if (!event.getEntity().level.isClientSide && !event.getEntity().isRemoved() && event.getEntity() instanceof Villager villager && event.getEntity().hasEffect(TMOEffects.ZOMBIFYING.get()) && event.getSource().msgId.equals("zombification")) {
+        if (!event.getEntity().level().isClientSide && !event.getEntity().isRemoved() && event.getEntity() instanceof Villager villager && event.getEntity().hasEffect(TMOEffects.ZOMBIFYING.get()) && event.getSource().getMsgId().equals("zombification")) {
             ZombieVillager zombieVillager = villager.convertTo(EntityType.ZOMBIE_VILLAGER, false);
             if (zombieVillager != null) {
-                zombieVillager.finalizeSpawn(((ServerLevel) villager.level), villager.level.getCurrentDifficultyAt(zombieVillager.blockPosition()), MobSpawnType.CONVERSION, new Zombie.ZombieGroupData(false, true), null);
+                zombieVillager.finalizeSpawn(((ServerLevel) villager.level()), villager.level().getCurrentDifficultyAt(zombieVillager.blockPosition()), MobSpawnType.CONVERSION, new Zombie.ZombieGroupData(false, true), null);
                 zombieVillager.setVillagerData(villager.getVillagerData());
-                zombieVillager.setGossips(villager.getGossips().store(NbtOps.INSTANCE).getValue());
+                zombieVillager.setGossips(villager.getGossips().store(NbtOps.INSTANCE));
                 zombieVillager.setTradeOffers(villager.getOffers().createTag());
                 zombieVillager.setVillagerXp(villager.getVillagerXp());
             }

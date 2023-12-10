@@ -52,14 +52,4 @@ public class ForgePlatformHelper implements IPlatformHelper {
         return ModifierUtil.applyModifiers(living, (List<ConfiguredModifier<?>>) modifiers, value);
     }
 
-    @Override
-    public double getReachDistance(Entity entity) {
-        return entity instanceof IForgePlayer player ? player.getReachDistance() : 4.5;
-    }
-
-    @Override
-    public double getAttackRange(Entity entity) {
-        return entity instanceof IForgePlayer player ? player.getAttackRange() : 3;
-    }
-
 }

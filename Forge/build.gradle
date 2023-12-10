@@ -13,7 +13,7 @@ buildscript {
 
 plugins {
     id 'java'
-    id 'net.minecraftforge.gradle' version '5.+'
+    id 'net.minecraftforge.gradle' version '6.+'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
     id 'eclipse'
     id 'org.spongepowered.mixin' version '0.7-SNAPSHOT'
@@ -35,10 +35,19 @@ repositories {
 
     maven { url 'https://maven.theillusivec4.top' }
 
+
     maven {
         name = "JitPack"
         url = 'https://jitpack.io'
+        content {
+            excludeGroup "io.github.edwinmindcraft"
+        }
     }
+
+    maven { url "https://maven.blamejared.com" }
+
+    mavenCentral()
+    mavenLocal()
 }
 
 mixin {
@@ -104,22 +113,23 @@ dependencies {
     //Forge
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     //Origins
-    implementation fg.deobf("com.github.MerchantPug.origins-forge:calio-forge:${origins_forge_version}")
-    implementation fg.deobf("com.github.MerchantPug.origins-forge:apoli-forge:${origins_forge_version}")
-    implementation fg.deobf("com.github.MerchantPug.origins-forge:origins-forge:${origins_forge_version}")
+    implementation fg.deobf("io.github.edwinmindcraft:calio-forge:${minecraft_version}-${calio_forge_version}")
+    implementation fg.deobf("io.github.edwinmindcraft:apoli-forge:${minecraft_version}-${apoli_forge_version}")
+    implementation fg.deobf("io.github.edwinmindcraft:origins-forge:${minecraft_version}-${origins_forge_version}")
     // Apugli
     implementation(jarJar(fg.deobf("net.merchantpug:Apugli:${apugli_version}+${minecraft_version}-forge"))) {
         jarJar.ranged(it, "[${apugli_version},)")
     }
     // Caelus
-    implementation fg.deobf("top.theillusivec4.caelus:caelus-forge:${minecraft_version}-${caelus_version}")
+    implementation fg.deobf("top.theillusivec4.caelus:caelus-forge:${caelus_version}+1.20")
     // AdditionalEntityAttributes
-    implementation(fg.deobf("com.github.EdwinMindcraft.AdditionalEntityAttributes:Forge:${aea_forge_version}") {
+    implementation(fg.deobf("de.dafuqs:additionalentityattributes-forge:${aea_forge_version}") {
         exclude group: 'net.minecraftforge'
+        exclude group: 'com.github.llamalad.mixinextras'
     })
     // MixinExtras
-    implementation(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:${mixin_extras_version}"))
-    implementation("com.github.llamalad7.mixinextras:mixinextras-forge:${mixin_extras_version}")
+    implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:${mixin_extras_version}"))
+    implementation("io.github.llamalad7:mixinextras-forge:${mixin_extras_version}")
     // Mixin
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     // Service

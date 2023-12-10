@@ -34,7 +34,7 @@ public class TooManyOriginsClientEventHandler {
 
     @SubscribeEvent
     public static void registerParticleProviders(RegisterParticleProvidersEvent event) {
-        event.register(TMOParticleTypes.CUSTOM_DRAGON_BREATH.get(), CustomDragonBreathParticle.Provider::new);
+        event.registerSpriteSet(TMOParticleTypes.CUSTOM_DRAGON_BREATH.get(), CustomDragonBreathParticle.Provider::new);
     }
 
 }
