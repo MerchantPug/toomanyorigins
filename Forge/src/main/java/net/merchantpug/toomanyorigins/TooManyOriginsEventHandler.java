@@ -64,7 +64,7 @@ public class TooManyOriginsEventHandler {
                 return;
             }
             IModFile file = info.getFile();
-            event.addRepositorySource(consumer -> consumer.accept(Pack.readMetaAndCreate(TooManyOrigins.asResource("legacytoomanyorigins").toString(), Component.translatable("dataPack.toomanyorigins.legacytoomanyorigins.name"), false, (s) -> new ModFilePackResources("bovinesandbuttercups/mojang", file, "resourcepacks/mojang"), PackType.SERVER_DATA, Pack.Position.TOP, PackSource.create(c -> Component.translatable("pack.nameAndSource", c, Component.translatable("pack.source.toomanyorigins")).withStyle(ChatFormatting.GRAY), false))));
+            event.addRepositorySource(consumer -> consumer.accept(Pack.readMetaAndCreate(TooManyOrigins.asResource("legacytoomanyorigins").toString(), Component.translatable("dataPack.toomanyorigins.legacytoomanyorigins.name"), false, (s) -> new ModFilePackResources("toomanyorigins/legacytoomanyorigins", file, "resourcepacks/legacytoomanyorigins"), PackType.SERVER_DATA, Pack.Position.TOP, PackSource.create(c -> Component.translatable("pack.nameAndSource", c, Component.translatable("pack.source.toomanyorigins")).withStyle(ChatFormatting.GRAY), false))));
         }
     }
 
