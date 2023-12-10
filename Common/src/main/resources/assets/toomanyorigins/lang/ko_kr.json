@@ -102,8 +102,8 @@
 
     "origin.legacytoomanyorigins.swarm.description": "이 벌집 그룹은 외부 세계의 장애물을 극복하기 위해 함께 뭉치기로 선택합니다.",
 
-    "power.legacytoomanyorigins.hover_toggle.name": "호버",
-    "power.legacytoomanyorigins.hover_toggle.description": "여러 벌로 이루어져 있어 떨어질 때마다 공중에 떠 있을 수 있습니다.",
+    "power.legacytoomanyorigins.hover.name": "호버",
+    "power.legacytoomanyorigins.hover.description": "여러 벌로 이루어져 있어 떨어질 때마다 공중에 떠 있을 수 있습니다.",
     "power.legacytoomanyorigins.smoke_sensitivity.name": "연기 감도",
     "power.legacytoomanyorigins.smoke_sensitivity.description": "연기 근처에 있으면 감각이 줄어듭니다.",
     "power.legacytoomanyorigins.expendable.name": "소모품",

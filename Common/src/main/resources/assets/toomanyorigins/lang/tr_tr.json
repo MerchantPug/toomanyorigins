@@ -157,8 +157,8 @@
 
     "origin.legacytoomanyorigins.swarm.description": "Kovan dışında yaşayan bu özgür arılar dış dünyanın engellerine karşı çıkabilmek için yapışık biçimde yaşamayı tercih eder.",
 
-    "power.legacytoomanyorigins.hover_toggle.name": "Süzül",
-    "power.legacytoomanyorigins.hover_toggle.description": "Birçok arıdan yapılmış olman, havadayken süzülebilmeni sağlar.",
+    "power.legacytoomanyorigins.hover.name": "Süzül",
+    "power.legacytoomanyorigins.hover.description": "Birçok arıdan yapılmış olman, havadayken süzülebilmeni sağlar.",
     "power.legacytoomanyorigins.smoke_sensitivity.name": "Duman Duyarlılığı",
     "power.legacytoomanyorigins.smoke_sensitivity.description": "Dumana yakınken hislerin azalır.",
     "power.legacytoomanyorigins.smoke_exhaustion.description": "Dumana yakınken daha hızlı acıkırsın.",

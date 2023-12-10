@@ -157,8 +157,8 @@
 
   "origin.legacytoomanyorigins.swarm.description": "These hive independent group of bees choose to stick together to overcome the obstacles of the outside world.",
 
-  "power.legacytoomanyorigins.hover_toggle.name": "Hover",
-  "power.legacytoomanyorigins.hover_toggle.description": "Being made up of multiple bees, you are able to hover midair whenever you are falling.",
+  "power.legacytoomanyorigins.hover.name": "Hover",
+  "power.legacytoomanyorigins.hover.description": "Being made up of multiple bees, you are able to hover midair whenever you are falling.",
   "power.legacytoomanyorigins.smoke_sensitivity.name": "Smoke Sensitivity",
   "power.legacytoomanyorigins.smoke_sensitivity.description": "Your senses are lessened when near smoke.",
   "power.legacytoomanyorigins.smoke_exhaustion.description": "You exhaust quicker whilst near smoke.",
