@@ -10,6 +10,6 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(FabricPowerFactory.class)
 public interface FabricPowerFactoryAccessor<P extends Power> {
-    @Invoker("getPower")
+    @Invoker(value = "getPower", remap = false)
     P invokeGetPower(ConfiguredPower<FabricPowerConfiguration<P>, ?> configuration, LivingEntity entity);
 }

@@ -8,6 +8,7 @@
         "type": "origins:extinguish"
       }
     },
+    "cooldown": 1,
     "bientity_condition": {
       "type": "origins:actor_condition",
       "condition": {
@@ -32,7 +33,8 @@
           "duration": 100,
           "amplifier": 1
         }
-      }
+      },
+      "stop_after": 2147483647
     },
     "bientity_condition": {
       "type": "origins:and",
