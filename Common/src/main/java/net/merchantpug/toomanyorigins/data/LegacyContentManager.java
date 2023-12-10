@@ -82,7 +82,7 @@ public class LegacyContentManager extends SimplePreparableReloadListener<Set<Leg
         if (!prepared.isEmpty()) {
             TooManyOrigins.LOG.info("Successfully enabled {} TooManyOrigins legacy content modules.", prepared.size());
         }
-        LegacyContentRegistry.setRecord(
+        LegacyContentRegistry.updateRecord(
                 prepared.stream().anyMatch(LegacyContentRecord::dragonFireballEnabled),
                 prepared.stream().anyMatch(LegacyContentRecord::witheredCropsEnabled),
                 prepared.stream().anyMatch(LegacyContentRecord::zombifyingEnabled));

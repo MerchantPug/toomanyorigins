@@ -16,27 +16,27 @@ description="An addon to Origins loosely inspired by the original mod. "
 [[dependencies.toomanyorigins]]
 modId="forge"
 mandatory=true
-versionRange="[43.2,)"
+versionRange="[47.1,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.toomanyorigins]]
 modId="minecraft"
 mandatory=true
-versionRange="[1.19.2,1.19.3)"
+versionRange="[1.20,1.20.2)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.toomanyorigins]]
 modId="origins"
 mandatory=true
-versionRange="[1.19.2-1.7.1.0,)"
+versionRange="[1.20.1-1.10.0.0,)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies.toomanyorigins]]
 modId="apugli"
 mandatory=true
-versionRange="[2.6.2,)"
+versionRange="[2.9.0,)"
 ordering="AFTER"
 side="BOTH"
