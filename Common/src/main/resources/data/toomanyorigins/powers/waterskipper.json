@@ -47,6 +47,7 @@
   },
   "allow_sprinting": {
     "type": "toomanyorigins:sprinting",
+    "requires_input": true,
     "condition": {
       "type": "origins:and",
       "conditions": [
