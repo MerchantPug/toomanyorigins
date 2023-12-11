@@ -20,6 +20,10 @@ public class LegacyContentRegistry {
         REGISTRY = new LegacyContentRecord(dragonFireball || oldRecord.dragonFireballEnabled(), witheredCrops || oldRecord.witheredCropsEnabled(), zombifying || oldRecord.zombifyingEnabled());
     }
 
+    public static int getContentCount() {
+        return REGISTRY.count();
+    }
+
     public static boolean isDragonFireballEnabled() {
         return REGISTRY.dragonFireballEnabled();
     }

@@ -13,4 +13,18 @@ public record LegacyContentRecord(boolean dragonFireballEnabled,
             Codec.BOOL.optionalFieldOf(LegacyContentRegistry.ZOMBIFYING, false).forGetter(LegacyContentRecord::zombifyingEnabled)
     ).apply(instance, LegacyContentRecord::new));
 
+    public int count() {
+        int count = 0;
+        if (dragonFireballEnabled()) {
+            ++count;
+        }
+        if (witheredCropsEnabled()) {
+            ++count;
+        }
+        if (zombifyingEnabled()) {
+            ++count;
+        }
+        return count;
+    }
+
 }

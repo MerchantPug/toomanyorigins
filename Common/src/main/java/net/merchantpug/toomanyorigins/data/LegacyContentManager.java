@@ -79,13 +79,12 @@ public class LegacyContentManager extends SimplePreparableReloadListener<Set<Leg
     @Override
     protected void apply(Set<LegacyContentRecord> prepared, ResourceManager manager, ProfilerFiller profiler) {
         LegacyContentRegistry.disableAll();
-        if (!prepared.isEmpty()) {
-            TooManyOrigins.LOG.info("Successfully enabled {} TooManyOrigins legacy content modules.", prepared.size());
-        }
-        LegacyContentRegistry.updateRecord(
+        LegacyContentRegistry.setRecord(
                 prepared.stream().anyMatch(LegacyContentRecord::dragonFireballEnabled),
                 prepared.stream().anyMatch(LegacyContentRecord::witheredCropsEnabled),
                 prepared.stream().anyMatch(LegacyContentRecord::zombifyingEnabled));
+        if (LegacyContentRegistry.getContentCount() > 0)
+            TooManyOrigins.LOG.info("Successfully enabled {} TooManyOrigins legacy content modules.", LegacyContentRegistry.getContentCount());
     }
 
 }
