@@ -13,21 +13,21 @@
 - Re-enabled Forge module.
 
 ### Bugfixes
-- Hiss-kin's Buildup/Overheat no longer catches onto entities that are riding it. ([#81](https://github.com/MerchantPug/toomanyorigins/issues/81))
+- `Hiss-kin`'s `Buildup`/`Overheat` no longer catches onto entities that are riding it. ([#81](https://github.com/MerchantPug/toomanyorigins/issues/81))
 - Fixed Legacy TooManyOrigins Swarm's Hover power having incorrect lang keys. 
 
 ### Dependencies
 - Updated Apugli to 2.9.0.
 - Updated Mixin Extras to 0.3.1.
 
-# Full Changelog Compared to 0.x.x
+# Full Changelog
 ### General
 - Reworked every origin. If you would like to have the old origins, you are able to use the legacy content built-in data pack.
 - Reworded many descriptions to open up more player interpretation.
 - Every Origins' order in the origins menu has been changed, TooManyOrigins' origins should now be found later but should always be together.
 
 ### Bugfixes
-- Hiss-kin's Buildup/Overheat no longer catches onto entities that are riding it.
+- `Hiss-kin`'s `Buildup`/`Overheat` no longer catches onto entities that are riding it. ([#81](https://github.com/MerchantPug/toomanyorigins/issues/81))
 
 ### Datapacking
 - Added built-in Legacy TooManyOrigins data pack.
