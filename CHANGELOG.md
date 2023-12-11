@@ -14,6 +14,7 @@
 
 ### Bugfixes
 - Hiss-kin's Buildup/Overheat no longer catches onto entities that are riding it. ([#81](https://github.com/MerchantPug/toomanyorigins/issues/81))
+- Fixed Legacy TooManyOrigins Swarm's Hover power having incorrect lang keys. 
 
 ### Dependencies
 - Updated Apugli to 2.9.0.
