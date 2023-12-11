@@ -13,7 +13,6 @@ version = "${rootProject.version}+${minecraft_version}-fabric"
 
 
 loom {
-    shareCaches()
     mixin.defaultRefmapName = "toomanyorigins.refmap.json"
 
     runs {
