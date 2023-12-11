@@ -2,6 +2,10 @@
 
 # Changelog compared to 1.0.0-beta.19
 
+### General
+- Re-enabled Forge module.
+- Optimised asset files' file size.
+
 ### Origins
 - `Withered`'s `Affliction` now functions with piercing.
 - `Dragonborn`'s Frost and Thunder `Draconic Breath` projectiles now have new textures.
@@ -10,9 +14,6 @@
 - `Draconic Breath` hit effects now show more particles.
 - `Hiss-kin`'s `Buildup` power now has 12 ticks (0.6 seconds) of cooldown, (previously 15 ticks (0.75 seconds)).
 - `Hiss-kin`'s `Conductive` power now grants 15 minutes of the `Charged` effect instead of the previous 8 minutes.
-
-### General
-- Re-enabled Forge module.
 
 ### Bugfixes
 - `Hiss-kin`'s `Buildup`/`Overheat` no longer catches onto entities that are riding it. ([#81](https://github.com/MerchantPug/toomanyorigins/issues/81))
@@ -27,6 +28,7 @@
 - Reworked every origin. If you would like to have the old origins, you are able to use the legacy content built-in data pack.
 - Reworded many descriptions to open up more player interpretation.
 - Every Origins' order in the origins menu has been changed, TooManyOrigins' origins should now be found later but should always be together.
+- Optimised asset files' file size.
 
 ### Bugfixes
 - `Hiss-kin`'s `Buildup`/`Overheat` no longer catches onto entities that are riding it. ([#81](https://github.com/MerchantPug/toomanyorigins/issues/81))
