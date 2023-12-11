@@ -115,3 +115,7 @@
 - Added `Soul Siphon` power, which feeds you upon killing entities or from damage dealt through affliction.
 - Added` Hell-Raised` power, which gives you an alternative recipe for arrows.
 - Added `Deathly Digestion` power, which makes food items less nourishing for you and exhausts you quicker whilst not in the Nether.
+
+### Undead
+- Removed Undead origin for the time being.
+- Will be reworked at a later date, it'll happen when it happens.
