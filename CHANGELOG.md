@@ -4,6 +4,7 @@
 
 ### Origins
 - `Withered`'s `Affliction` now functions with piercing.
+- `Dragonborn`'s Frost and Thunder `Draconic Breath` projectiles now have new textures.
 - `Dragonborn`'s Frost and Thunder `Draconic Breath` particles should now be more consistent with their fire counterpart.
 - Set off-coloured particles for hit effects with `Draconic Breath` to their default counterparts.
 - `Draconic Breath` hit effects now show more particles.
