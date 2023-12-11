@@ -71,8 +71,8 @@ minecraft {
                 create(mod_id) {
                     source sourceSets.main
                     source sourceSets.test
-                    source project(":Common").sourceSets.main
-                    source project(":Common").sourceSets.test
+                    source project(":common").sourceSets.main
+                    source project(":common").sourceSets.test
                 }
             }
         }
@@ -86,8 +86,8 @@ minecraft {
                 create(mod_id) {
                     source sourceSets.main
                     source sourceSets.test
-                    source project(":Common").sourceSets.main
-                    source project(":Common").sourceSets.test
+                    source project(":common").sourceSets.main
+                    source project(":common").sourceSets.test
                 }
             }
         }
@@ -101,7 +101,7 @@ minecraft {
             mods {
                 create(mod_id) {
                     source sourceSets.main
-                    source project(":Common").sourceSets.main
+                    source project(":common").sourceSets.main
                 }
             }
         }
@@ -137,15 +137,15 @@ dependencies {
     compileOnly group:'com.google.auto.service', name:'auto-service', version:'1.0.1'
     annotationProcessor group:'com.google.auto.service', name:'auto-service', version:'1.0.1'
     // Relying on the Common Project for sure
-    implementation project(":Common")
+    implementation project(":common")
 }
 
 tasks.withType(JavaCompile) {
-    source(project(":Common").sourceSets.main.allSource)
+    source(project(":common").sourceSets.main.allSource)
 }
 
 processResources {
-    from project(':Common').sourceSets.main.resources
+    from project(':common').sourceSets.main.resources
     exclude "toomanyorigins.common.accesswidener"
 
     inputs.property 'version', project.version
@@ -157,7 +157,7 @@ processResources {
 
 processTestResources {
     outputs.upToDateWhen { false }
-    from project(":Common").sourceSets.test.resources
+    from project(":common").sourceSets.test.resources
 
     filesMatching('META-INF/mods.toml') {
         expand 'version': project.version
