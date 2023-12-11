@@ -1,7 +1,7 @@
 import net.darkhax.curseforgegradle.TaskPublishCurseForge
 
 plugins {
-    id 'fabric-loom' version '0.12-SNAPSHOT'
+    id 'fabric-loom' version '1.2-SNAPSHOT'
     id 'maven-publish'
     id 'idea'
     id "net.darkhax.curseforgegradle" version "1.0.7"
@@ -19,14 +19,12 @@ loom {
     runs {
         client {
             client()
-            source(sourceSets.main)
             setConfigName("Fabric Client")
             ideConfigGenerated(true)
             runDir("run")
         }
         server {
             server()
-            source(sourceSets.main)
             setConfigName("Fabric Server")
             ideConfigGenerated(true)
             runDir("run")
