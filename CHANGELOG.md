@@ -1,5 +1,11 @@
 [A] Notes an Apugli related change.
 
+### Known Issues
+- Swarm's `Unity` power does not work, this is an issue with Origins' Conditioned Attribute power type.
+  - See [aoace100/apoli#190](https://github.com/apace100/apoli/issues/190)
+
+---
+
 # Changelog compared to 1.0.0-beta.19
 
 ### General
