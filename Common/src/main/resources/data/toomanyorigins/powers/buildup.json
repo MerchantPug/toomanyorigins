@@ -2,7 +2,7 @@
   "type": "origins:multiple",
   "buffer_cooldown": {
     "type": "origins:cooldown",
-    "cooldown": 15,
+    "cooldown": 12,
     "hud_render": {
       "should_render": true,
       "sprite_location": "toomanyorigins:textures/gui/tmo_resource_bar.png",

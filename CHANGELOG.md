@@ -7,6 +7,7 @@
 - `Dragonborn`'s Frost and Thunder `Draconic Breath` particles should now be more consistent with their fire counterpart.
 - Set off-coloured particles for hit effects with `Draconic Breath` to their default counterparts.
 - `Draconic Breath` hit effects now show more particles.
+- `Hiss-kin`'s `Buildup` power now has 12 ticks (0.6 seconds) of cooldown, (previously 15 ticks (0.75 seconds))
 
 ### General
 - Re-enabled Forge module.
@@ -39,7 +40,7 @@
 ### Hiss-kin
 - Renamed `Overheat` to `Buildup`
 - `Buildup`'s self damage will only damage you if you use the power whilst it is on cooldown.
-- Changed `Buildup` cooldown from 5 ticks (0.25 seconds) to 15 ticks (0.75 seconds).
+- Changed `Buildup` cooldown from 5 ticks (0.25 seconds) to 12 ticks (0.6 seconds).
 - `Buildup` self damage type now counts as explosive damage instead of fire damage.
 - `Buildup` deals 25% of the base explosion damage instead of 50%.
 - Increased the `Buildup` explosion's knockback when compared to Overheat.
