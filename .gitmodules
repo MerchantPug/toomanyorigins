@@ -1,4 +1,4 @@
-[submodule "Common/src/main/resources/resourcepacks/legacytoomanyorigins"]
-	path = Common/src/main/resources/resourcepacks/legacytoomanyorigins
+[submodule "common/src/main/resources/resourcepacks/legacytoomanyorigins"]
+	path = common/Common/src/main/resources/resourcepacks/legacytoomanyorigins
 	url = git@github.com:MerchantPug/legacy-toomanyorigins-datapack
 	branch = 1.20/main
