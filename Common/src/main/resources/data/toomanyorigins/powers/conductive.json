@@ -7,7 +7,7 @@
       "effect": {
         "effect": "toomanyorigins:charged",
         "amplifier": 0,
-        "duration": 9600
+        "duration": 18000
       }
     },
     "cooldown": 20

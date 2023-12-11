@@ -8,7 +8,8 @@
 - `Dragonborn`'s Frost and Thunder `Draconic Breath` particles should now be more consistent with their fire counterpart.
 - Set off-coloured particles for hit effects with `Draconic Breath` to their default counterparts.
 - `Draconic Breath` hit effects now show more particles.
-- `Hiss-kin`'s `Buildup` power now has 12 ticks (0.6 seconds) of cooldown, (previously 15 ticks (0.75 seconds))
+- `Hiss-kin`'s `Buildup` power now has 12 ticks (0.6 seconds) of cooldown, (previously 15 ticks (0.75 seconds)).
+- `Hiss-kin`'s `Conductive` power now grants 15 minutes of the `Charged` effect instead of the previous 8 minutes.
 
 ### General
 - Re-enabled Forge module.
@@ -52,7 +53,7 @@
 - Removed `Blast Resistant Hide`.
 - Added `Aerial Stability` power in place of Blast Resistant Hide, which lowers your falling velocity.
 - Renamed `Conductor` to `Conductive`.
-- `Conductive` now gives you 8 minutes of the Charged status effect (previously 20).
+- `Conductive` now gives you 15 minutes of the Charged status effect (previously 20 minutes).
 - Renamed `Sneaking Steps` to `Stubby Legs`, you are now 25% slower instead of 5% slower.
 
 ### Hare
@@ -78,7 +79,7 @@
     - The above effect no longer affects Brewing Stands.
     - A Dragonborn starts with this breath type but it is still able to be swapped to using Coal or Charcoal.
   - **Frost**
-    - Frost gradually slows down entities within the area effect cloud.
+    - Frost gradually slows down entities as if they were in powder snow within the area effect cloud.
     - Frost Breath Cloud radius starts at 3.5, lasts for 9 seconds, and decreases by 0.00375 per tick.
     - The projectile can freeze water surfaces, this is similar to the effects of Frost Walker.
     - Can be swapped to with Snowballs.
