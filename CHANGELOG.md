@@ -22,6 +22,7 @@
 ### Dependencies
 - Updated Apugli to 2.9.0.
 - Updated Mixin Extras to 0.3.1.
+- [FABRIC] Use `fabric-api` modid instead of `fabric` in fabric.mod.json.
 
 # Full Changelog
 ### General
@@ -29,6 +30,7 @@
 - Reworded many descriptions to open up more player interpretation.
 - Every Origins' order in the origins menu has been changed, TooManyOrigins' origins should now be found later but should always be together.
 - Optimised asset files' file size.
+- [FABRIC] Use `fabric-api` modid instead of `fabric` in fabric.mod.json.
 
 ### Bugfixes
 - `Hiss-kin`'s `Buildup`/`Overheat` no longer catches onto entities that are riding it. ([#81](https://github.com/MerchantPug/toomanyorigins/issues/81))
