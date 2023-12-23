@@ -118,10 +118,10 @@ processResources {
     from project(":common").sourceSets.main.resources
     exclude "toomanyorigins.common.accesswidener"
 
-    inputs.property "version", project.version
+    inputs.property "version", rootProject.version
 
     filesMatching("fabric.mod.json") {
-        expand "version": project.version
+        expand "version": rootProject.version
     }
 }
 
