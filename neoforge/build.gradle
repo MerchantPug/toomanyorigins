@@ -195,7 +195,8 @@ publishing {
             url = "https://maven.merchantpug.net/releases"
             credentials(PasswordCredentials)
             authentication {
-                create("basic", BasicAuthentication)
+                username System.getenv('MAVEN_USERNAME')
+                password System.getenv('MAVEN_PASSWORD')
             }
         }
         mavenLocal()
