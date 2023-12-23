@@ -58,6 +58,9 @@ repositories {
         }
     }
     maven {
+        url "https://masa.dy.fi/maven"
+    }
+    maven {
         name = "Shedaniel"
         url "https://maven.shedaniel.me/"
     }
