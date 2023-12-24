@@ -146,7 +146,7 @@ dependencies {
     annotationProcessor group:'com.google.auto.service', name:'auto-service', version:'1.0.1'
     // Water Walking Fix
     implementation(jarJar(fg.deobf("maven.modrinth:water-walking-fix-forge:${wwfix_forge_version}"))) {
-        jarJar.ranged(it, "[${wwfix_forge_version},)")
+        jarJar.ranged(it, "[${wwfix_forge_version.split('\\+')[0]},)")
     }
     // Relying on the Common Project for sure
     implementation project(":common")
