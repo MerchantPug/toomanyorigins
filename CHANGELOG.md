@@ -1,2 +1,2 @@
-- Updated Apugli to 2.9.2.
-- Updated codebase to be compatible with Origins 1.12.0.
+- Fixed the mod not providing Water Walking Fix.
+- Fixed Water Walking Fix having an incompatibility with Flywheel.

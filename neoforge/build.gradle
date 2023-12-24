@@ -46,6 +46,14 @@ repositories {
 
     maven { url "https://maven.blamejared.com" }
 
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+        content {
+            includeGroup "maven.modrinth"
+        }
+    }
+
     mavenCentral()
     mavenLocal()
 }
@@ -136,6 +144,10 @@ dependencies {
     // Service
     compileOnly group:'com.google.auto.service', name:'auto-service', version:'1.0.1'
     annotationProcessor group:'com.google.auto.service', name:'auto-service', version:'1.0.1'
+    // Water Walking Fix
+    implementation(jarJar(fg.deobf("maven.modrinth:water-walking-fix-forge:${wwfix_forge_version}"))) {
+        jarJar.ranged(it, "[${wwfix_forge_version},)")
+    }
     // Relying on the Common Project for sure
     implementation project(":common")
 }
