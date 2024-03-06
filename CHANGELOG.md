@@ -1,2 +1,8 @@
-- Fixed the mod not providing Water Walking Fix.
-- Fixed Water Walking Fix having an incompatibility with Flywheel.
+### Bugfixes
+- [FORGE] Unbroke item capabilities.
+
+### Dependencies
+- Updated Apugli to 2.10.0.
+
+### Translation
+- Updated Korean translation (Thanks Zeetheer).
