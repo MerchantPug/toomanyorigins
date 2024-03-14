@@ -1,8 +1,2 @@
-### Bugfixes
-- [FORGE] Unbroke item capabilities.
-
 ### Dependencies
-- Updated Apugli to 2.10.0.
-
-### Translation
-- Updated Korean translation (Thanks Zeetheer).
+- Updated Apugli to 2.10.1.
